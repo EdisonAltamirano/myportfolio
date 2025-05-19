@@ -8,7 +8,6 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
-import { ThreeScene } from '@/components/three/ThreeScene';
 import { FadeIn } from '@/components/animations/FadeIn';
 
 type Props = {
@@ -76,22 +75,6 @@ export default function ProjectDetailsPage({ params }: Props) {
                   <p className="text-lg text-muted-foreground leading-relaxed">{project.description}</p>
                 </CardContent>
               </Card>
-
-              {project.threeDModel && (
-                <FadeIn delay="delay-200">
-                  <Card className="shadow-xl mb-8">
-                    <CardHeader>
-                      <CardTitle className="text-2xl text-foreground">Interactive 3D Model</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <ThreeScene modelPath={project.threeDModel} />
-                       <p className="text-xs text-muted-foreground mt-2 text-center">
-                        (Placeholder: This is a generic 3D scene. Actual model loading for "{project.title}" would require specific integration.)
-                      </p>
-                    </CardContent>
-                  </Card>
-                </FadeIn>
-              )}
               
               <FadeIn delay="delay-300">
                 <Card className="shadow-xl">

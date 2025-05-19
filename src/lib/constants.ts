@@ -1,4 +1,4 @@
-import { Book, Bot, Brain, CodeXml, Contact, FileText, Home, Layers, Settings, Briefcase, Server } from 'lucide-react';
+import { Book, Bot, Brain, CodeXml, Contact, FileText, Home, Layers, Settings, Briefcase, Server, UserCircle } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 export type NavLink = {
@@ -9,7 +9,7 @@ export type NavLink = {
 
 export const navLinks: NavLink[] = [
   { href: '/', label: 'Home', icon: Home },
-  { href: '/about', label: 'About', icon: FileText },
+  { href: '/about', label: 'About', icon: UserCircle }, // Changed from FileText for better semantic meaning
   { href: '/projects', label: 'Projects', icon: Briefcase },
   { href: '/blog', label: 'Blog', icon: Book },
   { href: '/contact', label: 'Contact', icon: Contact },
@@ -25,7 +25,6 @@ export type Project = {
   company: string;
   tags: string[];
   href: string;
-  threeDModel?: string; // Path to a 3D model or identifier
 };
 
 export const featuredProjects: Project[] = [
@@ -39,7 +38,6 @@ export const featuredProjects: Project[] = [
     company: 'ZF Group',
     tags: ['Robotics', 'Autonomous Systems', 'Firmware'],
     href: '/projects/zf-autonomous-shuttle',
-    threeDModel: 'shuttle.glb'
   },
   {
     id: 'john-deere-go',
