@@ -3,7 +3,7 @@ import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { navLinks, siteName } from '@/lib/constants';
-import { ThemeToggle } from './ThemeToggle';
+// import { ThemeToggle } from './ThemeToggle'; // Removed ThemeToggle
 
 export function Header() {
   return (
@@ -24,10 +24,10 @@ export function Header() {
               {link.label}
             </Link>
           ))}
-          <ThemeToggle />
+          {/* <ThemeToggle /> */} {/* Removed ThemeToggle */}
         </div>
         <div className="flex lg:hidden">
-          <ThemeToggle />
+          {/* <ThemeToggle /> */} {/* Removed ThemeToggle */}
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="ml-2">

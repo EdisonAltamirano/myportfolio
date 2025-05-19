@@ -19,9 +19,8 @@ export default function RootLayout({
       <body className={`${inter.variable} ${robotoMono.variable} font-sans antialiased`} suppressHydrationWarning={true}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
+          defaultTheme="light"
+          forcedTheme="light" // Ensure light mode is forced
         >
           {children}
           <Toaster />
