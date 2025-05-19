@@ -1,9 +1,10 @@
-import type { Book, Bot, Brain, CodeXml, Contact, FileText, Home, Layers, Settings, Briefcase } from 'lucide-react';
+import { Book, Bot, Brain, CodeXml, Contact, FileText, Home, Layers, Settings, Briefcase, Server } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 
 export type NavLink = {
   href: string;
   label: string;
-  icon?: React.ComponentType<{ className?: string }>;
+  icon?: LucideIcon;
 };
 
 export const navLinks: NavLink[] = [
@@ -72,7 +73,7 @@ export const allProjects: Project[] = [
 
 export type SkillCategory = {
   title: string;
-  icon?: React.ComponentType<{ className?: string }>;
+  icon?: LucideIcon;
   skills: Skill[];
 };
 
