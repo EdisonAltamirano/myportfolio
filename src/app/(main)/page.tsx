@@ -1,7 +1,9 @@
+
 import { HeroSection } from '@/components/sections/HeroSection';
 import { FeaturedProjects } from '@/components/sections/FeaturedProjects';
 import { AboutTeaser } from '@/components/sections/AboutTeaser';
 import { SkillsSection } from '@/components/sections/SkillsSection';
+import { ExperienceTimeline } from '@/components/sections/ExperienceTimeline';
 
 export default function HomePage() {
   return (
@@ -9,6 +11,7 @@ export default function HomePage() {
       <HeroSection />
       <FeaturedProjects />
       <AboutTeaser />
+      <ExperienceTimeline />
       <SkillsSection />
     </div>
   );
