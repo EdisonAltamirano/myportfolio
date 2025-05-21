@@ -24,7 +24,7 @@ export function HeroSection() {
             </span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8">
-            Mechanical-Electrical Engineer turned Full-Stack Innovator with expertise in autonomous systems, AI, and robotics
+            Robotics Engineer turned Full-Stack Innovator with expertise in autonomous systems, AI, and robotics
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="shadow-md">

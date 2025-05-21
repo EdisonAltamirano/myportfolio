@@ -13,7 +13,7 @@ export function AboutTeaser() {
           <FadeIn>
             <div className="relative aspect-square rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="https://placehold.co/600x600.png"
+                src="/images/profile foto.png"
                 alt="Edison Altamirano"
                 data-ai-hint="professional portrait"
                 width={600}
@@ -26,7 +26,7 @@ export function AboutTeaser() {
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Bridging Hardware & Software</h2>
               <p className="text-lg text-muted-foreground mb-6">
-                My journey began in mechanical-electrical engineering, where I developed a strong foundation in systems thinking and hardware design. This unique background has proven invaluable as I've pivoted to full-stack development.
+                My journey began in robotics engineering, where I developed a strong foundation in systems thinking and hardware design. This unique background has proven invaluable as I've pivoted to full-stack development.
               </p>
               <p className="text-lg text-muted-foreground mb-8">
                 I now specialize in creating intelligent systems at the intersection of hardware and software, from autonomous vehicles to AI-powered applications and industrial automation solutions.

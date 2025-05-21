@@ -11,7 +11,7 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-semibold text-foreground mb-4">Edison's Lab</h3>
             <p className="text-sm">
-              Innovating at the intersection of hardware and software. Explore my journey from mechanical-electrical engineering to full-stack development and AI.
+              Innovating at the intersection of hardware and software. Explore my journey from robotics engineering to full-stack development and AI.
             </p>
             {/* Placeholder for social links */}
             {/* <div className="mt-4 flex space-x-4">

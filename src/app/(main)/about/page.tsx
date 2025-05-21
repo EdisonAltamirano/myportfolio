@@ -19,9 +19,9 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="p-8 md:p-12 flex flex-col justify-center">
               <h2 className="text-3xl font-semibold mb-4 text-foreground">Edison Ricardo Altamirano Avila</h2>
-              <p className="text-primary mb-6 font-medium">Mechanical-Electrical Engineer & Full-Stack Innovator</p>
+              <p className="text-primary mb-6 font-medium">Robotics Engineer & Full-Stack Innovator</p>
               <p className="text-muted-foreground mb-4">
-                My journey began in the intricate world of mechanical and electrical systems, fostering a deep understanding of how things work from the ground up. This foundation in engineering principles—problem-solving, systems thinking, and precision—has been pivotal in my evolution into a full-stack developer and AI enthusiast.
+                My journey began in the intricate world of robotics systems, fostering a deep understanding of how things work from the ground up. This foundation in engineering principles—problem-solving, systems thinking, and precision—has been pivotal in my evolution into a full-stack developer and AI enthusiast.
               </p>
               <p className="text-muted-foreground mb-6">
                 I thrive on bridging the gap between the physical and digital, transforming complex challenges into elegant, functional solutions. My passion lies in developing intelligent systems, whether they're autonomous vehicles navigating city streets, AI algorithms deciphering complex data, or robust enterprise applications streamlining operations.
@@ -32,12 +32,12 @@ export default function AboutPage() {
             </div>
             <div className="relative min-h-[300px] md:min-h-full">
               <Image
-                src="https://placehold.co/800x1000.png"
+                src="/images/profile_robot.jpeg"
                 alt={`${siteName} - Professional Portrait`}
                 data-ai-hint="professional developer"
                 layout="fill"
                 objectFit="cover"
-                className=" grayscale group-hover:grayscale-0 transition-all duration-300"
+                className=" group-hover:grayscale-0 transition-all duration-300"
               />
             </div>
           </div>

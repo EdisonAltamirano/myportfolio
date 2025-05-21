@@ -6,7 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: "Edison's Lab - Full-Stack Innovator",
-  description: 'Portfolio of Edison Ricardo Altamirano Avila, a mechanical-electrical engineer turned full-stack innovator, showcasing projects in autonomous systems, AI, robotics, and enterprise applications.',
+  description: 'Portfolio of Edison Ricardo Altamirano Avila, a roboticsengineer turned full-stack innovator, showcasing projects in autonomous systems, AI, robotics, and enterprise applications.',
 };
 
 export default function RootLayout({
