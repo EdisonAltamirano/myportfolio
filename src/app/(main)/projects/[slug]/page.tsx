@@ -116,16 +116,16 @@ function ZFShuttleProjectContent() {
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold mb-4">Initial Control System Demo</h3>
                   <div className="relative overflow-hidden rounded-lg shadow-lg aspect-video mb-4">
-                    <Image
-                      src="/images/zf-shuttle-control-demo.jpg"
-                      alt="ZF Shuttle Control Demo"
-                      width={600}
-                      height={400}
-                      className="object-cover w-full h-full"
+                    <iframe
+                      src="https://www.youtube.com/embed/rN4bV2_FTRk?si=245hcTpTJKdsCn8M"
+                      title="ZF Shuttle Control Demo"
+                      width="600"
+                      height="400"
+                      className="w-full h-full"
+                      frameBorder="0"
+                      allowFullScreen
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     />
-                    <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                      <Play className="h-16 w-16 text-white opacity-80" />
-                    </div>
                   </div>
                   <p className="text-muted-foreground">
                     Demonstration of manual control via Xbox controller: steering, acceleration, braking, lights, horn, and radio functionality.
@@ -138,16 +138,16 @@ function ZFShuttleProjectContent() {
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold mb-4">Autonomous Navigation Demo</h3>
                   <div className="relative overflow-hidden rounded-lg shadow-lg aspect-video mb-4">
-                    <Image
-                      src="/images/zf-shuttle-autonomous-demo.jpg"
-                      alt="ZF Shuttle Autonomous Demo"
-                      width={600}
-                      height={400}
-                      className="object-cover w-full h-full"
+                    <iframe
+                      src="https://www.youtube.com/embed/6oElwB4LGKE?si=B7PK7hxKPENC7Qs3"
+                      title="ZF Shuttle Autonomous Demo"
+                      width="600"
+                      height="400"
+                      className="w-full h-full"
+                      frameBorder="0"
+                      allowFullScreen
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     />
-                    <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                      <Play className="h-16 w-16 text-white opacity-80" />
-                    </div>
                   </div>
                   <p className="text-muted-foreground">
                     Full autonomous operation with vision algorithms, SLAM navigation, and safety systems for campus transportation.
@@ -195,19 +195,12 @@ function ZFShuttleProjectContent() {
                     </CardContent>
                   </Card>
                 </div>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="flex justify-center">
                   <Image
-                    src="/images/zf-pcb-design.jpg"
+                    src="/zf_autonomous_shuttle/placa.jpg"
                     alt="Custom PCB Design"
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-md object-cover"
-                  />
-                  <Image
-                    src="/images/zf-electronics-assembly.jpg"
-                    alt="Electronics Assembly"
-                    width={300}
-                    height={200}
+                    width={400}
+                    height={300}
                     className="rounded-lg shadow-md object-cover"
                   />
                 </div>
@@ -222,43 +215,38 @@ function ZFShuttleProjectContent() {
                 <Cpu className="mr-3 h-6 w-6 text-primary" />
                 Middleware & Embedded Software
               </h3>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div className="grid grid-cols-2 gap-4">
-                  <Image
-                    src="/images/zf-jetson-xavier.jpg"
-                    alt="Jetson Xavier Setup"
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-md object-cover"
-                  />
-                  <Image
-                    src="/images/zf-ros2-architecture.jpg"
-                    alt="ROS2 Architecture"
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-md object-cover"
-                  />
-                </div>
-                <div className="space-y-6">
-                  <Card className="bg-gradient-to-r from-secondary/5 to-secondary/10">
-                    <CardContent className="p-6">
-                      <h4 className="font-bold mb-3">ROS 2 Integration</h4>
-                      <ul className="space-y-2 text-sm">
-                        <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Jetson Xavier orchestrating perception, planning, and actuators</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>CAN AUTOSAR-like architecture</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Separate nodes for speed, brake, and telemetry</span>
-                        </li>
-                      </ul>
-                    </CardContent>
-                  </Card>
+              <div className="grid grid-cols-1 lg:grid-cols-1 gap-8 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-1 gap-8 items-center">
+                  <div className="flex justify-center">
+                    <Image
+                      src="/zf_autonomous_shuttle/zf-jetson.jpeg"
+                      alt="Jetson Xavier Setup"
+                      width={500}
+                      height={375}
+                      className="rounded-lg shadow-md object-cover"
+                    />
+                  </div>
+                  <div className="space-y-6">
+                    <Card className="bg-gradient-to-r from-secondary/5 to-secondary/10">
+                      <CardContent className="p-6">
+                        <h4 className="font-bold mb-3">ROS 2 Integration</h4>
+                        <ul className="space-y-2 text-sm">
+                          <li className="flex items-start space-x-2">
+                            <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                            <span>Jetson Xavier orchestrating perception, planning, and actuators</span>
+                          </li>
+                          <li className="flex items-start space-x-2">
+                            <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                            <span>CAN AUTOSAR-like architecture</span>
+                          </li>
+                          <li className="flex items-start space-x-2">
+                            <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                            <span>Separate nodes for speed, brake, and telemetry</span>
+                          </li>
+                        </ul>
+                      </CardContent>
+                    </Card>
+                  </div>
                 </div>
               </div>
             </div>
@@ -299,25 +287,18 @@ function ZFShuttleProjectContent() {
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <Image
-                    src="/images/zf-stereo-camera.jpg"
-                    alt="Stereo Camera System"
+                    src="/zf_autonomous_shuttle/pedestrian_detection.jpeg"
+                    alt="Pedestrian Detection System"
                     width={300}
                     height={200}
                     className="rounded-lg shadow-md object-cover"
                   />
                   <Image
-                    src="/images/zf-lidar-setup.jpg"
+                    src="/zf_autonomous_shuttle/lidar.jpeg"
                     alt="LiDAR Setup"
                     width={300}
                     height={200}
                     className="rounded-lg shadow-md object-cover"
-                  />
-                  <Image
-                    src="/images/zf-point-cloud.jpg"
-                    alt="Point Cloud Visualization"
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-md object-cover col-span-2"
                   />
                 </div>
               </div>
@@ -332,19 +313,12 @@ function ZFShuttleProjectContent() {
                 Trajectory Planning & Safety
               </h3>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="flex justify-center">
                   <Image
-                    src="/images/zf-control-dashboard.jpg"
-                    alt="Control Dashboard"
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-md object-cover"
-                  />
-                  <Image
-                    src="/images/zf-trajectory-planning.jpg"
-                    alt="Trajectory Planning"
-                    width={300}
-                    height={200}
+                    src="/zf_autonomous_shuttle/longitudinal_lateral_control.jpeg"
+                    alt="Longitudinal & Lateral Control"
+                    width={400}
+                    height={300}
                     className="rounded-lg shadow-md object-cover"
                   />
                 </div>
@@ -395,13 +369,18 @@ function ZFShuttleProjectContent() {
                     Testing Infrastructure
                   </h3>
                   <div className="space-y-4">
-                    <Image
-                      src="/images/zf-test-bench.jpg"
-                      alt="Electronics Test Bench"
-                      width={400}
-                      height={250}
-                      className="rounded-lg shadow-md object-cover w-full"
-                    />
+                    <div className="relative overflow-hidden rounded-lg shadow-lg aspect-video">
+                      <iframe
+                        src="https://www.youtube.com/embed/uKGA_UsuovQ?si=N-FvFzhoShNCuiVF"
+                        title="Electronics Test Bench"
+                        width="400"
+                        height="250"
+                        className="w-full h-full"
+                        frameBorder="0"
+                        allowFullScreen
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      />
+                    </div>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start space-x-2">
                         <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
@@ -423,13 +402,18 @@ function ZFShuttleProjectContent() {
                     Field Testing
                   </h3>
                   <div className="space-y-4">
-                    <Image
-                      src="/images/zf-field-testing.jpg"
-                      alt="Campus Field Testing"
-                      width={400}
-                      height={250}
-                      className="rounded-lg shadow-md object-cover w-full"
-                    />
+                    <div className="relative overflow-hidden rounded-lg shadow-lg aspect-video">
+                      <iframe
+                        src="https://www.youtube.com/embed/D6kxck312BE?si=XqUFCR4nPePFSNsC"
+                        title="Campus Field Testing"
+                        width="400"
+                        height="250"
+                        className="w-full h-full"
+                        frameBorder="0"
+                        allowFullScreen
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      />
+                    </div>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start space-x-2">
                         <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
@@ -443,41 +427,6 @@ function ZFShuttleProjectContent() {
                   </div>
                 </CardContent>
               </Card>
-            </div>
-
-            {/* Testing Gallery */}
-            <div>
-              <h3 className="text-xl font-bold mb-6 text-center">Testing & Development Gallery</h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <Image
-                  src="/images/zf-shuttle-before.jpg"
-                  alt="Shuttle Before Conversion"
-                  width={250}
-                  height={200}
-                  className="rounded-lg shadow-md object-cover aspect-square"
-                />
-                <Image
-                  src="/images/zf-shuttle-electronics.jpg"
-                  alt="Electronics Installation"
-                  width={250}
-                  height={200}
-                  className="rounded-lg shadow-md object-cover aspect-square"
-                />
-                <Image
-                  src="/images/zf-shuttle-sensors.jpg"
-                  alt="Sensor Integration"
-                  width={250}
-                  height={200}
-                  className="rounded-lg shadow-md object-cover aspect-square"
-                />
-                <Image
-                  src="/images/zf-shuttle-final.jpg"
-                  alt="Final Autonomous Shuttle"
-                  width={250}
-                  height={200}
-                  className="rounded-lg shadow-md object-cover aspect-square"
-                />
-              </div>
             </div>
           </CardContent>
         </Card>
@@ -506,7 +455,7 @@ function ZFShuttleProjectContent() {
                   </p>
                   <div className="relative overflow-hidden rounded-lg">
                     <Image
-                      src="/images/zf-first-presentation.jpg"
+                      src="/zf_autonomous_shuttle/10-reconocidos.jpeg"
                       alt="First Presentation to ZF"
                       width={400}
                       height={250}
@@ -536,10 +485,19 @@ function ZFShuttleProjectContent() {
                     <div className="flex items-start space-x-3">
                       <Car className="h-5 w-5 text-primary mt-0.5" />
                       <div>
-                        <h4 className="font-medium">Tesla Engineering Team</h4>
-                        <p className="text-sm text-muted-foreground">Visited one month before Gigafactory announcement</p>
+                        <h4 className="font-medium">BYD Vice President in North America</h4>
+                        <p className="text-sm text-muted-foreground">Visited us to see the project</p>
                       </div>
                     </div>
+                  </div>
+                  <div className="relative overflow-hidden rounded-lg mt-4">
+                    <Image
+                      src="/zf_autonomous_shuttle/byd-presentacion.jpeg"
+                      alt="First Presentation to ZF"
+                      width={400}
+                      height={250}
+                      className="object-cover w-full h-full"
+                    />
                   </div>
                 </CardContent>
               </Card>
@@ -573,7 +531,7 @@ function ZFShuttleProjectContent() {
                   </div>
                   <div className="relative overflow-hidden rounded-lg">
                     <Image
-                      src="/images/zf-official-presentation.jpg"
+                      src="/zf_autonomous_shuttle/zf-80.jpeg"
                       alt="Official Presentation"
                       width={400}
                       height={250}
@@ -605,15 +563,18 @@ function ZFShuttleProjectContent() {
                   <p className="text-sm text-muted-foreground">
                     Consolidated Tecnológico de Monterrey as "core development center" for ZF in Latin America.
                   </p>
-                  <div className="mt-4">
-                    <Image
-                      src="/images/zf-partnership.jpg"
-                      alt="ZF Partnership"
-                      width={300}
-                      height={200}
-                      className="rounded-lg object-cover w-full"
-                    />
-                  </div>
+                  <div className="relative overflow-hidden rounded-lg shadow-lg aspect-video mt-4">
+                      <iframe
+                        src="https://www.youtube.com/embed/-CX4PDktpAQ?si=QH_wdJw52Rr-wuFt"
+                        title="Educational Impact"
+                        width="300"
+                        height="200"
+                        className="w-full h-full"
+                        frameBorder="0"
+                        allowFullScreen
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      />
+                    </div>
                 </CardContent>
               </Card>
 
@@ -628,7 +589,7 @@ function ZFShuttleProjectContent() {
                   </p>
                   <div className="mt-4">
                     <Image
-                      src="/images/tesla-visit.jpg"
+                      src="/zf_autonomous_shuttle/gigaFactory.jpeg"
                       alt="Tesla Visit"
                       width={300}
                       height={200}
@@ -649,7 +610,7 @@ function ZFShuttleProjectContent() {
                   </p>
                   <div className="mt-4">
                     <Image
-                      src="/images/educational-impact.jpg"
+                      src="/zf_autonomous_shuttle/teach-professores.jpeg"
                       alt="Educational Impact"
                       width={300}
                       height={200}
@@ -1192,12 +1153,13 @@ function VanttecProjectContent() {
             {/* Autonomous Boat */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="relative overflow-hidden rounded-lg shadow-lg aspect-video">
-                <Image
-                  src="/images/autonomous-boat.jpg"
-                  alt="Autonomous Boat"
-                  width={600}
-                  height={400}
-                  className="object-cover w-full h-full"
+                <iframe
+                  src="https://www.youtube.com/embed/rN4bV2_FTRk?si=245hcTpTJKdsCn8M"
+                  title="Autonomous Boat Demo"
+                  allowFullScreen
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  className="w-full h-full"
                 />
               </div>
               <div>
@@ -1244,12 +1206,13 @@ function VanttecProjectContent() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="lg:order-last">
                 <div className="relative overflow-hidden rounded-lg shadow-lg aspect-video">
-                  <Image
-                    src="/images/autonomous-submarine.jpg"
-                    alt="Autonomous Submarine"
-                    width={600}
-                    height={400}
-                    className="object-cover w-full h-full"
+                  <iframe
+                    src="https://www.youtube.com/embed/6oElwB4LGKE?si=B7PK7hxKPENC7Qs3"
+                    title="Autonomous Submarine Demo"
+                    allowFullScreen
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    className="w-full h-full"
                   />
                 </div>
               </div>

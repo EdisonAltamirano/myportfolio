@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="bg-muted/50 dark:bg-neutral-800/50 text-muted-foreground py-12">
       <PageViewTracker />
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
           <div>
             <h3 className="text-lg font-semibold text-foreground mb-4">Edison's Lab</h3>
             <p className="text-sm">
@@ -19,11 +19,11 @@ export function Footer() {
               <a href="#" className="hover:text-primary"><Linkedin size={20} /></a>
               <a href="#" className="hover:text-primary"><Twitter size={20} /></a>
             </div> */}
-          </div>
+         {/* </div>
           <div className="max-w-md ml-auto">
              <AnalyticsChart />
           </div>
-        </div>
+        </div> */}
         <div className="border-t border-border pt-8 text-center text-sm">
           <p>&copy; {new Date().getFullYear()} {siteName}. All rights reserved.</p>
           <p className="mt-1">Designed with passion and Next.js.</p>
