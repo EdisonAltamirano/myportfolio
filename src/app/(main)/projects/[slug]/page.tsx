@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, Layers, Calendar, Tag, Trophy, Globe, Eye, Cpu, Satellite, Map, Award, Star, Target, Bot, Monitor, Route, Hand, Zap, FileText, CheckCircle, Car, Cog, Shield, Play, Users, Building, Factory, Settings, Brain, Network, Wrench, BookOpen, Presentation, Home, Gamepad2, Volume2, Navigation, Cloud, Headphones, ShoppingCart, Truck, DollarSign, Smartphone, ChefHat, MapPin } from 'lucide-react';
+import { ArrowLeft, Layers, Calendar, Tag, Trophy, Globe, Eye, Cpu, Satellite, Map, Award, Star, Target, Bot, Monitor, Route, Hand, Zap, FileText, CheckCircle, Car, Cog, Shield, Play, Users, Building, Factory, Settings, Brain, Network, Wrench, BookOpen, Presentation, Home, Gamepad2, Volume2, Navigation, Cloud, Headphones, ShoppingCart, Truck, DollarSign, Smartphone, ChefHat, MapPin, Bell, Server } from 'lucide-react';
 import { allProjects, Project } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -813,454 +813,6 @@ function AIRLabProjectContent() {
       <FadeIn delay="delay-500">
         <Card className="shadow-xl">
           <CardHeader>
-            <CardTitle className="text-2xl text-foreground">Our Technical Stack</CardTitle>
-            <p className="text-muted-foreground">Technologies used in the challenge</p>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Computer Vision */}
-              <Card className="bg-secondary/5 hover:bg-secondary/10 transition-colors">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
-                      <Eye className="h-6 w-6 text-primary" />
-                    </div>
-                    <h4 className="ml-3 text-lg font-medium">Computer Vision</h4>
-                  </div>
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                      <span>2D image processing for can detection</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                      <span>Point cloud generation for 3D positioning</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                      <span>Precision localization of objects</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              {/* Manipulation */}
-              <Card className="bg-secondary/5 hover:bg-secondary/10 transition-colors">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
-                      <Hand className="h-6 w-6 text-primary" />
-                    </div>
-                    <h4 className="ml-3 text-lg font-medium">Manipulation</h4>
-                  </div>
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                      <span>MoveIt! for trajectory planning</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                      <span>Force closure grasp analysis</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                      <span>Grasp quality heuristics</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              {/* Simulation */}
-              <Card className="bg-secondary/5 hover:bg-secondary/10 transition-colors">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
-                      <Monitor className="h-6 w-6 text-primary" />
-                    </div>
-                    <h4 className="ml-3 text-lg font-medium">Simulation</h4>
-                  </div>
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                      <span>Gazebo virtual environments</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                      <span>SIGVerse for realistic scenarios</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                      <span>Collision dynamics simulation</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              {/* ROS Framework */}
-              <Card className="bg-secondary/5 hover:bg-secondary/10 transition-colors">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
-                      <Layers className="h-6 w-6 text-primary" />
-                    </div>
-                    <h4 className="ml-3 text-lg font-medium">ROS Framework</h4>
-                  </div>
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                      <span>Modular architecture</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                      <span>Open-source components</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                      <span>Real-time communication</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              {/* Workflow Optimization */}
-              <Card className="bg-secondary/5 hover:bg-secondary/10 transition-colors">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
-                      <Zap className="h-6 w-6 text-primary" />
-                    </div>
-                    <h4 className="ml-3 text-lg font-medium">Workflow Optimization</h4>
-                  </div>
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                      <span>Task division by strengths</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                      <span>Continuous integration</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                      <span>Incremental deployment</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              {/* TIAGo Robot */}
-              <Card className="bg-secondary/5 hover:bg-secondary/10 transition-colors">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
-                      <Bot className="h-6 w-6 text-primary" />
-                    </div>
-                    <h4 className="ml-3 text-lg font-medium">TIAGo Robot</h4>
-                  </div>
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                      <span>Mobile manipulator platform</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                      <span>7-DOF arm with parallel gripper</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                      <span>Integrated sensors for perception</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
-          </CardContent>
-        </Card>
-      </FadeIn>
-
-      {/* Achievements Section */}
-      <FadeIn delay="delay-600">
-        <Card className="shadow-xl">
-          <CardHeader>
-            <CardTitle className="text-2xl text-foreground">Recognition & Awards</CardTitle>
-            <p className="text-muted-foreground">Achievements and impact</p>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Main Award */}
-              <Card className="bg-gradient-to-br from-yellow-50 to-yellow-100 border-yellow-200">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-6">
-                    <div className="bg-yellow-200 p-3 rounded-lg">
-                      <Trophy className="h-6 w-6 text-yellow-700" />
-                    </div>
-                    <h3 className="ml-3 text-xl font-bold">"Most Consistent Solution" Award</h3>
-                  </div>
-                  <p className="text-muted-foreground mb-4">
-                    Won €2,000 in the final online competition (November 2021) for our reliable and robust stacking solution.
-                  </p>
-                  <div className="relative overflow-hidden rounded-lg">
-                    <Image
-                      src="/images/award-ceremony.jpg"
-                      alt="Award ceremony"
-                      width={400}
-                      height={250}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Publication */}
-              <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-6">
-                    <div className="bg-blue-200 p-3 rounded-lg">
-                      <FileText className="h-6 w-6 text-blue-700" />
-                    </div>
-                    <h3 className="ml-3 text-xl font-bold">Published Paper</h3>
-                  </div>
-                  <p className="text-muted-foreground mb-4">
-                    Documented our vision-based approach to robotic grasping in a technical paper that serves as reference for future challenges.
-                  </p>
-                  <div className="relative overflow-hidden rounded-lg">
-                    <Image
-                      src="/images/technical-paper.jpg"
-                      alt="Technical paper"
-                      width={400}
-                      height={250}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* Impact Section */}
-            <Card className="mt-8 bg-gradient-to-r from-primary/5 via-secondary/5 to-primary/5">
-              <CardContent className="p-6">
-                <div className="flex items-center mb-6">
-                  <div className="bg-primary/20 p-3 rounded-lg">
-                    <Globe className="h-6 w-6 text-primary" />
-                  </div>
-                  <h3 className="ml-3 text-xl font-bold">Social and Academic Impact</h3>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="bg-white/50 p-4 rounded-lg">
-                    <h4 className="font-medium text-primary mb-2">International Presentation</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Live presentation to an international jury including PhDs and experts from PAL Robotics and TU Delft.
-                    </p>
-                  </div>
-                  <div className="bg-white/50 p-4 rounded-lg">
-                    <h4 className="font-medium text-primary mb-2">Knowledge Sharing</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Our published paper serves as reference for future robotic vision and manipulation challenges in retail.
-                    </p>
-                  </div>
-                  <div className="bg-white/50 p-4 rounded-lg">
-                    <h4 className="font-medium text-primary mb-2">Inspiration</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Demonstrated that with accumulated robotics experience, innovation is possible even with limited time and resources.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </CardContent>
-        </Card>
-      </FadeIn>
-    </div>
-  );
-}
-
-// Vanttec-specific content component
-function VanttecProjectContent() {
-  return (
-    <div className="space-y-12">
-      {/* About VANTTEC Section */}
-      <FadeIn delay="delay-300">
-        <Card className="shadow-xl">
-          <CardHeader>
-            <CardTitle className="text-2xl text-foreground flex items-center">
-              <Globe className="mr-3 h-6 w-6 text-primary" />
-              About VANTTEC
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-8">
-            <div className="text-center">
-              <h3 className="text-xl font-bold text-primary mb-2">Innovation in Autonomous Vehicles</h3>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                Research group from Tec de Monterrey focused on developing autonomous aerial and marine systems.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="bg-secondary/5">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
-                      <Trophy className="h-6 w-6 text-primary" />
-                    </div>
-                    <h4 className="ml-3 text-lg font-medium">Mission</h4>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Develop cutting-edge autonomous technology to compete internationally and train new generations of Mexican engineers.
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card className="bg-secondary/5">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
-                      <Award className="h-6 w-6 text-primary" />
-                    </div>
-                    <h4 className="ml-3 text-lg font-medium">Competitions</h4>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Participation in RoboBoat (surface vehicles) and RoboSub (underwater vehicles) organized by RoboNation.
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card className="bg-secondary/5">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
-                      <Star className="h-6 w-6 text-primary" />
-                    </div>
-                    <h4 className="ml-3 text-lg font-medium">Collaborations</h4>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Presentations to ZF, BYD, and Tesla executives. Work with Southwest Research Institute (SwRI) on underwater navigation.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </CardContent>
-        </Card>
-      </FadeIn>
-
-      {/* Vehicles Section */}
-      <FadeIn delay="delay-400">
-        <Card className="shadow-xl">
-          <CardHeader>
-            <CardTitle className="text-2xl text-foreground">Our Vehicles</CardTitle>
-            <p className="text-muted-foreground">Innovative autonomous systems</p>
-          </CardHeader>
-          <CardContent className="space-y-12">
-            {/* Autonomous Boat */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div className="relative overflow-hidden rounded-lg shadow-lg aspect-video">
-                <iframe
-                  src="https://www.youtube.com/embed/rN4bV2_FTRk?si=245hcTpTJKdsCn8M"
-                  title="Autonomous Boat Demo"
-                  allowFullScreen
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  className="w-full h-full"
-                />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold mb-4">Autonomous Boat</h3>
-                <p className="text-muted-foreground mb-6">
-                  Our autonomous surface vehicle designed to compete in RoboBoat. Capable of navigating predefined routes, avoiding obstacles, and completing complex missions autonomously.
-                </p>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="flex items-start space-x-3">
-                    <Cpu className="h-5 w-5 text-primary mt-0.5" />
-                    <div>
-                      <p className="font-medium">Jetson Xavier</p>
-                      <p className="text-sm text-muted-foreground">System brain</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <Satellite className="h-5 w-5 text-primary mt-0.5" />
-                    <div>
-                      <p className="font-medium">XBee RF</p>
-                      <p className="text-sm text-muted-foreground">Communication</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <Eye className="h-5 w-5 text-primary mt-0.5" />
-                    <div>
-                      <p className="font-medium">Computer Vision</p>
-                      <p className="text-sm text-muted-foreground">YOLO Darknet</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <Map className="h-5 w-5 text-primary mt-0.5" />
-                    <div>
-                      <p className="font-medium">Navigation</p>
-                      <p className="text-sm text-muted-foreground">ORBSLAM3</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <Separator />
-
-            {/* Autonomous Submarine */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div className="lg:order-last">
-                <div className="relative overflow-hidden rounded-lg shadow-lg aspect-video">
-                  <iframe
-                    src="https://www.youtube.com/embed/6oElwB4LGKE?si=B7PK7hxKPENC7Qs3"
-                    title="Autonomous Submarine Demo"
-                    allowFullScreen
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    className="w-full h-full"
-                  />
-                </div>
-              </div>
-              <div className="lg:order-first">
-                <h3 className="text-xl font-bold mb-4">Autonomous Submarine</h3>
-                <p className="text-muted-foreground mb-6">
-                  Autonomous underwater vehicle designed to compete in RoboSub. Equipped with advanced vision and navigation systems to operate in challenging underwater environments.
-                </p>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="flex items-start space-x-3">
-                    <div className="h-5 w-5 bg-primary rounded-full mt-0.5" />
-                    <div>
-                      <p className="font-medium">8 Thrusters</p>
-                      <p className="text-sm text-muted-foreground">6DOF Movement</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <Eye className="h-5 w-5 text-primary mt-0.5" />
-                    <div>
-                      <p className="font-medium">Stereo Cameras</p>
-                      <p className="text-sm text-muted-foreground">Point clouds</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <Layers className="h-5 w-5 text-primary mt-0.5" />
-                    <div>
-                      <p className="font-medium">ROS/ROS2</p>
-                      <p className="text-sm text-muted-foreground">Middleware</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="h-5 w-5 bg-primary rounded-full mt-0.5" />
-                    <div>
-                      <p className="font-medium">RANSAC</p>
-                      <p className="text-sm text-muted-foreground">Point cloud filtering</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </FadeIn>
-
-      {/* Technologies Section */}
-      <FadeIn delay="delay-500">
-        <Card className="shadow-xl">
-          <CardHeader>
             <CardTitle className="text-2xl text-foreground">Key Technologies</CardTitle>
             <p className="text-muted-foreground">Our technology stack</p>
           </CardHeader>
@@ -1364,91 +916,335 @@ function VanttecProjectContent() {
                     <div className="bg-primary/20 p-3 rounded-lg">
                       <Trophy className="h-6 w-6 text-primary" />
                     </div>
-                    <h3 className="ml-3 text-xl font-bold">RoboNation Competitions</h3>
+                    <h4 className="ml-3 text-lg font-medium">Mission</h4>
                   </div>
+                  <p className="text-sm text-muted-foreground">
+                    Develop cutting-edge autonomous technology to compete internationally and train new generations of Mexican engineers.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-secondary/5">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <div className="bg-primary/10 p-3 rounded-lg">
+                      <Award className="h-6 w-6 text-primary" />
+                    </div>
+                    <h4 className="ml-3 text-lg font-medium">Competitions</h4>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Participation in RoboBoat (surface vehicles) and RoboSub (underwater vehicles) organized by RoboNation.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-secondary/5">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <div className="bg-primary/10 p-3 rounded-lg">
+                      <Star className="h-6 w-6 text-primary" />
+                    </div>
+                    <h4 className="ml-3 text-lg font-medium">Collaborations</h4>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Presentations to ZF, BYD, and Tesla executives. Work with Southwest Research Institute (SwRI) on underwater navigation.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </CardContent>
+        </Card>
+      </FadeIn>
+
+      {/* Vehicles Section */}
+      <FadeIn delay="delay-400">
+        <Card className="shadow-xl">
+          <CardHeader>
+            <CardTitle className="text-2xl text-foreground">Our Vehicles</CardTitle>
+            <p className="text-muted-foreground">Innovative autonomous systems competing globally</p>
+          </CardHeader>
+          <CardContent className="space-y-12">
+            {/* Autonomous Boat */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div className="relative overflow-hidden rounded-lg shadow-lg aspect-video">
+                <iframe
+                  src="https://www.youtube.com/embed/dAObTRLfQEE?si=7plRS60a2Qzlwgu5"
+                  title="Autonomous Boat Demo"
+                  allowFullScreen
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  className="w-full h-full"
+                />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold mb-4">Autonomous Boat</h3>
+                <p className="text-muted-foreground mb-6">
+                  Our autonomous surface vehicle designed to compete in RoboBoat. Capable of navigating predefined routes, avoiding obstacles, and completing complex missions autonomously.
+                </p>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="flex items-start space-x-3">
+                    <Cpu className="h-5 w-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="font-medium">Jetson TX2</p>
+                      <p className="text-sm text-muted-foreground">System brain</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <Satellite className="h-5 w-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="font-medium">XBee RF</p>
+                      <p className="text-sm text-muted-foreground">Communication</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <Eye className="h-5 w-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="font-medium">Computer Vision</p>
+                      <p className="text-sm text-muted-foreground">YOLO Darknet</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <Layers className="h-5 w-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="font-medium">ROS/ROS2</p>
+                      <p className="text-sm text-muted-foreground">Middleware</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <Separator />
+
+            {/* Autonomous Submarine */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div className="lg:order-last">
+                <div className="relative overflow-hidden rounded-lg shadow-lg aspect-video">
+                  <iframe
+                    src="https://www.youtube.com/embed/f6_OrUrVz84?si=bPnS3Ug2ikezZ02J"
+                    title="Autonomous Submarine Demo"
+                    allowFullScreen
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    className="w-full h-full"
+                  />
+                </div>
+              </div>
+              <div className="lg:order-first">
+                <h3 className="text-xl font-bold mb-4">Autonomous Submarine</h3>
+                <p className="text-muted-foreground mb-6">
+                  Autonomous underwater vehicle designed to compete in RoboSub. Equipped with advanced vision and navigation systems to operate in challenging underwater environments.
+                </p>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="flex items-start space-x-3">
+                    <div className="h-5 w-5 bg-primary rounded-full mt-0.5" />
+                    <div>
+                      <p className="font-medium">6 Thrusters</p>
+                      <p className="text-sm text-muted-foreground">6DOF Movement</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <Eye className="h-5 w-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="font-medium">Stereo Cameras</p>
+                      <p className="text-sm text-muted-foreground">Point clouds</p>
+                    </div>
+                  </div>
+                
+                  <div className="flex items-start space-x-3">
+                    <Map className="h-5 w-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="font-medium">Navigation</p>
+                      <p className="text-sm text-muted-foreground">ORBSLAM3</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="h-5 w-5 bg-primary rounded-full mt-0.5" />
+                    <div>
+                      <p className="font-medium">RANSAC</p>
+                      <p className="text-sm text-muted-foreground">Point cloud filtering</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </FadeIn>
+
+      {/* Competition Awards Section */}
+      <FadeIn delay="delay-450">
+        <Card className="shadow-xl">
+          <CardHeader>
+            <CardTitle className="text-2xl text-foreground flex items-center">
+              <Trophy className="mr-3 h-6 w-6 text-yellow-500" />
+              Competition Awards & Recognition
+            </CardTitle>
+            <p className="text-muted-foreground">
+              Winning these international competitions was extremely challenging, competing against some of the world's most prestigious universities including MIT, Cornell, Caltech, Carnegie Mellon, and many others.
+            </p>
+          </CardHeader>
+          <CardContent className="space-y-8">
+            {/* Competition Difficulty Context */}
+            <div className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 p-6 rounded-lg border border-amber-200 dark:border-amber-700">
+              <div className="flex items-start space-x-4">
+                <Globe className="h-6 w-6 text-amber-600 mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="text-lg font-bold text-amber-800 dark:text-amber-200 mb-2">Global Competition</h3>
+                  <p className="text-amber-700 dark:text-amber-300 text-sm mb-3">
+                    These RoboNation competitions feature the world's most elite universities and research institutions, making our achievements particularly remarkable.
+                  </p>
+                  <div className="text-xs text-amber-600 dark:text-amber-400">
+                    <strong>Competing institutions include:</strong> Massachusetts Institute of Technology (MIT), Cornell University, California Institute of Technology (Caltech), 
+                    Carnegie Mellon University, University of Michigan, National University of Singapore, Istanbul Technical University, 
+                    AGH University of Krakow, and many other top-tier institutions worldwide.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* RoboBoat Awards */}
+              <Card className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 border-blue-200 dark:border-blue-700">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-6">
+                    <div className="bg-blue-600/10 p-3 rounded-lg">
+                      <Car className="h-8 w-8 text-blue-600" />
+                    </div>
+                    <div className="ml-4">
+                      <h3 className="text-xl font-bold text-blue-800 dark:text-blue-200">RoboBoat Awards</h3>
+                      <p className="text-sm text-blue-600 dark:text-blue-300">Autonomous Surface Vehicle Competition</p>
+                    </div>
+                  </div>
+                  
+                  <div className="text-center mb-6">
+                    <Image
+                      src="/vanttec/roboboat-award.png"
+                      alt="RoboBoat Competition Award"
+                      width={200}
+                      height={150}
+                      className="rounded-lg shadow-md mx-auto"
+                    />
+                  </div>
+
                   <div className="space-y-6">
-                    <div className="flex items-start space-x-4">
-                      <div className="bg-primary rounded-full h-4 w-4 flex items-center justify-center mt-1">
-                        <div className="h-2 w-2 bg-white rounded-full" />
-                      </div>
-                      <div>
-                        <h4 className="font-medium">1st place in RoboBoat</h4>
-                        <p className="text-sm text-muted-foreground">Team's first year of participation</p>
+                    <div>
+                      <h4 className="font-bold text-blue-800 dark:text-blue-200 mb-3">2021 Achievements:</h4>
+                      <div className="space-y-2">
+                        <div className="flex items-start space-x-3">
+                          <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
+                          <span className="text-sm">1st Place Skills Video Sensor Optimization</span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
+                          <span className="text-sm">1st Place Skills Video Power Management</span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
+                          <span className="text-sm">1st Place Optional Video</span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <Award className="h-4 w-4 text-orange-500 mt-1 flex-shrink-0" />
+                          <span className="text-sm">3rd Place Website</span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <Award className="h-4 w-4 text-orange-500 mt-1 flex-shrink-0" />
+                          <span className="text-sm">4th Place Technical Design Report</span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <Star className="h-4 w-4 text-purple-500 mt-1 flex-shrink-0" />
+                          <span className="text-sm">Special Award Advanced Techniques</span>
+                        </div>
                       </div>
                     </div>
-                    <div className="flex items-start space-x-4">
-                      <div className="bg-primary rounded-full h-4 w-4 flex items-center justify-center mt-1">
-                        <div className="h-2 w-2 bg-white rounded-full" />
-                      </div>
-                      <div>
-                        <h4 className="font-medium">3rd place in RoboSub</h4>
-                        <p className="text-sm text-muted-foreground">Team's first year of participation</p>
+
+                    <div>
+                      <h4 className="font-bold text-blue-800 dark:text-blue-200 mb-3">2020 Achievements:</h4>
+                      <div className="space-y-2">
+                        <div className="flex items-start space-x-3">
+                          <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
+                          <span className="text-sm">1st Place 2020 Overall Standings</span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
+                          <span className="text-sm">1st Place 2020 Technical Design Report</span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
+                          <span className="text-sm">1st Place 2020 Website</span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
+                          <span className="text-sm">1st Place 2020 Video</span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <Star className="h-4 w-4 text-purple-500 mt-1 flex-shrink-0" />
+                          <span className="text-sm">Special Award 2020 Evidence In Testing</span>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </CardContent>
               </Card>
 
-              {/* Other Awards */}
-              <Card className="bg-gradient-to-br from-secondary/5 to-secondary/10">
+              {/* RoboSub Awards */}
+              <Card className="bg-gradient-to-br from-teal-50 to-cyan-100 dark:from-teal-900/20 dark:to-cyan-800/20 border-teal-200 dark:border-teal-700">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-6">
-                    <div className="bg-secondary/20 p-3 rounded-lg">
-                      <Award className="h-6 w-6 text-secondary-foreground" />
+                    <div className="bg-teal-600/10 p-3 rounded-lg">
+                      <Navigation className="h-8 w-8 text-teal-600" />
                     </div>
-                    <h3 className="ml-3 text-xl font-bold">Other Recognition</h3>
+                    <div className="ml-4">
+                      <h3 className="text-xl font-bold text-teal-800 dark:text-teal-200">RoboSub Awards</h3>
+                      <p className="text-sm text-teal-600 dark:text-teal-300">Autonomous Underwater Vehicle Competition</p>
+                    </div>
                   </div>
-                  <div className="space-y-4">
-                    <div className="flex items-start space-x-3">
-                      <Star className="h-5 w-5 text-yellow-500 mt-0.5" />
-                      <div>
-                        <h4 className="font-medium">Rómulo Garza Sada Award</h4>
-                        <p className="text-sm text-muted-foreground">Best university research project at Tec de Monterrey</p>
+                  
+                  <div className="text-center mb-6">
+                    <Image
+                      src="/vanttec/robosub-award.png"
+                      alt="RoboSub Competition Award"
+                      width={200}
+                      height={150}
+                      className="rounded-lg shadow-md mx-auto"
+                    />
+                  </div>
+
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="font-bold text-teal-800 dark:text-teal-200 mb-3">2020 Achievements:</h4>
+                      <div className="space-y-2">
+                        <div className="flex items-start space-x-3">
+                          <Award className="h-4 w-4 text-orange-500 mt-1 flex-shrink-0" />
+                          <span className="text-sm">3rd Place 2020 Overall Standings</span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
+                          <span className="text-sm">1st Place 2020 Video Submission</span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <Award className="h-4 w-4 text-orange-500 mt-1 flex-shrink-0" />
+                          <span className="text-sm">4th Place 2020 Website</span>
+                        </div>
                       </div>
                     </div>
-                    <div className="flex items-start space-x-3">
-                      <Globe className="h-5 w-5 text-primary mt-0.5" />
-                      <div>
-                        <h4 className="font-medium">Executive Presentations</h4>
-                        <p className="text-sm text-muted-foreground">Prototypes presented to ZF, BYD, and Tesla executives</p>
+
+                    <div className="bg-teal-100/50 dark:bg-teal-800/20 p-4 rounded-lg">
+                      <div className="flex items-start space-x-3">
+                        <Target className="h-5 w-5 text-teal-600 mt-1 flex-shrink-0" />
+                        <div>
+                          <h5 className="font-medium text-teal-800 dark:text-teal-200 mb-1">Outstanding Achievement</h5>
+                          <p className="text-sm text-teal-700 dark:text-teal-300">
+                            Remarkable performance in our first year competing in both RoboBoat and RoboSub competitions, 
+                            establishing VANTTEC as a leading force in autonomous marine robotics.
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </CardContent>
               </Card>
             </div>
-
-            {/* Impact Section */}
-            <Card className="mt-8 bg-gradient-to-r from-primary/5 via-secondary/5 to-primary/5">
-              <CardContent className="p-6">
-                <div className="flex items-center mb-6">
-                  <div className="bg-primary/20 p-3 rounded-lg">
-                    <Globe className="h-6 w-6 text-primary" />
-                  </div>
-                  <h3 className="ml-3 text-xl font-bold">Social and Academic Impact</h3>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="bg-white/50 p-4 rounded-lg">
-                    <h4 className="font-medium text-primary mb-2">International Collaborations</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Work with Southwest Research Institute (SwRI) on underwater localization and navigation with ORBSLAM3.
-                    </p>
-                  </div>
-                  <div className="bg-white/50 p-4 rounded-lg">
-                    <h4 className="font-medium text-primary mb-2">Talent Formation</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Creation of "elite groups" in high school and mentoring of scholarship students at university.
-                    </p>
-                  </div>
-                  <div className="bg-white/50 p-4 rounded-lg">
-                    <h4 className="font-medium text-primary mb-2">Legacy</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Consolidation of VANTTEC as one of the most important robotics teams in Latin America.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
           </CardContent>
         </Card>
       </FadeIn>
@@ -1855,12 +1651,30 @@ function SmartFactoryProjectContent() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div className="bg-white/50 p-4 rounded-lg">
                     <h4 className="font-medium text-primary mb-2">International Collaborations</h4>
+                    <div className="text-center mb-3">
+                      <Image
+                        src="/vanttec/swri.jpeg"
+                        alt="Southwest Research Institute (SwRI) Collaboration"
+                        width={120}
+                        height={60}
+                        className="rounded-md mx-auto object-contain"
+                      />
+                    </div>
                     <p className="text-sm text-muted-foreground">
                       Work with Southwest Research Institute (SwRI) on underwater localization and navigation with ORBSLAM3.
                     </p>
                   </div>
                   <div className="bg-white/50 p-4 rounded-lg">
                     <h4 className="font-medium text-primary mb-2">Talent Formation</h4>
+                    <div className="text-center mb-3">
+                      <Image
+                        src="/vanttec/vanttec-meeting.jpeg"
+                        alt="VANTTEC Team Meeting and Training Session"
+                        width={120}
+                        height={80}
+                        className="rounded-md mx-auto object-cover"
+                      />
+                    </div>
                     <p className="text-sm text-muted-foreground">
                       Creation of "elite groups" in high school and mentoring of scholarship students at university.
                     </p>
@@ -4022,6 +3836,954 @@ function ChakriProjectContent() {
   );
 }
 
+// John Deere GO-specific content component
+function JohnDeereProjectContent() {
+  return (
+    <div className="space-y-12">
+      {/* Navigation Links */}
+      <FadeIn delay="delay-100">
+        <div className="flex flex-wrap justify-center gap-4 mb-8">
+          <Button variant="outline" size="sm" asChild>
+            <a href="#overview" className="scroll-smooth">Overview</a>
+          </Button>
+          <Button variant="outline" size="sm" asChild>
+            <a href="#im-reserver" className="scroll-smooth">IM Reserver</a>
+          </Button>
+          <Button variant="outline" size="sm" asChild>
+            <a href="#shelf-guard" className="scroll-smooth">ShelfGuard</a>
+          </Button>
+          <Button variant="outline" size="sm" asChild>
+            <a href="#tech-stack" className="scroll-smooth">Technology Stack</a>
+          </Button>
+        </div>
+      </FadeIn>
+
+      {/* Project Overview Section */}
+      <div id="overview">
+        <FadeIn delay="delay-200">
+          <Card className="shadow-xl">
+            <CardHeader>
+              <CardTitle className="text-3xl text-foreground flex items-center justify-center">
+                <Truck className="mr-3 h-8 w-8 text-green-600" />
+                John Deere Innovation Showcase
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-8">
+              <div className="text-center">
+                <h3 className="text-xl font-bold text-green-600 mb-4">Advanced Agricultural Technology Solutions</h3>
+                <p className="text-muted-foreground max-w-4xl mx-auto text-lg leading-relaxed">
+                  As part of <strong>John Deere Labs</strong>, I led the development of two flagship products that helped 
+                  agricultural equipment management and security. These innovative solutions demonstrate the power of integrating 
+                  SAP automation, cloud services, and AI technologies to streamline operations and enhance security in 
+                  agricultural environments.
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+                <Card className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 border-green-200 dark:border-green-700">
+                  <CardContent className="p-6">
+                    <div className="flex items-center mb-4">
+                      <div className="bg-green-600/10 p-3 rounded-lg">
+                        <ShoppingCart className="h-6 w-6 text-green-600" />
+                      </div>
+                      <h4 className="ml-3 text-lg font-bold text-green-700 dark:text-green-300">IM Reserver</h4>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      A customer self-service web/app reservation system with fully automated checkout, 
+                      eliminating cashier intervention and streamlining equipment pickup processes.
+                    </p>
+                  </CardContent>
+                </Card>
+                
+                <Card className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 border-blue-200 dark:border-blue-700">
+                  <CardContent className="p-6">
+                    <div className="flex items-center mb-4">
+                      <div className="bg-blue-600/10 p-3 rounded-lg">
+                        <Shield className="h-6 w-6 text-blue-600" />
+                      </div>
+                      <h4 className="ml-3 text-lg font-bold text-blue-700 dark:text-blue-300">ShelfGuard</h4>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      An AI-powered security camera system that detects shelf-grab theft in real time, 
+                      using computer vision to monitor unauthorized item removal.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <div className="bg-gradient-to-r from-primary/5 to-primary/10 p-6 rounded-lg">
+                <p className="text-center text-muted-foreground">
+                  <strong>Key Achievement:</strong> IM Reserver leverages end-to-end SAP Automation (ABAP), Azure services, 
+                  and Power Platform flows to streamline supply management across John Deere's agricultural equipment network.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </FadeIn>
+      </div>
+
+      {/* Project 1: IM Reserver */}
+      <div id="im-reserver">
+        <FadeIn delay="delay-300">
+          <Card className="shadow-xl">
+            <CardHeader>
+              <CardTitle className="text-2xl text-foreground flex items-center">
+                <ShoppingCart className="mr-3 h-6 w-6 text-green-600" />
+                IM Reserver - Automated In-Store Reservation Platform
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="space-y-6">
+                  <h3 className="text-xl font-bold text-green-600">Revolutionary Customer Experience</h3>
+                  <ul className="space-y-3">
+                    <li className="flex items-start space-x-3">
+                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                      <span>Mobile/web interface lets customers reserve equipment or parts and pick up without cashier intervention</span>
+                    </li>
+                    <li className="flex items-start space-x-3">
+                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                      <span>Real-time inventory sync via custom SAP ABAP function modules keeps stock levels current</span>
+                    </li>
+                    <li className="flex items-start space-x-3">
+                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                      <span>Azure Functions and AWS Lambda handle backend logic, while Power Platform dashboards let the supply team approve reservations and monitor alerts</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="relative">
+                  <div className="aspect-video rounded-lg overflow-hidden shadow-lg">
+                    <video 
+                      controls 
+                      className="w-full h-full object-cover"
+                      poster="/images/im-reserver-poster.jpg"
+                    >
+                      <source src="/jdgo/IM RESERVACION.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  <p className="text-center text-sm text-muted-foreground mt-2 font-medium">
+                    Watch the IM Reserver demo
+                  </p>
+                </div>
+              </div>
+
+              <Separator />
+
+              <div>
+                <h3 className="text-xl font-bold mb-6 flex items-center">
+                  <Settings className="mr-3 h-6 w-6 text-green-600" />
+                  Key Features & Capabilities
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <Card className="bg-secondary/5">
+                    <CardContent className="p-4">
+                      <div className="flex items-center mb-3">
+                        <Zap className="h-5 w-5 text-green-600 mr-2" />
+                        <h4 className="font-medium">Instant Reservation</h4>
+                      </div>
+                      <p className="text-sm text-muted-foreground">
+                        Instant reservation assignment with no checkout line required
+                      </p>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="bg-secondary/5">
+                    <CardContent className="p-4">
+                      <div className="flex items-center mb-3">
+                        <Smartphone className="h-5 w-5 text-green-600 mr-2" />
+                        <h4 className="font-medium">Mobile-First Design</h4>
+                      </div>
+                      <p className="text-sm text-muted-foreground">
+                        Frontend built in Microsoft PowerApps with mobile-first design
+                      </p>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="bg-secondary/5">
+                    <CardContent className="p-4">
+                      <div className="flex items-center mb-3">
+                        <Network className="h-5 w-5 text-green-600 mr-2" />
+                        <h4 className="font-medium">SAP Integration</h4>
+                      </div>
+                      <p className="text-sm text-muted-foreground">
+                        SAP ABAP-driven integration for real-time stock updates with API integration
+                      </p>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="bg-secondary/5">
+                    <CardContent className="p-4">
+                      <div className="flex items-center mb-3">
+                        <Cloud className="h-5 w-5 text-green-600 mr-2" />
+                        <h4 className="font-medium">Azure Logic Apps</h4>
+                      </div>
+                      <p className="text-sm text-muted-foreground">
+                        Azure Logic Apps flow syncing SAP stock levels automatically
+                      </p>
+                    </CardContent>
+                  </Card>
+
+           
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </FadeIn>
+      </div>
+
+      {/* Project 2: ShelfGuard */}
+      <div id="shelf-guard">
+        <FadeIn delay="delay-400">
+          <Card className="shadow-xl">
+            <CardHeader>
+              <CardTitle className="text-2xl text-foreground flex items-center">
+                <Shield className="mr-3 h-6 w-6 text-blue-600" />
+                ShelfGuard - AI-Powered Theft Prevention
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="space-y-6">
+                  <h3 className="text-xl font-bold text-blue-600">Intelligent Security Solution</h3>
+                  <ul className="space-y-3">
+                    <li className="flex items-start space-x-3">
+                      <Eye className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                      <span>Overhead cameras detect when someone removes an item from the shelf without authorization</span>
+                    </li>
+                    <li className="flex items-start space-x-3">
+                      <Brain className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                      <span>Computer vision algorithms track hand-item interactions using OpenCV/OpenVINO</span>
+                    </li>
+                    <li className="flex items-start space-x-3">
+                      <Zap className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                      <span>Triggers instant alerts to store associates or locks gates automatically</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="relative">
+                  <div className="aspect-video rounded-lg overflow-hidden shadow-lg">
+                    <video 
+                      controls 
+                      className="w-full h-full object-cover"
+                      poster="/images/shelfguard-poster.jpg"
+                    >
+                      <source src="/jdgo/Security Video.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  <p className="text-center text-sm text-muted-foreground mt-2 font-medium">
+                    See ShelfGuard in action
+                  </p>
+                </div>
+              </div>
+
+              <Separator />
+
+              <div>
+                <h3 className="text-xl font-bold mb-6 flex items-center">
+                  <Cpu className="mr-3 h-6 w-6 text-blue-600" />
+                  Advanced AI Features
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <Card className="bg-secondary/5">
+                    <CardContent className="p-4">
+                      <div className="flex items-center mb-3">
+                        <Eye className="h-5 w-5 text-blue-600 mr-2" />
+                        <h4 className="font-medium">Real-time Detection</h4>
+                      </div>
+                      <p className="text-sm text-muted-foreground">
+                        Real-time object and person detection with advanced computer vision algorithms
+                      </p>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="bg-secondary/5">
+                    <CardContent className="p-4">
+                      <div className="flex items-center mb-3">
+                        <Network className="h-5 w-5 text-blue-600 mr-2" />
+                        <h4 className="font-medium">System Integration</h4>
+                      </div>
+                      <p className="text-sm text-muted-foreground">
+                        Integration with store access control and POS systems for comprehensive security
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </FadeIn>
+      </div>
+
+      {/* Technology Stack */}
+      <div id="tech-stack">
+        <FadeIn delay="delay-500">
+          <Card className="shadow-xl">
+            <CardHeader>
+              <CardTitle className="text-2xl text-foreground flex items-center justify-center">
+                <Layers className="mr-3 h-6 w-6 text-primary" />
+                Technology Stack Highlight
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <div className="text-center space-y-3">
+                  <div className="bg-blue-100 dark:bg-blue-900/20 p-4 rounded-lg">
+                    <FileText className="h-8 w-8 text-blue-600 mx-auto" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-sm">SAP</h4>
+                    <p className="text-xs text-muted-foreground">Enterprise Integration</p>
+                  </div>
+                </div>
+
+                <div className="text-center space-y-3">
+                  <div className="bg-green-100 dark:bg-green-900/20 p-4 rounded-lg">
+                    <Cog className="h-8 w-8 text-green-600 mx-auto" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-sm">ABAP</h4>
+                    <p className="text-xs text-muted-foreground">Custom API Integration</p>
+                  </div>
+                </div>
+
+                <div className="text-center space-y-3">
+                  <div className="bg-blue-100 dark:bg-blue-900/20 p-4 rounded-lg">
+                    <Cloud className="h-8 w-8 text-blue-600 mx-auto" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-sm">Azure</h4>
+                    <p className="text-xs text-muted-foreground">Logic Apps & Functions</p>
+                  </div>
+                </div>
+
+                <div className="text-center space-y-3">
+                  <div className="bg-purple-100 dark:bg-purple-900/20 p-4 rounded-lg">
+                    <Zap className="h-8 w-8 text-purple-600 mx-auto" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-sm">Power Platform</h4>
+                    <p className="text-xs text-muted-foreground">Mobile Apps & Dashboards</p>
+                  </div>
+                </div>
+
+                <div className="text-center space-y-3">
+                  <div className="bg-yellow-100 dark:bg-yellow-900/20 p-4 rounded-lg">
+                    <Eye className="h-8 w-8 text-yellow-600 mx-auto" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-sm">OpenCV</h4>
+                    <p className="text-xs text-muted-foreground">Computer Vision</p>
+                  </div>
+                </div>
+
+                <div className="text-center space-y-3">
+                  <div className="bg-red-100 dark:bg-red-900/20 p-4 rounded-lg">
+                    <Brain className="h-8 w-8 text-red-600 mx-auto" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-sm">OpenVINO</h4>
+                    <p className="text-xs text-muted-foreground">Open-source software toolkit</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </FadeIn>
+      </div>
+    </div>
+  );
+}
+
+// Vanttec-specific content component
+function VanttecProjectContent() {
+  return (
+    <div className="space-y-12">
+      {/* About VANTTEC Section */}
+      <FadeIn delay="delay-300">
+        <Card className="shadow-xl">
+          <CardHeader>
+            <CardTitle className="text-2xl text-foreground flex items-center">
+              <Globe className="mr-3 h-6 w-6 text-primary" />
+              About VANTTEC
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-8">
+            <div className="text-center">
+              <h3 className="text-xl font-bold text-primary mb-2">Innovation in Autonomous Vehicles</h3>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Research group from Tec de Monterrey focused on developing autonomous aerial and marine systems.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <Card className="bg-secondary/5">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <div className="bg-primary/10 p-3 rounded-lg">
+                      <Trophy className="h-6 w-6 text-primary" />
+                    </div>
+                    <h4 className="ml-3 text-lg font-medium">Mission</h4>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Develop cutting-edge autonomous technology to compete internationally and train new generations of Mexican engineers.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-secondary/5">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <div className="bg-primary/10 p-3 rounded-lg">
+                      <Award className="h-6 w-6 text-primary" />
+                    </div>
+                    <h4 className="ml-3 text-lg font-medium">Competitions</h4>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Participation in RoboBoat (surface vehicles) and RoboSub (underwater vehicles) organized by RoboNation.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-secondary/5">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <div className="bg-primary/10 p-3 rounded-lg">
+                      <Star className="h-6 w-6 text-primary" />
+                    </div>
+                    <h4 className="ml-3 text-lg font-medium">Collaborations</h4>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Presentations to ZF, BYD, and Tesla executives. Work with Southwest Research Institute (SwRI) on underwater navigation.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </CardContent>
+        </Card>
+      </FadeIn>
+
+      {/* Vehicles Section */}
+      <FadeIn delay="delay-400">
+        <Card className="shadow-xl">
+          <CardHeader>
+            <CardTitle className="text-2xl text-foreground">Our Vehicles</CardTitle>
+            <p className="text-muted-foreground">Innovative autonomous systems competing globally</p>
+          </CardHeader>
+          <CardContent className="space-y-12">
+            {/* Autonomous Boat */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div className="relative overflow-hidden rounded-lg shadow-lg aspect-video">
+                <iframe
+                  src="https://www.youtube.com/embed/dAObTRLfQEE?si=7plRS60a2Qzlwgu5"
+                  title="Autonomous Boat Demo"
+                  allowFullScreen
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  className="w-full h-full"
+                />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold mb-4">Autonomous Boat</h3>
+                <p className="text-muted-foreground mb-6">
+                  Our autonomous surface vehicle designed to compete in RoboBoat. Capable of navigating predefined routes, avoiding obstacles, and completing complex missions autonomously.
+                </p>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="flex items-start space-x-3">
+                    <Cpu className="h-5 w-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="font-medium">Jetson TX2</p>
+                      <p className="text-sm text-muted-foreground">System brain</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <Satellite className="h-5 w-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="font-medium">XBee RF</p>
+                      <p className="text-sm text-muted-foreground">Communication</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <Eye className="h-5 w-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="font-medium">Computer Vision</p>
+                      <p className="text-sm text-muted-foreground">YOLO Darknet</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <Layers className="h-5 w-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="font-medium">ROS/ROS2</p>
+                      <p className="text-sm text-muted-foreground">Middleware</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <Separator />
+
+            {/* Autonomous Submarine */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div className="lg:order-last">
+                <div className="relative overflow-hidden rounded-lg shadow-lg aspect-video">
+                  <iframe
+                    src="https://www.youtube.com/embed/f6_OrUrVz84?si=bPnS3Ug2ikezZ02J"
+                    title="Autonomous Submarine Demo"
+                    allowFullScreen
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    className="w-full h-full"
+                  />
+                </div>
+              </div>
+              <div className="lg:order-first">
+                <h3 className="text-xl font-bold mb-4">Autonomous Submarine</h3>
+                <p className="text-muted-foreground mb-6">
+                  Autonomous underwater vehicle designed to compete in RoboSub. Equipped with advanced vision and navigation systems to operate in challenging underwater environments.
+                </p>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="flex items-start space-x-3">
+                    <div className="h-5 w-5 bg-primary rounded-full mt-0.5" />
+                    <div>
+                      <p className="font-medium">6 Thrusters</p>
+                      <p className="text-sm text-muted-foreground">6DOF Movement</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <Eye className="h-5 w-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="font-medium">Stereo Cameras</p>
+                      <p className="text-sm text-muted-foreground">Point clouds</p>
+                    </div>
+                  </div>
+                
+                  <div className="flex items-start space-x-3">
+                    <Map className="h-5 w-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="font-medium">Navigation</p>
+                      <p className="text-sm text-muted-foreground">ORBSLAM3</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="h-5 w-5 bg-primary rounded-full mt-0.5" />
+                    <div>
+                      <p className="font-medium">RANSAC</p>
+                      <p className="text-sm text-muted-foreground">Point cloud filtering</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </FadeIn>
+
+      {/* Competition Awards Section */}
+      <FadeIn delay="delay-450">
+        <Card className="shadow-xl">
+          <CardHeader>
+            <CardTitle className="text-2xl text-foreground flex items-center">
+              <Trophy className="mr-3 h-6 w-6 text-yellow-500" />
+              Competition Awards & Recognition
+            </CardTitle>
+            <p className="text-muted-foreground">
+              Winning these international competitions was extremely challenging, competing against some of the world's most prestigious universities including MIT, Cornell, Caltech, Carnegie Mellon, and many others.
+            </p>
+          </CardHeader>
+          <CardContent className="space-y-8">
+            {/* Competition Difficulty Context */}
+            <div className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 p-6 rounded-lg border border-amber-200 dark:border-amber-700">
+              <div className="flex items-start space-x-4">
+                <Globe className="h-6 w-6 text-amber-600 mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="text-lg font-bold text-amber-800 dark:text-amber-200 mb-2">Global Competition</h3>
+                  <p className="text-amber-700 dark:text-amber-300 text-sm mb-3">
+                    These RoboNation competitions feature the world's most elite universities and research institutions, making our achievements particularly remarkable.
+                  </p>
+                  <div className="text-xs text-amber-600 dark:text-amber-400">
+                    <strong>Competing institutions include:</strong> Massachusetts Institute of Technology (MIT), Cornell University, California Institute of Technology (Caltech), 
+                    Carnegie Mellon University, University of Michigan, National University of Singapore, Istanbul Technical University, 
+                    AGH University of Krakow, and many other top-tier institutions worldwide.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* RoboBoat Awards */}
+              <Card className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 border-blue-200 dark:border-blue-700">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-6">
+                    <div className="bg-blue-600/10 p-3 rounded-lg">
+                      <Car className="h-8 w-8 text-blue-600" />
+                    </div>
+                    <div className="ml-4">
+                      <h3 className="text-xl font-bold text-blue-800 dark:text-blue-200">RoboBoat Awards</h3>
+                      <p className="text-sm text-blue-600 dark:text-blue-300">Autonomous Surface Vehicle Competition</p>
+                    </div>
+                  </div>
+                  
+                  <div className="text-center mb-6">
+                    <Image
+                      src="/vanttec/roboboat-award.png"
+                      alt="RoboBoat Competition Award"
+                      width={200}
+                      height={150}
+                      className="rounded-lg shadow-md mx-auto"
+                    />
+                  </div>
+
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="font-bold text-blue-800 dark:text-blue-200 mb-3">2021 Achievements:</h4>
+                      <div className="space-y-2">
+                        <div className="flex items-start space-x-3">
+                          <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
+                          <span className="text-sm">1st Place Skills Video Sensor Optimization</span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
+                          <span className="text-sm">1st Place Skills Video Power Management</span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
+                          <span className="text-sm">1st Place Optional Video</span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <Award className="h-4 w-4 text-orange-500 mt-1 flex-shrink-0" />
+                          <span className="text-sm">3rd Place Website</span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <Award className="h-4 w-4 text-orange-500 mt-1 flex-shrink-0" />
+                          <span className="text-sm">4th Place Technical Design Report</span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <Star className="h-4 w-4 text-purple-500 mt-1 flex-shrink-0" />
+                          <span className="text-sm">Special Award Advanced Techniques</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h4 className="font-bold text-blue-800 dark:text-blue-200 mb-3">2020 Achievements:</h4>
+                      <div className="space-y-2">
+                        <div className="flex items-start space-x-3">
+                          <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
+                          <span className="text-sm">1st Place 2020 Overall Standings</span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
+                          <span className="text-sm">1st Place 2020 Technical Design Report</span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
+                          <span className="text-sm">1st Place 2020 Website</span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
+                          <span className="text-sm">1st Place 2020 Video</span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <Star className="h-4 w-4 text-purple-500 mt-1 flex-shrink-0" />
+                          <span className="text-sm">Special Award 2020 Evidence In Testing</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* RoboSub Awards */}
+              <Card className="bg-gradient-to-br from-teal-50 to-cyan-100 dark:from-teal-900/20 dark:to-cyan-800/20 border-teal-200 dark:border-teal-700">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-6">
+                    <div className="bg-teal-600/10 p-3 rounded-lg">
+                      <Navigation className="h-8 w-8 text-teal-600" />
+                    </div>
+                    <div className="ml-4">
+                      <h3 className="text-xl font-bold text-teal-800 dark:text-teal-200">RoboSub Awards</h3>
+                      <p className="text-sm text-teal-600 dark:text-teal-300">Autonomous Underwater Vehicle Competition</p>
+                    </div>
+                  </div>
+                  
+                  <div className="text-center mb-6">
+                    <Image
+                      src="/vanttec/robosub-award.png"
+                      alt="RoboSub Competition Award"
+                      width={200}
+                      height={150}
+                      className="rounded-lg shadow-md mx-auto"
+                    />
+                  </div>
+
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="font-bold text-teal-800 dark:text-teal-200 mb-3">2020 Achievements:</h4>
+                      <div className="space-y-2">
+                        <div className="flex items-start space-x-3">
+                          <Award className="h-4 w-4 text-orange-500 mt-1 flex-shrink-0" />
+                          <span className="text-sm">3rd Place 2020 Overall Standings</span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
+                          <span className="text-sm">1st Place 2020 Video Submission</span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <Award className="h-4 w-4 text-orange-500 mt-1 flex-shrink-0" />
+                          <span className="text-sm">4th Place 2020 Website</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="bg-teal-100/50 dark:bg-teal-800/20 p-4 rounded-lg">
+                      <div className="flex items-start space-x-3">
+                        <Target className="h-5 w-5 text-teal-600 mt-1 flex-shrink-0" />
+                        <div>
+                          <h5 className="font-medium text-teal-800 dark:text-teal-200 mb-1">Outstanding Achievement</h5>
+                          <p className="text-sm text-teal-700 dark:text-teal-300">
+                            Remarkable performance in our first year competing in both RoboBoat and RoboSub competitions, 
+                            establishing VANTTEC as a leading force in autonomous marine robotics.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </CardContent>
+        </Card>
+      </FadeIn>
+
+      {/* Technologies Section */}
+      <FadeIn delay="delay-500">
+        <Card className="shadow-xl">
+          <CardHeader>
+            <CardTitle className="text-2xl text-foreground">Key Technologies</CardTitle>
+            <p className="text-muted-foreground">Our technology stack</p>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Navigation */}
+              <Card className="bg-secondary/5 hover:bg-secondary/10 transition-colors">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <div className="bg-primary/10 p-3 rounded-lg">
+                      <Map className="h-6 w-6 text-primary" />
+                    </div>
+                    <h4 className="ml-3 text-lg font-medium">Navigation</h4>
+                  </div>
+                  <ul className="space-y-2 text-sm">
+                    <li className="flex items-start space-x-2">
+                      <div className="h-1.5 w-1.5 bg-green-500 rounded-full mt-2" />
+                      <span>High-level state machine</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <div className="h-1.5 w-1.5 bg-green-500 rounded-full mt-2" />
+                      <span>Body-NED transforms for navigation</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <div className="h-1.5 w-1.5 bg-green-500 rounded-full mt-2" />
+                      <span>ORBSLAM3 for underwater localization</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              {/* Communication */}
+              <Card className="bg-secondary/5 hover:bg-secondary/10 transition-colors">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <div className="bg-primary/10 p-3 rounded-lg">
+                      <Satellite className="h-6 w-6 text-primary" />
+                    </div>
+                    <h4 className="ml-3 text-lg font-medium">Communication</h4>
+                  </div>
+                  <ul className="space-y-2 text-sm">
+                    <li className="flex items-start space-x-2">
+                      <div className="h-1.5 w-1.5 bg-green-500 rounded-full mt-2" />
+                      <span>XBee (RF) for vehicle-base communication</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <div className="h-1.5 w-1.5 bg-green-500 rounded-full mt-2" />
+                      <span>CAN protocols for vehicle control</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <div className="h-1.5 w-1.5 bg-green-500 rounded-full mt-2" />
+                      <span>Real-time telemetry</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              {/* Computer Vision */}
+              <Card className="bg-secondary/5 hover:bg-secondary/10 transition-colors">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <div className="bg-primary/10 p-3 rounded-lg">
+                      <Eye className="h-6 w-6 text-primary" />
+                    </div>
+                    <h4 className="ml-3 text-lg font-medium">Computer Vision</h4>
+                  </div>
+                  <ul className="space-y-2 text-sm">
+                    <li className="flex items-start space-x-2">
+                      <div className="h-1.5 w-1.5 bg-green-500 rounded-full mt-2" />
+                      <span>Stereo cameras for point clouds</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <div className="h-1.5 w-1.5 bg-green-500 rounded-full mt-2" />
+                      <span>YOLO Darknet for object detection</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <div className="h-1.5 w-1.5 bg-green-500 rounded-full mt-2" />
+                      <span>RANSAC for point cloud filtering</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+          </CardContent>
+        </Card>
+      </FadeIn>
+
+      {/* Achievements Section */}
+      <FadeIn delay="delay-600">
+        <Card className="shadow-xl">
+          <CardHeader>
+            <CardTitle className="text-2xl text-foreground">Achievements</CardTitle>
+            <p className="text-muted-foreground">Recognition and awards</p>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* RoboNation Competitions */}
+              <Card className="bg-gradient-to-br from-primary/5 to-primary/10">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-6">
+                    <div className="bg-primary/20 p-3 rounded-lg">
+                      <Trophy className="h-6 w-6 text-primary" />
+                    </div>
+                    <h3 className="ml-3 text-xl font-bold">RoboNation Competitions</h3>
+                  </div>
+                  <div className="space-y-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="bg-primary rounded-full h-4 w-4 flex items-center justify-center mt-1">
+                        <div className="h-2 w-2 bg-white rounded-full" />
+                      </div>
+                      <div>
+                        <h4 className="font-medium">1st place in RoboBoat</h4>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-4">
+                      <div className="bg-primary rounded-full h-4 w-4 flex items-center justify-center mt-1">
+                        <div className="h-2 w-2 bg-white rounded-full" />
+                      </div>
+                      <div>
+                        <h4 className="font-medium">3rd place in RoboSub</h4>
+                        <p className="text-sm text-muted-foreground">Team's first year of participation</p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Other Awards */}
+              <Card className="bg-gradient-to-br from-secondary/5 to-secondary/10">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-6">
+                    <div className="bg-secondary/20 p-3 rounded-lg">
+                      <Award className="h-6 w-6 text-secondary-foreground" />
+                    </div>
+                    <h3 className="ml-3 text-xl font-bold">Other Recognition</h3>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="flex items-start space-x-3">
+                      <Star className="h-5 w-5 text-yellow-500 mt-0.5" />
+                      <div>
+                        <h4 className="font-medium">Rómulo Garza Sada Award</h4>
+                        <p className="text-sm text-muted-foreground">Best university research project at Tec de Monterrey</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <Globe className="h-5 w-5 text-primary mt-0.5" />
+                      <div>
+                        <h4 className="font-medium">Executive Presentations</h4>
+                        <p className="text-sm text-muted-foreground">Prototypes presented to many important companies executives</p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Impact Section */}
+            <Card className="mt-8 bg-gradient-to-r from-primary/5 via-secondary/5 to-primary/5">
+              <CardContent className="p-6">
+                <div className="flex items-center mb-6">
+                  <div className="bg-primary/20 p-3 rounded-lg">
+                    <Globe className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3 className="ml-3 text-xl font-bold">Social and Academic Impact</h3>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="bg-white/50 p-4 rounded-lg">
+                    <h4 className="font-medium text-primary mb-2">International Collaborations</h4>
+                      <div className="text-center mb-3">
+                      <Image
+                        src="/vanttec/swri.jpeg"
+                        alt="International collaboration with SwRI"
+                        width={120}
+                        height={80}
+                        className="rounded-md mx-auto object-cover"
+                      />
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      Work with Southwest Research Institute (SwRI) on underwater localization and navigation with ORBSLAM3.
+                    </p>
+                  </div>
+                  <div className="bg-white/50 p-4 rounded-lg">
+                    <h4 className="font-medium text-primary mb-2">Talent Formation</h4>
+                    <div className="text-center mb-3">
+                      <Image
+                        src="/vanttec/vanttec-meeting.jpeg"
+                        alt="VANTTEC Team Meeting and Training Session"
+                        width={120}
+                        height={80}
+                        className="rounded-md mx-auto object-cover"
+                      />
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      Creation of "elite groups" in high school and mentoring of scholarship students at university.
+                    </p>
+                  </div>
+                  <div className="bg-white/50 p-4 rounded-lg">
+                    <h4 className="font-medium text-primary mb-2">Legacy</h4>
+                    <div className="text-center mb-3">
+                      <Image
+                        src="/vanttec/vanttec-logo.jpeg"
+                        alt="Vanttec logo"
+                        width={120}
+                        height={80}
+                        className="rounded-md mx-auto object-cover"
+                      />
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      Consolidation of VANTTEC as one of the most important robotics teams in Latin America.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </CardContent>
+        </Card>
+      </FadeIn>
+    </div>
+  );
+}
+
 export default function ProjectDetailsPage({ params }: Props) {
   const project = allProjects.find((p) => p.id === params.slug);
 
@@ -4036,6 +4798,7 @@ export default function ProjectDetailsPage({ params }: Props) {
   const isRoboCupProject = project.id === 'robocup-competitions';
   const isTokyoIROSProject = project.id === 'tokyo-iros-2022';
   const isChakriProject = project.id === 'chakri-ecommerce';
+  const isJohnDeereProject = project.id === 'john-deere-go';
 
   return (
     <div className="container mx-auto px-4 py-12 lg:px-8">
@@ -4089,6 +4852,8 @@ export default function ProjectDetailsPage({ params }: Props) {
                 <TokyoIROSProjectContent />
               ) : isChakriProject ? (
                 <ChakriProjectContent />
+              ) : isJohnDeereProject ? (
+                <JohnDeereProjectContent />
               ) : (
                 <FadeIn delay="delay-300">
                   <Card className="shadow-xl">

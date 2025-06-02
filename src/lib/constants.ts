@@ -41,7 +41,7 @@ export const featuredProjects: Project[] = [
   },
   {
     id: 'john-deere-go',
-    title: 'John Deere GO',
+    title: 'John Deere GO', 
     description: 'Developed SAP-integrated reservation application and AI-powered grasp detection camera system for agricultural machinery.',
     imageUrl: '/images/JD GO.jpeg',
     imageHint: 'agricultural technology',
