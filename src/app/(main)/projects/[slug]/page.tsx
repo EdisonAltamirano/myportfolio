@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, Layers, Calendar, Tag, Trophy, Globe, Eye, Cpu, Satellite, Map, Award, Star, Target, Bot, Monitor, Route, Hand, Zap, FileText, CheckCircle, Car, Cog, Shield, Play, Users, Building, Factory, Settings, Brain, Network, Wrench, BookOpen, Presentation, Home, Gamepad2, Volume2, Navigation, Cloud, Headphones, ShoppingCart, Truck, DollarSign, Smartphone, ChefHat, MapPin, Bell, Server } from 'lucide-react';
+import { ArrowLeft, Layers, Calendar, Tag, Trophy, Globe, Eye, Cpu, Satellite, Map, Award, Star, Target, Bot, Monitor, Route, Hand, Zap, FileText, CheckCircle, Car, Cog, Shield, Play, Users, Building, Factory, Settings, Brain, Network, Wrench, BookOpen, Presentation, Home, Gamepad2, Volume2, Navigation, Cloud, Headphones, ShoppingCart, Truck, DollarSign, Smartphone, ChefHat, MapPin, Bell, Server, Sparkles, Camera, Box, Clock, BarChart, GraduationCap, Code } from 'lucide-react';
 import { allProjects, Project } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -631,619 +631,622 @@ function ZFShuttleProjectContent() {
 function AIRLabProjectContent() {
   return (
     <div className="space-y-12">
-      {/* About the Challenge Section */}
+      {/* Introduction Section */}
+      <FadeIn delay="delay-200">
+        <Card className="shadow-xl">
+          <CardHeader>
+            <CardTitle className="text-2xl text-foreground flex items-center">
+              <Sparkles className="mr-3 h-6 w-6 text-primary" />
+              Introduction: How This Challenge Began
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-muted-foreground leading-relaxed">
+              During the 2020–2021 pandemic, I enrolled in Professor Luis Alberto Muñoz's "Vision for Robots" course at Tecnológico de Monterrey. He played a pivotal role in my professional growth by proposing an optional team challenge: participate in PAL Robotics' international stacking competition. That invitation—to turn classroom exercises into a real-world test in robotics—sparked everything that follows.
+            </p>
+          </CardContent>
+        </Card>
+      </FadeIn>
+
+      {/* About the AIRLab Stacking Challenge */}
       <FadeIn delay="delay-300">
         <Card className="shadow-xl">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground flex items-center">
               <Target className="mr-3 h-6 w-6 text-primary" />
-              About the Challenge
+              About the AIRLab Stacking Challenge
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-8">
-            <div className="text-center">
-              <h3 className="text-xl font-bold text-primary mb-2">Autonomous Product Stacking</h3>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                Organized by Ahold Delhaize's AI for Retail Lab (AIRLab) and YES!Delft, with technical support from PAL Robotics and TU Delft
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="bg-secondary/5">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
-                      <Target className="h-6 w-6 text-primary" />
-                    </div>
-                    <h4 className="ml-3 text-lg font-medium">Challenge Goal</h4>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Develop algorithms capable of autonomously stacking products in a simulated environment, deploying them on PAL Robotics' TIAGo robot.
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card className="bg-secondary/5">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
-                      <Bot className="h-6 w-6 text-primary" />
-                    </div>
-                    <h4 className="ml-3 text-lg font-medium">Robotic Platform</h4>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    TIAGo robot by PAL Robotics with modular open-source software based on ROS.
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card className="bg-secondary/5">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
-                      <Monitor className="h-6 w-6 text-primary" />
-                    </div>
-                    <h4 className="ml-3 text-lg font-medium">Simulation</h4>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Virtual environments (SIGVerse/Gazebo) to iterate stacking algorithms before hardware deployment.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </CardContent>
-        </Card>
-      </FadeIn>
-
-      {/* Solution Section */}
-      <FadeIn delay="delay-400">
-        <Card className="shadow-xl">
-          <CardHeader>
-            <CardTitle className="text-2xl text-foreground">Our Solution</CardTitle>
-            <p className="text-muted-foreground">Vision + Manipulation Approach</p>
-          </CardHeader>
-          <CardContent className="space-y-12">
             {/* Video Demonstration */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div className="relative overflow-hidden rounded-lg shadow-lg aspect-video">
-                <Image
-                  src="/images/airlab-demo.jpg"
-                  alt="Autonomous Stacking System Demo"
-                  width={600}
-                  height={400}
-                  className="object-cover w-full h-full"
-                />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold mb-4">Autonomous Stacking System</h3>
-                <p className="text-muted-foreground mb-6">
-                  Our solution combines computer vision for object detection with advanced manipulation algorithms to reliably stack products in a retail environment.
-                </p>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="flex items-start space-x-3">
-                    <Eye className="h-5 w-5 text-primary mt-0.5" />
-                    <div>
-                      <p className="font-medium">2D Image Processing</p>
-                      <p className="text-sm text-muted-foreground">Can detection & localization</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <Layers className="h-5 w-5 text-primary mt-0.5" />
-                    <div>
-                      <p className="font-medium">Point Cloud Generation</p>
-                      <p className="text-sm text-muted-foreground">Validating grasp positions</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <Route className="h-5 w-5 text-primary mt-0.5" />
-                    <div>
-                      <p className="font-medium">MoveIt! Integration</p>
-                      <p className="text-sm text-muted-foreground">Arm trajectory planning</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <Hand className="h-5 w-5 text-primary mt-0.5" />
-                    <div>
-                      <p className="font-medium">Grasping Algorithms</p>
-                      <p className="text-sm text-muted-foreground">Force closure analysis</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <Separator />
-
-            {/* Technical Approach */}
-            <div>
-              <h3 className="text-xl font-bold text-center mb-8">Technical Approach</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <Card className="bg-gradient-to-br from-primary/5 to-primary/10">
-                  <CardContent className="p-6">
-                    <div className="flex items-center mb-4">
-                      <div className="bg-primary/20 p-3 rounded-lg">
-                        <Zap className="h-6 w-6 text-primary" />
-                      </div>
-                      <h4 className="ml-3 text-xl font-bold">State Machine Architecture</h4>
-                    </div>
-                    <p className="text-muted-foreground mb-4">
-                      Orchestrated the complete stacking sequence: detect → plan grasp → execute trajectory → release. The state machine ensured robust error handling and recovery procedures.
-                    </p>
-                    <div className="relative overflow-hidden rounded-lg">
-                      <Image
-                        src="/images/state-machine-diagram.jpg"
-                        alt="State machine diagram"
-                        width={400}
-                        height={250}
-                        className="object-cover w-full h-full"
-                      />
-                    </div>
-                  </CardContent>
-                </Card>
-                
-                <Card className="bg-gradient-to-br from-secondary/5 to-secondary/10">
-                  <CardContent className="p-6">
-                    <div className="flex items-center mb-4">
-                      <div className="bg-secondary/20 p-3 rounded-lg">
-                        <Bot className="h-6 w-6 text-secondary-foreground" />
-                      </div>
-                      <h4 className="ml-3 text-xl font-bold">Sim-to-Real Pipeline</h4>
-                    </div>
-                    <p className="text-muted-foreground mb-4">
-                      Developed in simulation first using Gazebo, then incrementally deployed to the physical TIAGo robot. This approach allowed rapid iteration and validation.
-                    </p>
-                    <div className="relative overflow-hidden rounded-lg">
-                      <Image
-                        src="/images/tiago-robot.jpg"
-                        alt="TIAGo robot"
-                        width={400}
-                        height={250}
-                        className="object-cover w-full h-full"
-                      />
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </FadeIn>
-
-      {/* Technologies Section */}
-      <FadeIn delay="delay-500">
-        <Card className="shadow-xl">
-          <CardHeader>
-            <CardTitle className="text-2xl text-foreground">Key Technologies</CardTitle>
-            <p className="text-muted-foreground">Our technology stack</p>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Navigation */}
-              <Card className="bg-secondary/5 hover:bg-secondary/10 transition-colors">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
-                      <Map className="h-6 w-6 text-primary" />
-                    </div>
-                    <h4 className="ml-3 text-lg font-medium">Navigation</h4>
-                  </div>
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-start space-x-2">
-                      <div className="h-1.5 w-1.5 bg-green-500 rounded-full mt-2" />
-                      <span>High-level state machine</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <div className="h-1.5 w-1.5 bg-green-500 rounded-full mt-2" />
-                      <span>Body-NED transforms for navigation</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <div className="h-1.5 w-1.5 bg-green-500 rounded-full mt-2" />
-                      <span>ORBSLAM3 for underwater localization</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              {/* Communication */}
-              <Card className="bg-secondary/5 hover:bg-secondary/10 transition-colors">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
-                      <Satellite className="h-6 w-6 text-primary" />
-                    </div>
-                    <h4 className="ml-3 text-lg font-medium">Communication</h4>
-                  </div>
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-start space-x-2">
-                      <div className="h-1.5 w-1.5 bg-green-500 rounded-full mt-2" />
-                      <span>XBee (RF) for vehicle-base communication</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <div className="h-1.5 w-1.5 bg-green-500 rounded-full mt-2" />
-                      <span>CAN protocols for vehicle control</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <div className="h-1.5 w-1.5 bg-green-500 rounded-full mt-2" />
-                      <span>Real-time telemetry</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              {/* Computer Vision */}
-              <Card className="bg-secondary/5 hover:bg-secondary/10 transition-colors">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
-                      <Eye className="h-6 w-6 text-primary" />
-                    </div>
-                    <h4 className="ml-3 text-lg font-medium">Computer Vision</h4>
-                  </div>
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-start space-x-2">
-                      <div className="h-1.5 w-1.5 bg-green-500 rounded-full mt-2" />
-                      <span>Stereo cameras for point clouds</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <div className="h-1.5 w-1.5 bg-green-500 rounded-full mt-2" />
-                      <span>YOLO Darknet for object detection</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <div className="h-1.5 w-1.5 bg-green-500 rounded-full mt-2" />
-                      <span>RANSAC for point cloud filtering</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
-          </CardContent>
-        </Card>
-      </FadeIn>
-
-      {/* Achievements Section */}
-      <FadeIn delay="delay-600">
-        <Card className="shadow-xl">
-          <CardHeader>
-            <CardTitle className="text-2xl text-foreground">Achievements</CardTitle>
-            <p className="text-muted-foreground">Recognition and awards</p>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* RoboNation Competitions */}
-              <Card className="bg-gradient-to-br from-primary/5 to-primary/10">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-6">
-                    <div className="bg-primary/20 p-3 rounded-lg">
-                      <Trophy className="h-6 w-6 text-primary" />
-                    </div>
-                    <h4 className="ml-3 text-lg font-medium">Mission</h4>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Develop cutting-edge autonomous technology to compete internationally and train new generations of Mexican engineers.
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card className="bg-secondary/5">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
-                      <Award className="h-6 w-6 text-primary" />
-                    </div>
-                    <h4 className="ml-3 text-lg font-medium">Competitions</h4>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Participation in RoboBoat (surface vehicles) and RoboSub (underwater vehicles) organized by RoboNation.
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card className="bg-secondary/5">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
-                      <Star className="h-6 w-6 text-primary" />
-                    </div>
-                    <h4 className="ml-3 text-lg font-medium">Collaborations</h4>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Presentations to ZF, BYD, and Tesla executives. Work with Southwest Research Institute (SwRI) on underwater navigation.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </CardContent>
-        </Card>
-      </FadeIn>
-
-      {/* Vehicles Section */}
-      <FadeIn delay="delay-400">
-        <Card className="shadow-xl">
-          <CardHeader>
-            <CardTitle className="text-2xl text-foreground">Our Vehicles</CardTitle>
-            <p className="text-muted-foreground">Innovative autonomous systems competing globally</p>
-          </CardHeader>
-          <CardContent className="space-y-12">
-            {/* Autonomous Boat */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div className="relative overflow-hidden rounded-lg shadow-lg aspect-video">
+            <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-lg border-l-4 border-blue-500">
+              <h3 className="text-lg font-bold text-blue-800 mb-4">Project Functionality Demonstration</h3>
+              <div className="relative overflow-hidden rounded-lg aspect-video shadow-lg">
                 <iframe
-                  src="https://www.youtube.com/embed/dAObTRLfQEE?si=7plRS60a2Qzlwgu5"
-                  title="Autonomous Boat Demo"
+                  src="https://www.youtube.com/embed/sTFtxwSkYfI?si=Iwi-O_nJTJAtQZO0"
+                  title="AIRLab Stacking Challenge - Autonomous Can Stacking Demo"
+                  width={800}
+                  height={450}
                   allowFullScreen
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   className="w-full h-full"
                 />
               </div>
-              <div>
-                <h3 className="text-xl font-bold mb-4">Autonomous Boat</h3>
-                <p className="text-muted-foreground mb-6">
-                  Our autonomous surface vehicle designed to compete in RoboBoat. Capable of navigating predefined routes, avoiding obstacles, and completing complex missions autonomously.
+              <p className="text-sm text-blue-700 mt-3 italic">
+                Complete demonstration of our autonomous can-stacking system from object detection to successful placement
+              </p>
+            </div>
+
+            {/* Overview */}
+            <div>
+              <h3 className="text-xl font-bold text-primary mb-4">Overview</h3>
+              <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-lg border-l-4 border-blue-500">
+                <p className="text-muted-foreground italic mb-4">
+                  "Ahold Delhaize's AI for Retail Lab (AIRLab) and YES!Delft invited us to the Finals Event of the AIRLab Stacking Challenge. Within this challenge, we have challenged students and research teams from all over the world to share knowledge and dive deep into the tech to better understand the ground principles of robotics."
                 </p>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="flex items-start space-x-3">
-                    <Cpu className="h-5 w-5 text-primary mt-0.5" />
-                    <div>
-                      <p className="font-medium">Jetson TX2</p>
-                      <p className="text-sm text-muted-foreground">System brain</p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+                <Card className="bg-gradient-to-br from-green-50 to-green-100">
+                  <CardContent className="p-6">
+                    <div className="flex items-center mb-4">
+                      <Target className="h-6 w-6 text-green-600 mr-3" />
+                      <h4 className="font-medium text-green-800">Goal</h4>
                     </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <Satellite className="h-5 w-5 text-primary mt-0.5" />
-                    <div>
-                      <p className="font-medium">XBee RF</p>
-                      <p className="text-sm text-muted-foreground">Communication</p>
+                    <p className="text-sm text-muted-foreground">
+                      Develop algorithms that autonomously stack products in a simulated environment and then deploy them onto the TIAGo robot in a live demo.
+                    </p>
+                  </CardContent>
+                </Card>
+                
+                <Card className="bg-gradient-to-br from-purple-50 to-purple-100">
+                  <CardContent className="p-6">
+                    <div className="flex items-center mb-4">
+                      <Building className="h-6 w-6 text-purple-600 mr-3" />
+                      <h4 className="font-medium text-purple-800">Context</h4>
                     </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <Eye className="h-5 w-5 text-primary mt-0.5" />
-                    <div>
-                      <p className="font-medium">Computer Vision</p>
-                      <p className="text-sm text-muted-foreground">YOLO Darknet</p>
+                    <p className="text-sm text-muted-foreground">
+                      Hosted by AIRLab (Ahold Delhaize / TU Delft) with support from PAL Robotics and YES!Delft.
+                    </p>
+                  </CardContent>
+                </Card>
+                
+                <Card className="bg-gradient-to-br from-orange-50 to-orange-100">
+                  <CardContent className="p-6">
+                    <div className="flex items-center mb-4">
+                      <Star className="h-6 w-6 text-orange-600 mr-3" />
+                      <h4 className="font-medium text-orange-800">Why It Matters</h4>
                     </div>
+                    <p className="text-sm text-muted-foreground">
+                      Retail shelving is a repetitive but delicate task. Automating "pick and place" in a cluttered environment tests both vision and manipulation subsystems end-to-end.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+
+            {/* Robotic Platform */}
+            <div>
+              <h3 className="text-xl font-bold text-primary mb-4">Robotic Platform: TIAGo by PAL Robotics</h3>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                  <h4 className="font-semibold mb-3">TIAGo Overview</h4>
+                  <p className="text-muted-foreground mb-4">
+                    TIAGo is a mobile, differential-drive platform equipped with:
+                  </p>
+                  <ul className="space-y-2">
+                    <li className="flex items-start space-x-3">
+                      <div className="h-2 w-2 bg-primary rounded-full mt-2" />
+                      <span className="text-sm">A 6-DOF manipulator arm (payload ≈ 1.5 kg)</span>
+                    </li>
+                    <li className="flex items-start space-x-3">
+                      <div className="h-2 w-2 bg-primary rounded-full mt-2" />
+                      <span className="text-sm">RGB-D head camera by default</span>
+                    </li>
+                    <li className="flex items-start space-x-3">
+                      <div className="h-2 w-2 bg-primary rounded-full mt-2" />
+                      <span className="text-sm">A wheeled base with odometry and IMU sensors</span>
+                    </li>
+                    <li className="flex items-start space-x-3">
+                      <div className="h-2 w-2 bg-primary rounded-full mt-2" />
+                      <span className="text-sm">A built-in NVIDIA Jetson TX2 for on-board compute</span>
+                    </li>
+                    <li className="flex items-start space-x-3">
+                      <div className="h-2 w-2 bg-primary rounded-full mt-2" />
+                      <span className="text-sm">Open-source software stack based on ROS (Noetic)</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <div className="relative overflow-hidden rounded-lg shadow-lg aspect-video">
+                    <iframe
+                      src="https://www.youtube.com/embed/mZ5a6zwiWZk?si=U76CDGK8pd4wqrf_"
+                      title="TIAGo Robot Demonstration at AIRLab Challenge"
+                      width={400}
+                      height={300}
+                      allowFullScreen
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      className="w-full h-full"
+                    />
                   </div>
-                  <div className="flex items-start space-x-3">
-                    <Layers className="h-5 w-5 text-primary mt-0.5" />
-                    <div>
-                      <p className="font-medium">ROS/ROS2</p>
-                      <p className="text-sm text-muted-foreground">Middleware</p>
+                  <p className="text-sm text-muted-foreground mt-2 text-center italic">
+                    TIAGo Robot demonstration at the AIRLab Challenge Finals
+                  </p>
+                </div>
+              </div>
+              
+              <div className="mt-6">
+                <h4 className="font-semibold mb-3">Key Features Enabling Our Work</h4>
+                <div className="space-y-4">
+                  <div className="bg-secondary/10 p-4 rounded-lg">
+                    <h5 className="font-medium mb-2">Modular Hardware</h5>
+                    <p className="text-sm text-muted-foreground">End effector can be replaced by custom gripper if needed.</p>
+                  </div>
+                  <div className="bg-secondary/10 p-4 rounded-lg">
+                    <h5 className="font-medium mb-2">Open-Source Drivers</h5>
+                    <p className="text-sm text-muted-foreground">ROS nodes for camera streaming, joint controllers (using ros_control and MoveIt!).</p>
+                  </div>
+                  <div className="bg-secondary/10 p-4 rounded-lg">
+                    <h5 className="font-medium mb-2">3D Perception Capability</h5>
+                    <p className="text-sm text-muted-foreground">The RGB-D head streams a 640×480 depth image at 30 fps, enabling point-cloud generation on the Jetson.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Simulation Environment */}
+            <div>
+              <h3 className="text-xl font-bold text-primary mb-4">Simulation Environment: Gazebo</h3>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                  <h4 className="font-semibold mb-3">Why Simulation First?</h4>
+                  <p className="text-muted-foreground mb-4">
+                    Gazebo ( ROS compatibility ) lets us:
+                  </p>
+                  <ol className="space-y-2">
+                    <li className="flex items-start space-x-3">
+                      <span className="bg-primary text-primary-foreground text-xs px-2 py-1 rounded-full font-bold mt-0.5">1</span>
+                      <span className="text-sm">Iterate quickly on perception algorithms without risking hardware</span>
+                    </li>
+                    <li className="flex items-start space-x-3">
+                      <span className="bg-primary text-primary-foreground text-xs px-2 py-1 rounded-full font-bold mt-0.5">2</span>
+                      <span className="text-sm">Simulate real-world lighting, textures and sensor noise (via Gazebo plugins)</span>
+                    </li>
+                    <li className="flex items-start space-x-3">
+                      <span className="bg-primary text-primary-foreground text-xs px-2 py-1 rounded-full font-bold mt-0.5">3</span>
+                      <span className="text-sm">Validate grasping pipelines before moving to TIAGo</span>
+                    </li>
+                  </ol>
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-3">Simulation Setup</h4>
+                  <div className="space-y-3">
+                    <div className="flex items-start space-x-3">
+                      <Box className="h-5 w-5 text-primary mt-0.5" />
+                      <div>
+                        <p className="font-medium text-sm">World Model</p>
+                        <p className="text-xs text-muted-foreground">A mock "retail shelf" with multiple product cans—each defined as a Gazebo model with collision and visual meshes.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <Camera className="h-5 w-5 text-primary mt-0.5" />
+                      <div>
+                        <p className="font-medium text-sm">Camera Plugin</p>
+                        <p className="text-xs text-muted-foreground">A Gazebo camera plugin publishes synthetic depth and RGB images through ROS topics.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <Zap className="h-5 w-5 text-primary mt-0.5" />
+                      <div>
+                        <p className="font-medium text-sm">Physics Engine</p>
+                        <p className="text-xs text-muted-foreground">ODE coupled with a 1 ms physics step ensures accurate joint collisions during stacking attempts.</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <Separator />
-
-            {/* Autonomous Submarine */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div className="lg:order-last">
-                <div className="relative overflow-hidden rounded-lg shadow-lg aspect-video">
-                  <iframe
-                    src="https://www.youtube.com/embed/f6_OrUrVz84?si=bPnS3Ug2ikezZ02J"
-                    title="Autonomous Submarine Demo"
-                    allowFullScreen
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    className="w-full h-full"
-                  />
-                </div>
+            {/* System Architecture */}
+            <div>
+              <h3 className="text-xl font-bold text-primary mb-4">System Architecture Overview</h3>
+              <div className="relative overflow-hidden rounded-lg shadow-lg">
+                <Image
+                  src="/airlab/mainengine.jpeg"
+                  alt="Main Functions Diagram of the Autonomous Stacking System"
+                  width={800}
+                  height={500}
+                  className="object-cover w-full h-full"
+                />
               </div>
-              <div className="lg:order-first">
-                <h3 className="text-xl font-bold mb-4">Autonomous Submarine</h3>
-                <p className="text-muted-foreground mb-6">
-                  Autonomous underwater vehicle designed to compete in RoboSub. Equipped with advanced vision and navigation systems to operate in challenging underwater environments.
-                </p>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="flex items-start space-x-3">
-                    <div className="h-5 w-5 bg-primary rounded-full mt-0.5" />
-                    <div>
-                      <p className="font-medium">6 Thrusters</p>
-                      <p className="text-sm text-muted-foreground">6DOF Movement</p>
+              <p className="text-sm text-muted-foreground mt-2 text-center italic">
+                System architecture showing the complete pipeline from perception to manipulation
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+      </FadeIn>
+
+      {/* Organizers and Involved Institutions */}
+      <FadeIn delay="delay-400">
+        <Card className="shadow-xl">
+          <CardHeader>
+            <CardTitle className="text-2xl text-foreground flex items-center">
+              <Building className="mr-3 h-6 w-6 text-primary" />
+              Organizers and Involved Institutions
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* AIRLab */}
+              <Card className="bg-gradient-to-br from-blue-50 to-blue-100">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <div className="bg-blue-200 p-3 rounded-lg">
+                      <Building className="h-6 w-6 text-blue-700" />
                     </div>
+                    <h3 className="ml-3 text-xl font-bold">AIRLab (Ahold Delhaize / TU Delft)</h3>
                   </div>
-                  <div className="flex items-start space-x-3">
-                    <Eye className="h-5 w-5 text-primary mt-0.5" />
-                    <div>
-                      <p className="font-medium">Stereo Cameras</p>
-                      <p className="text-sm text-muted-foreground">Point clouds</p>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    <strong>Mission:</strong> Redefine retail through technology, researching how robotics can assist store associates, reduce errors, and optimize workflows.
+                  </p>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    <strong>Location:</strong> RoboValley, Delft (TU Delft Robotics Institute)
+                  </p>
+                  <div>
+                    <p className="font-medium text-sm mb-2">Core Research Areas:</p>
+                    <ul className="space-y-1 text-xs">
+                      <li>• Robotic grippers for delicate items (e.g., fruits, vegetables)</li>
+                      <li>• Image-recognition models for packaging and product identification</li>
+                      <li>• Automated warehouse logistics and "last-mile" retail robotics</li>
+                    </ul>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Ahold Delhaize */}
+              <Card className="bg-gradient-to-br from-green-50 to-green-100">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <div className="bg-green-200 p-3 rounded-lg">
+                      <ShoppingCart className="h-6 w-6 text-green-700" />
                     </div>
+                    <h3 className="ml-3 text-xl font-bold">Ahold Delhaize</h3>
                   </div>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    <strong>Profile:</strong> One of the world's largest food retail groups—leader in supermarkets, e-commerce, and sustainable retailing.
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    <strong>Relevance:</strong> Focuses on same-day delivery, in-store robotics pilot programs, and AI-driven inventory management.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* TU Delft */}
+              <Card className="bg-gradient-to-br from-purple-50 to-purple-100">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <div className="bg-purple-200 p-3 rounded-lg">
+                      <GraduationCap className="h-6 w-6 text-purple-700" />
+                    </div>
+                    <h3 className="ml-3 text-xl font-bold">TU Delft</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    <strong>Collaboration Role:</strong> Provide access to lab infrastructure (manipulators, 3D printers, sensor testbeds) and guidance on robotic research protocols.
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    <strong>Signature Strength:</strong> Combining fundamental robotics research with applied industry labs—helped shape the evaluation criteria for the stacking challenge.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* PAL Robotics */}
+              <Card className="bg-gradient-to-br from-orange-50 to-orange-100">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <div className="bg-orange-200 p-3 rounded-lg">
+                      <Bot className="h-6 w-6 text-orange-700" />
+                    </div>
+                    <h3 className="ml-3 text-xl font-bold">PAL Robotics</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    <strong>Founded:</strong> 2004 by a small group of engineers building Europe's first fully autonomous biped robot.
+                  </p>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    <strong>Notable Robots:</strong> REEM (humanoid research platform), TALOS (high-payload humanoid), and TIAGo (service-robotic base).
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    <strong>Expertise:</strong> Service robots for research, logistics, retail and assistance; active R&D in ROS drivers, Gazebo plugins, and machine-learning integration.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </CardContent>
+        </Card>
+      </FadeIn>
+
+      {/* My Experience and Work Approach */}
+      <FadeIn delay="delay-500">
+        <Card className="shadow-xl">
+          <CardHeader>
+            <CardTitle className="text-2xl text-foreground flex items-center">
+              <Wrench className="mr-3 h-6 w-6 text-primary" />
+              Results
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-8">
+
+            {/* Results */}
+            <div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <Card className="bg-gradient-to-br from-yellow-50 to-yellow-100 border-2 border-yellow-300">
+                  <CardContent className="p-6 text-center">
+                    <Trophy className="h-12 w-12 text-yellow-600 mx-auto mb-4" />
+                    <h4 className="font-bold text-yellow-800 mb-2">💎 Award</h4>
+                    <p className="text-sm text-muted-foreground">"Most Consistent Solution" (out of 25+ international teams)</p>
+                  </CardContent>
+                </Card>
                 
-                  <div className="flex items-start space-x-3">
-                    <Map className="h-5 w-5 text-primary mt-0.5" />
-                    <div>
-                      <p className="font-medium">Navigation</p>
-                      <p className="text-sm text-muted-foreground">ORBSLAM3</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="h-5 w-5 bg-primary rounded-full mt-0.5" />
-                    <div>
-                      <p className="font-medium">RANSAC</p>
-                      <p className="text-sm text-muted-foreground">Point cloud filtering</p>
-                    </div>
-                  </div>
-                </div>
+                <Card className="bg-gradient-to-br from-blue-50 to-blue-100">
+                  <CardContent className="p-6 text-center">
+                    <Star className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                    <h4 className="font-bold text-blue-800 mb-2">🏅 Key Differentiator</h4>
+                    <p className="text-sm text-muted-foreground">Robust error handler with retry mechanism—minimized deadlocks</p>
+                  </CardContent>
+                </Card>
+                
+                <Card className="bg-gradient-to-br from-green-50 to-green-100">
+                  <CardContent className="p-6 text-center">
+                    <Code className="h-12 w-12 text-green-600 mx-auto mb-4" />
+                    <h4 className="font-bold text-green-800 mb-2">🔤 Tech Stack</h4>
+                    <p className="text-sm text-muted-foreground">ROS Noetic, OpenCV 4.2, PCL, MoveIt!, TensorFlow 1.15, C++/Python</p>
+                  </CardContent>
+                </Card>
               </div>
             </div>
           </CardContent>
         </Card>
       </FadeIn>
 
-      {/* Competition Awards Section */}
-      <FadeIn delay="delay-450">
+      {/* Academic Publication */}
+      <FadeIn delay="delay-600">
         <Card className="shadow-xl">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground flex items-center">
-              <Trophy className="mr-3 h-6 w-6 text-yellow-500" />
-              Competition Awards & Recognition
+              <FileText className="mr-3 h-6 w-6 text-primary" />
+              Academic Publication and Contribution
             </CardTitle>
-            <p className="text-muted-foreground">
-              Winning these international competitions was extremely challenging, competing against some of the world's most prestigious universities including MIT, Cornell, Caltech, Carnegie Mellon, and many others.
-            </p>
           </CardHeader>
           <CardContent className="space-y-8">
-            {/* Competition Difficulty Context */}
-            <div className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 p-6 rounded-lg border border-amber-200 dark:border-amber-700">
-              <div className="flex items-start space-x-4">
-                <Globe className="h-6 w-6 text-amber-600 mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="text-lg font-bold text-amber-800 dark:text-amber-200 mb-2">Global Competition</h3>
-                  <p className="text-amber-700 dark:text-amber-300 text-sm mb-3">
-                    These RoboNation competitions feature the world's most elite universities and research institutions, making our achievements particularly remarkable.
-                  </p>
-                  <div className="text-xs text-amber-600 dark:text-amber-400">
-                    <strong>Competing institutions include:</strong> Massachusetts Institute of Technology (MIT), Cornell University, California Institute of Technology (Caltech), 
-                    Carnegie Mellon University, University of Michigan, National University of Singapore, Istanbul Technical University, 
-                    AGH University of Krakow, and many other top-tier institutions worldwide.
+            {/* Paper Summary */}
+            <div>
+              <h3 className="text-xl font-bold text-primary mb-4">Paper Summary</h3>
+              <div className="bg-gradient-to-r from-slate-50 to-slate-100 p-6 rounded-lg border-l-4 border-slate-500">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <p className="font-semibold mb-2">Title:</p>
+                    <p className="text-sm text-muted-foreground mb-4">"Visual Navigation Algorithms for Mobile Manipulators in Service Shops"</p>
+                    
+                    <p className="font-semibold mb-2">Authors:</p>
+                    <p className="text-sm text-muted-foreground mb-4">    J. A. Cisneros Morales, E. R. Altamirano Ávila, R. Mendivil-Castro & L. A. Muñoz </p>
                   </div>
+                  <div>
+                    <p className="font-semibold mb-2">Published In:</p>
+                    <p className="text-sm text-muted-foreground mb-4">Mexican International Conference on Artificial Intelligence (MICAI) 2023 </p>
+                    
+                    <p className="font-semibold mb-2">DOI / ISBN:</p>
+                    <p className="text-sm text-muted-foreground">https://doi.org/10.1007/978-3-031-47640-2_19 </p>
+                  </div>
+                </div>
+                
+                <div className="mt-6">
+                  <p className="font-semibold mb-2">Abstract (condensed):</p>
+                  <p className="text-sm text-muted-foreground italic">
+                  In this paper, we present a computer vision-based robotic grasp detection approach which was recognized as the most consistent solution at the AirLab 2021 Challenge. The main objective was to accurately navigate, locate and grasp multiple cans in order to place them on a shelf.
+                  </p>
                 </div>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* RoboBoat Awards */}
-              <Card className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 border-blue-200 dark:border-blue-700">
+            {/* Technical Highlights */}
+            <div>
+              <h3 className="text-xl font-bold text-primary mb-6">Technical Highlights</h3>
+              
+              {/* Camera Calibration & Color Segmentation */}
+              <Card className="mb-6">
                 <CardContent className="p-6">
-                  <div className="flex items-center mb-6">
-                    <div className="bg-blue-600/10 p-3 rounded-lg">
-                      <Car className="h-8 w-8 text-blue-600" />
-                    </div>
-                    <div className="ml-4">
-                      <h3 className="text-xl font-bold text-blue-800 dark:text-blue-200">RoboBoat Awards</h3>
-                      <p className="text-sm text-blue-600 dark:text-blue-300">Autonomous Surface Vehicle Competition</p>
-                    </div>
-                  </div>
-                  
-                  <div className="text-center mb-6">
-                    <Image
-                      src="/vanttec/roboboat-award.png"
-                      alt="RoboBoat Competition Award"
-                      width={200}
-                      height={150}
-                      className="rounded-lg shadow-md mx-auto"
-                    />
-                  </div>
+                  <h4 className="font-semibold text-lg mb-4 flex items-center">
+                    <Camera className="h-5 w-5 text-primary mr-2" />
+                    1. Camera Calibration & Color Segmentation
+                  </h4>
+                  <ul className="space-y-2 text-sm">
+                    <li className="flex items-start space-x-2">
+                      <div className="h-1.5 w-1.5 bg-green-500 rounded-full mt-2" />
+                      <span>Calibrated the camera using a 8×6 checkerboard pattern (OpenCV's calibrateCamera)</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <div className="h-1.5 w-1.5 bg-green-500 rounded-full mt-2" />
+                      <span>RGB images undistorted, then passed through YOLOv3 network (pretrained on COCO, fine-tuned on ~2,000 labeled images)</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <div className="h-1.5 w-1.5 bg-green-500 rounded-full mt-2" />
+                      <span>YOLOv3 outputs bounding boxes and class confidences, streamed at ~15 fps on the Jetson TX2</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
 
-                  <div className="space-y-6">
+              {/* Point Cloud Generation */}
+              <Card className="mb-6">
+                <CardContent className="p-6">
+                  <h4 className="font-semibold text-lg mb-4 flex items-center">
+                    <Layers className="h-5 w-5 text-primary mr-2" />
+                    2. Point Cloud Generation & Preprocessing
+                  </h4>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     <div>
-                      <h4 className="font-bold text-blue-800 dark:text-blue-200 mb-3">2021 Achievements:</h4>
-                      <div className="space-y-2">
-                        <div className="flex items-start space-x-3">
-                          <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
-                          <span className="text-sm">1st Place Skills Video Sensor Optimization</span>
-                        </div>
-                        <div className="flex items-start space-x-3">
-                          <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
-                          <span className="text-sm">1st Place Skills Video Power Management</span>
-                        </div>
-                        <div className="flex items-start space-x-3">
-                          <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
-                          <span className="text-sm">1st Place Optional Video</span>
-                        </div>
-                        <div className="flex items-start space-x-3">
-                          <Award className="h-4 w-4 text-orange-500 mt-1 flex-shrink-0" />
-                          <span className="text-sm">3rd Place Website</span>
-                        </div>
-                        <div className="flex items-start space-x-3">
-                          <Award className="h-4 w-4 text-orange-500 mt-1 flex-shrink-0" />
-                          <span className="text-sm">4th Place Technical Design Report</span>
-                        </div>
-                        <div className="flex items-start space-x-3">
-                          <Star className="h-4 w-4 text-purple-500 mt-1 flex-shrink-0" />
-                          <span className="text-sm">Special Award Advanced Techniques</span>
-                        </div>
-                      </div>
+                      <ul className="space-y-2 text-sm">
+                        <li className="flex items-start space-x-2">
+                          <div className="h-1.5 w-1.5 bg-blue-500 rounded-full mt-2" />
+                          <span>Depth images converted to point clouds via PCL&apos;s PointCloud&lt;PointXYZRGB&gt;</span>
+                        </li>
+                        <li className="flex items-start space-x-2">
+                          <div className="h-1.5 w-1.5 bg-blue-500 rounded-full mt-2" />
+                          <span>Applied VoxelGrid filter (leaf size 0.005 m) to downsample for faster processing</span>
+                        </li>
+                        <li className="flex items-start space-x-2">
+                          <div className="h-1.5 w-1.5 bg-blue-500 rounded-full mt-2" />
+                          <span>Used RANSAC plane-segmentation to remove the tabletop and isolate candidate objects</span>
+                        </li>
+                      </ul>
                     </div>
-
                     <div>
-                      <h4 className="font-bold text-blue-800 dark:text-blue-200 mb-3">2020 Achievements:</h4>
-                      <div className="space-y-2">
-                        <div className="flex items-start space-x-3">
-                          <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
-                          <span className="text-sm">1st Place 2020 Overall Standings</span>
-                        </div>
-                        <div className="flex items-start space-x-3">
-                          <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
-                          <span className="text-sm">1st Place 2020 Technical Design Report</span>
-                        </div>
-                        <div className="flex items-start space-x-3">
-                          <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
-                          <span className="text-sm">1st Place 2020 Website</span>
-                        </div>
-                        <div className="flex items-start space-x-3">
-                          <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
-                          <span className="text-sm">1st Place 2020 Video</span>
-                        </div>
-                        <div className="flex items-start space-x-3">
-                          <Star className="h-4 w-4 text-purple-500 mt-1 flex-shrink-0" />
-                          <span className="text-sm">Special Award 2020 Evidence In Testing</span>
-                        </div>
+                      <div className="relative overflow-hidden rounded-lg shadow-lg">
+                        <Image
+                          src="/airlab/octomap.jpeg"
+                          alt="Octomap Generated from Point Clouds"
+                          width={400}
+                          height={300}
+                          className="object-cover w-full h-full"
+                        />
                       </div>
+                      <p className="text-xs text-muted-foreground mt-2 text-center italic">
+                        Octomap generated from accumulated point clouds for environment mapping
+                      </p>
                     </div>
                   </div>
                 </CardContent>
               </Card>
 
-              {/* RoboSub Awards */}
-              <Card className="bg-gradient-to-br from-teal-50 to-cyan-100 dark:from-teal-900/20 dark:to-cyan-800/20 border-teal-200 dark:border-teal-700">
+              {/* Object Detection and Segmentation */}
+              <Card className="mb-6">
                 <CardContent className="p-6">
-                  <div className="flex items-center mb-6">
-                    <div className="bg-teal-600/10 p-3 rounded-lg">
-                      <Navigation className="h-8 w-8 text-teal-600" />
-                    </div>
-                    <div className="ml-4">
-                      <h3 className="text-xl font-bold text-teal-800 dark:text-teal-200">RoboSub Awards</h3>
-                      <p className="text-sm text-teal-600 dark:text-teal-300">Autonomous Underwater Vehicle Competition</p>
-                    </div>
-                  </div>
-                  
-                  <div className="text-center mb-6">
-                    <Image
-                      src="/vanttec/robosub-award.png"
-                      alt="RoboSub Competition Award"
-                      width={200}
-                      height={150}
-                      className="rounded-lg shadow-md mx-auto"
-                    />
-                  </div>
-
-                  <div className="space-y-6">
+                  <h4 className="font-semibold text-lg mb-4 flex items-center">
+                    <Eye className="h-5 w-5 text-primary mr-2" />
+                    3. Object Detection and Point Cloud Segmentation
+                  </h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <h4 className="font-bold text-teal-800 dark:text-teal-200 mb-3">2020 Achievements:</h4>
-                      <div className="space-y-2">
-                        <div className="flex items-start space-x-3">
-                          <Award className="h-4 w-4 text-orange-500 mt-1 flex-shrink-0" />
-                          <span className="text-sm">3rd Place 2020 Overall Standings</span>
-                        </div>
-                        <div className="flex items-start space-x-3">
-                          <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
-                          <span className="text-sm">1st Place 2020 Video Submission</span>
-                        </div>
-                        <div className="flex items-start space-x-3">
-                          <Award className="h-4 w-4 text-orange-500 mt-1 flex-shrink-0" />
-                          <span className="text-sm">4th Place 2020 Website</span>
-                        </div>
+                      <div className="relative overflow-hidden rounded-lg shadow-lg mb-4">
+                        <Image
+                          src="/airlab/pointcloud-can.jpeg"
+                          alt="Point Cloud Segmentation of Cans"
+                          width={400}
+                          height={300}
+                          className="object-cover w-full h-full"
+                        />
                       </div>
+                      <p className="text-xs text-muted-foreground text-center italic">
+                        Point cloud segmentation isolating individual cans for grasping
+                      </p>
                     </div>
-
-                    <div className="bg-teal-100/50 dark:bg-teal-800/20 p-4 rounded-lg">
-                      <div className="flex items-start space-x-3">
-                        <Target className="h-5 w-5 text-teal-600 mt-1 flex-shrink-0" />
-                        <div>
-                          <h5 className="font-medium text-teal-800 dark:text-teal-200 mb-1">Outstanding Achievement</h5>
-                          <p className="text-sm text-teal-700 dark:text-teal-300">
-                            Remarkable performance in our first year competing in both RoboBoat and RoboSub competitions, 
-                            establishing VANTTEC as a leading force in autonomous marine robotics.
-                          </p>
-                        </div>
+                    <div>
+                      <div className="relative overflow-hidden rounded-lg shadow-lg mb-4">
+                        <Image
+                          src="/airlab/pointcloud-shelf.jpeg"
+                          alt="Point Cloud Segmentation in Shelf and New Can Location Calculation"
+                          width={400}
+                          height={300}
+                          className="object-cover w-full h-full"
+                        />
                       </div>
+                      <p className="text-xs text-muted-foreground text-center italic">
+                        Shelf segmentation and calculation of optimal placement locations
+                      </p>
                     </div>
                   </div>
                 </CardContent>
               </Card>
+
+              {/* Grasp Planning and Execution */}
+              <Card className="mb-6">
+                <CardContent className="p-6">
+                  <h4 className="font-semibold text-lg mb-4 flex items-center">
+                    <Hand className="h-5 w-5 text-primary mr-2" />
+                    4. Grasp Planning and Execution
+                  </h4>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div>
+                      <p className="text-sm text-muted-foreground mb-4">For each YOLO bounding box:</p>
+                      <ol className="space-y-2 text-sm">
+                        <li className="flex items-start space-x-2">
+                          <span className="bg-primary text-primary-foreground text-xs px-2 py-1 rounded-full font-bold mt-0.5">a</span>
+                          <span>Crop the corresponding depth ROI</span>
+                        </li>
+                        <li className="flex items-start space-x-2">
+                          <span className="bg-primary text-primary-foreground text-xs px-2 py-1 rounded-full font-bold mt-0.5">b</span>
+                          <span>Cluster via EuclideanClusterExtraction in PCL to segment the single object</span>
+                        </li>
+                        <li className="flex items-start space-x-2">
+                          <span className="bg-primary text-primary-foreground text-xs px-2 py-1 rounded-full font-bold mt-0.5">c</span>
+                          <span>Run simplified antipodal grasp search: sample 3D normals from opposing surface patches to propose a grasp pose in 6 DoF</span>
+                        </li>
+                      </ol>
+                    </div>
+                    <div>
+                      <div className="relative overflow-hidden rounded-lg shadow-lg">
+                        <Image
+                          src="/airlab/pointcloud-arrows.jpeg"
+                          alt="Planning Scene with Can Position and Possible Grasps"
+                          width={400}
+                          height={300}
+                          className="object-cover w-full h-full"
+                        />
+                      </div>
+                      <p className="text-xs text-muted-foreground mt-2 text-center italic">
+                        MoveIt! planning scene showing can position and evaluated grasp candidates
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Robot Execution */}
+              <Card className="mb-6">
+                <CardContent className="p-6">
+                  <h4 className="font-semibold text-lg mb-4 flex items-center">
+                    <Bot className="h-5 w-5 text-primary mr-2" />
+                    5. Robot Execution and Place Actions
+                  </h4>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div>
+                      <h5 className="font-medium mb-3">MoveIt! Integration & Trajectory Planning</h5>
+                      <ul className="space-y-2 text-sm">
+                        <li className="flex items-start space-x-2">
+                          <div className="h-1.5 w-1.5 bg-orange-500 rounded-full mt-2" />
+                          <span>computeCartesianPath for straight-line approach toward grasp pose</span>
+                        </li>
+                        <li className="flex items-start space-x-2">
+                          <div className="h-1.5 w-1.5 bg-orange-500 rounded-full mt-2" />
+                          <span>OMPL&apos;s RRTConnect planner for obstacle avoidance</span>
+                        </li>
+                        <li className="flex items-start space-x-2">
+                          <div className="h-1.5 w-1.5 bg-orange-500 rounded-full mt-2" />
+                          <span>Real-time execution with gripper control and verification</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <div className="relative overflow-hidden rounded-lg shadow-lg">
+                        <Image
+                          src="/airlab/tiago-grabing.jpeg"
+                          alt="TIAGo Robot Placing Can with Place Server and Gazebo Link Attacher"
+                          width={400}
+                          height={300}
+                          className="object-cover w-full h-full"
+                        />
+                      </div>
+                      <p className="text-xs text-muted-foreground mt-2 text-center italic">
+                        TIAGo executing placement action using place server and Gazebo link attacher
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+ 
+  
             </div>
           </CardContent>
         </Card>
@@ -1362,14 +1365,14 @@ function SmartFactoryProjectContent() {
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <Image
-                    src="/images/smart-factory-plc.jpg"
+                    src="/smartfactory/hmi.png"
                     alt="PLC Control System"
                     width={300}
                     height={200}
                     className="rounded-lg shadow-md object-cover"
                   />
                   <Image
-                    src="/images/smart-factory-hmi.jpg"
+                    src="/smartfactory/aveva.png"
                     alt="HMI Dashboard"
                     width={300}
                     height={200}
@@ -1390,29 +1393,15 @@ function SmartFactoryProjectContent() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div className="grid grid-cols-2 gap-4">
                   <Image
-                    src="/images/smart-factory-agv.jpg"
+                    src="/smartfactory/dashgos.png"
                     alt="AGV Line Following Robot"
                     width={300}
                     height={200}
                     className="rounded-lg shadow-md object-cover"
                   />
                   <Image
-                    src="/images/smart-factory-ur-robot.jpg"
-                    alt="UR Robot Integration"
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-md object-cover"
-                  />
-                  <Image
-                    src="/images/smart-factory-abb-yumi.jpg"
+                    src="/smartfactory/omron.png"
                     alt="ABB Yumi Robot"
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-md object-cover"
-                  />
-                  <Image
-                    src="/images/smart-factory-mobile-robots.jpg"
-                    alt="Mobile Robot Fleet"
                     width={300}
                     height={200}
                     className="rounded-lg shadow-md object-cover"
@@ -1488,35 +1477,16 @@ function SmartFactoryProjectContent() {
                     </CardContent>
                   </Card>
                 </div>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 gap-4">
+              
                   <Image
-                    src="/images/smart-factory-vision.jpg"
-                    alt="Industrial Vision System"
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-md object-cover"
-                  />
-                  <Image
-                    src="/images/smart-factory-digital-twin.jpg"
+                    src="/smartfactory/tecnomatix.png"
                     alt="Digital Twin Interface"
-                    width={300}
-                    height={200}
+                    width={400}
+                    height={300}
                     className="rounded-lg shadow-md object-cover"
                   />
-                  <Image
-                    src="/images/smart-factory-vr.jpg"
-                    alt="Virtual Reality System"
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-md object-cover"
-                  />
-                  <Image
-                    src="/images/smart-factory-simulation.jpg"
-                    alt="Simulation Environment"
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-md object-cover"
-                  />
+                 
                 </div>
               </div>
             </div>
@@ -1529,18 +1499,11 @@ function SmartFactoryProjectContent() {
                 <Network className="mr-3 h-6 w-6 text-primary" />
                 Cyber-Physical Systems
               </h3>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
+                <div className="grid grid-cols-1 gap-2">
                   <Image
-                    src="/images/smart-factory-cps.jpg"
+                    src="/smartfactory/laboratory.png"
                     alt="Cyber-Physical Systems"
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-md object-cover"
-                  />
-                  <Image
-                    src="/images/smart-factory-infrastructure.jpg"
-                    alt="CPS Infrastructure"
                     width={300}
                     height={200}
                     className="rounded-lg shadow-md object-cover"
@@ -1599,13 +1562,16 @@ function SmartFactoryProjectContent() {
                     Final presentation to OMRON, ABB, AVEVA, and UR executives who were impressed by the industrial-level automation achieved.
                   </p>
                   <div className="relative overflow-hidden rounded-lg">
-                    <Image
-                      src="/images/smart-factory-industry-presentation.jpg"
-                      alt="Industry Presentation 2021"
+                    <video
+                      controls
                       width={400}
                       height={250}
                       className="object-cover w-full h-full"
-                    />
+                      poster="/smartfactory/industry-presentation.png"
+                    >
+                      <source src="/smartfactory/smartfactory-entrega.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
                   </div>
                 </CardContent>
               </Card>
@@ -1634,60 +1600,23 @@ function SmartFactoryProjectContent() {
                         <p className="text-sm text-muted-foreground">Multiple works presented at conference</p>
                       </div>
                     </div>
+                    <div className="relative overflow-hidden rounded-lg">
+                    <video
+                      controls
+                      width={400}
+                      height={250}
+                      className="object-cover w-full h-full"
+                      poster="/smartfactory/VR Demostracion.png"
+                    >
+                      <source src="/smartfactory/VR Demostracion.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
                   </div>
                 </CardContent>
               </Card>
             </div>
 
-            {/* Impact Section */}
-            <Card className="mt-8 bg-gradient-to-r from-primary/5 via-secondary/5 to-primary/5">
-              <CardContent className="p-6">
-                <div className="flex items-center mb-6">
-                  <div className="bg-primary/20 p-3 rounded-lg">
-                    <Globe className="h-6 w-6 text-primary" />
-                  </div>
-                  <h3 className="ml-3 text-xl font-bold">Social and Academic Impact</h3>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="bg-white/50 p-4 rounded-lg">
-                    <h4 className="font-medium text-primary mb-2">International Collaborations</h4>
-                    <div className="text-center mb-3">
-                      <Image
-                        src="/vanttec/swri.jpeg"
-                        alt="Southwest Research Institute (SwRI) Collaboration"
-                        width={120}
-                        height={60}
-                        className="rounded-md mx-auto object-contain"
-                      />
-                    </div>
-                    <p className="text-sm text-muted-foreground">
-                      Work with Southwest Research Institute (SwRI) on underwater localization and navigation with ORBSLAM3.
-                    </p>
-                  </div>
-                  <div className="bg-white/50 p-4 rounded-lg">
-                    <h4 className="font-medium text-primary mb-2">Talent Formation</h4>
-                    <div className="text-center mb-3">
-                      <Image
-                        src="/vanttec/vanttec-meeting.jpeg"
-                        alt="VANTTEC Team Meeting and Training Session"
-                        width={120}
-                        height={80}
-                        className="rounded-md mx-auto object-cover"
-                      />
-                    </div>
-                    <p className="text-sm text-muted-foreground">
-                      Creation of "elite groups" in high school and mentoring of scholarship students at university.
-                    </p>
-                  </div>
-                  <div className="bg-white/50 p-4 rounded-lg">
-                    <h4 className="font-medium text-primary mb-2">Legacy</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Consolidation of VANTTEC as one of the most important robotics teams in Latin America.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
           </CardContent>
         </Card>
       </FadeIn>
@@ -1725,7 +1654,7 @@ function SmartFactoryProjectContent() {
               </div>
               <div className="relative overflow-hidden rounded-lg">
                 <Image
-                  src="/images/smart-factory-anniversary.jpg"
+                  src="/smartfactory/reconocimento.jpeg"
                   alt="Smart Factory Anniversary"
                   width={400}
                   height={250}
@@ -1758,7 +1687,7 @@ function SmartFactoryProjectContent() {
                   </p>
                   <div className="mt-4">
                     <Image
-                      src="/images/smart-factory-team.jpg"
+                      src="/smartfactory/presentacionSM.jpeg"
                       alt="Smart Factory Team"
                       width={300}
                       height={200}
@@ -1780,7 +1709,7 @@ function SmartFactoryProjectContent() {
                   </p>
                   <div className="mt-4">
                     <Image
-                      src="/images/smart-factory-training.jpg"
+                      src="/smartfactory/cadi.png"
                       alt="Teacher Training"
                       width={300}
                       height={200}
@@ -1846,7 +1775,7 @@ function SmartFactoryProjectContent() {
                   </p>
                   <div className="mt-4">
                     <Image
-                      src="/images/smart-factory-network.jpg"
+                      src="/smartfactory/epic-ur.png"
                       alt="Smart Factory Network"
                       width={300}
                       height={200}
@@ -1867,7 +1796,7 @@ function SmartFactoryProjectContent() {
                   </p>
                   <div className="mt-4">
                     <Image
-                      src="/images/smart-factory-students.jpg"
+                      src="/smartfactory/empower.jpeg"
                       alt="Student Empowerment"
                       width={300}
                       height={200}
@@ -1888,7 +1817,7 @@ function SmartFactoryProjectContent() {
                   </p>
                   <div className="mt-4">
                     <Image
-                      src="/images/smart-factory-mit-collaboration.jpg"
+                      src="/smartfactory/mit.jpeg"
                       alt="MIT Collaboration"
                       width={300}
                       height={200}
@@ -1909,7 +1838,7 @@ function SmartFactoryProjectContent() {
                   </p>
                   <div className="mt-4">
                     <Image
-                      src="/images/smart-factory-reference-lab.jpg"
+                      src="/smartfactory/cplas.jpeg"
                       alt="Reference Laboratory"
                       width={300}
                       height={200}
