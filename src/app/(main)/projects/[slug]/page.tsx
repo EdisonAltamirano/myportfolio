@@ -53,7 +53,47 @@ const projectsData = [
     githubUrl: "https://github.com/example/zf-shuttle",
     demoUrl: "https://demo.example.com/zf-shuttle"
   },
-  // Add other mock projects if needed
+  {
+    id: '2',
+    slug: "airlab-stacking-challenge",
+    title: "AirLab Stacking Challenge",
+    date: "March 15, 2024",
+    author: siteName,
+    category: "Robotics",
+    tags: ["Robotics", "Computer Vision", "AI", "Automation"],
+    imageUrl: "https://placehold.co/1200x600.png",
+    imageHint: "robotic stacking system",
+    content: `
+      <p>The AirLab Stacking Challenge project demonstrates advanced robotic manipulation and computer vision capabilities in a real-world industrial application.</p>
+      <h2 class="text-2xl font-semibold my-4">Project Overview</h2>
+      <p>This project focuses on developing an intelligent robotic system capable of precise object manipulation and stacking operations. Key features include:</p>
+      <ul class="list-disc pl-6 my-4">
+        <li>Advanced computer vision for object detection</li>
+        <li>Precise robotic arm control</li>
+        <li>Real-time path planning</li>
+        <li>Adaptive stacking algorithms</li>
+      </ul>
+      <h2 class="text-2xl font-semibold my-4">Technical Implementation</h2>
+      <p>The system incorporates several cutting-edge technologies:</p>
+      <ul class="list-disc pl-6 my-4">
+        <li>Deep learning for object recognition</li>
+        <li>Real-time 3D reconstruction</li>
+        <li>Advanced motion planning</li>
+        <li>Robust error handling</li>
+      </ul>
+      <h2 class="text-2xl font-semibold my-4">Results and Impact</h2>
+      <p>The project has achieved significant milestones in robotic manipulation:</p>
+      <ul class="list-disc pl-6 my-4">
+        <li>Improved stacking accuracy</li>
+        <li>Reduced operation time</li>
+        <li>Enhanced system reliability</li>
+        <li>Successful industrial deployment</li>
+      </ul>
+      <p>This project represents a significant step forward in industrial automation and robotic manipulation capabilities.</p>
+    `,
+    githubUrl: "https://github.com/example/airlab-stacking",
+    demoUrl: "https://demo.example.com/airlab-stacking"
+  }
 ];
 
 type Props = {
