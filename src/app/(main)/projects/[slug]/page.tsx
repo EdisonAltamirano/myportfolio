@@ -117,9 +117,337 @@ const projectsData = [
     imageHint: "robotics research conference",
     githubUrl: "https://github.com/example/tokyo-iros-2022",
     demoUrl: "https://demo.example.com/tokyo-iros-2022"
+  },
+  {
+    id: '9',
+    slug: "zf-braking-systems",
+    title: "ZF Braking Systems",
+    date: "November 15, 2023",
+    author: siteName,
+    category: "Automotive Systems",
+    tags: ["Automotive", "Safety Systems", "Engineering", "Innovation"],
+    imageUrl: '/zf_job/ZF-CVS.jpg',
+    imageHint: "automotive braking system technology",
+    githubUrl: "https://github.com/example/zf-braking",
+    demoUrl: "https://demo.example.com/zf-braking"
   }
 ];
 
+
+
+function ZFBrakingProjectContent() {
+  return (
+    <div className="space-y-12">
+      {/* Project Overview Section */}
+      <FadeIn delay="delay-300">
+        <Card className="shadow-xl">
+          <CardHeader>
+            <CardTitle className="text-2xl text-foreground flex items-center">
+              <Cog className="mr-3 h-6 w-6 text-primary" />
+              Application Engineer - Embedded Systems & Brake Technology
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-8">
+            <div className="text-center">
+              <h3 className="text-xl font-bold text-primary mb-2">Building Safer, Smarter Braking Systems</h3>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Leading the development of embedded systems for commercial vehicle braking, focusing on AUTOSAR-based software components and safety-critical applications.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+      </FadeIn>
+
+      {/* Key Responsibilities Section */}
+      <FadeIn delay="delay-400">
+        <Card className="shadow-xl">
+          <CardHeader>
+            <CardTitle className="text-2xl text-foreground">Key Responsibilities</CardTitle>
+            <p className="text-muted-foreground">Core duties and technical leadership</p>
+          </CardHeader>
+          <CardContent className="space-y-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Card className="bg-gradient-to-r from-primary/5 to-primary/10">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <Layers className="h-6 w-6 text-primary mr-3" />
+                    <h4 className="font-bold">Software Architecture Design</h4>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Conceptualized high-level software architecture for new machine platforms based on AUTOSAR Classic, ensuring compliance with industry standards and safety requirements.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-to-r from-primary/5 to-primary/10">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <LineChart className="h-6 w-6 text-primary mr-3" />
+                    <h4 className="font-bold">Modeling and Simulation</h4>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Simulated physical system behavior using MATLAB/Simulink to model complex braking physics, enabling Software-in-the-Loop (SiL) testing and design validation.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-to-r from-primary/5 to-primary/10">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <TestTube className="h-6 w-6 text-primary mr-3" />
+                    <h4 className="font-bold">Testing & Validation</h4>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Applied MISRA-C compliance and performed rigorous software validation with tools like VectorCAST and DaVinci Developer to ensure system reliability.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-to-r from-primary/5 to-primary/10">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <Bug className="h-6 w-6 text-primary mr-3" />
+                    <h4 className="font-bold">Toolchain Integration</h4>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Resolved system-level issues in AUTOSAR environments, analyzing runtime bugs, interface mismatches, and configuration anomalies.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </CardContent>
+        </Card>
+      </FadeIn>
+
+      {/* Technical Stack Section */}
+      <FadeIn delay="delay-500">
+        <Card className="shadow-xl">
+          <CardHeader>
+            <CardTitle className="text-2xl text-foreground">Technical Stack</CardTitle>
+            <p className="text-muted-foreground">Tools and technologies utilized</p>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Card className="bg-gradient-to-br from-primary/5 to-primary/10 hover:shadow-lg transition-shadow duration-300">
+                <CardContent className="p-6">
+                  <div className="flex flex-col items-center text-center mb-4">
+                    <div className="bg-primary/10 p-4 rounded-full mb-4">
+                      <Settings className="h-8 w-8 text-primary" />
+                    </div>
+                    <h4 className="text-lg font-semibold text-primary">Development Tools</h4>
+                  </div>
+                  <ul className="space-y-3 text-sm text-muted-foreground">
+                    <li className="flex items-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
+                      Da Vinci Configurator Classic
+                    </li>
+                    <li className="flex items-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
+                      VectorCAST
+                    </li>
+                    <li className="flex items-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
+                      AUTOSAR Builder
+                    </li>
+                    <li className="flex items-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
+                      MATLAB/Simulink
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-to-br from-primary/5 to-primary/10 hover:shadow-lg transition-shadow duration-300">
+                <CardContent className="p-6">
+                  <div className="flex flex-col items-center text-center mb-4">
+                    <div className="bg-primary/10 p-4 rounded-full mb-4">
+                      <Code className="h-8 w-8 text-primary" />
+                    </div>
+                    <h4 className="text-lg font-semibold text-primary">Programming</h4>
+                  </div>
+                  <ul className="space-y-3 text-sm text-muted-foreground">
+                    <li className="flex items-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
+                      Embedded C/C++
+                    </li>
+                    <li className="flex items-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
+                      MISRA-C Compliance
+                    </li>
+                    <li className="flex items-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
+                      AUTOSAR Architecture
+                    </li>
+                    <li className="flex items-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
+                      Control Systems
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-to-br from-primary/5 to-primary/10 hover:shadow-lg transition-shadow duration-300">
+                <CardContent className="p-6">
+                  <div className="flex flex-col items-center text-center mb-4">
+                    <div className="bg-primary/10 p-4 rounded-full mb-4">
+                      <GitBranch className="h-8 w-8 text-primary" />
+                    </div>
+                    <h4 className="text-lg font-semibold text-primary">Version Control</h4>
+                  </div>
+                  <ul className="space-y-3 text-sm text-muted-foreground">
+                    <li className="flex items-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
+                      Git
+                    </li>
+                    <li className="flex items-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
+                      IBM Rhapsody
+                    </li>
+                    <li className="flex items-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
+                      Configuration Management
+                    </li>
+                    <li className="flex items-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
+                      Documentation Systems
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-to-br from-primary/5 to-primary/10 hover:shadow-lg transition-shadow duration-300">
+                <CardContent className="p-6">
+                  <div className="flex flex-col items-center text-center mb-4">
+                    <div className="bg-primary/10 p-4 rounded-full mb-4">
+                      <Shield className="h-8 w-8 text-primary" />
+                    </div>
+                    <h4 className="text-lg font-semibold text-primary">Safety & Standards</h4>
+                  </div>
+                  <ul className="space-y-3 text-sm text-muted-foreground">
+                    <li className="flex items-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
+                      ISO 26262
+                    </li>
+                    <li className="flex items-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
+                      Automotive Safety
+                    </li>
+                    <li className="flex items-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
+                      Quality Assurance
+                    </li>
+                    <li className="flex items-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
+                      Risk Management
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+          </CardContent>
+        </Card>
+      </FadeIn>
+
+      {/* Achievements Section */}
+      <FadeIn delay="delay-600">
+        <Card className="shadow-xl">
+          <CardHeader>
+            <CardTitle className="text-2xl text-foreground">Key Achievements</CardTitle>
+            <p className="text-muted-foreground">Notable contributions and improvements</p>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-6">
+              <Card className="bg-gradient-to-r from-primary/5 to-primary/10">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <Lightbulb className="h-6 w-6 text-primary mr-3" />
+                    <h4 className="font-bold">Architectural Improvements</h4>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Proposed and implemented architectural improvements adopted by the team for future system designs, enhancing maintainability and performance.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-to-r from-primary/5 to-primary/10">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <Clock className="h-6 w-6 text-primary mr-3" />
+                    <h4 className="font-bold">Efficiency Gains</h4>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Reduced debugging time by 30% through implementation of better trace analysis techniques and toolchain optimizations.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-to-r from-primary/5 to-primary/10">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <BarChart className="h-6 w-6 text-primary mr-3" />
+                    <h4 className="font-bold">Test Coverage</h4>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Improved test coverage by 25% through development of custom simulation scenarios that identified edge cases in braking behavior.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </CardContent>
+        </Card>
+      </FadeIn>
+
+      {/* Impact Section */}
+      <FadeIn delay="delay-700">
+        <Card className="shadow-xl">
+          <CardHeader>
+            <CardTitle className="text-2xl text-foreground">Project Impact</CardTitle>
+            <p className="text-muted-foreground">Long-term influence and contributions</p>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <Card className="bg-gradient-to-br from-purple-50 to-purple-100">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <Trophy className="h-6 w-6 text-purple-600 mr-3" />
+                    <h4 className="font-medium text-purple-800">Technical Leadership</h4>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Established best practices for AUTOSAR implementation and system architecture that became team standards.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-to-br from-green-50 to-green-100">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <BookOpen className="h-6 w-6 text-green-600 mr-3" />
+                    <h4 className="font-medium text-green-800">Knowledge Transfer</h4>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Created comprehensive documentation and training materials for new team members and cross-functional teams.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-to-br from-blue-50 to-blue-100">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <Star className="h-6 w-6 text-blue-600 mr-3" />
+                    <h4 className="font-medium text-blue-800">Innovation</h4>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Introduced new testing methodologies and tools that improved overall system reliability and performance.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </CardContent>
+        </Card>
+      </FadeIn>
+    </div>
+  );
+}
 
 // ZF Autonomous Shuttle-specific content component
 function   ZFShuttleProjectContent() {
@@ -1402,7 +1730,7 @@ function   SmartFactoryProjectContent() {
                       className="object-cover w-full h-full"
                       poster="/smartfactory/industry-presentation.png"
                     >
-                      <source src="/smartfactory/smartfactory-entrega.mp4" type="video/mp4" />
+                      <source src={`${process.env.NODE_ENV === 'production' ? '/myportfolio' : ''}/smartfactory/smartfactory-entrega.mp4`} type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
                   </div>
@@ -2070,319 +2398,7 @@ function   RoboCupProjectContent() {
   );
 }
 
-function   ZFBrakingProjectContent() {
-  return (
-    <div className="space-y-12">
-      {/* Project Overview Section */}
-      <FadeIn delay="delay-300">
-        <Card className="shadow-xl">
-          <CardHeader>
-            <CardTitle className="text-2xl text-foreground flex items-center">
-              <Cog className="mr-3 h-6 w-6 text-primary" />
-              Application Engineer - Embedded Systems & Brake Technology
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-8">
-            <div className="text-center">
-              <h3 className="text-xl font-bold text-primary mb-2">Building Safer, Smarter Braking Systems</h3>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                Leading the development of embedded systems for commercial vehicle braking, focusing on AUTOSAR-based software components and safety-critical applications.
-              </p>
-            </div>
-          </CardContent>
-        </Card>
-      </FadeIn>
 
-      {/* Key Responsibilities Section */}
-      <FadeIn delay="delay-400">
-        <Card className="shadow-xl">
-          <CardHeader>
-            <CardTitle className="text-2xl text-foreground">Key Responsibilities</CardTitle>
-            <p className="text-muted-foreground">Core duties and technical leadership</p>
-          </CardHeader>
-          <CardContent className="space-y-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card className="bg-gradient-to-r from-primary/5 to-primary/10">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <Layers className="h-6 w-6 text-primary mr-3" />
-                    <h4 className="font-bold">Software Architecture Design</h4>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Conceptualized high-level software architecture for new machine platforms based on AUTOSAR Classic, ensuring compliance with industry standards and safety requirements.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-gradient-to-r from-primary/5 to-primary/10">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <LineChart className="h-6 w-6 text-primary mr-3" />
-                    <h4 className="font-bold">Modeling and Simulation</h4>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Simulated physical system behavior using MATLAB/Simulink to model complex braking physics, enabling Software-in-the-Loop (SiL) testing and design validation.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-gradient-to-r from-primary/5 to-primary/10">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <TestTube className="h-6 w-6 text-primary mr-3" />
-                    <h4 className="font-bold">Testing & Validation</h4>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Applied MISRA-C compliance and performed rigorous software validation with tools like VectorCAST and DaVinci Developer to ensure system reliability.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-gradient-to-r from-primary/5 to-primary/10">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <Bug className="h-6 w-6 text-primary mr-3" />
-                    <h4 className="font-bold">Toolchain Integration</h4>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Resolved system-level issues in AUTOSAR environments, analyzing runtime bugs, interface mismatches, and configuration anomalies.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </CardContent>
-        </Card>
-      </FadeIn>
-
-      {/* Technical Stack Section */}
-      <FadeIn delay="delay-500">
-        <Card className="shadow-xl">
-          <CardHeader>
-            <CardTitle className="text-2xl text-foreground">Technical Stack</CardTitle>
-            <p className="text-muted-foreground">Tools and technologies utilized</p>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Card className="bg-gradient-to-br from-primary/5 to-primary/10 hover:shadow-lg transition-shadow duration-300">
-                <CardContent className="p-6">
-                  <div className="flex flex-col items-center text-center mb-4">
-                    <div className="bg-primary/10 p-4 rounded-full mb-4">
-                      <Settings className="h-8 w-8 text-primary" />
-                    </div>
-                    <h4 className="text-lg font-semibold text-primary">Development Tools</h4>
-                  </div>
-                  <ul className="space-y-3 text-sm text-muted-foreground">
-                    <li className="flex items-center">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
-                      Da Vinci Configurator Classic
-                    </li>
-                    <li className="flex items-center">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
-                      VectorCAST
-                    </li>
-                    <li className="flex items-center">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
-                      AUTOSAR Builder
-                    </li>
-                    <li className="flex items-center">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
-                      MATLAB/Simulink
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-gradient-to-br from-primary/5 to-primary/10 hover:shadow-lg transition-shadow duration-300">
-                <CardContent className="p-6">
-                  <div className="flex flex-col items-center text-center mb-4">
-                    <div className="bg-primary/10 p-4 rounded-full mb-4">
-                      <Code className="h-8 w-8 text-primary" />
-                    </div>
-                    <h4 className="text-lg font-semibold text-primary">Programming</h4>
-                  </div>
-                  <ul className="space-y-3 text-sm text-muted-foreground">
-                    <li className="flex items-center">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
-                      Embedded C/C++
-                    </li>
-                    <li className="flex items-center">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
-                      MISRA-C Compliance
-                    </li>
-                    <li className="flex items-center">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
-                      AUTOSAR Architecture
-                    </li>
-                    <li className="flex items-center">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
-                      Control Systems
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-gradient-to-br from-primary/5 to-primary/10 hover:shadow-lg transition-shadow duration-300">
-                <CardContent className="p-6">
-                  <div className="flex flex-col items-center text-center mb-4">
-                    <div className="bg-primary/10 p-4 rounded-full mb-4">
-                      <GitBranch className="h-8 w-8 text-primary" />
-                    </div>
-                    <h4 className="text-lg font-semibold text-primary">Version Control</h4>
-                  </div>
-                  <ul className="space-y-3 text-sm text-muted-foreground">
-                    <li className="flex items-center">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
-                      Git
-                    </li>
-                    <li className="flex items-center">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
-                      IBM Rhapsody
-                    </li>
-                    <li className="flex items-center">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
-                      Configuration Management
-                    </li>
-                    <li className="flex items-center">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
-                      Documentation Systems
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-gradient-to-br from-primary/5 to-primary/10 hover:shadow-lg transition-shadow duration-300">
-                <CardContent className="p-6">
-                  <div className="flex flex-col items-center text-center mb-4">
-                    <div className="bg-primary/10 p-4 rounded-full mb-4">
-                      <Shield className="h-8 w-8 text-primary" />
-                    </div>
-                    <h4 className="text-lg font-semibold text-primary">Safety & Standards</h4>
-                  </div>
-                  <ul className="space-y-3 text-sm text-muted-foreground">
-                    <li className="flex items-center">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
-                      ISO 26262
-                    </li>
-                    <li className="flex items-center">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
-                      Automotive Safety
-                    </li>
-                    <li className="flex items-center">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
-                      Quality Assurance
-                    </li>
-                    <li className="flex items-center">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
-                      Risk Management
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
-          </CardContent>
-        </Card>
-      </FadeIn>
-
-      {/* Achievements Section */}
-      <FadeIn delay="delay-600">
-        <Card className="shadow-xl">
-          <CardHeader>
-            <CardTitle className="text-2xl text-foreground">Key Achievements</CardTitle>
-            <p className="text-muted-foreground">Notable contributions and improvements</p>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-6">
-              <Card className="bg-gradient-to-r from-primary/5 to-primary/10">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <Lightbulb className="h-6 w-6 text-primary mr-3" />
-                    <h4 className="font-bold">Architectural Improvements</h4>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Proposed and implemented architectural improvements adopted by the team for future system designs, enhancing maintainability and performance.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-gradient-to-r from-primary/5 to-primary/10">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <Clock className="h-6 w-6 text-primary mr-3" />
-                    <h4 className="font-bold">Efficiency Gains</h4>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Reduced debugging time by 30% through implementation of better trace analysis techniques and toolchain optimizations.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-gradient-to-r from-primary/5 to-primary/10">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <BarChart className="h-6 w-6 text-primary mr-3" />
-                    <h4 className="font-bold">Test Coverage</h4>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Improved test coverage by 25% through development of custom simulation scenarios that identified edge cases in braking behavior.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </CardContent>
-        </Card>
-      </FadeIn>
-
-      {/* Impact Section */}
-      <FadeIn delay="delay-700">
-        <Card className="shadow-xl">
-          <CardHeader>
-            <CardTitle className="text-2xl text-foreground">Project Impact</CardTitle>
-            <p className="text-muted-foreground">Long-term influence and contributions</p>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="bg-gradient-to-br from-purple-50 to-purple-100">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <Trophy className="h-6 w-6 text-purple-600 mr-3" />
-                    <h4 className="font-medium text-purple-800">Technical Leadership</h4>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Established best practices for AUTOSAR implementation and system architecture that became team standards.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-gradient-to-br from-green-50 to-green-100">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <BookOpen className="h-6 w-6 text-green-600 mr-3" />
-                    <h4 className="font-medium text-green-800">Knowledge Transfer</h4>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Created comprehensive documentation and training materials for new team members and cross-functional teams.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-gradient-to-br from-blue-50 to-blue-100">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <Star className="h-6 w-6 text-blue-600 mr-3" />
-                    <h4 className="font-medium text-blue-800">Innovation</h4>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Introduced new testing methodologies and tools that improved overall system reliability and performance.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </CardContent>
-        </Card>
-      </FadeIn>
-    </div>
-  );
-}
 
 // Tokyo IROS 2022-specific content component
 function   TokyoIROSProjectContent() {
