@@ -36,13 +36,14 @@ const blogPostsData = [
   // Add other mock posts if needed
 ];
 
-type Props = {
-  params: { slug: string };
+interface PageProps {
+  params: Promise<{ slug: string }>;
   searchParams?: { [key: string]: string | string[] | undefined };
-};
+}
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = blogPostsData.find((p) => p.slug === params.slug);
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const resolvedParams = await params;
+  const post = blogPostsData.find((p) => p.slug === resolvedParams.slug);
   if (!post) {
     return { title: 'Blog Post Not Found' };
   }
@@ -58,8 +59,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function BlogPostPage({ params }: Props) {
-  const post = blogPostsData.find((p) => p.slug === params.slug);
+export default async function BlogPostPage({ params }: PageProps) {
+  const resolvedParams = await params;
+  const post = blogPostsData.find((p) => p.slug === resolvedParams.slug);
 
   if (!post) {
     notFound();
