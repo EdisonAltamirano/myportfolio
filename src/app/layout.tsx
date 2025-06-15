@@ -6,12 +6,10 @@ import { Toaster } from "@/components/ui/toaster";
 
 type Props = {
   children: React.ReactNode;
-  params: Promise<{ [key: string]: string }>;
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
 export async function generateMetadata(
-  { params, searchParams }: Omit<Props, 'children'>,
+  _: unknown,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   // Get parent metadata
@@ -47,9 +45,7 @@ export async function generateMetadata(
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode;
-}) {
+}: Props) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${robotoMono.variable} font-sans antialiased`} suppressHydrationWarning={true}>
