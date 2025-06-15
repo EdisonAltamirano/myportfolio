@@ -1680,14 +1680,14 @@ function RoboCupProjectContent() {
                 <Video className="mr-3 h-6 w-6 text-primary" />
                 Competition Demonstration
               </h3>
-              <div className="aspect-video w-full overflow-hidden rounded-lg">
-                <video 
-                  src="/robocup/frida.mp4"
-                  controls
-                  className="w-full h-full object-cover"
-                >
-                  Your browser does not support the video tag.
-                </video>
+              <div className="relative aspect-video w-full overflow-hidden rounded-lg">
+                <iframe
+                  src="https://www.youtube.com/embed/Mzi_xq-Lm4o"
+                  title="RoboCup Competition Video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
               </div>
               <p className="text-sm text-muted-foreground">
                 Video demonstration of Frida robot during the RoboCup@Home competition in Veracruz, showcasing navigation, person following, and object manipulation capabilities.
@@ -3528,15 +3528,14 @@ function JohnDeereProjectContent() {
                 </div>
                 
                 <div className="relative">
-                  <div className="aspect-video rounded-lg overflow-hidden shadow-lg">
-                    <video 
-                      controls 
-                      className="w-full h-full object-cover"
-                      poster="/images/shelfguard-poster.jpg"
-                    >
-                      <source src="/jdgo/Security Video.mp4" type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
+                  <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg">
+                    <iframe
+                      src="https://www.youtube.com/embed/Mzi_xq-Lm4o"
+                      title="RoboCup Competition Video"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="absolute top-0 left-0 w-full h-full"
+                    />
                   </div>
                   <p className="text-center text-sm text-muted-foreground mt-2 font-medium">
                     See ShelfGuard in action
