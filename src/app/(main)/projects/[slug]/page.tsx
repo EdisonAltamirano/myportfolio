@@ -57,12 +57,13 @@ const projectsData = [
 ];
 
 type Props = {
-  params: { slug: string };
-  searchParams?: { [key: string]: string | string[] | undefined };
+  params: Promise<{ slug: string }>;
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const project = projectsData.find((p) => p.slug === params.slug);
+  const { slug } = await params;
+  const project = projectsData.find((p) => p.slug === slug);
   
   if (!project) {
     return { title: 'Project Not Found' };
@@ -89,14 +90,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+export const dynamic = 'force-static';
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   return projectsData.map((project) => ({
     slug: project.slug,
   }));
 }
 
-export default function ProjectPage({ params }: Props) {
-  const project = projectsData.find((p) => p.slug === params.slug);
+export default async function ProjectPage({ params }: Props) {
+  const { slug } = await params;
+  const project = projectsData.find((p) => p.slug === slug);
 
   if (!project) {
     notFound();
