@@ -37,12 +37,13 @@ const blogPostsData = [
 ];
 
 type Props = {
-  params: { slug: string };
-  searchParams?: { [key: string]: string | string[] | undefined };
+  params: Promise<{ slug: string }>;
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = blogPostsData.find((p) => p.slug === params.slug);
+  const { slug } = await params;
+  const post = blogPostsData.find((p) => p.slug === slug);
   
   if (!post) {
     return { title: 'Blog Post Not Found' };
@@ -75,8 +76,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function BlogPostPage({ params }: Props) {
-  const post = blogPostsData.find((p) => p.slug === params.slug);
+export default async function BlogPostPage({ params }: Props) {
+  const { slug } = await params;
+  const post = blogPostsData.find((p) => p.slug === slug);
 
   if (!post) {
     notFound();
