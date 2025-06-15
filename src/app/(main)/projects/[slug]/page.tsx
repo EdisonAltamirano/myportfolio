@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+import { Metadata, ResolvingMetadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -12,16 +12,38 @@ import { FadeIn } from '@/components/animations/FadeIn';
 import { Suspense } from 'react';
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const project = allProjects.find(p => p.id === params.slug);
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const { slug } = await params;
+  const searchParamsResolved = await searchParams;
+  const project = allProjects.find(p => p.id === slug);
+  
   if (!project) return { title: 'Project Not Found' };
+
+  // Get parent metadata
+  const previousMetadata = await parent;
   
   return {
     title: `${project.title} | Portfolio`,
     description: project.description,
+    openGraph: {
+      title: project.title,
+      description: project.description,
+      type: 'article',
+      images: project.imageUrl ? [project.imageUrl] : [],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: project.title,
+      description: project.description,
+      images: project.imageUrl ? [project.imageUrl] : [],
+    },
   };
 }
 
@@ -4247,9 +4269,14 @@ function VanttecProjectContent() {
   );
 }
 
-export default async function ProjectDetailsPage({ params }: { params: { slug: string } }) {
-  const project = allProjects.find(p => p.id === params.slug);
-  if (!project) notFound();
+export default async function ProjectDetailsPage({ params, searchParams }: Props) {
+  const { slug } = await params;
+  const searchParamsResolved = await searchParams;
+  const project = allProjects.find(p => p.id === slug);
+
+  if (!project) {
+    notFound();
+  }
 
   const isVanttecProject = project.id === 'vanttec-roboboat-robosub';
   const isAIRLabProject = project.id === 'airlab-stacking-challenge';
