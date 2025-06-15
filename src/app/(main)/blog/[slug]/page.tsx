@@ -38,14 +38,15 @@ const blogPostsData = [
 
 type Props = {
   params: Promise<{ slug: string }>;
-  searchParams?: { [key: string]: string | string[] | undefined };
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
 export async function generateMetadata(
-  { params }: Props,
+  { params, searchParams }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const { slug } = await params;
+  const searchParamsResolved = await searchParams;
   const post = blogPostsData.find((p) => p.slug === slug);
   
   if (!post) {
@@ -82,8 +83,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function BlogPostPage({ params }: Props) {
+export default async function BlogPostPage({ params, searchParams }: Props) {
   const { slug } = await params;
+  const searchParamsResolved = await searchParams;
   const post = blogPostsData.find((p) => p.slug === slug);
 
   if (!post) {
