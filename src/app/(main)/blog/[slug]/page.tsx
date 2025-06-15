@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+import { Metadata, ResolvingMetadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -37,18 +37,42 @@ const blogPostsData = [
 ];
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
   searchParams?: { [key: string]: string | string[] | undefined };
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = blogPostsData.find((p) => p.slug === params.slug);
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const { slug } = await params;
+  const post = blogPostsData.find((p) => p.slug === slug);
+  
   if (!post) {
     return { title: 'Blog Post Not Found' };
   }
+
+  // Get parent metadata
+  const previousMetadata = await parent;
+
   return {
     title: `${post.title} - ${siteName} Blog`,
     description: post.content.substring(0, 160).replace(/<[^>]*>?/gm, ''), // Simple excerpt
+    openGraph: {
+      title: post.title,
+      description: post.content.substring(0, 160).replace(/<[^>]*>?/gm, ''),
+      type: 'article',
+      publishedTime: post.date,
+      authors: [post.author],
+      tags: post.tags,
+      images: post.imageUrl ? [post.imageUrl] : [],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.content.substring(0, 160).replace(/<[^>]*>?/gm, ''),
+      images: post.imageUrl ? [post.imageUrl] : [],
+    },
   };
 }
 
@@ -58,8 +82,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function BlogPostPage({ params }: Props) {
-  const post = blogPostsData.find((p) => p.slug === params.slug);
+export default async function BlogPostPage({ params }: Props) {
+  const { slug } = await params;
+  const post = blogPostsData.find((p) => p.slug === slug);
 
   if (!post) {
     notFound();
