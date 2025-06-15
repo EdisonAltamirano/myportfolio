@@ -1730,7 +1730,7 @@ function   SmartFactoryProjectContent() {
                       className="object-cover w-full h-full"
                       poster="/smartfactory/industry-presentation.png"
                     >
-                      <source src={`${process.env.NODE_ENV === 'production' ? '/myportfolio' : ''}/smartfactory/smartfactory-entrega.mp4`} type="video/mp4" />
+                      <source src={`${process.env.NODE_ENV === 'production' ? '/myportfolio/public' : ''}/smartfactory/smartfactory-entrega.mp4`} type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
                   </div>
