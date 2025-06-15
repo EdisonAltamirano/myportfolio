@@ -1,4 +1,4 @@
-import { Metadata, ResolvingMetadata } from 'next';
+import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -37,24 +37,16 @@ const blogPostsData = [
 ];
 
 type Props = {
-  params: Promise<{ slug: string }>;
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+  params: { slug: string };
+  searchParams?: { [key: string]: string | string[] | undefined };
 };
 
-export async function generateMetadata(
-  { params, searchParams }: Props,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
-  const { slug } = await params;
-  const searchParamsResolved = await searchParams;
-  const post = blogPostsData.find((p) => p.slug === slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const post = blogPostsData.find((p) => p.slug === params.slug);
   
   if (!post) {
     return { title: 'Blog Post Not Found' };
   }
-
-  // Get parent metadata
-  const previousMetadata = await parent;
 
   return {
     title: `${post.title} - ${siteName} Blog`,
@@ -83,10 +75,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function BlogPostPage({ params, searchParams }: Props) {
-  const { slug } = await params;
-  const searchParamsResolved = await searchParams;
-  const post = blogPostsData.find((p) => p.slug === slug);
+export default function BlogPostPage({ params }: Props) {
+  const post = blogPostsData.find((p) => p.slug === params.slug);
 
   if (!post) {
     notFound();
