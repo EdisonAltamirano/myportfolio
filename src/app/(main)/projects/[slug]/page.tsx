@@ -615,7 +615,7 @@ function   ZFShuttleProjectContent() {
                 </div>
                 <div className="flex justify-center">
                   <Image
-                    src="/zf_autonomous_shuttle/placa.jpg"
+                    src={`${process.env.NODE_ENV === 'production' ? '/myportfolio' : ''}/zf_autonomous_shuttle/placa.jpg`}
                     alt="Custom PCB Design"
                     width={400}
                     height={300}
@@ -637,7 +637,7 @@ function   ZFShuttleProjectContent() {
                 <div className="grid grid-cols-1 lg:grid-cols-1 gap-8 items-center">
                   <div className="flex justify-center">
                     <Image
-                      src="/zf_autonomous_shuttle/zf-jetson.jpeg"
+                      src={`${process.env.NODE_ENV === 'production' ? '/myportfolio' : ''}/zf_autonomous_shuttle/zf-jetson.jpeg`}
                       alt="Jetson Xavier Setup"
                       width={500}
                       height={375}
@@ -705,14 +705,14 @@ function   ZFShuttleProjectContent() {
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <Image
-                    src="/zf_autonomous_shuttle/pedestrian_detection.jpeg"
+                    src={`${process.env.NODE_ENV === 'production' ? '/myportfolio' : ''}/zf_autonomous_shuttle/pedestrian_detection.jpeg`}
                     alt="Pedestrian Detection System"
                     width={300}
                     height={200}
                     className="rounded-lg shadow-md object-cover"
                   />
                   <Image
-                    src="/zf_autonomous_shuttle/lidar.jpeg"
+                    src={`${process.env.NODE_ENV === 'production' ? '/myportfolio' : ''}/zf_autonomous_shuttle/lidar.jpeg`}
                     alt="LiDAR Setup"
                     width={300}
                     height={200}
@@ -733,7 +733,7 @@ function   ZFShuttleProjectContent() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div className="flex justify-center">
                   <Image
-                    src="/zf_autonomous_shuttle/longitudinal_lateral_control.jpeg"
+                    src={`${process.env.NODE_ENV === 'production' ? '/myportfolio' : ''}/zf_autonomous_shuttle/longitudinal_lateral_control.jpeg`}
                     alt="Longitudinal & Lateral Control"
                     width={400}
                     height={300}
@@ -1730,7 +1730,7 @@ function   SmartFactoryProjectContent() {
                       className="object-cover w-full h-full"
                       poster="/smartfactory/industry-presentation.png"
                     >
-                      <source src={`${process.env.NODE_ENV === 'production' ? '/myportfolio/public' : ''}/smartfactory/smartfactory-entrega.mp4`} type="video/mp4" />
+                      <source src={`${process.env.NODE_ENV === 'production' ? '/myportfolio' : ''}/smartfactory/smartfactory-entrega.mp4`} type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
                   </div>
