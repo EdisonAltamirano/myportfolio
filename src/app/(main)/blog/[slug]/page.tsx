@@ -9,6 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { FadeIn } from '@/components/animations/FadeIn';
 import { siteName } from '@/lib/constants';
+import React from 'react';
 
 // Mock data - In a real app, this would come from a CMS or database
 const blogPostsData = [
@@ -37,12 +38,13 @@ const blogPostsData = [
 ];
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
   searchParams?: { [key: string]: string | string[] | undefined };
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = blogPostsData.find((p) => p.slug === params.slug);
+  const resolvedParams = await params; // Resolve the Promise
+  const post = blogPostsData.find((p) => p.slug === resolvedParams.slug);
   if (!post) {
     return { title: 'Blog Post Not Found' };
   }
@@ -59,7 +61,20 @@ export async function generateStaticParams() {
 }
 
 export default function BlogPostPage({ params }: Props) {
-  const post = blogPostsData.find((p) => p.slug === params.slug);
+  const [resolvedParams, setResolvedParams] = React.useState<{ slug: string } | null>(null);
+
+  React.useEffect(() => {
+    (async () => {
+      const result = await params; // Resolve the Promise
+      setResolvedParams(result);
+    })();
+  }, [params]);
+
+  if (!resolvedParams) {
+    return <div>Loading...</div>;
+  }
+
+  const post = blogPostsData.find((p) => p.slug === resolvedParams.slug);
 
   if (!post) {
     notFound();
