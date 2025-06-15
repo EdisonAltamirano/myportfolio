@@ -190,10 +190,10 @@ export const technicalSkills: SkillCategory[] = [
 ];
 
 export const expertiseAreas = [
-    { name: 'Robotics', label: 'Expert' },
-    { name: 'AI & Vision', label: 'Specialist' },
-    { name: 'Full-Stack', label: 'Developer' },
-    { name: 'Systems', label: 'Architect' },
+    { name: 'Robotics ', label: 'Expert' },
+    { name: 'AI & Vision ', label: 'Specialist' },
+    { name: 'Full-Stack ', label: 'Developer' },
+    { name: 'Systems ', label: 'Architect' },
 ];
 
 export const aboutStats = [

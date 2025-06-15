@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { expertiseAreas } from '@/lib/constants';
 import { HeroBlob } from '@/components/core/HeroBlob';
 import { FadeIn } from '@/components/animations/FadeIn';
+import { TypingText } from '@/components/ui/typing-text';
 
 export function HeroSection() {
   return (
@@ -34,12 +35,17 @@ export function HeroSection() {
               <Link href="/contact">Contact Me</Link>
             </Button>
           </div>
-          <div className="mt-16 flex flex-wrap justify-center gap-x-6 gap-y-3">
-            {expertiseAreas.map((area, index) => (
-              <FadeIn key={area.name} delay={`delay-${index * 100}`} className="text-sm text-muted-foreground">
-                <span className="font-medium text-primary">{area.name}</span> {area.label}
-              </FadeIn>
-            ))}
+          <div className="mt-16 flex justify-center">
+            <FadeIn className="text-sm text-muted-foreground">
+              <TypingText
+                texts={expertiseAreas.map(area => `${area.name}  ${area.label}`)}
+                className="font-medium"
+                cursorClassName="text-primary"
+                typingSpeed={50}
+                deletingSpeed={30}
+                pauseTime={1500}
+              />
+            </FadeIn>
           </div>
         </div>
       </FadeIn>
