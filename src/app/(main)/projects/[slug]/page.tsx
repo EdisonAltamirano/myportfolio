@@ -2,25 +2,25 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, Layers, Calendar, Tag, Trophy, Globe, Eye, Cpu, Satellite, Map, Award, Star, Target, Bot, Monitor, Route, Hand, Zap, FileText, CheckCircle, Car, Cog, Shield, Play, Users, Building, Factory, Settings, Brain, Network, Wrench, BookOpen, Presentation, Home, Gamepad2, Volume2, Navigation, Cloud, Headphones, ShoppingCart, Truck, DollarSign, Smartphone, ChefHat, MapPin, Bell, Server, Sparkles, Camera, Box, Clock, BarChart, GraduationCap, Code } from 'lucide-react';
+import { ArrowLeft, Layers, Calendar, Tag, Trophy, Globe, Eye, Cpu, Satellite, Map, Award, Star, Target, Bot, Monitor, Route, Hand, Zap, FileText, CheckCircle, Car, Cog, Shield, Play, Users, Building, Factory, Settings, Brain, Network, Wrench, BookOpen, Presentation, Home, Gamepad2, Volume2, Navigation, Cloud, Headphones, ShoppingCart, Truck, DollarSign, Smartphone, ChefHat, MapPin, Bell, Server, Sparkles, Camera, Box, Clock, BarChart, GraduationCap, Code, XCircle, Layout, RefreshCw, LineChart, TestTube, Bug, Lightbulb, GitBranch } from 'lucide-react';
 import { allProjects, Project } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { FadeIn } from '@/components/animations/FadeIn';
+import { Suspense } from 'react';
 
 type Props = {
   params: { slug: string };
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const project = allProjects.find((p) => p.id === params.slug);
-  if (!project) {
-    return { title: 'Project Not Found' };
-  }
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const project = allProjects.find(p => p.id === params.slug);
+  if (!project) return { title: 'Project Not Found' };
+  
   return {
-    title: `${project.title} - Edison's Lab`,
+    title: `${project.title} | Portfolio`,
     description: project.description,
   };
 }
@@ -1865,14 +1865,14 @@ function RoboCupProjectContent() {
           <CardHeader>
             <CardTitle className="text-2xl text-foreground flex items-center">
               <Home className="mr-3 h-6 w-6 text-primary" />
-              RoboCup Home Simulation @ Veracruz
+              RoboCup@Home Competition
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-8">
             <div className="text-center">
-              <h3 className="text-xl font-bold text-primary mb-2">Domestic Service Robots in Virtual Reality</h3>
+              <h3 className="text-xl font-bold text-primary mb-2">Domestic Service Robots in Real Home Environments</h3>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Team Roborregos from Tecnológico de Monterrey Campus Monterrey competing in the Home Simulation category - simulated domestic service robots in virtual reality environments.
+                Team Roborregos competing in the RoboCup@Home league, where robots must navigate and perform tasks in a realistic apartment setting with multiple rooms and dynamic environments.
               </p>
             </div>
             
@@ -1897,10 +1897,10 @@ function RoboCupProjectContent() {
                     <div className="bg-primary/10 p-3 rounded-lg">
                       <Home className="h-6 w-6 text-primary" />
                     </div>
-                    <h4 className="ml-3 text-lg font-medium">Category</h4>
+                    <h4 className="ml-3 text-lg font-medium">Arena</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    Home Simulation - domestic service robots simulated in virtual reality environments for household tasks.
+                    Realistic apartment setting with bedroom, dining room, living room, and kitchen, featuring standard furniture and dynamic environments.
                   </p>
                 </CardContent>
               </Card>
@@ -1914,7 +1914,7 @@ function RoboCupProjectContent() {
                     <h4 className="ml-3 text-lg font-medium">Achievement</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    3rd place in Home Simulation Challenge @ Veracruz with recognition for mission logic robustness.
+                    3rd place in RoboCup@Home competition with recognition for robust navigation and object manipulation in dynamic environments.
                   </p>
                 </CardContent>
               </Card>
@@ -1923,41 +1923,41 @@ function RoboCupProjectContent() {
         </Card>
       </FadeIn>
 
-      {/* Technologies and Development Section */}
+      {/* Arena and Environment Section */}
       <FadeIn delay="delay-400">
         <Card className="shadow-xl">
           <CardHeader>
-            <CardTitle className="text-2xl text-foreground">Technologies & Applied Developments</CardTitle>
-            <p className="text-muted-foreground">Comprehensive domestic robotics implementation</p>
+            <CardTitle className="text-2xl text-foreground">Competition Environment</CardTitle>
+            <p className="text-muted-foreground">RoboCup@Home Arena Specifications</p>
           </CardHeader>
           <CardContent className="space-y-12">
-            {/* State Machine and Mission Logic */}
+            {/* Arena Layout */}
             <div>
               <h3 className="text-xl font-bold mb-6 flex items-center">
-                <Brain className="mr-3 h-6 w-6 text-primary" />
-                State Machine & Mission Logic
+                <Layout className="mr-3 h-6 w-6 text-primary" />
+                Arena Layout
               </h3>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div className="space-y-6">
                   <Card className="bg-gradient-to-r from-primary/5 to-primary/10">
                     <CardContent className="p-6">
-                      <h4 className="font-bold mb-3">Sequence Orchestration</h4>
+                      <h4 className="font-bold mb-3">Room Configuration</h4>
                       <ul className="space-y-2 text-sm">
                         <li className="flex items-start space-x-2">
                           <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Task detection through voice commands</span>
+                          <span>Bedroom with bed and chest of drawers</span>
                         </li>
                         <li className="flex items-start space-x-2">
                           <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Action plan generation and validation</span>
+                          <span>Dining room with table and chairs</span>
                         </li>
                         <li className="flex items-start space-x-2">
                           <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Task execution with real-time monitoring</span>
+                          <span>Living room with couch and entertainment center</span>
                         </li>
                         <li className="flex items-start space-x-2">
                           <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Return to standby state for next command</span>
+                          <span>Kitchen with appliances and storage</span>
                         </li>
                       </ul>
                     </CardContent>
@@ -1965,15 +1965,15 @@ function RoboCupProjectContent() {
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <Image
-                    src="/images/robocup-state-machine.jpg"
-                    alt="State Machine Architecture"
+                    src="/images/robocup-arena-layout.jpg"
+                    alt="Arena Layout"
                     width={300}
                     height={200}
                     className="rounded-lg shadow-md object-cover"
                   />
                   <Image
-                    src="/images/robocup-mission-logic.jpg"
-                    alt="Mission Logic Flow"
+                    src="/images/robocup-room-config.jpg"
+                    alt="Room Configuration"
                     width={300}
                     height={200}
                     className="rounded-lg shadow-md object-cover"
@@ -1984,38 +1984,24 @@ function RoboCupProjectContent() {
 
             <Separator />
 
-            {/* Manipulation Planning */}
+            {/* Furniture and Objects */}
             <div>
               <h3 className="text-xl font-bold mb-6 flex items-center">
-                <Hand className="mr-3 h-6 w-6 text-primary" />
-                Manipulation Planning
+                <Box className="mr-3 h-6 w-6 text-primary" />
+                Furniture & Objects
               </h3>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div className="grid grid-cols-2 gap-4">
                   <Image
-                    src="/images/robocup-moveit.jpg"
-                    alt="MoveIt! Trajectory Planning"
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-md object-cover"
-                  />
-                  <Image
-                    src="/images/robocup-grasping.jpg"
-                    alt="Grasping Algorithms"
+                    src="/images/robocup-furniture.jpg"
+                    alt="Arena Furniture"
                     width={300}
                     height={200}
                     className="rounded-lg shadow-md object-cover"
                   />
                   <Image
                     src="/images/robocup-objects.jpg"
-                    alt="Household Objects"
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-md object-cover"
-                  />
-                  <Image
-                    src="/images/robocup-collision-avoidance.jpg"
-                    alt="Collision Avoidance"
+                    alt="Competition Objects"
                     width={300}
                     height={200}
                     className="rounded-lg shadow-md object-cover"
@@ -2024,23 +2010,23 @@ function RoboCupProjectContent() {
                 <div className="space-y-6">
                   <Card className="bg-gradient-to-r from-secondary/5 to-secondary/10">
                     <CardContent className="p-6">
-                      <h4 className="font-bold mb-3">Advanced Manipulation</h4>
+                      <h4 className="font-bold mb-3">Standard Equipment</h4>
                       <ul className="space-y-2 text-sm">
                         <li className="flex items-start space-x-2">
                           <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>MoveIt! for arm trajectory generation</span>
+                          <span>Furniture: Bed, couch, tables, chairs, cabinets</span>
                         </li>
                         <li className="flex items-start space-x-2">
                           <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Dynamic environment collision avoidance</span>
+                          <span>Kitchen: Dishwasher, microwave, sink, refrigerator</span>
                         </li>
                         <li className="flex items-start space-x-2">
                           <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Quality-based grasping algorithms</span>
+                          <span>Objects: Tableware, cutlery, containers, bags</span>
                         </li>
                         <li className="flex items-start space-x-2">
                           <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Household object manipulation (apples, utensils)</span>
+                          <span>Special items: Fragile, heavy, and deformable objects</span>
                         </li>
                       </ul>
                     </CardContent>
@@ -2051,33 +2037,33 @@ function RoboCupProjectContent() {
 
             <Separator />
 
-            {/* Vision and Perception */}
+            {/* Dynamic Environment */}
             <div>
               <h3 className="text-xl font-bold mb-6 flex items-center">
-                <Eye className="mr-3 h-6 w-6 text-primary" />
-                Vision & Perception
+                <RefreshCw className="mr-3 h-6 w-6 text-primary" />
+                Dynamic Environment
               </h3>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div className="space-y-6">
                   <Card className="bg-gradient-to-r from-blue-50 to-blue-100">
                     <CardContent className="p-6">
-                      <h4 className="font-bold mb-3">Perception Systems</h4>
+                      <h4 className="font-bold mb-3">Environmental Changes</h4>
                       <ul className="space-y-2 text-sm">
                         <li className="flex items-start space-x-2">
                           <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Simulated stereo cameras for 3D point clouds</span>
+                          <span>Furniture may be slightly moved or rotated</span>
                         </li>
                         <li className="flex items-start space-x-2">
                           <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>2D image processing for object identification</span>
+                          <span>Doors may be closed or blocked</span>
                         </li>
                         <li className="flex items-start space-x-2">
                           <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Interaction zone detection and mapping</span>
+                          <span>Objects may be placed in different locations</span>
                         </li>
                         <li className="flex items-start space-x-2">
                           <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Real-time scene understanding</span>
+                          <span>People may move around the arena</span>
                         </li>
                       </ul>
                     </CardContent>
@@ -2085,104 +2071,19 @@ function RoboCupProjectContent() {
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <Image
-                    src="/images/robocup-stereo-vision.jpg"
-                    alt="Stereo Vision System"
+                    src="/images/robocup-dynamic-env.jpg"
+                    alt="Dynamic Environment"
                     width={300}
                     height={200}
                     className="rounded-lg shadow-md object-cover"
                   />
                   <Image
-                    src="/images/robocup-point-cloud.jpg"
-                    alt="3D Point Cloud Processing"
+                    src="/images/robocup-human-interaction.jpg"
+                    alt="Human Interaction"
                     width={300}
                     height={200}
                     className="rounded-lg shadow-md object-cover"
                   />
-                  <Image
-                    src="/images/robocup-object-detection.jpg"
-                    alt="Object Detection"
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-md object-cover"
-                  />
-                  <Image
-                    src="/images/robocup-scene-understanding.jpg"
-                    alt="Scene Understanding"
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-md object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <Separator />
-
-            {/* Simulation Environment */}
-            <div>
-              <h3 className="text-xl font-bold mb-6 flex items-center">
-                <Gamepad2 className="mr-3 h-6 w-6 text-primary" />
-                Simulation Environment
-              </h3>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div className="grid grid-cols-2 gap-4">
-                  <Image
-                    src="/images/robocup-sigverse.jpg"
-                    alt="SIGVerse Environment"
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-md object-cover"
-                  />
-                  <Image
-                    src="/images/robocup-gazebo.jpg"
-                    alt="Gazebo Simulation"
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-md object-cover"
-                  />
-                  <Image
-                    src="/images/robocup-human-robot.jpg"
-                    alt="Human-Robot Interaction"
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-md object-cover"
-                  />
-                  <Image
-                    src="/images/robocup-domestic-scenario.jpg"
-                    alt="Domestic Scenarios"
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-md object-cover"
-                  />
-                </div>
-                <div className="space-y-6">
-                  <Card className="bg-gradient-to-r from-green-50 to-green-100">
-                    <CardContent className="p-6">
-                      <h4 className="font-bold mb-3">Virtual Reality Integration</h4>
-                      <ul className="space-y-2 text-sm">
-                        <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>SIGVerse + Gazebo simulation platforms</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Human-robot interaction validation</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Voice recognition and processing</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Avatar animation and interaction</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Domestic scenario simulation</span>
-                        </li>
-                      </ul>
-                    </CardContent>
-                  </Card>
                 </div>
               </div>
             </div>
@@ -2190,190 +2091,96 @@ function RoboCupProjectContent() {
         </Card>
       </FadeIn>
 
-      {/* Awards and Recognition Section */}
+      {/* Technical Implementation Section */}
       <FadeIn delay="delay-500">
         <Card className="shadow-xl">
           <CardHeader>
-            <CardTitle className="text-2xl text-foreground">Awards & Recognition</CardTitle>
-            <p className="text-muted-foreground">Competition achievements and jury recognition</p>
+            <CardTitle className="text-2xl text-foreground">Technical Implementation</CardTitle>
+            <p className="text-muted-foreground">Robust solutions for real-world challenges</p>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Competition Award */}
-              <Card className="bg-gradient-to-br from-yellow-50 to-yellow-100 border-yellow-200">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-6">
-                    <div className="bg-yellow-200 p-3 rounded-lg">
-                      <Trophy className="h-6 w-6 text-yellow-700" />
-                    </div>
-                    <h3 className="ml-3 text-xl font-bold">3rd Place @ Veracruz</h3>
-                  </div>
-                  <p className="text-muted-foreground mb-4">
-                    Achieved 3rd place in the Home Simulation Challenge at RoboCup @ Veracruz, competing against international teams.
-                  </p>
-                  <div className="relative overflow-hidden rounded-lg">
-                    <Image
-                      src="/images/robocup-award-ceremony.jpg"
-                      alt="RoboCup Award Ceremony"
-                      width={400}
-                      height={250}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Jury Recognition */}
-              <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-6">
-                    <div className="bg-blue-200 p-3 rounded-lg">
-                      <Award className="h-6 w-6 text-blue-700" />
-                    </div>
-                    <h3 className="ml-3 text-xl font-bold">Jury Recognition</h3>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="flex items-start space-x-3">
-                      <Brain className="h-5 w-5 text-primary mt-0.5" />
-                      <div>
-                        <h4 className="font-medium">Mission Logic Robustness</h4>
-                        <p className="text-sm text-muted-foreground">Recognized for exceptional state machine design and task orchestration</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <Hand className="h-5 w-5 text-primary mt-0.5" />
-                      <div>
-                        <h4 className="font-medium">Grasping Precision</h4>
-                        <p className="text-sm text-muted-foreground">Outstanding manipulation accuracy for household objects</p>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* Competition Highlights */}
-            <Card className="mt-8 bg-gradient-to-r from-primary/5 via-secondary/5 to-primary/5">
-              <CardContent className="p-6">
-                <div className="flex items-center mb-6">
-                  <div className="bg-primary/20 p-3 rounded-lg">
-                    <Globe className="h-6 w-6 text-primary" />
-                  </div>
-                  <h3 className="ml-3 text-xl font-bold">Competition Highlights</h3>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                  <div>
-                    <ul className="space-y-3">
-                      <li className="flex items-start space-x-3">
-                        <Star className="h-5 w-5 text-yellow-500 mt-0.5" />
-                        <span>International competition representing Mexico</span>
-                      </li>
-                      <li className="flex items-start space-x-3">
-                        <Volume2 className="h-5 w-5 text-primary mt-0.5" />
-                        <span>Advanced voice command recognition and processing</span>
-                      </li>
-                      <li className="flex items-start space-x-3">
-                        <Home className="h-5 w-5 text-primary mt-0.5" />
-                        <span>Complex domestic task execution in virtual environments</span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="relative overflow-hidden rounded-lg">
-                    <Image
-                      src="/images/robocup-competition.jpg"
-                      alt="RoboCup Competition"
-                      width={400}
-                      height={250}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </CardContent>
-        </Card>
-      </FadeIn>
-
-      {/* Leadership Roles Section */}
-      <FadeIn delay="delay-600">
-        <Card className="shadow-xl">
-          <CardHeader>
-            <CardTitle className="text-2xl text-foreground">Leadership Roles</CardTitle>
-            <p className="text-muted-foreground">Technical leadership and team coordination</p>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Navigation Leader */}
+              {/* Navigation System */}
               <Card className="bg-gradient-to-br from-purple-50 to-purple-100">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <Navigation className="h-6 w-6 text-purple-600 mr-3" />
-                    <h4 className="font-medium text-purple-800">Principal Navigation Leader</h4>
+                    <h4 className="font-medium text-purple-800">Adaptive Navigation</h4>
                   </div>
                   <p className="text-sm text-muted-foreground mb-4">
-                    Designed and implemented trajectory planning strategies, obstacle recovery, and real-time localization ensuring safe and efficient robot navigation.
+                    Implemented robust navigation system capable of handling dynamic environments, including:
                   </p>
-                  <div className="mt-4">
-                    <Image
-                      src="/images/robocup-navigation.jpg"
-                      alt="Navigation System"
-                      width={300}
-                      height={200}
-                      className="rounded-lg object-cover w-full"
-                    />
-                  </div>
+                  <ul className="space-y-2 text-sm">
+                    <li className="flex items-start space-x-2">
+                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                      <span>Dynamic obstacle avoidance</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                      <span>Door handling and navigation</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                      <span>Real-time path planning</span>
+                    </li>
+                  </ul>
                 </CardContent>
               </Card>
 
-              {/* Technical Coordinator */}
+              {/* Object Manipulation */}
               <Card className="bg-gradient-to-br from-green-50 to-green-100">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <Cog className="h-6 w-6 text-green-600 mr-3" />
-                    <h4 className="font-medium text-green-800">Technical Coordinator</h4>
+                    <Hand className="h-6 w-6 text-green-600 mr-3" />
+                    <h4 className="font-medium text-green-800">Object Manipulation</h4>
                   </div>
                   <p className="text-sm text-muted-foreground mb-4">
-                    Guided the team in SIGVerse environment configuration and Gazebo validations, assigning tasks by specialty (vision, control, simulation).
+                    Developed versatile manipulation system for various objects:
                   </p>
-                  <div className="mt-4">
-                    <Image
-                      src="/images/robocup-team-coordination.jpg"
-                      alt="Team Coordination"
-                      width={300}
-                      height={200}
-                      className="rounded-lg object-cover w-full"
-                    />
-                  </div>
+                  <ul className="space-y-2 text-sm">
+                    <li className="flex items-start space-x-2">
+                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                      <span>Grasping different object types</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                      <span>Safe handling of fragile items</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                      <span>Bimanual manipulation for complex tasks</span>
+                    </li>
+                  </ul>
                 </CardContent>
               </Card>
             </div>
 
-            {/* Internal Mentor */}
+            {/* Human-Robot Interaction */}
             <Card className="mt-8 bg-gradient-to-r from-blue-50 to-blue-100">
               <CardContent className="p-6">
                 <div className="flex items-center mb-6">
                   <div className="bg-blue-200 p-3 rounded-lg">
-                    <BookOpen className="h-6 w-6 text-blue-700" />
+                    <Users className="h-6 w-6 text-blue-700" />
                   </div>
-                  <h3 className="ml-3 text-xl font-bold">Internal Mentor</h3>
+                  <h3 className="ml-3 text-xl font-bold">Human-Robot Interaction</h3>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div className="bg-white/50 p-4 rounded-lg">
-                    <h4 className="font-medium text-blue-800 mb-2">ROS Training</h4>
+                    <h4 className="font-medium text-blue-800 mb-2">Voice Commands</h4>
                     <p className="text-sm text-muted-foreground">
-                      Conducted comprehensive training sessions on ROS architecture, node communication, and best practices.
+                      Natural language processing for understanding and executing voice commands in noisy environments.
                     </p>
                   </div>
                   <div className="bg-white/50 p-4 rounded-lg">
-                    <h4 className="font-medium text-blue-800 mb-2">MoveIt! Expertise</h4>
+                    <h4 className="font-medium text-blue-800 mb-2">Person Recognition</h4>
                     <p className="text-sm text-muted-foreground">
-                      Taught advanced manipulation planning, trajectory optimization, and collision avoidance techniques.
+                      Face recognition and tracking for identifying and interacting with different people in the arena.
                     </p>
                   </div>
                   <div className="bg-white/50 p-4 rounded-lg">
-                    <h4 className="font-medium text-blue-800 mb-2">Simulation Best Practices</h4>
+                    <h4 className="font-medium text-blue-800 mb-2">Task Execution</h4>
                     <p className="text-sm text-muted-foreground">
-                      Shared expertise in simulation environments, debugging techniques, and performance optimization.
+                      Robust task planning and execution system for completing complex domestic service tasks.
                     </p>
                   </div>
                 </div>
@@ -2384,11 +2191,342 @@ function RoboCupProjectContent() {
       </FadeIn>
 
       {/* Impact Section */}
+      <FadeIn delay="delay-600">
+        <Card className="shadow-xl">
+          <CardHeader>
+            <CardTitle className="text-2xl text-foreground">Competition Impact</CardTitle>
+            <p className="text-muted-foreground">Achievements and recognition</p>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Competition Results */}
+              <Card className="bg-gradient-to-br from-yellow-50 to-yellow-100">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-6">
+                    <Trophy className="h-6 w-6 text-yellow-700" />
+                    <h3 className="ml-3 text-xl font-bold">3rd Place Achievement</h3>
+                  </div>
+                  <p className="text-muted-foreground mb-4">
+                    Successfully completed complex tasks in the dynamic RoboCup@Home environment, demonstrating:
+                  </p>
+                  <ul className="space-y-2">
+                    <li className="flex items-start space-x-2">
+                      <Star className="h-5 w-5 text-yellow-500 mt-0.5" />
+                      <span>Robust navigation in changing environments</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <Star className="h-5 w-5 text-yellow-500 mt-0.5" />
+                      <span>Reliable object manipulation and handling</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <Star className="h-5 w-5 text-yellow-500 mt-0.5" />
+                      <span>Effective human-robot interaction</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              {/* Technical Recognition */}
+              <Card className="bg-gradient-to-br from-blue-50 to-blue-100">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-6">
+                    <Award className="h-6 w-6 text-blue-700" />
+                    <h3 className="ml-3 text-xl font-bold">Technical Excellence</h3>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="flex items-start space-x-3">
+                      <Brain className="h-5 w-5 text-primary mt-0.5" />
+                      <div>
+                        <h4 className="font-medium">Adaptive Navigation</h4>
+                        <p className="text-sm text-muted-foreground">Recognized for robust navigation in dynamic environments</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <Hand className="h-5 w-5 text-primary mt-0.5" />
+                      <div>
+                        <h4 className="font-medium">Object Manipulation</h4>
+                        <p className="text-sm text-muted-foreground">Outstanding performance in handling various objects</p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </CardContent>
+        </Card>
+      </FadeIn>
+    </div>
+  );
+}
+
+function ZFBrakingProjectContent() {
+  return (
+    <div className="space-y-12">
+      {/* Project Overview Section */}
+      <FadeIn delay="delay-300">
+        <Card className="shadow-xl">
+          <CardHeader>
+            <CardTitle className="text-2xl text-foreground flex items-center">
+              <Cog className="mr-3 h-6 w-6 text-primary" />
+              Application Engineer - Embedded Systems & Brake Technology
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-8">
+            <div className="text-center">
+              <h3 className="text-xl font-bold text-primary mb-2">Building Safer, Smarter Braking Systems</h3>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Leading the development of embedded systems for commercial vehicle braking, focusing on AUTOSAR-based software components and safety-critical applications.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+      </FadeIn>
+
+      {/* Key Responsibilities Section */}
+      <FadeIn delay="delay-400">
+        <Card className="shadow-xl">
+          <CardHeader>
+            <CardTitle className="text-2xl text-foreground">Key Responsibilities</CardTitle>
+            <p className="text-muted-foreground">Core duties and technical leadership</p>
+          </CardHeader>
+          <CardContent className="space-y-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Card className="bg-gradient-to-r from-primary/5 to-primary/10">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <Layers className="h-6 w-6 text-primary mr-3" />
+                    <h4 className="font-bold">Software Architecture Design</h4>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Conceptualized high-level software architecture for new machine platforms based on AUTOSAR Classic, ensuring compliance with industry standards and safety requirements.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-to-r from-primary/5 to-primary/10">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <LineChart className="h-6 w-6 text-primary mr-3" />
+                    <h4 className="font-bold">Modeling and Simulation</h4>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Simulated physical system behavior using MATLAB/Simulink to model complex braking physics, enabling Software-in-the-Loop (SiL) testing and design validation.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-to-r from-primary/5 to-primary/10">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <TestTube className="h-6 w-6 text-primary mr-3" />
+                    <h4 className="font-bold">Testing & Validation</h4>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Applied MISRA-C compliance and performed rigorous software validation with tools like VectorCAST and DaVinci Developer to ensure system reliability.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-to-r from-primary/5 to-primary/10">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <Bug className="h-6 w-6 text-primary mr-3" />
+                    <h4 className="font-bold">Toolchain Integration</h4>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Resolved system-level issues in AUTOSAR environments, analyzing runtime bugs, interface mismatches, and configuration anomalies.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </CardContent>
+        </Card>
+      </FadeIn>
+
+      {/* Technical Stack Section */}
+      <FadeIn delay="delay-500">
+        <Card className="shadow-xl">
+          <CardHeader>
+            <CardTitle className="text-2xl text-foreground">Technical Stack</CardTitle>
+            <p className="text-muted-foreground">Tools and technologies utilized</p>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Card className="bg-gradient-to-br from-primary/5 to-primary/10 hover:shadow-lg transition-shadow duration-300">
+                <CardContent className="p-6">
+                  <div className="flex flex-col items-center text-center mb-4">
+                    <div className="bg-primary/10 p-4 rounded-full mb-4">
+                      <Settings className="h-8 w-8 text-primary" />
+                    </div>
+                    <h4 className="text-lg font-semibold text-primary">Development Tools</h4>
+                  </div>
+                  <ul className="space-y-3 text-sm text-muted-foreground">
+                    <li className="flex items-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
+                      Da Vinci Configurator Classic
+                    </li>
+                    <li className="flex items-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
+                      VectorCAST
+                    </li>
+                    <li className="flex items-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
+                      AUTOSAR Builder
+                    </li>
+                    <li className="flex items-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
+                      MATLAB/Simulink
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-to-br from-primary/5 to-primary/10 hover:shadow-lg transition-shadow duration-300">
+                <CardContent className="p-6">
+                  <div className="flex flex-col items-center text-center mb-4">
+                    <div className="bg-primary/10 p-4 rounded-full mb-4">
+                      <Code className="h-8 w-8 text-primary" />
+                    </div>
+                    <h4 className="text-lg font-semibold text-primary">Programming</h4>
+                  </div>
+                  <ul className="space-y-3 text-sm text-muted-foreground">
+                    <li className="flex items-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
+                      Embedded C/C++
+                    </li>
+                    <li className="flex items-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
+                      MISRA-C Compliance
+                    </li>
+                    <li className="flex items-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
+                      AUTOSAR Architecture
+                    </li>
+                    <li className="flex items-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
+                      Control Systems
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-to-br from-primary/5 to-primary/10 hover:shadow-lg transition-shadow duration-300">
+                <CardContent className="p-6">
+                  <div className="flex flex-col items-center text-center mb-4">
+                    <div className="bg-primary/10 p-4 rounded-full mb-4">
+                      <GitBranch className="h-8 w-8 text-primary" />
+                    </div>
+                    <h4 className="text-lg font-semibold text-primary">Version Control</h4>
+                  </div>
+                  <ul className="space-y-3 text-sm text-muted-foreground">
+                    <li className="flex items-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
+                      Git
+                    </li>
+                    <li className="flex items-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
+                      IBM Rhapsody
+                    </li>
+                    <li className="flex items-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
+                      Configuration Management
+                    </li>
+                    <li className="flex items-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
+                      Documentation Systems
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-to-br from-primary/5 to-primary/10 hover:shadow-lg transition-shadow duration-300">
+                <CardContent className="p-6">
+                  <div className="flex flex-col items-center text-center mb-4">
+                    <div className="bg-primary/10 p-4 rounded-full mb-4">
+                      <Shield className="h-8 w-8 text-primary" />
+                    </div>
+                    <h4 className="text-lg font-semibold text-primary">Safety & Standards</h4>
+                  </div>
+                  <ul className="space-y-3 text-sm text-muted-foreground">
+                    <li className="flex items-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
+                      ISO 26262
+                    </li>
+                    <li className="flex items-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
+                      Automotive Safety
+                    </li>
+                    <li className="flex items-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
+                      Quality Assurance
+                    </li>
+                    <li className="flex items-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-2"></div>
+                      Risk Management
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+          </CardContent>
+        </Card>
+      </FadeIn>
+
+      {/* Achievements Section */}
+      <FadeIn delay="delay-600">
+        <Card className="shadow-xl">
+          <CardHeader>
+            <CardTitle className="text-2xl text-foreground">Key Achievements</CardTitle>
+            <p className="text-muted-foreground">Notable contributions and improvements</p>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-6">
+              <Card className="bg-gradient-to-r from-primary/5 to-primary/10">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <Lightbulb className="h-6 w-6 text-primary mr-3" />
+                    <h4 className="font-bold">Architectural Improvements</h4>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Proposed and implemented architectural improvements adopted by the team for future system designs, enhancing maintainability and performance.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-to-r from-primary/5 to-primary/10">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <Clock className="h-6 w-6 text-primary mr-3" />
+                    <h4 className="font-bold">Efficiency Gains</h4>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Reduced debugging time by 30% through implementation of better trace analysis techniques and toolchain optimizations.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-to-r from-primary/5 to-primary/10">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <BarChart className="h-6 w-6 text-primary mr-3" />
+                    <h4 className="font-bold">Test Coverage</h4>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Improved test coverage by 25% through development of custom simulation scenarios that identified edge cases in braking behavior.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </CardContent>
+        </Card>
+      </FadeIn>
+
+      {/* Impact Section */}
       <FadeIn delay="delay-700">
         <Card className="shadow-xl">
           <CardHeader>
-            <CardTitle className="text-2xl text-foreground">Academic & Social Impact</CardTitle>
-            <p className="text-muted-foreground">Long-term influence and educational legacy</p>
+            <CardTitle className="text-2xl text-foreground">Project Impact</CardTitle>
+            <p className="text-muted-foreground">Long-term influence and contributions</p>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -2396,20 +2534,11 @@ function RoboCupProjectContent() {
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <Trophy className="h-6 w-6 text-purple-600 mr-3" />
-                    <h4 className="font-medium text-purple-800">Team Profile Elevation</h4>
+                    <h4 className="font-medium text-purple-800">Technical Leadership</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    Elevated Roborregos' profile as a reference in service robotics in Mexico, establishing national recognition.
+                    Established best practices for AUTOSAR implementation and system architecture that became team standards.
                   </p>
-                  <div className="mt-4">
-                    <Image
-                      src="/images/robocup-team-profile.jpg"
-                      alt="Team Profile"
-                      width={300}
-                      height={200}
-                      className="rounded-lg object-cover w-full"
-                    />
-                  </div>
                 </CardContent>
               </Card>
 
@@ -2417,20 +2546,11 @@ function RoboCupProjectContent() {
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <BookOpen className="h-6 w-6 text-green-600 mr-3" />
-                    <h4 className="font-medium text-green-800">Reusable Educational Material</h4>
+                    <h4 className="font-medium text-green-800">Knowledge Transfer</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    Navigation scripts and tutorials were incorporated into robotics courses across multiple campuses.
+                    Created comprehensive documentation and training materials for new team members and cross-functional teams.
                   </p>
-                  <div className="mt-4">
-                    <Image
-                      src="/images/robocup-educational-material.jpg"
-                      alt="Educational Materials"
-                      width={300}
-                      height={200}
-                      className="rounded-lg object-cover w-full"
-                    />
-                  </div>
                 </CardContent>
               </Card>
 
@@ -2438,20 +2558,11 @@ function RoboCupProjectContent() {
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <Star className="h-6 w-6 text-blue-600 mr-3" />
-                    <h4 className="font-medium text-blue-800">Local Inspiration</h4>
+                    <h4 className="font-medium text-blue-800">Innovation</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    Motivated new students to participate in RoboCup and explore domestic robotics applications.
+                    Introduced new testing methodologies and tools that improved overall system reliability and performance.
                   </p>
-                  <div className="mt-4">
-                    <Image
-                      src="/images/robocup-student-inspiration.jpg"
-                      alt="Student Inspiration"
-                      width={300}
-                      height={200}
-                      className="rounded-lg object-cover w-full"
-                    />
-                  </div>
                 </CardContent>
               </Card>
             </div>
@@ -2481,6 +2592,104 @@ function TokyoIROSProjectContent() {
               <p className="text-muted-foreground max-w-2xl mx-auto">
                 Team Roborregos from Tecnológico de Monterrey Campus Monterrey competing in the Home Simulation category - humanoid robot performing domestic tasks in virtual environment with voice command response.
               </p>
+              <div className="mt-4">
+                <Link 
+                  href="https://drive.google.com/file/d/1Jor8UZXW6xFtBZmMvmZmJlUWtryMW7rQ/view?pli=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg transition-colors"
+                >
+                  <FileText className="mr-2 h-5 w-5" />
+                  View Complete Competition Rules
+                </Link>
+              </div>
+            </div>
+
+            {/* Competition Rules Overview */}
+            <div className="bg-gradient-to-r from-primary/5 to-primary/10 p-6 rounded-lg">
+              <h4 className="text-lg font-bold mb-4">Competition Rules & Structure</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h5 className="font-semibold mb-2">HandyMan Challenge</h5>
+                  <ul className="space-y-2 text-sm">
+                    <li className="flex items-start space-x-2">
+                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                      <span>Navigation with obstacle avoidance</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                      <span>Object recognition and manipulation</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                      <span>Human detection and interaction</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                      <span>Error detection in human instructions</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 className="font-semibold mb-2">Scoring System</h5>
+                  <ul className="space-y-2 text-sm">
+                    <li className="flex items-start space-x-2">
+                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                      <span>Room arrival: +20 points</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                      <span>Object grasping: +50 points</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                      <span>Task completion: +30 points</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                      <span>Error detection: +50 points</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Additional Rules */}
+              <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h5 className="font-semibold mb-2">Penalties</h5>
+                  <ul className="space-y-2 text-sm">
+                    <li className="flex items-start space-x-2">
+                      <XCircle className="h-4 w-4 text-red-500 mt-0.5" />
+                      <span>Collision with objects: -5 to -50 points</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <XCircle className="h-4 w-4 text-red-500 mt-0.5" />
+                      <span>Failed task completion: -10 points</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <XCircle className="h-4 w-4 text-red-500 mt-0.5" />
+                      <span>Object collision after release: -1 to -50 points</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 className="font-semibold mb-2">Time Limits</h5>
+                  <ul className="space-y-2 text-sm">
+                    <li className="flex items-start space-x-2">
+                      <Clock className="h-4 w-4 text-blue-500 mt-0.5" />
+                      <span>6-10 minutes per session</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <Clock className="h-4 w-4 text-blue-500 mt-0.5" />
+                      <span>10-24 sessions total</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <Clock className="h-4 w-4 text-blue-500 mt-0.5" />
+                      <span>Real-world time limit announced 7 days prior</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -2530,6 +2739,66 @@ function TokyoIROSProjectContent() {
         </Card>
       </FadeIn>
 
+      {/* Video Demonstrations Section */}
+      <FadeIn delay="delay-400">
+        <Card className="shadow-xl">
+          <CardHeader>
+            <CardTitle className="text-2xl text-foreground flex items-center">
+              <Play className="mr-3 h-6 w-6 text-primary" />
+              Competition Demonstrations
+            </CardTitle>
+            <p className="text-muted-foreground">Live demonstrations of our robot's capabilities</p>
+          </CardHeader>
+          <CardContent className="space-y-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Video 1: HandyMan Challenge Demo */}
+              <Card className="bg-gradient-to-br from-primary/5 to-primary/10">
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold mb-4">HandyMan Challenge Demo</h3>
+                  <div className="relative overflow-hidden rounded-lg shadow-lg aspect-video mb-4">
+                    <iframe
+                      src="https://www.youtube.com/embed/6-ixvZpijes?si=-TOcxu-nm-_Qof4s"
+                      title="IROS 2022 HandyMan Challenge Demo"
+                      width="600"
+                      height="400"
+                      className="w-full h-full"
+                      frameBorder="0"
+                      allowFullScreen
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    />
+                  </div>
+                  <p className="text-muted-foreground">
+                    Complete demonstration of our robot's capabilities in the HandyMan Challenge, including navigation, object manipulation, and human interaction.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Video 2: Interactive Cleanup Demo */}
+              <Card className="bg-gradient-to-br from-primary/5 to-primary/10">
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold mb-4">Interactive Cleanup Demo</h3>
+                  <div className="relative overflow-hidden rounded-lg shadow-lg aspect-video mb-4">
+                    <iframe
+                      src="https://www.youtube.com/embed/8PyehsxmFc8?si=VcPegoKlOKXndqxB"
+                      title="IROS 2022 Interactive Cleanup Demo"
+                      width="600"
+                      height="400"
+                      className="w-full h-full"
+                      frameBorder="0"
+                      allowFullScreen
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    />
+                  </div>
+                  <p className="text-muted-foreground">
+                    Showcase of our robot's ability to understand pointing gestures and perform cleanup tasks in a virtual domestic environment.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </CardContent>
+        </Card>
+      </FadeIn>
+
       {/* Technologies and Development Section */}
       <FadeIn delay="delay-400">
         <Card className="shadow-xl">
@@ -2570,21 +2839,15 @@ function TokyoIROSProjectContent() {
                     </CardContent>
                   </Card>
                 </div>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 gap-2">
                   <Image
-                    src="/images/iros-state-machine.jpg"
+                    src="/tokio/system-comms.png"
                     alt="IROS State Machine Architecture"
                     width={300}
                     height={200}
                     className="rounded-lg shadow-md object-cover"
                   />
-                  <Image
-                    src="/images/iros-voice-commands.jpg"
-                    alt="Voice Command Processing"
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-md object-cover"
-                  />
+                 
                 </div>
               </div>
             </div>
@@ -2598,35 +2861,15 @@ function TokyoIROSProjectContent() {
                 Navigation Planning
               </h3>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 gap-4">
                   <Image
-                    src="/images/iros-navigation-stack.jpg"
+                    src="/tokio/tokio-path.jpg"
                     alt="ROS Navigation Stack"
                     width={300}
                     height={200}
                     className="rounded-lg shadow-md object-cover"
                   />
-                  <Image
-                    src="/images/iros-sigverse-nav.jpg"
-                    alt="SIGVerse Navigation"
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-md object-cover"
-                  />
-                  <Image
-                    src="/images/iros-path-planning.jpg"
-                    alt="Path Planning Algorithms"
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-md object-cover"
-                  />
-                  <Image
-                    src="/images/iros-obstacle-avoidance.jpg"
-                    alt="Obstacle Avoidance"
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-md object-cover"
-                  />
+                  
                 </div>
                 <div className="space-y-6">
                   <Card className="bg-gradient-to-r from-secondary/5 to-secondary/10">
@@ -2694,35 +2937,15 @@ function TokyoIROSProjectContent() {
                     </CardContent>
                   </Card>
                 </div>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 gap-4">
                   <Image
-                    src="/images/iros-moveit-integration.jpg"
+                    src="/tokio/graspable-objects.jpg"
                     alt="MoveIt! SIGVerse Integration"
                     width={300}
                     height={200}
                     className="rounded-lg shadow-md object-cover"
                   />
-                  <Image
-                    src="/images/iros-grasping-algorithms.jpg"
-                    alt="Grasping Algorithms"
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-md object-cover"
-                  />
-                  <Image
-                    src="/images/iros-collision-detection.jpg"
-                    alt="Collision Detection"
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-md object-cover"
-                  />
-                  <Image
-                    src="/images/iros-object-manipulation.jpg"
-                    alt="Object Manipulation"
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-md object-cover"
-                  />
+               
                 </div>
               </div>
             </div>
@@ -2736,35 +2959,16 @@ function TokyoIROSProjectContent() {
                 Vision & Perception
               </h3>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-4">
                   <Image
-                    src="/images/iros-stereo-cameras.jpg"
-                    alt="Simulated Stereo Cameras"
+                    src="/tokio/vision.png"
+                    alt="Stereo Vision System"
                     width={300}
                     height={200}
                     className="rounded-lg shadow-md object-cover"
                   />
-                  <Image
-                    src="/images/iros-point-clouds.jpg"
-                    alt="3D Point Cloud Generation"
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-md object-cover"
-                  />
-                  <Image
-                    src="/images/iros-object-recognition.jpg"
-                    alt="Object Recognition"
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-md object-cover"
-                  />
-                  <Image
-                    src="/images/iros-yolo-detection.jpg"
-                    alt="YOLO-based Detection"
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-md object-cover"
-                  />
+                 
+                
                 </div>
                 <div className="space-y-6">
                   <Card className="bg-gradient-to-r from-green-50 to-green-100">
@@ -2799,57 +3003,6 @@ function TokyoIROSProjectContent() {
             </div>
 
             <Separator />
-
-            {/* Deployment Infrastructure */}
-            <div>
-              <h3 className="text-xl font-bold mb-6 flex items-center">
-                <Cloud className="mr-3 h-6 w-6 text-primary" />
-                Deployment Infrastructure
-              </h3>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div className="space-y-6">
-                  <Card className="bg-gradient-to-r from-purple-50 to-purple-100">
-                    <CardContent className="p-6">
-                      <h4 className="font-bold mb-3">Cloud Integration</h4>
-                      <ul className="space-y-2 text-sm">
-                        <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Code deployed on AWS for continuous integration</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Cloud-based logs and performance metrics</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Automated testing and validation pipelines</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Real-time monitoring and debugging</span>
-                        </li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <Image
-                    src="/images/iros-aws-deployment.jpg"
-                    alt="AWS Deployment"
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-md object-cover"
-                  />
-                  <Image
-                    src="/images/iros-cloud-metrics.jpg"
-                    alt="Cloud Performance Metrics"
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-md object-cover"
-                  />
-                </div>
-              </div>
-            </div>
           </CardContent>
         </Card>
       </FadeIn>
@@ -2877,7 +3030,7 @@ function TokyoIROSProjectContent() {
                   </p>
                   <div className="relative overflow-hidden rounded-lg">
                     <Image
-                      src="/images/iros-handyman-award.jpg"
+                      src="/tokio/thirdplace.png"
                       alt="IROS HandyMan Award Ceremony"
                       width={400}
                       height={250}
@@ -2912,6 +3065,15 @@ function TokyoIROSProjectContent() {
                       </div>
                     </div>
                   </div>
+                  <div className="relative overflow-hidden rounded-lg">
+                    <Image
+                      src="/tokio/portada.png"
+                      alt="IROS HandyMan Award Ceremony"
+                      width={400}
+                      height={250}
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
                 </CardContent>
               </Card>
             </div>
@@ -2944,12 +3106,13 @@ function TokyoIROSProjectContent() {
                   </div>
                   <div className="relative overflow-hidden rounded-lg">
                     <Image
-                      src="/images/iros-2022-kyoto.jpg"
+                      src="/tokio/premiacion-tokio.jpg"
                       alt="IROS 2022 Kyoto"
                       width={400}
                       height={250}
                       className="object-cover w-full h-full"
                     />
+                    
                   </div>
                 </div>
               </CardContent>
@@ -2979,7 +3142,7 @@ function TokyoIROSProjectContent() {
                   </p>
                   <div className="mt-4">
                     <Image
-                      src="/images/iros-navigation-leader.jpg"
+                      src="/tokio/places.png"
                       alt="Navigation Leadership"
                       width={300}
                       height={200}
@@ -3001,7 +3164,7 @@ function TokyoIROSProjectContent() {
                   </p>
                   <div className="mt-4">
                     <Image
-                      src="/images/iros-integration-architect.jpg"
+                      src="/tokio/aws.jpg"
                       alt="Integration Architecture"
                       width={300}
                       height={200}
@@ -3067,7 +3230,7 @@ function TokyoIROSProjectContent() {
                   </p>
                   <div className="mt-4">
                     <Image
-                      src="/images/iros-international-recognition.jpg"
+                      src="/tokio/roborregos.png"
                       alt="International Recognition"
                       width={300}
                       height={200}
@@ -3088,7 +3251,7 @@ function TokyoIROSProjectContent() {
                   </p>
                   <div className="mt-4">
                     <Image
-                      src="/images/iros-reusable-resources.jpg"
+                      src="/tokio/sigverse-general.png"
                       alt="Reusable Resources"
                       width={300}
                       height={200}
@@ -3109,7 +3272,7 @@ function TokyoIROSProjectContent() {
                   </p>
                   <div className="mt-4">
                     <Image
-                      src="/images/iros-research-inspiration.jpg"
+                      src="/tokio/team.jpg"
                       alt="Research Inspiration"
                       width={300}
                       height={200}
@@ -4713,12 +4876,9 @@ function VanttecProjectContent() {
   );
 }
 
-export default function ProjectDetailsPage({ params }: Props) {
-  const project = allProjects.find((p) => p.id === params.slug);
-
-  if (!project) {
-    notFound();
-  }
+export default async function ProjectDetailsPage({ params }: { params: { slug: string } }) {
+  const project = allProjects.find(p => p.id === params.slug);
+  if (!project) notFound();
 
   const isVanttecProject = project.id === 'vanttec-roboboat-robosub';
   const isAIRLabProject = project.id === 'airlab-stacking-challenge';
@@ -4728,6 +4888,7 @@ export default function ProjectDetailsPage({ params }: Props) {
   const isTokyoIROSProject = project.id === 'tokyo-iros-2022';
   const isChakriProject = project.id === 'chakri-ecommerce';
   const isJohnDeereProject = project.id === 'john-deere-go';
+  const isZFBrakingProject = project.id === 'zf-braking-systems';
 
   return (
     <div className="container mx-auto px-4 py-12 lg:px-8">
@@ -4783,6 +4944,8 @@ export default function ProjectDetailsPage({ params }: Props) {
                 <ChakriProjectContent />
               ) : isJohnDeereProject ? (
                 <JohnDeereProjectContent />
+              ) : isZFBrakingProject ? (
+                <ZFBrakingProjectContent />
               ) : (
                 <FadeIn delay="delay-300">
                   <Card className="shadow-xl">

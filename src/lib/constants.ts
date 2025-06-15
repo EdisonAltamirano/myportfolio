@@ -67,6 +67,17 @@ export const allProjects: Project[] = [
   ...featuredProjects,
   // Add more projects here if needed for the /projects page
   {
+    id: 'zf-braking-systems',
+    title: 'ZF – Advanced Braking Systems',
+    description: 'Contributed to the development of next-generation braking systems for commercial vehicles, focusing on AUTOSAR-based software architecture, system simulation, and rigorous testing under safety-critical conditions.',
+    imageUrl: '/projects/zf-braking.jpeg',
+    imageHint: 'embedded systems engineering',
+    category: 'Automotive Embedded Systems',
+    company: 'ZF Friedrichshafen AG',
+    tags: ['AUTOSAR', 'VectorCAST', 'MATLAB', 'Embedded C', 'System Simulation'],
+    href: '/projects/zf-braking-systems',
+  },
+  {
     id: 'smart-factory',
     title: 'Smart Factory - Industry 4.0',
     description: 'Led development of one of Latin America\'s most advanced automated factories, now partnered with MIT and recognized by international organizations.',
@@ -102,7 +113,7 @@ export const allProjects: Project[] = [
   {
     id: 'robocup-competitions',
     title: 'RoboCup International Competitions',
-    description: 'Led navigation software development for humanoid service robots, achieving 3rd place in multiple international competitions including Mexico nationals.',
+    description: 'Led navigation software development for humanoid service robots, competing in Mexico nationals.',
     imageUrl: '/images/robocup-robot.jpg',
     imageHint: 'humanoid service robot',
     category: 'Robotics',
@@ -114,7 +125,7 @@ export const allProjects: Project[] = [
     id: 'tokyo-iros-2022',
     title: 'IROS 2022 Tokyo - Home Simulation',
     description: 'Achieved 3rd place in HandyMan Challenge at IROS 2022, developing autonomous home assistance robots with advanced navigation and manipulation.',
-    imageUrl: '/images/iros-tokyo.jpg',
+    imageUrl: '/tokio/tokio-general.jpg',
     imageHint: 'robot in home environment',
     category: 'Robotics',
     company: 'IEEE/RSJ IROS',
