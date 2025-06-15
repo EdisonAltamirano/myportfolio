@@ -5,16 +5,17 @@ import { ThemeProvider } from '@/components/core/ThemeProvider';
 import { Toaster } from "@/components/ui/toaster";
 
 type Props = {
-  params: { [key: string]: string }
-  searchParams: { [key: string]: string | string[] | undefined }
-}
+  children: React.ReactNode;
+  params: Promise<{ [key: string]: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
 
 export async function generateMetadata(
-  { params, searchParams }: Props,
+  { params, searchParams }: Omit<Props, 'children'>,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   // Get parent metadata
-  const previousMetadata = await parent
+  const previousMetadata = await parent;
 
   // Define base metadata
   const baseMetadata = {
@@ -32,7 +33,7 @@ export async function generateMetadata(
       title: "Edison's Lab - Full-Stack Innovator",
       description: 'Portfolio of Edison Ricardo Altamirano Avila, a robotics engineer turned full-stack innovator, showcasing projects in autonomous systems, AI, robotics, and enterprise applications.',
     },
-  }
+  };
 
   // Merge with parent metadata if needed
   return {
@@ -41,14 +42,14 @@ export async function generateMetadata(
       ...baseMetadata.openGraph,
       images: [...(previousMetadata.openGraph?.images || [])],
     },
-  }
+  };
 }
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${robotoMono.variable} font-sans antialiased`} suppressHydrationWarning={true}>
