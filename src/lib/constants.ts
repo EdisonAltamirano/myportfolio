@@ -154,7 +154,7 @@ export const technicalSkills: SkillCategory[] = [
       { name: 'ROS/ROS2', level: 95 },
       { name: 'Embedded C/C++', level: 95 },
       { name: 'AUTOSAR', level: 90 },
-      { name: 'CAN Bus', level: 85 },
+      { name: 'Matlab', level: 85 },
     ],
   },
   {
