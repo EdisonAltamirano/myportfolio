@@ -148,43 +148,43 @@ export type Skill = {
 
 export const technicalSkills: SkillCategory[] = [
   {
-    title: 'Frontend',
-    icon: CodeXml,
-    skills: [
-      { name: 'React', level: 90 },
-      { name: 'TypeScript', level: 85 },
-      { name: 'Next.js', level: 90 },
-      { name: 'Tailwind CSS', level: 95 },
-    ],
-  },
-  {
-    title: 'Backend',
-    icon: Server,
-    skills: [
-      { name: 'Node.js', level: 85 },
-      { name: 'Python', level: 90 },
-      { name: 'PostgreSQL', level: 80 },
-      { name: 'MongoDB', level: 75 },
-    ],
-  },
-  {
-    title: 'AI & ML',
-    icon: Brain,
-    skills: [
-      { name: 'TensorFlow', level: 85 },
-      { name: 'PyTorch', level: 80 },
-      { name: 'Computer Vision', level: 85 },
-      { name: 'NLP', level: 75 },
-    ],
-  },
-  {
-    title: 'DevOps & Robotics',
+    title: 'Robotics & Embedded',
     icon: Bot,
     skills: [
-      { name: 'Docker', level: 85 },
-      { name: 'Kubernetes', level: 75 },
-      { name: 'AWS', level: 80 },
-      { name: 'ROS', level: 80 },
+      { name: 'ROS/ROS2', level: 95 },
+      { name: 'Embedded C/C++', level: 95 },
+      { name: 'AUTOSAR', level: 90 },
+      { name: 'CAN Bus', level: 85 },
+    ],
+  },
+  {
+    title: 'AI & Computer Vision',
+    icon: Brain,
+    skills: [
+      { name: 'OpenCV', level: 90 },
+      { name: 'Computer Vision', level: 90 },
+      { name: 'SLAM', level: 85 },
+      { name: 'Deep Learning', level: 80 },
+    ],
+  },
+  {
+    title: 'Enterprise & Cloud',
+    icon: Server,
+    skills: [
+      { name: 'SAP ABAP', level: 85 },
+      { name: 'Azure', level: 80 },
+      { name: 'Power Platform', level: 85 },
+      { name: 'AWS', level: 75 },
+    ],
+  },
+  {
+    title: 'Full Stack',
+    icon: CodeXml,
+    skills: [
+      { name: 'React/Next.js', level: 85 },
+      { name: 'Flutter', level: 95 },
+      { name: 'Python', level: 90 },
+      { name: 'Node.js', level: 75 },
     ],
   },
 ];

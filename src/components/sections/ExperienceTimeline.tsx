@@ -23,14 +23,14 @@ const experienceData: Omit<TimelineItemProps, 'isLeft'>[] = [
   },
   {
     title: "Smart Factory",
-    period: "2019-2023",
+    period: "2019-2022",
     description: "Developed AGV line-following robots and integrated them with PLCs. Created visual interfaces for robot monitoring. Taught ROS to professors.",
     details: "This work led to my first job as Robotics Assistant.",
     icon: Briefcase, // Placeholder, consider more specific icon
   },
   {
     title: "VANTTEC",
-    period: "2019-2023",
+    period: "2020-2023",
     description: "Led software development for autonomous boats and submarines. Implemented state machines, computer vision, and radio communication systems.",
     details: "Won 1st place in RoboBoat and 3rd in RoboSub competitions.",
     icon: Zap, // Placeholder
@@ -43,26 +43,33 @@ const experienceData: Omit<TimelineItemProps, 'isLeft'>[] = [
     icon: Briefcase,
   },
   {
+    title: "John Deere",
+    period: "2022-2023",
+    description: "Led development of two flagship products at John Deere Labs: IM Reserver, a customer self-service reservation system with SAP integration, and ShelfGuard, an AI-powered security camera system for theft prevention.",
+    details: "Implemented end-to-end solutions using SAP ABAP, Azure services, Power Platform, and computer vision technologies. Successfully delivered automated inventory management and real-time security monitoring systems.",
+    icon: Zap,
+  },
+  {
     title: "Autonomous Car Project",
-    period: "2021-2023",
+    period: "2022-2023",
     description: "Led software development for Mexico's first student-built autonomous car sponsored by ZF. Developed CAN bus control systems and visual SLAM.",
     details: "Presented to Tesla executives before their Gigafactory announcement.",
-    icon: Zap, // Placeholder
+    icon: Briefcase, // Placeholder
   },
     {
     title: "ROBORREGOS",
     period: "2022-2023",
     description: "Led software development for autonomous systems and robotics competitions. Implemented state machines, computer vision, and control systems for various platforms including TIAGO robot, RoboCup@Home, and Home Simualtion Tokyo Tech Challenge.",
     details: "Successful participation in international robotics challenges including RoboCup@Home and Home Simulation Tokyo Tech Challenge.",
-    icon: Briefcase, // Placeholder
+    icon: Zap, // Placeholder
   },
 
   {
     title: "Current Work - Next-Gen Axle Modulators",
-    period: "2022-Present",
+    period: "2023-Present",
     description: "Developing next-gen axle modulators for braking systems. Working on mathematical modeling, embedded software, and reverse engineering commercial systems.",
     details: "Project valued at millions of dollars based on financial projections.",
-    icon: Zap, // Placeholder
+    icon: Briefcase, // Placeholder
   },
 ];
 
