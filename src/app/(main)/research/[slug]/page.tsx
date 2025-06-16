@@ -11,15 +11,14 @@ import { FadeIn } from '@/components/animations/FadeIn';
 import { siteName } from '@/lib/constants';
 import { researchPostsData, ResearchPost } from "@/lib/research-posts";
 
-interface ResearchPostPageProps {
-  params: {
-    slug: string;
-  };
+type Props = {
+  params: { slug: string }
+  searchParams: { [key: string]: string | string[] | undefined }
 }
 
 export async function generateMetadata({
   params,
-}: ResearchPostPageProps): Promise<Metadata> {
+}: Props): Promise<Metadata> {
   const post = researchPostsData.find((post: ResearchPost) => post.slug === params.slug);
 
   if (!post) {
@@ -40,7 +39,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function ResearchPostPage({ params }: ResearchPostPageProps) {
+export default function ResearchPostPage({ params }: Props) {
   const post = researchPostsData.find((post: ResearchPost) => post.slug === params.slug);
 
   if (!post) {
