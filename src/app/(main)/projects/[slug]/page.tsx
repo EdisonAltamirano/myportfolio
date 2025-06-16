@@ -472,7 +472,7 @@ function   ZFShuttleProjectContent() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="bg-secondary/5 hover:bg-secondary/10 transition-colors duration-300">
+              <Card className="bg-white/95 hover:bg-white transition-colors duration-300 shadow-md">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <div className="bg-primary/10 p-3 rounded-lg">
@@ -486,7 +486,7 @@ function   ZFShuttleProjectContent() {
                 </CardContent>
               </Card>
               
-              <Card className="bg-secondary/5 hover:bg-secondary/10 transition-colors duration-300">
+              <Card className="bg-white/95 hover:bg-white transition-colors duration-300 shadow-md">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <div className="bg-primary/10 p-3 rounded-lg">
@@ -500,7 +500,7 @@ function   ZFShuttleProjectContent() {
                 </CardContent>
               </Card>
               
-              <Card className="bg-secondary/5 hover:bg-secondary/10 transition-colors duration-300">
+              <Card className="bg-white/95 hover:bg-white transition-colors duration-300 shadow-md">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <div className="bg-primary/10 p-3 rounded-lg">
@@ -642,7 +642,7 @@ function   ZFShuttleProjectContent() {
                       alt="Jetson Xavier Setup"
                       width={500}
                       height={375}
-                      className="rounded-lg shadow-md object-cover"
+                      className="rounded-lg shadow-md object-cover w-auto"
                     />
                   </div>
                   <div className="space-y-6">
@@ -710,14 +710,14 @@ function   ZFShuttleProjectContent() {
                     alt="Pedestrian Detection System"
                     width={300}
                     height={200}
-                    className="rounded-lg shadow-md object-cover"
+                    className="rounded-lg shadow-md object-cover w-auto"
                   />
                   <Image
                     src={getAssetPath("/zf_autonomous_shuttle/lidar.jpeg")}
                     alt="LiDAR Setup"
                     width={300}
                     height={200}
-                    className="rounded-lg shadow-md object-cover"
+                    className="rounded-lg shadow-md object-cover w-auto"
                   />
                 </div>
               </div>
@@ -738,7 +738,7 @@ function   ZFShuttleProjectContent() {
                     alt="Longitudinal & Lateral Control"
                     width={400}
                     height={300}
-                    className="rounded-lg shadow-md object-cover"
+                    className="rounded-lg shadow-md object-cover w-auto"
                   />
                 </div>
                 <div className="space-y-6">
@@ -1729,7 +1729,7 @@ function   SmartFactoryProjectContent() {
                       width={400}
                       height={250}
                       className="object-cover w-full h-full"
-                      poster={getAssetPath("/smartfactory/industry-presentation.png")}
+                      poster={getAssetPath("/smartfactory/presentacionSM.jpeg")}
                     >
                       <source src={getAssetPath("/smartfactory/smartfactory-entrega.mp4")} type="video/mp4" />
                       Your browser does not support the video tag.
@@ -1768,7 +1768,7 @@ function   SmartFactoryProjectContent() {
                       width={400}
                       height={250}
                       className="object-cover w-full h-full"
-                      poster={getAssetPath("/smartfactory/VR Demostracion.png")}
+                      poster={getAssetPath("/smartfactory/empower.jpeg")}
                     >
                       <source src={getAssetPath("/smartfactory/VR Demostracion.mp4")} type="video/mp4" />
                       Your browser does not support the video tag.
