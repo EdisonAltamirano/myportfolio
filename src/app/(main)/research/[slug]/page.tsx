@@ -13,13 +13,15 @@ import { researchPostsData, ResearchPost } from "@/lib/research-posts";
 
 type Props = {
   params: Promise<{ slug: string }>;
-  searchParams?: { [key: string]: string | string[] | undefined };
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
 export async function generateMetadata({
   params,
+  searchParams,
 }: Props): Promise<Metadata> {
   const resolvedParams = await params;
+  const resolvedSearchParams = await searchParams;
   const post = researchPostsData.find((post: ResearchPost) => post.slug === resolvedParams.slug);
 
   if (!post) {
@@ -40,8 +42,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function ResearchPostPage({ params }: Props) {
+export default async function ResearchPostPage({ params, searchParams }: Props) {
   const resolvedParams = await params;
+  const resolvedSearchParams = await searchParams;
   const post = researchPostsData.find((post: ResearchPost) => post.slug === resolvedParams.slug);
 
   if (!post) {
