@@ -23,7 +23,7 @@ const projectsData = [
     author: siteName,
     category: "Autonomous Systems",
     tags: ["AI", "Robotics", "Self-Driving", "Innovation"],
-    imageUrl: '/images/sdv image.png',
+     imageUrl: getAssetPath("/images/sdv image.png"),
     imageHint: "autonomous vehicle technology",
     githubUrl: "https://github.com/example/zf-shuttle",
     demoUrl: "https://demo.example.com/zf-shuttle"
@@ -36,7 +36,7 @@ const projectsData = [
     author: siteName,
     category: "Robotics",
     tags: ["Robotics", "Computer Vision", "AI", "Automation"],
-    imageUrl:'/airlab/AirlabPrize.jpeg',
+    imageUrl: getAssetPath('/airlab/AirlabPrize.jpeg'),
     imageHint: "robotic stacking system",
     githubUrl: "https://github.com/example/airlab-stacking",
     demoUrl: "https://demo.example.com/airlab-stacking"
@@ -49,7 +49,7 @@ const projectsData = [
     author: siteName,
     category: "Marine Robotics",
     tags: ["Robotics", "Marine", "Autonomous Systems", "Competition"],
-    imageUrl: '/images/uuv.png',
+    imageUrl: getAssetPath('/images/uuv.png'),
     imageHint: "autonomous marine vehicle",
     githubUrl: "https://github.com/example/vanttec-marine",
     demoUrl: "https://demo.example.com/vanttec-marine"
@@ -62,7 +62,7 @@ const projectsData = [
     author: siteName,
     category: "Industrial Automation",
     tags: ["Industry 4.0", "IoT", "Automation", "Digital Twin"],
-    imageUrl:  '/smartfactory/smartfactory.jpeg',
+    imageUrl:  getAssetPath('/smartfactory/smartfactory.jpeg'),
     imageHint: "smart factory automation system",
     githubUrl: "https://github.com/example/smart-factory",
     demoUrl: "https://demo.example.com/smart-factory"
@@ -75,7 +75,7 @@ const projectsData = [
     author: siteName,
     category: "Web Development",
     tags: ["E-commerce", "Next.js", "TypeScript", "Tailwind CSS"],
-    imageUrl: '/chakri/portada.jpg',
+    imageUrl: getAssetPath('/chakri/portada.jpg'),
     imageHint: "e-commerce platform interface",
     githubUrl: "https://github.com/example/chakri-ecommerce",
     demoUrl: "https://demo.example.com/chakri-ecommerce"
@@ -88,7 +88,7 @@ const projectsData = [
     author: siteName,
     category: "Mobile App Development",
     tags: ["Mobile App", "React Native", "IoT", "Agriculture"],
-    imageUrl: '/images/JD GO.jpeg',
+    imageUrl: getAssetPath('/images/JD GO.jpeg'),
     imageHint: "mobile app for agricultural equipment",
     githubUrl: "https://github.com/example/john-deere-go",
     demoUrl: "https://demo.example.com/john-deere-go"
@@ -101,7 +101,7 @@ const projectsData = [
     author: siteName,
     category: "Robotics",
     tags: ["Robotics", "AI", "Competition", "Soccer"],
-    imageUrl:'/robocup/frida.jpg',
+    imageUrl: getAssetPath('/robocup/frida.jpg'),
     imageHint: "robotic soccer competition",
     githubUrl: "https://github.com/example/robocup",
     demoUrl: "https://demo.example.com/robocup"
@@ -114,7 +114,7 @@ const projectsData = [
     author: siteName,
     category: "Research",
     tags: ["Research", "Robotics", "Conference", "AI"],
-    imageUrl:'/tokio/tokio-general.jpg',
+    imageUrl: getAssetPath('/tokio/tokio-general.jpg'),
     imageHint: "robotics research conference",
     githubUrl: "https://github.com/example/tokyo-iros-2022",
     demoUrl: "https://demo.example.com/tokyo-iros-2022"
@@ -127,7 +127,7 @@ const projectsData = [
     author: siteName,
     category: "Automotive Systems",
     tags: ["Automotive", "Safety Systems", "Engineering", "Innovation"],
-    imageUrl: '/zf_job/ZF-CVS.jpg',
+    imageUrl: getAssetPath('/zf_job/ZF-CVS.jpg'),
     imageHint: "automotive braking system technology",
     githubUrl: "https://github.com/example/zf-braking",
     demoUrl: "https://demo.example.com/zf-braking"
@@ -2100,13 +2100,13 @@ function   RoboCupProjectContent() {
                 Competition Demonstration
               </h3>
               <div className="aspect-video w-full overflow-hidden rounded-lg">
-                <video 
-                  src={getAssetPath("/robocup/frida.mp4")}
-                  controls
-                  className="w-full h-full object-cover"
-                >
-                  Your browser does not support the video tag.
-                </video>
+                <iframe
+                  src="https://www.youtube.com/embed/Mzi_xq-Lm4o"
+                  title="RoboCup Competition Video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
               </div>
               <p className="text-sm text-muted-foreground">
                 Video demonstration of Frida robot during the RoboCup@Home competition in Veracruz, showcasing navigation, person following, and object manipulation capabilities.
