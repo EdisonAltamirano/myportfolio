@@ -12,6 +12,7 @@ import { siteName } from '@/lib/constants';
 import {  Layers,  Trophy, Globe, Satellite, Map, Award, Star, Bot, Monitor, Route, Hand, Zap, FileText, CheckCircle, Car, Cog, Shield, Play, Users, Building, Factory, Settings, Brain, Network, Wrench, BookOpen, Presentation, Home, Gamepad2, Volume2, Navigation, Cloud, Headphones, ShoppingCart, Truck, DollarSign, Smartphone, ChefHat, MapPin, Bell, Server, Sparkles, Camera, Box, Clock, BarChart, GraduationCap, Code, XCircle, Layout, RefreshCw, LineChart, TestTube, Bug, Lightbulb, GitBranch, Video, ExternalLink } from 'lucide-react';
 import { allProjects, Project } from '@/lib/constants';
 import { Suspense } from 'react';
+import { getAssetPath } from '@/lib/utils';
 // Project metadata
 const projectsData = [
   {
@@ -615,7 +616,7 @@ function   ZFShuttleProjectContent() {
                 </div>
                 <div className="flex justify-center">
                   <Image
-                    src={`${process.env.NODE_ENV === 'production' ? '/myportfolio' : ''}/zf_autonomous_shuttle/placa.jpg`}
+                    src={getAssetPath("/zf_autonomous_shuttle/placa.jpg")}
                     alt="Custom PCB Design"
                     width={400}
                     height={300}
@@ -637,7 +638,7 @@ function   ZFShuttleProjectContent() {
                 <div className="grid grid-cols-1 lg:grid-cols-1 gap-8 items-center">
                   <div className="flex justify-center">
                     <Image
-                      src={`${process.env.NODE_ENV === 'production' ? '/myportfolio' : ''}/zf_autonomous_shuttle/zf-jetson.jpeg`}
+                      src={getAssetPath("/zf_autonomous_shuttle/zf-jetson.jpeg")}
                       alt="Jetson Xavier Setup"
                       width={500}
                       height={375}
@@ -705,14 +706,14 @@ function   ZFShuttleProjectContent() {
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <Image
-                    src={`${process.env.NODE_ENV === 'production' ? '/myportfolio' : ''}/zf_autonomous_shuttle/pedestrian_detection.jpeg`}
+                    src={getAssetPath("/zf_autonomous_shuttle/pedestrian_detection.jpeg")}
                     alt="Pedestrian Detection System"
                     width={300}
                     height={200}
                     className="rounded-lg shadow-md object-cover"
                   />
                   <Image
-                    src={`${process.env.NODE_ENV === 'production' ? '/myportfolio' : ''}/zf_autonomous_shuttle/lidar.jpeg`}
+                    src={getAssetPath("/zf_autonomous_shuttle/lidar.jpeg")}
                     alt="LiDAR Setup"
                     width={300}
                     height={200}
@@ -733,7 +734,7 @@ function   ZFShuttleProjectContent() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div className="flex justify-center">
                   <Image
-                    src={`${process.env.NODE_ENV === 'production' ? '/myportfolio' : ''}/zf_autonomous_shuttle/longitudinal_lateral_control.jpeg`}
+                    src={getAssetPath("/zf_autonomous_shuttle/longitudinal_lateral_control.jpeg")}
                     alt="Longitudinal & Lateral Control"
                     width={400}
                     height={300}
@@ -873,7 +874,7 @@ function   ZFShuttleProjectContent() {
                   </p>
                   <div className="relative overflow-hidden rounded-lg">
                     <Image
-                      src="/zf_autonomous_shuttle/10-reconocidos.jpeg"
+                      src={getAssetPath("/zf_autonomous_shuttle/10-reconocidos.jpeg")}
                       alt="First Presentation to ZF"
                       width={400}
                       height={250}
@@ -910,7 +911,7 @@ function   ZFShuttleProjectContent() {
                   </div>
                   <div className="relative overflow-hidden rounded-lg mt-4">
                     <Image
-                      src="/zf_autonomous_shuttle/byd-presentacion.jpeg"
+                      src={getAssetPath("/zf_autonomous_shuttle/byd-presentacion.jpeg")}
                       alt="First Presentation to ZF"
                       width={400}
                       height={250}
@@ -949,7 +950,7 @@ function   ZFShuttleProjectContent() {
                   </div>
                   <div className="relative overflow-hidden rounded-lg">
                     <Image
-                      src="/zf_autonomous_shuttle/zf-80.jpeg"
+                      src={getAssetPath("/zf_autonomous_shuttle/zf-80.jpeg")}
                       alt="Official Presentation"
                       width={400}
                       height={250}
@@ -1007,7 +1008,7 @@ function   ZFShuttleProjectContent() {
                   </p>
                   <div className="mt-4">
                     <Image
-                      src="/zf_autonomous_shuttle/gigaFactory.jpeg"
+                      src={getAssetPath("/zf_autonomous_shuttle/gigaFactory.jpeg")}
                       alt="Tesla Visit"
                       width={300}
                       height={200}
@@ -1028,7 +1029,7 @@ function   ZFShuttleProjectContent() {
                   </p>
                   <div className="mt-4">
                     <Image
-                      src="/zf_autonomous_shuttle/teach-professores.jpeg"
+                      src={getAssetPath("/zf_autonomous_shuttle/teach-professores.jpeg")}
                       alt="Educational Impact"
                       width={300}
                       height={200}
@@ -1256,7 +1257,7 @@ function   AIRLabProjectContent() {
               <h3 className="text-xl font-bold text-primary mb-4">System Architecture Overview</h3>
               <div className="relative overflow-hidden rounded-lg shadow-lg">
                 <Image
-                  src="/airlab/mainengine.jpeg"
+                  src={getAssetPath("/airlab/mainengine.jpeg")}
                   alt="Main Functions Diagram of the Autonomous Stacking System"
                   width={800}
                   height={500}
@@ -1526,14 +1527,14 @@ function   SmartFactoryProjectContent() {
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <Image
-                    src="/smartfactory/hmi.png"
+                    src={getAssetPath("/smartfactory/hmi.png")}
                     alt="PLC Control System"
                     width={300}
                     height={200}
                     className="rounded-lg shadow-md object-cover"
                   />
                   <Image
-                    src="/smartfactory/aveva.png"
+                    src={getAssetPath("/smartfactory/aveva.png")}
                     alt="HMI Dashboard"
                     width={300}
                     height={200}
@@ -1554,14 +1555,14 @@ function   SmartFactoryProjectContent() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div className="grid grid-cols-2 gap-4">
                   <Image
-                    src="/smartfactory/dashgos.png"
+                    src={getAssetPath("/smartfactory/dashgos.png")}
                     alt="AGV Line Following Robot"
                     width={300}
                     height={200}
                     className="rounded-lg shadow-md object-cover"
                   />
                   <Image
-                    src="/smartfactory/omron.png"
+                    src={getAssetPath("/smartfactory/omron.png")}
                     alt="ABB Yumi Robot"
                     width={300}
                     height={200}
@@ -1641,7 +1642,7 @@ function   SmartFactoryProjectContent() {
                 <div className="grid grid-cols-1 gap-4">
               
                   <Image
-                    src="/smartfactory/tecnomatix.png"
+                    src={getAssetPath("/smartfactory/tecnomatix.png")}
                     alt="Digital Twin Interface"
                     width={400}
                     height={300}
@@ -1663,7 +1664,7 @@ function   SmartFactoryProjectContent() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
                 <div className="grid grid-cols-1 gap-2">
                   <Image
-                    src="/smartfactory/laboratory.png"
+                    src={getAssetPath("/smartfactory/laboratory.png")}
                     alt="Cyber-Physical Systems"
                     width={300}
                     height={200}
@@ -1728,9 +1729,9 @@ function   SmartFactoryProjectContent() {
                       width={400}
                       height={250}
                       className="object-cover w-full h-full"
-                      poster="/smartfactory/industry-presentation.png"
+                      poster={getAssetPath("/smartfactory/industry-presentation.png")}
                     >
-                      <source src={`${process.env.NODE_ENV === 'production' ? '/myportfolio' : ''}/smartfactory/smartfactory-entrega.mp4`} type="video/mp4" />
+                      <source src={getAssetPath("/smartfactory/smartfactory-entrega.mp4")} type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
                   </div>
@@ -1767,9 +1768,9 @@ function   SmartFactoryProjectContent() {
                       width={400}
                       height={250}
                       className="object-cover w-full h-full"
-                      poster="/smartfactory/VR Demostracion.png"
+                      poster={getAssetPath("/smartfactory/VR Demostracion.png")}
                     >
-                      <source src="/smartfactory/VR Demostracion.mp4" type="video/mp4" />
+                      <source src={getAssetPath("/smartfactory/VR Demostracion.mp4")} type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
                   </div>
@@ -1815,7 +1816,7 @@ function   SmartFactoryProjectContent() {
               </div>
               <div className="relative overflow-hidden rounded-lg">
                 <Image
-                  src="/smartfactory/reconocimento.jpeg"
+                  src={getAssetPath("/smartfactory/reconocimento.jpeg")}
                   alt="Smart Factory Anniversary"
                   width={400}
                   height={250}
@@ -1848,7 +1849,7 @@ function   SmartFactoryProjectContent() {
                   </p>
                   <div className="mt-4">
                     <Image
-                      src="/smartfactory/presentacionSM.jpeg"
+                      src={getAssetPath("/smartfactory/presentacionSM.jpeg")}
                       alt="Smart Factory Team"
                       width={300}
                       height={200}
@@ -1870,7 +1871,7 @@ function   SmartFactoryProjectContent() {
                   </p>
                   <div className="mt-4">
                     <Image
-                      src="/smartfactory/cadi.png"
+                      src={getAssetPath("/smartfactory/cadi.png")}
                       alt="Teacher Training"
                       width={300}
                       height={200}
@@ -1936,7 +1937,7 @@ function   SmartFactoryProjectContent() {
                   </p>
                   <div className="mt-4">
                     <Image
-                      src="/smartfactory/epic-ur.png"
+                      src={getAssetPath("/smartfactory/epic-ur.png")}
                       alt="Smart Factory Network"
                       width={300}
                       height={200}
@@ -1957,7 +1958,7 @@ function   SmartFactoryProjectContent() {
                   </p>
                   <div className="mt-4">
                     <Image
-                      src="/smartfactory/empower.jpeg"
+                      src={getAssetPath("/smartfactory/empower.jpeg")}
                       alt="Student Empowerment"
                       width={300}
                       height={200}
@@ -1978,7 +1979,7 @@ function   SmartFactoryProjectContent() {
                   </p>
                   <div className="mt-4">
                     <Image
-                      src="/smartfactory/mit.jpeg"
+                      src={getAssetPath("/smartfactory/mit.jpeg")}
                       alt="MIT Collaboration"
                       width={300}
                       height={200}
@@ -1999,7 +2000,7 @@ function   SmartFactoryProjectContent() {
                   </p>
                   <div className="mt-4">
                     <Image
-                      src="/smartfactory/cplas.jpeg"
+                      src={getAssetPath("/smartfactory/cplas.jpeg")}
                       alt="Reference Laboratory"
                       width={300}
                       height={200}
@@ -2100,7 +2101,7 @@ function   RoboCupProjectContent() {
               </h3>
               <div className="aspect-video w-full overflow-hidden rounded-lg">
                 <video 
-                  src="/robocup/frida.mp4"
+                  src={getAssetPath("/robocup/frida.mp4")}
                   controls
                   className="w-full h-full object-cover"
                 >
@@ -2342,7 +2343,7 @@ function   RoboCupProjectContent() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-4">
                 <Image
-                  src="/robocup/roborregos-premiacion.jpg"
+                  src={getAssetPath("/robocup/roborregos-premiacion.jpg")}
                   alt="Team Roborregos Award Ceremony"
                   width={600}
                   height={400}
@@ -2354,7 +2355,7 @@ function   RoboCupProjectContent() {
               </div>
               <div className="space-y-4">
                 <Image
-                  src="/robocup/roborregos-veracruz.jpg"
+                  src={getAssetPath("/robocup/roborregos-veracruz.jpg")}
                   alt="Team Roborregos in Veracruz"
                   width={600}
                   height={400}
@@ -2668,7 +2669,7 @@ function   TokyoIROSProjectContent() {
                 </div>
                 <div className="grid grid-cols-1 gap-2">
                   <Image
-                    src="/tokio/system-comms.png"
+                    src={getAssetPath("/tokio/system-comms.png")}
                     alt="IROS State Machine Architecture"
                     width={300}
                     height={200}
@@ -2690,7 +2691,7 @@ function   TokyoIROSProjectContent() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div className="grid grid-cols-1 gap-4">
                   <Image
-                    src="/tokio/tokio-path.jpg"
+                    src={getAssetPath("/tokio/tokio-path.jpg")}
                     alt="ROS Navigation Stack"
                     width={300}
                     height={200}
@@ -2766,7 +2767,7 @@ function   TokyoIROSProjectContent() {
                 </div>
                 <div className="grid grid-cols-1 gap-4">
                   <Image
-                    src="/tokio/graspable-objects.jpg"
+                    src={getAssetPath("/tokio/graspable-objects.jpg")}
                     alt="MoveIt! SIGVerse Integration"
                     width={300}
                     height={200}
@@ -2788,7 +2789,7 @@ function   TokyoIROSProjectContent() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="grid grid-cols-1 gap-4">
                   <Image
-                    src="/tokio/vision.png"
+                    src={getAssetPath("/tokio/vision.png")}
                     alt="Stereo Vision System"
                     width={300}
                     height={200}
@@ -2857,7 +2858,7 @@ function   TokyoIROSProjectContent() {
                   </p>
                   <div className="relative overflow-hidden rounded-lg">
                     <Image
-                      src="/tokio/thirdplace.png"
+                      src={getAssetPath("/tokio/thirdplace.png")}
                       alt="IROS HandyMan Award Ceremony"
                       width={400}
                       height={250}
@@ -2894,7 +2895,7 @@ function   TokyoIROSProjectContent() {
                   </div>
                   <div className="relative overflow-hidden rounded-lg">
                     <Image
-                      src="/tokio/portada.png"
+                      src={getAssetPath("/tokio/portada.png")}
                       alt="IROS HandyMan Award Ceremony"
                       width={400}
                       height={250}
@@ -2933,7 +2934,7 @@ function   TokyoIROSProjectContent() {
                   </div>
                   <div className="relative overflow-hidden rounded-lg">
                     <Image
-                      src="/tokio/premiacion-tokio.jpg"
+                      src={getAssetPath("/tokio/premiacion-tokio.jpg")}
                       alt="IROS 2022 Kyoto"
                       width={400}
                       height={250}
@@ -2969,7 +2970,7 @@ function   TokyoIROSProjectContent() {
                   </p>
                   <div className="mt-4">
                     <Image
-                      src="/tokio/places.png"
+                      src={getAssetPath("/tokio/places.png")}
                       alt="Navigation Leadership"
                       width={300}
                       height={200}
@@ -2991,7 +2992,7 @@ function   TokyoIROSProjectContent() {
                   </p>
                   <div className="mt-4">
                     <Image
-                      src="/tokio/aws.jpg"
+                      src={getAssetPath("/tokio/aws.jpg")}
                       alt="Integration Architecture"
                       width={300}
                       height={200}
@@ -3057,7 +3058,7 @@ function   TokyoIROSProjectContent() {
                   </p>
                   <div className="mt-4">
                     <Image
-                      src="/tokio/roborregos.png"
+                      src={getAssetPath("/tokio/roborregos.png")}
                       alt="International Recognition"
                       width={300}
                       height={200}
@@ -3078,7 +3079,7 @@ function   TokyoIROSProjectContent() {
                   </p>
                   <div className="mt-4">
                     <Image
-                      src="/tokio/sigverse-general.png"
+                      src={getAssetPath("/tokio/sigverse-general.png")}
                       alt="Reusable Resources"
                       width={300}
                       height={200}
@@ -3099,7 +3100,7 @@ function   TokyoIROSProjectContent() {
                   </p>
                   <div className="mt-4">
                     <Image
-                      src="/tokio/team.jpg"
+                      src={getAssetPath("/tokio/team.jpg")}
                       alt="Research Inspiration"
                       width={300}
                       height={200}
@@ -3134,14 +3135,14 @@ function   ChakriProjectContent() {
             <div className="flex flex-col items-center space-y-6">
               <div className="flex items-center space-x-4">
                 <Image
-                  src="/chakri/appstore.png"
+                  src={getAssetPath("/chakri/appstore.png")}
                   alt="App Store"
                   width={120}
                   height={40}
                   className="rounded-lg hover:opacity-80 transition-opacity"
                 />
                 <Image
-                  src="/chakri/playstore.png"
+                  src={getAssetPath("/chakri/playstore.png")}
                   alt="Play Store"
                   width={120}
                   height={40}
@@ -3272,7 +3273,7 @@ function   ChakriProjectContent() {
                 </div>
                 <div className="flex justify-center">
                   <Image
-                    src="/chakri/architecture.png"
+                    src={getAssetPath("/chakri/architecture.png")}
                     alt="System Architecture"
                     width={300}
                     height={200}
@@ -3527,9 +3528,9 @@ function   JohnDeereProjectContent() {
                     <video 
                       controls 
                       className="w-full h-full object-cover"
-                      poster="/images/im-reserver-poster.jpg"
+                      poster={getAssetPath("/images/im-reserver-poster.jpg")}
                     >
-                      <source src="/jdgo/IM RESERVACION.mp4" type="video/mp4" />
+                      <source src={getAssetPath("/jdgo/IM RESERVACION.mp4")} type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
                   </div>
@@ -3638,9 +3639,9 @@ function   JohnDeereProjectContent() {
                     <video 
                       controls 
                       className="w-full h-full object-cover"
-                      poster="/images/shelfguard-poster.jpg"
+                      poster={getAssetPath("/images/shelfguard-poster.jpg")}
                     >
-                      <source src="/jdgo/Security Video.mp4" type="video/mp4" />
+                      <source src={getAssetPath("/jdgo/Security Video.mp4")} type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
                   </div>
@@ -3999,7 +4000,7 @@ function   VanttecProjectContent() {
                   
                   <div className="text-center mb-6">
                     <Image
-                      src="/vanttec/roboboat-award.png"
+                      src={getAssetPath("/vanttec/roboboat-award.png")}
                       alt="RoboBoat Competition Award"
                       width={200}
                       height={150}
@@ -4082,7 +4083,7 @@ function   VanttecProjectContent() {
                   
                   <div className="text-center mb-6">
                     <Image
-                      src="/vanttec/robosub-award.png"
+                      src={getAssetPath("/vanttec/robosub-award.png")}
                       alt="RoboSub Competition Award"
                       width={200}
                       height={150}
@@ -4303,7 +4304,7 @@ function   VanttecProjectContent() {
                     <h4 className="font-medium text-primary mb-2">International Collaborations</h4>
                       <div className="text-center mb-3">
                       <Image
-                        src="/vanttec/swri.jpeg"
+                        src={getAssetPath("/vanttec/swri.jpeg")}
                         alt="International collaboration with SwRI"
                         width={120}
                         height={80}
@@ -4318,7 +4319,7 @@ function   VanttecProjectContent() {
                     <h4 className="font-medium text-primary mb-2">Talent Formation</h4>
                     <div className="text-center mb-3">
                       <Image
-                        src="/vanttec/vanttec-meeting.jpeg"
+                        src={getAssetPath("/vanttec/vanttec-meeting.jpeg")}
                         alt="VANTTEC Team Meeting and Training Session"
                         width={120}
                         height={80}
@@ -4333,7 +4334,7 @@ function   VanttecProjectContent() {
                     <h4 className="font-medium text-primary mb-2">Legacy</h4>
                     <div className="text-center mb-3">
                       <Image
-                        src="/vanttec/vanttec-logo.jpeg"
+                        src={getAssetPath("/vanttec/vanttec-logo.jpeg")}
                         alt="Vanttec logo"
                         width={120}
                         height={80}
