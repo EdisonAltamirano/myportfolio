@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Briefcase, Brain, Download, Layers, Lightbulb, Users } from "lucide-react";
 import { aboutStats, siteName, technicalSkills } from "@/lib/constants";
 import { TechSkillsDisplay } from "@/components/sections/TechSkills";
+import { getAssetPath } from "@/lib/utils";
 
 export default function AboutPage() {
   return (
@@ -21,10 +22,10 @@ export default function AboutPage() {
               <h2 className="text-3xl font-semibold mb-4 text-foreground">Edison Ricardo Altamirano Avila</h2>
               <p className="text-primary mb-6 font-medium">Robotics Engineer & Full-Stack Innovator</p>
               <p className="text-muted-foreground mb-4">
-                My journey began in the intricate world of robotics systems, fostering a deep understanding of how things work from the ground up. This foundation in engineering principles—problem-solving, systems thinking, and precision—has been pivotal in my evolution into a full-stack developer and AI enthusiast.
+              As a leader in robotics and technology, I've built my career on a foundation of hands-on engineering excellence. My deep expertise in robotics systems and software development has positioned me at the forefront of innovation, driving the development of cutting-edge solutions that bridge the gap between hardware and software. This unique perspective has been instrumental in my success as a full-stack developer and AI innovator, allowing me to deliver transformative solutions that push the boundaries of what's possible.
               </p>
               <p className="text-muted-foreground mb-6">
-                I thrive on bridging the gap between the physical and digital, transforming complex challenges into elegant, functional solutions. My passion lies in developing intelligent systems, whether they're autonomous vehicles navigating city streets, AI algorithms deciphering complex data, or robust enterprise applications streamlining operations.
+              I thrive on bridging the gap between the physical and digital, transforming complex challenges into elegant, functional solutions. My passion lies in developing intelligent systems, whether they're autonomous vehicles navigating city streets, AI algorithms deciphering complex data, or robust enterprise applications streamlining operations.
               </p>
               <Button asChild size="lg" className="mt-4 w-full sm:w-auto">
                 <Link href="/contact">Get In Touch</Link>
@@ -110,12 +111,18 @@ export default function AboutPage() {
       </FadeIn>
 
       <FadeIn delay="delay-500" className="text-center mt-12">
-        <Button size="lg" variant="outline" asChild className="border-primary text-primary hover:bg-primary/10">
-          <Link href="/cv_edison_altamirano.pdf" target="_blank" rel="noopener noreferrer">
-            <Download className="mr-2 h-5 w-5" />
-            Download My CV
-          </Link>
-        </Button>
+        <div className="flex flex-col items-center gap-4">
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-primary to-primary/50 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+            <Button size="lg" variant="outline" asChild className="relative border-primary text-primary hover:bg-primary/10 transition-all duration-300 hover:scale-105">
+              <Link href={getAssetPath("/cv_edison_altamirano.pdf")} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3">
+                <Download className="h-5 w-5" />
+                <span className="font-medium">Download My CV</span>
+              </Link>
+            </Button>
+          </div>
+          <p className="text-sm text-muted-foreground">Get a detailed overview of my experience and skills</p>
+        </div>
       </FadeIn>
     </div>
   );

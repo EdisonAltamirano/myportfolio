@@ -11,7 +11,7 @@ export const navLinks: NavLink[] = [
   { href: '/', label: 'Home', icon: Home },
   { href: '/about', label: 'About', icon: UserCircle }, // Changed from FileText for better semantic meaning
   { href: '/projects', label: 'Projects', icon: Briefcase },
-  { href: '/blog', label: 'Blog', icon: Book },
+  { href: '/research', label: 'Research', icon: Book },
   { href: '/contact', label: 'Contact', icon: Contact },
 ];
 

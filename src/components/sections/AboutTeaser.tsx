@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { aboutStats } from '@/lib/constants';
 import { FadeIn } from '@/components/animations/FadeIn';
 import { Card, CardContent } from '@/components/ui/card';
+import { getAssetPath } from '@/lib/utils';
 
 export function AboutTeaser() {
   return (
@@ -13,7 +14,7 @@ export function AboutTeaser() {
           <FadeIn>
             <div className="relative aspect-square rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/images/profile foto.png"
+                src={getAssetPath('/images/profile foto.png')}
                 alt="Edison Altamirano"
                 data-ai-hint="professional portrait"
                 width={600}

@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Briefcase, CalendarDays, Zap } from "lucide-react";
@@ -17,32 +16,47 @@ interface TimelineItemProps {
 const experienceData: Omit<TimelineItemProps, 'isLeft'>[] = [
   {
     title: "Robotics Beginnings",
-    period: "2015-2017",
-    description: "Joined robotics team \"LIONS\" and won regional Robocup competition. Developed skills in computer vision and electronics for maze-solving robots.",
+    period: "2018-2019",
+    description: "Joined robotics team \"LIONS\" and won regional Robocup competition in the MazeRescue category. Developed skills in computer vision and electronics for maze-solving robots.",
     details: "Also served as teaching assistant for mobile app programming courses.",
     icon: Zap,
   },
   {
     title: "Smart Factory",
-    period: "2017-2019",
+    period: "2019-2023",
     description: "Developed AGV line-following robots and integrated them with PLCs. Created visual interfaces for robot monitoring. Taught ROS to professors.",
     details: "This work led to my first job as Robotics Assistant.",
     icon: Briefcase, // Placeholder, consider more specific icon
   },
   {
     title: "VANTTEC",
-    period: "2019-2021",
+    period: "2019-2023",
     description: "Led software development for autonomous boats and submarines. Implemented state machines, computer vision, and radio communication systems.",
     details: "Won 1st place in RoboBoat and 3rd in RoboSub competitions.",
     icon: Zap, // Placeholder
   },
   {
+    title: "CHAKRI",
+    period: "2020-Present",
+    description: "Developed a comprehensive e-commerce platform with three integrated applications: customer-facing web store, vendor management system, and administrative dashboard. Implemented secure payment processing, inventory management, and real-time order tracking.",
+    details: "Created a full-stack solution using modern web technologies, ensuring seamless user experience across all platforms. Successfully managed the entire development lifecycle from design to deployment.",
+    icon: Briefcase,
+  },
+  {
     title: "Autonomous Car Project",
-    period: "2021-2022",
+    period: "2021-2023",
     description: "Led software development for Mexico's first student-built autonomous car sponsored by ZF. Developed CAN bus control systems and visual SLAM.",
     details: "Presented to Tesla executives before their Gigafactory announcement.",
+    icon: Zap, // Placeholder
+  },
+    {
+    title: "ROBORREGOS",
+    period: "2022-2023",
+    description: "Led software development for autonomous systems and robotics competitions. Implemented state machines, computer vision, and control systems for various platforms including TIAGO robot, RoboCup@Home, and Home Simualtion Tokyo Tech Challenge.",
+    details: "Successful participation in international robotics challenges including RoboCup@Home and Home Simulation Tokyo Tech Challenge.",
     icon: Briefcase, // Placeholder
   },
+
   {
     title: "Current Work - Next-Gen Axle Modulators",
     period: "2022-Present",

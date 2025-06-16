@@ -472,7 +472,7 @@ function   ZFShuttleProjectContent() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="bg-secondary/5">
+              <Card className="bg-secondary/5 hover:bg-secondary/10 transition-colors duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <div className="bg-primary/10 p-3 rounded-lg">
@@ -486,7 +486,7 @@ function   ZFShuttleProjectContent() {
                 </CardContent>
               </Card>
               
-              <Card className="bg-secondary/5">
+              <Card className="bg-secondary/5 hover:bg-secondary/10 transition-colors duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <div className="bg-primary/10 p-3 rounded-lg">
@@ -500,7 +500,7 @@ function   ZFShuttleProjectContent() {
                 </CardContent>
               </Card>
               
-              <Card className="bg-secondary/5">
+              <Card className="bg-secondary/5 hover:bg-secondary/10 transition-colors duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <div className="bg-primary/10 p-3 rounded-lg">
