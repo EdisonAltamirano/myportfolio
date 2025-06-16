@@ -12,8 +12,8 @@ import { siteName } from '@/lib/constants';
 import { researchPostsData, ResearchPost } from "@/lib/research-posts";
 
 type Props = {
-  params: { slug: string }
-  searchParams: { [key: string]: string | string[] | undefined }
+  params: { slug: string };
+  searchParams?: { [key: string]: string | string[] | undefined };
 }
 
 export async function generateMetadata({
