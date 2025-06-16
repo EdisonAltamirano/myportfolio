@@ -115,7 +115,7 @@ export default function AboutPage() {
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-primary to-primary/50 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
             <Button size="lg" variant="outline" asChild className="relative border-primary text-primary hover:bg-primary/10 transition-all duration-300 hover:scale-105">
-              <Link href={getAssetPath("docs/EdisonAltamiranoResume.pdf")} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3">
+              <Link href={getAssetPath("/docs/EdisonAltamiranoResume.pdf")} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3">
                 <Download className="h-5 w-5" />
                 <span className="font-medium">Download My CV</span>
               </Link>
