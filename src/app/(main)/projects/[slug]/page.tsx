@@ -4697,7 +4697,7 @@ export default async function ProjectPage({ params }: Props) {
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-4 mt-8">
+            {/* <div className="flex flex-wrap gap-4 mt-8">
               {project.githubUrl && (
                 <Button variant="outline" asChild>
                   <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
@@ -4712,7 +4712,7 @@ export default async function ProjectPage({ params }: Props) {
                   </Link>
                 </Button>
               )}
-            </div>
+            </div> */}
           </footer>
         </article>
       </FadeIn>
