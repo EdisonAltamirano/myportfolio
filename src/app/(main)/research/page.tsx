@@ -1,139 +1,264 @@
 import { Metadata } from "next";
 import { FadeIn } from "@/components/animations/FadeIn";
+import { BookOpen, ExternalLink, Presentation, FlaskConical } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Research & Publications",
-  description: "Explore our research work, publications, and presentations in robotics, education, and industry 4.0.",
+  title: "Research & Publications — Edison Altamirano",
+  description:
+    "Research publications, conference presentations, and academic contributions in robotics, VLSI, and AI.",
 };
+
+const publications = [
+  {
+    authors: "Altamirano-Avila, E., Ahmad, R., & Rodriguez-Padilla, C.",
+    year: "2022",
+    title:
+      "A Digital Twin Implementation for Mobile and Collaborative Robot Scenarios for Teaching Robotics Based on Robot Operating System.",
+    venue: "IEEE EDUCON",
+    pages: "1–6",
+    doi: "https://doi.org/10.1109/EDUCON52537.2022.9766583",
+  },
+  {
+    authors: "Rodriguez-Padilla, C., Ahmad, R., & Altamirano-Avila, E.",
+    year: "2023",
+    title: "Visual Navigation Algorithms for Mobile Manipulators in Service Shops.",
+    venue: "International Conference on Robotics and Automation",
+    pages: "1–8",
+    doi: "https://doi.org/10.1007/978-3-031-47640-2_19",
+  },
+  {
+    authors: "Vázquez-Hurtado, C., Altamirano-Avila, E., & Ahmad, R.",
+    year: "2023",
+    title:
+      "Towards a Mixed Virtual Reality Environment Implementation to Enable Industrial Robot Programming Competencies within a Cyber-Physical Factory.",
+    venue: "IEEE EDUCON",
+    pages: "1–6",
+    doi: "https://doi.org/10.1109/EDUCON54358.2023.10125175",
+  },
+  {
+    authors:
+      "Vázquez-Hurtado, C., Altamirano-Avila, E., Rodriguez-Padilla, C., Ahmad, R., et al.",
+    year: "2024",
+    title:
+      "Virtual Twin for the Smart Factory as a Tool to Enable Robotics Skills Acquisition.",
+    venue: "International Conference on Learning Factories (IALF)",
+    pages: "113–120",
+    doi: "https://doi.org/10.1007/978-3-031-65411-4_14",
+  },
+  {
+    authors: "VANTTEC Team",
+    year: "2022",
+    title:
+      "RoboSub 2022, 2021 and 2020: Comprehensive Papers on Autonomous Submarine Design and Operation.",
+    venue: "RoboNation Technical Design Report",
+    doi: "https://robonation.org/app/uploads/sites/4/2022/07/RS2022_VantTec_ITESM_TDR.pdf",
+  },
+  {
+    authors: "VANTTEC Team",
+    year: "2022",
+    title:
+      "RoboBoat 2022, 2021, 2020 and 2019: Papers on Engineering and Design of Autonomous Surface Vehicles.",
+    venue: "RoboNation Technical Design Report",
+    doi: "https://robonation.org/app/uploads/sites/3/2022/05/RB_2022_Vanttec_TecDeMonterrey_TDR.pdf",
+  },
+  {
+    authors: "Altamirano-Avila, E., Ahmad, R., & Rodriguez-Padilla, C.",
+    year: "2022",
+    title:
+      "Work in Progress: Implementation of a Digital Twin as Technology to Support Discrete Event Control Teaching.",
+    venue: "IEEE EDUNINE",
+    pages: "1–6",
+    doi: "https://doi.org/10.1109/EDUNINE53672.2022.9782154",
+  },
+];
+
+const presentations: { year: string; items: { title: string; venue: string; link?: string; linkLabel?: string }[] }[] = [
+  {
+    year: "2025",
+    items: [
+      {
+        title:
+          "Intensive 20-hour Course on Robotics and Autonomous Vehicles — Teaching 30 professors from Tecnológico de Monterrey campuses on ROS1/ROS2, control systems, advanced perception algorithms, and ADAS simulations.",
+        venue: "Tecnológico de Monterrey Faculty Program",
+        link: "https://www.linkedin.com/posts/edison-altamirano-avila-55a0341a3_robotics-autonomousvehicles-innovation-activity-7296053708478435329-iOwt",
+        linkLabel: "View Post",
+      },
+    ],
+  },
+  {
+    year: "2024",
+    items: [
+      {
+        title:
+          '5th Anniversary of the SMART FACTORY at Tec De Monterrey — "Roadmap to the SmartFactory: Paving the Way for Intelligent Manufacturing and Advanced Robotics"',
+        venue: "Tecnológico de Monterrey",
+        link: "https://www.linkedin.com/posts/edison-altamirano-avila-55a0341a3_innovation-smartfactory-industry4-activity-7245875486931697664-V3Lk",
+        linkLabel: "View Recording",
+      },
+      {
+        title:
+          '"Virtual Twin for the Smart Factory as a Tool to Enable Robotics Skills Acquisition"',
+        venue: "IALF — University of Twente, Netherlands",
+        link: "https://ialf-online.net/",
+        linkLabel: "Conference Website",
+      },
+      {
+        title:
+          '"Towards a Mixed VR Environment for Industrial Robot Programming within a Cyber-Physical Factory"',
+        venue: "CPLAS 2024",
+        link: "https://ciie.itesm.mx/en/cplas-2024/",
+        linkLabel: "Conference Website",
+      },
+    ],
+  },
+  {
+    year: "2023",
+    items: [
+      {
+        title:
+          "VANTTEC Self-Driving Car Showcase — First official demonstration of fully autonomous SDV capabilities to company executives, academics, and school directives.",
+        venue: "VANTTEC Showcase Event",
+        link: "https://drive.google.com/file/d/1tOrO6Brp6VLg6hqPitjMkOtYIW-htkGg/view",
+        linkLabel: "View Recording",
+      },
+    ],
+  },
+  {
+    year: "2022",
+    items: [
+      {
+        title:
+          "AVEVA OSIsoft Training — Teaching 11+ professors on industrial data management using AVEVA PI System: real-time data collection, visualization, and analysis.",
+        venue: "Tecnológico de Monterrey",
+      },
+      {
+        title: 'RoboSub 2022 — "Presentation of VANTTEC UUV-IV Prototype"',
+        venue: "RoboNation RoboSub 2022",
+      },
+    ],
+  },
+];
 
 export default function ResearchPage() {
   return (
-    <FadeIn>
-      <div className="container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold mb-8">List of Publications & Presentations</h1>
-        
-        {/* Publications Section */}
-        <section className="mb-12">
-          <h2 className="text-3xl font-semibold mb-6">Publications</h2>
-          <div className="space-y-6">
-            <div className="prose max-w-none">
-              <p className="mb-4">
-                Altamirano-Avila, E., Ahmad, R., & Rodriguez-Padilla, C. (2022). A Digital Twin Implementation for Mobile and Collaborative Robot Scenarios for Teaching Robotics Based on Robot Operating System. IEEE EDUCON, 1-6.{" "}
-                <a href="https://doi.org/10.1109/EDUCON52537.2022.9766583" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                  [View Publication]
-                </a>
-              </p>
-              <p className="mb-4">
-                Rodriguez-Padilla, C., Ahmad, R., & Altamirano-Avila, E. (2023). Visual Navigation Algorithms for Mobile Manipulators in Service Shops. In International Conference on Robotics and Automation, 1-8.{" "}
-                <a href="https://doi.org/10.1007/978-3-031-47640-2_19" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                  [View Publication]
-                </a>
-              </p>
-              <p className="mb-4">
-                Vázquez-Hurtado, C., Altamirano-Avila, E., & Ahmad, R. (2023). Towards a Mixed Virtual Reality Environment Implementation to Enable Industrial Robot Programming Competencies within a Cyber-Physical Factory. IEEE EDUCON, 1-6.{" "}
-                <a href="https://doi.org/10.1109/EDUCON54358.2023.10125175" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                  [View Publication]
-                </a>
-              </p>
-              <p className="mb-4">
-                Vázquez-Hurtado, C., Altamirano-Avila, E., Rodriguez-Padilla, C., Ahmad, R., Quiñones, J. I. G., Rodriguez-Delgado, J. M., & Flores-Ramírez, A. (2024). Virtual Twin for the Smart Factory as a Tool to Enable Robotics Skills Acquisition. In International Conference on Learning Factories, 113-120.{" "}
-                <a href="https://doi.org/10.1007/978-3-031-65411-4_14" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                  [View Publication]
-                </a>
-              </p>
-              <p className="mb-4">
-                VANTTEC Team. (2022). RoboSub 2022, 2021 and 2020: Comprehensive Papers on the Development, Challenges, and Innovations in Autonomous Submarine Design and Operation. RoboNation Technical Design Report.{" "}
-                <a href="https://robonation.org/app/uploads/sites/4/2022/07/RS2022_VantTec_ITESM_TDR.pdf" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                  [View Publication]
-                </a>
-              </p>
-              <p className="mb-4">
-                VANTTEC Team. (2022). RoboBoat 2022, 2021, 2020 and 2019: Detailed Papers on the Engineering, Design, and Performance of Autonomous Surface Vehicles. RoboNation Technical Design Report.{" "}
-                <a href="https://robonation.org/app/uploads/sites/3/2022/05/RB_2022_Vanttec_TecDeMonterrey_TDR.pdf" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                  [View Publication]
-                </a>
-              </p>
-              <p className="mb-4">
-                Altamirano-Avila, E., Ahmad, R., & Rodriguez-Padilla, C. (2022). Work in Progress: Implementation of a Digital Twin as Technology to Support Discrete Event Control Teaching. IEEE EDUNINE, 1-6.{" "}
-                <a href="https://doi.org/10.1109/EDUNINE53672.2022.9782154" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                  [View Publication]
-                </a>
-              </p>
-            </div>
+    <div className="min-h-screen bg-circuit">
+      <div className="container mx-auto px-4 py-14 lg:px-8">
+        {/* Header */}
+        <FadeIn className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-sky-500/20 bg-sky-500/5 mb-5">
+            <FlaskConical className="w-3.5 h-3.5 text-sky-400" />
+            <span className="font-mono text-xs text-sky-400/80 tracking-widest uppercase">
+              Academic Contributions
+            </span>
           </div>
-        </section>
+          <h1 className="font-display text-5xl md:text-6xl font-bold text-foreground mb-4">
+            Research &{" "}
+            <span className="text-gradient-sky">Publications</span>
+          </h1>
+          <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
+            Peer-reviewed publications, conference presentations, and invited talks spanning
+            robotics, VLSI, AI systems, and engineering education.
+          </p>
+        </FadeIn>
 
-        {/* Presentations Section */}
-        <section>
-          <h2 className="text-3xl font-semibold mb-6">Presentations</h2>
-            {/* 2025 Presentations */}
-            <div className="mb-8">
-            <h3 className="text-2xl font-medium mb-4">2025</h3>
-            <div className="prose max-w-none">
-            <p className="mb-4">
-                Intensive 20-hour Course on Robotics and Autonomous Vehicles - Teaching 30 professors from various Tecnológico de Monterrey campuses on ROS1/ROS2, control systems, advanced perception algorithms, and ADAS simulations with Gazebo and CARLA{" "}
-                <a href="https://www.linkedin.com/posts/edison-altamirano-avila-55a0341a3_robotics-autonomousvehicles-innovation-activity-7296053708478435329-iOwt" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                  [View Post]
-                </a>
-              </p>
+        {/* Publications */}
+        <FadeIn delay="delay-100" className="mb-16">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="flex items-center gap-2">
+              <BookOpen className="w-4 h-4 text-sky-400" />
+              <span className="font-display text-sm font-bold tracking-widest uppercase text-sky-400">
+                Publications
+              </span>
             </div>
-          </div>
-          {/* 2024 Presentations */}
-          <div className="mb-8">
-            <h3 className="text-2xl font-medium mb-4">2024</h3>
-            <div className="prose max-w-none">
-        
-              <p className="mb-4">
-                5th anniversary of the SMART FACTORY in Tec De Monterrey - "Roadmap the the SmartFactory: paving the way for intelligent manufacturing and advanced robotics"{" "}
-                <a href="https://www.linkedin.com/posts/edison-altamirano-avila-55a0341a3_innovation-smartfactory-industry4-activity-7245875486931697664-V3Lk" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                  [View Presentation Recording]
-                </a>
-              </p>
-              <p className="mb-4">
-                IALF (International Association of Learning Factories) in University of Twente, The Netherlands - "Virtual Twin for the Smart Factory as a Tool to Enable Robotics Skills Acquisition"{" "}
-                <a href="https://ialf-online.net/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                  [View Conference Website]
-                </a>
-              </p>
-              <p className="mb-4">
-                Cyber-Physical Learning Alliance Summit (CPLAS 2024) - "Towards a Mixed Virtual Reality Environment Implementation to Enable Industrial Robot Programming Competencies within a Cyber-Physical Factory"{" "}
-                <a href="https://ciie.itesm.mx/en/cplas-2024/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                  [View Conference Website]
-                </a>
-              </p>
-            </div>
+            <div className="flex-1 h-px bg-gradient-to-r from-sky-500/30 to-transparent" />
+            <span className="font-mono text-xs text-muted-foreground/60">{publications.length} papers</span>
           </div>
 
-          {/* 2023 Presentations */}
-          <div className="mb-8">
-            <h3 className="text-2xl font-medium mb-4">2023</h3>
-            <div className="prose max-w-none">
-              <p className="mb-4">
-                VANTEC Self-Driving Car Showcase Event (September 2023) - First official demonstration presentation of fully autonomous capabilities of VANTTEC's SDV to company executives, academics, and school directives{" "}
-                <a href="https://drive.google.com/file/d/1tOrO6Brp6VLg6hqPitjMkOtYIW-htkGg/view" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                  [View Presentation Recording]
-                </a>
-              </p>
+          <div className="space-y-4">
+            {publications.map((pub, i) => (
+              <FadeIn key={i} delay={`delay-${(i % 4) * 75}`}>
+                <div className="rounded-lg border border-border bg-card/50 p-5 card-glow-sky group">
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="font-mono text-xs text-sky-400 font-bold border border-sky-500/30 bg-sky-500/10 px-2 py-0.5 rounded-sm">
+                          {pub.year}
+                        </span>
+                        <span className="font-mono text-xs text-muted-foreground/60">{pub.venue}</span>
+                      </div>
+                      <p className="font-display text-sm font-semibold text-foreground leading-snug mb-1">
+                        {pub.title}
+                      </p>
+                      <p className="font-body text-xs text-muted-foreground/70 italic">
+                        {pub.authors}
+                        {pub.pages && ` · pp. ${pub.pages}`}
+                      </p>
+                    </div>
+                    {pub.doi && (
+                      <a
+                        href={pub.doi}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="shrink-0 flex items-center gap-1.5 font-mono text-xs text-teal-400 hover:text-teal-300 border border-teal-500/25 hover:border-teal-400/50 bg-teal-500/5 hover:bg-teal-500/10 px-3 py-1.5 rounded-sm transition-all duration-200"
+                      >
+                        <ExternalLink className="w-3 h-3" />
+                        DOI
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </FadeIn>
+
+        {/* Presentations */}
+        <FadeIn delay="delay-200">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="flex items-center gap-2">
+              <Presentation className="w-4 h-4 text-teal-400" />
+              <span className="font-display text-sm font-bold tracking-widest uppercase text-teal-400">
+                Presentations & Talks
+              </span>
             </div>
+            <div className="flex-1 h-px bg-gradient-to-r from-teal-500/30 to-transparent" />
           </div>
 
-          {/* 2022 Presentations */}
-          <div>
-            <h3 className="text-2xl font-medium mb-4">2022</h3>
-            <div className="prose max-w-none">
-            <p className="mb-4">
-                AVEVA OSIsoft Training - Teaching 11+ professors on industrial data management using AVEVA PI System, covering real-time data collection, visualization, and analysis for industrial operations{" "}
-                <a href="/smartfactory/cadi.png" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                  [View Training Image]
-                </a>
-              </p>
-              <p className="mb-4">
-                RoboSub 2022 - "Presentation of VANTTEC UUV-IV Prototype"{" "}
-              </p>
-            </div>
+          <div className="space-y-8">
+            {presentations.map((yearGroup) => (
+              <div key={yearGroup.year}>
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="font-display text-2xl font-bold text-sky-400">{yearGroup.year}</span>
+                  <div className="flex-1 h-px bg-border/50" />
+                </div>
+                <div className="space-y-3">
+                  {yearGroup.items.map((item, i) => (
+                    <FadeIn key={i} delay={`delay-${i * 75}`}>
+                      <div className="rounded-lg border border-border bg-card/40 p-5 card-glow-teal">
+                        <p className="font-body text-sm text-foreground leading-relaxed mb-2">{item.title}</p>
+                        <div className="flex items-center justify-between gap-2">
+                          <span className="font-mono text-xs text-muted-foreground/60">{item.venue}</span>
+                          {item.link && (
+                            <a
+                              href={item.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-1.5 font-mono text-xs text-teal-400 hover:text-teal-300 transition-colors"
+                            >
+                              <ExternalLink className="w-3 h-3" />
+                              {item.linkLabel ?? "View"}
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    </FadeIn>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
-        </section>
+        </FadeIn>
       </div>
-    </FadeIn>
+    </div>
   );
 }

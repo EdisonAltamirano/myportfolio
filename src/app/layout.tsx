@@ -1,5 +1,5 @@
 import type { Metadata, ResolvingMetadata } from 'next';
-import { inter, robotoMono } from '@/lib/fonts';
+import { rajdhani, nunito, jetbrainsMono } from '@/lib/fonts';
 import './globals.css';
 import { ThemeProvider } from '@/components/core/ThemeProvider';
 import { Toaster } from "@/components/ui/toaster";
@@ -12,28 +12,28 @@ export async function generateMetadata(
   _: unknown,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  // Get parent metadata
   const previousMetadata = await parent;
 
-  // Define base metadata
   const baseMetadata = {
-    title: "Edison's Lab - Full-Stack Innovator",
-    description: 'Portfolio of Edison Ricardo Altamirano Avila, a robotics engineer turned full-stack innovator, showcasing projects in autonomous systems, AI, robotics, and enterprise applications.',
+    title: "Edison Altamirano — Stanford EE | VLSI & AI Research",
+    description:
+      "Portfolio of Edison Ricardo Altamirano Avila — Stanford Electrical Engineering MS researcher at Arbabian Lab (radar sensors, multimodal AI), VLSI chip designer, robotics engineer, and full-stack innovator.",
     openGraph: {
-      title: "Edison's Lab - Full-Stack Innovator",
-      description: 'Portfolio of Edison Ricardo Altamirano Avila, a robotics engineer turned full-stack innovator, showcasing projects in autonomous systems, AI, robotics, and enterprise applications.',
-      type: 'website',
-      locale: 'en_US',
-      siteName: "Edison's Lab",
+      title: "Edison Altamirano — Stanford EE | VLSI & AI Research",
+      description:
+        "Stanford EE researcher specializing in radar sensors, VLSI chip design at TSMC, and multimodal AI systems.",
+      type: "website" as const,
+      locale: "en_US",
+      siteName: "Edison Altamirano",
     },
     twitter: {
-      card: 'summary_large_image',
-      title: "Edison's Lab - Full-Stack Innovator",
-      description: 'Portfolio of Edison Ricardo Altamirano Avila, a robotics engineer turned full-stack innovator, showcasing projects in autonomous systems, AI, robotics, and enterprise applications.',
+      card: "summary_large_image" as const,
+      title: "Edison Altamirano — Stanford EE | VLSI & AI Research",
+      description:
+        "Stanford EE researcher specializing in radar sensors, VLSI chip design at TSMC, and multimodal AI systems.",
     },
   };
 
-  // Merge with parent metadata if needed
   return {
     ...baseMetadata,
     openGraph: {
@@ -43,16 +43,17 @@ export async function generateMetadata(
   };
 }
 
-export default function RootLayout({
-  children,
-}: Props) {
+export default function RootLayout({ children }: Props) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${robotoMono.variable} font-sans antialiased`} suppressHydrationWarning={true}>
+    <html lang="en" suppressHydrationWarning className="dark">
+      <body
+        className={`${rajdhani.variable} ${nunito.variable} ${jetbrainsMono.variable} font-body antialiased`}
+        suppressHydrationWarning={true}
+      >
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
-          forcedTheme="light" // Ensure light mode is forced
+          defaultTheme="dark"
+          forcedTheme="dark"
         >
           {children}
           <Toaster />

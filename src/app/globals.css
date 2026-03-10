@@ -4,85 +4,82 @@
 
 @layer base {
   :root {
-    --background: 0 0% 95%; /* Light Gray #F2F2F2 */
-    --foreground: 0 0% 8%; /* Charcoal #141414 */
-    --card: 0 0% 100%; /* White #FFFFFF */
-    --card-foreground: 0 0% 8%; /* Charcoal #141414 */
-    --popover: 0 0% 100%; /* White #FFFFFF */
-    --popover-foreground: 0 0% 8%; /* Charcoal #141414 */
-    --primary: 204 100% 49%; /* Primary Blue #0097FB */
-    --primary-foreground: 0 0% 100%; /* White #FFFFFF */
-    --secondary: 187 100% 50%; /* Neon Aqua #00E5FF */
-    --secondary-foreground: 0 0% 8%; /* Charcoal #141414 on Neon Aqua */
-    --muted: 0 0% 98%; /* Very Light Gray, almost white */
-    --muted-foreground: 0 0% 40%; /* Mid-gray */
-    --accent: 187 100% 50%; /* Neon Aqua #00E5FF for general accents/hovers */
-    --accent-foreground: 0 0% 8%; /* Charcoal #141414 on Neon Aqua */
-    --destructive: 0 84.2% 60.2%; /* Default Red */
-    --destructive-foreground: 0 0% 98%; /* Default Light text for red */
-    --border: 0 0% 88%; /* Mid-Light Gray for borders */
-    --input: 0 0% 88%; /* Mid-Light Gray for inputs */
-    --ring: 204 100% 49%; /* Primary Blue #0097FB for focus rings */
-    --radius: 0.5rem;
+    /* ── Silicon Lab Dark Theme ────────────────────────────── */
+    --background: 224 84% 4%;          /* #030712 deep space navy  */
+    --foreground: 210 18% 90%;         /* #dde4ed cool off-white   */
+    --card: 218 45% 7%;                /* #0a1220 dark card surface */
+    --card-foreground: 210 18% 90%;
+    --popover: 218 45% 7%;
+    --popover-foreground: 210 18% 90%;
+    --primary: 199 91% 60%;            /* #38bdf8 sky blue — EDA lab */
+    --primary-foreground: 224 84% 4%;
+    --secondary: 175 65% 50%;          /* #2dd4bf teal               */
+    --secondary-foreground: 224 84% 4%;
+    --muted: 216 30% 11%;
+    --muted-foreground: 210 15% 55%;
+    --accent: 258 89% 66%;             /* #8b5cf6 silicon violet    */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 213 40% 14%;
+    --input: 213 40% 14%;
+    --ring: 199 91% 60%;
+    --radius: 0.375rem;
 
-    /* Chart colors for light theme */
-    --chart-1: 204 100% 49%; /* Primary Blue */
-    --chart-2: 187 100% 50%; /* Neon Aqua */
-    --chart-3: 204 80% 60%; /* Lighter Primary Blue */
-    --chart-4: 187 80% 70%; /* Lighter Neon Aqua */
-    --chart-5: 204 60% 40%; /* Darker Primary Blue */
+    --chart-1: 199 91% 60%;
+    --chart-2: 175 65% 50%;
+    --chart-3: 258 89% 66%;
+    --chart-4: 199 80% 70%;
+    --chart-5: 175 65% 35%;
 
-    /* Sidebar specific colors for light theme (often a contrasting dark panel) */
-    --sidebar-background: 0 0% 8%; /* Charcoal #141414 */
-    --sidebar-foreground: 0 0% 100%; /* White #FFFFFF */
-    --sidebar-primary: 204 100% 49%; /* Primary Blue #0097FB */
-    --sidebar-primary-foreground: 0 0% 100%; /* White #FFFFFF */
-    --sidebar-accent: 187 100% 50%; /* Neon Aqua #00E5FF */
-    --sidebar-accent-foreground: 0 0% 8%; /* Charcoal #141414 */
-    --sidebar-border: 0 0% 15%; /* Slightly Lighter Charcoal */
-    --sidebar-ring: 204 100% 49%; /* Primary Blue */
+    --sidebar-background: 224 84% 4%;
+    --sidebar-foreground: 210 18% 90%;
+    --sidebar-primary: 199 91% 60%;
+    --sidebar-primary-foreground: 224 84% 4%;
+    --sidebar-accent: 175 65% 50%;
+    --sidebar-accent-foreground: 224 84% 4%;
+    --sidebar-border: 213 40% 14%;
+    --sidebar-ring: 199 91% 60%;
   }
- 
+
   .dark {
-    --background: 0 0% 8%; /* Charcoal #141414 */
-    --foreground: 0 0% 100%; /* White #FFFFFF */
-    --card: 0 0% 12%; /* Slightly Lighter Charcoal */
-    --card-foreground: 0 0% 100%; /* White #FFFFFF */
-    --popover: 0 0% 12%; /* Slightly Lighter Charcoal */
-    --popover-foreground: 0 0% 100%; /* White #FFFFFF */
-    --primary: 204 100% 49%; /* Primary Blue #0097FB */
-    --primary-foreground: 0 0% 100%; /* White #FFFFFF */
-    --secondary: 187 100% 50%; /* Neon Aqua #00E5FF */
-    --secondary-foreground: 0 0% 8%; /* Charcoal #141414 on Neon Aqua */
-    --muted: 0 0% 10%; /* Darker Charcoal / Very subtle dark gray */
-    --muted-foreground: 0 0% 70%; /* Light gray for less prominent text */
-    --accent: 187 100% 50%; /* Neon Aqua #00E5FF */
-    --accent-foreground: 0 0% 8%; /* Charcoal #141414 on Neon Aqua */
-    --destructive: 0 72.2% 50.6%; /* Adjusted Red for dark mode */
-    --destructive-foreground: 0 0% 98%; /* Default Light text for red */
-    --border: 0 0% 20%; /* Lighter Charcoal for borders */
-    --input: 0 0% 20%; /* Lighter Charcoal for inputs */
-    --ring: 204 100% 49%; /* Primary Blue #0097FB for focus rings */
+    --background: 224 84% 4%;
+    --foreground: 210 18% 90%;
+    --card: 218 45% 7%;
+    --card-foreground: 210 18% 90%;
+    --popover: 218 45% 7%;
+    --popover-foreground: 210 18% 90%;
+    --primary: 199 91% 60%;
+    --primary-foreground: 224 84% 4%;
+    --secondary: 175 65% 50%;
+    --secondary-foreground: 224 84% 4%;
+    --muted: 216 30% 11%;
+    --muted-foreground: 210 15% 55%;
+    --accent: 258 89% 66%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 213 40% 14%;
+    --input: 213 40% 14%;
+    --ring: 199 91% 60%;
 
-    /* Chart colors for dark theme */
-    --chart-1: 204 100% 60%; /* Brighter Primary Blue */
-    --chart-2: 187 100% 60%; /* Brighter Neon Aqua */
-    --chart-3: 204 80% 70%; 
-    --chart-4: 187 80% 80%;
-    --chart-5: 204 70% 50%;
+    --chart-1: 199 91% 60%;
+    --chart-2: 175 65% 50%;
+    --chart-3: 258 89% 66%;
+    --chart-4: 199 80% 70%;
+    --chart-5: 175 65% 35%;
 
-    /* Sidebar specific colors for dark theme (blends with main dark theme) */
-    --sidebar-background: 0 0% 8%; /* Charcoal #141414 */
-    --sidebar-foreground: 0 0% 100%; /* White #FFFFFF */
-    --sidebar-primary: 204 100% 49%; /* Primary Blue #0097FB */
-    --sidebar-primary-foreground: 0 0% 100%; /* White #FFFFFF */
-    --sidebar-accent: 187 100% 50%; /* Neon Aqua #00E5FF */
-    --sidebar-accent-foreground: 0 0% 8%; /* Charcoal #141414 */
-    --sidebar-border: 0 0% 15%; /* Slightly Lighter Charcoal */
-    --sidebar-ring: 204 100% 49%; /* Primary Blue */
+    --sidebar-background: 224 84% 4%;
+    --sidebar-foreground: 210 18% 90%;
+    --sidebar-primary: 199 91% 60%;
+    --sidebar-primary-foreground: 224 84% 4%;
+    --sidebar-accent: 175 65% 50%;
+    --sidebar-accent-foreground: 224 84% 4%;
+    --sidebar-border: 213 40% 14%;
+    --sidebar-ring: 199 91% 60%;
   }
 }
- 
+
 @layer base {
   * {
     @apply border-border;
@@ -92,38 +89,225 @@
     min-height: 100vh;
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
+    font-family: var(--font-nunito), system-ui, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-rajdhani), system-ui, sans-serif;
+    letter-spacing: 0.02em;
+  }
+  code, pre, .font-mono {
+    font-family: var(--font-mono), monospace;
   }
 }
 
+/* ═══════════════════════════════════════════
+   KEYFRAME ANIMATIONS
+═══════════════════════════════════════════ */
+
+@keyframes radar-sweep {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes radar-blip {
+  0%   { transform: scale(0); opacity: 1; }
+  100% { transform: scale(3); opacity: 0; }
+}
+
+@keyframes sky-glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(56, 189, 248, 0.2),
+                0 0 16px rgba(56, 189, 248, 0.08);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(56, 189, 248, 0.5),
+                0 0 48px rgba(56, 189, 248, 0.18),
+                0 0 80px rgba(56, 189, 248, 0.06);
+  }
+}
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+
+@keyframes scan-down {
+  0%   { transform: translateY(-100%); opacity: 0; }
+  5%   { opacity: 1; }
+  95%  { opacity: 1; }
+  100% { transform: translateY(200vh); opacity: 0; }
+}
+
+@keyframes fade-slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes trace-in {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+/* ═══════════════════════════════════════════
+   UTILITY CLASSES
+═══════════════════════════════════════════ */
+
 @layer utilities {
-  .bg-grid-pattern {
-    background-image: 
-      linear-gradient(to right, hsl(var(--foreground) / 0.03) 1px, transparent 1px),
-      linear-gradient(to bottom, hsl(var(--foreground) / 0.03) 1px, transparent 1px);
-    background-size: 20px 20px;
+  /* Circuit-board grid background */
+  .bg-circuit {
+    background-image:
+      linear-gradient(rgba(56, 189, 248, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(56, 189, 248, 0.045) 1px, transparent 1px),
+      linear-gradient(rgba(56, 189, 248, 0.016) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(56, 189, 248, 0.016) 1px, transparent 1px);
+    background-size: 80px 80px, 80px 80px, 16px 16px, 16px 16px;
+  }
+
+  /* Gradient text */
+  .text-gradient-sky {
+    background: linear-gradient(135deg, #38bdf8 0%, #7dd3fc 50%, #38bdf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  /* Keep amber alias for any leftover references */
+  .text-gradient-amber {
+    background: linear-gradient(135deg, #38bdf8 0%, #7dd3fc 50%, #38bdf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-teal {
+    background: linear-gradient(135deg, #2dd4bf 0%, #5eead4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-cyan {
+    background: linear-gradient(135deg, #2dd4bf 0%, #5eead4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glow text */
+  .text-sky-glow {
+    color: #38bdf8;
+    text-shadow: 0 0 20px rgba(56, 189, 248, 0.5), 0 0 40px rgba(56, 189, 248, 0.2);
+  }
+  /* Keep old names as aliases */
+  .text-amber-glow {
+    color: #38bdf8;
+    text-shadow: 0 0 20px rgba(56, 189, 248, 0.5), 0 0 40px rgba(56, 189, 248, 0.2);
+  }
+  .text-teal-glow {
+    color: #2dd4bf;
+    text-shadow: 0 0 20px rgba(45, 212, 191, 0.5), 0 0 40px rgba(45, 212, 191, 0.2);
+  }
+  .text-cyan-glow {
+    color: #2dd4bf;
+    text-shadow: 0 0 20px rgba(45, 212, 191, 0.5), 0 0 40px rgba(45, 212, 191, 0.2);
+  }
+
+  /* Animations */
+  .animate-radar-sweep   { animation: radar-sweep 4s linear infinite; }
+  .animate-radar-blip    { animation: radar-blip 2.5s ease-out infinite; }
+  .animate-float         { animation: float-y 4s ease-in-out infinite; }
+  .animate-sky-glow      { animation: sky-glow-pulse 3s ease-in-out infinite; }
+  .animate-amber-glow    { animation: sky-glow-pulse 3s ease-in-out infinite; }
+  .animate-scan-down     { animation: scan-down 10s linear infinite; }
+  .animate-fade-slide-up { animation: fade-slide-up 0.7s ease-out forwards; }
+
+  /* Card hover glows */
+  .card-glow-sky {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(56, 189, 248, 0.12);
+  }
+  .card-glow-sky:hover {
+    border-color: rgba(56, 189, 248, 0.45) !important;
+    box-shadow: 0 0 24px rgba(56, 189, 248, 0.12), 0 8px 32px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3px);
+  }
+
+  /* Keep amber alias */
+  .card-glow-amber {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(56, 189, 248, 0.12);
+  }
+  .card-glow-amber:hover {
+    border-color: rgba(56, 189, 248, 0.45) !important;
+    box-shadow: 0 0 24px rgba(56, 189, 248, 0.12), 0 8px 32px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3px);
+  }
+
+  .card-glow-teal {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(45, 212, 191, 0.12);
+  }
+  .card-glow-teal:hover {
+    border-color: rgba(45, 212, 191, 0.45) !important;
+    box-shadow: 0 0 24px rgba(45, 212, 191, 0.12), 0 8px 32px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3px);
+  }
+
+  /* Keep cyan alias */
+  .card-glow-cyan {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(45, 212, 191, 0.12);
+  }
+  .card-glow-cyan:hover {
+    border-color: rgba(45, 212, 191, 0.45) !important;
+    box-shadow: 0 0 24px rgba(45, 212, 191, 0.12), 0 8px 32px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3px);
   }
 
   .project-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(56, 189, 248, 0.1);
   }
-  
   .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  }
-  .dark .project-card:hover {
-      box-shadow: 0 10px 15px -3px hsl(var(--primary) / 0.1), 0 4px 6px -4px hsl(var(--primary) / 0.08); /* Adjusted shadow for dark theme using accent */
+    border-color: rgba(56, 189, 248, 0.4) !important;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.1), 0 8px 32px rgba(0, 0, 0, 0.5);
+    transform: translateY(-4px);
   }
 
   .article-card {
-      transition: box-shadow 0.3s ease;
+    transition: all 0.3s ease;
   }
-  
   .article-card:hover {
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px rgba(45, 212, 191, 0.1), 0 8px 32px rgba(0, 0, 0, 0.4);
   }
-  
-  .dark .article-card:hover {
-      box-shadow: 0 10px 25px -5px hsl(var(--primary) / 0.15); /* Adjusted shadow for dark theme using accent */
+
+  /* Scan line overlay */
+  .scan-line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, rgba(56, 189, 248, 0.35) 50%, transparent 100%);
+    animation: scan-down 10s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+    top: 0;
+    left: 0;
+  }
+
+  /* Sky border glow */
+  .border-sky-glow {
+    border-color: rgba(56, 189, 248, 0.35);
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.1), inset 0 0 12px rgba(56, 189, 248, 0.04);
+  }
+  /* Keep amber alias */
+  .border-amber-glow {
+    border-color: rgba(56, 189, 248, 0.35);
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.1), inset 0 0 12px rgba(56, 189, 248, 0.04);
+  }
+  .border-teal-glow {
+    border-color: rgba(45, 212, 191, 0.35);
+    box-shadow: 0 0 12px rgba(45, 212, 191, 0.1), inset 0 0 12px rgba(45, 212, 191, 0.04);
+  }
+  /* Keep cyan alias */
+  .border-cyan-glow {
+    border-color: rgba(45, 212, 191, 0.35);
+    box-shadow: 0 0 12px rgba(45, 212, 191, 0.1), inset 0 0 12px rgba(45, 212, 191, 0.04);
   }
 }

@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Radio Tuning Interface</title>
+<style>
+/* ── SHARED TOKENS ─────────────────────────────────────────── */
+:root {
+  --bg: #eef3f9;
+  --panel: #ffffff;
+  --line: #d1dbe8;
+  --text: #1d2a3b;
+  --muted: #5b6b80;
+  --accent: #1f5fae;
+  --accent-soft: #e6f0fb;
+  --readonly: #f2f6fc;
+  --ok: #1f7a4f;
+  --warn: #9a6a10;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 0% 0%, #ffffff 0%, #f4f8fd 42%, #e8eff8 100%);
+  min-height: 100vh;
+  padding: 28px 16px;
+}
+
+.app { max-width: 1080px; margin: 0 auto; }
+
+/* ── TOP BAR ───────────────────────────────────────────────── */
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.title { font-size: 1.25rem; font-weight: 700; letter-spacing: 0.01em; }
+
+.mode-switch {
+  display: inline-flex;
+  background: #dfe8f4;
+  border: 1px solid #c8d4e4;
+  border-radius: 999px;
+  padding: 3px;
+  gap: 4px;
+}
+
+.mode-switch input { position: absolute; opacity: 0; pointer-events: none; }
+
+.mode-switch label {
+  padding: 7px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--muted);
+  user-select: none;
+}
+
+.mode-switch input:checked + label {
+  background: var(--panel);
+  color: var(--accent);
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgba(16,40,74,0.08);
+}
+
+/* ── DEBUG PANEL (light theme) ─────────────────────────────── */
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px;
+}
+
+.panel + .panel { margin-top: 14px; }
+.panel h2 { margin: 0; font-size: 1.03rem; letter-spacing: 0.01em; }
+.caption { margin-top: 4px; color: var(--muted); font-size: 0.9rem; }
+.section-gap { margin-top: 14px; }
+
+.field-grid {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: minmax(250px, 1.35fr) minmax(220px, 1fr);
+  gap: 12px 16px;
+  align-items: center;
+}
+
+.field-grid label { font-size: 0.92rem; color: #304056; }
+
+input[type="text"] {
+  width: 100%;
+  border: 1px solid #c8d4e4;
+  border-radius: 8px;
+  padding: 9px 10px;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: #fff;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #78a1d8;
+  box-shadow: 0 0 0 2px rgba(31,95,174,0.12);
+}
+
+input[readonly] { background: var(--readonly); color: #2f4462; border-color: #cfd9e7; }
+
+.status-line {
+  margin-top: 10px;
+  background: var(--accent-soft);
+  border: 1px solid #c8d9ef;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  color: #234066;
+}
+
+.pair-line {
+  margin-top: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #f4f8fd;
+  border: 1px solid #d7e1ef;
+  font-size: 0.9rem;
+  color: #2d4565;
+}
+
+.button-row { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 10px; }
+
+button {
+  border: 1px solid #2d6eb9;
+  background: #2d6eb9;
+  color: #fff;
+  border-radius: 8px;
+  padding: 9px 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.01em;
+}
+
+button.secondary { background: #f4f8ff; color: #1f5fae; border-color: #9bb7dc; }
+button:hover { filter: brightness(0.98); }
+
+.results-grid {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: minmax(300px,1.4fr) 1fr;
+  gap: 10px 16px;
+  align-items: center;
+}
+
+.results-grid .k { color: #334861; font-size: 0.92rem; }
+
+.results-grid .v {
+  background: #f6f9fd;
+  border: 1px solid #d7e0ed;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 0.92rem;
+  color: #213550;
+  min-height: 37px;
+  display: flex;
+  align-items: center;
+}
+
+/* ── PRODUCTION PANEL (dark radio theme) ───────────────────── */
+.radio-panel {
+  background: #0b0f18;
+  border: 1px solid #1c2535;
+  border-radius: 16px;
+  padding: 24px;
+  color: #c8d8ec;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Header */
+.radio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #1c2535;
+}
+
+.radio-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #00c99a;
+}
+
+.radio-live {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+  color: #4a6070;
+}
+
+.live-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #00ff88;
+  animation: livepulse 2s infinite;
+}
+
+@keyframes livepulse {
+  0%,100% { opacity: 1; box-shadow: 0 0 6px #00ff88; }
+  50%      { opacity: 0.35; box-shadow: none; }
+}
+
+/* Main frequency display */
+.radio-freq-display {
+  text-align: center;
+  background: #06090f;
+  border-radius: 14px;
+  padding: 22px 20px 16px;
+  margin-bottom: 16px;
+  border: 1px solid #151e2e;
+  position: relative;
+}
+
+.freq-label {
+  font-size: 0.65rem;
+  letter-spacing: 4px;
+  color: #2e4050;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.freq-big {
+  font-size: 4.4rem;
+  font-weight: 200;
+  font-family: "Courier New", monospace;
+  color: #00c99a;
+  text-shadow: 0 0 28px rgba(0,201,154,0.45);
+  line-height: 1;
+  letter-spacing: 2px;
+}
+
+.freq-unit {
+  font-size: 1.3rem;
+  color: #2e5040;
+  margin-left: 6px;
+  vertical-align: bottom;
+  line-height: 1.6;
+}
+
+.prod-station-name {
+  margin-top: 10px;
+  font-size: 0.78rem;
+  letter-spacing: 2.5px;
+  color: #3a8060;
+  text-transform: uppercase;
+}
+
+/* FM band bar */
+.fm-band-wrap {
+  margin-bottom: 18px;
+}
+
+.fm-band-ticks {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.62rem;
+  color: #2e4050;
+  font-family: monospace;
+  margin-bottom: 5px;
+  padding: 0 1px;
+}
+
+.fm-band-track {
+  height: 14px;
+  background: #0a1220;
+  border-radius: 7px;
+  border: 1px solid #1a2840;
+  position: relative;
+  overflow: visible;
+}
+
+.fm-band-track::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 7px;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent calc(20% - 1px),
+    #1a2840 calc(20% - 1px),
+    #1a2840 20%
+  );
+}
+
+.fm-needle {
+  position: absolute;
+  top: -7px;
+  width: 3px;
+  height: 28px;
+  background: #00c99a;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(0,201,154,0.9);
+  transform: translateX(-50%);
+  transition: left 0.45s cubic-bezier(0.25,0.8,0.25,1);
+  left: 50%;
+}
+
+/* ── STATION GRID ───────────────────────────────────────────── */
+.stations-wrap {
+  margin-bottom: 18px;
+}
+
+.stations-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.stations-label {
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+  color: #2e4050;
+  text-transform: uppercase;
+}
+
+.stations-count {
+  font-size: 0.6rem;
+  color: #2e4050;
+  font-family: monospace;
+}
+
+.station-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  max-height: 268px;
+  overflow-y: auto;
+  padding-right: 3px;
+  scrollbar-width: thin;
+  scrollbar-color: #1a2535 #06090f;
+  /* fade bottom edge to signal scroll */
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+.station-grid::-webkit-scrollbar { width: 4px; }
+.station-grid::-webkit-scrollbar-track { background: #06090f; }
+.station-grid::-webkit-scrollbar-thumb { background: #1c2c40; border-radius: 2px; }
+
+.station-card {
+  background: #0a1220;
+  border: 1px solid #18273a;
+  border-radius: 8px;
+  padding: 8px 10px;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, box-shadow 0.12s;
+  user-select: none;
+  min-width: 0;
+}
+
+.station-card:hover {
+  background: #0f1d32;
+  border-color: #2a4060;
+}
+
+.station-card.active {
+  background: #091d14;
+  border-color: #00c99a;
+  box-shadow: 0 0 12px rgba(0,201,154,0.18);
+}
+
+.sc-freq {
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-family: "Courier New", monospace;
+  color: #00c99a;
+  margin-bottom: 2px;
+}
+
+.station-card.active .sc-freq {
+  text-shadow: 0 0 8px rgba(0,201,154,0.55);
+}
+
+.sc-call {
+  font-size: 0.72rem;
+  color: #5080a0;
+  font-weight: 600;
+  margin-bottom: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.station-card.active .sc-call {
+  color: #70b090;
+}
+
+.sc-genre {
+  font-size: 0.62rem;
+  color: #253545;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── SPECTRUM ANALYZER ──────────────────────────────────────── */
+.spectrum-wrap {
+  margin-bottom: 18px;
+}
+
+.spectrum-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.spectrum-title {
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+  color: #2e4050;
+  text-transform: uppercase;
+}
+
+.spectrum-box {
+  height: 130px;
+  background: #06090f;
+  border-radius: 10px;
+  border: 1px solid #141e2e;
+  position: relative;
+  overflow: hidden;
+}
+
+#prod-spectrum {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.spectrum-freq-labels {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 2px 0;
+  font-size: 0.6rem;
+  color: #2e4050;
+  font-family: monospace;
+}
+
+/* ── QUADRATURE CONTROL ─────────────────────────────────────── */
+.quad-control {
+  margin-bottom: 16px;
+  background: #0a1220;
+  border: 1px solid #1a2535;
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.quad-control-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.quad-control-label {
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+  color: #2e4050;
+  text-transform: uppercase;
+}
+
+.quad-val-display {
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-family: "Courier New", monospace;
+  color: #00c99a;
+}
+
+.quad-slider-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.quad-lim-label {
+  font-size: 0.65rem;
+  color: #2e4050;
+  font-family: monospace;
+  flex-shrink: 0;
+}
+
+.quad-track-wrap { flex: 1; }
+
+/* Range slider */
+.quad-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: #1a2840;
+  outline: none;
+  cursor: pointer;
+}
+
+.quad-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #00c99a;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0,201,154,0.65);
+  border: 2px solid #06090f;
+}
+
+.quad-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #00c99a;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0,201,154,0.65);
+  border: 2px solid #06090f;
+}
+
+.quad-status-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: #3a7060;
+}
+
+.quad-lowif-readout { font-family: "Courier New", monospace; }
+
+.quad-send-badge {
+  font-size: 0.68rem;
+  font-family: monospace;
+  color: #2e5040;
+  transition: color 0.3s;
+}
+
+.quad-send-badge.ok  { color: #00c99a; }
+.quad-send-badge.err { color: #c07060; }
+
+/* Readout cards */
+.radio-readouts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.readout-card {
+  background: #0a1220;
+  border: 1px solid #1a2535;
+  border-radius: 10px;
+  padding: 11px 14px;
+}
+
+.readout-lbl {
+  font-size: 0.62rem;
+  letter-spacing: 1.5px;
+  color: #2e4050;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.readout-val {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #00c99a;
+  font-family: "Courier New", monospace;
+}
+
+/* Bottom notes */
+.radio-note {
+  font-size: 0.8rem;
+  color: #2e4858;
+  background: #0a1220;
+  border: 1px solid #1a2535;
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+.radio-note + .radio-note { margin-top: 6px; }
+.radio-note.ok  { color: #00c99a; border-color: #0e3025; background: #060f0c; }
+.radio-note.err { color: #c07060; border-color: #3a1010; background: #0f0808; }
+
+/* ── HIDDEN ─────────────────────────────────────────────────── */
+[hidden] { display: none !important; }
+
+/* ── RESPONSIVE ─────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .field-grid, .results-grid { grid-template-columns: 1fr; }
+  .radio-readouts { grid-template-columns: 1fr; }
+  .freq-big { font-size: 2.8rem; }
+  .station-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 520px) {
+  .station-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<main class="app">
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="title">FM Radio / SDR Tuning Interface</div>
+    <div class="mode-switch" aria-label="Mode">
+      <input id="mode-production" type="radio" name="mode" checked/>
+      <label for="mode-production">Production Mode</label>
+      <input id="mode-debug" type="radio" name="mode" />
+      <label for="mode-debug">Debug Mode</label>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       PRODUCTION PANEL — dark FM radio
+  ═══════════════════════════════════════════════════════════ -->
+  <section id="production-panel" class="radio-panel" hidden>
+
+    <div class="radio-header">
+      <span class="radio-title">FM Radio Receiver</span>
+      <div class="radio-live">
+        <span class="live-dot"></span>
+        <span>LIVE</span>
+      </div>
+    </div>
+
+    <!-- Big frequency display -->
+    <div class="radio-freq-display">
+      <div class="freq-label">Tuned Frequency</div>
+      <div class="freq-big">
+        <span id="prod-rf-display">—</span><span class="freq-unit">MHz</span>
+      </div>
+      <div id="prod-station-name" class="prod-station-name">Select a station below</div>
+    </div>
+
+    <!-- FM band bar 87.5 – 108 MHz -->
+    <div class="fm-band-wrap">
+      <div class="fm-band-ticks">
+        <span>87.5</span><span>92</span><span>96</span><span>100</span><span>104</span><span>108</span>
+      </div>
+      <div class="fm-band-track">
+        <div class="fm-needle" id="prod-needle"></div>
+      </div>
+    </div>
+
+    <!-- Bay Area Station Picker -->
+    <div class="stations-wrap">
+      <div class="stations-header">
+        <span class="stations-label">Bay Area FM Stations</span>
+        <span class="stations-count" id="stations-count"></span>
+      </div>
+      <div class="station-grid" id="station-grid"></div>
+    </div>
+
+    <!-- Spectrum Analyzer -->
+    <div class="spectrum-wrap">
+      <div class="spectrum-header">
+        <span class="spectrum-title">Spectrum Analyzer</span>
+      </div>
+      <div class="spectrum-box">
+        <canvas id="prod-spectrum"></canvas>
+      </div>
+      <div class="spectrum-freq-labels">
+        <span>87.5 MHz</span><span>92</span><span>96</span><span>100</span><span>104</span><span>108 MHz</span>
+      </div>
+    </div>
+
+    <!-- Quadrature Frequency Slider -->
+    <div class="quad-control">
+      <div class="quad-control-header">
+        <span class="quad-control-label">Quadrature Freq — CLK0 / CLK1</span>
+        <span class="quad-val-display" id="prod-quad-value">10.950 MHz</span>
+      </div>
+      <div class="quad-slider-row">
+        <span class="quad-lim-label">10.875</span>
+        <div class="quad-track-wrap">
+          <input type="range" id="quad-slider" class="quad-slider"
+                 min="10875" max="11025" step="5" value="10950">
+        </div>
+        <span class="quad-lim-label">11.025</span>
+      </div>
+      <div class="quad-status-row">
+        <span class="quad-lowif-readout">Low-IF: <span id="prod-lowif-live">250.0 kHz</span></span>
+        <span class="quad-send-badge" id="quad-send-badge">—</span>
+      </div>
+    </div>
+
+    <!-- Compact readout cards -->
+    <div class="radio-readouts">
+      <div class="readout-card">
+        <div class="readout-lbl">LO1 / CLK2</div>
+        <div class="readout-val" id="prod-clk2">—</div>
+      </div>
+      <div class="readout-card">
+        <div class="readout-lbl">IF Stage 1</div>
+        <div class="readout-val" id="prod-if">10.700 MHz</div>
+      </div>
+      <div class="readout-card">
+        <div class="readout-lbl">CLK0 / CLK1</div>
+        <div class="readout-val" id="prod-quad">—</div>
+      </div>
+      <div class="readout-card">
+        <div class="readout-lbl">Low-IF</div>
+        <div class="readout-val" id="prod-lowif">—</div>
+      </div>
+    </div>
+
+    <div class="radio-note" id="prod-note">No station selected</div>
+    <div class="radio-note" id="clk2-send-status-prod" style="margin-top:6px">CLK2: ready</div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       DEBUG PANEL — unchanged
+  ═══════════════════════════════════════════════════════════ -->
+  <section id="debug-panel" class="panel">
+    <h2>SECTION A: STAGE 1 INPUTS</h2>
+    <div class="caption">Stage 1 only: RF source and CLK2 (LO1). IF ≈ |RF - CLK2|</div>
+    <div class="field-grid">
+      <label for="rf-generator">RF from generator (MHz)</label>
+      <input id="rf-generator" type="text" inputmode="decimal" value="40.000" />
+
+      <label for="clk2-current">CLK2 current frequency (MHz)</label>
+      <input id="clk2-current" type="text" inputmode="decimal" value="29.300" />
+
+      <label for="suggested-clk2">Suggested LO1 / CLK2 (MHz)</label>
+      <input id="suggested-clk2" type="text" readonly />
+
+      <label for="measured-if">Measured IF after stage 1 (MHz)</label>
+      <input id="measured-if" type="text" inputmode="decimal" value="10.670" />
+    </div>
+    <div id="stage1-check" class="status-line">Measured IF matches the stage-1 reference</div>
+    <div class="button-row">
+      <button id="send-clk2">SEND FREQ CLK2</button>
+    </div>
+    <div id="clk2-send-status" class="status-line">Ready to send CLK2 value</div>
+
+    <section class="panel section-gap">
+      <h2>SECTION B: STAGE 2 QUADRATURE CORRECTION</h2>
+      <div class="caption">Stage 2 only: measured IF into CLK0/CLK1 quadrature mixer.</div>
+      <div class="pair-line">CLK0 = 0° &nbsp;&nbsp;|&nbsp;&nbsp; CLK1 = 90°</div>
+      <div class="field-grid">
+        <label for="desired-low-if">Desired low-IF (kHz)</label>
+        <input id="desired-low-if" type="text" inputmode="decimal" value="250" />
+
+        <label for="quad-current">Current freq in CLK0 / CLK1 (MHz)</label>
+        <input id="quad-current" type="text" inputmode="decimal" value="10.950" />
+
+        <label for="quad-suggested">Suggested quad_freq for CLK0 / CLK1 (MHz)</label>
+        <input id="quad-suggested" type="text" readonly />
+
+        <label for="quad-adjust">Suggested quad_adjust</label>
+        <input id="quad-adjust" type="text" readonly />
+      </div>
+      <div class="button-row">
+        <button id="load-quad" class="secondary">LOAD SUGGESTED QUAD_FREQ</button>
+        <button id="send-quad">SEND QUAD_FREQ CORRECTION TO RASPBERRY</button>
+      </div>
+      <div id="quad-send-status" class="status-line">Ready to send quadrature value</div>
+    </section>
+
+    <section class="panel section-gap">
+      <h2>SECTION C: EXPECTED RESULTS</h2>
+      <div class="results-grid">
+        <div class="k">Measured IF used</div>
+        <div class="v" id="result-measured-if">10.670 MHz</div>
+
+        <div class="k">Stage-1 reference from suggested LO1 / CLK2</div>
+        <div class="v" id="result-stage1-ref">10.700 MHz</div>
+
+        <div class="k">Current freq in CLK0 / CLK1</div>
+        <div class="v" id="result-quad-current">10.950 MHz</div>
+
+        <div class="k">Try quad_freq for CLK0 / CLK1</div>
+        <div class="v" id="result-quad-try">10.920 MHz</div>
+
+        <div class="k">Current low-IF from your values</div>
+        <div class="v" id="result-low-if">280.0 kHz</div>
+
+        <div class="k">Move quad_freq for CLK0 / CLK1</div>
+        <div class="v" id="result-move">Decrease quad_freq by 30.0 kHz</div>
+
+        <div class="k">After that move you should see</div>
+        <div class="v" id="result-after">low-IF near 250.0 kHz with quad_freq = 10.920 MHz</div>
+      </div>
+    </section>
+  </section>
+
+</main>
+
+<script>
+(function () {
+  /* ── element registry (debug panel + shared) ─────────────── */
+  const ids = [
+    "mode-production","mode-debug","production-panel","debug-panel",
+    "rf-generator","clk2-current","suggested-clk2","measured-if",
+    "stage1-check","send-clk2","clk2-send-status",
+    "desired-low-if","quad-current","quad-suggested","quad-adjust",
+    "load-quad","send-quad","quad-send-status",
+    "result-measured-if","result-stage1-ref","result-quad-current",
+    "result-quad-try","result-low-if","result-move","result-after",
+    "prod-clk2","prod-if","prod-quad","prod-lowif","prod-note",
+    "prod-rf-display","prod-needle","prod-spectrum"
+  ];
+  const el = {};
+  for (const id of ids) {
+    const node = document.getElementById(id);
+    if (!node) { console.error("Missing element:", id); return; }
+    el[id] = node;
+  }
+
+  /* production-only elements */
+  const prodEl = {
+    stationName   : document.getElementById("prod-station-name"),
+    stationGrid   : document.getElementById("station-grid"),
+    stationsCount : document.getElementById("stations-count"),
+    quadSlider    : document.getElementById("quad-slider"),
+    quadValDisplay: document.getElementById("prod-quad-value"),
+    lowifLive     : document.getElementById("prod-lowif-live"),
+    quadBadge     : document.getElementById("quad-send-badge"),
+    clk2Status    : document.getElementById("clk2-send-status-prod"),
+  };
+
+  /* ── helpers ───────────────────────────────────────────────── */
+  const toNumber = v => {
+    const t = String(v).trim().replace(",",".");
+    if (t===""||t==="."||t==="-"||t==="+") return 0;
+    const n = Number(t);
+    return Number.isFinite(n) ? n : 0;
+  };
+  const fmtMhz = n => `${n.toFixed(3)} MHz`;
+  const fmtKhz = n => `${n.toFixed(1)} kHz`;
+
+  const stage1Message = d => {
+    const a = Math.abs(d);
+    if (a < 0.05) return "Measured IF matches the stage-1 reference";
+    return d > 0
+      ? `Measured IF is ${fmtKhz(a)} above the stage-1 reference`
+      : `Measured IF is ${fmtKhz(a)} below the stage-1 reference`;
+  };
+
+  const quadAdjustMessage = d => {
+    const a = Math.abs(d);
+    if (a < 0.05) return "Current quad_freq already matches the recommendation";
+    return d > 0
+      ? `Increase quad_freq by ${fmtKhz(a)}`
+      : `Decrease quad_freq by ${fmtKhz(a)}`;
+  };
+
+  /* ── spectrum analyzer ─────────────────────────────────────── */
+  const specCvs = el["prod-spectrum"];
+  const specCtx = specCvs.getContext("2d");
+  let specActive = false;
+  let specRfMhz  = 40;
+
+  const FM_MIN = 87.5, FM_MAX = 108;
+  const BINS   = 120;
+
+  function resizeSpectrum() {
+    const dpr = window.devicePixelRatio || 1;
+    const rect = specCvs.parentElement.getBoundingClientRect();
+    specCvs.width  = (rect.width  || 600) * dpr;
+    specCvs.height = (rect.height || 130) * dpr;
+    specCtx.scale(dpr, dpr);
+  }
+
+  function drawSpectrum() {
+    if (!specActive) return;
+
+    const dpr = window.devicePixelRatio || 1;
+    const W = specCvs.width  / dpr;
+    const H = specCvs.height / dpr;
+
+    specCtx.fillStyle = "#06090f";
+    specCtx.fillRect(0, 0, W, H);
+
+    specCtx.strokeStyle = "rgba(30,50,60,0.6)";
+    specCtx.lineWidth = 1;
+    for (let i = 1; i < 4; i++) {
+      const y = (H / 4) * i;
+      specCtx.beginPath(); specCtx.moveTo(0, y); specCtx.lineTo(W, y); specCtx.stroke();
+    }
+    for (let i = 1; i < 5; i++) {
+      const x = (W / 5) * i;
+      specCtx.beginPath(); specCtx.moveTo(x, 0); specCtx.lineTo(x, H); specCtx.stroke();
+    }
+
+    const tunedBin = Math.floor(((specRfMhz - FM_MIN) / (FM_MAX - FM_MIN)) * BINS);
+    const binW = W / BINS;
+
+    for (let i = 0; i < BINS; i++) {
+      let amp = 0.05 + Math.random() * 0.10;
+      const d = Math.abs(i - tunedBin);
+      if (d < 9) amp += Math.exp(-(d * d) / 7) * 0.88;
+      if (d >= 14 && d < 22) amp += 0.14 + Math.random() * 0.06;
+      const ghost1 = Math.round(tunedBin + 35) % BINS;
+      const ghost2 = Math.round(tunedBin - 28 + BINS) % BINS;
+      if (Math.abs(i - ghost1) < 5) amp += Math.exp(-Math.abs(i-ghost1)*0.6)*0.30;
+      if (Math.abs(i - ghost2) < 4) amp += Math.exp(-Math.abs(i-ghost2)*0.7)*0.22;
+
+      const barH = Math.min(amp * H * 0.92, H);
+      const x = i * binW;
+      const y = H - barH;
+      const isTuned = (d <= 2);
+      const grad = specCtx.createLinearGradient(0, H, 0, y);
+      if (isTuned) {
+        grad.addColorStop(0, "#00c99a"); grad.addColorStop(1, "#4a9eff");
+      } else {
+        grad.addColorStop(0, "#1a2a3a"); grad.addColorStop(1, "#2e4050");
+      }
+      specCtx.fillStyle = grad;
+      specCtx.fillRect(x + 1, y, Math.max(binW - 2, 1), barH);
+    }
+
+    if (tunedBin >= 0 && tunedBin <= BINS) {
+      const tx = (tunedBin / BINS) * W;
+      specCtx.save();
+      specCtx.strokeStyle = "#00c99a";
+      specCtx.lineWidth   = 1.5;
+      specCtx.setLineDash([4, 4]);
+      specCtx.beginPath(); specCtx.moveTo(tx, 0); specCtx.lineTo(tx, H); specCtx.stroke();
+      specCtx.restore();
+    }
+
+    requestAnimationFrame(drawSpectrum);
+  }
+
+  /* ── Bay Area station data ─────────────────────────────────── */
+  const STATIONS = [
+    { mhz: 87.7,  call: 'KBKF-LD',  city: 'San Jose',           genre: 'Air1' },
+    { mhz: 88.1,  call: 'KECG',     city: 'El Cerrito',         genre: 'Campus/variety' },
+    { mhz: 88.1,  call: 'KSRH',     city: 'San Rafael',         genre: 'Campus/variety' },
+    { mhz: 88.5,  call: 'KQED-FM',  city: 'San Francisco',      genre: 'NPR/talk' },
+    { mhz: 88.9,  call: 'K-LOVE',   city: '',                   genre: 'K-Love' },
+    { mhz: 89.1,  call: 'KCEA',     city: 'Atherton',           genre: 'Adult standards' },
+    { mhz: 89.3,  call: 'KMVS',     city: 'Moss Beach',         genre: 'K-Love' },
+    { mhz: 89.3,  call: 'KPFB',     city: 'Berkeley',           genre: 'Pacifica Radio' },
+    { mhz: 89.3,  call: 'KOHL',     city: 'Fremont',            genre: 'College/CHR' },
+    { mhz: 89.3,  call: 'KMTG',     city: 'San Jose',           genre: 'Campus/variety' },
+    { mhz: 89.5,  call: 'KPOO',     city: 'San Francisco',      genre: 'Community' },
+    { mhz: 89.7,  call: 'KFJC',     city: 'Los Altos',          genre: 'College/variety' },
+    { mhz: 89.9,  call: 'KCRH',     city: 'Hayward',            genre: 'College/variety' },
+    { mhz: 90.1,  call: 'KZSU',     city: 'Stanford',           genre: 'College/variety' },
+    { mhz: 90.3,  call: 'KDFC',     city: 'San Francisco',      genre: 'Classical' },
+    { mhz: 90.5,  call: 'KSJS',     city: 'San Jose',           genre: 'College/variety' },
+    { mhz: 90.5,  call: 'KVHS',     city: 'Concord',            genre: 'College/variety' },
+    { mhz: 90.5,  call: 'KWMR',     city: 'Point Reyes Stn',    genre: 'Community' },
+    { mhz: 90.7,  call: 'KALX',     city: 'Berkeley',           genre: 'College/variety' },
+    { mhz: 91.1,  call: 'KCSM',     city: 'San Mateo',          genre: 'College/jazz' },
+    { mhz: 91.5,  call: 'KKUP',     city: 'Cupertino',          genre: 'Community' },
+    { mhz: 91.7,  call: 'KALW',     city: 'San Francisco',      genre: 'NPR/talk/variety' },
+    { mhz: 92.1,  call: 'KKDV',     city: 'Walnut Creek',       genre: 'Country' },
+    { mhz: 92.3,  call: 'KSJO',     city: 'San Jose',           genre: 'Bollywood' },
+    { mhz: 92.7,  call: 'KEXC',     city: 'San Francisco',      genre: 'Variety' },
+    { mhz: 93.3,  call: 'KRZZ',     city: 'San Francisco',      genre: 'Regional Mexican' },
+    { mhz: 93.7,  call: 'KXZM',     city: 'Felton',             genre: 'Regional Mexican' },
+    { mhz: 94.1,  call: 'KPFA',     city: 'Berkeley',           genre: 'Pacifica Radio' },
+    { mhz: 94.5,  call: 'KBAY',     city: 'Gilroy',             genre: 'Country' },
+    { mhz: 94.9,  call: 'KYLD',     city: 'San Francisco',      genre: 'Contemporary hit' },
+    { mhz: 95.3,  call: 'KJLV',     city: 'San Jose',           genre: 'K-Love' },
+    { mhz: 95.7,  call: 'KGMZ-FM',  city: 'San Francisco',      genre: 'Sports' },
+    { mhz: 96.1,  call: 'KSQQ',     city: 'Morgan Hill',        genre: 'Sing Tao Chinese' },
+    { mhz: 96.5,  call: 'KOIT',     city: 'San Francisco',      genre: 'Adult contemporary' },
+    { mhz: 97.3,  call: 'KLLC',     city: 'San Francisco',      genre: 'Hot AC' },
+    { mhz: 97.7,  call: 'KWAI',     city: 'Los Altos',          genre: 'Air1' },
+    { mhz: 98.1,  call: 'KISQ',     city: 'San Francisco',      genre: 'Soft AC' },
+    { mhz: 98.5,  call: 'KUFX',     city: 'San Jose',           genre: 'Classic rock' },
+    { mhz: 98.9,  call: 'KSOL',     city: 'San Francisco',      genre: 'Regional Mexican' },
+    { mhz: 99.1,  call: 'KSQL',     city: 'Santa Cruz',         genre: 'Regional Mexican' },
+    { mhz: 99.7,  call: 'KMVQ-FM',  city: 'San Francisco',      genre: 'Contemporary hit' },
+    { mhz: 100.3, call: 'KBRG',     city: 'San Jose',           genre: 'Spanish AC' },
+    { mhz: 100.7, call: 'KVVZ',     city: 'San Rafael',         genre: 'Reggaeton' },
+    { mhz: 101.3, call: 'KIOI',     city: 'San Francisco',      genre: 'Hot AC' },
+    { mhz: 101.7, call: 'KKIQ',     city: 'Livermore',          genre: 'Adult contemporary' },
+    { mhz: 102.1, call: 'KRBQ',     city: 'San Francisco',      genre: 'Classic hip hop' },
+    { mhz: 102.5, call: 'KSFP-LP',  city: 'San Francisco',      genre: 'Public Radio/Talk' },
+    { mhz: 102.9, call: 'KBLX-FM',  city: 'Berkeley',           genre: 'Urban AC' },
+    { mhz: 103.3, call: 'KSCU',     city: 'Santa Clara',        genre: 'College/variety' },
+    { mhz: 103.7, call: 'KOSF',     city: 'San Francisco',      genre: 'Classic hits' },
+    { mhz: 104.5, call: 'KNBR-FM',  city: 'San Francisco',      genre: 'Sports' },
+    { mhz: 104.9, call: 'KXSC',     city: 'Sunnyvale',          genre: 'Classical' },
+    { mhz: 105.3, call: 'KITS',     city: 'San Francisco',      genre: 'Alternative rock' },
+    { mhz: 105.7, call: 'KVVF',     city: 'Santa Clara',        genre: 'Reggaeton' },
+    { mhz: 106.1, call: 'KMEL',     city: 'San Francisco',      genre: 'Urban contemporary' },
+    { mhz: 106.5, call: 'KEZR',     city: 'San Jose',           genre: 'Hot AC' },
+    { mhz: 106.9, call: 'KFRC-FM',  city: 'San Francisco',      genre: 'All-news' },
+    { mhz: 107.3, call: 'KLVS',     city: 'Livermore',          genre: 'K-Love' },
+    { mhz: 107.7, call: 'KSAN',     city: 'San Mateo',          genre: 'Classic rock' },
+  ];
+
+  /* ── build station cards ───────────────────────────────────── */
+  prodEl.stationsCount.textContent = `${STATIONS.length} stations`;
+
+  const stationCards = [];
+  STATIONS.forEach((s, idx) => {
+    const card = document.createElement('div');
+    card.className = 'station-card';
+    card.innerHTML =
+      `<div class="sc-freq">${s.mhz.toFixed(1)}</div>` +
+      `<div class="sc-call">${s.call}</div>` +
+      `<div class="sc-genre">${s.city ? s.city + ' · ' : ''}${s.genre}</div>`;
+    card.addEventListener('click', () => selectStation(idx));
+    prodEl.stationGrid.appendChild(card);
+    stationCards.push(card);
+  });
+
+  /* ── production state ──────────────────────────────────────── */
+  let selectedIdx = -1;
+  let quadKhz = 10950; // 10.950 MHz in kHz
+
+  /* ── slider fill helper ────────────────────────────────────── */
+  function updateSliderFill() {
+    const min = parseInt(prodEl.quadSlider.min);
+    const max = parseInt(prodEl.quadSlider.max);
+    const val = parseInt(prodEl.quadSlider.value);
+    const pct = ((val - min) / (max - min)) * 100;
+    prodEl.quadSlider.style.background =
+      `linear-gradient(to right, #00c99a ${pct}%, #1a2840 ${pct}%)`;
+  }
+
+  /* ── send helpers ──────────────────────────────────────────── */
+  const sendWithFallback = async (urlBase, mhz, statusEl, ok, fallback) => {
+    const safe    = Number.isFinite(mhz) ? mhz : 0;
+    const display = safe.toFixed(3);
+    try {
+      const res = await fetch(`${urlBase}${encodeURIComponent(safe.toFixed(6))}`);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      statusEl.textContent = `${ok}: ${display} MHz`;
+    } catch (_) {
+      statusEl.textContent = `Manual UI only: ${fallback} ${display} MHz`;
+    }
+  };
+
+  /* production-specific senders */
+  async function prodSendClk2(mhz) {
+    const display = mhz.toFixed(3);
+    prodEl.clk2Status.className = 'radio-note';
+    prodEl.clk2Status.textContent = `Sending CLK2 → ${display} MHz…`;
+    try {
+      const res = await fetch(`/api/clk2/set?mhz=${encodeURIComponent(mhz.toFixed(6))}`);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      prodEl.clk2Status.className = 'radio-note ok';
+      prodEl.clk2Status.textContent = `CLK2 sent: ${display} MHz`;
+    } catch (_) {
+      prodEl.clk2Status.className = 'radio-note';
+      prodEl.clk2Status.textContent = `CLK2 target: ${display} MHz (manual)`;
+    }
+  }
+
+  async function prodSendQuad(mhz) {
+    const display = mhz.toFixed(3);
+    prodEl.quadBadge.className = 'quad-send-badge';
+    prodEl.quadBadge.textContent = `↑ ${display}`;
+    try {
+      const res = await fetch(`/api/quad/set?mhz=${encodeURIComponent(mhz.toFixed(6))}`);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      prodEl.quadBadge.className = 'quad-send-badge ok';
+      prodEl.quadBadge.textContent = `✓ sent ${display}`;
+    } catch (_) {
+      prodEl.quadBadge.className = 'quad-send-badge';
+      prodEl.quadBadge.textContent = `manual ${display}`;
+    }
+  }
+
+  /* ── station selection ─────────────────────────────────────── */
+  function selectStation(idx) {
+    selectedIdx = idx;
+    const s = STATIONS[idx];
+
+    /* highlight card */
+    stationCards.forEach((c, i) => c.classList.toggle('active', i === idx));
+
+    /* big display */
+    el['prod-rf-display'].textContent = s.mhz.toFixed(1);
+    prodEl.stationName.textContent =
+      `${s.call}${s.city ? ' · ' + s.city : ''} · ${s.genre}`;
+
+    /* FM needle */
+    const pct = Math.max(0, Math.min(100,
+      ((s.mhz - FM_MIN) / (FM_MAX - FM_MIN)) * 100
+    ));
+    el['prod-needle'].style.left = `${pct}%`;
+
+    /* spectrum */
+    specRfMhz = s.mhz;
+
+    /* LO1 = RF − 10.700 */
+    const lo = s.mhz - 10.700;
+    el['prod-clk2'].textContent = fmtMhz(lo);
+    el['prod-if'].textContent   = '10.700 MHz';
+
+    /* note */
+    el['prod-note'].textContent = `${s.mhz.toFixed(1)} MHz → LO1 = ${lo.toFixed(3)} MHz`;
+
+    /* auto-send CLK2 */
+    prodSendClk2(lo);
+
+    /* update quad readout (quad doesn't reset on station change) */
+    updateQuadReadouts();
+  }
+
+  /* ── quad slider ───────────────────────────────────────────── */
+  function updateQuadReadouts() {
+    const mhz = quadKhz / 1000;
+    const lowIfKhz = Math.abs(mhz - 10.700) * 1000;
+
+    prodEl.quadValDisplay.textContent = fmtMhz(mhz);
+    el['prod-quad'].textContent   = fmtMhz(mhz);
+    el['prod-lowif'].textContent  = fmtKhz(lowIfKhz);
+    prodEl.lowifLive.textContent  = fmtKhz(lowIfKhz);
+    updateSliderFill();
+  }
+
+  prodEl.quadSlider.addEventListener('input', () => {
+    quadKhz = parseInt(prodEl.quadSlider.value);
+    updateQuadReadouts();
+    prodSendQuad(quadKhz / 1000);
+  });
+
+  /* ── mode switch ───────────────────────────────────────────── */
+  const updateMode = () => {
+    const isDebug = el["mode-debug"].checked;
+    el["debug-panel"].hidden      = !isDebug;
+    el["production-panel"].hidden = isDebug;
+
+    if (!isDebug) {
+      if (!specActive) {
+        specActive = true;
+        resizeSpectrum();
+        drawSpectrum();
+      }
+    } else {
+      specActive = false;
+    }
+  };
+
+  /* ── debug panel computation ───────────────────────────────── */
+  const updateComputed = () => {
+    const rf              = toNumber(el["rf-generator"].value);
+    const clk2Current     = toNumber(el["clk2-current"].value);
+    const measuredIf      = toNumber(el["measured-if"].value);
+    const desiredLowIfKhz = toNumber(el["desired-low-if"].value);
+    const quadCurrent     = toNumber(el["quad-current"].value);
+
+    const suggestedLo1Clk2 = rf - 10.700;
+    const stage1RefIf       = Math.abs(rf - suggestedLo1Clk2);
+    const stage1DeltaKhz    = (measuredIf - stage1RefIf) * 1000;
+    const suggestedQuad     = measuredIf + desiredLowIfKhz / 1000;
+    const quadDeltaKhz      = (suggestedQuad - quadCurrent) * 1000;
+    const currentLowIfKhz   = Math.abs(quadCurrent - measuredIf) * 1000;
+    const adjustText        = quadAdjustMessage(quadDeltaKhz);
+
+    el["suggested-clk2"].value          = suggestedLo1Clk2.toFixed(3);
+    el["quad-suggested"].value          = suggestedQuad.toFixed(3);
+    el["quad-adjust"].value             = adjustText;
+    el["stage1-check"].textContent      = stage1Message(stage1DeltaKhz);
+    el["result-measured-if"].textContent= fmtMhz(measuredIf);
+    el["result-stage1-ref"].textContent = fmtMhz(stage1RefIf);
+    el["result-quad-current"].textContent= fmtMhz(quadCurrent);
+    el["result-quad-try"].textContent   = fmtMhz(suggestedQuad);
+    el["result-low-if"].textContent     = fmtKhz(currentLowIfKhz);
+    el["result-move"].textContent       = adjustText;
+    el["result-after"].textContent      = `low-IF near ${desiredLowIfKhz.toFixed(1)} kHz with quad_freq = ${suggestedQuad.toFixed(3)} MHz`;
+  };
+
+  /* ── debug send buttons ────────────────────────────────────── */
+  for (const id of ["rf-generator","clk2-current","measured-if","desired-low-if","quad-current"]) {
+    el[id].addEventListener("input", updateComputed);
+  }
+
+  el["mode-production"].addEventListener("change", updateMode);
+  el["mode-debug"].addEventListener("change", updateMode);
+
+  el["load-quad"].addEventListener("click", () => {
+    el["quad-current"].value = toNumber(el["quad-suggested"].value).toFixed(3);
+    updateComputed();
+  });
+
+  el["send-clk2"].addEventListener("click", async () => {
+    await sendWithFallback("/api/clk2/set?mhz=", toNumber(el["clk2-current"].value),
+      el["clk2-send-status"], "CLK2 sent", "CLK2 target");
+  });
+
+  el["send-quad"].addEventListener("click", async () => {
+    await sendWithFallback("/api/quad/set?mhz=", toNumber(el["quad-current"].value),
+      el["quad-send-status"], "Quadrature sent", "quadrature target");
+  });
+
+  /* ── init ──────────────────────────────────────────────────── */
+  updateMode();
+  updateComputed();
+  updateQuadReadouts();
+})();
+</script>
+</body>
+</html>

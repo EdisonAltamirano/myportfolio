@@ -1,22 +1,33 @@
 import { technicalSkills } from '@/lib/constants';
 import { TechSkillsDisplay } from './TechSkills';
 import { FadeIn } from '@/components/animations/FadeIn';
+import { Cpu } from 'lucide-react';
 
 export function SkillsSection() {
   return (
-    <section className="py-16 bg-muted/50 dark:bg-neutral-800/50">
+    <section className="py-20 bg-muted/15">
       <div className="container px-4 mx-auto">
         <FadeIn>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Technical Skills</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              A comprehensive overview of my technical expertise across various domains
+          <div className="text-center mb-14">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-sky-500/20 bg-sky-500/5 mb-5">
+              <Cpu className="w-3 h-3 text-sky-400" />
+              <span className="font-mono text-xs text-sky-400/80 tracking-widest uppercase">
+                Technical Expertise
+              </span>
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
+              Core Skills
+            </h2>
+            <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
+              From silicon transistors to cloud APIs — a comprehensive stack built over 7+ years.
             </p>
           </div>
         </FadeIn>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {technicalSkills.map((category) => (
-            <TechSkillsDisplay key={category.title} category={category} />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {technicalSkills.map((category, i) => (
+            <FadeIn key={category.title} delay={`delay-${i * 100}`}>
+              <TechSkillsDisplay category={category} />
+            </FadeIn>
           ))}
         </div>
       </div>

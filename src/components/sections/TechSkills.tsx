@@ -1,7 +1,5 @@
 import { SkillCategory } from '@/lib/constants';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { FadeIn } from '@/components/animations/FadeIn';
-import { D3SkillChart } from '@/components/core/D3SkillChart';
+import { cn } from '@/lib/utils';
 
 interface TechSkillsProps {
   category: SkillCategory;
@@ -9,19 +7,31 @@ interface TechSkillsProps {
 
 export function TechSkillsDisplay({ category }: TechSkillsProps) {
   return (
-    <FadeIn>
-      <Card className="bg-card shadow-lg">
-        <CardHeader className="flex flex-row items-center space-x-2 pb-4">
-          {category.icon && <category.icon className="h-6 w-6 text-primary" />}
-          <CardTitle className="text-xl">{category.title}</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <D3SkillChart 
-            skills={category.skills} 
-            className="min-h-[400px] h-auto" 
-          />
-        </CardContent>
-      </Card>
-    </FadeIn>
+    <div className="rounded-lg border border-border bg-card/60 card-glow-sky p-6">
+      <div className="flex items-center gap-2.5 mb-5">
+        {category.icon && (
+          <div className="w-8 h-8 rounded-md bg-sky-500/10 flex items-center justify-center">
+            <category.icon className="h-4 w-4 text-sky-400" />
+          </div>
+        )}
+        <h3 className="font-display text-lg font-bold text-foreground">{category.title}</h3>
+      </div>
+      <div className="space-y-4">
+        {category.skills.map((skill) => (
+          <div key={skill.name}>
+            <div className="flex justify-between mb-1.5">
+              <span className="font-body text-sm text-muted-foreground">{skill.name}</span>
+              <span className="font-mono text-xs text-sky-400/80">{skill.level}%</span>
+            </div>
+            <div className="h-1.5 bg-muted rounded-full overflow-hidden">
+              <div
+                className="h-full rounded-full bg-gradient-to-r from-sky-500 to-sky-400 shadow-[0_0_8px_rgba(56,189,248,0.4)]"
+                style={{ width: `${skill.level}%`, transition: 'width 1s ease-out' }}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }

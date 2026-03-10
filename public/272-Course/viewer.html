@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SKY130 SRAM Layout Viewer</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;background:#07080d;color:#90a8c0;font-family:'Segoe UI',monospace,sans-serif;overflow:hidden}
+#app{display:flex;flex-direction:column;height:100vh}
+#bar{display:flex;align-items:center;gap:8px;padding:5px 12px;background:#0b0d18;border-bottom:1px solid #181f30;flex-shrink:0}
+.bt{font-weight:700;color:#40d8a8;letter-spacing:2px;text-transform:uppercase;font-size:.66rem}
+.bs{color:#1a2538;font-size:.62rem}
+.br{margin-left:auto;display:flex;align-items:center;gap:8px}
+#pb{width:80px;height:3px;background:#111928;border-radius:2px;overflow:hidden}
+#pf{height:100%;width:0%;background:linear-gradient(90deg,#40d8a8,#4090ff);border-radius:2px;transition:width .1s}
+#pt{font-size:.6rem;color:#283848;min-width:90px}
+#leg{display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+.li{display:flex;align-items:center;gap:3px;font-size:.58rem;color:#2a4060}
+.ld{width:7px;height:7px;border-radius:1px;flex-shrink:0}
+#fb{background:transparent;border:1px solid #1c2e44;color:#2a5070;border-radius:3px;padding:2px 8px;font-size:.6rem;cursor:pointer;letter-spacing:1px;transition:all .15s}
+#fb:hover{border-color:#40d8a8;color:#40d8a8}
+#cw{flex:1;overflow:hidden;position:relative}
+canvas{display:block;width:100%;height:100%;cursor:grab}
+canvas:active{cursor:grabbing}
+#sb{position:absolute;bottom:0;left:0;right:0;padding:3px 10px;background:rgba(8,10,18,.85);border-top:1px solid #111820;display:flex;gap:12px;font-size:.58rem;color:#1e3040}
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="bar">
+    <span class="bt">SKY130 SRAM 1KB</span>
+    <span class="bs">·</span>
+    <span class="bs">sky130_sram_1kbyte_1rw1r_32x256_8</span>
+    <div class="br">
+      <div id="pb"><div id="pf"></div></div>
+      <span id="pt">Loading…</span>
+      <div id="leg"></div>
+      <button id="fb">FIT</button>
+    </div>
+  </div>
+  <div id="cw">
+    <canvas id="cv"></canvas>
+    <div id="sb">
+      <span id="sp">—</span>
+      <span id="sz">zoom: —</span>
+      <span style="margin-left:auto;opacity:.35">scroll=zoom · drag=pan</span>
+    </div>
+  </div>
+</div>
+<script>
+// ── Bright SKY130 layer palette ───────────────────────────────
+const L={
+  22: {n:'areaid', f:'#090f1e', s:'#1a2848', a:.4,  z:0},
+  33: {n:'cap2m',  f:'#110820', s:'#5828a8', a:.55, z:1},
+  64: {n:'nwell',  f:'#001a06', s:'#00b840', a:.5,  z:2},
+  65: {n:'diff',   f:'#002a0a', s:'#00ee58', a:.65, z:3},
+  66: {n:'tap',    f:'#002208', s:'#00cc44', a:.6,  z:4},
+  67: {n:'nsdm',   f:'#200800', s:'#ff5800', a:.65, z:5},
+  68: {n:'psdm',   f:'#1c0018', s:'#e000b8', a:.6,  z:6},
+  69: {n:'poly',   f:'#220000', s:'#ff1818', a:.8,  z:7},
+  70: {n:'npc',    f:'#120018', s:'#9030cc', a:.65, z:8},
+  71: {n:'licon1', f:'#141000', s:'#c8a000', a:.72, z:9},
+  78: {n:'li1',    f:'#00061e', s:'#1060e8', a:.85, z:10},
+  81: {n:'mcon',   f:'#0c0c0c', s:'#6878a0', a:.72, z:11},
+  83: {n:'met1',   f:'#000520', s:'#1050ee', a:.9,  z:12},
+  93: {n:'via',    f:'#080808', s:'#506070', a:.68, z:13},
+  94: {n:'met2',   f:'#001018', s:'#00c8e8', a:.9,  z:14},
+  95: {n:'via2',   f:'#060606', s:'#404848', a:.65, z:15},
+ 235: {n:'prBnd',  f:null,      s:'#50a0ff', a:1.0, z:16},
+};
+const DL={n:'?',f:'#0c141e',s:'#1c2838',a:.45,z:1};
+function gl(n){return L[n]||DL;}
+
+// ── GDS2 Parser ───────────────────────────────────────────────
+class Parser{
+  constructor(buf,cb){
+    this.v=new DataView(buf);this.pos=0;this.end=buf.byteLength;
+    this.cb=cb;this.S=new Map();
+  }
+  rec(){
+    if(this.pos+4>this.end)return null;
+    const len=this.v.getUint16(this.pos),t=this.v.getUint8(this.pos+2);
+    if(len<4||this.pos+len>this.end)return null;
+    const d=new DataView(this.v.buffer,this.pos+4,len-4);
+    this.pos+=len;return{t,d};
+  }
+  str(d){let s='';for(let i=0;i<d.byteLength;i++){const c=d.getUint8(i);if(!c)break;s+=String.fromCharCode(c);}return s.trim();}
+  parse(){
+    let cur=null,ib=false,ir=false,ia=false,b=null,r=null,last=0;
+    while(this.pos<this.end){
+      if(this.pos-last>524288){this.cb(this.pos/this.end);last=this.pos;}
+      const rec=this.rec();if(!rec)break;
+      const{t,d}=rec;
+      switch(t){
+        case 0x05:cur={B:[],refs:[]};break;
+        case 0x06:if(cur){cur.name=this.str(d);this.S.set(cur.name,cur);}break;
+        case 0x07:cur=null;break;
+        case 0x08:case 0x09:ib=true;b={l:0,xy:[]};break;
+        case 0x0A:ir=true;ia=false;r={type:'S',nm:'',x:0,y:0};break;
+        case 0x0B:ir=true;ia=true;r={type:'A',nm:'',cols:1,rows:1,ox:0,oy:0,csx:0,csy:0,rsx:0,rsy:0};break;
+        case 0x0D:if(ib&&b)b.l=d.getInt16(0);break;
+        case 0x10:
+          if(ib&&b){
+            const n=(d.byteLength/8)|0;
+            for(let i=0;i<n;i++)b.xy.push(d.getInt32(i*8),d.getInt32(i*8+4));
+          }else if(ir&&r){
+            if(!ia){r.x=d.getInt32(0);r.y=d.getInt32(4);}
+            else{
+              const ox=d.getInt32(0),oy=d.getInt32(4),x1=d.getInt32(8),y1=d.getInt32(12),x2=d.getInt32(16),y2=d.getInt32(20);
+              r.ox=ox;r.oy=oy;
+              r.csx=(x1-ox)/r.cols;r.csy=(y1-oy)/r.cols;
+              r.rsx=(x2-ox)/r.rows;r.rsy=(y2-oy)/r.rows;
+            }
+          }
+          break;
+        case 0x11:
+          if(ib&&cur&&b&&b.xy.length>=4)cur.B.push(b);
+          if(ir&&cur&&r)cur.refs.push(r);
+          ib=ir=ia=false;b=r=null;break;
+        case 0x12:if(ir&&r)r.nm=this.str(d);break;
+        case 0x13:if(ir&&r&&ia){r.cols=d.getInt16(0);r.rows=d.getInt16(2);}break;
+      }
+    }
+    this.cb(1);
+  }
+}
+
+// ── Flatten hierarchy (iterative, with polygon limit) ─────────
+function flatten(S,top,max=280000){
+  const out=[];
+  const stack=[{nm:top,dx:0,dy:0}];
+  while(stack.length&&out.length<max){
+    const{nm,dx,dy}=stack.pop();
+    const s=S.get(nm);if(!s)continue;
+    for(const b of s.B){
+      out.push({l:b.l,xy:b.xy,dx,dy});
+      if(out.length>=max)break;
+    }
+    for(const r of s.refs){
+      if(r.type==='S'){
+        stack.push({nm:r.nm,dx:dx+r.x,dy:dy+r.y});
+      }else if(r.type==='A'){
+        for(let c=0;c<r.cols;c++)for(let rw=0;rw<r.rows;rw++)
+          stack.push({nm:r.nm,dx:dx+r.ox+c*r.csx+rw*r.rsx,dy:dy+r.oy+c*r.csy+rw*r.rsy});
+      }
+    }
+  }
+  return out;
+}
+
+// ── Renderer ─────────────────────────────────────────────────
+class Renderer{
+  constructor(cv){
+    this.cv=cv;this.cx=cv.getContext('2d');
+    this.polys=[];this.byL=null;this.layers=[];
+    this.bb=null;this.sc=1;this.ox=0;this.oy=0;
+    this.dirty=true;
+    this._ev();this._rsz();
+    requestAnimationFrame(()=>this._loop());
+  }
+  load(polys){
+    this.polys=polys;
+    const m=new Map();
+    for(const p of polys){if(!m.has(p.l))m.set(p.l,[]);m.get(p.l).push(p);}
+    this.byL=m;
+    this.layers=[...m.keys()].sort((a,b)=>(gl(a).z||0)-(gl(b).z||0));
+    this._bb();this._fit();this.dirty=true;
+  }
+  _bb(){
+    let x0=1e15,y0=1e15,x1=-1e15,y1=-1e15;
+    for(const p of this.polys)for(let i=0;i<p.xy.length;i+=2){
+      const x=p.xy[i]+p.dx,y=p.xy[i+1]+p.dy;
+      if(x<x0)x0=x;if(x>x1)x1=x;if(y<y0)y0=y;if(y>y1)y1=y;
+    }
+    if(x0<1e15)this.bb={x0,y0,x1,y1};
+  }
+  _fit(){
+    const b=this.bb;if(!b)return;
+    const W=this.cv.width,H=this.cv.height;
+    const dw=b.x1-b.x0,dh=b.y1-b.y0;if(!dw||!dh)return;
+    this.sc=Math.min(W/dw,H/dh)*0.9;
+    this.ox=(W-dw*this.sc)/2-b.x0*this.sc;
+    this.oy=(H-dh*this.sc)/2+b.y1*this.sc;
+  }
+  // GDS Y up → screen Y down
+  _sx(wx,dx){return(wx+dx)*this.sc+this.ox;}
+  _sy(wy,dy){return-(wy+dy)*this.sc+this.oy;}
+  _loop(){this._draw();requestAnimationFrame(()=>this._loop());}
+  _draw(){
+    if(!this.dirty)return;this.dirty=false;
+    const cx=this.cx,W=this.cv.width,H=this.cv.height,sc=this.sc;
+    cx.fillStyle='#07080d';cx.fillRect(0,0,W,H);
+    if(!this.byL)return;
+
+    for(const layer of this.layers){
+      const polys=this.byL.get(layer),col=gl(layer);
+      const hasFill=col.f&&col.f!=='none';
+      cx.globalAlpha=col.a;
+      if(hasFill)cx.fillStyle=col.f;
+      cx.strokeStyle=col.s;
+      cx.lineWidth=1;
+
+      // Batch all visible polys in one path per layer
+      cx.beginPath();
+      let cnt=0;
+      for(const p of polys){
+        const{xy,dx,dy}=p;
+        // Compute screen bbox
+        let sx0=1e9,sy0=1e9,sx1=-1e9,sy1=-1e9;
+        for(let i=0;i<xy.length;i+=2){
+          const sx=this._sx(xy[i],dx),sy=this._sy(xy[i+1],dy);
+          if(sx<sx0)sx0=sx;if(sx>sx1)sx1=sx;if(sy<sy0)sy0=sy;if(sy>sy1)sy1=sy;
+        }
+        if(sx1<-2||sx0>W+2||sy1<-2||sy0>H+2)continue; // viewport cull
+        if(sx1-sx0<0.4&&sy1-sy0<0.4)continue; // sub-pixel cull
+        for(let i=0;i<xy.length;i+=2){
+          const sx=this._sx(xy[i],dx),sy=this._sy(xy[i+1],dy);
+          if(i===0)cx.moveTo(sx,sy);else cx.lineTo(sx,sy);
+        }
+        cx.closePath();
+        cnt++;
+      }
+      if(cnt>0){if(hasFill)cx.fill();cx.stroke();}
+    }
+
+    // Glow pass: bright metals
+    for(const layer of[83,94,78]){
+      const polys=this.byL.get(layer);if(!polys)continue;
+      const col=gl(layer);
+      cx.globalAlpha=col.a*0.45;cx.strokeStyle=col.s;cx.lineWidth=2;
+      cx.beginPath();
+      for(const p of polys){
+        const{xy,dx,dy}=p;
+        let sx0=1e9,sy0=1e9,sx1=-1e9,sy1=-1e9;
+        for(let i=0;i<xy.length;i+=2){const sx=this._sx(xy[i],dx),sy=this._sy(xy[i+1],dy);if(sx<sx0)sx0=sx;if(sx>sx1)sx1=sx;if(sy<sy0)sy0=sy;if(sy>sy1)sy1=sy;}
+        if(sx1<-2||sx0>W+2||sy1<-2||sy0>H+2)continue;
+        if(sx1-sx0<0.4&&sy1-sy0<0.4)continue;
+        for(let i=0;i<xy.length;i+=2){const sx=this._sx(xy[i],dx),sy=this._sy(xy[i+1],dy);if(i===0)cx.moveTo(sx,sy);else cx.lineTo(sx,sy);}
+        cx.closePath();
+      }
+      cx.stroke();
+    }
+
+    cx.globalAlpha=1;
+    document.getElementById('sp').textContent=this.polys.length.toLocaleString()+' polys';
+    document.getElementById('sz').textContent='zoom: '+sc.toExponential(2);
+  }
+  fit(){this._fit();this.dirty=true;}
+  _rsz(){const w=this.cv.parentElement;this.cv.width=w.clientWidth||800;this.cv.height=w.clientHeight||500;this.dirty=true;}
+  _ev(){
+    this.cv.addEventListener('wheel',e=>{
+      e.preventDefault();
+      const r=this.cv.getBoundingClientRect(),mx=e.clientX-r.left,my=e.clientY-r.top;
+      const f=e.deltaY<0?1.2:1/1.2;
+      this.ox=mx-(mx-this.ox)*f;this.oy=my-(my-this.oy)*f;this.sc*=f;this.dirty=true;
+    },{passive:false});
+    let drag=false,lx=0,ly=0;
+    this.cv.addEventListener('mousedown',e=>{drag=true;lx=e.clientX;ly=e.clientY;});
+    window.addEventListener('mouseup',()=>{drag=false;});
+    window.addEventListener('mousemove',e=>{if(!drag)return;this.ox+=e.clientX-lx;this.oy+=e.clientY-ly;lx=e.clientX;ly=e.clientY;this.dirty=true;});
+    window.addEventListener('resize',()=>{this._rsz();if(this.bb)this._fit();this.dirty=true;});
+    this._rsz();
+  }
+}
+
+// ── Bootstrap ────────────────────────────────────────────────
+const renderer=new Renderer(document.getElementById('cv'));
+document.getElementById('fb').addEventListener('click',()=>renderer.fit());
+
+async function boot(){
+  const pf=document.getElementById('pf'),pt=document.getElementById('pt');
+  pt.textContent='Fetching…';pf.style.width='4%';
+  let buf;
+  try{
+    const res=await fetch('./sky130_sram_1kbyte_1rw1r_32x256_8.gds');
+    if(!res.ok)throw new Error('HTTP '+res.status);
+    const tot=parseInt(res.headers.get('Content-Length')||'0')||1;
+    const rdr=res.body.getReader();const cks=[];let got=0;
+    for(;;){const{done,value}=await rdr.read();if(done)break;cks.push(value);got+=value.length;pf.style.width=(4+got/tot*36)+'%';pt.textContent=(got/1e6).toFixed(1)+' MB';}
+    const out=new Uint8Array(got);let off=0;for(const c of cks){out.set(c,off);off+=c.length;}
+    buf=out.buffer;
+  }catch(e){pt.textContent='Error: '+e.message;return;}
+
+  pt.textContent='Parsing…';pf.style.width='42%';
+  await new Promise(r=>setTimeout(r,12));
+
+  const parser=new Parser(buf,p=>{pf.style.width=(42+p*28)+'%';});
+  parser.parse();
+
+  pt.textContent='Flattening…';pf.style.width='72%';
+  await new Promise(r=>setTimeout(r,12));
+
+  let top='sky130_sram_1kbyte_1rw1r_32x256_8';
+  if(!parser.S.has(top)){
+    let best=null,bc=0;
+    for(const[n,s]of parser.S)if(s.B.length>bc){best=n;bc=s.B.length;}
+    top=best||[...parser.S.keys()][0];
+  }
+
+  const polys=flatten(parser.S,top,280000);
+
+  // Legend
+  const legEl=document.getElementById('leg');
+  const used=new Set(polys.map(p=>p.l));
+  for(const l of[64,65,69,78,83,94,235]){
+    if(!used.has(l))continue;
+    const col=L[l];if(!col)continue;
+    const d=document.createElement('div');d.className='li';
+    d.innerHTML=`<div class="ld" style="background:${col.s}"></div><span>${col.n}</span>`;
+    legEl.appendChild(d);
+  }
+
+  renderer.load(polys);
+  pf.style.width='100%';
+  pt.textContent=polys.length.toLocaleString()+' polys · done';
+}
+
+window.addEventListener('DOMContentLoaded',boot);
+</script>
+</body>
+</html>

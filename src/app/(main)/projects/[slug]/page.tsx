@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, Calendar, UserCircle, Tag, Target, Cpu, Eye } from 'lucide-react';
+import { ArrowLeft, Calendar, UserCircle, Tag, Target, Cpu, Eye, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -70,13 +70,13 @@ const projectsData = [
   {
     id: '5',
     slug: "chakri-ecommerce",
-    title: "Chakri E-commerce Platform",
-    date: "March 1, 2024",
+    title: "BAC Modelos — BIM Platform",
+    date: "2024",
     author: siteName,
-    category: "Web Development",
-    tags: ["E-commerce", "Next.js", "TypeScript", "Tailwind CSS"],
-    imageUrl: getAssetPath('/chakri/portada.jpg'),
-    imageHint: "e-commerce platform interface",
+    category: "Full-Stack Platform",
+    tags: ["Next.js", "TypeScript", "Firebase", "Elasticsearch", "BIM", "Full-Stack"],
+    imageUrl: getAssetPath('/bacmodelos/mainpage.png'),
+    imageHint: "BIM product discovery platform",
     githubUrl: "https://github.com/example/chakri-ecommerce",
     demoUrl: "https://demo.example.com/chakri-ecommerce"
   },
@@ -131,6 +131,32 @@ const projectsData = [
     imageHint: "automotive braking system technology",
     githubUrl: "https://github.com/example/zf-braking",
     demoUrl: "https://demo.example.com/zf-braking"
+  },
+  {
+    id: '10',
+    slug: "ee272-vlsi-design",
+    title: "EE272 VLSI Design Projects",
+    date: "June 2025",
+    author: siteName,
+    category: "VLSI / Integrated Circuits",
+    tags: ["VLSI", "SKY130", "Cadence", "Place & Route", "IC Design", "Stanford"],
+    imageUrl: getAssetPath('/272-Course/sram.png'),
+    imageHint: "VLSI chip layout design",
+    githubUrl: "",
+    demoUrl: ""
+  },
+  {
+    id: '11',
+    slug: "ee233-fm-radio",
+    title: "EE233 — FM Superheterodyne Radio Receiver",
+    date: "March 2025",
+    author: siteName,
+    category: "Analog IC / RF",
+    tags: ["Si5351 PLL", "Superheterodyne", "I/Q Demodulation", "RF Design", "Raspberry Pi Pico", "Analog Circuits"],
+    imageUrl: getAssetPath('/images/placaaceleracion.jpeg'),
+    imageHint: "FM radio receiver circuit board",
+    githubUrl: "",
+    demoUrl: ""
   }
 ];
 
@@ -407,11 +433,11 @@ function ZFBrakingProjectContent() {
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="bg-gradient-to-br from-purple-50 to-purple-100">
+              <Card className="bg-violet-500/10 border-violet-500/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <Trophy className="h-6 w-6 text-purple-600 mr-3" />
-                    <h4 className="font-medium text-purple-800">Technical Leadership</h4>
+                    <Trophy className="h-6 w-6 text-violet-400 mr-3" />
+                    <h4 className="font-medium text-violet-300">Technical Leadership</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Established best practices for AUTOSAR implementation and system architecture that became team standards.
@@ -419,11 +445,11 @@ function ZFBrakingProjectContent() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-gradient-to-br from-green-50 to-green-100">
+              <Card className="bg-green-500/10 border-green-500/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <BookOpen className="h-6 w-6 text-green-600 mr-3" />
-                    <h4 className="font-medium text-green-800">Knowledge Transfer</h4>
+                    <BookOpen className="h-6 w-6 text-green-400 mr-3" />
+                    <h4 className="font-medium text-green-300">Knowledge Transfer</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Created comprehensive documentation and training materials for new team members and cross-functional teams.
@@ -431,11 +457,11 @@ function ZFBrakingProjectContent() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-gradient-to-br from-blue-50 to-blue-100">
+              <Card className="bg-sky-500/10 border-sky-500/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <Star className="h-6 w-6 text-blue-600 mr-3" />
-                    <h4 className="font-medium text-blue-800">Innovation</h4>
+                    <Star className="h-6 w-6 text-sky-400 mr-3" />
+                    <h4 className="font-medium text-sky-300">Innovation</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Introduced new testing methodologies and tools that improved overall system reliability and performance.
@@ -472,7 +498,7 @@ function ZFShuttleProjectContent() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="bg-white/95 hover:bg-white transition-colors duration-300 shadow-md">
+              <Card className="bg-card/60 border-border hover:border-sky-500/30 transition-colors duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <div className="bg-primary/10 p-3 rounded-lg">
@@ -486,7 +512,7 @@ function ZFShuttleProjectContent() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-white/95 hover:bg-white transition-colors duration-300 shadow-md">
+              <Card className="bg-card/60 border-border hover:border-sky-500/30 transition-colors duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <div className="bg-primary/10 p-3 rounded-lg">
@@ -500,7 +526,7 @@ function ZFShuttleProjectContent() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-white/95 hover:bg-white transition-colors duration-300 shadow-md">
+              <Card className="bg-card/60 border-border hover:border-sky-500/30 transition-colors duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <div className="bg-primary/10 p-3 rounded-lg">
@@ -680,7 +706,7 @@ function ZFShuttleProjectContent() {
               </h3>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div className="space-y-6">
-                  <Card className="bg-gradient-to-r from-blue-50 to-blue-100">
+                  <Card className="bg-sky-500/10 border-sky-500/20">
                     <CardContent className="p-6">
                       <h4 className="font-bold mb-3">Stereo Vision & SLAM</h4>
                       <ul className="space-y-2 text-sm">
@@ -781,7 +807,7 @@ function ZFShuttleProjectContent() {
           </CardHeader>
           <CardContent className="space-y-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <Card className="bg-gradient-to-br from-purple-50 to-purple-100">
+              <Card className="bg-violet-500/10 border-violet-500/20">
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold mb-4 flex items-center">
                     <Monitor className="mr-3 h-5 w-5" />
@@ -814,7 +840,7 @@ function ZFShuttleProjectContent() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-gradient-to-br from-orange-50 to-orange-100">
+              <Card className="bg-orange-500/10 border-orange-500/20">
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold mb-4 flex items-center">
                     <Car className="mr-3 h-5 w-5" />
@@ -861,7 +887,7 @@ function ZFShuttleProjectContent() {
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Extended Funding */}
-              <Card className="bg-gradient-to-br from-green-50 to-green-100 border-green-200">
+              <Card className="bg-green-500/10 border-green-500/25">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-6">
                     <div className="bg-green-200 p-3 rounded-lg">
@@ -885,7 +911,7 @@ function ZFShuttleProjectContent() {
               </Card>
 
               {/* High-Level Visits */}
-              <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200">
+              <Card className="bg-sky-500/10 border-sky-500/25">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-6">
                     <div className="bg-blue-200 p-3 rounded-lg">
@@ -973,11 +999,11 @@ function ZFShuttleProjectContent() {
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="bg-gradient-to-br from-purple-50 to-purple-100">
+              <Card className="bg-violet-500/10 border-violet-500/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <Building className="h-6 w-6 text-purple-600 mr-3" />
-                    <h4 className="font-medium text-purple-800">Institutional Reputation</h4>
+                    <Building className="h-6 w-6 text-violet-400 mr-3" />
+                    <h4 className="font-medium text-violet-300">Institutional Reputation</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Consolidated Tecnológico de Monterrey as "core development center" for ZF in Latin America.
@@ -997,11 +1023,11 @@ function ZFShuttleProjectContent() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-gradient-to-br from-green-50 to-green-100">
+              <Card className="bg-green-500/10 border-green-500/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <Car className="h-6 w-6 text-green-600 mr-3" />
-                    <h4 className="font-medium text-green-800">Investment Attraction</h4>
+                    <Car className="h-6 w-6 text-green-400 mr-3" />
+                    <h4 className="font-medium text-green-300">Investment Attraction</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Project visibility contributed to Tesla choosing Monterrey for its first Mexican Gigafactory.
@@ -1018,11 +1044,11 @@ function ZFShuttleProjectContent() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-gradient-to-br from-blue-50 to-blue-100">
+              <Card className="bg-sky-500/10 border-sky-500/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <Users className="h-6 w-6 text-blue-600 mr-3" />
-                    <h4 className="font-medium text-blue-800">Educational Impact</h4>
+                    <Users className="h-6 w-6 text-sky-400 mr-3" />
+                    <h4 className="font-medium text-sky-300">Educational Impact</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Know-how incorporated into autonomous vehicle courses taught to teachers across Mexico.
@@ -1062,8 +1088,8 @@ function AIRLabProjectContent() {
           </CardHeader>
           <CardContent className="space-y-8">
             {/* Video Demonstration */}
-            <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-lg border-l-4 border-blue-500">
-              <h3 className="text-lg font-bold text-blue-800 mb-4">Project Functionality Demonstration</h3>
+            <div className="bg-sky-500/10 border-l-4 border-sky-500 p-6 rounded-lg">
+              <h3 className="text-lg font-bold text-sky-300 mb-4">Project Functionality Demonstration</h3>
               <div className="relative overflow-hidden rounded-lg aspect-video shadow-lg">
                 <iframe
                   src="https://www.youtube.com/embed/sTFtxwSkYfI?si=Iwi-O_nJTJAtQZO0"
@@ -1084,18 +1110,18 @@ function AIRLabProjectContent() {
             {/* Overview */}
             <div>
               <h3 className="text-xl font-bold text-primary mb-4">Overview</h3>
-              <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-lg border-l-4 border-blue-500">
+              <div className="bg-sky-500/10 border-l-4 border-sky-500 p-6 rounded-lg">
                 <p className="text-muted-foreground italic mb-4">
                   "Ahold Delhaize's AI for Retail Lab (AIRLab) and YES!Delft invited us to the Finals Event of the AIRLab Stacking Challenge. Within this challenge, we have challenged students and research teams from all over the world to share knowledge and dive deep into the tech to better understand the ground principles of robotics."
                 </p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-                <Card className="bg-gradient-to-br from-green-50 to-green-100">
+                <Card className="bg-green-500/10 border-green-500/20">
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
-                      <Target className="h-6 w-6 text-green-600 mr-3" />
-                      <h4 className="font-medium text-green-800">Goal</h4>
+                      <Target className="h-6 w-6 text-green-400 mr-3" />
+                      <h4 className="font-medium text-green-300">Goal</h4>
                     </div>
                     <p className="text-sm text-muted-foreground">
                       Develop algorithms that autonomously stack products in a simulated environment and then deploy them onto the TIAGo robot in a live demo.
@@ -1103,11 +1129,11 @@ function AIRLabProjectContent() {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-gradient-to-br from-purple-50 to-purple-100">
+                <Card className="bg-violet-500/10 border-violet-500/20">
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
-                      <Building className="h-6 w-6 text-purple-600 mr-3" />
-                      <h4 className="font-medium text-purple-800">Context</h4>
+                      <Building className="h-6 w-6 text-violet-400 mr-3" />
+                      <h4 className="font-medium text-violet-300">Context</h4>
                     </div>
                     <p className="text-sm text-muted-foreground">
                       Hosted by AIRLab (Ahold Delhaize / TU Delft) with support from PAL Robotics and YES!Delft.
@@ -1115,11 +1141,11 @@ function AIRLabProjectContent() {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-gradient-to-br from-orange-50 to-orange-100">
+                <Card className="bg-orange-500/10 border-orange-500/20">
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
-                      <Star className="h-6 w-6 text-orange-600 mr-3" />
-                      <h4 className="font-medium text-orange-800">Why It Matters</h4>
+                      <Star className="h-6 w-6 text-orange-400 mr-3" />
+                      <h4 className="font-medium text-orange-300">Why It Matters</h4>
                     </div>
                     <p className="text-sm text-muted-foreground">
                       Retail shelving is a repetitive but delicate task. Automating "pick and place" in a cluttered environment tests both vision and manipulation subsystems end-to-end.
@@ -1284,7 +1310,7 @@ function AIRLabProjectContent() {
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* AIRLab */}
-              <Card className="bg-gradient-to-br from-blue-50 to-blue-100">
+              <Card className="bg-sky-500/10 border-sky-500/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <div className="bg-blue-200 p-3 rounded-lg">
@@ -1310,7 +1336,7 @@ function AIRLabProjectContent() {
               </Card>
 
               {/* Ahold Delhaize */}
-              <Card className="bg-gradient-to-br from-green-50 to-green-100">
+              <Card className="bg-green-500/10 border-green-500/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <div className="bg-green-200 p-3 rounded-lg">
@@ -1328,7 +1354,7 @@ function AIRLabProjectContent() {
               </Card>
 
               {/* TU Delft */}
-              <Card className="bg-gradient-to-br from-purple-50 to-purple-100">
+              <Card className="bg-violet-500/10 border-violet-500/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <div className="bg-purple-200 p-3 rounded-lg">
@@ -1346,7 +1372,7 @@ function AIRLabProjectContent() {
               </Card>
 
               {/* PAL Robotics */}
-              <Card className="bg-gradient-to-br from-orange-50 to-orange-100">
+              <Card className="bg-orange-500/10 border-orange-500/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <div className="bg-orange-200 p-3 rounded-lg">
@@ -1384,26 +1410,26 @@ function AIRLabProjectContent() {
             {/* Results */}
             <div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <Card className="bg-gradient-to-br from-yellow-50 to-yellow-100 border-2 border-yellow-300">
+                <Card className="bg-yellow-500/10 border-yellow-500/40">
                   <CardContent className="p-6 text-center">
-                    <Trophy className="h-12 w-12 text-yellow-600 mx-auto mb-4" />
-                    <h4 className="font-bold text-yellow-800 mb-2">💎 Award</h4>
+                    <Trophy className="h-12 w-12 text-yellow-400 mx-auto mb-4" />
+                    <h4 className="font-bold text-yellow-300 mb-2">💎 Award</h4>
                     <p className="text-sm text-muted-foreground">"Most Consistent Solution" (out of 25+ international teams)</p>
                   </CardContent>
                 </Card>
 
-                <Card className="bg-gradient-to-br from-blue-50 to-blue-100">
+                <Card className="bg-sky-500/10 border-sky-500/20">
                   <CardContent className="p-6 text-center">
-                    <Star className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                    <h4 className="font-bold text-blue-800 mb-2">🏅 Key Differentiator</h4>
+                    <Star className="h-12 w-12 text-sky-400 mx-auto mb-4" />
+                    <h4 className="font-bold text-sky-300 mb-2">🏅 Key Differentiator</h4>
                     <p className="text-sm text-muted-foreground">Robust error handler with retry mechanism—minimized deadlocks</p>
                   </CardContent>
                 </Card>
 
-                <Card className="bg-gradient-to-br from-green-50 to-green-100">
+                <Card className="bg-green-500/10 border-green-500/20">
                   <CardContent className="p-6 text-center">
-                    <Code className="h-12 w-12 text-green-600 mx-auto mb-4" />
-                    <h4 className="font-bold text-green-800 mb-2">🔤 Tech Stack</h4>
+                    <Code className="h-12 w-12 text-green-400 mx-auto mb-4" />
+                    <h4 className="font-bold text-green-300 mb-2">🔤 Tech Stack</h4>
                     <p className="text-sm text-muted-foreground">ROS Noetic, OpenCV 4.2, PCL, MoveIt!, TensorFlow 1.15, C++/Python</p>
                   </CardContent>
                 </Card>
@@ -1611,7 +1637,7 @@ function SmartFactoryProjectContent() {
               </h3>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div className="space-y-6">
-                  <Card className="bg-gradient-to-r from-blue-50 to-blue-100">
+                  <Card className="bg-sky-500/10 border-sky-500/20">
                     <CardContent className="p-6">
                       <h4 className="font-bold mb-3">Vision & Simulation Systems</h4>
                       <ul className="space-y-2 text-sm">
@@ -1712,7 +1738,7 @@ function SmartFactoryProjectContent() {
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Industry Presentation */}
-              <Card className="bg-gradient-to-br from-green-50 to-green-100 border-green-200">
+              <Card className="bg-green-500/10 border-green-500/25">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-6">
                     <div className="bg-green-200 p-3 rounded-lg">
@@ -1739,7 +1765,7 @@ function SmartFactoryProjectContent() {
               </Card>
 
               {/* Academic Publications */}
-              <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200">
+              <Card className="bg-sky-500/10 border-sky-500/25">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-6">
                     <div className="bg-blue-200 p-3 rounded-lg">
@@ -1838,11 +1864,11 @@ function SmartFactoryProjectContent() {
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* General Coordinator */}
-              <Card className="bg-gradient-to-br from-purple-50 to-purple-100">
+              <Card className="bg-violet-500/10 border-violet-500/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <Users className="h-6 w-6 text-purple-600 mr-3" />
-                    <h4 className="font-medium text-purple-800">General Coordinator</h4>
+                    <Users className="h-6 w-6 text-violet-400 mr-3" />
+                    <h4 className="font-medium text-violet-300">General Coordinator</h4>
                   </div>
                   <p className="text-sm text-muted-foreground mb-4">
                     Led a team of 50 scholarship students, 70 students, and 3 teachers to design, implement, and validate the pilot factory.
@@ -1860,11 +1886,11 @@ function SmartFactoryProjectContent() {
               </Card>
 
               {/* CADI Instructor */}
-              <Card className="bg-gradient-to-br from-green-50 to-green-100">
+              <Card className="bg-green-500/10 border-green-500/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <BookOpen className="h-6 w-6 text-green-600 mr-3" />
-                    <h4 className="font-medium text-green-800">CADI Instructor</h4>
+                    <BookOpen className="h-6 w-6 text-green-400 mr-3" />
+                    <h4 className="font-medium text-green-300">CADI Instructor</h4>
                   </div>
                   <p className="text-sm text-muted-foreground mb-4">
                     Trained 20 teachers from CDMX, Toluca, Guadalajara, and Monterrey in monitoring and control with AVEVA-OSIsoft.
@@ -1883,7 +1909,7 @@ function SmartFactoryProjectContent() {
             </div>
 
             {/* Mentor and Facilitator */}
-            <Card className="mt-8 bg-gradient-to-r from-blue-50 to-blue-100">
+            <Card className="mt-8 bg-sky-500/10 border-sky-500/20">
               <CardContent className="p-6">
                 <div className="flex items-center mb-6">
                   <div className="bg-blue-200 p-3 rounded-lg">
@@ -1892,20 +1918,20 @@ function SmartFactoryProjectContent() {
                   <h3 className="ml-3 text-xl font-bold">Mentor & Facilitator</h3>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="bg-white/50 p-4 rounded-lg">
-                    <h4 className="font-medium text-blue-800 mb-2">Team Leadership</h4>
+                  <div className="bg-card/60 border border-border p-4 rounded-lg">
+                    <h4 className="font-medium text-sky-300 mb-2">Team Leadership</h4>
                     <p className="text-sm text-muted-foreground">
                       Guided group leaders, defined weekly objectives, and reviewed progress presentations.
                     </p>
                   </div>
-                  <div className="bg-white/50 p-4 rounded-lg">
-                    <h4 className="font-medium text-blue-800 mb-2">Immediate Feedback</h4>
+                  <div className="bg-card/60 border border-border p-4 rounded-lg">
+                    <h4 className="font-medium text-sky-300 mb-2">Immediate Feedback</h4>
                     <p className="text-sm text-muted-foreground">
                       Provided real-time feedback to prevent technical blockages and maintain project momentum.
                     </p>
                   </div>
-                  <div className="bg-white/50 p-4 rounded-lg">
-                    <h4 className="font-medium text-blue-800 mb-2">Weekend Support</h4>
+                  <div className="bg-card/60 border border-border p-4 rounded-lg">
+                    <h4 className="font-medium text-sky-300 mb-2">Weekend Support</h4>
                     <p className="text-sm text-muted-foreground">
                       Resolved technical problems on weekends alongside faculty to ensure continuous progress.
                     </p>
@@ -1926,11 +1952,11 @@ function SmartFactoryProjectContent() {
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="bg-gradient-to-br from-purple-50 to-purple-100">
+              <Card className="bg-violet-500/10 border-violet-500/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <Network className="h-6 w-6 text-purple-600 mr-3" />
-                    <h4 className="font-medium text-purple-800">Knowledge Multiplier</h4>
+                    <Network className="h-6 w-6 text-violet-400 mr-3" />
+                    <h4 className="font-medium text-violet-300">Knowledge Multiplier</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Created a replicable model for other campuses, strengthening the Smart Factory network in Latin America.
@@ -1947,11 +1973,11 @@ function SmartFactoryProjectContent() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-gradient-to-br from-green-50 to-green-100">
+              <Card className="bg-green-500/10 border-green-500/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <Users className="h-6 w-6 text-green-600 mr-3" />
-                    <h4 className="font-medium text-green-800">Talent Formation</h4>
+                    <Users className="h-6 w-6 text-green-400 mr-3" />
+                    <h4 className="font-medium text-green-300">Talent Formation</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Empowered hundreds of students and teachers with Industry 4.0, robotics, and CPS competencies.
@@ -1968,11 +1994,11 @@ function SmartFactoryProjectContent() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-gradient-to-br from-blue-50 to-blue-100">
+              <Card className="bg-sky-500/10 border-sky-500/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <Globe className="h-6 w-6 text-blue-600 mr-3" />
-                    <h4 className="font-medium text-blue-800">International Collaboration</h4>
+                    <Globe className="h-6 w-6 text-sky-400 mr-3" />
+                    <h4 className="font-medium text-sky-300">International Collaboration</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Positioned Tec as partner of Cyber-Physical Learning Alliance (CPL) and MIT in Digital Twin projects.
@@ -1989,11 +2015,11 @@ function SmartFactoryProjectContent() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-gradient-to-br from-orange-50 to-orange-100">
+              <Card className="bg-orange-500/10 border-orange-500/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <Building className="h-6 w-6 text-orange-600 mr-3" />
-                    <h4 className="font-medium text-orange-800">Technological Pillar</h4>
+                    <Building className="h-6 w-6 text-orange-400 mr-3" />
+                    <h4 className="font-medium text-orange-300">Technological Pillar</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Consolidated a pilot factory that serves as reference laboratory for global institutions and companies.
@@ -2177,11 +2203,11 @@ function RoboCupProjectContent() {
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Navigation System */}
-              <Card className="bg-gradient-to-br from-purple-50 to-purple-100">
+              <Card className="bg-violet-500/10 border-violet-500/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <Navigation className="h-6 w-6 text-purple-600 mr-3" />
-                    <h4 className="font-medium text-purple-800">Adaptive Navigation</h4>
+                    <Navigation className="h-6 w-6 text-violet-400 mr-3" />
+                    <h4 className="font-medium text-violet-300">Adaptive Navigation</h4>
                   </div>
                   <p className="text-sm text-muted-foreground mb-4">
                     Implemented robust navigation system capable of handling dynamic environments, including:
@@ -2204,11 +2230,11 @@ function RoboCupProjectContent() {
               </Card>
 
               {/* Object Manipulation */}
-              <Card className="bg-gradient-to-br from-green-50 to-green-100">
+              <Card className="bg-green-500/10 border-green-500/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <Hand className="h-6 w-6 text-green-600 mr-3" />
-                    <h4 className="font-medium text-green-800">Object Manipulation</h4>
+                    <Hand className="h-6 w-6 text-green-400 mr-3" />
+                    <h4 className="font-medium text-green-300">Object Manipulation</h4>
                   </div>
                   <p className="text-sm text-muted-foreground mb-4">
                     Developed versatile manipulation system for various objects:
@@ -2232,7 +2258,7 @@ function RoboCupProjectContent() {
             </div>
 
             {/* Human-Robot Interaction */}
-            <Card className="mt-8 bg-gradient-to-r from-blue-50 to-blue-100">
+            <Card className="mt-8 bg-sky-500/10 border-sky-500/20">
               <CardContent className="p-6">
                 <div className="flex items-center mb-6">
                   <div className="bg-blue-200 p-3 rounded-lg">
@@ -2241,20 +2267,20 @@ function RoboCupProjectContent() {
                   <h3 className="ml-3 text-xl font-bold">Human-Robot Interaction</h3>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="bg-white/50 p-4 rounded-lg">
-                    <h4 className="font-medium text-blue-800 mb-2">Voice Commands</h4>
+                  <div className="bg-card/60 border border-border p-4 rounded-lg">
+                    <h4 className="font-medium text-sky-300 mb-2">Voice Commands</h4>
                     <p className="text-sm text-muted-foreground">
                       Natural language processing for understanding and executing voice commands in noisy environments.
                     </p>
                   </div>
-                  <div className="bg-white/50 p-4 rounded-lg">
-                    <h4 className="font-medium text-blue-800 mb-2">Person Recognition</h4>
+                  <div className="bg-card/60 border border-border p-4 rounded-lg">
+                    <h4 className="font-medium text-sky-300 mb-2">Person Recognition</h4>
                     <p className="text-sm text-muted-foreground">
                       Face recognition and tracking for identifying and interacting with different people in the arena.
                     </p>
                   </div>
-                  <div className="bg-white/50 p-4 rounded-lg">
-                    <h4 className="font-medium text-blue-800 mb-2">Task Execution</h4>
+                  <div className="bg-card/60 border border-border p-4 rounded-lg">
+                    <h4 className="font-medium text-sky-300 mb-2">Task Execution</h4>
                     <p className="text-sm text-muted-foreground">
                       Robust task planning and execution system for completing complex domestic service tasks.
                     </p>
@@ -2276,7 +2302,7 @@ function RoboCupProjectContent() {
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Competition Results */}
-              <Card className="bg-gradient-to-br from-yellow-50 to-yellow-100">
+              <Card className="bg-yellow-500/10 border-yellow-500/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-6">
                     <Trophy className="h-6 w-6 text-yellow-700" />
@@ -2303,7 +2329,7 @@ function RoboCupProjectContent() {
               </Card>
 
               {/* Technical Recognition */}
-              <Card className="bg-gradient-to-br from-blue-50 to-blue-100">
+              <Card className="bg-sky-500/10 border-sky-500/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-6">
                     <Award className="h-6 w-6 text-blue-700" />
@@ -2737,7 +2763,7 @@ function TokyoIROSProjectContent() {
               </h3>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div className="space-y-6">
-                  <Card className="bg-gradient-to-r from-blue-50 to-blue-100">
+                  <Card className="bg-sky-500/10 border-sky-500/20">
                     <CardContent className="p-6">
                       <h4 className="font-bold mb-3">Intelligent Manipulation</h4>
                       <ul className="space-y-2 text-sm">
@@ -2845,7 +2871,7 @@ function TokyoIROSProjectContent() {
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Competition Award */}
-              <Card className="bg-gradient-to-br from-yellow-50 to-yellow-100 border-yellow-200">
+              <Card className="bg-yellow-500/10 border-yellow-500/20 border-yellow-200">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-6">
                     <div className="bg-yellow-200 p-3 rounded-lg">
@@ -2869,7 +2895,7 @@ function TokyoIROSProjectContent() {
               </Card>
 
               {/* Community Recognition */}
-              <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200">
+              <Card className="bg-sky-500/10 border-sky-500/25">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-6">
                     <div className="bg-blue-200 p-3 rounded-lg">
@@ -2959,11 +2985,11 @@ function TokyoIROSProjectContent() {
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Navigation and Recovery Leader */}
-              <Card className="bg-gradient-to-br from-purple-50 to-purple-100">
+              <Card className="bg-violet-500/10 border-violet-500/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <Navigation className="h-6 w-6 text-purple-600 mr-3" />
-                    <h4 className="font-medium text-purple-800">Navigation & Recovery Leader</h4>
+                    <Navigation className="h-6 w-6 text-violet-400 mr-3" />
+                    <h4 className="font-medium text-violet-300">Navigation & Recovery Leader</h4>
                   </div>
                   <p className="text-sm text-muted-foreground mb-4">
                     Designed autonomous navigation layer and failure replanning mechanisms, ensuring mission completion without interruption.
@@ -2981,11 +3007,11 @@ function TokyoIROSProjectContent() {
               </Card>
 
               {/* ROS-SIGVerse Integration Architect */}
-              <Card className="bg-gradient-to-br from-green-50 to-green-100">
+              <Card className="bg-green-500/10 border-green-500/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <Cog className="h-6 w-6 text-green-600 mr-3" />
-                    <h4 className="font-medium text-green-800">ROS-SIGVerse Integration Architect</h4>
+                    <Cog className="h-6 w-6 text-green-400 mr-3" />
+                    <h4 className="font-medium text-green-300">ROS-SIGVerse Integration Architect</h4>
                   </div>
                   <p className="text-sm text-muted-foreground mb-4">
                     Coordinated ROS node adaptation for SIGVerse virtual environment, ensuring synchrony between simulator and real control.
@@ -3004,7 +3030,7 @@ function TokyoIROSProjectContent() {
             </div>
 
             {/* Training and Mentorship */}
-            <Card className="mt-8 bg-gradient-to-r from-blue-50 to-blue-100">
+            <Card className="mt-8 bg-sky-500/10 border-sky-500/20">
               <CardContent className="p-6">
                 <div className="flex items-center mb-6">
                   <div className="bg-blue-200 p-3 rounded-lg">
@@ -3013,20 +3039,20 @@ function TokyoIROSProjectContent() {
                   <h3 className="ml-3 text-xl font-bold">Training & Mentorship</h3>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="bg-white/50 p-4 rounded-lg">
-                    <h4 className="font-medium text-blue-800 mb-2">MoveIt! Best Practices</h4>
+                  <div className="bg-card/60 border border-border p-4 rounded-lg">
+                    <h4 className="font-medium text-sky-300 mb-2">MoveIt! Best Practices</h4>
                     <p className="text-sm text-muted-foreground">
                       Trained team in advanced manipulation planning, optimization techniques, and collision avoidance strategies.
                     </p>
                   </div>
-                  <div className="bg-white/50 p-4 rounded-lg">
-                    <h4 className="font-medium text-blue-800 mb-2">SIGVerse Simulation</h4>
+                  <div className="bg-card/60 border border-border p-4 rounded-lg">
+                    <h4 className="font-medium text-sky-300 mb-2">SIGVerse Simulation</h4>
                     <p className="text-sm text-muted-foreground">
                       Conducted comprehensive training on virtual environment setup, debugging, and performance optimization.
                     </p>
                   </div>
-                  <div className="bg-white/50 p-4 rounded-lg">
-                    <h4 className="font-medium text-blue-800 mb-2">Code Review & Testing</h4>
+                  <div className="bg-card/60 border border-border p-4 rounded-lg">
+                    <h4 className="font-medium text-sky-300 mb-2">Code Review & Testing</h4>
                     <p className="text-sm text-muted-foreground">
                       Organized code review sessions and cross-testing protocols to ensure system reliability and robustness.
                     </p>
@@ -3047,11 +3073,11 @@ function TokyoIROSProjectContent() {
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="bg-gradient-to-br from-purple-50 to-purple-100">
+              <Card className="bg-violet-500/10 border-violet-500/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <Globe className="h-6 w-6 text-purple-600 mr-3" />
-                    <h4 className="font-medium text-purple-800">International Recognition</h4>
+                    <Globe className="h-6 w-6 text-violet-400 mr-3" />
+                    <h4 className="font-medium text-violet-300">International Recognition</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Positioned Roborregos on the IROS scene and reinforced Tec de Monterrey's reputation in service robotics.
@@ -3068,11 +3094,11 @@ function TokyoIROSProjectContent() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-gradient-to-br from-green-50 to-green-100">
+              <Card className="bg-green-500/10 border-green-500/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <FileText className="h-6 w-6 text-green-600 mr-3" />
-                    <h4 className="font-medium text-green-800">Reusable Resources</h4>
+                    <FileText className="h-6 w-6 text-green-400 mr-3" />
+                    <h4 className="font-medium text-green-300">Reusable Resources</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Navigation packages and ROS-AWS integration scripts documented and shared for future simulation projects.
@@ -3089,11 +3115,11 @@ function TokyoIROSProjectContent() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-gradient-to-br from-blue-50 to-blue-100">
+              <Card className="bg-sky-500/10 border-sky-500/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <Star className="h-6 w-6 text-blue-600 mr-3" />
-                    <h4 className="font-medium text-blue-800">Inspiration & Research</h4>
+                    <Star className="h-6 w-6 text-sky-400 mr-3" />
+                    <h4 className="font-medium text-sky-300">Inspiration & Research</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Motivated student community to explore human-robot interaction in virtual environments, driving new SLAM and VR research.
@@ -3117,517 +3143,293 @@ function TokyoIROSProjectContent() {
   );
 }
 
-// Chakri E-commerce-specific content component
+// BAC Modelos — CHAKRI case study
 function ChakriProjectContent() {
   return (
-    <div className="space-y-12">
-      {/* App Store Links Section */}
+    <div className="space-y-14">
+
+      {/* Hero Statement */}
       <FadeIn delay="delay-200">
-        <Card className="shadow-xl bg-gradient-to-r from-primary/5 to-primary/10">
-          <CardHeader>
-            <CardTitle className="text-2xl text-foreground flex items-center">
-              <Smartphone className="mr-3 h-6 w-6 text-primary" />
-              Available on App Stores
-            </CardTitle>
-            <p className="text-muted-foreground">Download Chakri for iOS and Android</p>
-          </CardHeader>
-          <CardContent>
-            <div className="flex flex-col items-center space-y-6">
-              <div className="flex items-center space-x-4">
-                <Image
-                  src={getAssetPath("/chakri/appstore.png")}
-                  alt="App Store"
-                  width={120}
-                  height={40}
-                  className="rounded-lg hover:opacity-80 transition-opacity"
-                />
-                <Image
-                  src={getAssetPath("/chakri/playstore.png")}
-                  alt="Play Store"
-                  width={120}
-                  height={40}
-                  className="rounded-lg hover:opacity-80 transition-opacity"
-                />
-              </div>
-              <a
-                href="https://lnk.bio/Chakriapp"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
-              >
-                <ExternalLink className="mr-2 h-4 w-4" />
-                Get the App
-              </a>
-            </div>
-          </CardContent>
-        </Card>
+        <div className="rounded-xl border border-sky-500/20 bg-card/50 p-8 md:p-10">
+          <div className="flex items-center gap-2 mb-5">
+            <span className="font-mono text-xs text-sky-400/70 tracking-widest uppercase border border-sky-500/25 bg-sky-500/8 px-2 py-0.5 rounded-sm">CHAKRI Studio</span>
+            <span className="font-mono text-xs text-muted-foreground/50">·</span>
+            <span className="font-mono text-xs text-muted-foreground/50">Client Project — Mexico</span>
+          </div>
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4 leading-tight">
+            Engineering a BIM platform for discovery,<br className="hidden md:block" /> downloads, and manufacturer growth
+          </h2>
+          <p className="font-body text-lg text-muted-foreground leading-relaxed max-w-3xl">
+            For BAC Modelos, CHAKRI delivered a modern Next.js platform that combines searchable
+            product catalogs, secure file delivery, content management, manufacturer onboarding,
+            and analytics into one scalable web product.
+          </p>
+          <div className="flex flex-wrap gap-4 mt-6">
+            {['Full-stack platform','Search + Auth + CMS + Analytics','Mexico-based client'].map(t=>(
+              <span key={t} className="font-mono text-xs text-sky-300 border border-sky-500/25 bg-sky-500/8 px-3 py-1 rounded-full">{t}</span>
+            ))}
+          </div>
+        </div>
       </FadeIn>
 
-      {/* Project Overview Section */}
+      {/* Main screenshot */}
+      <FadeIn delay="delay-250">
+        <div className="rounded-xl overflow-hidden border border-border shadow-xl">
+          <Image
+            src={getAssetPath('/bacmodelos/mainpage.png')}
+            alt="BAC Modelos main page"
+            width={1400}
+            height={860}
+            className="w-full object-cover"
+          />
+        </div>
+      </FadeIn>
+
+      {/* Challenge + Solution */}
       <FadeIn delay="delay-300">
+        <div className="grid md:grid-cols-2 gap-6">
+          <Card className="bg-card/60 border-border shadow-xl">
+            <CardHeader>
+              <CardTitle className="text-xl text-foreground flex items-center gap-2">
+                <Target className="h-5 w-5 text-primary" /> The Challenge
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground leading-relaxed text-sm">
+                The client needed more than a polished website. They needed a platform that could
+                serve architects and designers looking for BIM-ready products, while also creating
+                a business funnel for manufacturers who wanted visibility, analytics, and a
+                structured publishing workflow — balancing public UX, internal operations, gated
+                downloads, content publishing, and long-term scalability.
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="bg-card/60 border-border shadow-xl">
+            <CardHeader>
+              <CardTitle className="text-xl text-foreground flex items-center gap-2">
+                <Lightbulb className="h-5 w-5 text-primary" /> The Solution
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground leading-relaxed text-sm">
+                CHAKRI designed and built BAC Modelos as a multi-surface digital product. On the
+                public side, users browse manufacturers, explore a BIM library, search and filter
+                products, and access gated downloads. On the business side, manufacturers have a
+                dedicated acquisition path, and administrators manage hero content, featured
+                inventory, categories, blog content, and analytics through a custom dashboard.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </FadeIn>
+
+      {/* Feature Highlights */}
+      <FadeIn delay="delay-350">
         <Card className="shadow-xl">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground flex items-center">
-              <ShoppingCart className="mr-3 h-6 w-6 text-primary" />
-              CHAKRI (ALTAVI S.A.S) - Fair Trade Platform
+              <Sparkles className="mr-3 h-6 w-6 text-primary" />
+              Platform Features
+            </CardTitle>
+            <p className="text-muted-foreground">A full product platform — not a brochure site</p>
+          </CardHeader>
+          <CardContent>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                {icon:BookOpen, title:'Searchable BIM Library', body:'Advanced filtering, product discovery, pagination, and manufacturer-aware search powered by Elasticsearch.'},
+                {icon:Shield,   title:'Secure Downloads',       body:'Authenticated download flow protected with Firebase ID tokens and server-side checks.'},
+                {icon:Users,    title:'Manufacturer Funnel',    body:'Dedicated pages and onboarding flows designed to convert brands into platform participants.'},
+                {icon:FileText, title:'Content Publishing',     body:'Blog, resources, featured sections, and homepage content managed from the admin side via TipTap rich text editor.'},
+                {icon:Settings, title:'Admin Dashboard',        body:'Internal tooling for content operations, manufacturer management, product management, and moderation.'},
+                {icon:BarChart, title:'Analytics Layer',        body:'GA-connected dashboards with D3 visual charts and live Firestore-backed download activity counts.'},
+              ].map(f=>(
+                <div key={f.title} className="bg-card/60 border border-border rounded-lg p-5 hover:border-primary/30 transition-colors">
+                  <div className="flex items-center gap-2.5 mb-3">
+                    <div className="w-8 h-8 rounded-md bg-primary/10 flex items-center justify-center shrink-0">
+                      <f.icon className="h-4 w-4 text-primary" />
+                    </div>
+                    <h4 className="font-semibold text-foreground text-sm">{f.title}</h4>
+                  </div>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{f.body}</p>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      </FadeIn>
+
+      {/* BIM Library screenshot */}
+      <FadeIn delay="delay-400">
+        <div className="grid md:grid-cols-2 gap-6 items-start">
+          <div>
+            <div className="font-mono text-xs text-primary/70 uppercase tracking-widest mb-3">BIM Library</div>
+            <h3 className="font-display text-2xl font-bold text-foreground mb-3">Product Discovery at Scale</h3>
+            <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+              The BIM library is the core of the platform: search with Elasticsearch, category
+              and manufacturer filters, format filters, sorting, and pagination. Product cards
+              include ratings, favorites, and gated download actions.
+            </p>
+            <div className="space-y-2">
+              {['Search + Elasticsearch-powered APIs','Category / manufacturer / format filters','Product ratings, favorites, download tracking','Gated downloads with Firebase token auth'].map(i=>(
+                <div key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <CheckCircle className="h-3.5 w-3.5 text-green-400 shrink-0" />{i}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="rounded-xl overflow-hidden border border-border shadow-lg">
+            <Image
+              src={getAssetPath('/bacmodelos/bibliotecaBIM.png')}
+              alt="BAC Modelos BIM Library"
+              width={800}
+              height={500}
+              className="w-full object-cover"
+            />
+          </div>
+        </div>
+      </FadeIn>
+
+      {/* Admin + Analytics screenshots */}
+      <FadeIn delay="delay-450">
+        <div className="grid md:grid-cols-2 gap-6">
+          <div>
+            <div className="font-mono text-xs text-primary/70 uppercase tracking-widest mb-2">Admin CMS</div>
+            <div className="rounded-xl overflow-hidden border border-border shadow-lg mb-3">
+              <Image
+                src={getAssetPath('/bacmodelos/gestionproductos.png')}
+                alt="BAC Modelos Admin Product Management"
+                width={700}
+                height={440}
+                className="w-full object-cover"
+              />
+            </div>
+            <p className="text-xs text-muted-foreground">Product management with 36 admin-area files and dedicated tabs for hero, featured products, categories, blog, resources, partners, and ads.</p>
+          </div>
+          <div>
+            <div className="font-mono text-xs text-primary/70 uppercase tracking-widest mb-2">Analytics Dashboard</div>
+            <div className="rounded-xl overflow-hidden border border-border shadow-lg mb-3">
+              <Image
+                src={getAssetPath('/bacmodelos/analytics.png')}
+                alt="BAC Modelos Analytics Dashboard"
+                width={700}
+                height={440}
+                className="w-full object-cover"
+              />
+            </div>
+            <p className="text-xs text-muted-foreground">Google Analytics Data API + live Firestore-backed activity counts visualized with D3 charts.</p>
+          </div>
+        </div>
+      </FadeIn>
+
+      {/* Tech Stack */}
+      <FadeIn delay="delay-500">
+        <Card className="shadow-xl">
+          <CardHeader>
+            <CardTitle className="text-2xl text-foreground flex items-center">
+              <Code className="mr-3 h-6 w-6 text-primary" />
+              Tech Stack
             </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-8">
-            <div className="text-center">
-              <h3 className="text-xl font-bold text-primary mb-2">SaaS Platform Connecting Producers, Supermarkets & Consumers</h3>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                SaaS platform that directly connects producers, supermarkets, and consumers, eliminating intermediaries and reducing logistics costs while promoting fair trade and real-time price transparency.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="bg-secondary/5">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
-                      <Target className="h-6 w-6 text-primary" />
-                    </div>
-                    <h4 className="ml-3 text-lg font-medium">Mission</h4>
+          <CardContent>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                {cat:'Frontend',      items:['Next.js 16','React 18','TypeScript','Tailwind CSS']},
+                {cat:'Rich UI',       items:['D3 charts','TipTap editor','React Icons','Suspense']},
+                {cat:'Backend / Cloud',items:['Firebase Auth','Firestore','Firebase Storage','Cloud Functions','Elasticsearch']},
+                {cat:'Quality / DX',  items:['ESLint + Prettier','Husky','Docker','Firebase emulators']},
+              ].map(g=>(
+                <div key={g.cat} className="bg-card/60 border border-border rounded-lg p-4">
+                  <div className="font-mono text-[10px] text-primary/70 uppercase tracking-widest mb-3">{g.cat}</div>
+                  <div className="space-y-1.5">
+                    {g.items.map(i=>(<div key={i} className="flex items-center gap-1.5"><div className="w-1 h-1 rounded-full bg-primary/50" /><span className="text-xs text-muted-foreground">{i}</span></div>))}
                   </div>
-                  <p className="text-sm text-muted-foreground">
-                    Eliminate intermediaries, reduce logistics costs, and promote fair trade with real-time price transparency and competitive freshness.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-secondary/5">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
-                      <ChefHat className="h-6 w-6 text-primary" />
-                    </div>
-                    <h4 className="ml-3 text-lg font-medium">Innovation</h4>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Recipe plugin linking products with culinary options, improving customer experience and cross-selling opportunities.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-secondary/5">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
-                      <DollarSign className="h-6 w-6 text-primary" />
-                    </div>
-                    <h4 className="ml-3 text-lg font-medium">Valuation</h4>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Technology app valued at ~$20,000 USD after first seed investment round with 300+ active users.
-                  </p>
-                </CardContent>
-              </Card>
+                </div>
+              ))}
             </div>
           </CardContent>
         </Card>
       </FadeIn>
 
-      {/* Technologies and Development Section */}
-      <FadeIn delay="delay-400">
+      {/* Architecture */}
+      <FadeIn delay="delay-550">
         <Card className="shadow-xl">
           <CardHeader>
-            <CardTitle className="text-2xl text-foreground">Technologies & Applied Developments</CardTitle>
-            <p className="text-muted-foreground">Comprehensive e-commerce and logistics platform</p>
-          </CardHeader>
-          <CardContent className="space-y-12">
-            {/* Backend Architecture and SaaS */}
-            <div>
-              <h3 className="text-xl font-bold mb-6 flex items-center">
-                <Cloud className="mr-3 h-6 w-6 text-primary" />
-                Backend Architecture & SaaS
-              </h3>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div className="space-y-6">
-                  <Card className="bg-gradient-to-r from-primary/5 to-primary/10">
-                    <CardContent className="p-6">
-                      <h4 className="font-bold mb-3">Microservices Architecture</h4>
-                      <ul className="space-y-2 text-sm">
-                        <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Catalog, orders, and payments microservices</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Cloud-hosted with automatic scalability</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Intelligent routing algorithms</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Optimized collection and delivery routes by zones</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Reduced delivery times and costs (Quito zones)</span>
-                        </li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </div>
-                <div className="flex justify-center">
-                  <Image
-                    src={getAssetPath("/chakri/architecture.png")}
-                    alt="System Architecture"
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-lg object-contain w-full max-w-[300px]"
-                    priority
-                  />
-                </div>
-              </div>
-            </div>
-
-            <Separator />
-            {/* Client App */}
-            <div>
-              <h3 className="text-xl font-bold mb-6 flex items-center">
-                <Smartphone className="mr-3 h-6 w-6 text-primary" />
-                Client App
-              </h3>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div className="flex justify-center">
-                  <Image
-                    src={getAssetPath("/chakri/cliente.jpg")}
-                    alt="System Architecture"
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-lg object-contain w-full max-w-[300px]"
-                    priority
-                  />
-                </div>
-                <div className="space-y-6">
-                  <Card className="bg-gradient-to-r from-secondary/5 to-secondary/10">
-                    <CardContent className="p-6">
-                      <h4 className="font-bold mb-3">Customer Experience</h4>
-                      <ul className="space-y-2 text-sm">
-                        <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Interactive catalog with price, supplier, and recipe filters</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Chakri Recipes plugin integration</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Influencer recipes with automatic purchase links</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Real-time order tracking</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Secure payment gateway</span>
-                        </li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
-            </div>
-
-            <Separator />
-
-            {/* Vendor App */}
-            <div>
-              <h3 className="text-xl font-bold mb-6 flex items-center">
-                <Building className="mr-3 h-6 w-6 text-primary" />
-                Vendor App
-              </h3>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div className="space-y-6">
-                  <Card className="bg-gradient-to-r from-blue-50 to-blue-100">
-                    <CardContent className="p-6">
-                      <h4 className="font-bold mb-3">Chakri Vendor Management</h4>
-                      <ul className="space-y-2 text-sm">
-                        <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Virtual store management (inventory, dynamic pricing)</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Real-time sales analytics and monitoring</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Supplier registration and evaluation</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Quality standards and authenticity guarantee</span>
-                        </li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </div>
-                <div className="flex justify-center">
-                  <Image
-                    src={getAssetPath("/chakri/vendedor.jpg")}
-                    alt="System Architecture"
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-lg object-contain w-full max-w-[300px]"
-                    priority
-                  />
-                </div>
-              </div>
-            </div>
-
-            <Separator />
-
-            {/* Delivery App */}
-            <div>
-              <h3 className="text-xl font-bold mb-6 flex items-center">
-                <Truck className="mr-3 h-6 w-6 text-primary" />
-                Delivery App
-              </h3>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div className="flex justify-center">
-                  <Image
-                    src={getAssetPath("/chakri/delivery.jpg")}
-                    alt="System Architecture"
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-lg object-contain w-full max-w-[300px]"
-                    priority
-                  />
-                </div>
-                <div className="space-y-6">
-                  <Card className="bg-gradient-to-r from-green-50 to-green-100">
-                    <CardContent className="p-6">
-                      <h4 className="font-bold mb-3">Delivery Operations</h4>
-                      <ul className="space-y-2 text-sm">
-                        <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Mobile panel for delivery drivers</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Real-time geolocation tracking</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Optimized routes and automatic zone-based pricing</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Delivery state management and incident reporting</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                          <span>Direct app-based incident management</span>
-                        </li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </FadeIn>
-
-      {/* Achievements and Recognition Section */}
-      <FadeIn delay="delay-500">
-        <Card className="shadow-xl">
-          <CardHeader>
-            <CardTitle className="text-2xl text-foreground">Achievements & Recognition</CardTitle>
-            <p className="text-muted-foreground">Business success and market traction</p>
+            <CardTitle className="text-2xl text-foreground flex items-center">
+              <Network className="mr-3 h-6 w-6 text-primary" />
+              System Architecture
+            </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Product Valuation */}
-              <Card className="bg-gradient-to-br from-green-50 to-green-100 border-green-200">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-6">
-                    <div className="bg-green-200 p-3 rounded-lg">
-                      <DollarSign className="h-6 w-6 text-green-700" />
-                    </div>
-                    <h3 className="ml-3 text-xl font-bold">Product Valuation</h3>
-                  </div>
-                  <p className="text-muted-foreground mb-4">
-                    Technology app valued at approximately $20,000 USD after the first seed investment round.
-                  </p>
-                </CardContent>
-              </Card>
-
-              {/* Initial Traction */}
-              <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-6">
-                    <div className="bg-blue-200 p-3 rounded-lg">
-                      <Users className="h-6 w-6 text-blue-700" />
-                    </div>
-                    <h3 className="ml-3 text-xl font-bold">Initial Traction</h3>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="flex items-start space-x-3">
-                      <Users className="h-5 w-5 text-primary mt-0.5" />
-                      <div>
-                        <h4 className="font-medium">300+ Active Users</h4>
-                        <p className="text-sm text-muted-foreground">Growing user base on iOS and Android platforms</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <ShoppingCart className="h-5 w-5 text-primary mt-0.5" />
-                      <div>
-                        <h4 className="font-medium">6,000 Products in Catalog</h4>
-                        <p className="text-sm text-muted-foreground">Comprehensive product offering across categories</p>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Revenue Model */}
-              <Card className="bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-6">
-                    <div className="bg-purple-200 p-3 rounded-lg">
-                      <Trophy className="h-6 w-6 text-purple-700" />
-                    </div>
-                    <h3 className="ml-3 text-xl font-bold">Revenue Model</h3>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="flex items-start space-x-3">
-                      <DollarSign className="h-5 w-5 text-primary mt-0.5" />
-                      <div>
-                        <h4 className="font-medium">15% Service Commission</h4>
-                        <p className="text-sm text-muted-foreground">Plus dynamic transport fees</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <Star className="h-5 w-5 text-yellow-500 mt-0.5" />
-                      <div>
-                        <h4 className="font-medium">$60,000 USD Monthly Projection</h4>
-                        <p className="text-sm text-muted-foreground">At large scale operations</p>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+              {[
+                {label:'API Routes',  value:'58',  sub:'Next.js App Router handlers'},
+                {label:'Admin Files', value:'36',  sub:'Full admin area surface'},
+                {label:'Components',  value:'45',  sub:'Reusable UI components'},
+                {label:'App Files',   value:'122', sub:'Total pages and modules'},
+              ].map(s=>(
+                <div key={s.label} className="bg-card/60 border border-border rounded-lg p-4 text-center">
+                  <div className="font-display text-3xl font-bold text-primary">{s.value}</div>
+                  <div className="font-mono text-xs text-foreground mt-1">{s.label}</div>
+                  <div className="font-body text-[11px] text-muted-foreground/70 mt-0.5">{s.sub}</div>
+                </div>
+              ))}
+            </div>
+            <div className="bg-card/40 border border-border rounded-lg p-5 font-mono text-xs text-muted-foreground/80 leading-loose mb-4">
+              <div className="text-primary/60 text-[10px] uppercase tracking-widest mb-3">Data Flow</div>
+              <div className="flex flex-col gap-1">
+                <span><span className="text-sky-400">Architects / Designers / Admins</span>  →  Next.js Web App (SSR + ISR)</span>
+                <span className="pl-4 text-muted-foreground/50">↓  58 API Route Handlers</span>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-2 mt-1 pl-4">
+                  {['Firebase Auth','Firestore','Firebase Storage','Elasticsearch','Google Analytics API','Cloud Functions'].map(s=>(
+                    <span key={s} className="border border-border rounded px-2 py-1 text-[10px] text-muted-foreground/70">{s}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="space-y-2">
+              {[
+                'ISR on homepage (revalidate=60) — sections stream progressively with Suspense',
+                'Lazy-loaded admin tabs reduce initial bundle cost',
+                'Library pages implement filtering, pagination, preload, and retry logic',
+                'Image optimization with AVIF / WebP; secure downloads gated by Firebase tokens',
+              ].map(i=>(
+                <div key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                  <CheckCircle className="h-3.5 w-3.5 text-green-400 mt-0.5 shrink-0" />{i}
+                </div>
+              ))}
             </div>
           </CardContent>
         </Card>
       </FadeIn>
 
-      {/* Leadership Roles Section */}
+      {/* Why it matters */}
       <FadeIn delay="delay-600">
-        <Card className="shadow-xl">
-          <CardHeader>
-            <CardTitle className="text-2xl text-foreground">Leadership Roles</CardTitle>
-            <p className="text-muted-foreground">Executive leadership and strategic direction</p>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* CTO and Co-founder */}
-              <Card className="bg-gradient-to-br from-purple-50 to-purple-100">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <Cpu className="h-6 w-6 text-purple-600 mr-3" />
-                    <h4 className="font-medium text-purple-800">CTO & Co-founder of ALTAVI S.A.S</h4>
-                  </div>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Led technical architecture definition and coordinated a multidisciplinary team for platform development and scaling.
-                  </p>
-                </CardContent>
-              </Card>
-
-              {/* Product Direction */}
-              <Card className="bg-gradient-to-br from-green-50 to-green-100">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <Target className="h-6 w-6 text-green-600 mr-3" />
-                    <h4 className="font-medium text-green-800">Product Direction</h4>
-                  </div>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Established roadmap, prioritized features for client, vendor, and delivery apps, and managed continuous integration processes.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* Strategic Partnerships */}
-            <Card className="mt-8 bg-gradient-to-r from-blue-50 to-blue-100">
-              <CardContent className="p-6">
-                <div className="flex items-center mb-6">
-                  <div className="bg-blue-200 p-3 rounded-lg">
-                    <Network className="h-6 w-6 text-blue-700" />
-                  </div>
-                  <h3 className="ml-3 text-xl font-bold">Strategic Partnerships</h3>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="bg-white/50 p-4 rounded-lg">
-                    <h4 className="font-medium text-blue-800 mb-2">Producer Partnerships</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Negotiated with producers to ensure direct supply chain connections and fair pricing models.
-                    </p>
-                  </div>
-                  <div className="bg-white/50 p-4 rounded-lg">
-                    <h4 className="font-medium text-blue-800 mb-2">Supermarket Alliances</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Established partnerships with supermarkets to drive adoption and success of fair trade model.
-                    </p>
-                  </div>
-                  <div className="bg-white/50 p-4 rounded-lg">
-                    <h4 className="font-medium text-blue-800 mb-2">Influencer Collaborations</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Negotiated with influencers for recipe content creation and platform promotion strategies.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </CardContent>
-        </Card>
-      </FadeIn>
-      {/* Impact Section */}
-      <FadeIn delay="delay-500">
-        <Card className="shadow-xl">
-          <CardHeader>
-            <CardTitle className="text-2xl text-foreground">Social & Commercial Impact</CardTitle>
-            <p className="text-muted-foreground">Transforming agricultural commerce and empowering communities</p>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <Card className="bg-gradient-to-br from-green-50 to-green-100">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <Users className="h-6 w-6 text-green-600 mr-3" />
-                    <h4 className="font-medium text-green-800">Producer Empowerment</h4>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Increased income for small farmers by connecting them directly with consumers, avoiding intermediary speculation.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-gradient-to-br from-blue-50 to-blue-100">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <Award className="h-6 w-6 text-blue-600 mr-3" />
-                    <h4 className="font-medium text-blue-800">Fair Trade Promotion</h4>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Promotes clean competition and product freshness, improving supermarket perception as community ally.
-                  </p>
-                </CardContent>
-              </Card>
+        <Card className="bg-gradient-to-r from-primary/5 to-primary/10 shadow-xl">
+          <CardContent className="p-8">
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-xl bg-primary/15 flex items-center justify-center shrink-0">
+                <Star className="h-5 w-5 text-primary" />
+              </div>
+              <div>
+                <h3 className="font-display text-xl font-bold text-foreground mb-3">Why This Project Matters</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  What makes BAC Modelos strong is its breadth. It is not just visually polished —
+                  it is operationally useful. It supports content, catalog management, brand
+                  onboarding, gated resources, analytics, and user workflows in a single cohesive
+                  platform. That is the kind of build that demonstrates product thinking, not just
+                  web design. CHAKRI delivered end-to-end: architecture, full-stack implementation,
+                  auth, search infrastructure, CMS, and analytics in one codebase.
+                </p>
+              </div>
             </div>
           </CardContent>
         </Card>
       </FadeIn>
+
     </div>
   );
 }
+
 
 // John Deere GO-specific content component
 function JohnDeereProjectContent() {
@@ -3657,13 +3459,13 @@ function JohnDeereProjectContent() {
           <Card className="shadow-xl">
             <CardHeader>
               <CardTitle className="text-3xl text-foreground flex items-center justify-center">
-                <Truck className="mr-3 h-8 w-8 text-green-600" />
+                <Truck className="mr-3 h-8 w-8 text-green-400" />
                 John Deere Innovation Showcase
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-8">
               <div className="text-center">
-                <h3 className="text-xl font-bold text-green-600 mb-4">Advanced Agricultural Technology Solutions</h3>
+                <h3 className="text-xl font-bold text-green-400 mb-4">Advanced Agricultural Technology Solutions</h3>
                 <p className="text-muted-foreground max-w-4xl mx-auto text-lg leading-relaxed">
                   As part of <strong>John Deere Labs</strong>, I led the development of two flagship products that helped
                   agricultural equipment management and security. These innovative solutions demonstrate the power of integrating
@@ -3673,11 +3475,11 @@ function JohnDeereProjectContent() {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-                <Card className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 border-green-200 dark:border-green-700">
+                <Card className="bg-green-500/10 border-green-500/20 dark:from-green-900/20 dark:to-green-800/20 border-green-500/30 dark:border-green-700">
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
                       <div className="bg-green-600/10 p-3 rounded-lg">
-                        <ShoppingCart className="h-6 w-6 text-green-600" />
+                        <ShoppingCart className="h-6 w-6 text-green-400" />
                       </div>
                       <h4 className="ml-3 text-lg font-bold text-green-700 dark:text-green-300">IM Reserver</h4>
                     </div>
@@ -3688,11 +3490,11 @@ function JohnDeereProjectContent() {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 border-blue-200 dark:border-blue-700">
+                <Card className="bg-sky-500/10 border-sky-500/20 dark:from-blue-900/20 dark:to-blue-800/20 border-sky-500/30 dark:border-blue-700">
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
                       <div className="bg-blue-600/10 p-3 rounded-lg">
-                        <Shield className="h-6 w-6 text-blue-600" />
+                        <Shield className="h-6 w-6 text-sky-400" />
                       </div>
                       <h4 className="ml-3 text-lg font-bold text-blue-700 dark:text-blue-300">ShelfGuard</h4>
                     </div>
@@ -3721,25 +3523,25 @@ function JohnDeereProjectContent() {
           <Card className="shadow-xl">
             <CardHeader>
               <CardTitle className="text-2xl text-foreground flex items-center">
-                <ShoppingCart className="mr-3 h-6 w-6 text-green-600" />
+                <ShoppingCart className="mr-3 h-6 w-6 text-green-400" />
                 IM Reserver - Automated In-Store Reservation Platform
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-8">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div className="space-y-6">
-                  <h3 className="text-xl font-bold text-green-600">Revolutionary Customer Experience</h3>
+                  <h3 className="text-xl font-bold text-green-400">Revolutionary Customer Experience</h3>
                   <ul className="space-y-3">
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
                       <span>Mobile/web interface lets customers reserve equipment or parts and pick up without cashier intervention</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
                       <span>Real-time inventory sync via custom SAP ABAP function   modules keeps stock levels current</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
                       <span>Azure Functions and AWS Lambda handle backend logic, while Power Platform dashboards let the supply team approve reservations and monitor alerts</span>
                     </li>
                   </ul>
@@ -3766,14 +3568,14 @@ function JohnDeereProjectContent() {
 
               <div>
                 <h3 className="text-xl font-bold mb-6 flex items-center">
-                  <Settings className="mr-3 h-6 w-6 text-green-600" />
+                  <Settings className="mr-3 h-6 w-6 text-green-400" />
                   Key Features & Capabilities
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   <Card className="bg-secondary/5">
                     <CardContent className="p-4">
                       <div className="flex items-center mb-3">
-                        <Zap className="h-5 w-5 text-green-600 mr-2" />
+                        <Zap className="h-5 w-5 text-green-400 mr-2" />
                         <h4 className="font-medium">Instant Reservation</h4>
                       </div>
                       <p className="text-sm text-muted-foreground">
@@ -3785,7 +3587,7 @@ function JohnDeereProjectContent() {
                   <Card className="bg-secondary/5">
                     <CardContent className="p-4">
                       <div className="flex items-center mb-3">
-                        <Smartphone className="h-5 w-5 text-green-600 mr-2" />
+                        <Smartphone className="h-5 w-5 text-green-400 mr-2" />
                         <h4 className="font-medium">Mobile-First Design</h4>
                       </div>
                       <p className="text-sm text-muted-foreground">
@@ -3797,7 +3599,7 @@ function JohnDeereProjectContent() {
                   <Card className="bg-secondary/5">
                     <CardContent className="p-4">
                       <div className="flex items-center mb-3">
-                        <Network className="h-5 w-5 text-green-600 mr-2" />
+                        <Network className="h-5 w-5 text-green-400 mr-2" />
                         <h4 className="font-medium">SAP Integration</h4>
                       </div>
                       <p className="text-sm text-muted-foreground">
@@ -3809,7 +3611,7 @@ function JohnDeereProjectContent() {
                   <Card className="bg-secondary/5">
                     <CardContent className="p-4">
                       <div className="flex items-center mb-3">
-                        <Cloud className="h-5 w-5 text-green-600 mr-2" />
+                        <Cloud className="h-5 w-5 text-green-400 mr-2" />
                         <h4 className="font-medium">Azure Logic Apps</h4>
                       </div>
                       <p className="text-sm text-muted-foreground">
@@ -3832,25 +3634,25 @@ function JohnDeereProjectContent() {
           <Card className="shadow-xl">
             <CardHeader>
               <CardTitle className="text-2xl text-foreground flex items-center">
-                <Shield className="mr-3 h-6 w-6 text-blue-600" />
+                <Shield className="mr-3 h-6 w-6 text-sky-400" />
                 ShelfGuard - AI-Powered Theft Prevention
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-8">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div className="space-y-6">
-                  <h3 className="text-xl font-bold text-blue-600">Intelligent Security Solution</h3>
+                  <h3 className="text-xl font-bold text-sky-400">Intelligent Security Solution</h3>
                   <ul className="space-y-3">
                     <li className="flex items-start space-x-3">
-                      <Eye className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                      <Eye className="h-5 w-5 text-sky-400 mt-0.5 flex-shrink-0" />
                       <span>Overhead cameras detect when someone removes an item from the shelf without authorization</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <Brain className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                      <Brain className="h-5 w-5 text-sky-400 mt-0.5 flex-shrink-0" />
                       <span>Computer vision algorithms track hand-item interactions using OpenCV/OpenVINO</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <Zap className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                      <Zap className="h-5 w-5 text-sky-400 mt-0.5 flex-shrink-0" />
                       <span>Triggers instant alerts to store associates or locks gates automatically</span>
                     </li>
                   </ul>
@@ -3877,14 +3679,14 @@ function JohnDeereProjectContent() {
 
               <div>
                 <h3 className="text-xl font-bold mb-6 flex items-center">
-                  <Cpu className="mr-3 h-6 w-6 text-blue-600" />
+                  <Cpu className="mr-3 h-6 w-6 text-sky-400" />
                   Advanced AI Features
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <Card className="bg-secondary/5">
                     <CardContent className="p-4">
                       <div className="flex items-center mb-3">
-                        <Eye className="h-5 w-5 text-blue-600 mr-2" />
+                        <Eye className="h-5 w-5 text-sky-400 mr-2" />
                         <h4 className="font-medium">Real-time Detection</h4>
                       </div>
                       <p className="text-sm text-muted-foreground">
@@ -3896,7 +3698,7 @@ function JohnDeereProjectContent() {
                   <Card className="bg-secondary/5">
                     <CardContent className="p-4">
                       <div className="flex items-center mb-3">
-                        <Network className="h-5 w-5 text-blue-600 mr-2" />
+                        <Network className="h-5 w-5 text-sky-400 mr-2" />
                         <h4 className="font-medium">System Integration</h4>
                       </div>
                       <p className="text-sm text-muted-foreground">
@@ -3925,7 +3727,7 @@ function JohnDeereProjectContent() {
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
                 <div className="text-center space-y-3">
                   <div className="bg-blue-100 dark:bg-blue-900/20 p-4 rounded-lg">
-                    <FileText className="h-8 w-8 text-blue-600 mx-auto" />
+                    <FileText className="h-8 w-8 text-sky-400 mx-auto" />
                   </div>
                   <div>
                     <h4 className="font-medium text-sm">SAP</h4>
@@ -3935,7 +3737,7 @@ function JohnDeereProjectContent() {
 
                 <div className="text-center space-y-3">
                   <div className="bg-green-100 dark:bg-green-900/20 p-4 rounded-lg">
-                    <Cog className="h-8 w-8 text-green-600 mx-auto" />
+                    <Cog className="h-8 w-8 text-green-400 mx-auto" />
                   </div>
                   <div>
                     <h4 className="font-medium text-sm">ABAP</h4>
@@ -3945,7 +3747,7 @@ function JohnDeereProjectContent() {
 
                 <div className="text-center space-y-3">
                   <div className="bg-blue-100 dark:bg-blue-900/20 p-4 rounded-lg">
-                    <Cloud className="h-8 w-8 text-blue-600 mx-auto" />
+                    <Cloud className="h-8 w-8 text-sky-400 mx-auto" />
                   </div>
                   <div>
                     <h4 className="font-medium text-sm">Azure</h4>
@@ -3955,7 +3757,7 @@ function JohnDeereProjectContent() {
 
                 <div className="text-center space-y-3">
                   <div className="bg-purple-100 dark:bg-purple-900/20 p-4 rounded-lg">
-                    <Zap className="h-8 w-8 text-purple-600 mx-auto" />
+                    <Zap className="h-8 w-8 text-violet-400 mx-auto" />
                   </div>
                   <div>
                     <h4 className="font-medium text-sm">Power Platform</h4>
@@ -3965,7 +3767,7 @@ function JohnDeereProjectContent() {
 
                 <div className="text-center space-y-3">
                   <div className="bg-yellow-100 dark:bg-yellow-900/20 p-4 rounded-lg">
-                    <Eye className="h-8 w-8 text-yellow-600 mx-auto" />
+                    <Eye className="h-8 w-8 text-yellow-400 mx-auto" />
                   </div>
                   <div>
                     <h4 className="font-medium text-sm">OpenCV</h4>
@@ -4208,15 +4010,15 @@ function VanttecProjectContent() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* RoboBoat Awards */}
-              <Card className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 border-blue-200 dark:border-blue-700">
+              <Card className="bg-sky-500/10 border-sky-500/20 dark:from-blue-900/20 dark:to-blue-800/20 border-sky-500/30 dark:border-blue-700">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-6">
                     <div className="bg-blue-600/10 p-3 rounded-lg">
-                      <Car className="h-8 w-8 text-blue-600" />
+                      <Car className="h-8 w-8 text-sky-400" />
                     </div>
                     <div className="ml-4">
-                      <h3 className="text-xl font-bold text-blue-800 dark:text-blue-200">RoboBoat Awards</h3>
-                      <p className="text-sm text-blue-600 dark:text-blue-300">Autonomous Surface Vehicle Competition</p>
+                      <h3 className="text-xl font-bold text-sky-300 dark:text-blue-200">RoboBoat Awards</h3>
+                      <p className="text-sm text-sky-400 dark:text-blue-300">Autonomous Surface Vehicle Competition</p>
                     </div>
                   </div>
 
@@ -4232,7 +4034,7 @@ function VanttecProjectContent() {
 
                   <div className="space-y-6">
                     <div>
-                      <h4 className="font-bold text-blue-800 dark:text-blue-200 mb-3">2021 Achievements:</h4>
+                      <h4 className="font-bold text-sky-300 dark:text-blue-200 mb-3">2021 Achievements:</h4>
                       <div className="space-y-2">
                         <div className="flex items-start space-x-3">
                           <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
@@ -4262,7 +4064,7 @@ function VanttecProjectContent() {
                     </div>
 
                     <div>
-                      <h4 className="font-bold text-blue-800 dark:text-blue-200 mb-3">2020 Achievements:</h4>
+                      <h4 className="font-bold text-sky-300 dark:text-blue-200 mb-3">2020 Achievements:</h4>
                       <div className="space-y-2">
                         <div className="flex items-start space-x-3">
                           <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
@@ -4522,7 +4324,7 @@ function VanttecProjectContent() {
                   <h3 className="ml-3 text-xl font-bold">Social and Academic Impact</h3>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="bg-white/50 p-4 rounded-lg">
+                  <div className="bg-card/60 border border-border p-4 rounded-lg">
                     <h4 className="font-medium text-primary mb-2">International Collaborations</h4>
                     <div className="text-center mb-3">
                       <Image
@@ -4537,7 +4339,7 @@ function VanttecProjectContent() {
                       Work with Southwest Research Institute (SwRI) on underwater localization and navigation with ORBSLAM3.
                     </p>
                   </div>
-                  <div className="bg-white/50 p-4 rounded-lg">
+                  <div className="bg-card/60 border border-border p-4 rounded-lg">
                     <h4 className="font-medium text-primary mb-2">Talent Formation</h4>
                     <div className="text-center mb-3">
                       <Image
@@ -4552,7 +4354,7 @@ function VanttecProjectContent() {
                       Creation of "elite groups" in high school and mentoring of scholarship students at university.
                     </p>
                   </div>
-                  <div className="bg-white/50 p-4 rounded-lg">
+                  <div className="bg-card/60 border border-border p-4 rounded-lg">
                     <h4 className="font-medium text-primary mb-2">Legacy</h4>
                     <div className="text-center mb-3">
                       <Image
@@ -4578,6 +4380,247 @@ function VanttecProjectContent() {
 }
 
 
+
+// EE272 VLSI Design — full project detail
+function EE272ProjectContent() {
+  return (
+    <div className="space-y-12">
+      {/* Overview */}
+      <FadeIn delay="delay-300">
+        <Card className="shadow-xl">
+          <CardHeader>
+            <CardTitle className="text-2xl text-foreground flex items-center">
+              <Cpu className="mr-3 h-6 w-6 text-primary" />
+              EE272 / 272B — VLSI System Design Projects
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div className="text-center">
+              <h3 className="text-xl font-bold text-primary mb-2">Full-Custom Silicon from RTL to Tape-Out</h3>
+              <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                A two-quarter advanced VLSI design sequence covering the complete digital IC design flow:
+                from RTL description and logic synthesis to custom layout, place &amp; route, timing
+                closure, and post-layout verification using industry-standard Cadence tools and the
+                open-source SKY130 process design kit.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-sky-500/10 border-sky-500/20 rounded-lg border p-5">
+                <div className="flex items-center mb-3">
+                  <GraduationCap className="h-5 w-5 text-primary mr-2" />
+                  <h4 className="font-semibold">Final Grade</h4>
+                </div>
+                <p className="text-3xl font-bold text-primary">8 / 8</p>
+                <p className="text-sm text-muted-foreground mt-1">Homeworks — all 100 / 100</p>
+              </div>
+              <div className="bg-sky-500/10 border-sky-500/20 rounded-lg border p-5">
+                <div className="flex items-center mb-3">
+                  <Layers className="h-5 w-5 text-primary mr-2" />
+                  <h4 className="font-semibold">Process Node</h4>
+                </div>
+                <p className="text-2xl font-bold text-primary">SKY130</p>
+                <p className="text-sm text-muted-foreground mt-1">130 nm open-source PDK</p>
+              </div>
+              <div className="bg-sky-500/10 border-sky-500/20 rounded-lg border p-5">
+                <div className="flex items-center mb-3">
+                  <Cpu className="h-5 w-5 text-primary mr-2" />
+                  <h4 className="font-semibold">Final Project</h4>
+                </div>
+                <p className="text-lg font-bold text-primary">DNN Accelerator</p>
+                <p className="text-sm text-muted-foreground mt-1">Convolution engine P&amp;R</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </FadeIn>
+
+      {/* Design Flow */}
+      <FadeIn delay="delay-400">
+        <Card className="shadow-xl">
+          <CardHeader>
+            <CardTitle className="text-2xl text-foreground flex items-center">
+              <GitBranch className="mr-3 h-6 w-6 text-primary" />
+              VLSI Design Flow
+            </CardTitle>
+            <p className="text-muted-foreground">End-to-end IC design methodology covered in EE272</p>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {[
+                {
+                  step: '01', title: 'RTL Design & Simulation',
+                  body: 'Hardware description in Verilog/SystemVerilog. Functional simulation with VCS to verify design intent before synthesis.',
+                  icon: Code,
+                },
+                {
+                  step: '02', title: 'Logic Synthesis',
+                  body: 'Automated mapping of RTL to standard cell gates using Cadence Genus. Timing-driven synthesis with setup/hold constraints via SDC.',
+                  icon: Settings,
+                },
+                {
+                  step: '03', title: 'Floorplanning & Placement',
+                  body: 'Definition of die area, I/O ring, power grid design (VDD/VSS straps), and automated placement of standard cells with Cadence Innovus.',
+                  icon: Layout,
+                },
+                {
+                  step: '04', title: 'Clock Tree Synthesis (CTS)',
+                  body: 'Balanced clock distribution tree generated to meet skew and insertion delay targets across all sequential elements.',
+                  icon: RefreshCw,
+                },
+                {
+                  step: '05', title: 'Routing & Timing Closure',
+                  body: 'Global and detailed routing of all signal nets. Iterative ECO-based timing closure to meet setup/hold across all PVT corners.',
+                  icon: Network,
+                },
+                {
+                  step: '06', title: 'DRC / LVS / Post-Layout STA',
+                  body: 'Design Rule Check (DRC), Layout vs. Schematic (LVS), and final static timing analysis on the extracted parasitics for sign-off.',
+                  icon: CheckCircle,
+                },
+              ].map((s) => (
+                <div key={s.step} className="bg-card/60 border border-border rounded-lg p-5">
+                  <div className="flex items-start gap-3">
+                    <span className="font-mono text-xs text-primary/50 font-bold mt-0.5 shrink-0">
+                      {s.step}
+                    </span>
+                    <div>
+                      <div className="flex items-center gap-2 mb-2">
+                        <s.icon className="h-4 w-4 text-primary" />
+                        <h4 className="font-semibold text-foreground text-sm">{s.title}</h4>
+                      </div>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{s.body}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      </FadeIn>
+
+      {/* Homework Breakdown */}
+      <FadeIn delay="delay-500">
+        <Card className="shadow-xl">
+          <CardHeader>
+            <CardTitle className="text-2xl text-foreground flex items-center">
+              <BookOpen className="mr-3 h-6 w-6 text-primary" />
+              Homework Progression — 8 / 8 Perfect Scores
+            </CardTitle>
+            <p className="text-muted-foreground">Each assignment built on the previous, constructing a complete design flow</p>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-3">
+              {[
+                { hw: 'HW 1', topic: 'Standard Cell Layout',         desc: 'Manual full-custom layout of inverter and NAND2 cells in SKY130. DRC/LVS clean. GDS extraction.', score: '100/100' },
+                { hw: 'HW 2', topic: 'RTL-to-GDS Synthesis Flow',    desc: 'First automated synthesis run with Genus + Innovus. Setup timing constraints, area targets, and power grid generation.', score: '100/100' },
+                { hw: 'HW 3', topic: 'Floorplanning & Timing',       desc: 'Manual floorplan refinement. I/O placement, power rail design, utilization optimization.', score: '100/100' },
+                { hw: 'HW 4', topic: 'Clock Tree Synthesis',         desc: 'CTS implementation and tuning. Achieving <50 ps skew across all registers while minimizing insertion delay.', score: '100/100' },
+                { hw: 'HW 5', topic: 'Post-Route Timing Closure',    desc: 'Timing ECO iterations. Hold/setup fix with buffer insertion. Multi-corner sign-off with extracted RC parasitics.', score: '95/100' },
+                { hw: 'HW 6', topic: 'Power Analysis & Optimization', desc: 'Dynamic and static power estimation with Innovus. Clock gating insertion and power intent (CPF/UPF) basics.', score: '100/100' },
+                { hw: 'HW 7', topic: 'DNN Accelerator — P&R',       desc: 'Place & route of a convolutional DNN accelerator using Cadence Innovus on SKY130. Final merged GDS passed DRC/LVS sign-off.', score: '100/100' },
+                { hw: 'HW 8', topic: 'Physical Verification & Tape-out', desc: 'Full DRC/LVS/ERC checks on completed design. Preparation of final GDS for tape-out readiness review.', score: '100/100' },
+              ].map((h) => (
+                <div key={h.hw} className="flex items-start gap-4 bg-card/50 border border-border rounded-lg p-4">
+                  <div className="shrink-0 w-16 text-center">
+                    <div className="font-mono text-xs font-bold text-primary">{h.hw}</div>
+                    <div className="font-mono text-[10px] text-green-400 border border-green-500/30 bg-green-500/10 rounded px-1 mt-1">{h.score}</div>
+                  </div>
+                  <div className="flex-1">
+                    <div className="font-semibold text-sm text-foreground mb-1">{h.topic}</div>
+                    <div className="text-xs text-muted-foreground leading-relaxed">{h.desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      </FadeIn>
+
+      {/* Final Project: DNN Accelerator */}
+      <FadeIn delay="delay-600">
+        <Card className="shadow-xl">
+          <CardHeader>
+            <CardTitle className="text-2xl text-foreground flex items-center">
+              <Brain className="mr-3 h-6 w-6 text-primary" />
+              Final Project: Convolutional DNN Accelerator
+            </CardTitle>
+            <p className="text-muted-foreground">Homework 7 — Place & Route with Cadence Innovus on SKY130</p>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <p className="text-muted-foreground leading-relaxed">
+              The culminating project was a full place-and-route implementation of a convolutional
+              neural network (DNN) accelerator on the SKY130 open-source PDK. Starting from a
+              synthesized Verilog netlist, the design was placed, routed, and timed in Cadence Innovus
+              targeting a 10 ns clock period. The final merged GDS ({' '}
+              <span className="font-mono text-primary text-sm">conv-merged.gds</span>) passed DRC
+              and LVS sign-off, representing a tape-out-ready silicon implementation.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {[
+                { label: 'Technology', value: 'SKY130 (130 nm CMOS, open PDK)' },
+                { label: 'Target Clock', value: '10 ns (100 MHz)' },
+                { label: 'Tool Flow', value: 'Cadence Genus → Innovus → Calibre' },
+                { label: 'Verification', value: 'DRC + LVS + Post-route STA' },
+                { label: 'GDS Output', value: 'conv-merged.gds (~44 MB)' },
+                { label: 'Signoff Stage', value: 'Cadence Innovus Signoff (#19)' },
+              ].map((item) => (
+                <div key={item.label} className="bg-card/60 border border-border rounded-lg px-4 py-3">
+                  <div className="font-mono text-[10px] text-muted-foreground/60 uppercase tracking-wider">{item.label}</div>
+                  <div className="font-body text-sm text-foreground mt-0.5">{item.value}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Layout Viewer embed */}
+            <div className="rounded-lg border border-primary/20 bg-card/30 overflow-hidden">
+              <div className="px-4 py-3 border-b border-primary/15 flex items-center gap-2">
+                <Layers className="h-4 w-4 text-primary" />
+                <span className="font-mono text-xs text-primary uppercase tracking-widest">Interactive Layout Viewer</span>
+              </div>
+              <div style={{ height: '520px' }}>
+                <iframe
+                  src={getAssetPath('/272-Course/viewer.html')}
+                  className="w-full h-full border-0"
+                  title="SKY130 DNN Accelerator Layout"
+                  sandbox="allow-scripts allow-same-origin"
+                />
+              </div>
+            </div>
+
+            {/* What I Learned */}
+            <Card className="bg-card/60 border-border">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-lg flex items-center gap-2">
+                  <Lightbulb className="h-5 w-5 text-primary" />
+                  Key Learnings
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {[
+                    'Timing-driven synthesis: how SDC constraints steer logic mapping',
+                    'Power grid design and the impact of IR drop on timing closure',
+                    'Clock tree synthesis trade-offs: skew vs. power vs. area',
+                    'How P&R tools perform global/detailed routing and handle DRC fixes',
+                    'Post-layout parasitic extraction (RC) and its effect on critical paths',
+                    'Multi-corner/multi-mode (MCMM) sign-off for robust silicon',
+                    'DRC/LVS debugging workflow for tape-out readiness',
+                    'Open-source EDA (SKY130 PDK, OpenROAD) vs. commercial Cadence flows',
+                  ].map(item => (
+                    <div key={item} className="flex items-start gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-400 mt-0.5 shrink-0" />
+                      <span className="text-sm text-muted-foreground">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </CardContent>
+        </Card>
+      </FadeIn>
+    </div>
+  );
+}
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -4624,6 +4667,154 @@ export async function generateStaticParams() {
   return slugs;
 }
 
+// EE233 FM Superheterodyne Radio Receiver — project detail
+function EE233ProjectContent() {
+  return (
+    <div className="space-y-10">
+
+      {/* Hero */}
+      <FadeIn delay="delay-200">
+        <div className="rounded-xl border border-primary/20 bg-card/50 p-8 md:p-10">
+          <div className="flex items-center gap-2 mb-5">
+            <span className="font-mono text-xs text-primary/70 tracking-widest uppercase border border-primary/25 bg-primary/8 px-2 py-0.5 rounded-sm">Stanford EE233</span>
+            <span className="font-mono text-xs text-muted-foreground/50">·</span>
+            <span className="font-mono text-xs text-muted-foreground/50">Winter 2025</span>
+          </div>
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4 leading-tight">
+            Dual-Conversion FM Superheterodyne<br className="hidden md:block" /> Radio Receiver
+          </h2>
+          <p className="font-body text-lg text-muted-foreground leading-relaxed max-w-3xl">
+            Final project for Stanford EE233 (Advanced Analog Circuits). Designed and built a complete
+            FM radio receiver (87.5–108 MHz) using a Si5351 PLL IC for local oscillator synthesis,
+            implementing I/Q quadrature demodulation with a Raspberry Pi Pico and a real-time
+            spectrum analyzer web interface over WiFi.
+          </p>
+          <div className="flex flex-wrap gap-3 mt-6">
+            {['Si5351 PLL', 'I/Q Demodulation', 'Superheterodyne', 'Raspberry Pi Pico', 'RF Design'].map(t => (
+              <span key={t} className="font-mono text-xs text-primary/80 border border-primary/25 bg-primary/8 px-3 py-1 rounded-full">{t}</span>
+            ))}
+          </div>
+        </div>
+      </FadeIn>
+
+      {/* Board photo */}
+      <FadeIn delay="delay-250">
+        <div className="rounded-xl overflow-hidden border border-border shadow-xl">
+          <Image
+            src={getAssetPath('/images/placaaceleracion.jpeg')}
+            alt="FM Radio Receiver PCB"
+            width={1200}
+            height={600}
+            className="w-full object-cover"
+          />
+        </div>
+      </FadeIn>
+
+      {/* Expandable block diagram */}
+      <FadeIn delay="delay-300">
+        <div className="rounded-xl border border-border bg-card/60 overflow-hidden">
+          <details className="group">
+            <summary className="flex items-center gap-3 px-6 py-4 cursor-pointer select-none hover:bg-primary/5 transition-colors list-none">
+              <div className="w-7 h-7 rounded-md bg-primary/10 flex items-center justify-center shrink-0">
+                <ChevronDown className="h-4 w-4 text-primary transition-transform duration-300 group-open:rotate-180" />
+              </div>
+              <span className="font-mono text-xs text-primary uppercase tracking-widest">System Block Diagram</span>
+              <span className="text-xs text-muted-foreground/50 ml-auto">click to expand</span>
+            </summary>
+            <div className="px-4 pb-4 pt-2 border-t border-border/50">
+              <Image
+                src={getAssetPath('/233-FinalProject/FinalProject.png')}
+                alt="FM Superheterodyne Receiver Block Diagram"
+                width={1100}
+                height={420}
+                className="w-full rounded-lg"
+              />
+              <p className="text-xs text-muted-foreground/60 mt-2 text-center">
+                Signal flow: antenna → LNA → first mixer (ω₁−ω₀) → IF bandpass filter → second mixer with I/Q quadrature oscillator (0°/90°) → baseband demodulation
+              </p>
+            </div>
+          </details>
+        </div>
+      </FadeIn>
+
+      {/* Technical highlights */}
+      <FadeIn delay="delay-350">
+        <div className="grid md:grid-cols-2 gap-6">
+          <Card className="bg-card/60 border-border shadow-xl">
+            <CardHeader>
+              <CardTitle className="text-xl text-foreground flex items-center gap-2">
+                <Cpu className="h-5 w-5 text-primary" /> Architecture
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-2">
+              {[
+                'Dual-conversion superheterodyne topology',
+                'Si5351 PLL IC for programmable LO synthesis',
+                'First IF stage: ω₁ − ω₀ downconversion',
+                'Second stage: CLK0/CLK1 at 90° for I/Q demodulation',
+                'Raspberry Pi Pico controls Si5351 via I²C',
+                'HTTP server streams spectrum data over WiFi',
+              ].map(s => (
+                <div key={s} className="flex items-start gap-2 text-sm text-muted-foreground">
+                  <CheckCircle className="h-3.5 w-3.5 text-green-400 mt-0.5 shrink-0" />{s}
+                </div>
+              ))}
+            </CardContent>
+          </Card>
+          <Card className="bg-card/60 border-border shadow-xl">
+            <CardHeader>
+              <CardTitle className="text-xl text-foreground flex items-center gap-2">
+                <FileText className="h-5 w-5 text-primary" /> Specifications
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-3">
+                {[
+                  { label: 'Frequency Range', value: '87.5 – 108 MHz' },
+                  { label: 'LO IC', value: 'Si5351 (3-output PLL)' },
+                  { label: 'Demodulation', value: 'I/Q Quadrature (CLK0 / CLK1)' },
+                  { label: 'MCU', value: 'Raspberry Pi Pico (RP2040)' },
+                  { label: 'Interface', value: 'Real-time spectrum analyzer via WiFi HTTP' },
+                  { label: 'Course', value: 'Stanford EE233 — Winter 2025' },
+                ].map(row => (
+                  <div key={row.label} className="flex justify-between items-start gap-4 text-sm border-b border-border/30 pb-2 last:border-0 last:pb-0">
+                    <span className="text-muted-foreground/70 font-mono text-xs uppercase tracking-wide shrink-0">{row.label}</span>
+                    <span className="text-foreground text-right">{row.value}</span>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </FadeIn>
+
+      {/* PDF report link */}
+      <FadeIn delay="delay-400">
+        <Card className="bg-gradient-to-r from-primary/5 to-primary/10 shadow-xl">
+          <CardContent className="p-6 flex items-center gap-4">
+            <div className="w-10 h-10 rounded-xl bg-primary/15 flex items-center justify-center shrink-0">
+              <FileText className="h-5 w-5 text-primary" />
+            </div>
+            <div className="flex-1">
+              <h3 className="font-semibold text-foreground mb-1">Full Project Report</h3>
+              <p className="text-sm text-muted-foreground">Complete writeup including schematics, measurements, and analysis.</p>
+            </div>
+            <a
+              href={getAssetPath('/233-FinalProject/FinalProject.pdf')}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 inline-flex items-center gap-2 text-sm font-medium text-primary border border-primary/30 rounded-lg px-4 py-2 hover:bg-primary/10 transition-colors"
+            >
+              <ExternalLink className="h-4 w-4" /> View PDF
+            </a>
+          </CardContent>
+        </Card>
+      </FadeIn>
+
+    </div>
+  );
+}
+
 // Map of slugs to their corresponding content components
 const projectComponents: { [key: string]: React.ComponentType } = {
   'zf-autonomous-shuttle': ZFShuttleProjectContent,
@@ -4635,6 +4826,8 @@ const projectComponents: { [key: string]: React.ComponentType } = {
   'chakri-ecommerce': ChakriProjectContent,
   'john-deere-go': JohnDeereProjectContent,
   'vanttec-roboboat-robosub': VanttecProjectContent,
+  'ee272-vlsi-design': EE272ProjectContent,
+  'ee233-fm-radio': EE233ProjectContent,
 };
 
 export default async function ProjectPage({ params }: Props) {
