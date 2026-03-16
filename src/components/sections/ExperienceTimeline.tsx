@@ -45,17 +45,17 @@ const categoryConfig: Record<TimelineCategory, { icon: React.ElementType; color:
 
 const timelineData: TimelineEntry[] = [
   {
-    title: "Stanford University — MS Electrical Engineering",
+    title: "Stanford University | MS Electrical Engineering",
     org: "Stanford University",
     period: "2024–Present",
     description:
-      "Graduate research in Arbabian Lab (EE391): mm-wave radar sensor ICs and multimodal AI systems. VLSI design sequence (EE272, EE272B, EE372) culminating in an analog chip tapeout through TSMC. Analog IC design courses: EE214A, EE233.",
-    details: "Spring 2025: EE372 — designing an analog IC (imager/camera) for physical TSMC fabrication.",
+      "Graduate research in Arbabian Lab (EE391): mm-wave radar sensor ICs and multimodal AI systems. Completed VLSI design coursework in EE271 and EE272, with EE372 upcoming for analog IC fabrication through TSMC. Analog IC design courses: EE214A, EE233.",
+    details: "Upcoming: EE372 | analog IC (imager/camera) design for TSMC-oriented fabrication.",
     category: "research",
-    highlight: "TSMC Tapeout · Arbabian Lab",
+    highlight: "Arbabian Lab · IC Design Track",
   },
   {
-    title: "ZF — Next-Gen Axle Modulators",
+    title: "ZF | Next-Gen Axle Modulators",
     org: "ZF Friedrichshafen AG",
     period: "2023–Present",
     description:
@@ -63,15 +63,15 @@ const timelineData: TimelineEntry[] = [
     category: "company",
   },
   {
-    title: "John Deere GO",
+    title: "John Deere. Supply Chain Management Intern",
     org: "John Deere",
     period: "2022–2023",
     description:
-      "Led development of two flagship products at John Deere Labs: IM Reserver (SAP-integrated customer self-service) and ShieldGuard (AI computer vision security system). Delivered end-to-end solutions with Azure, Power Platform, and ABAP.",
+      "Built internal supply-chain systems at John Deere Labs, including IM Reserver for SAP-connected reservation workflows and ShieldGuard for computer-vision-based loss prevention. Delivered solutions with Azure, Power Platform, and ABAP.",
     category: "company",
   },
   {
-    title: "Chakri — Agricultural E-commerce",
+    title: "Chakri | Agricultural E-commerce",
     org: "Chakri (Co-founder)",
     period: "2020–Present",
     description:
@@ -89,7 +89,7 @@ const timelineData: TimelineEntry[] = [
     highlight: "First in Mexico",
   },
   {
-    title: "ROBORREGOS — RoboCup & IROS Tokyo",
+    title: "ROBORREGOS | RoboCup & IROS Tokyo",
     org: "Roborregos / Tecnológico de Monterrey",
     period: "2022–2023",
     description:
@@ -98,7 +98,7 @@ const timelineData: TimelineEntry[] = [
     highlight: "3rd place IROS 2022",
   },
   {
-    title: "VANTTEC — Autonomous Marine Vehicles",
+    title: "VANTTEC | Autonomous Marine Vehicles",
     org: "RoboNation / Tecnológico de Monterrey",
     period: "2020–2023",
     description:
@@ -108,7 +108,7 @@ const timelineData: TimelineEntry[] = [
     highlight: "🥇 RoboBoat Champion",
   },
   {
-    title: "Smart Factory — Industry 4.0",
+    title: "Smart Factory | Industry 4.0",
     org: "Tecnológico de Monterrey",
     period: "2019–2022",
     description:
@@ -217,9 +217,9 @@ export function ExperienceTimeline() {
         </FadeIn>
 
         <div className="relative">
-          {/* Center line — desktop */}
+          {/* Center line | desktop */}
           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-sky-500/40 via-teal-500/20 to-sky-500/10 -translate-x-1/2" />
-          {/* Left line — mobile */}
+          {/* Left line | mobile */}
           <div className="md:hidden absolute left-5 top-0 bottom-0 w-px bg-gradient-to-b from-sky-500/40 to-sky-500/10" />
 
           {timelineData.map((entry, index) => (

@@ -9,7 +9,8 @@ import * as z from "zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
 import { FadeIn } from "@/components/animations/FadeIn";
-import { Mail, Linkedin, Phone, Send, MessageSquare } from "lucide-react";
+import { officialWebsiteUrl, phoneDisplay, phoneHref, primaryEmail, workEmail, linkedinUrl } from "@/lib/constants";
+import { Mail, Linkedin, Phone, Send, MessageSquare, Globe } from "lucide-react";
 
 const contactFormSchema = z.object({
   name:    z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -43,7 +44,7 @@ export default function ContactPage() {
           </h1>
           <p className="font-body text-lg text-muted-foreground max-w-xl mx-auto">
             Whether it&#39;s research collaboration, job opportunities, or just a great
-            engineering conversation — I&#39;d love to hear from you.
+            engineering conversation | I&#39;d love to hear from you.
           </p>
         </FadeIn>
 
@@ -55,7 +56,7 @@ export default function ContactPage() {
               <div className="font-mono text-xs text-sky-400/70 tracking-widest uppercase mb-5">Direct Contact</div>
               <div className="space-y-4">
                 <a
-                  href="mailto:edisonaltamirano2000@outlook.com"
+                  href={`mailto:${primaryEmail}`}
                   className="flex items-center gap-3 group"
                 >
                   <div className="w-9 h-9 rounded-md bg-sky-500/10 flex items-center justify-center shrink-0">
@@ -64,12 +65,12 @@ export default function ContactPage() {
                   <div>
                     <div className="font-mono text-xs text-muted-foreground/60 uppercase tracking-wider">Email</div>
                     <div className="font-body text-sm text-foreground group-hover:text-sky-400 transition-colors">
-                      edisonaltamirano2000@outlook.com
+                      {primaryEmail}
                     </div>
                   </div>
                 </a>
                 <a
-                  href="mailto:edison.altamirano@drijet.io"
+                  href={`mailto:${workEmail}`}
                   className="flex items-center gap-3 group"
                 >
                   <div className="w-9 h-9 rounded-md bg-sky-500/10 flex items-center justify-center shrink-0">
@@ -78,26 +79,26 @@ export default function ContactPage() {
                   <div>
                     <div className="font-mono text-xs text-muted-foreground/60 uppercase tracking-wider">Work Email</div>
                     <div className="font-body text-sm text-foreground group-hover:text-sky-400 transition-colors">
-                      edison.altamirano@drijet.io
+                      {workEmail}
                     </div>
                   </div>
                 </a>
-                <div className="flex items-center gap-3">
+                <a href={`tel:${phoneHref}`} className="flex items-center gap-3 group">
                   <div className="w-9 h-9 rounded-md bg-teal-500/10 flex items-center justify-center shrink-0">
                     <Phone className="w-4 h-4 text-teal-400" />
                   </div>
                   <div>
                     <div className="font-mono text-xs text-muted-foreground/60 uppercase tracking-wider">Phone</div>
-                    <div className="font-body text-sm text-foreground">(+52) 8121987907</div>
+                    <div className="font-body text-sm text-foreground group-hover:text-teal-400 transition-colors">{phoneDisplay}</div>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
 
             <div className="rounded-xl border border-teal-500/15 bg-card/50 p-6">
               <div className="font-mono text-xs text-teal-400/70 tracking-widest uppercase mb-5">Online</div>
               <a
-                href="https://www.linkedin.com/in/edison-altamirano-avila-55a0341a3"
+                href={linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 group"
@@ -109,6 +110,22 @@ export default function ContactPage() {
                   <div className="font-mono text-xs text-muted-foreground/60 uppercase tracking-wider">LinkedIn</div>
                   <div className="font-body text-sm text-foreground group-hover:text-teal-400 transition-colors">
                     edison-altamirano-avila
+                  </div>
+                </div>
+              </a>
+              <a
+                href={officialWebsiteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 flex items-center gap-3 group"
+              >
+                <div className="w-9 h-9 rounded-md bg-teal-500/10 flex items-center justify-center shrink-0">
+                  <Globe className="w-4 h-4 text-teal-400" />
+                </div>
+                <div>
+                  <div className="font-mono text-xs text-muted-foreground/60 uppercase tracking-wider">Website</div>
+                  <div className="font-body text-sm text-foreground group-hover:text-teal-400 transition-colors">
+                    edisonaltamirano.github.io/myportfolio
                   </div>
                 </div>
               </a>

@@ -20,7 +20,7 @@ export function FeaturedProjects() {
               Featured Projects
             </h2>
             <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-              A selection of my most impactful work — autonomous systems,
+              A selection of my most impactful work | autonomous systems,
               international competitions, and enterprise applications.
             </p>
           </div>

@@ -9,12 +9,36 @@ import { cn } from '@/lib/utils';
 
 type Tab = 'all' | 'company' | 'academic';
 
+const featuredProjectOrder: string[] = ['ee272-vlsi-design', 'ee233-fm-radio'];
+
+function sortProjects<T extends { id: string }>(projects: T[]) {
+  const priority = new Map(featuredProjectOrder.map((id, index) => [id, index]));
+  return [...projects].sort((a, b) => {
+    const aPriority = priority.get(a.id);
+    const bPriority = priority.get(b.id);
+
+    if (aPriority !== undefined && bPriority !== undefined) {
+      return aPriority - bPriority;
+    }
+
+    if (aPriority !== undefined) {
+      return -1;
+    }
+
+    if (bPriority !== undefined) {
+      return 1;
+    }
+
+    return 0;
+  });
+}
+
 const tabs: { id: Tab; label: string; icon: React.ElementType; desc: string }[] = [
   {
     id: 'all',
     label: 'All Projects',
     icon: Layers,
-    desc: 'Complete portfolio — company work, research, and startups',
+    desc: 'Complete portfolio | company work, research, and startups',
   },
   {
     id: 'company',
@@ -31,9 +55,9 @@ const tabs: { id: Tab; label: string; icon: React.ElementType; desc: string }[] 
 ];
 
 const projectMap: Record<Tab, typeof allProjects> = {
-  all:      allProjects,
+  all:      sortProjects(allProjects),
   company:  companyProjects,
-  academic: academicProjects,
+  academic: sortProjects(academicProjects),
 };
 
 export default function ProjectsPage() {
@@ -50,7 +74,7 @@ export default function ProjectsPage() {
             <span className="text-gradient-sky">Projects</span>
           </h1>
           <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-            From autonomous vehicles and VLSI chips to enterprise platforms and AI systems —
+            From autonomous vehicles and VLSI chips to enterprise platforms and AI systems |
             built across 7+ years in industry and academia.
           </p>
         </FadeIn>

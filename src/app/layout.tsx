@@ -1,5 +1,6 @@
 import type { Metadata, ResolvingMetadata } from 'next';
 import { rajdhani, nunito, jetbrainsMono } from '@/lib/fonts';
+import { officialWebsiteUrl } from '@/lib/constants';
 import './globals.css';
 import { ThemeProvider } from '@/components/core/ThemeProvider';
 import { Toaster } from "@/components/ui/toaster";
@@ -15,20 +16,25 @@ export async function generateMetadata(
   const previousMetadata = await parent;
 
   const baseMetadata = {
-    title: "Edison Altamirano — Stanford EE | VLSI & AI Research",
+    title: "Edison Altamirano | Stanford EE | VLSI & AI Research",
     description:
-      "Portfolio of Edison Ricardo Altamirano Avila — Stanford Electrical Engineering MS researcher at Arbabian Lab (radar sensors, multimodal AI), VLSI chip designer, robotics engineer, and full-stack innovator.",
+      "Portfolio of Edison Ricardo Altamirano Avila | Stanford Electrical Engineering MS researcher at Arbabian Lab (radar sensors, multimodal AI), VLSI chip designer, robotics engineer, and full-stack innovator.",
+    metadataBase: new URL(officialWebsiteUrl),
+    alternates: {
+      canonical: officialWebsiteUrl,
+    },
     openGraph: {
-      title: "Edison Altamirano — Stanford EE | VLSI & AI Research",
+      title: "Edison Altamirano | Stanford EE | VLSI & AI Research",
       description:
         "Stanford EE researcher specializing in radar sensors, VLSI chip design at TSMC, and multimodal AI systems.",
       type: "website" as const,
+      url: officialWebsiteUrl,
       locale: "en_US",
       siteName: "Edison Altamirano",
     },
     twitter: {
       card: "summary_large_image" as const,
-      title: "Edison Altamirano — Stanford EE | VLSI & AI Research",
+      title: "Edison Altamirano | Stanford EE | VLSI & AI Research",
       description:
         "Stanford EE researcher specializing in radar sensors, VLSI chip design at TSMC, and multimodal AI systems.",
     },

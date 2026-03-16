@@ -133,7 +133,7 @@ export function HeroSection() {
 
           {/* Body subtitle */}
           <p className="font-body text-base text-muted-foreground/60 mb-10 max-w-xl mx-auto leading-relaxed">
-            Building next-generation sensors on silicon — from radar-integrated circuits
+            Building next-generation sensors on silicon | from radar-integrated circuits
             fabricated at TSMC to multimodal AI perception systems.
           </p>
 
@@ -185,7 +185,7 @@ export function HeroSection() {
           <div className="mt-16 flex flex-wrap justify-center gap-x-8 gap-y-3">
             {[
               { value: 'EE391', label: 'Arbabian Lab Research' },
-              { value: 'EE372', label: 'TSMC Tapeout — Spring \'25' },
+              { value: 'EE372', label: 'Upcoming IC Fabrication' },
               { value: 'EE272', label: 'VLSI Design' },
               { value: '4×', label: 'IEEE Publications' },
             ].map((s) => (

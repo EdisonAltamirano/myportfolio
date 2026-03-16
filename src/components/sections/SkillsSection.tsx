@@ -19,7 +19,7 @@ export function SkillsSection() {
               Core Skills
             </h2>
             <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-              From silicon transistors to cloud APIs — a comprehensive stack built over 7+ years.
+              From silicon transistors to cloud APIs | a comprehensive stack built over 7+ years.
             </p>
           </div>
         </FadeIn>

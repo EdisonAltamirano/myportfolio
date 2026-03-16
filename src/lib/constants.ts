@@ -33,6 +33,13 @@ export type Project = {
 
 const BASE = process.env.NODE_ENV === 'production' ? '/myportfolio' : '';
 
+export const primaryEmail = 'eraltam@stanford.edu';
+export const workEmail = 'edison.altamirano@drijet.io';
+export const linkedinUrl = 'https://www.linkedin.com/in/edison-altamirano-avila-55a0341a3';
+export const officialWebsiteUrl = 'https://edisonaltamirano.github.io/myportfolio/';
+export const phoneHref = '+16503349546';
+export const phoneDisplay = '+1 (650) 334-9546';
+
 export const featuredProjects: Project[] = [
   {
     id: 'zf-autonomous-shuttle',
@@ -49,7 +56,7 @@ export const featuredProjects: Project[] = [
   },
   {
     id: 'airlab-stacking-challenge',
-    title: 'AIRLab Stacking Challenge — Winner',
+    title: 'AIRLab Stacking Challenge | Winner',
     description:
       'Won "Most Consistent Solution" award in international robotics competition hosted in the Netherlands, developing vision-based robotic grasping algorithms.',
     imageUrl: `${BASE}/airlab/AirlabPrize.jpeg`,
@@ -91,7 +98,7 @@ export const companyProjects: Project[] = [
   },
   {
     id: 'zf-braking-systems',
-    title: 'ZF — Next-Gen Axle Modulators',
+    title: 'ZF | Next-Gen Axle Modulators',
     description:
       'Developing next-generation braking systems for commercial vehicles. Mathematical modeling, embedded software (AUTOSAR), and reverse engineering of commercial systems. Project valued at millions of dollars.',
     imageUrl: `${BASE}/zf_job/ZF-CVS.jpg`,
@@ -104,12 +111,12 @@ export const companyProjects: Project[] = [
   },
   {
     id: 'john-deere-go',
-    title: 'John Deere GO',
+    title: 'John Deere Supply Chain Systems',
     description:
-      'Led development of two flagship products at John Deere Labs: IM Reserver (SAP-integrated self-service reservation system) and ShieldGuard (AI-powered security camera for theft prevention).',
+      'Built internal supply-chain systems at John Deere, including IM Reserver for SAP-connected reservation workflows and ShieldGuard for computer-vision-based loss prevention.',
     imageUrl: `${BASE}/images/JD GO.jpeg`,
     imageHint: 'agricultural technology',
-    category: 'AI & Enterprise',
+    category: 'Supply Chain Systems',
     company: 'John Deere',
     tags: ['AI', 'Computer Vision', 'SAP ABAP', 'Azure', 'Power Platform'],
     href: '/projects/john-deere-go',
@@ -117,7 +124,7 @@ export const companyProjects: Project[] = [
   },
   {
     id: 'chakri-ecommerce',
-    title: 'BAC Modelos — BIM Platform',
+    title: 'BAC Modelos | BIM Platform',
     description:
       'Full-stack BIM product discovery platform built with CHAKRI for a Mexico-based client. Combines a searchable BIM library, secure downloads, manufacturer onboarding, content CMS, and analytics in one scalable Next.js + Firebase + Elasticsearch product.',
     imageUrl: `${BASE}/bacmodelos/mainpage.png`,
@@ -134,7 +141,7 @@ export const companyProjects: Project[] = [
 export const academicProjects: Project[] = [
   {
     id: 'airlab-stacking-challenge',
-    title: 'AIRLab Stacking Challenge — Winner',
+    title: 'AIRLab Stacking Challenge | Winner',
     description:
       'Won "Most Consistent Solution" award in international robotics competition hosted in the Netherlands, developing vision-based robotic grasping algorithms at TU Delft.',
     imageUrl: `${BASE}/airlab/AirlabPrize.jpeg`,
@@ -160,7 +167,7 @@ export const academicProjects: Project[] = [
   },
   {
     id: 'smart-factory',
-    title: 'Smart Factory — Industry 4.0',
+    title: 'Smart Factory | Industry 4.0',
     description:
       "Led development of one of Latin America's most advanced automated factories, now partnered with MIT and recognized by international organizations including IEEE EDUCON.",
     imageUrl: `${BASE}/smartfactory/smartfactory.jpeg`,
@@ -186,7 +193,7 @@ export const academicProjects: Project[] = [
   },
   {
     id: 'tokyo-iros-2022',
-    title: 'IROS 2022 Tokyo — HandyMan Challenge',
+    title: 'IROS 2022 Tokyo | HandyMan Challenge',
     description:
       'Achieved 3rd place in the HandyMan Challenge at IROS 2022 in Tokyo, developing autonomous home assistance robots with advanced navigation, manipulation, and task planning.',
     imageUrl: `${BASE}/tokio/tokio-general.jpg`,
@@ -199,16 +206,30 @@ export const academicProjects: Project[] = [
   },
   {
     id: 'ee272-vlsi-design',
-    title: 'EE272 / 272B — VLSI Design Projects',
+    title: 'EE271 / EE272 - VLSI Design Projects',
     description:
-      'Full-custom VLSI design in SKY130 open-source PDK at Stanford. Eight homeworks all receiving 100/100, culminating in a DNN accelerator chip — from RTL through place-and-route, timing closure, and tapeout signoff.',
+      'Full-custom VLSI design in SKY130 open-source PDK at Stanford. Eight homeworks all receiving 100/100, culminating in a DNN accelerator chip | from RTL through place-and-route, timing closure, and tapeout signoff.',
     imageUrl: `${BASE}/272-Course/sram.png`,
     imageHint: 'VLSI chip layout design',
     category: 'VLSI / IC Design',
-    company: 'Stanford University — EE272',
+    company: 'Stanford University - EE271/EE272',
     tags: ['VLSI', 'SKY130', 'Cadence', 'Place & Route', 'IC Design', 'Stanford'],
     href: '/projects/ee272-vlsi-design',
     type: 'academic',
+  },
+  {
+    id: 'ee233-fm-radio',
+    title: 'EE233 - FM Superheterodyne Radio Receiver',
+    description:
+      'Built a dual-conversion FM receiver for Stanford EE233 with a Si5351 PLL, quadrature I/Q demodulation, Raspberry Pi Pico control, and a live browser-based tuning interface.',
+    imageUrl: `${BASE}/images/radio_hardware.png`,
+    imageHint: 'FM radio tuning interface',
+    category: 'Analog IC / RF',
+    company: 'Stanford University - EE233',
+    tags: ['RF Design', 'Superheterodyne', 'Si5351 PLL', 'Raspberry Pi Pico', 'I/Q Demodulation'],
+    href: '/projects/ee233-fm-radio',
+    type: 'academic',
+    websiteUrl: `${BASE}/233-FinalProject/radioUI.html`,
   },
 ];
 
@@ -299,7 +320,7 @@ export type StanfordCourse = {
 export const stanfordCourses: StanfordCourse[] = [
   {
     code: 'EE391',
-    title: 'Research — Arbabian Lab',
+    title: 'Research | Arbabian Lab',
     semester: '2024–Present',
     description:
       'Graduate research in one of Stanford\'s leading RF/mm-wave IC groups. Focus on next-generation radar sensor systems and multimodal AI frameworks that fuse radar data with vision and other sensing modalities for perception tasks.',
@@ -310,19 +331,19 @@ export const stanfordCourses: StanfordCourse[] = [
   {
     code: 'EE372',
     title: 'Design for Test & IC Fabrication',
-    semester: 'Spring 2025',
+    semester: 'Upcoming',
     description:
-      'Full chip design flow for an analog integrated circuit (camera/imager). Complete tapeout through TSMC process — from specification and schematic capture through layout, DRC/LVS verification, and physical fabrication.',
-    highlight: 'TSMC Tapeout',
-    status: 'active',
+      'Upcoming full chip design flow for an analog integrated circuit (camera/imager), spanning specification, schematic capture, layout, DRC/LVS verification, and TSMC-oriented fabrication.',
+    highlight: 'Upcoming TSMC Fabrication',
+    status: 'upcoming',
     area: 'vlsi',
   },
   {
-    code: 'EE272 / 272B',
+    code: 'EE271 / EE272',
     title: 'VLSI Design Projects',
     semester: '2024–2025',
     description:
-      'Advanced VLSI system design covering full-custom layout, logic synthesis, timing closure, and mixed-signal IC verification. Two-quarter sequence producing a complete chip design.',
+      'Advanced VLSI system design covering full-custom layout, logic synthesis, timing closure, and mixed-signal IC verification across the EE271/EE272 sequence.',
     highlight: 'Silicon Design',
     status: 'completed',
     area: 'vlsi',
@@ -351,7 +372,7 @@ export const stanfordCourses: StanfordCourse[] = [
     title: 'Analog–Digital Interface Circuits',
     semester: 'Spring 2026',
     description:
-      'Design of high-performance ADCs, DACs, and mixed-signal circuits for interfacing physical sensors with digital systems — closing the loop between the analog world and AI.',
+      'Design of high-performance ADCs, DACs, and mixed-signal circuits for interfacing physical sensors with digital systems | closing the loop between the analog world and AI.',
     status: 'upcoming',
     area: 'analog',
   },

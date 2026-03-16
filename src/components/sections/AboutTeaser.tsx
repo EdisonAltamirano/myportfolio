@@ -51,14 +51,14 @@ export function AboutTeaser() {
               <span className="text-gradient-sky">Silicon</span>
             </h2>
             <p className="font-body text-lg text-muted-foreground mb-4 leading-relaxed">
-              My journey started in robotics engineering — building autonomous boats, humanoid
+              My journey started in robotics engineering | building autonomous boats, humanoid
               robots, and smart factories. Now at Stanford, I&#39;m going deeper: designing
               integrated circuits at the transistor level.
             </p>
             <p className="font-body text-muted-foreground mb-8 leading-relaxed">
               At the <span className="text-teal-400 font-medium">Arbabian Lab</span>, I research
               mm-wave radar sensors and multimodal AI systems. In the fab, I design analog ICs
-              for <span className="text-sky-400 font-medium">actual fabrication at TSMC</span> —
+              for <span className="text-sky-400 font-medium">actual fabrication at TSMC</span> |
               bridging the gap between physics, silicon, and intelligent perception.
             </p>
 

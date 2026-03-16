@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { siteName } from '@/lib/constants';
+import { linkedinUrl, officialWebsiteUrl, siteName } from '@/lib/constants';
 import { PageViewTracker } from '@/components/analytics/PageViewTracker';
-import { Cpu, Github, Linkedin, Mail } from 'lucide-react';
+import { Cpu, Globe, Linkedin, Mail } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -57,7 +57,7 @@ export function Footer() {
             <div className="font-mono text-xs text-sky-400/70 tracking-widest uppercase mb-4">Connect</div>
             <div className="space-y-3">
               <Link
-                href="https://www.linkedin.com/in/edison-altamirano-avila-55a0341a3"
+                href={linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 font-body text-sm text-muted-foreground/70 hover:text-teal-400 transition-colors"
@@ -73,12 +73,12 @@ export function Footer() {
                 <Mail className="w-3.5 h-3.5" /> Download CV
               </Link>
               <a
-                href="https://www.bacmodelos.com/"
+                href={officialWebsiteUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 font-body text-sm text-muted-foreground/70 hover:text-teal-400 transition-colors"
               >
-                <Github className="w-3.5 h-3.5" /> BACModelos.com
+                <Globe className="w-3.5 h-3.5" /> Official Website
               </a>
             </div>
           </div>

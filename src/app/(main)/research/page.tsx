@@ -3,12 +3,22 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import { BookOpen, ExternalLink, Presentation, FlaskConical } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Research & Publications — Edison Altamirano",
+  title: "Research & Publications | Edison Altamirano",
   description:
     "Research publications, conference presentations, and academic contributions in robotics, VLSI, and AI.",
 };
 
-const publications = [
+type Publication = {
+  authors: string;
+  year: string;
+  title: string;
+  venue: string;
+  pages?: string;
+  doi: string;
+  linkLabel?: string;
+};
+
+const publications: Publication[] = [
   {
     authors: "Altamirano-Avila, E., Ahmad, R., & Rodriguez-Padilla, C.",
     year: "2022",
@@ -51,7 +61,8 @@ const publications = [
     title:
       "RoboSub 2022, 2021 and 2020: Comprehensive Papers on Autonomous Submarine Design and Operation.",
     venue: "RoboNation Technical Design Report",
-    doi: "https://robonation.org/app/uploads/sites/4/2022/07/RS2022_VantTec_ITESM_TDR.pdf",
+    doi: "https://edisonaltamirano.github.io/myportfolio/projects/vanttec-roboboat-robosub",
+    linkLabel: "VANTTEC",
   },
   {
     authors: "VANTTEC Team",
@@ -59,7 +70,8 @@ const publications = [
     title:
       "RoboBoat 2022, 2021, 2020 and 2019: Papers on Engineering and Design of Autonomous Surface Vehicles.",
     venue: "RoboNation Technical Design Report",
-    doi: "https://robonation.org/app/uploads/sites/3/2022/05/RB_2022_Vanttec_TecDeMonterrey_TDR.pdf",
+    doi: "https://edisonaltamirano.github.io/myportfolio/projects/vanttec-roboboat-robosub",
+    linkLabel: "VANTTEC",
   },
   {
     authors: "Altamirano-Avila, E., Ahmad, R., & Rodriguez-Padilla, C.",
@@ -78,7 +90,7 @@ const presentations: { year: string; items: { title: string; venue: string; link
     items: [
       {
         title:
-          "Intensive 20-hour Course on Robotics and Autonomous Vehicles — Teaching 30 professors from Tecnológico de Monterrey campuses on ROS1/ROS2, control systems, advanced perception algorithms, and ADAS simulations.",
+          "Intensive 20-hour Course on Robotics and Autonomous Vehicles | Teaching 30 professors from Tecnológico de Monterrey campuses on ROS1/ROS2, control systems, advanced perception algorithms, and ADAS simulations.",
         venue: "Tecnológico de Monterrey Faculty Program",
         link: "https://www.linkedin.com/posts/edison-altamirano-avila-55a0341a3_robotics-autonomousvehicles-innovation-activity-7296053708478435329-iOwt",
         linkLabel: "View Post",
@@ -90,7 +102,7 @@ const presentations: { year: string; items: { title: string; venue: string; link
     items: [
       {
         title:
-          '5th Anniversary of the SMART FACTORY at Tec De Monterrey — "Roadmap to the SmartFactory: Paving the Way for Intelligent Manufacturing and Advanced Robotics"',
+          '5th Anniversary of the SMART FACTORY at Tec De Monterrey | "Roadmap to the SmartFactory: Paving the Way for Intelligent Manufacturing and Advanced Robotics"',
         venue: "Tecnológico de Monterrey",
         link: "https://www.linkedin.com/posts/edison-altamirano-avila-55a0341a3_innovation-smartfactory-industry4-activity-7245875486931697664-V3Lk",
         linkLabel: "View Recording",
@@ -98,7 +110,7 @@ const presentations: { year: string; items: { title: string; venue: string; link
       {
         title:
           '"Virtual Twin for the Smart Factory as a Tool to Enable Robotics Skills Acquisition"',
-        venue: "IALF — University of Twente, Netherlands",
+        venue: "IALF | University of Twente, Netherlands",
         link: "https://ialf-online.net/",
         linkLabel: "Conference Website",
       },
@@ -116,7 +128,7 @@ const presentations: { year: string; items: { title: string; venue: string; link
     items: [
       {
         title:
-          "VANTTEC Self-Driving Car Showcase — First official demonstration of fully autonomous SDV capabilities to company executives, academics, and school directives.",
+          "VANTTEC Self-Driving Car Showcase | First official demonstration of fully autonomous SDV capabilities to company executives, academics, and school directives.",
         venue: "VANTTEC Showcase Event",
         link: "https://drive.google.com/file/d/1tOrO6Brp6VLg6hqPitjMkOtYIW-htkGg/view",
         linkLabel: "View Recording",
@@ -128,11 +140,11 @@ const presentations: { year: string; items: { title: string; venue: string; link
     items: [
       {
         title:
-          "AVEVA OSIsoft Training — Teaching 11+ professors on industrial data management using AVEVA PI System: real-time data collection, visualization, and analysis.",
+          "AVEVA OSIsoft Training | Teaching 11+ professors on industrial data management using AVEVA PI System: real-time data collection, visualization, and analysis.",
         venue: "Tecnológico de Monterrey",
       },
       {
-        title: 'RoboSub 2022 — "Presentation of VANTTEC UUV-IV Prototype"',
+        title: 'RoboSub 2022 | "Presentation of VANTTEC UUV-IV Prototype"',
         venue: "RoboNation RoboSub 2022",
       },
     ],
@@ -202,7 +214,7 @@ export default function ResearchPage() {
                         className="shrink-0 flex items-center gap-1.5 font-mono text-xs text-teal-400 hover:text-teal-300 border border-teal-500/25 hover:border-teal-400/50 bg-teal-500/5 hover:bg-teal-500/10 px-3 py-1.5 rounded-sm transition-all duration-200"
                       >
                         <ExternalLink className="w-3 h-3" />
-                        DOI
+                        {pub.linkLabel ?? "DOI"}
                       </a>
                     )}
                   </div>

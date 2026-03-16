@@ -42,13 +42,13 @@ export default function AboutPage() {
                   I started as a robotics engineer, building autonomous boats, humanoid service
                   robots, and industrial automation systems across Mexico and the Netherlands.
                   That hands-on foundation led me to Stanford, where I&apos;m now going deeper
-                  into the hardware stack — designing integrated circuits at the transistor level.
+                  into the hardware stack | designing integrated circuits at the transistor level.
                 </p>
                 <p className="font-body text-muted-foreground leading-relaxed">
                   At the <span className="text-teal-400 font-medium">Arbabian Lab</span>, I research
                   mm-wave radar sensor ICs and multimodal AI systems. In the fab, I design analog
                   circuits for <span className="text-sky-400 font-medium">real fabrication at TSMC</span>{" "}
-                  — bridging physics, silicon, and intelligent perception.
+                  | bridging physics, silicon, and intelligent perception.
                 </p>
                 <div className="mt-8">
                   <Link
@@ -98,7 +98,7 @@ export default function AboutPage() {
               {
                 icon: Cpu,
                 title: "Silicon First",
-                body: "Understanding systems at the transistor level — the physics of silicon — makes everything else more elegant. From circuits to software.",
+                body: "Understanding systems at the transistor level | the physics of silicon | makes everything else more elegant. From circuits to software.",
               },
               {
                 icon: Layers,
@@ -130,7 +130,7 @@ export default function AboutPage() {
                 Core Technical Expertise
               </h2>
               <p className="font-body text-muted-foreground">
-                From transistors to cloud deployments — a full-stack technical skill set.
+                From transistors to cloud deployments | a full-stack technical skill set.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -154,7 +154,7 @@ export default function AboutPage() {
               Download Full CV
             </Link>
             <p className="font-mono text-xs text-muted-foreground/50">
-              PDF — updated 2025
+              PDF | updated 2025
             </p>
           </div>
         </FadeIn>

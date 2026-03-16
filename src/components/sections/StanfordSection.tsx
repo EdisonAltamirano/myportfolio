@@ -133,7 +133,7 @@ export function StanfordSection() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-sky-500/20 bg-sky-500/5 mb-5">
             <FlaskConical className="w-3.5 h-3.5 text-sky-400" />
             <span className="font-mono text-xs text-sky-400/80 tracking-widest uppercase">
-              Stanford University — Electrical Engineering
+              Stanford University | Electrical Engineering
             </span>
           </div>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -141,7 +141,7 @@ export function StanfordSection() {
             <span className="text-gradient-sky">Advanced Coursework</span>
           </h2>
           <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Pursuing an MS in EE at Stanford with a focus on integrated circuit design — from
+            Pursuing an MS in EE at Stanford with a focus on integrated circuit design | from
             mm-wave radar sensors to VLSI chip fabrication at TSMC.
           </p>
         </FadeIn>
@@ -216,7 +216,7 @@ export function StanfordSection() {
               ))}
             </div>
 
-            {/* EE272 — Chip Layout Viewer */}
+            {/* EE272 | Chip Layout Viewer */}
             <FadeIn delay="delay-300">
               <div className="rounded-xl border border-sky-500/20 bg-card/40 overflow-hidden transition-all duration-300">
                 <button
@@ -229,10 +229,10 @@ export function StanfordSection() {
                     </div>
                     <div className="text-left">
                       <div className="font-mono text-xs text-sky-400 font-bold tracking-widest uppercase mb-0.5">
-                        EE272 — Final Project
+                        EE272 | Final Project
                       </div>
                       <div className="font-display text-sm font-semibold text-foreground">
-                        SKY130 DNN Accelerator — Interactive VLSI Layout Viewer
+                        SKY130 DNN Accelerator | Interactive VLSI Layout Viewer
                       </div>
                     </div>
                   </div>
@@ -261,7 +261,7 @@ export function StanfordSection() {
                         <iframe
                           src={getAssetPath('/272-Course/viewer.html')}
                           className="w-full h-full border-0"
-                          title="VLSI Layout Viewer — SKY130 DNN Accelerator"
+                          title="VLSI Layout Viewer | SKY130 DNN Accelerator"
                           sandbox="allow-scripts allow-same-origin"
                         />
                       )}
@@ -286,7 +286,7 @@ export function StanfordSection() {
               <div className="flex-1 h-px bg-gradient-to-r from-violet-500/30 to-transparent" />
             </div>
 
-            {/* EE233 — FM Radio Project (expandable) */}
+            {/* EE233 | FM Radio Project (expandable) */}
             <div className="rounded-xl border border-violet-500/20 bg-card/40 overflow-hidden mb-5 transition-all duration-300 hover:border-violet-400/30">
               {/* Project summary row */}
               <div className="flex flex-col md:flex-row md:items-start gap-5 p-6">
@@ -305,7 +305,7 @@ export function StanfordSection() {
                     <span className="text-violet-300 font-medium">Raspberry Pi Pico</span> hosts a
                     WiFi HTTP server with an embedded{' '}
                     <span className="text-violet-300 font-medium">real-time spectrum analyzer</span>{' '}
-                    and interactive tuning interface — all served from the microcontroller.
+                    and interactive tuning interface | all served from the microcontroller.
                   </p>
                   <div className="grid grid-cols-2 gap-2 mb-4">
                     {[
@@ -330,6 +330,14 @@ export function StanfordSection() {
                       className="inline-flex items-center gap-1.5 font-mono text-xs text-violet-400 hover:text-violet-300 border border-violet-500/30 hover:border-violet-400/50 bg-violet-500/5 hover:bg-violet-500/10 px-3 py-1.5 rounded-sm transition-all duration-200"
                     >
                       <FileText className="w-3 h-3" /> Project Report (PDF)
+                    </a>
+                    <a
+                      href="https://youtube.com/shorts/ubQI5udW8H8?si=RdDYvzP_OdoH4A6_"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 font-mono text-xs text-violet-400 hover:text-violet-300 border border-violet-500/30 hover:border-violet-400/50 bg-violet-500/5 hover:bg-violet-500/10 px-3 py-1.5 rounded-sm transition-all duration-200"
+                    >
+                      <ExternalLink className="w-3 h-3" /> Live Demo
                     </a>
                   </div>
                 </div>

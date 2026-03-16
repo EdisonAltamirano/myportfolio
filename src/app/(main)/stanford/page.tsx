@@ -14,9 +14,9 @@ import {
 import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
-  title: 'Stanford EE — Edison Altamirano',
+  title: 'Stanford EE | Edison Altamirano',
   description:
-    'MS Electrical Engineering at Stanford: Arbabian Lab mm-Wave radar research, VLSI chip design with TSMC tape-out, analog IC design, and RF/mixed-signal coursework.',
+    'MS Electrical Engineering at Stanford: Arbabian Lab mm-Wave radar research, EE271/EE272 VLSI chip design, upcoming EE372 fabrication work, and analog/RF coursework.',
 };
 
 /* ── Status badge config ──────────────────────────────── */
@@ -145,7 +145,7 @@ export default function StanfordPage() {
                   <span className="font-mono text-xs text-teal-400 font-bold">EE391</span>
                 </div>
                 <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">
-                  Arbabian Lab — mm-Wave Radar & Sensing Research
+                  Arbabian Lab | mm-Wave Radar & Sensing Research
                 </h2>
                 <p className="font-body text-muted-foreground leading-relaxed max-w-3xl">
                   The Arbabian Lab at Stanford designs next-generation mm-wave radar systems for
@@ -221,7 +221,7 @@ export default function StanfordPage() {
             <p className="font-body text-sm text-muted-foreground leading-relaxed">
               <span className="text-sky-400 font-medium">Track Overview:</span>{' '}
               The VLSI design sequence at Stanford covers the complete chip design flow from RTL
-              specification through physical verification and TSMC tape-out. Tools: Cadence Virtuoso,
+              specification through physical verification, with EE372 as the upcoming TSMC-oriented fabrication track. Tools: Cadence Virtuoso,
               Synopsys Design Compiler, Innovus P&R, plus the SkyWater 130nm open PDK.
             </p>
           </div>
@@ -237,19 +237,19 @@ export default function StanfordPage() {
                   </h3>
                 </div>
                 <div className="flex flex-col items-end gap-1.5 shrink-0">
-                  <span className="font-mono text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-sm border bg-green-500/15 text-green-300 border-green-500/30">
-                    ACTIVE
+                  <span className="font-mono text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-sm border bg-violet-500/15 text-violet-300 border-violet-500/30">
+                    UPCOMING
                   </span>
                   <span className="font-mono text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-sm border bg-sky-500/15 text-sky-300 border-sky-500/30">
-                    TSMC TAPEOUT
+                    FABRICATION TRACK
                   </span>
                 </div>
               </div>
-              <p className="font-mono text-xs text-muted-foreground/60 mb-3">Spring 2025</p>
+              <p className="font-mono text-xs text-muted-foreground/60 mb-3">Upcoming</p>
               <p className="font-body text-sm text-muted-foreground leading-relaxed mb-4">
-                Full chip design flow for an analog IC (imager/camera circuit). Complete tape-out
-                through TSMC — from specification and schematic capture through layout, DRC/LVS
-                verification, and physical fab.
+                Planned full chip design flow for an analog IC (imager/camera circuit), from
+                specification and schematic capture through layout, DRC/LVS verification, and
+                TSMC-oriented fabrication.
               </p>
               <div className="flex flex-wrap gap-1.5">
                 {['Physical layout (Cadence)', 'DRC/LVS', 'Analog schematic design', 'TSMC PDK'].map((s) => (
@@ -262,7 +262,7 @@ export default function StanfordPage() {
             <div className="rounded-xl border border-sky-500/25 bg-card/50 p-6 hover:border-sky-400/45 hover:shadow-[0_0_24px_rgba(56,189,248,0.1)] transition-all duration-300">
               <div className="flex items-start justify-between gap-2 mb-4">
                 <div>
-                  <div className="font-mono text-xs font-bold text-sky-400 tracking-widest mb-1">EE272 / 272B</div>
+                  <div className="font-mono text-xs font-bold text-sky-400 tracking-widest mb-1">EE271 / EE272</div>
                   <h3 className="font-display text-lg font-bold text-foreground leading-tight">
                     Design Projects in VLSI Systems
                   </h3>
@@ -272,9 +272,9 @@ export default function StanfordPage() {
                 </span>
               </div>
               <p className="font-body text-sm text-muted-foreground leading-relaxed mb-4">
-                Two-quarter VLSI sequence. EE272: designed a chip with a digital DNN accelerator +
-                analog block. EE272B: full custom mixed-signal chip proposal, Verilog/C++ models,
-                synthesis, P&R, and tape-out in SkyWater 130nm.
+                Two-course VLSI sequence. EE271 and EE272 covered chip architecture, Verilog/C++
+                models, synthesis, place-and-route, physical verification, and a DNN accelerator
+                implementation in SkyWater 130nm.
               </p>
               <div className="flex flex-wrap gap-1.5">
                 {[

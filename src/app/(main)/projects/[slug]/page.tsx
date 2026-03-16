@@ -70,7 +70,7 @@ const projectsData = [
   {
     id: '5',
     slug: "chakri-ecommerce",
-    title: "BAC Modelos — BIM Platform",
+    title: "BAC Modelos | BIM Platform",
     date: "2024",
     author: siteName,
     category: "Full-Stack Platform",
@@ -83,11 +83,11 @@ const projectsData = [
   {
     id: '6',
     slug: "john-deere-go",
-    title: "John Deere GO",
+    title: "John Deere Supply Chain Systems",
     date: "February 15, 2024",
     author: siteName,
-    category: "Mobile App Development",
-    tags: ["Mobile App", "React Native", "IoT", "Agriculture"],
+    category: "Supply Chain Systems",
+    tags: ["SAP ABAP", "Azure", "Computer Vision", "Power Platform", "Supply Chain"],
     imageUrl: getAssetPath('/images/JD GO.jpeg'),
     imageHint: "mobile app for agricultural equipment",
     githubUrl: "https://github.com/example/john-deere-go",
@@ -148,15 +148,15 @@ const projectsData = [
   {
     id: '11',
     slug: "ee233-fm-radio",
-    title: "EE233 — FM Superheterodyne Radio Receiver",
+    title: "EE233 | FM Superheterodyne Radio Receiver",
     date: "March 2025",
     author: siteName,
     category: "Analog IC / RF",
     tags: ["Si5351 PLL", "Superheterodyne", "I/Q Demodulation", "RF Design", "Raspberry Pi Pico", "Analog Circuits"],
-    imageUrl: getAssetPath('/images/placaaceleracion.jpeg'),
+    imageUrl: getAssetPath('/images/radio_hardware.png'),
     imageHint: "FM radio receiver circuit board",
     githubUrl: "",
-    demoUrl: ""
+    demoUrl: "https://youtube.com/shorts/ubQI5udW8H8?si=RdDYvzP_OdoH4A6_"
   }
 ];
 
@@ -768,7 +768,7 @@ function ZFShuttleProjectContent() {
                   />
                 </div>
                 <div className="space-y-6">
-                  <Card className="bg-gradient-to-r from-green-50 to-green-100">
+                  <Card className="bg-green-500/10 border border-green-500/25 shadow-xl">
                     <CardContent className="p-6">
                       <h4 className="font-bold mb-3">Advanced Control Systems</h4>
                       <ul className="space-y-2 text-sm">
@@ -1256,7 +1256,7 @@ function AIRLabProjectContent() {
                       <Box className="h-5 w-5 text-primary mt-0.5" />
                       <div>
                         <p className="font-medium text-sm">World Model</p>
-                        <p className="text-xs text-muted-foreground">A mock "retail shelf" with multiple product cans—each defined as a Gazebo model with collision and visual meshes.</p>
+                        <p className="text-xs text-muted-foreground">A mock "retail shelf" with multiple product cans|each defined as a Gazebo model with collision and visual meshes.</p>
                       </div>
                     </div>
                     <div className="flex items-start space-x-3">
@@ -1345,7 +1345,7 @@ function AIRLabProjectContent() {
                     <h3 className="ml-3 text-xl font-bold">Ahold Delhaize</h3>
                   </div>
                   <p className="text-sm text-muted-foreground mb-4">
-                    <strong>Profile:</strong> One of the world's largest food retail groups—leader in supermarkets, e-commerce, and sustainable retailing.
+                    <strong>Profile:</strong> One of the world's largest food retail groups|leader in supermarkets, e-commerce, and sustainable retailing.
                   </p>
                   <p className="text-sm text-muted-foreground">
                     <strong>Relevance:</strong> Focuses on same-day delivery, in-store robotics pilot programs, and AI-driven inventory management.
@@ -1366,7 +1366,7 @@ function AIRLabProjectContent() {
                     <strong>Collaboration Role:</strong> Provide access to lab infrastructure (manipulators, 3D printers, sensor testbeds) and guidance on robotic research protocols.
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    <strong>Signature Strength:</strong> Combining fundamental robotics research with applied industry labs—helped shape the evaluation criteria for the stacking challenge.
+                    <strong>Signature Strength:</strong> Combining fundamental robotics research with applied industry labs|helped shape the evaluation criteria for the stacking challenge.
                   </p>
                 </CardContent>
               </Card>
@@ -1422,7 +1422,7 @@ function AIRLabProjectContent() {
                   <CardContent className="p-6 text-center">
                     <Star className="h-12 w-12 text-sky-400 mx-auto mb-4" />
                     <h4 className="font-bold text-sky-300 mb-2">🏅 Key Differentiator</h4>
-                    <p className="text-sm text-muted-foreground">Robust error handler with retry mechanism—minimized deadlocks</p>
+                    <p className="text-sm text-muted-foreground">Robust error handler with retry mechanism|minimized deadlocks</p>
                   </CardContent>
                 </Card>
 
@@ -1698,7 +1698,7 @@ function SmartFactoryProjectContent() {
                   />
                 </div>
                 <div className="space-y-6">
-                  <Card className="bg-gradient-to-r from-green-50 to-green-100">
+                  <Card className="bg-green-500/10 border border-green-500/25 shadow-xl">
                     <CardContent className="p-6">
                       <h4 className="font-bold mb-3">CPS Infrastructure Development</h4>
                       <ul className="space-y-2 text-sm">
@@ -2825,7 +2825,7 @@ function TokyoIROSProjectContent() {
 
                 </div>
                 <div className="space-y-6">
-                  <Card className="bg-gradient-to-r from-green-50 to-green-100">
+                  <Card className="bg-green-500/10 border border-green-500/25 shadow-xl">
                     <CardContent className="p-6">
                       <h4 className="font-bold mb-3">Advanced Perception</h4>
                       <ul className="space-y-2 text-sm">
@@ -3143,7 +3143,7 @@ function TokyoIROSProjectContent() {
   );
 }
 
-// BAC Modelos — CHAKRI case study
+// BAC Modelos | CHAKRI case study
 function ChakriProjectContent() {
   return (
     <div className="space-y-14">
@@ -3154,7 +3154,7 @@ function ChakriProjectContent() {
           <div className="flex items-center gap-2 mb-5">
             <span className="font-mono text-xs text-sky-400/70 tracking-widest uppercase border border-sky-500/25 bg-sky-500/8 px-2 py-0.5 rounded-sm">CHAKRI Studio</span>
             <span className="font-mono text-xs text-muted-foreground/50">·</span>
-            <span className="font-mono text-xs text-muted-foreground/50">Client Project — Mexico</span>
+            <span className="font-mono text-xs text-muted-foreground/50">Client Project | Mexico</span>
           </div>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4 leading-tight">
             Engineering a BIM platform for discovery,<br className="hidden md:block" /> downloads, and manufacturer growth
@@ -3199,7 +3199,7 @@ function ChakriProjectContent() {
                 The client needed more than a polished website. They needed a platform that could
                 serve architects and designers looking for BIM-ready products, while also creating
                 a business funnel for manufacturers who wanted visibility, analytics, and a
-                structured publishing workflow — balancing public UX, internal operations, gated
+                structured publishing workflow | balancing public UX, internal operations, gated
                 downloads, content publishing, and long-term scalability.
               </p>
             </CardContent>
@@ -3231,7 +3231,7 @@ function ChakriProjectContent() {
               <Sparkles className="mr-3 h-6 w-6 text-primary" />
               Platform Features
             </CardTitle>
-            <p className="text-muted-foreground">A full product platform — not a brochure site</p>
+            <p className="text-muted-foreground">A full product platform | not a brochure site</p>
           </CardHeader>
           <CardContent>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -3388,7 +3388,7 @@ function ChakriProjectContent() {
             </div>
             <div className="space-y-2">
               {[
-                'ISR on homepage (revalidate=60) — sections stream progressively with Suspense',
+                'ISR on homepage (revalidate=60) | sections stream progressively with Suspense',
                 'Lazy-loaded admin tabs reduce initial bundle cost',
                 'Library pages implement filtering, pagination, preload, and retry logic',
                 'Image optimization with AVIF / WebP; secure downloads gated by Firebase tokens',
@@ -3413,7 +3413,7 @@ function ChakriProjectContent() {
               <div>
                 <h3 className="font-display text-xl font-bold text-foreground mb-3">Why This Project Matters</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  What makes BAC Modelos strong is its breadth. It is not just visually polished —
+                  What makes BAC Modelos strong is its breadth. It is not just visually polished |
                   it is operationally useful. It supports content, catalog management, brand
                   onboarding, gated resources, analytics, and user workflows in a single cohesive
                   platform. That is the kind of build that demonstrates product thinking, not just
@@ -3431,7 +3431,7 @@ function ChakriProjectContent() {
 }
 
 
-// John Deere GO-specific content component
+// John Deere-specific content component
 function JohnDeereProjectContent() {
   return (
     <div className="space-y-12">
@@ -3460,17 +3460,16 @@ function JohnDeereProjectContent() {
             <CardHeader>
               <CardTitle className="text-3xl text-foreground flex items-center justify-center">
                 <Truck className="mr-3 h-8 w-8 text-green-400" />
-                John Deere Innovation Showcase
+                John Deere Supply Chain Systems
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-8">
               <div className="text-center">
                 <h3 className="text-xl font-bold text-green-400 mb-4">Advanced Agricultural Technology Solutions</h3>
                 <p className="text-muted-foreground max-w-4xl mx-auto text-lg leading-relaxed">
-                  As part of <strong>John Deere Labs</strong>, I led the development of two flagship products that helped
-                  agricultural equipment management and security. These innovative solutions demonstrate the power of integrating
-                  SAP automation, cloud services, and AI technologies to streamline operations and enhance security in
-                  agricultural environments.
+                  As a <strong>Supply Chain Management Intern at John Deere</strong>, I built internal systems that improved
+                  reservation workflows, inventory visibility, and loss-prevention monitoring. The work combined SAP automation,
+                  cloud services, and computer vision to support operational supply-chain processes.
                 </p>
               </div>
 
@@ -3508,8 +3507,8 @@ function JohnDeereProjectContent() {
 
               <div className="bg-gradient-to-r from-primary/5 to-primary/10 p-6 rounded-lg">
                 <p className="text-center text-muted-foreground">
-                  <strong>Key Achievement:</strong> IM Reserver leverages end-to-end SAP Automation (ABAP), Azure services,
-                  and Power Platform flows to streamline supply management across John Deere's agricultural equipment network.
+                  <strong>Key Achievement:</strong> IM Reserver leveraged end-to-end SAP automation, Azure services,
+                  and Power Platform flows to streamline supply management across John Deere operations.
                 </p>
               </div>
             </CardContent>
@@ -4093,15 +4092,15 @@ function VanttecProjectContent() {
               </Card>
 
               {/* RoboSub Awards */}
-              <Card className="bg-gradient-to-br from-teal-50 to-cyan-100 dark:from-teal-900/20 dark:to-cyan-800/20 border-teal-200 dark:border-teal-700">
+              <Card className="bg-teal-500/10 border border-teal-500/25 shadow-xl">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-6">
-                    <div className="bg-teal-600/10 p-3 rounded-lg">
-                      <Navigation className="h-8 w-8 text-teal-600" />
+                    <div className="bg-teal-500/15 p-3 rounded-lg border border-teal-500/20">
+                      <Navigation className="h-8 w-8 text-teal-300" />
                     </div>
                     <div className="ml-4">
-                      <h3 className="text-xl font-bold text-teal-800 dark:text-teal-200">RoboSub Awards</h3>
-                      <p className="text-sm text-teal-600 dark:text-teal-300">Autonomous Underwater Vehicle Competition</p>
+                      <h3 className="text-xl font-bold text-teal-200">RoboSub Awards</h3>
+                      <p className="text-sm text-teal-300/80">Autonomous Underwater Vehicle Competition</p>
                     </div>
                   </div>
 
@@ -4381,7 +4380,7 @@ function VanttecProjectContent() {
 
 
 
-// EE272 VLSI Design — full project detail
+// EE272 VLSI Design | full project detail
 function EE272ProjectContent() {
   return (
     <div className="space-y-12">
@@ -4391,14 +4390,14 @@ function EE272ProjectContent() {
           <CardHeader>
             <CardTitle className="text-2xl text-foreground flex items-center">
               <Cpu className="mr-3 h-6 w-6 text-primary" />
-              EE272 / 272B — VLSI System Design Projects
+              EE271 / EE272 - VLSI System Design Projects
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="text-center">
               <h3 className="text-xl font-bold text-primary mb-2">Full-Custom Silicon from RTL to Tape-Out</h3>
               <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                A two-quarter advanced VLSI design sequence covering the complete digital IC design flow:
+                A two-course advanced VLSI design sequence covering the complete digital IC design flow:
                 from RTL description and logic synthesis to custom layout, place &amp; route, timing
                 closure, and post-layout verification using industry-standard Cadence tools and the
                 open-source SKY130 process design kit.
@@ -4411,7 +4410,7 @@ function EE272ProjectContent() {
                   <h4 className="font-semibold">Final Grade</h4>
                 </div>
                 <p className="text-3xl font-bold text-primary">8 / 8</p>
-                <p className="text-sm text-muted-foreground mt-1">Homeworks — all 100 / 100</p>
+                <p className="text-sm text-muted-foreground mt-1">Homeworks | all 100 / 100</p>
               </div>
               <div className="bg-sky-500/10 border-sky-500/20 rounded-lg border p-5">
                 <div className="flex items-center mb-3">
@@ -4442,7 +4441,7 @@ function EE272ProjectContent() {
               <GitBranch className="mr-3 h-6 w-6 text-primary" />
               VLSI Design Flow
             </CardTitle>
-            <p className="text-muted-foreground">End-to-end IC design methodology covered in EE272</p>
+              <p className="text-muted-foreground">End-to-end IC design methodology covered across EE271 and EE272</p>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -4504,7 +4503,7 @@ function EE272ProjectContent() {
           <CardHeader>
             <CardTitle className="text-2xl text-foreground flex items-center">
               <BookOpen className="mr-3 h-6 w-6 text-primary" />
-              Homework Progression — 8 / 8 Perfect Scores
+              Homework Progression | 8 / 8 Perfect Scores
             </CardTitle>
             <p className="text-muted-foreground">Each assignment built on the previous, constructing a complete design flow</p>
           </CardHeader>
@@ -4517,8 +4516,8 @@ function EE272ProjectContent() {
                 { hw: 'HW 4', topic: 'Clock Tree Synthesis',         desc: 'CTS implementation and tuning. Achieving <50 ps skew across all registers while minimizing insertion delay.', score: '100/100' },
                 { hw: 'HW 5', topic: 'Post-Route Timing Closure',    desc: 'Timing ECO iterations. Hold/setup fix with buffer insertion. Multi-corner sign-off with extracted RC parasitics.', score: '95/100' },
                 { hw: 'HW 6', topic: 'Power Analysis & Optimization', desc: 'Dynamic and static power estimation with Innovus. Clock gating insertion and power intent (CPF/UPF) basics.', score: '100/100' },
-                { hw: 'HW 7', topic: 'DNN Accelerator — P&R',       desc: 'Place & route of a convolutional DNN accelerator using Cadence Innovus on SKY130. Final merged GDS passed DRC/LVS sign-off.', score: '100/100' },
-                { hw: 'HW 8', topic: 'Physical Verification & Tape-out', desc: 'Full DRC/LVS/ERC checks on completed design. Preparation of final GDS for tape-out readiness review.', score: '100/100' },
+                { hw: 'HW 7', topic: 'DNN Accelerator | P&R',       desc: 'Place & route of a convolutional DNN accelerator using Cadence Innovus on SKY130. Final merged GDS passed DRC/LVS sign-off.', score: '100/100' },
+                { hw: 'HW 8', topic: 'Physical Verification & Tape-out', desc: 'Full DRC/LVS/ERC checks on completed design. Preparation of final GDS for tape-out readiness review.', score: '95/100' },
               ].map((h) => (
                 <div key={h.hw} className="flex items-start gap-4 bg-card/50 border border-border rounded-lg p-4">
                   <div className="shrink-0 w-16 text-center">
@@ -4544,7 +4543,7 @@ function EE272ProjectContent() {
               <Brain className="mr-3 h-6 w-6 text-primary" />
               Final Project: Convolutional DNN Accelerator
             </CardTitle>
-            <p className="text-muted-foreground">Homework 7 — Place & Route with Cadence Innovus on SKY130</p>
+            <p className="text-muted-foreground">Homework 7 | Place & Route with Cadence Innovus on SKY130</p>
           </CardHeader>
           <CardContent className="space-y-6">
             <p className="text-muted-foreground leading-relaxed">
@@ -4667,7 +4666,7 @@ export async function generateStaticParams() {
   return slugs;
 }
 
-// EE233 FM Superheterodyne Radio Receiver — project detail
+// EE233 FM Superheterodyne Radio Receiver | project detail
 function EE233ProjectContent() {
   return (
     <div className="space-y-10">
@@ -4694,24 +4693,63 @@ function EE233ProjectContent() {
               <span key={t} className="font-mono text-xs text-primary/80 border border-primary/25 bg-primary/8 px-3 py-1 rounded-full">{t}</span>
             ))}
           </div>
+          <div className="flex flex-wrap gap-3 mt-6">
+            <a
+              href="https://youtube.com/shorts/ubQI5udW8H8?si=RdDYvzP_OdoH4A6_"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-medium text-primary border border-primary/30 rounded-lg px-4 py-2 hover:bg-primary/10 transition-colors"
+            >
+              <ExternalLink className="h-4 w-4" /> Watch Live Demo
+            </a>
+          </div>
         </div>
       </FadeIn>
 
-      {/* Board photo */}
+      {/* Interactive radio interface */}
       <FadeIn delay="delay-250">
-        <div className="rounded-xl overflow-hidden border border-border shadow-xl">
-          <Image
-            src={getAssetPath('/images/placaaceleracion.jpeg')}
-            alt="FM Radio Receiver PCB"
-            width={1200}
-            height={600}
-            className="w-full object-cover"
-          />
-        </div>
+        <Card className="bg-card/60 border-border shadow-xl overflow-hidden">
+          <CardHeader className="space-y-3">
+            <CardTitle className="text-xl text-foreground flex items-center gap-2">
+              <Monitor className="h-5 w-5 text-primary" /> Interactive Tuning Interface
+            </CardTitle>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Visitors can use the same browser-based FM tuning interface you built for the project, including the
+              station selector and spectrum analyzer view.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href={getAssetPath('/233-FinalProject/radioUI.html')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-medium text-primary border border-primary/30 rounded-lg px-4 py-2 hover:bg-primary/10 transition-colors"
+              >
+                <ExternalLink className="h-4 w-4" /> Open Standalone Interface
+              </a>
+              <a
+                href={getAssetPath('/233-FinalProject/FinalProject.pdf')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-medium text-primary border border-primary/30 rounded-lg px-4 py-2 hover:bg-primary/10 transition-colors"
+              >
+                <ExternalLink className="h-4 w-4" /> View PDF
+              </a>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <div className="rounded-lg overflow-hidden border border-border bg-[#070c14]" style={{ height: '620px' }}>
+              <iframe
+                src={getAssetPath('/233-FinalProject/radioUI.html')}
+                className="w-full h-full border-0"
+                title="FM Radio Tuning Interface"
+                sandbox="allow-scripts allow-same-origin"
+              />
+            </div>
+          </CardContent>
+        </Card>
       </FadeIn>
-
       {/* Expandable block diagram */}
-      <FadeIn delay="delay-300">
+      <FadeIn delay="delay-350">
         <div className="rounded-xl border border-border bg-card/60 overflow-hidden">
           <details className="group">
             <summary className="flex items-center gap-3 px-6 py-4 cursor-pointer select-none hover:bg-primary/5 transition-colors list-none">
@@ -4738,7 +4776,7 @@ function EE233ProjectContent() {
       </FadeIn>
 
       {/* Technical highlights */}
-      <FadeIn delay="delay-350">
+      <FadeIn delay="delay-400">
         <div className="grid md:grid-cols-2 gap-6">
           <Card className="bg-card/60 border-border shadow-xl">
             <CardHeader>
@@ -4775,7 +4813,7 @@ function EE233ProjectContent() {
                   { label: 'Demodulation', value: 'I/Q Quadrature (CLK0 / CLK1)' },
                   { label: 'MCU', value: 'Raspberry Pi Pico (RP2040)' },
                   { label: 'Interface', value: 'Real-time spectrum analyzer via WiFi HTTP' },
-                  { label: 'Course', value: 'Stanford EE233 — Winter 2025' },
+                  { label: 'Course', value: 'Stanford EE233 | Winter 2025' },
                 ].map(row => (
                   <div key={row.label} className="flex justify-between items-start gap-4 text-sm border-b border-border/30 pb-2 last:border-0 last:pb-0">
                     <span className="text-muted-foreground/70 font-mono text-xs uppercase tracking-wide shrink-0">{row.label}</span>
@@ -4789,7 +4827,7 @@ function EE233ProjectContent() {
       </FadeIn>
 
       {/* PDF report link */}
-      <FadeIn delay="delay-400">
+      <FadeIn delay="delay-450">
         <Card className="bg-gradient-to-r from-primary/5 to-primary/10 shadow-xl">
           <CardContent className="p-6 flex items-center gap-4">
             <div className="w-10 h-10 rounded-xl bg-primary/15 flex items-center justify-center shrink-0">
@@ -4799,14 +4837,24 @@ function EE233ProjectContent() {
               <h3 className="font-semibold text-foreground mb-1">Full Project Report</h3>
               <p className="text-sm text-muted-foreground">Complete writeup including schematics, measurements, and analysis.</p>
             </div>
-            <a
-              href={getAssetPath('/233-FinalProject/FinalProject.pdf')}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="shrink-0 inline-flex items-center gap-2 text-sm font-medium text-primary border border-primary/30 rounded-lg px-4 py-2 hover:bg-primary/10 transition-colors"
-            >
-              <ExternalLink className="h-4 w-4" /> View PDF
-            </a>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href={getAssetPath('/233-FinalProject/FinalProject.pdf')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 inline-flex items-center gap-2 text-sm font-medium text-primary border border-primary/30 rounded-lg px-4 py-2 hover:bg-primary/10 transition-colors"
+              >
+                <ExternalLink className="h-4 w-4" /> View PDF
+              </a>
+              <a
+                href="https://youtube.com/shorts/ubQI5udW8H8?si=RdDYvzP_OdoH4A6_"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 inline-flex items-center gap-2 text-sm font-medium text-primary border border-primary/30 rounded-lg px-4 py-2 hover:bg-primary/10 transition-colors"
+              >
+                <ExternalLink className="h-4 w-4" /> Watch Demo
+              </a>
+            </div>
           </CardContent>
         </Card>
       </FadeIn>

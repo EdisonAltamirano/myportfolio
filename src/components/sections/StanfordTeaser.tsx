@@ -6,7 +6,7 @@ const tracks = [
   {
     icon: Cpu,
     title: 'VLSI & Chip Design',
-    desc: 'Full chip design flow through TSMC tape-out using Cadence and Synopsys tools.',
+    desc: 'VLSI design flow with Cadence and Synopsys tools, plus an upcoming TSMC-oriented fabrication track.',
     color: 'text-sky-400',
     bg: 'bg-sky-500/10',
     border: 'border-sky-500/20',
@@ -98,9 +98,9 @@ export function StanfordTeaser() {
           {/* Quick stats strip */}
           <div className="mt-8 flex flex-wrap gap-6 items-center justify-center md:justify-start border-t border-border/30 pt-6">
             {[
-              { label: '6 courses', sub: 'EE272, 272B, 372, 214A, 233, 256' },
+              { label: '6 courses', sub: 'EE271, 272, 372, 214A, 233, 256' },
               { label: '1 research lab', sub: 'Arbabian Lab · mm-Wave Radar' },
-              { label: 'TSMC tape-out', sub: 'EE372 · Spring 2025' },
+              { label: 'TSMC track', sub: 'EE372 · Upcoming' },
               { label: '2 chip designs', sub: 'Digital DNN + Analog Imager' },
             ].map((s) => (
               <div key={s.label} className="text-center md:text-left">
