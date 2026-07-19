@@ -38,7 +38,7 @@ export function AnalyticsChart() {
 
   if (!isClient) {
     // Render a placeholder or nothing on the server to avoid hydration mismatch
-    return <div className="h-[200px] w-full bg-muted rounded-lg animate-pulse" />;
+    return <div className="h-[200px] w-full bg-muted rounded-xl animate-pulse" />;
   }
   
   return (

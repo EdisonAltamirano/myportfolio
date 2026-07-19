@@ -59,10 +59,10 @@ export default async function ResearchPostPage({ params }: Props) {
       </FadeIn>
 
       <FadeIn delay="delay-100">
-        <article className="mx-auto max-w-4xl rounded-2xl border border-black/10 bg-white/[0.82] p-5 shadow-sm shadow-black/5 backdrop-blur-sm sm:p-8 lg:p-10">
+        <article className="case-study mx-auto max-w-4xl rounded-2xl border border-black/10 bg-white/[0.82] p-5 shadow-sm shadow-black/5 backdrop-blur-sm sm:p-8 lg:p-10">
           <header className="mb-10 text-center">
             <Badge variant="outline" className="mb-4 rounded-full border-primary/25 bg-primary/10 px-3 py-1 text-primary">{post.category}</Badge>
-            <h1 className="mx-auto max-w-3xl text-4xl font-bold tracking-[-0.05em] text-foreground md:text-5xl">{post.title}</h1>
+            <h1 className="mx-auto max-w-3xl text-3xl font-semibold tracking-[-0.055em] text-foreground sm:text-4xl md:text-5xl">{post.title}</h1>
             <div className="mt-5 flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground">
               <span className="flex items-center"><UserCircle className="mr-1.5 h-4 w-4" /> {post.author}</span>
               <span className="flex items-center"><Calendar className="mr-1.5 h-4 w-4" /> {post.date}</span>
@@ -70,7 +70,7 @@ export default async function ResearchPostPage({ params }: Props) {
           </header>
 
           {post.imageUrl && (
-            <div className="relative aspect-video rounded-lg overflow-hidden mb-10 shadow-lg">
+            <div className="relative aspect-video rounded-xl overflow-hidden mb-10 shadow-lg">
               <Image
                 src={post.imageUrl}
                 alt={post.title}

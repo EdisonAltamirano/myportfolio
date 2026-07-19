@@ -19,7 +19,7 @@ export default function ProjectLoading() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
-            <Card className="overflow-hidden shadow-xl mb-8">
+            <Card className="overflow-hidden shadow-sm shadow-black/5 mb-8">
               <Skeleton className="aspect-video w-full" />
               <CardContent className="p-6">
                 <Skeleton className="h-6 w-full mb-2" />
@@ -27,7 +27,7 @@ export default function ProjectLoading() {
               </CardContent>
             </Card>
 
-            <Card className="shadow-xl">
+            <Card className="shadow-sm shadow-black/5">
               <CardHeader>
                 <Skeleton className="h-8 w-48" />
               </CardHeader>

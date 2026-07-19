@@ -189,7 +189,7 @@ export default function ResearchPage() {
           <div className="space-y-4">
             {publications.map((pub, i) => (
               <FadeIn key={i} delay={`delay-${(i % 4) * 75}`}>
-                <div className="rounded-lg border border-border bg-card p-5 card-glow-sky group">
+                <div className="rounded-xl border border-border bg-card p-5 card-glow-sky group">
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
@@ -240,13 +240,13 @@ export default function ResearchPage() {
             {presentations.map((yearGroup) => (
               <div key={yearGroup.year}>
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="font-display text-2xl font-bold text-primary">{yearGroup.year}</span>
+                  <span className="font-display text-2xl font-bold text-foreground">{yearGroup.year}</span>
                   <div className="flex-1 h-px bg-border/50" />
                 </div>
                 <div className="space-y-3">
                   {yearGroup.items.map((item, i) => (
                     <FadeIn key={i} delay={`delay-${i * 75}`}>
-                      <div className="rounded-lg border border-border bg-card p-5 card-glow-teal">
+                      <div className="rounded-xl border border-border bg-card p-5 card-glow-teal">
                         <p className="font-body text-sm text-foreground leading-relaxed mb-2">{item.title}</p>
                         <div className="flex items-center justify-between gap-2">
                           <span className="font-mono text-xs text-muted-foreground/80">{item.venue}</span>

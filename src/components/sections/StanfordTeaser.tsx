@@ -79,7 +79,7 @@ export function StanfordTeaser() {
               const Icon = track.icon;
               return (
                 <FadeIn key={track.title} delay={`delay-${i * 75}`}>
-                  <div className={`rounded-lg border ${track.border} bg-card p-5 hover:bg-card transition-all duration-300 group`}>
+                  <div className={`rounded-xl border ${track.border} bg-card p-5 hover:bg-card transition-all duration-300 group`}>
                     <div className={`w-9 h-9 rounded-md ${track.bg} flex items-center justify-center mb-3`}>
                       <Icon className={`w-4.5 h-4.5 ${track.color}`} />
                     </div>

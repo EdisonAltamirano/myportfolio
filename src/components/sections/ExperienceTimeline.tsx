@@ -37,9 +37,9 @@ const categoryConfig: Record<TimelineCategory, { icon: React.ElementType; color:
   },
   startup: {
     icon: Rocket,
-    color: 'text-orange-700',
+    color: 'text-foreground',
     bg: 'bg-primary/10',
-    border: 'border-orange-500/30',
+    border: 'border-border',
   },
 };
 
@@ -133,7 +133,7 @@ function TimelineCard({ entry, isLeft }: { entry: TimelineEntry; isLeft: boolean
     <div className={cn('relative flex md:flex-row items-start mb-10 md:mb-16 gap-4 md:gap-0', isLeft && 'md:flex-row-reverse')}>
       {/* Card */}
       <FadeIn
-        className={cn('w-full md:w-5/12 card-glow-sky rounded-lg border bg-card p-5', cfg.border)}
+        className={cn('w-full md:w-5/12 card-glow-sky rounded-xl border bg-card p-5', cfg.border)}
         delay={isLeft ? "delay-200" : "delay-100"}
       >
         {/* Header */}
@@ -228,7 +228,7 @@ export function ExperienceTimeline() {
               <div className="md:hidden pl-12 pb-8">
                 <div className="absolute left-[16px] top-5 w-3 h-3 rounded-full bg-card border-2 border-primary/50" />
                 <FadeIn delay={`delay-${(index % 4) * 100}`}>
-                  <div className={cn('rounded-lg border bg-card p-4', categoryConfig[entry.category].border)}>
+                  <div className={cn('rounded-xl border bg-card p-4', categoryConfig[entry.category].border)}>
                     <div className="flex items-center gap-2 mb-2">
                       {(() => {
                         const cfg = categoryConfig[entry.category];

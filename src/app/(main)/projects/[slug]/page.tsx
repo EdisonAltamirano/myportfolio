@@ -167,7 +167,7 @@ function ZFBrakingProjectContent() {
     <div className="space-y-12">
       {/* Project Overview Section */}
       <FadeIn delay="delay-300">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground flex items-center">
               <Cog className="mr-3 h-6 w-6 text-primary" />
@@ -176,7 +176,7 @@ function ZFBrakingProjectContent() {
           </CardHeader>
           <CardContent className="space-y-8">
             <div className="text-center">
-              <h3 className="text-xl font-bold text-primary mb-2">Building Safer, Smarter Braking Systems</h3>
+              <h3 className="text-xl font-bold text-foreground mb-2">Building Safer, Smarter Braking Systems</h3>
               <p className="text-muted-foreground max-w-2xl mx-auto">
                 Leading the development of embedded systems for commercial vehicle braking, focusing on AUTOSAR-based software components and safety-critical applications.
               </p>
@@ -187,14 +187,14 @@ function ZFBrakingProjectContent() {
 
       {/* Key Responsibilities Section */}
       <FadeIn delay="delay-400">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground">Key Responsibilities</CardTitle>
             <p className="text-muted-foreground">Core duties and technical leadership</p>
           </CardHeader>
           <CardContent className="space-y-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card className="bg-gradient-to-r from-primary/5 to-primary/10">
+              <Card className="bg-primary/10">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <Layers className="h-6 w-6 text-primary mr-3" />
@@ -206,7 +206,7 @@ function ZFBrakingProjectContent() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-gradient-to-r from-primary/5 to-primary/10">
+              <Card className="bg-primary/10">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <LineChart className="h-6 w-6 text-primary mr-3" />
@@ -218,7 +218,7 @@ function ZFBrakingProjectContent() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-gradient-to-r from-primary/5 to-primary/10">
+              <Card className="bg-primary/10">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <TestTube className="h-6 w-6 text-primary mr-3" />
@@ -230,7 +230,7 @@ function ZFBrakingProjectContent() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-gradient-to-r from-primary/5 to-primary/10">
+              <Card className="bg-primary/10">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <Bug className="h-6 w-6 text-primary mr-3" />
@@ -248,20 +248,20 @@ function ZFBrakingProjectContent() {
 
       {/* Technical Stack Section */}
       <FadeIn delay="delay-500">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground">Technical Stack</CardTitle>
             <p className="text-muted-foreground">Tools and technologies utilized</p>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Card className="bg-gradient-to-br from-primary/5 to-primary/10 hover:shadow-lg transition-shadow duration-300">
+              <Card className="bg-primary/10 hover:shadow-lg transition-shadow duration-300">
                 <CardContent className="p-6">
                   <div className="flex flex-col items-center text-center mb-4">
                     <div className="bg-primary/10 p-4 rounded-full mb-4">
                       <Settings className="h-8 w-8 text-primary" />
                     </div>
-                    <h4 className="text-lg font-semibold text-primary">Development Tools</h4>
+                    <h4 className="text-lg font-semibold text-foreground">Development Tools</h4>
                   </div>
                   <ul className="space-y-3 text-sm text-muted-foreground">
                     <li className="flex items-center">
@@ -284,13 +284,13 @@ function ZFBrakingProjectContent() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-gradient-to-br from-primary/5 to-primary/10 hover:shadow-lg transition-shadow duration-300">
+              <Card className="bg-primary/10 hover:shadow-lg transition-shadow duration-300">
                 <CardContent className="p-6">
                   <div className="flex flex-col items-center text-center mb-4">
                     <div className="bg-primary/10 p-4 rounded-full mb-4">
                       <Code className="h-8 w-8 text-primary" />
                     </div>
-                    <h4 className="text-lg font-semibold text-primary">Programming</h4>
+                    <h4 className="text-lg font-semibold text-foreground">Programming</h4>
                   </div>
                   <ul className="space-y-3 text-sm text-muted-foreground">
                     <li className="flex items-center">
@@ -313,13 +313,13 @@ function ZFBrakingProjectContent() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-gradient-to-br from-primary/5 to-primary/10 hover:shadow-lg transition-shadow duration-300">
+              <Card className="bg-primary/10 hover:shadow-lg transition-shadow duration-300">
                 <CardContent className="p-6">
                   <div className="flex flex-col items-center text-center mb-4">
                     <div className="bg-primary/10 p-4 rounded-full mb-4">
                       <GitBranch className="h-8 w-8 text-primary" />
                     </div>
-                    <h4 className="text-lg font-semibold text-primary">Version Control</h4>
+                    <h4 className="text-lg font-semibold text-foreground">Version Control</h4>
                   </div>
                   <ul className="space-y-3 text-sm text-muted-foreground">
                     <li className="flex items-center">
@@ -342,13 +342,13 @@ function ZFBrakingProjectContent() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-gradient-to-br from-primary/5 to-primary/10 hover:shadow-lg transition-shadow duration-300">
+              <Card className="bg-primary/10 hover:shadow-lg transition-shadow duration-300">
                 <CardContent className="p-6">
                   <div className="flex flex-col items-center text-center mb-4">
                     <div className="bg-primary/10 p-4 rounded-full mb-4">
                       <Shield className="h-8 w-8 text-primary" />
                     </div>
-                    <h4 className="text-lg font-semibold text-primary">Safety & Standards</h4>
+                    <h4 className="text-lg font-semibold text-foreground">Safety & Standards</h4>
                   </div>
                   <ul className="space-y-3 text-sm text-muted-foreground">
                     <li className="flex items-center">
@@ -377,14 +377,14 @@ function ZFBrakingProjectContent() {
 
       {/* Achievements Section */}
       <FadeIn delay="delay-600">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground">Key Achievements</CardTitle>
             <p className="text-muted-foreground">Notable contributions and improvements</p>
           </CardHeader>
           <CardContent>
             <div className="space-y-6">
-              <Card className="bg-gradient-to-r from-primary/5 to-primary/10">
+              <Card className="bg-primary/10">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <Lightbulb className="h-6 w-6 text-primary mr-3" />
@@ -396,7 +396,7 @@ function ZFBrakingProjectContent() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-gradient-to-r from-primary/5 to-primary/10">
+              <Card className="bg-primary/10">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <Clock className="h-6 w-6 text-primary mr-3" />
@@ -408,7 +408,7 @@ function ZFBrakingProjectContent() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-gradient-to-r from-primary/5 to-primary/10">
+              <Card className="bg-primary/10">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <BarChart className="h-6 w-6 text-primary mr-3" />
@@ -426,7 +426,7 @@ function ZFBrakingProjectContent() {
 
       {/* Impact Section */}
       <FadeIn delay="delay-700">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground">Project Impact</CardTitle>
             <p className="text-muted-foreground">Long-term influence and contributions</p>
@@ -437,7 +437,7 @@ function ZFBrakingProjectContent() {
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <Trophy className="h-6 w-6 text-primary mr-3" />
-                    <h4 className="font-medium text-primary">Technical Leadership</h4>
+                    <h4 className="font-medium text-foreground">Technical Leadership</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Established best practices for AUTOSAR implementation and system architecture that became team standards.
@@ -448,8 +448,8 @@ function ZFBrakingProjectContent() {
               <Card className="bg-primary/10 border-primary/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <BookOpen className="h-6 w-6 text-green-700 mr-3" />
-                    <h4 className="font-medium text-green-700">Knowledge Transfer</h4>
+                    <BookOpen className="h-6 w-6 text-primary mr-3" />
+                    <h4 className="font-medium text-foreground">Knowledge Transfer</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Created comprehensive documentation and training materials for new team members and cross-functional teams.
@@ -461,7 +461,7 @@ function ZFBrakingProjectContent() {
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <Star className="h-6 w-6 text-primary mr-3" />
-                    <h4 className="font-medium text-primary">Innovation</h4>
+                    <h4 className="font-medium text-foreground">Innovation</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Introduced new testing methodologies and tools that improved overall system reliability and performance.
@@ -482,7 +482,7 @@ function ZFShuttleProjectContent() {
     <div className="space-y-12">
       {/* Project Overview Section */}
       <FadeIn delay="delay-300">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground flex items-center">
               <Car className="mr-3 h-6 w-6 text-primary" />
@@ -491,7 +491,7 @@ function ZFShuttleProjectContent() {
           </CardHeader>
           <CardContent className="space-y-8">
             <div className="text-center">
-              <h3 className="text-xl font-bold text-primary mb-2">Student Autonomous Shuttle Development</h3>
+              <h3 className="text-xl font-bold text-foreground mb-2">Student Autonomous Shuttle Development</h3>
               <p className="text-muted-foreground max-w-2xl mx-auto">
                 In collaboration with ZF Group, the German company inaugurated its first research center in Mexico and sponsored a student team to develop an autonomous transport shuttle from a disused vehicle.
               </p>
@@ -501,7 +501,7 @@ function ZFShuttleProjectContent() {
               <Card className="bg-card border-border hover:border-primary/25 transition-colors duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
+                    <div className="bg-primary/10 p-3 rounded-xl">
                       <Target className="h-6 w-6 text-primary" />
                     </div>
                     <h4 className="ml-3 text-lg font-medium">Objective</h4>
@@ -515,7 +515,7 @@ function ZFShuttleProjectContent() {
               <Card className="bg-card border-border hover:border-primary/25 transition-colors duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
+                    <div className="bg-primary/10 p-3 rounded-xl">
                       <Building className="h-6 w-6 text-primary" />
                     </div>
                     <h4 className="ml-3 text-lg font-medium">Partnership</h4>
@@ -529,7 +529,7 @@ function ZFShuttleProjectContent() {
               <Card className="bg-card border-border hover:border-primary/25 transition-colors duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
+                    <div className="bg-primary/10 p-3 rounded-xl">
                       <Users className="h-6 w-6 text-primary" />
                     </div>
                     <h4 className="ml-3 text-lg font-medium">Team Leadership</h4>
@@ -546,7 +546,7 @@ function ZFShuttleProjectContent() {
 
       {/* Video Demonstrations Section */}
       <FadeIn delay="delay-400">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground flex items-center">
               <Play className="mr-3 h-6 w-6 text-primary" />
@@ -557,10 +557,10 @@ function ZFShuttleProjectContent() {
           <CardContent className="space-y-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Video 1: Initial Control Demo */}
-              <Card className="bg-gradient-to-br from-primary/5 to-primary/10">
+              <Card className="bg-primary/10">
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold mb-4">Initial Control System Demo</h3>
-                  <div className="relative overflow-hidden rounded-lg shadow-lg aspect-video mb-4">
+                  <div className="relative overflow-hidden rounded-xl shadow-lg aspect-video mb-4">
                     <iframe
                       src="https://www.youtube.com/embed/rN4bV2_FTRk?si=245hcTpTJKdsCn8M"
                       title="ZF Shuttle Control Demo"
@@ -582,7 +582,7 @@ function ZFShuttleProjectContent() {
               <Card className="bg-gradient-to-br from-secondary/5 to-secondary/10">
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold mb-4">Autonomous Navigation Demo</h3>
-                  <div className="relative overflow-hidden rounded-lg shadow-lg aspect-video mb-4">
+                  <div className="relative overflow-hidden rounded-xl shadow-lg aspect-video mb-4">
                     <iframe
                       src="https://www.youtube.com/embed/6oElwB4LGKE?si=B7PK7hxKPENC7Qs3"
                       title="ZF Shuttle Autonomous Demo"
@@ -606,7 +606,7 @@ function ZFShuttleProjectContent() {
 
       {/* Technologies and Development Section */}
       <FadeIn delay="delay-500">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground">Technologies & Development</CardTitle>
             <p className="text-muted-foreground">Comprehensive technical implementation</p>
@@ -620,20 +620,20 @@ function ZFShuttleProjectContent() {
               </h3>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div className="space-y-6">
-                  <Card className="bg-gradient-to-r from-primary/5 to-primary/10">
+                  <Card className="bg-primary/10">
                     <CardContent className="p-6">
                       <h4 className="font-bold mb-3">Custom PCB Design</h4>
                       <ul className="space-y-2 text-sm">
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>PWM acceleration and brake modulation via CAN Bus</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Light control (headlights, turn signals)</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Horn and audio system integration</span>
                         </li>
                       </ul>
@@ -646,7 +646,7 @@ function ZFShuttleProjectContent() {
                     alt="Custom PCB Design"
                     width={400}
                     height={300}
-                    className="rounded-lg shadow-md object-cover"
+                    className="rounded-xl shadow-md object-cover"
                   />
                 </div>
               </div>
@@ -668,7 +668,7 @@ function ZFShuttleProjectContent() {
                       alt="Jetson Xavier Setup"
                       width={500}
                       height={375}
-                      className="rounded-lg shadow-md object-cover w-auto"
+                      className="rounded-xl shadow-md object-cover w-auto"
                     />
                   </div>
                   <div className="space-y-6">
@@ -677,15 +677,15 @@ function ZFShuttleProjectContent() {
                         <h4 className="font-bold mb-3">ROS 2 Integration</h4>
                         <ul className="space-y-2 text-sm">
                           <li className="flex items-start space-x-2">
-                            <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                            <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                             <span>Jetson Xavier orchestrating perception, planning, and actuators</span>
                           </li>
                           <li className="flex items-start space-x-2">
-                            <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                            <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                             <span>CAN AUTOSAR-like architecture</span>
                           </li>
                           <li className="flex items-start space-x-2">
-                            <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                            <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                             <span>Separate nodes for speed, brake, and telemetry</span>
                           </li>
                         </ul>
@@ -711,39 +711,39 @@ function ZFShuttleProjectContent() {
                       <h4 className="font-bold mb-3">Stereo Vision & SLAM</h4>
                       <ul className="space-y-2 text-sm">
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Carnegie Mellon stereo camera system</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>3D obstacle detection via point clouds</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Camera + LiDAR sensor fusion</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Short-range LiDAR for noise reduction</span>
                         </li>
                       </ul>
                     </CardContent>
                   </Card>
                 </div>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <Image
                     src={getAssetPath("/zf_autonomous_shuttle/pedestrian_detection.jpeg")}
                     alt="Pedestrian Detection System"
                     width={300}
                     height={200}
-                    className="rounded-lg shadow-md object-cover w-auto"
+                    className="rounded-xl shadow-md object-cover w-auto"
                   />
                   <Image
                     src={getAssetPath("/zf_autonomous_shuttle/lidar.jpeg")}
                     alt="LiDAR Setup"
                     width={300}
                     height={200}
-                    className="rounded-lg shadow-md object-cover w-auto"
+                    className="rounded-xl shadow-md object-cover w-auto"
                   />
                 </div>
               </div>
@@ -764,28 +764,28 @@ function ZFShuttleProjectContent() {
                     alt="Longitudinal & Lateral Control"
                     width={400}
                     height={300}
-                    className="rounded-lg shadow-md object-cover w-auto"
+                    className="rounded-xl shadow-md object-cover w-auto"
                   />
                 </div>
                 <div className="space-y-6">
-                  <Card className="bg-primary/10 border border-green-500/25 shadow-xl">
+                  <Card className="bg-primary/10 border border-primary/20 shadow-sm shadow-black/5">
                     <CardContent className="p-6">
                       <h4 className="font-bold mb-3">Advanced Control Systems</h4>
                       <ul className="space-y-2 text-sm">
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Model Predictive Control (MPC) algorithms</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Real-time state monitoring</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Industrial visualization dashboards</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Emergency stop and safety protocols</span>
                         </li>
                       </ul>
@@ -800,7 +800,7 @@ function ZFShuttleProjectContent() {
 
       {/* Integration and Testing Section */}
       <FadeIn delay="delay-600">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground">Integration & Testing</CardTitle>
             <p className="text-muted-foreground">Validation and field testing process</p>
@@ -814,7 +814,7 @@ function ZFShuttleProjectContent() {
                     Testing Infrastructure
                   </h3>
                   <div className="space-y-4">
-                    <div className="relative overflow-hidden rounded-lg shadow-lg aspect-video">
+                    <div className="relative overflow-hidden rounded-xl shadow-lg aspect-video">
                       <iframe
                         src="https://www.youtube.com/embed/uKGA_UsuovQ?si=N-FvFzhoShNCuiVF"
                         title="Electronics Test Bench"
@@ -828,11 +828,11 @@ function ZFShuttleProjectContent() {
                     </div>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start space-x-2">
-                        <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                        <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                         <span>Electronics test bench for firmware validation</span>
                       </li>
                       <li className="flex items-start space-x-2">
-                        <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                        <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                         <span>CAN simulation before deployment</span>
                       </li>
                     </ul>
@@ -847,7 +847,7 @@ function ZFShuttleProjectContent() {
                     Field Testing
                   </h3>
                   <div className="space-y-4">
-                    <div className="relative overflow-hidden rounded-lg shadow-lg aspect-video">
+                    <div className="relative overflow-hidden rounded-xl shadow-lg aspect-video">
                       <iframe
                         src="https://www.youtube.com/embed/D6kxck312BE?si=XqUFCR4nPePFSNsC"
                         title="Campus Field Testing"
@@ -861,11 +861,11 @@ function ZFShuttleProjectContent() {
                     </div>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start space-x-2">
-                        <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                        <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                         <span>Campus testing with ZF supervision</span>
                       </li>
                       <li className="flex items-start space-x-2">
-                        <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                        <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                         <span>Safe turning, emergency stop, lane change</span>
                       </li>
                     </ul>
@@ -879,7 +879,7 @@ function ZFShuttleProjectContent() {
 
       {/* Awards and Recognition Section */}
       <FadeIn delay="delay-700">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground">Awards & Recognition</CardTitle>
             <p className="text-muted-foreground">Industry recognition and academic achievements</p>
@@ -887,18 +887,18 @@ function ZFShuttleProjectContent() {
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Extended Funding */}
-              <Card className="bg-primary/10 border-green-500/25">
+              <Card className="bg-primary/10 border-primary/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-6">
-                    <div className="bg-green-200 p-3 rounded-lg">
-                      <Trophy className="h-6 w-6 text-green-700" />
+                    <div className="bg-primary/10 p-3 rounded-xl">
+                      <Trophy className="h-6 w-6 text-primary" />
                     </div>
                     <h3 className="ml-3 text-xl font-bold">Extended Funding</h3>
                   </div>
                   <p className="text-muted-foreground mb-4">
                     ZF granted additional 5-month funding after successful first presentation, recognizing the project's potential and technical excellence.
                   </p>
-                  <div className="relative overflow-hidden rounded-lg">
+                  <div className="relative overflow-hidden rounded-xl">
                     <Image
                       src={getAssetPath("/zf_autonomous_shuttle/10-reconocidos.jpeg")}
                       alt="First Presentation to ZF"
@@ -914,8 +914,8 @@ function ZFShuttleProjectContent() {
               <Card className="bg-primary/10 border-primary/25">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-6">
-                    <div className="bg-blue-200 p-3 rounded-lg">
-                      <Users className="h-6 w-6 text-blue-700" />
+                    <div className="bg-muted p-3 rounded-xl">
+                      <Users className="h-6 w-6 text-foreground" />
                     </div>
                     <h3 className="ml-3 text-xl font-bold">High-Level Visits</h3>
                   </div>
@@ -935,7 +935,7 @@ function ZFShuttleProjectContent() {
                       </div>
                     </div>
                   </div>
-                  <div className="relative overflow-hidden rounded-lg mt-4">
+                  <div className="relative overflow-hidden rounded-xl mt-4">
                     <Image
                       src={getAssetPath("/zf_autonomous_shuttle/byd-presentacion.jpeg")}
                       alt="First Presentation to ZF"
@@ -952,7 +952,7 @@ function ZFShuttleProjectContent() {
             <Card className="mt-8 bg-gradient-to-r from-primary/5 via-secondary/5 to-primary/5">
               <CardContent className="p-6">
                 <div className="flex items-center mb-6">
-                  <div className="bg-primary/20 p-3 rounded-lg">
+                  <div className="bg-primary/20 p-3 rounded-xl">
                     <FileText className="h-6 w-6 text-primary" />
                   </div>
                   <h3 className="ml-3 text-xl font-bold">Official Presentation & Documentation</h3>
@@ -961,20 +961,20 @@ function ZFShuttleProjectContent() {
                   <div>
                     <ul className="space-y-3">
                       <li className="flex items-start space-x-3">
-                        <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                        <CheckCircle className="h-5 w-5 text-primary mt-0.5" />
                         <span>Live presentation to ZF deans and engineers</span>
                       </li>
                       <li className="flex items-start space-x-3">
-                        <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                        <CheckCircle className="h-5 w-5 text-primary mt-0.5" />
                         <span>Technical manuals approved by ZF for homologation</span>
                       </li>
                       <li className="flex items-start space-x-3">
-                        <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                        <CheckCircle className="h-5 w-5 text-primary mt-0.5" />
                         <span>Live recording and institutional coverage</span>
                       </li>
                     </ul>
                   </div>
-                  <div className="relative overflow-hidden rounded-lg">
+                  <div className="relative overflow-hidden rounded-xl">
                     <Image
                       src={getAssetPath("/zf_autonomous_shuttle/zf-80.jpeg")}
                       alt="Official Presentation"
@@ -992,7 +992,7 @@ function ZFShuttleProjectContent() {
 
       {/* Impact Section */}
       <FadeIn delay="delay-800">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground">Social & Academic Impact</CardTitle>
             <p className="text-muted-foreground">Long-term influence and legacy</p>
@@ -1003,12 +1003,12 @@ function ZFShuttleProjectContent() {
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <Building className="h-6 w-6 text-primary mr-3" />
-                    <h4 className="font-medium text-primary">Institutional Reputation</h4>
+                    <h4 className="font-medium text-foreground">Institutional Reputation</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Consolidated Tecnológico de Monterrey as "core development center" for ZF in Latin America.
                   </p>
-                  <div className="relative overflow-hidden rounded-lg shadow-lg aspect-video mt-4">
+                  <div className="relative overflow-hidden rounded-xl shadow-lg aspect-video mt-4">
                     <iframe
                       src="https://www.youtube.com/embed/-CX4PDktpAQ?si=QH_wdJw52Rr-wuFt"
                       title="Educational Impact"
@@ -1026,8 +1026,8 @@ function ZFShuttleProjectContent() {
               <Card className="bg-primary/10 border-primary/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <Car className="h-6 w-6 text-green-700 mr-3" />
-                    <h4 className="font-medium text-green-700">Investment Attraction</h4>
+                    <Car className="h-6 w-6 text-primary mr-3" />
+                    <h4 className="font-medium text-foreground">Investment Attraction</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Project visibility contributed to Tesla choosing Monterrey for its first Mexican Gigafactory.
@@ -1038,7 +1038,7 @@ function ZFShuttleProjectContent() {
                       alt="Tesla Visit"
                       width={300}
                       height={200}
-                      className="rounded-lg object-cover w-full"
+                      className="rounded-xl object-cover w-full"
                     />
                   </div>
                 </CardContent>
@@ -1048,7 +1048,7 @@ function ZFShuttleProjectContent() {
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <Users className="h-6 w-6 text-primary mr-3" />
-                    <h4 className="font-medium text-primary">Educational Impact</h4>
+                    <h4 className="font-medium text-foreground">Educational Impact</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Know-how incorporated into autonomous vehicle courses taught to teachers across Mexico.
@@ -1059,7 +1059,7 @@ function ZFShuttleProjectContent() {
                       alt="Educational Impact"
                       width={300}
                       height={200}
-                      className="rounded-lg object-cover w-full"
+                      className="rounded-xl object-cover w-full"
                     />
                   </div>
                 </CardContent>
@@ -1079,7 +1079,7 @@ function AIRLabProjectContent() {
 
       {/* About the AIRLab Stacking Challenge */}
       <FadeIn delay="delay-300">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground flex items-center">
               <Target className="mr-3 h-6 w-6 text-primary" />
@@ -1088,9 +1088,9 @@ function AIRLabProjectContent() {
           </CardHeader>
           <CardContent className="space-y-8">
             {/* Video Demonstration */}
-            <div className="bg-primary/10 border-l-4 border-primary p-6 rounded-lg">
-              <h3 className="text-lg font-bold text-primary mb-4">Project Functionality Demonstration</h3>
-              <div className="relative overflow-hidden rounded-lg aspect-video shadow-lg">
+            <div className="bg-primary/10 border-l-4 border-primary p-6 rounded-xl">
+              <h3 className="text-lg font-bold text-foreground mb-4">Project Functionality Demonstration</h3>
+              <div className="relative overflow-hidden rounded-xl aspect-video shadow-lg">
                 <iframe
                   src="https://www.youtube.com/embed/sTFtxwSkYfI?si=Iwi-O_nJTJAtQZO0"
                   title="AIRLab Stacking Challenge - Autonomous Can Stacking Demo"
@@ -1102,15 +1102,15 @@ function AIRLabProjectContent() {
                   className="w-full h-full"
                 />
               </div>
-              <p className="text-sm text-blue-700 mt-3 italic">
+              <p className="text-sm text-foreground mt-3 italic">
                 Complete demonstration of our autonomous can-stacking system from object detection to successful placement
               </p>
             </div>
 
             {/* Overview */}
             <div>
-              <h3 className="text-xl font-bold text-primary mb-4">Overview</h3>
-              <div className="bg-primary/10 border-l-4 border-primary p-6 rounded-lg">
+              <h3 className="text-xl font-bold text-foreground mb-4">Overview</h3>
+              <div className="bg-primary/10 border-l-4 border-primary p-6 rounded-xl">
                 <p className="text-muted-foreground italic mb-4">
                   "Ahold Delhaize's AI for Retail Lab (AIRLab) and YES!Delft invited us to the Finals Event of the AIRLab Stacking Challenge. Within this challenge, we have challenged students and research teams from all over the world to share knowledge and dive deep into the tech to better understand the ground principles of robotics."
                 </p>
@@ -1120,8 +1120,8 @@ function AIRLabProjectContent() {
                 <Card className="bg-primary/10 border-primary/20">
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
-                      <Target className="h-6 w-6 text-green-700 mr-3" />
-                      <h4 className="font-medium text-green-700">Goal</h4>
+                      <Target className="h-6 w-6 text-primary mr-3" />
+                      <h4 className="font-medium text-foreground">Goal</h4>
                     </div>
                     <p className="text-sm text-muted-foreground">
                       Develop algorithms that autonomously stack products in a simulated environment and then deploy them onto the TIAGo robot in a live demo.
@@ -1133,7 +1133,7 @@ function AIRLabProjectContent() {
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
                       <Building className="h-6 w-6 text-primary mr-3" />
-                      <h4 className="font-medium text-primary">Context</h4>
+                      <h4 className="font-medium text-foreground">Context</h4>
                     </div>
                     <p className="text-sm text-muted-foreground">
                       Hosted by AIRLab (Ahold Delhaize / TU Delft) with support from PAL Robotics and YES!Delft.
@@ -1144,8 +1144,8 @@ function AIRLabProjectContent() {
                 <Card className="bg-primary/10 border-border">
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
-                      <Star className="h-6 w-6 text-orange-700 mr-3" />
-                      <h4 className="font-medium text-orange-300">Why It Matters</h4>
+                      <Star className="h-6 w-6 text-foreground mr-3" />
+                      <h4 className="font-medium text-foreground">Why It Matters</h4>
                     </div>
                     <p className="text-sm text-muted-foreground">
                       Retail shelving is a repetitive but delicate task. Automating "pick and place" in a cluttered environment tests both vision and manipulation subsystems end-to-end.
@@ -1157,7 +1157,7 @@ function AIRLabProjectContent() {
 
             {/* Robotic Platform */}
             <div>
-              <h3 className="text-xl font-bold text-primary mb-4">Robotic Platform: TIAGo by PAL Robotics</h3>
+              <h3 className="text-xl font-bold text-foreground mb-4">Robotic Platform: TIAGo by PAL Robotics</h3>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div>
                   <h4 className="font-semibold mb-3">TIAGo Overview</h4>
@@ -1188,7 +1188,7 @@ function AIRLabProjectContent() {
                   </ul>
                 </div>
                 <div>
-                  <div className="relative overflow-hidden rounded-lg shadow-lg aspect-video">
+                  <div className="relative overflow-hidden rounded-xl shadow-lg aspect-video">
                     <iframe
                       src="https://www.youtube.com/embed/mZ5a6zwiWZk?si=U76CDGK8pd4wqrf_"
                       title="TIAGo Robot Demonstration at AIRLab Challenge"
@@ -1209,15 +1209,15 @@ function AIRLabProjectContent() {
               <div className="mt-6">
                 <h4 className="font-semibold mb-3">Key Features Enabling Our Work</h4>
                 <div className="space-y-4">
-                  <div className="bg-secondary/10 p-4 rounded-lg">
+                  <div className="bg-secondary/10 p-4 rounded-xl">
                     <h5 className="font-medium mb-2">Modular Hardware</h5>
                     <p className="text-sm text-muted-foreground">End effector can be replaced by custom gripper if needed.</p>
                   </div>
-                  <div className="bg-secondary/10 p-4 rounded-lg">
+                  <div className="bg-secondary/10 p-4 rounded-xl">
                     <h5 className="font-medium mb-2">Open-Source Drivers</h5>
                     <p className="text-sm text-muted-foreground">ROS nodes for camera streaming, joint controllers (using ros_control and MoveIt!).</p>
                   </div>
-                  <div className="bg-secondary/10 p-4 rounded-lg">
+                  <div className="bg-secondary/10 p-4 rounded-xl">
                     <h5 className="font-medium mb-2">3D Perception Capability</h5>
                     <p className="text-sm text-muted-foreground">The RGB-D head streams a 640×480 depth image at 30 fps, enabling point-cloud generation on the Jetson.</p>
                   </div>
@@ -1227,7 +1227,7 @@ function AIRLabProjectContent() {
 
             {/* Simulation Environment */}
             <div>
-              <h3 className="text-xl font-bold text-primary mb-4">Simulation Environment: Gazebo</h3>
+              <h3 className="text-xl font-bold text-foreground mb-4">Simulation Environment: Gazebo</h3>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div>
                   <h4 className="font-semibold mb-3">Why Simulation First?</h4>
@@ -1280,8 +1280,8 @@ function AIRLabProjectContent() {
 
             {/* System Architecture */}
             <div>
-              <h3 className="text-xl font-bold text-primary mb-4">System Architecture Overview</h3>
-              <div className="relative overflow-hidden rounded-lg shadow-lg">
+              <h3 className="text-xl font-bold text-foreground mb-4">System Architecture Overview</h3>
+              <div className="relative overflow-hidden rounded-xl shadow-lg">
                 <Image
                   src={getAssetPath("/airlab/mainengine.jpeg")}
                   alt="Main Functions Diagram of the Autonomous Stacking System"
@@ -1300,7 +1300,7 @@ function AIRLabProjectContent() {
 
       {/* Organizers and Involved Institutions */}
       <FadeIn delay="delay-400">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground flex items-center">
               <Building className="mr-3 h-6 w-6 text-primary" />
@@ -1313,8 +1313,8 @@ function AIRLabProjectContent() {
               <Card className="bg-primary/10 border-border">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <div className="bg-blue-200 p-3 rounded-lg">
-                      <Building className="h-6 w-6 text-blue-700" />
+                    <div className="bg-muted p-3 rounded-xl">
+                      <Building className="h-6 w-6 text-foreground" />
                     </div>
                     <h3 className="ml-3 text-xl font-bold">AIRLab (Ahold Delhaize / TU Delft)</h3>
                   </div>
@@ -1339,8 +1339,8 @@ function AIRLabProjectContent() {
               <Card className="bg-primary/10 border-primary/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <div className="bg-green-200 p-3 rounded-lg">
-                      <ShoppingCart className="h-6 w-6 text-green-700" />
+                    <div className="bg-primary/10 p-3 rounded-xl">
+                      <ShoppingCart className="h-6 w-6 text-primary" />
                     </div>
                     <h3 className="ml-3 text-xl font-bold">Ahold Delhaize</h3>
                   </div>
@@ -1357,8 +1357,8 @@ function AIRLabProjectContent() {
               <Card className="bg-primary/10 border-border">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <div className="bg-purple-200 p-3 rounded-lg">
-                      <GraduationCap className="h-6 w-6 text-purple-700" />
+                    <div className="bg-muted p-3 rounded-xl">
+                      <GraduationCap className="h-6 w-6 text-foreground" />
                     </div>
                     <h3 className="ml-3 text-xl font-bold">TU Delft</h3>
                   </div>
@@ -1375,8 +1375,8 @@ function AIRLabProjectContent() {
               <Card className="bg-primary/10 border-border">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <div className="bg-orange-200 p-3 rounded-lg">
-                      <Bot className="h-6 w-6 text-orange-700" />
+                    <div className="bg-muted p-3 rounded-xl">
+                      <Bot className="h-6 w-6 text-foreground" />
                     </div>
                     <h3 className="ml-3 text-xl font-bold">PAL Robotics</h3>
                   </div>
@@ -1398,7 +1398,7 @@ function AIRLabProjectContent() {
 
       {/* My Experience and Work Approach */}
       <FadeIn delay="delay-500">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground flex items-center">
               <Wrench className="mr-3 h-6 w-6 text-primary" />
@@ -1410,10 +1410,10 @@ function AIRLabProjectContent() {
             {/* Results */}
             <div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <Card className="bg-yellow-500/10 border-yellow-500/40">
+                <Card className="bg-primary/10 border-primary/25">
                   <CardContent className="p-6 text-center">
-                    <Trophy className="h-12 w-12 text-yellow-400 mx-auto mb-4" />
-                    <h4 className="font-bold text-yellow-300 mb-2">💎 Award</h4>
+                    <Trophy className="h-12 w-12 text-primary mx-auto mb-4" />
+                    <h4 className="font-bold text-foreground mb-2">💎 Award</h4>
                     <p className="text-sm text-muted-foreground">"Most Consistent Solution" (out of 25+ international teams)</p>
                   </CardContent>
                 </Card>
@@ -1421,15 +1421,15 @@ function AIRLabProjectContent() {
                 <Card className="bg-primary/10 border-border">
                   <CardContent className="p-6 text-center">
                     <Star className="h-12 w-12 text-primary mx-auto mb-4" />
-                    <h4 className="font-bold text-primary mb-2">🏅 Key Differentiator</h4>
+                    <h4 className="font-bold text-foreground mb-2">🏅 Key Differentiator</h4>
                     <p className="text-sm text-muted-foreground">Robust error handler with retry mechanism|minimized deadlocks</p>
                   </CardContent>
                 </Card>
 
                 <Card className="bg-primary/10 border-primary/20">
                   <CardContent className="p-6 text-center">
-                    <Code className="h-12 w-12 text-green-700 mx-auto mb-4" />
-                    <h4 className="font-bold text-green-700 mb-2">🔤 Tech Stack</h4>
+                    <Code className="h-12 w-12 text-primary mx-auto mb-4" />
+                    <h4 className="font-bold text-foreground mb-2">🔤 Tech Stack</h4>
                     <p className="text-sm text-muted-foreground">ROS Noetic, OpenCV 4.2, PCL, MoveIt!, TensorFlow 1.15, C++/Python</p>
                   </CardContent>
                 </Card>
@@ -1449,7 +1449,7 @@ function SmartFactoryProjectContent() {
     <div className="space-y-12">
       {/* Project Overview Section */}
       <FadeIn delay="delay-300">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground flex items-center">
               <Factory className="mr-3 h-6 w-6 text-primary" />
@@ -1458,7 +1458,7 @@ function SmartFactoryProjectContent() {
           </CardHeader>
           <CardContent className="space-y-8">
             <div className="text-center">
-              <h3 className="text-xl font-bold text-primary mb-2">Fully Automated Manufacturing Line</h3>
+              <h3 className="text-xl font-bold text-foreground mb-2">Fully Automated Manufacturing Line</h3>
               <p className="text-muted-foreground max-w-2xl mx-auto">
                 Design and implementation of a completely automated manufacturing line, integrating PLCs, mobile robots, robotic arms, and cyber-physical systems at Tecnológico de Monterrey.
               </p>
@@ -1468,7 +1468,7 @@ function SmartFactoryProjectContent() {
               <Card className="bg-secondary/5">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
+                    <div className="bg-primary/10 p-3 rounded-xl">
                       <Target className="h-6 w-6 text-primary" />
                     </div>
                     <h4 className="ml-3 text-lg font-medium">Objective</h4>
@@ -1482,7 +1482,7 @@ function SmartFactoryProjectContent() {
               <Card className="bg-secondary/5">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
+                    <div className="bg-primary/10 p-3 rounded-xl">
                       <Building className="h-6 w-6 text-primary" />
                     </div>
                     <h4 className="ml-3 text-lg font-medium">Scope</h4>
@@ -1496,7 +1496,7 @@ function SmartFactoryProjectContent() {
               <Card className="bg-secondary/5">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
+                    <div className="bg-primary/10 p-3 rounded-xl">
                       <Globe className="h-6 w-6 text-primary" />
                     </div>
                     <h4 className="ml-3 text-lg font-medium">Impact</h4>
@@ -1513,7 +1513,7 @@ function SmartFactoryProjectContent() {
 
       {/* Technologies and Development Section */}
       <FadeIn delay="delay-400">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground">Technologies & Applied Developments</CardTitle>
             <p className="text-muted-foreground">Comprehensive Industry 4.0 implementation</p>
@@ -1527,44 +1527,44 @@ function SmartFactoryProjectContent() {
               </h3>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div className="space-y-6">
-                  <Card className="bg-gradient-to-r from-primary/5 to-primary/10">
+                  <Card className="bg-primary/10">
                     <CardContent className="p-6">
                       <h4 className="font-bold mb-3">PLCs & Discrete State Machines</h4>
                       <ul className="space-y-2 text-sm">
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Orchestration of conveyors and automatic storage</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Robot sequence coordination</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>HMI and AVEVA-OSIsoft dashboards</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Real-time production parameter monitoring</span>
                         </li>
                       </ul>
                     </CardContent>
                   </Card>
                 </div>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <Image
                     src={getAssetPath("/smartfactory/hmi.png")}
                     alt="PLC Control System"
                     width={300}
                     height={200}
-                    className="rounded-lg shadow-md object-cover"
+                    className="rounded-xl shadow-md object-cover"
                   />
                   <Image
                     src={getAssetPath("/smartfactory/aveva.png")}
                     alt="HMI Dashboard"
                     width={300}
                     height={200}
-                    className="rounded-lg shadow-md object-cover"
+                    className="rounded-xl shadow-md object-cover"
                   />
                 </div>
               </div>
@@ -1579,20 +1579,20 @@ function SmartFactoryProjectContent() {
                 Mobile Robotics & Manipulators
               </h3>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <Image
                     src={getAssetPath("/smartfactory/dashgos.png")}
                     alt="AGV Line Following Robot"
                     width={300}
                     height={200}
-                    className="rounded-lg shadow-md object-cover"
+                    className="rounded-xl shadow-md object-cover"
                   />
                   <Image
                     src={getAssetPath("/smartfactory/omron.png")}
                     alt="ABB Yumi Robot"
                     width={300}
                     height={200}
-                    className="rounded-lg shadow-md object-cover"
+                    className="rounded-xl shadow-md object-cover"
                   />
                 </div>
                 <div className="space-y-6">
@@ -1601,23 +1601,23 @@ function SmartFactoryProjectContent() {
                       <h4 className="font-bold mb-3">Robotic Integration</h4>
                       <ul className="space-y-2 text-sm">
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>AGV line-following robot as initial project</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>UR, ABB Yumi, and mobile robot integration</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Pick, transport, and place operations</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>MoveIt! trajectory planning with ROS</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Collision avoidance algorithms</span>
                         </li>
                       </ul>
@@ -1642,23 +1642,23 @@ function SmartFactoryProjectContent() {
                       <h4 className="font-bold mb-3">Vision & Simulation Systems</h4>
                       <ul className="space-y-2 text-sm">
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Industrial cameras for part inspection</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Real-time feedback to PLC systems</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Gazebo + Blender simulation environments</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Virtual reality applied to robotics</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Flow validation before physical testing</span>
                         </li>
                       </ul>
@@ -1672,7 +1672,7 @@ function SmartFactoryProjectContent() {
                     alt="Digital Twin Interface"
                     width={400}
                     height={300}
-                    className="rounded-lg shadow-md object-cover"
+                    className="rounded-xl shadow-md object-cover"
                   />
 
                 </div>
@@ -1694,28 +1694,28 @@ function SmartFactoryProjectContent() {
                     alt="Cyber-Physical Systems"
                     width={300}
                     height={200}
-                    className="rounded-lg shadow-md object-cover"
+                    className="rounded-xl shadow-md object-cover"
                   />
                 </div>
                 <div className="space-y-6">
-                  <Card className="bg-primary/10 border border-green-500/25 shadow-xl">
+                  <Card className="bg-primary/10 border border-primary/20 shadow-sm shadow-black/5">
                     <CardContent className="p-6">
                       <h4 className="font-bold mb-3">CPS Infrastructure Development</h4>
                       <ul className="space-y-2 text-sm">
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Infrastructure for inaugural CPS course</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Pilot factory integration with Digital Twin tools</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Real-time data integration and analysis</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Foundation for MIT collaboration</span>
                         </li>
                       </ul>
@@ -1730,7 +1730,7 @@ function SmartFactoryProjectContent() {
 
       {/* Awards and Recognition Section */}
       <FadeIn delay="delay-500">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground">Awards & Recognition</CardTitle>
             <p className="text-muted-foreground">Industry recognition and academic achievements</p>
@@ -1738,18 +1738,18 @@ function SmartFactoryProjectContent() {
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Industry Presentation */}
-              <Card className="bg-primary/10 border-green-500/25">
+              <Card className="bg-primary/10 border-primary/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-6">
-                    <div className="bg-green-200 p-3 rounded-lg">
-                      <Presentation className="h-6 w-6 text-green-700" />
+                    <div className="bg-primary/10 p-3 rounded-xl">
+                      <Presentation className="h-6 w-6 text-primary" />
                     </div>
                     <h3 className="ml-3 text-xl font-bold">Industry Presentation 2021</h3>
                   </div>
                   <p className="text-muted-foreground mb-4">
                     Final presentation to OMRON, ABB, AVEVA, and UR executives who were impressed by the industrial-level automation achieved.
                   </p>
-                  <div className="relative overflow-hidden rounded-lg">
+                  <div className="relative overflow-hidden rounded-xl">
                     <video
                       controls
                       width={400}
@@ -1768,8 +1768,8 @@ function SmartFactoryProjectContent() {
               <Card className="bg-primary/10 border-primary/25">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-6">
-                    <div className="bg-blue-200 p-3 rounded-lg">
-                      <FileText className="h-6 w-6 text-blue-700" />
+                    <div className="bg-muted p-3 rounded-xl">
+                      <FileText className="h-6 w-6 text-foreground" />
                     </div>
                     <h3 className="ml-3 text-xl font-bold">Academic Publications</h3>
                   </div>
@@ -1788,7 +1788,7 @@ function SmartFactoryProjectContent() {
                         <p className="text-sm text-muted-foreground">Multiple works presented at conference</p>
                       </div>
                     </div>
-                    <div className="relative overflow-hidden rounded-lg">
+                    <div className="relative overflow-hidden rounded-xl">
                       <video
                         controls
                         width={400}
@@ -1811,14 +1811,14 @@ function SmartFactoryProjectContent() {
 
       {/* Special Recognition */}
       <FadeIn delay="delay-600">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground">Special Recognition & Partnerships</CardTitle>
             <p className="text-muted-foreground">Industry and academic recognition</p>
           </CardHeader>
           <CardContent>
             <div className="flex items-center mb-6">
-              <div className="bg-primary/20 p-3 rounded-lg">
+              <div className="bg-primary/20 p-3 rounded-xl">
                 <Trophy className="h-6 w-6 text-primary" />
               </div>
               <h3 className="ml-3 text-xl font-bold">Special Recognition & Partnerships</h3>
@@ -1827,7 +1827,7 @@ function SmartFactoryProjectContent() {
               <div>
                 <ul className="space-y-3">
                   <li className="flex items-start space-x-3">
-                    <Star className="h-5 w-5 text-yellow-500 mt-0.5" />
+                    <Star className="h-5 w-5 text-primary mt-0.5" />
                     <span>Special guest speaker at Smart Factory 5th anniversary ceremony</span>
                   </li>
                   <li className="flex items-start space-x-3">
@@ -1840,7 +1840,7 @@ function SmartFactoryProjectContent() {
                   </li>
                 </ul>
               </div>
-              <div className="relative overflow-hidden rounded-lg">
+              <div className="relative overflow-hidden rounded-xl">
                 <Image
                   src={getAssetPath("/smartfactory/reconocimento.jpeg")}
                   alt="Smart Factory Anniversary"
@@ -1856,7 +1856,7 @@ function SmartFactoryProjectContent() {
 
       {/* Leadership Roles Section */}
       <FadeIn delay="delay-700">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground">Leadership Roles</CardTitle>
             <p className="text-muted-foreground">Coordination and mentorship responsibilities</p>
@@ -1868,7 +1868,7 @@ function SmartFactoryProjectContent() {
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <Users className="h-6 w-6 text-primary mr-3" />
-                    <h4 className="font-medium text-primary">General Coordinator</h4>
+                    <h4 className="font-medium text-foreground">General Coordinator</h4>
                   </div>
                   <p className="text-sm text-muted-foreground mb-4">
                     Led a team of 50 scholarship students, 70 students, and 3 teachers to design, implement, and validate the pilot factory.
@@ -1879,7 +1879,7 @@ function SmartFactoryProjectContent() {
                       alt="Smart Factory Team"
                       width={300}
                       height={200}
-                      className="rounded-lg object-cover w-full"
+                      className="rounded-xl object-cover w-full"
                     />
                   </div>
                 </CardContent>
@@ -1889,8 +1889,8 @@ function SmartFactoryProjectContent() {
               <Card className="bg-primary/10 border-primary/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <BookOpen className="h-6 w-6 text-green-700 mr-3" />
-                    <h4 className="font-medium text-green-700">CADI Instructor</h4>
+                    <BookOpen className="h-6 w-6 text-primary mr-3" />
+                    <h4 className="font-medium text-foreground">CADI Instructor</h4>
                   </div>
                   <p className="text-sm text-muted-foreground mb-4">
                     Trained 20 teachers from CDMX, Toluca, Guadalajara, and Monterrey in monitoring and control with AVEVA-OSIsoft.
@@ -1901,7 +1901,7 @@ function SmartFactoryProjectContent() {
                       alt="Teacher Training"
                       width={300}
                       height={200}
-                      className="rounded-lg object-cover w-full"
+                      className="rounded-xl object-cover w-full"
                     />
                   </div>
                 </CardContent>
@@ -1912,26 +1912,26 @@ function SmartFactoryProjectContent() {
             <Card className="mt-8 bg-primary/10 border-border">
               <CardContent className="p-6">
                 <div className="flex items-center mb-6">
-                  <div className="bg-blue-200 p-3 rounded-lg">
-                    <Wrench className="h-6 w-6 text-blue-700" />
+                  <div className="bg-muted p-3 rounded-xl">
+                    <Wrench className="h-6 w-6 text-foreground" />
                   </div>
                   <h3 className="ml-3 text-xl font-bold">Mentor & Facilitator</h3>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="bg-card border border-border p-4 rounded-lg">
-                    <h4 className="font-medium text-primary mb-2">Team Leadership</h4>
+                  <div className="bg-card border border-border p-4 rounded-xl">
+                    <h4 className="font-medium text-foreground mb-2">Team Leadership</h4>
                     <p className="text-sm text-muted-foreground">
                       Guided group leaders, defined weekly objectives, and reviewed progress presentations.
                     </p>
                   </div>
-                  <div className="bg-card border border-border p-4 rounded-lg">
-                    <h4 className="font-medium text-primary mb-2">Immediate Feedback</h4>
+                  <div className="bg-card border border-border p-4 rounded-xl">
+                    <h4 className="font-medium text-foreground mb-2">Immediate Feedback</h4>
                     <p className="text-sm text-muted-foreground">
                       Provided real-time feedback to prevent technical blockages and maintain project momentum.
                     </p>
                   </div>
-                  <div className="bg-card border border-border p-4 rounded-lg">
-                    <h4 className="font-medium text-primary mb-2">Weekend Support</h4>
+                  <div className="bg-card border border-border p-4 rounded-xl">
+                    <h4 className="font-medium text-foreground mb-2">Weekend Support</h4>
                     <p className="text-sm text-muted-foreground">
                       Resolved technical problems on weekends alongside faculty to ensure continuous progress.
                     </p>
@@ -1945,7 +1945,7 @@ function SmartFactoryProjectContent() {
 
       {/* Impact Section */}
       <FadeIn delay="delay-800">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground">Social & Academic Impact</CardTitle>
             <p className="text-muted-foreground">Long-term influence and legacy</p>
@@ -1956,7 +1956,7 @@ function SmartFactoryProjectContent() {
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <Network className="h-6 w-6 text-primary mr-3" />
-                    <h4 className="font-medium text-primary">Knowledge Multiplier</h4>
+                    <h4 className="font-medium text-foreground">Knowledge Multiplier</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Created a replicable model for other campuses, strengthening the Smart Factory network in Latin America.
@@ -1967,7 +1967,7 @@ function SmartFactoryProjectContent() {
                       alt="Smart Factory Network"
                       width={300}
                       height={200}
-                      className="rounded-lg object-cover w-full"
+                      className="rounded-xl object-cover w-full"
                     />
                   </div>
                 </CardContent>
@@ -1976,8 +1976,8 @@ function SmartFactoryProjectContent() {
               <Card className="bg-primary/10 border-primary/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <Users className="h-6 w-6 text-green-700 mr-3" />
-                    <h4 className="font-medium text-green-700">Talent Formation</h4>
+                    <Users className="h-6 w-6 text-primary mr-3" />
+                    <h4 className="font-medium text-foreground">Talent Formation</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Empowered hundreds of students and teachers with Industry 4.0, robotics, and CPS competencies.
@@ -1988,7 +1988,7 @@ function SmartFactoryProjectContent() {
                       alt="Student Empowerment"
                       width={300}
                       height={200}
-                      className="rounded-lg object-cover w-full"
+                      className="rounded-xl object-cover w-full"
                     />
                   </div>
                 </CardContent>
@@ -1998,7 +1998,7 @@ function SmartFactoryProjectContent() {
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <Globe className="h-6 w-6 text-primary mr-3" />
-                    <h4 className="font-medium text-primary">International Collaboration</h4>
+                    <h4 className="font-medium text-foreground">International Collaboration</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Positioned Tec as partner of Cyber-Physical Learning Alliance (CPL) and MIT in Digital Twin projects.
@@ -2009,7 +2009,7 @@ function SmartFactoryProjectContent() {
                       alt="MIT Collaboration"
                       width={300}
                       height={200}
-                      className="rounded-lg object-cover w-full"
+                      className="rounded-xl object-cover w-full"
                     />
                   </div>
                 </CardContent>
@@ -2018,8 +2018,8 @@ function SmartFactoryProjectContent() {
               <Card className="bg-primary/10 border-border">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <Building className="h-6 w-6 text-orange-700 mr-3" />
-                    <h4 className="font-medium text-orange-300">Technological Pillar</h4>
+                    <Building className="h-6 w-6 text-foreground mr-3" />
+                    <h4 className="font-medium text-foreground">Technological Pillar</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Consolidated a pilot factory that serves as reference laboratory for global institutions and companies.
@@ -2030,7 +2030,7 @@ function SmartFactoryProjectContent() {
                       alt="Reference Laboratory"
                       width={300}
                       height={200}
-                      className="rounded-lg object-cover w-full"
+                      className="rounded-xl object-cover w-full"
                     />
                   </div>
                 </CardContent>
@@ -2049,7 +2049,7 @@ function RoboCupProjectContent() {
     <div className="space-y-12">
       {/* Project Overview Section */}
       <FadeIn delay="delay-300">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground flex items-center">
               <Home className="mr-3 h-6 w-6 text-primary" />
@@ -2058,7 +2058,7 @@ function RoboCupProjectContent() {
           </CardHeader>
           <CardContent className="space-y-8">
             <div className="text-center">
-              <h3 className="text-xl font-bold text-primary mb-2">Domestic Service Robots in Real Home Environments</h3>
+              <h3 className="text-xl font-bold text-foreground mb-2">Domestic Service Robots in Real Home Environments</h3>
               <p className="text-muted-foreground max-w-2xl mx-auto">
                 Team Roborregos competing in the RoboCup@Home league, where robots must navigate and perform tasks in a realistic apartment setting with multiple rooms and dynamic environments.
               </p>
@@ -2068,7 +2068,7 @@ function RoboCupProjectContent() {
               <Card className="bg-secondary/5">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
+                    <div className="bg-primary/10 p-3 rounded-xl">
                       <Users className="h-6 w-6 text-primary" />
                     </div>
                     <h4 className="ml-3 text-lg font-medium">Team</h4>
@@ -2082,7 +2082,7 @@ function RoboCupProjectContent() {
               <Card className="bg-secondary/5">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
+                    <div className="bg-primary/10 p-3 rounded-xl">
                       <Home className="h-6 w-6 text-primary" />
                     </div>
                     <h4 className="ml-3 text-lg font-medium">Arena</h4>
@@ -2096,7 +2096,7 @@ function RoboCupProjectContent() {
               <Card className="bg-secondary/5">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
+                    <div className="bg-primary/10 p-3 rounded-xl">
                       <Trophy className="h-6 w-6 text-primary" />
                     </div>
                     <h4 className="ml-3 text-lg font-medium">Achievement</h4>
@@ -2113,7 +2113,7 @@ function RoboCupProjectContent() {
 
       {/* Arena and Environment Section */}
       <FadeIn delay="delay-400">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground">Competition Environment</CardTitle>
             <p className="text-muted-foreground">RoboCup@Home Arena Specifications</p>
@@ -2125,7 +2125,7 @@ function RoboCupProjectContent() {
                 <Video className="mr-3 h-6 w-6 text-primary" />
                 Competition Demonstration
               </h3>
-              <div className="aspect-video w-full overflow-hidden rounded-lg">
+              <div className="aspect-video w-full overflow-hidden rounded-xl">
                 <iframe
                   src="https://www.youtube.com/embed/Mzi_xq-Lm4o"
                   title="RoboCup Competition Video"
@@ -2148,20 +2148,20 @@ function RoboCupProjectContent() {
                 Technical Implementation
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Card className="bg-gradient-to-r from-primary/5 to-primary/10">
+                <Card className="bg-primary/10">
                   <CardContent className="p-6">
                     <h4 className="font-bold mb-3">Navigation Stack</h4>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start space-x-2">
-                        <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                        <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                         <span>ROS Navigation Stack with Gmapping for SLAM</span>
                       </li>
                       <li className="flex items-start space-x-2">
-                        <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                        <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                         <span>SMACH for robust state machine implementation</span>
                       </li>
                       <li className="flex items-start space-x-2">
-                        <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                        <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                         <span>Dynamic obstacle avoidance and path planning</span>
                       </li>
                     </ul>
@@ -2173,15 +2173,15 @@ function RoboCupProjectContent() {
                     <h4 className="font-bold mb-3">Vision & Manipulation</h4>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start space-x-2">
-                        <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                        <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                         <span>MediaPipe for person detection and tracking</span>
                       </li>
                       <li className="flex items-start space-x-2">
-                        <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                        <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                         <span>Advanced grasping algorithms for object manipulation</span>
                       </li>
                       <li className="flex items-start space-x-2">
-                        <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                        <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                         <span>Real-time person following with visual servoing</span>
                       </li>
                     </ul>
@@ -2195,7 +2195,7 @@ function RoboCupProjectContent() {
 
       {/* Technical Implementation Section */}
       <FadeIn delay="delay-500">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground">Technical Implementation</CardTitle>
             <p className="text-muted-foreground">Robust solutions for real-world challenges</p>
@@ -2207,22 +2207,22 @@ function RoboCupProjectContent() {
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <Navigation className="h-6 w-6 text-primary mr-3" />
-                    <h4 className="font-medium text-primary">Adaptive Navigation</h4>
+                    <h4 className="font-medium text-foreground">Adaptive Navigation</h4>
                   </div>
                   <p className="text-sm text-muted-foreground mb-4">
                     Implemented robust navigation system capable of handling dynamic environments, including:
                   </p>
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                      <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                       <span>Dynamic obstacle avoidance</span>
                     </li>
                     <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                      <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                       <span>Door handling and navigation</span>
                     </li>
                     <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                      <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                       <span>Real-time path planning</span>
                     </li>
                   </ul>
@@ -2233,23 +2233,23 @@ function RoboCupProjectContent() {
               <Card className="bg-primary/10 border-primary/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <Hand className="h-6 w-6 text-green-700 mr-3" />
-                    <h4 className="font-medium text-green-700">Object Manipulation</h4>
+                    <Hand className="h-6 w-6 text-primary mr-3" />
+                    <h4 className="font-medium text-foreground">Object Manipulation</h4>
                   </div>
                   <p className="text-sm text-muted-foreground mb-4">
                     Developed versatile manipulation system for various objects:
                   </p>
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                      <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                       <span>Grasping different object types</span>
                     </li>
                     <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                      <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                       <span>Safe handling of fragile items</span>
                     </li>
                     <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                      <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                       <span>Bimanual manipulation for complex tasks</span>
                     </li>
                   </ul>
@@ -2261,26 +2261,26 @@ function RoboCupProjectContent() {
             <Card className="mt-8 bg-primary/10 border-border">
               <CardContent className="p-6">
                 <div className="flex items-center mb-6">
-                  <div className="bg-blue-200 p-3 rounded-lg">
-                    <Users className="h-6 w-6 text-blue-700" />
+                  <div className="bg-muted p-3 rounded-xl">
+                    <Users className="h-6 w-6 text-foreground" />
                   </div>
                   <h3 className="ml-3 text-xl font-bold">Human-Robot Interaction</h3>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="bg-card border border-border p-4 rounded-lg">
-                    <h4 className="font-medium text-primary mb-2">Voice Commands</h4>
+                  <div className="bg-card border border-border p-4 rounded-xl">
+                    <h4 className="font-medium text-foreground mb-2">Voice Commands</h4>
                     <p className="text-sm text-muted-foreground">
                       Natural language processing for understanding and executing voice commands in noisy environments.
                     </p>
                   </div>
-                  <div className="bg-card border border-border p-4 rounded-lg">
-                    <h4 className="font-medium text-primary mb-2">Person Recognition</h4>
+                  <div className="bg-card border border-border p-4 rounded-xl">
+                    <h4 className="font-medium text-foreground mb-2">Person Recognition</h4>
                     <p className="text-sm text-muted-foreground">
                       Face recognition and tracking for identifying and interacting with different people in the arena.
                     </p>
                   </div>
-                  <div className="bg-card border border-border p-4 rounded-lg">
-                    <h4 className="font-medium text-primary mb-2">Task Execution</h4>
+                  <div className="bg-card border border-border p-4 rounded-xl">
+                    <h4 className="font-medium text-foreground mb-2">Task Execution</h4>
                     <p className="text-sm text-muted-foreground">
                       Robust task planning and execution system for completing complex domestic service tasks.
                     </p>
@@ -2294,7 +2294,7 @@ function RoboCupProjectContent() {
 
       {/* Impact Section */}
       <FadeIn delay="delay-600">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground">Competition Impact</CardTitle>
             <p className="text-muted-foreground">Achievements and recognition</p>
@@ -2302,10 +2302,10 @@ function RoboCupProjectContent() {
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Competition Results */}
-              <Card className="bg-yellow-500/10 border-yellow-500/20">
+              <Card className="bg-primary/10 border-primary/25">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-6">
-                    <Trophy className="h-6 w-6 text-yellow-700" />
+                    <Trophy className="h-6 w-6 text-foreground" />
                     <h3 className="ml-3 text-xl font-bold">3rd Place Achievement</h3>
                   </div>
                   <p className="text-muted-foreground mb-4">
@@ -2313,15 +2313,15 @@ function RoboCupProjectContent() {
                   </p>
                   <ul className="space-y-2">
                     <li className="flex items-start space-x-2">
-                      <Star className="h-5 w-5 text-yellow-500 mt-0.5" />
+                      <Star className="h-5 w-5 text-primary mt-0.5" />
                       <span>Robust navigation in changing environments</span>
                     </li>
                     <li className="flex items-start space-x-2">
-                      <Star className="h-5 w-5 text-yellow-500 mt-0.5" />
+                      <Star className="h-5 w-5 text-primary mt-0.5" />
                       <span>Reliable object manipulation and handling</span>
                     </li>
                     <li className="flex items-start space-x-2">
-                      <Star className="h-5 w-5 text-yellow-500 mt-0.5" />
+                      <Star className="h-5 w-5 text-primary mt-0.5" />
                       <span>Effective human-robot interaction</span>
                     </li>
                   </ul>
@@ -2332,7 +2332,7 @@ function RoboCupProjectContent() {
               <Card className="bg-primary/10 border-border">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-6">
-                    <Award className="h-6 w-6 text-blue-700" />
+                    <Award className="h-6 w-6 text-foreground" />
                     <h3 className="ml-3 text-xl font-bold">Technical Excellence</h3>
                   </div>
                   <div className="space-y-4">
@@ -2360,7 +2360,7 @@ function RoboCupProjectContent() {
 
       {/* Team Impact Section */}
       <FadeIn delay="delay-500">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground">Team Impact</CardTitle>
             <p className="text-muted-foreground">Advancing Robotics in Mexico</p>
@@ -2373,7 +2373,7 @@ function RoboCupProjectContent() {
                   alt="Team Roborregos Award Ceremony"
                   width={600}
                   height={400}
-                  className="rounded-lg shadow-lg object-cover w-full"
+                  className="rounded-xl shadow-lg object-cover w-full"
                 />
                 <p className="text-sm text-muted-foreground">
                   Team Roborregos celebrating their achievement at the award ceremony, representing Mexico's excellence in robotics.
@@ -2385,7 +2385,7 @@ function RoboCupProjectContent() {
                   alt="Team Roborregos in Veracruz"
                   width={600}
                   height={400}
-                  className="rounded-lg shadow-lg object-cover w-full"
+                  className="rounded-xl shadow-lg object-cover w-full"
                 />
                 <p className="text-sm text-muted-foreground">
                   The team preparing for competition in Veracruz, showcasing the collaborative effort behind Mexico's robotics advancement.
@@ -2393,7 +2393,7 @@ function RoboCupProjectContent() {
               </div>
             </div>
 
-            <Card className="bg-gradient-to-r from-primary/5 to-primary/10">
+            <Card className="bg-primary/10">
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold mb-4 flex items-center">
                   <GraduationCap className="mr-3 h-6 w-6 text-primary" />
@@ -2404,15 +2404,15 @@ function RoboCupProjectContent() {
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start space-x-2">
-                    <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                    <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                     <span>Developing the next generation of robotics engineers and researchers</span>
                   </li>
                   <li className="flex items-start space-x-2">
-                    <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                    <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                     <span>Creating opportunities for Mexican talent to compete on the global stage</span>
                   </li>
                   <li className="flex items-start space-x-2">
-                    <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                    <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                     <span>Building a foundation for future technological innovation in Mexico</span>
                   </li>
                 </ul>
@@ -2433,7 +2433,7 @@ function TokyoIROSProjectContent() {
     <div className="space-y-12">
       {/* Project Overview Section */}
       <FadeIn delay="delay-300">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground flex items-center">
               <Bot className="mr-3 h-6 w-6 text-primary" />
@@ -2442,7 +2442,7 @@ function TokyoIROSProjectContent() {
           </CardHeader>
           <CardContent className="space-y-8">
             <div className="text-center">
-              <h3 className="text-xl font-bold text-primary mb-2">Humanoid Robot in Virtual Domestic Environment</h3>
+              <h3 className="text-xl font-bold text-foreground mb-2">Humanoid Robot in Virtual Domestic Environment</h3>
               <p className="text-muted-foreground max-w-2xl mx-auto">
                 Team Roborregos from Tecnológico de Monterrey Campus Monterrey competing in the Home Simulation category - humanoid robot performing domestic tasks in virtual environment with voice command response.
               </p>
@@ -2451,7 +2451,7 @@ function TokyoIROSProjectContent() {
                   href="https://drive.google.com/file/d/1Jor8UZXW6xFtBZmMvmZmJlUWtryMW7rQ/view?pli=1"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg transition-colors"
+                  className="inline-flex items-center px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-xl transition-colors"
                 >
                   <FileText className="mr-2 h-5 w-5" />
                   View Complete Competition Rules
@@ -2460,26 +2460,26 @@ function TokyoIROSProjectContent() {
             </div>
 
             {/* Competition Rules Overview */}
-            <div className="bg-gradient-to-r from-primary/5 to-primary/10 p-6 rounded-lg">
+            <div className="bg-primary/10 p-6 rounded-xl">
               <h4 className="text-lg font-bold mb-4">Competition Rules & Structure</h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <h5 className="font-semibold mb-2">HandyMan Challenge</h5>
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                      <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                       <span>Navigation with obstacle avoidance</span>
                     </li>
                     <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                      <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                       <span>Object recognition and manipulation</span>
                     </li>
                     <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                      <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                       <span>Human detection and interaction</span>
                     </li>
                     <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                      <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                       <span>Error detection in human instructions</span>
                     </li>
                   </ul>
@@ -2488,19 +2488,19 @@ function TokyoIROSProjectContent() {
                   <h5 className="font-semibold mb-2">Scoring System</h5>
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                      <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                       <span>Room arrival: +20 points</span>
                     </li>
                     <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                      <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                       <span>Object grasping: +50 points</span>
                     </li>
                     <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                      <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                       <span>Task completion: +30 points</span>
                     </li>
                     <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                      <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                       <span>Error detection: +50 points</span>
                     </li>
                   </ul>
@@ -2513,15 +2513,15 @@ function TokyoIROSProjectContent() {
                   <h5 className="font-semibold mb-2">Penalties</h5>
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-start space-x-2">
-                      <XCircle className="h-4 w-4 text-red-500 mt-0.5" />
+                      <XCircle className="h-4 w-4 text-muted-foreground mt-0.5" />
                       <span>Collision with objects: -5 to -50 points</span>
                     </li>
                     <li className="flex items-start space-x-2">
-                      <XCircle className="h-4 w-4 text-red-500 mt-0.5" />
+                      <XCircle className="h-4 w-4 text-muted-foreground mt-0.5" />
                       <span>Failed task completion: -10 points</span>
                     </li>
                     <li className="flex items-start space-x-2">
-                      <XCircle className="h-4 w-4 text-red-500 mt-0.5" />
+                      <XCircle className="h-4 w-4 text-muted-foreground mt-0.5" />
                       <span>Object collision after release: -1 to -50 points</span>
                     </li>
                   </ul>
@@ -2530,15 +2530,15 @@ function TokyoIROSProjectContent() {
                   <h5 className="font-semibold mb-2">Time Limits</h5>
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-start space-x-2">
-                      <Clock className="h-4 w-4 text-blue-500 mt-0.5" />
+                      <Clock className="h-4 w-4 text-muted-foreground mt-0.5" />
                       <span>6-10 minutes per session</span>
                     </li>
                     <li className="flex items-start space-x-2">
-                      <Clock className="h-4 w-4 text-blue-500 mt-0.5" />
+                      <Clock className="h-4 w-4 text-muted-foreground mt-0.5" />
                       <span>10-24 sessions total</span>
                     </li>
                     <li className="flex items-start space-x-2">
-                      <Clock className="h-4 w-4 text-blue-500 mt-0.5" />
+                      <Clock className="h-4 w-4 text-muted-foreground mt-0.5" />
                       <span>Real-world time limit announced 7 days prior</span>
                     </li>
                   </ul>
@@ -2550,7 +2550,7 @@ function TokyoIROSProjectContent() {
               <Card className="bg-secondary/5">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
+                    <div className="bg-primary/10 p-3 rounded-xl">
                       <Users className="h-6 w-6 text-primary" />
                     </div>
                     <h4 className="ml-3 text-lg font-medium">Team</h4>
@@ -2564,7 +2564,7 @@ function TokyoIROSProjectContent() {
               <Card className="bg-secondary/5">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
+                    <div className="bg-primary/10 p-3 rounded-xl">
                       <Bot className="h-6 w-6 text-primary" />
                     </div>
                     <h4 className="ml-3 text-lg font-medium">Category</h4>
@@ -2578,7 +2578,7 @@ function TokyoIROSProjectContent() {
               <Card className="bg-secondary/5">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
+                    <div className="bg-primary/10 p-3 rounded-xl">
                       <Trophy className="h-6 w-6 text-primary" />
                     </div>
                     <h4 className="ml-3 text-lg font-medium">Achievement</h4>
@@ -2595,7 +2595,7 @@ function TokyoIROSProjectContent() {
 
       {/* Video Demonstrations Section */}
       <FadeIn delay="delay-400">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground flex items-center">
               <Play className="mr-3 h-6 w-6 text-primary" />
@@ -2606,10 +2606,10 @@ function TokyoIROSProjectContent() {
           <CardContent className="space-y-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Video 1: HandyMan Challenge Demo */}
-              <Card className="bg-gradient-to-br from-primary/5 to-primary/10">
+              <Card className="bg-primary/10">
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold mb-4">HandyMan Challenge Demo</h3>
-                  <div className="relative overflow-hidden rounded-lg shadow-lg aspect-video mb-4">
+                  <div className="relative overflow-hidden rounded-xl shadow-lg aspect-video mb-4">
                     <iframe
                       src="https://www.youtube.com/embed/6-ixvZpijes?si=-TOcxu-nm-_Qof4s"
                       title="IROS 2022 HandyMan Challenge Demo"
@@ -2628,10 +2628,10 @@ function TokyoIROSProjectContent() {
               </Card>
 
               {/* Video 2: Interactive Cleanup Demo */}
-              <Card className="bg-gradient-to-br from-primary/5 to-primary/10">
+              <Card className="bg-primary/10">
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold mb-4">Interactive Cleanup Demo</h3>
-                  <div className="relative overflow-hidden rounded-lg shadow-lg aspect-video mb-4">
+                  <div className="relative overflow-hidden rounded-xl shadow-lg aspect-video mb-4">
                     <iframe
                       src="https://www.youtube.com/embed/8PyehsxmFc8?si=VcPegoKlOKXndqxB"
                       title="IROS 2022 Interactive Cleanup Demo"
@@ -2655,7 +2655,7 @@ function TokyoIROSProjectContent() {
 
       {/* Technologies and Development Section */}
       <FadeIn delay="delay-400">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground">Technologies & Applied Developments</CardTitle>
             <p className="text-muted-foreground">Advanced humanoid robotics in virtual environments</p>
@@ -2669,24 +2669,24 @@ function TokyoIROSProjectContent() {
               </h3>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div className="space-y-6">
-                  <Card className="bg-gradient-to-r from-primary/5 to-primary/10">
+                  <Card className="bg-primary/10">
                     <CardContent className="p-6">
                       <h4 className="font-bold mb-3">Dynamic Orchestration</h4>
                       <ul className="space-y-2 text-sm">
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Voice command interpretation and processing</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Mission selection ("grab apple", "clean room")</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Route planning and execution</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Return to standby state after completion</span>
                         </li>
                       </ul>
@@ -2699,7 +2699,7 @@ function TokyoIROSProjectContent() {
                     alt="IROS State Machine Architecture"
                     width={300}
                     height={200}
-                    className="rounded-lg shadow-md object-cover"
+                    className="rounded-xl shadow-md object-cover"
                   />
 
                 </div>
@@ -2721,7 +2721,7 @@ function TokyoIROSProjectContent() {
                     alt="ROS Navigation Stack"
                     width={300}
                     height={200}
-                    className="rounded-lg shadow-md object-cover"
+                    className="rounded-xl shadow-md object-cover"
                   />
 
                 </div>
@@ -2731,19 +2731,19 @@ function TokyoIROSProjectContent() {
                       <h4 className="font-bold mb-3">Advanced Navigation</h4>
                       <ul className="space-y-2 text-sm">
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>ROS Navigation Stack adapted for SIGVerse</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Automatic recovery from unexpected obstacles</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Real-time evasion and replanning algorithms</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>A* and Dijkstra adapted for simulator</span>
                         </li>
                       </ul>
@@ -2768,23 +2768,23 @@ function TokyoIROSProjectContent() {
                       <h4 className="font-bold mb-3">Intelligent Manipulation</h4>
                       <ul className="space-y-2 text-sm">
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>MoveIt! integrated with SIGVerse simulation</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Arm movement planning with collision avoidance</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Virtual furniture and people collision detection</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Geometry-based grasp point calculation</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Stability heuristics for object grasping</span>
                         </li>
                       </ul>
@@ -2797,7 +2797,7 @@ function TokyoIROSProjectContent() {
                     alt="MoveIt! SIGVerse Integration"
                     width={300}
                     height={200}
-                    className="rounded-lg shadow-md object-cover"
+                    className="rounded-xl shadow-md object-cover"
                   />
 
                 </div>
@@ -2819,34 +2819,34 @@ function TokyoIROSProjectContent() {
                     alt="Stereo Vision System"
                     width={300}
                     height={200}
-                    className="rounded-lg shadow-md object-cover"
+                    className="rounded-xl shadow-md object-cover"
                   />
 
 
                 </div>
                 <div className="space-y-6">
-                  <Card className="bg-primary/10 border border-green-500/25 shadow-xl">
+                  <Card className="bg-primary/10 border border-primary/20 shadow-sm shadow-black/5">
                     <CardContent className="p-6">
                       <h4 className="font-bold mb-3">Advanced Perception</h4>
                       <ul className="space-y-2 text-sm">
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Simulated stereo cameras for 3D point clouds</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Mobile obstacle detection and tracking</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>2D image processing for object recognition</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>Interest area recognition (apples, toys, plates)</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
                           <span>YOLO-derived detection techniques</span>
                         </li>
                       </ul>
@@ -2863,7 +2863,7 @@ function TokyoIROSProjectContent() {
 
       {/* Awards and Recognition Section */}
       <FadeIn delay="delay-500">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground">Awards & Recognition</CardTitle>
             <p className="text-muted-foreground">IROS 2022 competition achievements and community recognition</p>
@@ -2871,18 +2871,18 @@ function TokyoIROSProjectContent() {
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Competition Award */}
-              <Card className="bg-yellow-500/10 border-yellow-500/20 border-yellow-200">
+              <Card className="bg-primary/10 border-primary/25 border-primary/25">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-6">
-                    <div className="bg-yellow-200 p-3 rounded-lg">
-                      <Trophy className="h-6 w-6 text-yellow-700" />
+                    <div className="bg-primary/10 p-3 rounded-xl">
+                      <Trophy className="h-6 w-6 text-foreground" />
                     </div>
                     <h3 className="ml-3 text-xl font-bold">3rd Place HandyMan Challenge</h3>
                   </div>
                   <p className="text-muted-foreground mb-4">
                     Achieved 3rd place in the HandyMan Challenge at IROS 2022 (October 23-27, Kyoto), competing against top international teams.
                   </p>
-                  <div className="relative overflow-hidden rounded-lg">
+                  <div className="relative overflow-hidden rounded-xl">
                     <Image
                       src={getAssetPath("/tokio/thirdplace.png")}
                       alt="IROS HandyMan Award Ceremony"
@@ -2898,8 +2898,8 @@ function TokyoIROSProjectContent() {
               <Card className="bg-primary/10 border-primary/25">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-6">
-                    <div className="bg-blue-200 p-3 rounded-lg">
-                      <Award className="h-6 w-6 text-blue-700" />
+                    <div className="bg-muted p-3 rounded-xl">
+                      <Award className="h-6 w-6 text-foreground" />
                     </div>
                     <h3 className="ml-3 text-xl font-bold">IROS Community Recognition</h3>
                   </div>
@@ -2919,7 +2919,7 @@ function TokyoIROSProjectContent() {
                       </div>
                     </div>
                   </div>
-                  <div className="relative overflow-hidden rounded-lg">
+                  <div className="relative overflow-hidden rounded-xl">
                     <Image
                       src={getAssetPath("/tokio/portada.png")}
                       alt="IROS HandyMan Award Ceremony"
@@ -2936,7 +2936,7 @@ function TokyoIROSProjectContent() {
             <Card className="mt-8 bg-gradient-to-r from-primary/5 via-secondary/5 to-primary/5">
               <CardContent className="p-6">
                 <div className="flex items-center mb-6">
-                  <div className="bg-primary/20 p-3 rounded-lg">
+                  <div className="bg-primary/20 p-3 rounded-xl">
                     <Globe className="h-6 w-6 text-primary" />
                   </div>
                   <h3 className="ml-3 text-xl font-bold">IROS 2022 Highlights</h3>
@@ -2945,7 +2945,7 @@ function TokyoIROSProjectContent() {
                   <div>
                     <ul className="space-y-3">
                       <li className="flex items-start space-x-3">
-                        <Star className="h-5 w-5 text-yellow-500 mt-0.5" />
+                        <Star className="h-5 w-5 text-primary mt-0.5" />
                         <span>Premier international robotics conference in Kyoto</span>
                       </li>
                       <li className="flex items-start space-x-3">
@@ -2958,7 +2958,7 @@ function TokyoIROSProjectContent() {
                       </li>
                     </ul>
                   </div>
-                  <div className="relative overflow-hidden rounded-lg">
+                  <div className="relative overflow-hidden rounded-xl">
                     <Image
                       src={getAssetPath("/tokio/premiacion-tokio.jpg")}
                       alt="IROS 2022 Kyoto"
@@ -2977,7 +2977,7 @@ function TokyoIROSProjectContent() {
 
       {/* Leadership Roles Section */}
       <FadeIn delay="delay-600">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground">Leadership Roles</CardTitle>
             <p className="text-muted-foreground">Technical leadership and system architecture</p>
@@ -2989,7 +2989,7 @@ function TokyoIROSProjectContent() {
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <Navigation className="h-6 w-6 text-primary mr-3" />
-                    <h4 className="font-medium text-primary">Navigation & Recovery Leader</h4>
+                    <h4 className="font-medium text-foreground">Navigation & Recovery Leader</h4>
                   </div>
                   <p className="text-sm text-muted-foreground mb-4">
                     Designed autonomous navigation layer and failure replanning mechanisms, ensuring mission completion without interruption.
@@ -3000,7 +3000,7 @@ function TokyoIROSProjectContent() {
                       alt="Navigation Leadership"
                       width={300}
                       height={200}
-                      className="rounded-lg object-cover w-full"
+                      className="rounded-xl object-cover w-full"
                     />
                   </div>
                 </CardContent>
@@ -3010,8 +3010,8 @@ function TokyoIROSProjectContent() {
               <Card className="bg-primary/10 border-primary/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <Cog className="h-6 w-6 text-green-700 mr-3" />
-                    <h4 className="font-medium text-green-700">ROS-SIGVerse Integration Architect</h4>
+                    <Cog className="h-6 w-6 text-primary mr-3" />
+                    <h4 className="font-medium text-foreground">ROS-SIGVerse Integration Architect</h4>
                   </div>
                   <p className="text-sm text-muted-foreground mb-4">
                     Coordinated ROS node adaptation for SIGVerse virtual environment, ensuring synchrony between simulator and real control.
@@ -3022,7 +3022,7 @@ function TokyoIROSProjectContent() {
                       alt="Integration Architecture"
                       width={300}
                       height={200}
-                      className="rounded-lg object-cover w-full"
+                      className="rounded-xl object-cover w-full"
                     />
                   </div>
                 </CardContent>
@@ -3033,26 +3033,26 @@ function TokyoIROSProjectContent() {
             <Card className="mt-8 bg-primary/10 border-border">
               <CardContent className="p-6">
                 <div className="flex items-center mb-6">
-                  <div className="bg-blue-200 p-3 rounded-lg">
-                    <BookOpen className="h-6 w-6 text-blue-700" />
+                  <div className="bg-muted p-3 rounded-xl">
+                    <BookOpen className="h-6 w-6 text-foreground" />
                   </div>
                   <h3 className="ml-3 text-xl font-bold">Training & Mentorship</h3>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="bg-card border border-border p-4 rounded-lg">
-                    <h4 className="font-medium text-primary mb-2">MoveIt! Best Practices</h4>
+                  <div className="bg-card border border-border p-4 rounded-xl">
+                    <h4 className="font-medium text-foreground mb-2">MoveIt! Best Practices</h4>
                     <p className="text-sm text-muted-foreground">
                       Trained team in advanced manipulation planning, optimization techniques, and collision avoidance strategies.
                     </p>
                   </div>
-                  <div className="bg-card border border-border p-4 rounded-lg">
-                    <h4 className="font-medium text-primary mb-2">SIGVerse Simulation</h4>
+                  <div className="bg-card border border-border p-4 rounded-xl">
+                    <h4 className="font-medium text-foreground mb-2">SIGVerse Simulation</h4>
                     <p className="text-sm text-muted-foreground">
                       Conducted comprehensive training on virtual environment setup, debugging, and performance optimization.
                     </p>
                   </div>
-                  <div className="bg-card border border-border p-4 rounded-lg">
-                    <h4 className="font-medium text-primary mb-2">Code Review & Testing</h4>
+                  <div className="bg-card border border-border p-4 rounded-xl">
+                    <h4 className="font-medium text-foreground mb-2">Code Review & Testing</h4>
                     <p className="text-sm text-muted-foreground">
                       Organized code review sessions and cross-testing protocols to ensure system reliability and robustness.
                     </p>
@@ -3066,7 +3066,7 @@ function TokyoIROSProjectContent() {
 
       {/* Impact Section */}
       <FadeIn delay="delay-700">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground">Academic & Social Impact</CardTitle>
             <p className="text-muted-foreground">International recognition and educational legacy</p>
@@ -3077,7 +3077,7 @@ function TokyoIROSProjectContent() {
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <Globe className="h-6 w-6 text-primary mr-3" />
-                    <h4 className="font-medium text-primary">International Recognition</h4>
+                    <h4 className="font-medium text-foreground">International Recognition</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Positioned Roborregos on the IROS scene and reinforced Tec de Monterrey's reputation in service robotics.
@@ -3088,7 +3088,7 @@ function TokyoIROSProjectContent() {
                       alt="International Recognition"
                       width={300}
                       height={200}
-                      className="rounded-lg object-cover w-full"
+                      className="rounded-xl object-cover w-full"
                     />
                   </div>
                 </CardContent>
@@ -3097,8 +3097,8 @@ function TokyoIROSProjectContent() {
               <Card className="bg-primary/10 border-primary/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <FileText className="h-6 w-6 text-green-700 mr-3" />
-                    <h4 className="font-medium text-green-700">Reusable Resources</h4>
+                    <FileText className="h-6 w-6 text-primary mr-3" />
+                    <h4 className="font-medium text-foreground">Reusable Resources</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Navigation packages and ROS-AWS integration scripts documented and shared for future simulation projects.
@@ -3109,7 +3109,7 @@ function TokyoIROSProjectContent() {
                       alt="Reusable Resources"
                       width={300}
                       height={200}
-                      className="rounded-lg object-cover w-full"
+                      className="rounded-xl object-cover w-full"
                     />
                   </div>
                 </CardContent>
@@ -3119,7 +3119,7 @@ function TokyoIROSProjectContent() {
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <Star className="h-6 w-6 text-primary mr-3" />
-                    <h4 className="font-medium text-primary">Inspiration & Research</h4>
+                    <h4 className="font-medium text-foreground">Inspiration & Research</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Motivated student community to explore human-robot interaction in virtual environments, driving new SLAM and VR research.
@@ -3130,7 +3130,7 @@ function TokyoIROSProjectContent() {
                       alt="Research Inspiration"
                       width={300}
                       height={200}
-                      className="rounded-lg object-cover w-full"
+                      className="rounded-xl object-cover w-full"
                     />
                   </div>
                 </CardContent>
@@ -3174,7 +3174,7 @@ function ChakriProjectContent() {
 
       {/* Main screenshot */}
       <FadeIn delay="delay-250">
-        <div className="rounded-xl overflow-hidden border border-border shadow-xl">
+        <div className="rounded-xl overflow-hidden border border-border shadow-sm shadow-black/5">
           <Image
             src={getAssetPath('/bacmodelos/mainpage.png')}
             alt="BAC Modelos main page"
@@ -3188,7 +3188,7 @@ function ChakriProjectContent() {
       {/* Challenge + Solution */}
       <FadeIn delay="delay-300">
         <div className="grid md:grid-cols-2 gap-6">
-          <Card className="bg-card border-border shadow-xl">
+          <Card className="bg-card border-border shadow-sm shadow-black/5">
             <CardHeader>
               <CardTitle className="text-xl text-foreground flex items-center gap-2">
                 <Target className="h-5 w-5 text-primary" /> The Challenge
@@ -3204,7 +3204,7 @@ function ChakriProjectContent() {
               </p>
             </CardContent>
           </Card>
-          <Card className="bg-card border-border shadow-xl">
+          <Card className="bg-card border-border shadow-sm shadow-black/5">
             <CardHeader>
               <CardTitle className="text-xl text-foreground flex items-center gap-2">
                 <Lightbulb className="h-5 w-5 text-primary" /> The Solution
@@ -3225,7 +3225,7 @@ function ChakriProjectContent() {
 
       {/* Feature Highlights */}
       <FadeIn delay="delay-350">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground flex items-center">
               <Sparkles className="mr-3 h-6 w-6 text-primary" />
@@ -3243,7 +3243,7 @@ function ChakriProjectContent() {
                 {icon:Settings, title:'Admin Dashboard',        body:'Internal tooling for content operations, manufacturer management, product management, and moderation.'},
                 {icon:BarChart, title:'Analytics Layer',        body:'GA-connected dashboards with D3 visual charts and live Firestore-backed download activity counts.'},
               ].map(f=>(
-                <div key={f.title} className="bg-card border border-border rounded-lg p-5 hover:border-primary/30 transition-colors">
+                <div key={f.title} className="bg-card border border-border rounded-xl p-5 hover:border-primary/30 transition-colors">
                   <div className="flex items-center gap-2.5 mb-3">
                     <div className="w-8 h-8 rounded-md bg-primary/10 flex items-center justify-center shrink-0">
                       <f.icon className="h-4 w-4 text-primary" />
@@ -3272,7 +3272,7 @@ function ChakriProjectContent() {
             <div className="space-y-2">
               {['Search + Elasticsearch-powered APIs','Category / manufacturer / format filters','Product ratings, favorites, download tracking','Gated downloads with Firebase token auth'].map(i=>(
                 <div key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <CheckCircle className="h-3.5 w-3.5 text-green-700 shrink-0" />{i}
+                  <CheckCircle className="h-3.5 w-3.5 text-primary shrink-0" />{i}
                 </div>
               ))}
             </div>
@@ -3323,7 +3323,7 @@ function ChakriProjectContent() {
 
       {/* Tech Stack */}
       <FadeIn delay="delay-500">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground flex items-center">
               <Code className="mr-3 h-6 w-6 text-primary" />
@@ -3331,14 +3331,14 @@ function ChakriProjectContent() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
               {[
                 {cat:'Frontend',      items:['Next.js 16','React 18','TypeScript','Tailwind CSS']},
                 {cat:'Rich UI',       items:['D3 charts','TipTap editor','React Icons','Suspense']},
                 {cat:'Backend / Cloud',items:['Firebase Auth','Firestore','Firebase Storage','Cloud Functions','Elasticsearch']},
                 {cat:'Quality / DX',  items:['ESLint + Prettier','Husky','Docker','Firebase emulators']},
               ].map(g=>(
-                <div key={g.cat} className="bg-card border border-border rounded-lg p-4">
+                <div key={g.cat} className="bg-card border border-border rounded-xl p-4">
                   <div className="font-mono text-[10px] text-primary/70 uppercase tracking-widest mb-3">{g.cat}</div>
                   <div className="space-y-1.5">
                     {g.items.map(i=>(<div key={i} className="flex items-center gap-1.5"><div className="w-1 h-1 rounded-full bg-primary/50" /><span className="text-xs text-muted-foreground">{i}</span></div>))}
@@ -3352,7 +3352,7 @@ function ChakriProjectContent() {
 
       {/* Architecture */}
       <FadeIn delay="delay-550">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground flex items-center">
               <Network className="mr-3 h-6 w-6 text-primary" />
@@ -3360,26 +3360,26 @@ function ChakriProjectContent() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 mb-6">
               {[
                 {label:'API Routes',  value:'58',  sub:'Next.js App Router handlers'},
                 {label:'Admin Files', value:'36',  sub:'Full admin area surface'},
                 {label:'Components',  value:'45',  sub:'Reusable UI components'},
                 {label:'App Files',   value:'122', sub:'Total pages and modules'},
               ].map(s=>(
-                <div key={s.label} className="bg-card border border-border rounded-lg p-4 text-center">
-                  <div className="font-display text-3xl font-bold text-primary">{s.value}</div>
+                <div key={s.label} className="bg-card border border-border rounded-xl p-4 text-center">
+                  <div className="font-display text-3xl font-bold text-foreground">{s.value}</div>
                   <div className="font-mono text-xs text-foreground mt-1">{s.label}</div>
                   <div className="font-body text-[11px] text-muted-foreground/70 mt-0.5">{s.sub}</div>
                 </div>
               ))}
             </div>
-            <div className="bg-card border border-border rounded-lg p-5 font-mono text-xs text-muted-foreground/80 leading-loose mb-4">
+            <div className="bg-card border border-border rounded-xl p-5 font-mono text-xs text-muted-foreground/80 leading-loose mb-4">
               <div className="text-primary/60 text-[10px] uppercase tracking-widest mb-3">Data Flow</div>
               <div className="flex flex-col gap-1">
                 <span><span className="text-primary">Architects / Designers / Admins</span>  →  Next.js Web App (SSR + ISR)</span>
                 <span className="pl-4 text-muted-foreground/50">↓  58 API Route Handlers</span>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-2 mt-1 pl-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 mt-1 pl-4">
                   {['Firebase Auth','Firestore','Firebase Storage','Elasticsearch','Google Analytics API','Cloud Functions'].map(s=>(
                     <span key={s} className="border border-border rounded px-2 py-1 text-[10px] text-muted-foreground/70">{s}</span>
                   ))}
@@ -3394,7 +3394,7 @@ function ChakriProjectContent() {
                 'Image optimization with AVIF / WebP; secure downloads gated by Firebase tokens',
               ].map(i=>(
                 <div key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-                  <CheckCircle className="h-3.5 w-3.5 text-green-700 mt-0.5 shrink-0" />{i}
+                  <CheckCircle className="h-3.5 w-3.5 text-primary mt-0.5 shrink-0" />{i}
                 </div>
               ))}
             </div>
@@ -3404,7 +3404,7 @@ function ChakriProjectContent() {
 
       {/* Why it matters */}
       <FadeIn delay="delay-600">
-        <Card className="bg-gradient-to-r from-primary/5 to-primary/10 shadow-xl">
+        <Card className="bg-primary/10 shadow-sm shadow-black/5">
           <CardContent className="p-8">
             <div className="flex items-start gap-4">
               <div className="w-10 h-10 rounded-xl bg-primary/15 flex items-center justify-center shrink-0">
@@ -3456,16 +3456,16 @@ function JohnDeereProjectContent() {
       {/* Project Overview Section */}
       <div id="overview">
         <FadeIn delay="delay-200">
-          <Card className="shadow-xl">
+          <Card className="shadow-sm shadow-black/5">
             <CardHeader>
               <CardTitle className="text-3xl text-foreground flex items-center justify-center">
-                <Truck className="mr-3 h-8 w-8 text-green-700" />
+                <Truck className="mr-3 h-8 w-8 text-primary" />
                 John Deere Supply Chain Systems
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-8">
               <div className="text-center">
-                <h3 className="text-xl font-bold text-green-700 mb-4">Advanced Agricultural Technology Solutions</h3>
+                <h3 className="text-xl font-bold text-foreground mb-4">Advanced Agricultural Technology Solutions</h3>
                 <p className="text-muted-foreground max-w-4xl mx-auto text-lg leading-relaxed">
                   As a <strong>Supply Chain Management Intern at John Deere</strong>, I built internal systems that improved
                   reservation workflows, inventory visibility, and loss-prevention monitoring. The work combined SAP automation,
@@ -3477,10 +3477,10 @@ function JohnDeereProjectContent() {
                 <Card className="bg-primary/10 border-primary/20 border-primary/25 ">
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
-                      <div className="bg-green-600/10 p-3 rounded-lg">
-                        <ShoppingCart className="h-6 w-6 text-green-700" />
+                      <div className="bg-primary/10 p-3 rounded-xl">
+                        <ShoppingCart className="h-6 w-6 text-primary" />
                       </div>
-                      <h4 className="ml-3 text-lg font-bold text-green-700 ">IM Reserver</h4>
+                      <h4 className="ml-3 text-lg font-bold text-foreground ">IM Reserver</h4>
                     </div>
                     <p className="text-sm text-muted-foreground">
                       A customer self-service web/app reservation system with fully automated checkout,
@@ -3492,7 +3492,7 @@ function JohnDeereProjectContent() {
                 <Card className="bg-primary/10 border-border border-primary/25 ">
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
-                      <div className="bg-blue-600/10 p-3 rounded-lg">
+                      <div className="bg-muted p-3 rounded-xl">
                         <Shield className="h-6 w-6 text-primary" />
                       </div>
                       <h4 className="ml-3 text-lg font-bold text-foreground">ShelfGuard</h4>
@@ -3505,7 +3505,7 @@ function JohnDeereProjectContent() {
                 </Card>
               </div>
 
-              <div className="bg-gradient-to-r from-primary/5 to-primary/10 p-6 rounded-lg">
+              <div className="bg-primary/10 p-6 rounded-xl">
                 <p className="text-center text-muted-foreground">
                   <strong>Key Achievement:</strong> IM Reserver leveraged end-to-end SAP automation, Azure services,
                   and Power Platform flows to streamline supply management across John Deere operations.
@@ -3519,35 +3519,35 @@ function JohnDeereProjectContent() {
       {/* Project 1: IM Reserver */}
       <div id="im-reserver">
         <FadeIn delay="delay-300">
-          <Card className="shadow-xl">
+          <Card className="shadow-sm shadow-black/5">
             <CardHeader>
               <CardTitle className="text-2xl text-foreground flex items-center">
-                <ShoppingCart className="mr-3 h-6 w-6 text-green-700" />
+                <ShoppingCart className="mr-3 h-6 w-6 text-primary" />
                 IM Reserver - Automated In-Store Reservation Platform
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-8">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div className="space-y-6">
-                  <h3 className="text-xl font-bold text-green-700">Revolutionary Customer Experience</h3>
+                  <h3 className="text-xl font-bold text-foreground">Revolutionary Customer Experience</h3>
                   <ul className="space-y-3">
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-700 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                       <span>Mobile/web interface lets customers reserve equipment or parts and pick up without cashier intervention</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-700 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                       <span>Real-time inventory sync via custom SAP ABAP function   modules keeps stock levels current</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-700 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                       <span>Azure Functions and AWS Lambda handle backend logic, while Power Platform dashboards let the supply team approve reservations and monitor alerts</span>
                     </li>
                   </ul>
                 </div>
 
                 <div className="relative">
-                  <div className="aspect-video rounded-lg overflow-hidden shadow-lg">
+                  <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
                     <video
                       controls
                       className="w-full h-full object-cover"
@@ -3567,14 +3567,14 @@ function JohnDeereProjectContent() {
 
               <div>
                 <h3 className="text-xl font-bold mb-6 flex items-center">
-                  <Settings className="mr-3 h-6 w-6 text-green-700" />
+                  <Settings className="mr-3 h-6 w-6 text-primary" />
                   Key Features & Capabilities
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   <Card className="bg-secondary/5">
                     <CardContent className="p-4">
                       <div className="flex items-center mb-3">
-                        <Zap className="h-5 w-5 text-green-700 mr-2" />
+                        <Zap className="h-5 w-5 text-primary mr-2" />
                         <h4 className="font-medium">Instant Reservation</h4>
                       </div>
                       <p className="text-sm text-muted-foreground">
@@ -3586,7 +3586,7 @@ function JohnDeereProjectContent() {
                   <Card className="bg-secondary/5">
                     <CardContent className="p-4">
                       <div className="flex items-center mb-3">
-                        <Smartphone className="h-5 w-5 text-green-700 mr-2" />
+                        <Smartphone className="h-5 w-5 text-primary mr-2" />
                         <h4 className="font-medium">Mobile-First Design</h4>
                       </div>
                       <p className="text-sm text-muted-foreground">
@@ -3598,7 +3598,7 @@ function JohnDeereProjectContent() {
                   <Card className="bg-secondary/5">
                     <CardContent className="p-4">
                       <div className="flex items-center mb-3">
-                        <Network className="h-5 w-5 text-green-700 mr-2" />
+                        <Network className="h-5 w-5 text-primary mr-2" />
                         <h4 className="font-medium">SAP Integration</h4>
                       </div>
                       <p className="text-sm text-muted-foreground">
@@ -3610,7 +3610,7 @@ function JohnDeereProjectContent() {
                   <Card className="bg-secondary/5">
                     <CardContent className="p-4">
                       <div className="flex items-center mb-3">
-                        <Cloud className="h-5 w-5 text-green-700 mr-2" />
+                        <Cloud className="h-5 w-5 text-primary mr-2" />
                         <h4 className="font-medium">Azure Logic Apps</h4>
                       </div>
                       <p className="text-sm text-muted-foreground">
@@ -3630,7 +3630,7 @@ function JohnDeereProjectContent() {
       {/* Project 2: ShelfGuard */}
       <div id="shelf-guard">
         <FadeIn delay="delay-400">
-          <Card className="shadow-xl">
+          <Card className="shadow-sm shadow-black/5">
             <CardHeader>
               <CardTitle className="text-2xl text-foreground flex items-center">
                 <Shield className="mr-3 h-6 w-6 text-primary" />
@@ -3640,7 +3640,7 @@ function JohnDeereProjectContent() {
             <CardContent className="space-y-8">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div className="space-y-6">
-                  <h3 className="text-xl font-bold text-primary">Intelligent Security Solution</h3>
+                  <h3 className="text-xl font-bold text-foreground">Intelligent Security Solution</h3>
                   <ul className="space-y-3">
                     <li className="flex items-start space-x-3">
                       <Eye className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
@@ -3658,7 +3658,7 @@ function JohnDeereProjectContent() {
                 </div>
 
                 <div className="relative">
-                  <div className="aspect-video rounded-lg overflow-hidden shadow-lg">
+                  <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
                     <video
                       controls
                       className="w-full h-full object-cover"
@@ -3715,7 +3715,7 @@ function JohnDeereProjectContent() {
       {/* Technology Stack */}
       <div id="tech-stack">
         <FadeIn delay="delay-500">
-          <Card className="shadow-xl">
+          <Card className="shadow-sm shadow-black/5">
             <CardHeader>
               <CardTitle className="text-2xl text-foreground flex items-center justify-center">
                 <Layers className="mr-3 h-6 w-6 text-primary" />
@@ -3723,9 +3723,9 @@ function JohnDeereProjectContent() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
                 <div className="text-center space-y-3">
-                  <div className="bg-muted  p-4 rounded-lg">
+                  <div className="bg-muted  p-4 rounded-xl">
                     <FileText className="h-8 w-8 text-primary mx-auto" />
                   </div>
                   <div>
@@ -3735,8 +3735,8 @@ function JohnDeereProjectContent() {
                 </div>
 
                 <div className="text-center space-y-3">
-                  <div className="bg-primary/10  p-4 rounded-lg">
-                    <Cog className="h-8 w-8 text-green-700 mx-auto" />
+                  <div className="bg-primary/10  p-4 rounded-xl">
+                    <Cog className="h-8 w-8 text-primary mx-auto" />
                   </div>
                   <div>
                     <h4 className="font-medium text-sm">ABAP</h4>
@@ -3745,7 +3745,7 @@ function JohnDeereProjectContent() {
                 </div>
 
                 <div className="text-center space-y-3">
-                  <div className="bg-muted  p-4 rounded-lg">
+                  <div className="bg-muted  p-4 rounded-xl">
                     <Cloud className="h-8 w-8 text-primary mx-auto" />
                   </div>
                   <div>
@@ -3755,7 +3755,7 @@ function JohnDeereProjectContent() {
                 </div>
 
                 <div className="text-center space-y-3">
-                  <div className="bg-muted  p-4 rounded-lg">
+                  <div className="bg-muted  p-4 rounded-xl">
                     <Zap className="h-8 w-8 text-primary mx-auto" />
                   </div>
                   <div>
@@ -3765,8 +3765,8 @@ function JohnDeereProjectContent() {
                 </div>
 
                 <div className="text-center space-y-3">
-                  <div className="bg-muted  p-4 rounded-lg">
-                    <Eye className="h-8 w-8 text-yellow-400 mx-auto" />
+                  <div className="bg-muted  p-4 rounded-xl">
+                    <Eye className="h-8 w-8 text-primary mx-auto" />
                   </div>
                   <div>
                     <h4 className="font-medium text-sm">OpenCV</h4>
@@ -3775,8 +3775,8 @@ function JohnDeereProjectContent() {
                 </div>
 
                 <div className="text-center space-y-3">
-                  <div className="bg-muted  p-4 rounded-lg">
-                    <Brain className="h-8 w-8 text-red-600 mx-auto" />
+                  <div className="bg-muted  p-4 rounded-xl">
+                    <Brain className="h-8 w-8 text-muted-foreground mx-auto" />
                   </div>
                   <div>
                     <h4 className="font-medium text-sm">OpenVINO</h4>
@@ -3798,7 +3798,7 @@ function VanttecProjectContent() {
     <div className="space-y-12">
       {/* About VANTTEC Section */}
       <FadeIn delay="delay-300">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground flex items-center">
               <Globe className="mr-3 h-6 w-6 text-primary" />
@@ -3807,7 +3807,7 @@ function VanttecProjectContent() {
           </CardHeader>
           <CardContent className="space-y-8">
             <div className="text-center">
-              <h3 className="text-xl font-bold text-primary mb-2">Innovation in Autonomous Vehicles</h3>
+              <h3 className="text-xl font-bold text-foreground mb-2">Innovation in Autonomous Vehicles</h3>
               <p className="text-muted-foreground max-w-2xl mx-auto">
                 Research group from Tec de Monterrey focused on developing autonomous aerial and marine systems.
               </p>
@@ -3817,7 +3817,7 @@ function VanttecProjectContent() {
               <Card className="bg-secondary/5">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
+                    <div className="bg-primary/10 p-3 rounded-xl">
                       <Trophy className="h-6 w-6 text-primary" />
                     </div>
                     <h4 className="ml-3 text-lg font-medium">Mission</h4>
@@ -3831,7 +3831,7 @@ function VanttecProjectContent() {
               <Card className="bg-secondary/5">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
+                    <div className="bg-primary/10 p-3 rounded-xl">
                       <Award className="h-6 w-6 text-primary" />
                     </div>
                     <h4 className="ml-3 text-lg font-medium">Competitions</h4>
@@ -3845,7 +3845,7 @@ function VanttecProjectContent() {
               <Card className="bg-secondary/5">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
+                    <div className="bg-primary/10 p-3 rounded-xl">
                       <Star className="h-6 w-6 text-primary" />
                     </div>
                     <h4 className="ml-3 text-lg font-medium">Collaborations</h4>
@@ -3862,7 +3862,7 @@ function VanttecProjectContent() {
 
       {/* Vehicles Section */}
       <FadeIn delay="delay-400">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground">Our Vehicles</CardTitle>
             <p className="text-muted-foreground">Innovative autonomous systems competing globally</p>
@@ -3870,7 +3870,7 @@ function VanttecProjectContent() {
           <CardContent className="space-y-12">
             {/* Autonomous Boat */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div className="relative overflow-hidden rounded-lg shadow-lg aspect-video">
+              <div className="relative overflow-hidden rounded-xl shadow-lg aspect-video">
                 <iframe
                   src="https://www.youtube.com/embed/dAObTRLfQEE?si=7plRS60a2Qzlwgu5"
                   title="Autonomous Boat Demo"
@@ -3885,7 +3885,7 @@ function VanttecProjectContent() {
                 <p className="text-muted-foreground mb-6">
                   Our autonomous surface vehicle designed to compete in RoboBoat. Capable of navigating predefined routes, avoiding obstacles, and completing complex missions autonomously.
                 </p>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex items-start space-x-3">
                     <Cpu className="h-5 w-5 text-primary mt-0.5" />
                     <div>
@@ -3923,7 +3923,7 @@ function VanttecProjectContent() {
             {/* Autonomous Submarine */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="lg:order-last">
-                <div className="relative overflow-hidden rounded-lg shadow-lg aspect-video">
+                <div className="relative overflow-hidden rounded-xl shadow-lg aspect-video">
                   <iframe
                     src="https://www.youtube.com/embed/f6_OrUrVz84?si=bPnS3Ug2ikezZ02J"
                     title="Autonomous Submarine Demo"
@@ -3939,7 +3939,7 @@ function VanttecProjectContent() {
                 <p className="text-muted-foreground mb-6">
                   Autonomous underwater vehicle designed to compete in RoboSub. Equipped with advanced vision and navigation systems to operate in challenging underwater environments.
                 </p>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex items-start space-x-3">
                     <div className="h-5 w-5 bg-primary rounded-full mt-0.5" />
                     <div>
@@ -3978,10 +3978,10 @@ function VanttecProjectContent() {
 
       {/* Competition Awards Section */}
       <FadeIn delay="delay-450">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground flex items-center">
-              <Trophy className="mr-3 h-6 w-6 text-yellow-500" />
+              <Trophy className="mr-3 h-6 w-6 text-primary" />
               Competition Awards & Recognition
             </CardTitle>
             <p className="text-muted-foreground">
@@ -3990,9 +3990,9 @@ function VanttecProjectContent() {
           </CardHeader>
           <CardContent className="space-y-8">
             {/* Competition Difficulty Context */}
-            <div className="bg-gradient-to-r from-amber-50 to-orange-50 p-6 rounded-lg border border-amber-200 ">
+            <div className="bg-gradient-to-r from-white to-muted p-6 rounded-xl border border-border ">
               <div className="flex items-start space-x-4">
-                <Globe className="h-6 w-6 text-amber-600 mt-1 flex-shrink-0" />
+                <Globe className="h-6 w-6 text-muted-foreground mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="text-lg font-bold text-foreground mb-2">Global Competition</h3>
                   <p className="text-muted-foreground text-sm mb-3">
@@ -4012,11 +4012,11 @@ function VanttecProjectContent() {
               <Card className="bg-primary/10 border-border border-primary/25 ">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-6">
-                    <div className="bg-blue-600/10 p-3 rounded-lg">
+                    <div className="bg-muted p-3 rounded-xl">
                       <Car className="h-8 w-8 text-primary" />
                     </div>
                     <div className="ml-4">
-                      <h3 className="text-xl font-bold text-primary ">RoboBoat Awards</h3>
+                      <h3 className="text-xl font-bold text-foreground ">RoboBoat Awards</h3>
                       <p className="text-sm text-primary ">Autonomous Surface Vehicle Competition</p>
                     </div>
                   </div>
@@ -4027,62 +4027,62 @@ function VanttecProjectContent() {
                       alt="RoboBoat Competition Award"
                       width={200}
                       height={150}
-                      className="rounded-lg shadow-md mx-auto"
+                      className="rounded-xl shadow-md mx-auto"
                     />
                   </div>
 
                   <div className="space-y-6">
                     <div>
-                      <h4 className="font-bold text-primary  mb-3">2021 Achievements:</h4>
+                      <h4 className="font-bold text-foreground  mb-3">2021 Achievements:</h4>
                       <div className="space-y-2">
                         <div className="flex items-start space-x-3">
-                          <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
+                          <Trophy className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
                           <span className="text-sm">1st Place Skills Video Sensor Optimization</span>
                         </div>
                         <div className="flex items-start space-x-3">
-                          <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
+                          <Trophy className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
                           <span className="text-sm">1st Place Skills Video Power Management</span>
                         </div>
                         <div className="flex items-start space-x-3">
-                          <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
+                          <Trophy className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
                           <span className="text-sm">1st Place Optional Video</span>
                         </div>
                         <div className="flex items-start space-x-3">
-                          <Award className="h-4 w-4 text-orange-500 mt-1 flex-shrink-0" />
+                          <Award className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
                           <span className="text-sm">3rd Place Website</span>
                         </div>
                         <div className="flex items-start space-x-3">
-                          <Award className="h-4 w-4 text-orange-500 mt-1 flex-shrink-0" />
+                          <Award className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
                           <span className="text-sm">4th Place Technical Design Report</span>
                         </div>
                         <div className="flex items-start space-x-3">
-                          <Star className="h-4 w-4 text-purple-500 mt-1 flex-shrink-0" />
+                          <Star className="h-4 w-4 text-muted-foreground mt-1 flex-shrink-0" />
                           <span className="text-sm">Special Award Advanced Techniques</span>
                         </div>
                       </div>
                     </div>
 
                     <div>
-                      <h4 className="font-bold text-primary  mb-3">2020 Achievements:</h4>
+                      <h4 className="font-bold text-foreground  mb-3">2020 Achievements:</h4>
                       <div className="space-y-2">
                         <div className="flex items-start space-x-3">
-                          <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
+                          <Trophy className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
                           <span className="text-sm">1st Place 2020 Overall Standings</span>
                         </div>
                         <div className="flex items-start space-x-3">
-                          <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
+                          <Trophy className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
                           <span className="text-sm">1st Place 2020 Technical Design Report</span>
                         </div>
                         <div className="flex items-start space-x-3">
-                          <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
+                          <Trophy className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
                           <span className="text-sm">1st Place 2020 Website</span>
                         </div>
                         <div className="flex items-start space-x-3">
-                          <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
+                          <Trophy className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
                           <span className="text-sm">1st Place 2020 Video</span>
                         </div>
                         <div className="flex items-start space-x-3">
-                          <Star className="h-4 w-4 text-purple-500 mt-1 flex-shrink-0" />
+                          <Star className="h-4 w-4 text-muted-foreground mt-1 flex-shrink-0" />
                           <span className="text-sm">Special Award 2020 Evidence In Testing</span>
                         </div>
                       </div>
@@ -4092,14 +4092,14 @@ function VanttecProjectContent() {
               </Card>
 
               {/* RoboSub Awards */}
-              <Card className="bg-primary/10 border border-border shadow-xl">
+              <Card className="bg-primary/10 border border-border shadow-sm shadow-black/5">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-6">
-                    <div className="bg-primary/10 p-3 rounded-lg border border-border">
+                    <div className="bg-primary/10 p-3 rounded-xl border border-border">
                       <Navigation className="h-8 w-8 text-primary" />
                     </div>
                     <div className="ml-4">
-                      <h3 className="text-xl font-bold text-primary">RoboSub Awards</h3>
+                      <h3 className="text-xl font-bold text-foreground">RoboSub Awards</h3>
                       <p className="text-sm text-primary/80">Autonomous Underwater Vehicle Competition</p>
                     </div>
                   </div>
@@ -4110,7 +4110,7 @@ function VanttecProjectContent() {
                       alt="RoboSub Competition Award"
                       width={200}
                       height={150}
-                      className="rounded-lg shadow-md mx-auto"
+                      className="rounded-xl shadow-md mx-auto"
                     />
                   </div>
 
@@ -4119,21 +4119,21 @@ function VanttecProjectContent() {
                       <h4 className="font-bold text-foreground  mb-3">2020 Achievements:</h4>
                       <div className="space-y-2">
                         <div className="flex items-start space-x-3">
-                          <Award className="h-4 w-4 text-orange-500 mt-1 flex-shrink-0" />
+                          <Award className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
                           <span className="text-sm">3rd Place 2020 Overall Standings</span>
                         </div>
                         <div className="flex items-start space-x-3">
-                          <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
+                          <Trophy className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
                           <span className="text-sm">1st Place 2020 Video Submission</span>
                         </div>
                         <div className="flex items-start space-x-3">
-                          <Award className="h-4 w-4 text-orange-500 mt-1 flex-shrink-0" />
+                          <Award className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
                           <span className="text-sm">4th Place 2020 Website</span>
                         </div>
                       </div>
                     </div>
 
-                    <div className="bg-primary/10  p-4 rounded-lg">
+                    <div className="bg-primary/10  p-4 rounded-xl">
                       <div className="flex items-start space-x-3">
                         <Target className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                         <div>
@@ -4155,7 +4155,7 @@ function VanttecProjectContent() {
 
       {/* Technologies Section */}
       <FadeIn delay="delay-500">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground">Key Technologies</CardTitle>
             <p className="text-muted-foreground">Our technology stack</p>
@@ -4166,22 +4166,22 @@ function VanttecProjectContent() {
               <Card className="bg-secondary/5 hover:bg-secondary/10 transition-colors">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
+                    <div className="bg-primary/10 p-3 rounded-xl">
                       <Map className="h-6 w-6 text-primary" />
                     </div>
                     <h4 className="ml-3 text-lg font-medium">Navigation</h4>
                   </div>
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-start space-x-2">
-                      <div className="h-1.5 w-1.5 bg-green-500 rounded-full mt-2" />
+                      <div className="h-1.5 w-1.5 bg-primary rounded-full mt-2" />
                       <span>High-level state machine</span>
                     </li>
                     <li className="flex items-start space-x-2">
-                      <div className="h-1.5 w-1.5 bg-green-500 rounded-full mt-2" />
+                      <div className="h-1.5 w-1.5 bg-primary rounded-full mt-2" />
                       <span>Body-NED transforms for navigation</span>
                     </li>
                     <li className="flex items-start space-x-2">
-                      <div className="h-1.5 w-1.5 bg-green-500 rounded-full mt-2" />
+                      <div className="h-1.5 w-1.5 bg-primary rounded-full mt-2" />
                       <span>ORBSLAM3 for underwater localization</span>
                     </li>
                   </ul>
@@ -4192,22 +4192,22 @@ function VanttecProjectContent() {
               <Card className="bg-secondary/5 hover:bg-secondary/10 transition-colors">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
+                    <div className="bg-primary/10 p-3 rounded-xl">
                       <Satellite className="h-6 w-6 text-primary" />
                     </div>
                     <h4 className="ml-3 text-lg font-medium">Communication</h4>
                   </div>
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-start space-x-2">
-                      <div className="h-1.5 w-1.5 bg-green-500 rounded-full mt-2" />
+                      <div className="h-1.5 w-1.5 bg-primary rounded-full mt-2" />
                       <span>XBee (RF) for vehicle-base communication</span>
                     </li>
                     <li className="flex items-start space-x-2">
-                      <div className="h-1.5 w-1.5 bg-green-500 rounded-full mt-2" />
+                      <div className="h-1.5 w-1.5 bg-primary rounded-full mt-2" />
                       <span>CAN protocols for vehicle control</span>
                     </li>
                     <li className="flex items-start space-x-2">
-                      <div className="h-1.5 w-1.5 bg-green-500 rounded-full mt-2" />
+                      <div className="h-1.5 w-1.5 bg-primary rounded-full mt-2" />
                       <span>Real-time telemetry</span>
                     </li>
                   </ul>
@@ -4218,22 +4218,22 @@ function VanttecProjectContent() {
               <Card className="bg-secondary/5 hover:bg-secondary/10 transition-colors">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
+                    <div className="bg-primary/10 p-3 rounded-xl">
                       <Eye className="h-6 w-6 text-primary" />
                     </div>
                     <h4 className="ml-3 text-lg font-medium">Computer Vision</h4>
                   </div>
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-start space-x-2">
-                      <div className="h-1.5 w-1.5 bg-green-500 rounded-full mt-2" />
+                      <div className="h-1.5 w-1.5 bg-primary rounded-full mt-2" />
                       <span>Stereo cameras for point clouds</span>
                     </li>
                     <li className="flex items-start space-x-2">
-                      <div className="h-1.5 w-1.5 bg-green-500 rounded-full mt-2" />
+                      <div className="h-1.5 w-1.5 bg-primary rounded-full mt-2" />
                       <span>YOLO Darknet for object detection</span>
                     </li>
                     <li className="flex items-start space-x-2">
-                      <div className="h-1.5 w-1.5 bg-green-500 rounded-full mt-2" />
+                      <div className="h-1.5 w-1.5 bg-primary rounded-full mt-2" />
                       <span>RANSAC for point cloud filtering</span>
                     </li>
                   </ul>
@@ -4246,7 +4246,7 @@ function VanttecProjectContent() {
 
       {/* Achievements Section */}
       <FadeIn delay="delay-600">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground">Achievements</CardTitle>
             <p className="text-muted-foreground">Recognition and awards</p>
@@ -4254,10 +4254,10 @@ function VanttecProjectContent() {
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* RoboNation Competitions */}
-              <Card className="bg-gradient-to-br from-primary/5 to-primary/10">
+              <Card className="bg-primary/10">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-6">
-                    <div className="bg-primary/20 p-3 rounded-lg">
+                    <div className="bg-primary/20 p-3 rounded-xl">
                       <Trophy className="h-6 w-6 text-primary" />
                     </div>
                     <h3 className="ml-3 text-xl font-bold">RoboNation Competitions</h3>
@@ -4288,14 +4288,14 @@ function VanttecProjectContent() {
               <Card className="bg-gradient-to-br from-secondary/5 to-secondary/10">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-6">
-                    <div className="bg-secondary/20 p-3 rounded-lg">
+                    <div className="bg-secondary/20 p-3 rounded-xl">
                       <Award className="h-6 w-6 text-secondary-foreground" />
                     </div>
                     <h3 className="ml-3 text-xl font-bold">Other Recognition</h3>
                   </div>
                   <div className="space-y-4">
                     <div className="flex items-start space-x-3">
-                      <Star className="h-5 w-5 text-yellow-500 mt-0.5" />
+                      <Star className="h-5 w-5 text-primary mt-0.5" />
                       <div>
                         <h4 className="font-medium">Rómulo Garza Sada Award</h4>
                         <p className="text-sm text-muted-foreground">Best university research project at Tec de Monterrey</p>
@@ -4317,14 +4317,14 @@ function VanttecProjectContent() {
             <Card className="mt-8 bg-gradient-to-r from-primary/5 via-secondary/5 to-primary/5">
               <CardContent className="p-6">
                 <div className="flex items-center mb-6">
-                  <div className="bg-primary/20 p-3 rounded-lg">
+                  <div className="bg-primary/20 p-3 rounded-xl">
                     <Globe className="h-6 w-6 text-primary" />
                   </div>
                   <h3 className="ml-3 text-xl font-bold">Social and Academic Impact</h3>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="bg-card border border-border p-4 rounded-lg">
-                    <h4 className="font-medium text-primary mb-2">International Collaborations</h4>
+                  <div className="bg-card border border-border p-4 rounded-xl">
+                    <h4 className="font-medium text-foreground mb-2">International Collaborations</h4>
                     <div className="text-center mb-3">
                       <Image
                         src={getAssetPath("/vanttec/swri.jpeg")}
@@ -4338,8 +4338,8 @@ function VanttecProjectContent() {
                       Work with Southwest Research Institute (SwRI) on underwater localization and navigation with ORBSLAM3.
                     </p>
                   </div>
-                  <div className="bg-card border border-border p-4 rounded-lg">
-                    <h4 className="font-medium text-primary mb-2">Talent Formation</h4>
+                  <div className="bg-card border border-border p-4 rounded-xl">
+                    <h4 className="font-medium text-foreground mb-2">Talent Formation</h4>
                     <div className="text-center mb-3">
                       <Image
                         src={getAssetPath("/vanttec/vanttec-meeting.jpeg")}
@@ -4353,8 +4353,8 @@ function VanttecProjectContent() {
                       Creation of "elite groups" in high school and mentoring of scholarship students at university.
                     </p>
                   </div>
-                  <div className="bg-card border border-border p-4 rounded-lg">
-                    <h4 className="font-medium text-primary mb-2">Legacy</h4>
+                  <div className="bg-card border border-border p-4 rounded-xl">
+                    <h4 className="font-medium text-foreground mb-2">Legacy</h4>
                     <div className="text-center mb-3">
                       <Image
                         src={getAssetPath("/vanttec/vanttec-logo.jpeg")}
@@ -4386,7 +4386,7 @@ function EE272ProjectContent() {
     <div className="space-y-12">
       {/* Overview */}
       <FadeIn delay="delay-300">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground flex items-center">
               <Cpu className="mr-3 h-6 w-6 text-primary" />
@@ -4395,7 +4395,7 @@ function EE272ProjectContent() {
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="text-center">
-              <h3 className="text-xl font-bold text-primary mb-2">Full-Custom Silicon from RTL to Tape-Out</h3>
+              <h3 className="text-xl font-bold text-foreground mb-2">Full-Custom Silicon from RTL to Tape-Out</h3>
               <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                 A two-course advanced VLSI design sequence covering the complete digital IC design flow:
                 from RTL description and logic synthesis to custom layout, place &amp; route, timing
@@ -4404,28 +4404,28 @@ function EE272ProjectContent() {
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-primary/10 border-border rounded-lg border p-5">
+              <div className="bg-primary/10 border-border rounded-xl border p-5">
                 <div className="flex items-center mb-3">
                   <GraduationCap className="h-5 w-5 text-primary mr-2" />
                   <h4 className="font-semibold">Final Grade</h4>
                 </div>
-                <p className="text-3xl font-bold text-primary">8 / 8</p>
+                <p className="text-3xl font-bold text-foreground">8 / 8</p>
                 <p className="text-sm text-muted-foreground mt-1">Homeworks | all 100 / 100</p>
               </div>
-              <div className="bg-primary/10 border-border rounded-lg border p-5">
+              <div className="bg-primary/10 border-border rounded-xl border p-5">
                 <div className="flex items-center mb-3">
                   <Layers className="h-5 w-5 text-primary mr-2" />
                   <h4 className="font-semibold">Process Node</h4>
                 </div>
-                <p className="text-2xl font-bold text-primary">SKY130</p>
+                <p className="text-2xl font-bold text-foreground">SKY130</p>
                 <p className="text-sm text-muted-foreground mt-1">130 nm open-source PDK</p>
               </div>
-              <div className="bg-primary/10 border-border rounded-lg border p-5">
+              <div className="bg-primary/10 border-border rounded-xl border p-5">
                 <div className="flex items-center mb-3">
                   <Cpu className="h-5 w-5 text-primary mr-2" />
                   <h4 className="font-semibold">Final Project</h4>
                 </div>
-                <p className="text-lg font-bold text-primary">DNN Accelerator</p>
+                <p className="text-lg font-bold text-foreground">DNN Accelerator</p>
                 <p className="text-sm text-muted-foreground mt-1">Convolution engine P&amp;R</p>
               </div>
             </div>
@@ -4435,7 +4435,7 @@ function EE272ProjectContent() {
 
       {/* Design Flow */}
       <FadeIn delay="delay-400">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground flex items-center">
               <GitBranch className="mr-3 h-6 w-6 text-primary" />
@@ -4477,7 +4477,7 @@ function EE272ProjectContent() {
                   icon: CheckCircle,
                 },
               ].map((s) => (
-                <div key={s.step} className="bg-card border border-border rounded-lg p-5">
+                <div key={s.step} className="bg-card border border-border rounded-xl p-5">
                   <div className="flex items-start gap-3">
                     <span className="font-mono text-xs text-primary/50 font-bold mt-0.5 shrink-0">
                       {s.step}
@@ -4499,7 +4499,7 @@ function EE272ProjectContent() {
 
       {/* Homework Breakdown */}
       <FadeIn delay="delay-500">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground flex items-center">
               <BookOpen className="mr-3 h-6 w-6 text-primary" />
@@ -4519,10 +4519,10 @@ function EE272ProjectContent() {
                 { hw: 'HW 7', topic: 'DNN Accelerator | P&R',       desc: 'Place & route of a convolutional DNN accelerator using Cadence Innovus on SKY130. Final merged GDS passed DRC/LVS sign-off.', score: '100/100' },
                 { hw: 'HW 8', topic: 'Physical Verification & Tape-out', desc: 'Full DRC/LVS/ERC checks on completed design. Preparation of final GDS for tape-out readiness review.', score: '95/100' },
               ].map((h) => (
-                <div key={h.hw} className="flex items-start gap-4 bg-card border border-border rounded-lg p-4">
+                <div key={h.hw} className="flex items-start gap-4 bg-card border border-border rounded-xl p-4">
                   <div className="shrink-0 w-16 text-center">
-                    <div className="font-mono text-xs font-bold text-primary">{h.hw}</div>
-                    <div className="font-mono text-[10px] text-green-700 border border-primary/25 bg-primary/10 rounded px-1 mt-1">{h.score}</div>
+                    <div className="font-mono text-xs font-bold text-foreground">{h.hw}</div>
+                    <div className="font-mono text-[10px] text-primary border border-primary/25 bg-primary/10 rounded px-1 mt-1">{h.score}</div>
                   </div>
                   <div className="flex-1">
                     <div className="font-semibold text-sm text-foreground mb-1">{h.topic}</div>
@@ -4537,7 +4537,7 @@ function EE272ProjectContent() {
 
       {/* Final Project: DNN Accelerator */}
       <FadeIn delay="delay-600">
-        <Card className="shadow-xl">
+        <Card className="shadow-sm shadow-black/5">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground flex items-center">
               <Brain className="mr-3 h-6 w-6 text-primary" />
@@ -4563,7 +4563,7 @@ function EE272ProjectContent() {
                 { label: 'GDS Output', value: 'conv-merged.gds (~44 MB)' },
                 { label: 'Signoff Stage', value: 'Cadence Innovus Signoff (#19)' },
               ].map((item) => (
-                <div key={item.label} className="bg-card border border-border rounded-lg px-4 py-3">
+                <div key={item.label} className="bg-card border border-border rounded-xl px-4 py-3">
                   <div className="font-mono text-[10px] text-muted-foreground/60 uppercase tracking-wider">{item.label}</div>
                   <div className="font-body text-sm text-foreground mt-0.5">{item.value}</div>
                 </div>
@@ -4571,7 +4571,7 @@ function EE272ProjectContent() {
             </div>
 
             {/* Layout Viewer embed */}
-            <div className="rounded-lg border border-primary/20 bg-card overflow-hidden">
+            <div className="rounded-xl border border-primary/20 bg-card overflow-hidden">
               <div className="px-4 py-3 border-b border-primary/15 flex items-center gap-2">
                 <Layers className="h-4 w-4 text-primary" />
                 <span className="font-mono text-xs text-primary uppercase tracking-widest">Interactive Layout Viewer</span>
@@ -4607,7 +4607,7 @@ function EE272ProjectContent() {
                     'Open-source EDA (SKY130 PDK, OpenROAD) vs. commercial Cadence flows',
                   ].map(item => (
                     <div key={item} className="flex items-start gap-2">
-                      <CheckCircle className="h-4 w-4 text-green-700 mt-0.5 shrink-0" />
+                      <CheckCircle className="h-4 w-4 text-primary mt-0.5 shrink-0" />
                       <span className="text-sm text-muted-foreground">{item}</span>
                     </div>
                   ))}
@@ -4698,7 +4698,7 @@ function EE233ProjectContent() {
               href="https://youtube.com/shorts/ubQI5udW8H8?si=RdDYvzP_OdoH4A6_"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-medium text-primary border border-primary/30 rounded-lg px-4 py-2 hover:bg-primary/10 transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-medium text-foreground border border-primary/30 rounded-xl px-4 py-2 hover:bg-primary/10 transition-colors"
             >
               <ExternalLink className="h-4 w-4" /> Watch Live Demo
             </a>
@@ -4708,7 +4708,7 @@ function EE233ProjectContent() {
 
       {/* Interactive radio interface */}
       <FadeIn delay="delay-250">
-        <Card className="bg-card border-border shadow-xl overflow-hidden">
+        <Card className="bg-card border-border shadow-sm shadow-black/5 overflow-hidden">
           <CardHeader className="space-y-3">
             <CardTitle className="text-xl text-foreground flex items-center gap-2">
               <Monitor className="h-5 w-5 text-primary" /> Interactive Tuning Interface
@@ -4722,7 +4722,7 @@ function EE233ProjectContent() {
                 href={getAssetPath('/233-FinalProject/radioUI.html')}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-medium text-primary border border-primary/30 rounded-lg px-4 py-2 hover:bg-primary/10 transition-colors"
+                className="inline-flex items-center gap-2 text-sm font-medium text-foreground border border-primary/30 rounded-xl px-4 py-2 hover:bg-primary/10 transition-colors"
               >
                 <ExternalLink className="h-4 w-4" /> Open Standalone Interface
               </a>
@@ -4730,14 +4730,14 @@ function EE233ProjectContent() {
                 href={getAssetPath('/233-FinalProject/FinalProject.pdf')}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-medium text-primary border border-primary/30 rounded-lg px-4 py-2 hover:bg-primary/10 transition-colors"
+                className="inline-flex items-center gap-2 text-sm font-medium text-foreground border border-primary/30 rounded-xl px-4 py-2 hover:bg-primary/10 transition-colors"
               >
                 <ExternalLink className="h-4 w-4" /> View PDF
               </a>
             </div>
           </CardHeader>
           <CardContent>
-            <div className="rounded-lg overflow-hidden border border-border bg-[#070c14]" style={{ height: '620px' }}>
+            <div className="rounded-xl overflow-hidden border border-border bg-[#070c14]" style={{ height: '620px' }}>
               <iframe
                 src={getAssetPath('/233-FinalProject/radioUI.html')}
                 className="w-full h-full border-0"
@@ -4765,7 +4765,7 @@ function EE233ProjectContent() {
                 alt="FM Superheterodyne Receiver Block Diagram"
                 width={1100}
                 height={420}
-                className="w-full rounded-lg"
+                className="w-full rounded-xl"
               />
               <p className="text-xs text-muted-foreground/60 mt-2 text-center">
                 Signal flow: antenna → LNA → first mixer (ω₁−ω₀) → IF bandpass filter → second mixer with I/Q quadrature oscillator (0°/90°) → baseband demodulation
@@ -4778,7 +4778,7 @@ function EE233ProjectContent() {
       {/* Technical highlights */}
       <FadeIn delay="delay-400">
         <div className="grid md:grid-cols-2 gap-6">
-          <Card className="bg-card border-border shadow-xl">
+          <Card className="bg-card border-border shadow-sm shadow-black/5">
             <CardHeader>
               <CardTitle className="text-xl text-foreground flex items-center gap-2">
                 <Cpu className="h-5 w-5 text-primary" /> Architecture
@@ -4794,12 +4794,12 @@ function EE233ProjectContent() {
                 'HTTP server streams spectrum data over WiFi',
               ].map(s => (
                 <div key={s} className="flex items-start gap-2 text-sm text-muted-foreground">
-                  <CheckCircle className="h-3.5 w-3.5 text-green-700 mt-0.5 shrink-0" />{s}
+                  <CheckCircle className="h-3.5 w-3.5 text-primary mt-0.5 shrink-0" />{s}
                 </div>
               ))}
             </CardContent>
           </Card>
-          <Card className="bg-card border-border shadow-xl">
+          <Card className="bg-card border-border shadow-sm shadow-black/5">
             <CardHeader>
               <CardTitle className="text-xl text-foreground flex items-center gap-2">
                 <FileText className="h-5 w-5 text-primary" /> Specifications
@@ -4828,7 +4828,7 @@ function EE233ProjectContent() {
 
       {/* PDF report link */}
       <FadeIn delay="delay-450">
-        <Card className="bg-gradient-to-r from-primary/5 to-primary/10 shadow-xl">
+        <Card className="bg-primary/10 shadow-sm shadow-black/5">
           <CardContent className="p-6 flex items-center gap-4">
             <div className="w-10 h-10 rounded-xl bg-primary/15 flex items-center justify-center shrink-0">
               <FileText className="h-5 w-5 text-primary" />
@@ -4842,7 +4842,7 @@ function EE233ProjectContent() {
                 href={getAssetPath('/233-FinalProject/FinalProject.pdf')}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="shrink-0 inline-flex items-center gap-2 text-sm font-medium text-primary border border-primary/30 rounded-lg px-4 py-2 hover:bg-primary/10 transition-colors"
+                className="shrink-0 inline-flex items-center gap-2 text-sm font-medium text-foreground border border-primary/30 rounded-xl px-4 py-2 hover:bg-primary/10 transition-colors"
               >
                 <ExternalLink className="h-4 w-4" /> View PDF
               </a>
@@ -4850,7 +4850,7 @@ function EE233ProjectContent() {
                 href="https://youtube.com/shorts/ubQI5udW8H8?si=RdDYvzP_OdoH4A6_"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="shrink-0 inline-flex items-center gap-2 text-sm font-medium text-primary border border-primary/30 rounded-lg px-4 py-2 hover:bg-primary/10 transition-colors"
+                className="shrink-0 inline-flex items-center gap-2 text-sm font-medium text-foreground border border-primary/30 rounded-xl px-4 py-2 hover:bg-primary/10 transition-colors"
               >
                 <ExternalLink className="h-4 w-4" /> Watch Demo
               </a>
@@ -4900,10 +4900,10 @@ export default async function ProjectPage({ params }: Props) {
       </FadeIn>
 
       <FadeIn delay="delay-100">
-        <article className="mx-auto max-w-4xl rounded-2xl border border-black/10 bg-white/[0.82] p-5 shadow-sm shadow-black/5 backdrop-blur-sm sm:p-8 lg:p-10">
+        <article className="case-study mx-auto max-w-6xl rounded-2xl border border-black/10 bg-white/[0.82] p-4 shadow-sm shadow-black/5 backdrop-blur-sm sm:p-8 lg:p-10">
           <header className="mb-10 text-center">
             <Badge variant="outline" className="mb-4 rounded-full border-primary/25 bg-primary/10 px-3 py-1 text-primary">{project.category}</Badge>
-            <h1 className="mx-auto max-w-3xl text-4xl font-bold tracking-[-0.05em] text-foreground md:text-5xl">{project.title}</h1>
+            <h1 className="mx-auto max-w-3xl text-3xl font-semibold tracking-[-0.055em] text-foreground sm:text-4xl md:text-5xl">{project.title}</h1>
             <div className="mt-5 flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground">
               <span className="flex items-center"><UserCircle className="mr-1.5 h-4 w-4" /> {project.author}</span>
               <span className="flex items-center"><Calendar className="mr-1.5 h-4 w-4" /> {project.date}</span>

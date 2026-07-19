@@ -45,7 +45,7 @@ const areaConfig = {
 };
 
 const statusConfig = {
-  active:    { label: 'ACTIVE',    cls: 'bg-green-500/15 text-green-700 border-primary/25' },
+  active:    { label: 'ACTIVE',    cls: 'bg-primary/10 text-primary border-primary/25' },
   completed: { label: 'COMPLETED', cls: 'bg-muted text-muted-foreground border-border' },
   upcoming:  { label: 'UPCOMING',  cls: 'bg-primary/10 text-primary border-primary/25' },
 };
@@ -58,7 +58,7 @@ function CourseCard({ course }: { course: StanfordCourse }) {
   return (
     <div
       className={cn(
-        'relative rounded-lg border p-5 transition-all duration-300 bg-card group cursor-default',
+        'relative rounded-xl border p-5 transition-all duration-300 bg-card group cursor-default',
         area.border,
         area.glow
       )}
@@ -170,7 +170,7 @@ export function StanfordSection() {
                       <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                       <span className="font-mono text-xs text-primary/90 tracking-widest uppercase">Active Research</span>
                     </div>
-                    <div className="font-mono text-sm font-bold text-primary mb-1 tracking-wider">{c.code}</div>
+                    <div className="font-mono text-sm font-bold text-foreground mb-1 tracking-wider">{c.code}</div>
                     <h3 className="font-display text-2xl font-bold text-foreground mb-3">{c.title}</h3>
                     <p className="font-body text-muted-foreground leading-relaxed">{c.description}</p>
                   </div>
@@ -256,7 +256,7 @@ export function StanfordSection() {
                   )}
                 >
                   <div className="px-4 pb-4">
-                    <div className="rounded-lg overflow-hidden border border-black/10" style={{ height: '560px' }}>
+                    <div className="rounded-xl overflow-hidden border border-black/10" style={{ height: '560px' }}>
                       {showLayout && (
                         <iframe
                           src={getAssetPath('/272-Course/viewer.html')}
@@ -292,8 +292,8 @@ export function StanfordSection() {
               <div className="flex flex-col md:flex-row md:items-start gap-5 p-6">
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="font-mono text-xs font-bold text-primary border border-primary/25 bg-primary/10 px-2 py-0.5 rounded-md">EE233 Final Project</span>
-                    <span className="font-mono text-[10px] text-green-700 border border-primary/25 bg-green-500/15 px-2 py-0.5 rounded-md font-bold tracking-widest uppercase">COMPLETED</span>
+                    <span className="font-mono text-xs font-bold text-foreground border border-primary/25 bg-primary/10 px-2 py-0.5 rounded-md">EE233 Final Project</span>
+                    <span className="font-mono text-[10px] text-primary border border-primary/25 bg-primary/10 px-2 py-0.5 rounded-md font-bold tracking-widest uppercase">COMPLETED</span>
                   </div>
                   <h3 className="font-display text-xl font-bold text-foreground mb-2">
                     FM Superheterodyne Radio Receiver
@@ -342,7 +342,7 @@ export function StanfordSection() {
                   </div>
                 </div>
                 {/* Signal chain diagram */}
-                <div className="md:w-52 rounded-lg bg-white/80 border border-border p-4 font-mono text-xs text-muted-foreground/85 leading-relaxed shrink-0">
+                <div className="md:w-52 rounded-xl bg-white/80 border border-border p-4 font-mono text-xs text-muted-foreground/85 leading-relaxed shrink-0">
                   <div className="text-primary/80 text-[10px] tracking-widest uppercase mb-2">Signal Chain</div>
                   <div className="space-y-1">
                     <div className="text-foreground/80">FM Antenna</div>
@@ -386,7 +386,7 @@ export function StanfordSection() {
                   )}
                 >
                   <div className="px-4 pb-4">
-                    <div className="rounded-lg overflow-hidden border border-border" style={{ height: '620px' }}>
+                    <div className="rounded-xl overflow-hidden border border-border" style={{ height: '620px' }}>
                       {showRadio && (
                         <iframe
                           src={getAssetPath('/233-FinalProject/radioUI.html')}

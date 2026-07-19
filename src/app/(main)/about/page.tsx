@@ -79,7 +79,7 @@ export default function AboutPage() {
             {aboutStats.map((stat) => (
               <div
                 key={stat.label}
-                className="rounded-lg border border-border bg-card p-6 text-center hover:border-primary/25 transition-colors card-glow-sky"
+                className="rounded-xl border border-border bg-card p-6 text-center hover:border-primary/25 transition-colors card-glow-sky"
               >
                 <span className="font-display text-4xl font-bold text-primary block">{stat.value}</span>
                 <span className="font-body text-sm text-muted-foreground mt-1 block">{stat.label}</span>
@@ -111,7 +111,7 @@ export default function AboutPage() {
                 body: "From autonomous vehicles and radar chips to agricultural e-commerce: technology only matters when it solves real problems for real people.",
               },
             ].map((p) => (
-              <div key={p.title} className="rounded-lg border border-border bg-card p-6 text-center card-glow-sky">
+              <div key={p.title} className="rounded-xl border border-border bg-card p-6 text-center card-glow-sky">
                 <div className="w-12 h-12 rounded-xl bg-white/80 flex items-center justify-center mx-auto mb-4">
                   <p.icon className="h-6 w-6 text-primary" />
                 </div>

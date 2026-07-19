@@ -23,8 +23,8 @@ export const metadata: Metadata = {
 const statusBadge = {
   active: {
     label: 'ACTIVE',
-    cls: 'bg-green-500/15 text-green-700 border-primary/25',
-    dot: 'bg-green-400',
+    cls: 'bg-primary/10 text-primary border-primary/25',
+    dot: 'bg-primary',
     Icon: Circle,
   },
   completed: {
@@ -118,7 +118,7 @@ export default function StanfordPage() {
               { value: '2', label: 'Chip Designs' },
             ].map((s) => (
               <div key={s.label} className="text-center px-4">
-                <div className="font-display text-3xl font-bold text-primary">{s.value}</div>
+                <div className="font-display text-3xl font-bold text-foreground">{s.value}</div>
                 <div className="font-mono text-xs text-muted-foreground/80 tracking-wider uppercase mt-0.5">{s.label}</div>
               </div>
             ))}
@@ -139,7 +139,7 @@ export default function StanfordPage() {
             <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
               <div>
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="font-mono text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-md border bg-green-500/15 text-green-700 border-primary/25">
+                  <span className="font-mono text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-md border bg-primary/10 text-primary border-primary/25">
                     ACTIVE RESEARCH
                   </span>
                   <span className="font-mono text-xs text-primary font-bold">EE391</span>
@@ -217,7 +217,7 @@ export default function StanfordPage() {
           />
 
           {/* Track overview */}
-          <div className="rounded-lg border border-black/10 bg-white/70 px-5 py-4 mb-6">
+          <div className="rounded-xl border border-black/10 bg-white/70 px-5 py-4 mb-6">
             <p className="font-body text-sm text-muted-foreground leading-relaxed">
               <span className="text-primary font-medium">Track Overview:</span>{' '}
               The VLSI design sequence at Stanford covers the complete chip design flow from RTL
@@ -231,7 +231,7 @@ export default function StanfordPage() {
             <div className="rounded-xl border border-black/10 bg-card p-6 hover:border-primary/30 hover:shadow-lg hover:shadow-black/5 transition-all duration-300">
               <div className="flex items-start justify-between gap-2 mb-4">
                 <div>
-                  <div className="font-mono text-xs font-bold text-primary tracking-widest mb-1">EE372</div>
+                  <div className="font-mono text-xs font-bold text-foreground tracking-widest mb-1">EE372</div>
                   <h3 className="font-display text-lg font-bold text-foreground leading-tight">
                     Analog/Mixed-Signal IC Design & Fabrication
                   </h3>
@@ -262,7 +262,7 @@ export default function StanfordPage() {
             <div className="rounded-xl border border-black/10 bg-card p-6 hover:border-primary/30 hover:shadow-lg hover:shadow-black/5 transition-all duration-300">
               <div className="flex items-start justify-between gap-2 mb-4">
                 <div>
-                  <div className="font-mono text-xs font-bold text-primary tracking-widest mb-1">EE271 / EE272</div>
+                  <div className="font-mono text-xs font-bold text-foreground tracking-widest mb-1">EE271 / EE272</div>
                   <h3 className="font-display text-lg font-bold text-foreground leading-tight">
                     Design Projects in VLSI Systems
                   </h3>
@@ -304,7 +304,7 @@ export default function StanfordPage() {
           />
 
           {/* Track overview */}
-          <div className="rounded-lg border border-border bg-primary/10 px-5 py-4 mb-6">
+          <div className="rounded-xl border border-border bg-primary/10 px-5 py-4 mb-6">
             <p className="font-body text-sm text-muted-foreground leading-relaxed">
               <span className="text-primary font-medium">Track Overview:</span>{' '}
               Deep analog IC design from device physics through advanced mixed-signal systems.
@@ -318,7 +318,7 @@ export default function StanfordPage() {
             <div className="rounded-xl border border-border bg-card p-6 hover:border-primary/30 hover:shadow-lg hover:shadow-black/5 transition-all duration-300">
               <div className="flex items-start justify-between gap-2 mb-4">
                 <div>
-                  <div className="font-mono text-xs font-bold text-primary tracking-widest mb-1">EE214A</div>
+                  <div className="font-mono text-xs font-bold text-foreground tracking-widest mb-1">EE214A</div>
                   <h3 className="font-display text-base font-bold text-foreground leading-tight">
                     Fundamentals of Analog Integrated Circuit Design
                   </h3>
@@ -343,7 +343,7 @@ export default function StanfordPage() {
             <div className="rounded-xl border border-border bg-card p-6 hover:border-primary/30 hover:shadow-lg hover:shadow-black/5 transition-all duration-300">
               <div className="flex items-start justify-between gap-2 mb-4">
                 <div>
-                  <div className="font-mono text-xs font-bold text-primary tracking-widest mb-1">EE233</div>
+                  <div className="font-mono text-xs font-bold text-foreground tracking-widest mb-1">EE233</div>
                   <h3 className="font-display text-base font-bold text-foreground leading-tight">
                     Analog Communications Design Laboratory
                   </h3>
@@ -381,7 +381,7 @@ export default function StanfordPage() {
             <div className="rounded-xl border border-border bg-card p-6 hover:border-primary/30 hover:shadow-lg hover:shadow-black/5 transition-all duration-300">
               <div className="flex items-start justify-between gap-2 mb-4">
                 <div>
-                  <div className="font-mono text-xs font-bold text-primary tracking-widest mb-1">EE256</div>
+                  <div className="font-mono text-xs font-bold text-foreground tracking-widest mb-1">EE256</div>
                   <h3 className="font-display text-base font-bold text-foreground leading-tight">
                     Analog-Digital Interface Circuits
                   </h3>
@@ -458,7 +458,7 @@ export default function StanfordPage() {
                 <div
                   key={item.title}
                   className={cn(
-                    'rounded-lg border p-5 text-center',
+                    'rounded-xl border p-5 text-center',
                     item.border,
                     item.bg
                   )}

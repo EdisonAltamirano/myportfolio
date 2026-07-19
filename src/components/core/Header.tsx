@@ -22,7 +22,7 @@ export function Header() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-background/86 backdrop-blur-xl supports-[backdrop-filter]:bg-background/76">
       <nav className="container mx-auto flex h-16 items-center justify-between px-4 lg:px-8" aria-label="Primary navigation">
         <Link href="/" className="group flex items-center gap-3 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-black/10 bg-white/80 text-primary transition-colors duration-200 group-hover:border-black/15 group-hover:bg-black/[0.05]">
+          <span className="flex h-8 w-8 items-center justify-center rounded-xl border border-black/10 bg-white/80 text-primary transition-colors duration-200 group-hover:border-black/15 group-hover:bg-black/[0.05]">
             <Cpu className="h-4 w-4" />
           </span>
           <span className="text-sm font-semibold tracking-[-0.01em] text-foreground">

@@ -14,7 +14,7 @@ export function AboutTeaser() {
           {/* Image */}
           <FadeIn>
             <div className="relative">
-              <div className="relative aspect-square rounded-xl overflow-hidden border border-black/10 shadow-xl shadow-black/10">
+              <div className="relative aspect-square rounded-xl overflow-hidden border border-black/10 shadow-sm shadow-black/5 shadow-black/10">
                 <Image
                   src={getAssetPath('/images/profile foto.png')}
                   alt="Edison Altamirano"
@@ -66,7 +66,7 @@ export function AboutTeaser() {
             <div className="grid grid-cols-2 gap-4 mb-8">
               {aboutStats.map((stat, index) => (
                 <FadeIn key={stat.label} delay={`delay-${index * 100}`}>
-                  <div className="rounded-lg border border-border bg-card p-4 text-center hover:border-primary/25 transition-colors">
+                  <div className="rounded-xl border border-border bg-card p-4 text-center hover:border-primary/25 transition-colors">
                     <span className="font-display text-3xl font-bold text-primary block">{stat.value}</span>
                     <span className="font-body text-xs text-muted-foreground mt-1 block">{stat.label}</span>
                   </div>
