@@ -19,21 +19,21 @@ interface TimelineEntry {
 const categoryConfig: Record<TimelineCategory, { icon: React.ElementType; color: string; bg: string; border: string }> = {
   research: {
     icon: FlaskConical,
-    color: 'text-teal-400',
-    bg: 'bg-teal-500/10',
-    border: 'border-teal-500/30',
+    color: 'text-primary',
+    bg: 'bg-primary/10',
+    border: 'border-primary/25',
   },
   company: {
     icon: Building2,
-    color: 'text-sky-400',
-    bg: 'bg-sky-500/10',
-    border: 'border-sky-500/30',
+    color: 'text-primary',
+    bg: 'bg-primary/10',
+    border: 'border-primary/25',
   },
   academic: {
     icon: GraduationCap,
-    color: 'text-violet-400',
-    bg: 'bg-violet-500/10',
-    border: 'border-violet-500/30',
+    color: 'text-primary',
+    bg: 'bg-primary/10',
+    border: 'border-primary/25',
   },
   startup: {
     icon: Rocket,
@@ -218,9 +218,9 @@ export function ExperienceTimeline() {
 
         <div className="relative">
           {/* Center line | desktop */}
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-sky-500/40 via-teal-500/20 to-sky-500/10 -translate-x-1/2" />
+          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/20 via-primary/10 to-primary/5 -translate-x-1/2" />
           {/* Left line | mobile */}
-          <div className="md:hidden absolute left-5 top-0 bottom-0 w-px bg-gradient-to-b from-sky-500/40 to-sky-500/10" />
+          <div className="md:hidden absolute left-5 top-0 bottom-0 w-px bg-gradient-to-b from-primary/20 to-primary/5" />
 
           {timelineData.map((entry, index) => (
             <div key={index} className="relative">

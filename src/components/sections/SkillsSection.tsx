@@ -9,7 +9,7 @@ export function SkillsSection() {
       <div className="container px-4 mx-auto">
         <FadeIn>
           <div className="text-center mb-14">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/[0.03] mb-5">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-black/10 bg-white/70 mb-5">
               <Cpu className="w-3 h-3 text-primary" />
               <span className="font-mono text-xs text-primary/80 tracking-widest uppercase">
                 Technical Expertise

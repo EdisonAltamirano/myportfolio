@@ -20,7 +20,7 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
         </p>
         <button
           onClick={reset}
-          className="mt-8 inline-flex items-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-background transition-transform hover:scale-[1.01] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          className="mt-8 inline-flex items-center rounded-full bg-foreground px-5 py-3 text-sm font-semibold text-white transition-transform hover:scale-[1.01] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
           <RotateCcw className="mr-2 h-4 w-4" />
           Try again

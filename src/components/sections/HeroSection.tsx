@@ -26,7 +26,7 @@ export function HeroSection() {
     <section className="relative overflow-hidden bg-circuit">
       <div className="container mx-auto px-4 py-24 sm:py-28 lg:px-8 lg:py-36">
         <FadeIn className="mx-auto max-w-5xl text-center">
-          <div className="mx-auto mb-8 flex max-w-[22rem] items-center justify-center overflow-hidden rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-center text-xs leading-5 text-muted-foreground shadow-sm shadow-black/10 sm:inline-flex sm:max-w-full sm:text-sm">
+          <div className="mx-auto mb-8 flex max-w-[18rem] items-center justify-center overflow-hidden rounded-full border border-black/10 bg-white/80 px-4 py-2 text-center text-xs leading-5 text-muted-foreground shadow-sm shadow-black/5 sm:inline-flex sm:max-w-full sm:text-sm">
             <span className="mr-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
             <span className="min-w-0 truncate sm:whitespace-normal">Stanford Electrical Engineering · Research, silicon, robotics, and software</span>
           </div>
@@ -40,17 +40,17 @@ export function HeroSection() {
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button asChild size="lg" className="h-12 rounded-full bg-white px-6 text-sm font-semibold text-background shadow-none transition-transform duration-150 hover:scale-[1.01] hover:bg-white/90 active:scale-[0.98]">
+            <Button asChild size="lg" className="h-12 rounded-full bg-foreground px-6 text-sm font-semibold text-white shadow-none transition-transform duration-150 hover:scale-[1.01] hover:bg-foreground/90 active:scale-[0.98]">
               <Link href="/projects">
                 View selected work <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="h-12 rounded-full border-white/12 bg-transparent px-6 text-sm font-semibold text-foreground hover:bg-white/[0.06]">
+            <Button asChild variant="outline" size="lg" className="h-12 rounded-full border-black/10 bg-transparent px-6 text-sm font-semibold text-foreground hover:bg-black/[0.04]">
               <Link href="/docs/EdisonAltamiranoResume.pdf" target="_blank" rel="noopener noreferrer">
                 Resume <FileText className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild variant="ghost" size="lg" className="h-12 rounded-full px-6 text-sm font-semibold text-muted-foreground hover:bg-white/[0.06] hover:text-foreground">
+            <Button asChild variant="ghost" size="lg" className="h-12 rounded-full px-6 text-sm font-semibold text-muted-foreground hover:bg-black/[0.04] hover:text-foreground">
               <Link href="/contact">
                 Contact <ExternalLink className="ml-2 h-4 w-4" />
               </Link>
@@ -59,7 +59,7 @@ export function HeroSection() {
 
           <div className="mx-auto mt-14 grid max-w-4xl grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {highlights.map((item) => (
-              <div key={item.value} className="rounded-2xl border border-white/10 bg-white/[0.035] p-5 text-left shadow-sm shadow-black/10">
+              <div key={item.value} className="rounded-2xl border border-black/10 bg-white/80 p-5 text-left shadow-sm shadow-black/5">
                 <div className="text-base font-semibold text-foreground">{item.value}</div>
                 <div className="mt-2 text-sm leading-6 text-muted-foreground">{item.label}</div>
               </div>
@@ -68,7 +68,7 @@ export function HeroSection() {
 
           <div className="mt-10 flex flex-wrap justify-center gap-2">
             {focusAreas.map((area) => (
-              <span key={area} className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs font-medium text-muted-foreground">
+              <span key={area} className="rounded-full border border-black/10 bg-white/70 px-3 py-1.5 text-xs font-medium text-muted-foreground">
                 {area}
               </span>
             ))}

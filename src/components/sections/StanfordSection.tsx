@@ -13,41 +13,41 @@ const areaConfig = {
     icon: Radio,
     label: 'Research',
     color: 'teal',
-    border: 'border-teal-500/25',
-    bg: 'bg-teal-500/5',
-    dot: 'bg-teal-400',
-    text: 'text-teal-400',
-    glow: 'hover:border-teal-400/45 hover:shadow-[0_0_24px_rgba(45,212,191,0.12)]',
-    badge: 'bg-teal-500/15 text-teal-300 border-teal-500/30',
+    border: 'border-border',
+    bg: 'bg-primary/10',
+    dot: 'bg-primary',
+    text: 'text-primary',
+    glow: 'hover:border-primary/30 hover:shadow-lg hover:shadow-black/5',
+    badge: 'bg-primary/10 text-primary border-primary/25',
   },
   vlsi: {
     icon: Cpu,
     label: 'VLSI',
     color: 'sky',
     border: 'border-sky-500/25',
-    bg: 'bg-sky-500/5',
-    dot: 'bg-sky-400',
-    text: 'text-sky-400',
-    glow: 'hover:border-sky-400/45 hover:shadow-[0_0_24px_rgba(56,189,248,0.12)]',
-    badge: 'bg-sky-500/15 text-primary border-white/12',
+    bg: 'bg-primary/10',
+    dot: 'bg-primary',
+    text: 'text-primary',
+    glow: 'hover:border-primary/30 hover:shadow-lg hover:shadow-black/5',
+    badge: 'bg-primary/10 text-primary border-black/10',
   },
   analog: {
     icon: Zap,
     label: 'Analog',
     color: 'violet',
-    border: 'border-violet-500/25',
-    bg: 'bg-violet-500/5',
-    dot: 'bg-violet-400',
-    text: 'text-violet-400',
-    glow: 'hover:border-violet-400/45 hover:shadow-[0_0_24px_rgba(139,92,246,0.12)]',
-    badge: 'bg-violet-500/15 text-violet-300 border-violet-500/30',
+    border: 'border-border',
+    bg: 'bg-primary/10',
+    dot: 'bg-primary',
+    text: 'text-primary',
+    glow: 'hover:border-primary/30 hover:shadow-lg hover:shadow-black/5',
+    badge: 'bg-primary/10 text-primary border-primary/25',
   },
 };
 
 const statusConfig = {
   active:    { label: 'ACTIVE',    cls: 'bg-green-500/15 text-green-300 border-green-500/30' },
   completed: { label: 'COMPLETED', cls: 'bg-muted/50 text-muted-foreground border-border' },
-  upcoming:  { label: 'UPCOMING',  cls: 'bg-violet-500/15 text-violet-300 border-violet-500/30' },
+  upcoming:  { label: 'UPCOMING',  cls: 'bg-primary/10 text-primary border-primary/25' },
 };
 
 function CourseCard({ course }: { course: StanfordCourse }) {
@@ -124,13 +124,13 @@ export function StanfordSection() {
       {/* Top fade */}
       <div
         className="absolute top-0 left-0 right-0 h-20 pointer-events-none"
-        style={{ background: 'linear-gradient(to bottom, hsl(224,84%,4%), transparent)' }}
+        style={{ background: 'linear-gradient(to bottom, hsl(var(--background)), transparent)' }}
       />
 
       <div className="container px-4 mx-auto relative z-10">
         {/* Header */}
         <FadeIn className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/[0.03] mb-5">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-black/10 bg-white/70 mb-5">
             <FlaskConical className="w-3.5 h-3.5 text-primary" />
             <span className="font-mono text-xs text-primary/80 tracking-widest uppercase">
               Stanford University — Electrical Engineering
@@ -151,26 +151,26 @@ export function StanfordSection() {
           <div className="mb-10">
             <div className="flex items-center gap-3 mb-5">
               <div className="flex items-center gap-2">
-                <Radio className="w-4 h-4 text-teal-400" />
-                <span className="font-display text-sm font-bold tracking-widest uppercase text-teal-400">
+                <Radio className="w-4 h-4 text-primary" />
+                <span className="font-display text-sm font-bold tracking-widest uppercase text-primary">
                   Research Lab
                 </span>
               </div>
-              <div className="flex-1 h-px bg-gradient-to-r from-teal-500/30 to-transparent" />
+              <div className="flex-1 h-px bg-gradient-to-r from-primary/20 to-transparent" />
             </div>
 
             {researchCourses.map((c) => (
               <div
                 key={c.code}
-                className="rounded-xl border border-teal-500/20 bg-card/65 p-6 md:p-8 transition-all duration-300 hover:border-teal-400/35 hover:shadow-[0_0_32px_rgba(45,212,191,0.08)]"
+                className="rounded-xl border border-border bg-card/65 p-6 md:p-8 transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-black/5"
               >
                 <div className="grid md:grid-cols-2 gap-6 items-start">
                   <div>
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-teal-500/25 bg-teal-500/8 mb-4">
-                      <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" />
-                      <span className="font-mono text-xs text-teal-400/90 tracking-widest uppercase">Active Research</span>
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-primary/10 mb-4">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                      <span className="font-mono text-xs text-primary/90 tracking-widest uppercase">Active Research</span>
                     </div>
-                    <div className="font-mono text-sm font-bold text-teal-400 mb-1 tracking-wider">{c.code}</div>
+                    <div className="font-mono text-sm font-bold text-primary mb-1 tracking-wider">{c.code}</div>
                     <h3 className="font-display text-2xl font-bold text-foreground mb-3">{c.title}</h3>
                     <p className="font-body text-muted-foreground leading-relaxed">{c.description}</p>
                   </div>
@@ -185,7 +185,7 @@ export function StanfordSection() {
                       'Low-power sensor IC architectures',
                     ].map((item) => (
                       <div key={item} className="flex items-start gap-2.5">
-                        <ChevronRight className="w-3.5 h-3.5 text-teal-400 mt-0.5 shrink-0" />
+                        <ChevronRight className="w-3.5 h-3.5 text-primary mt-0.5 shrink-0" />
                         <span className="font-body text-sm text-muted-foreground">{item}</span>
                       </div>
                     ))}
@@ -206,7 +206,7 @@ export function StanfordSection() {
                   VLSI & Chip Design
                 </span>
               </div>
-              <div className="flex-1 h-px bg-gradient-to-r from-sky-500/30 to-transparent" />
+              <div className="flex-1 h-px bg-gradient-to-r from-primary/20 to-transparent" />
             </div>
             <div className="grid md:grid-cols-2 gap-4 mb-6">
               {vlsiCourses.map((c, i) => (
@@ -218,13 +218,13 @@ export function StanfordSection() {
 
             {/* EE272 — Chip Layout Viewer */}
             <FadeIn delay="delay-300">
-              <div className="rounded-xl border border-white/10 bg-card/65 overflow-hidden transition-all duration-300">
+              <div className="rounded-xl border border-black/10 bg-card/65 overflow-hidden transition-all duration-300">
                 <button
                   onClick={() => setShowLayout(!showLayout)}
-                  className="w-full flex items-center justify-between px-6 py-4 group hover:bg-sky-500/5 transition-colors duration-200"
+                  className="w-full flex items-center justify-between px-6 py-4 group hover:bg-primary/10 transition-colors duration-200"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-md bg-white/[0.05] flex items-center justify-center">
+                    <div className="w-8 h-8 rounded-md bg-white/80 flex items-center justify-center">
                       <Layers className="w-4 h-4 text-primary" />
                     </div>
                     <div className="text-left">
@@ -256,7 +256,7 @@ export function StanfordSection() {
                   )}
                 >
                   <div className="px-4 pb-4">
-                    <div className="rounded-lg overflow-hidden border border-white/10" style={{ height: '560px' }}>
+                    <div className="rounded-lg overflow-hidden border border-black/10" style={{ height: '560px' }}>
                       {showLayout && (
                         <iframe
                           src={getAssetPath('/272-Course/viewer.html')}
@@ -278,21 +278,21 @@ export function StanfordSection() {
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="flex items-center gap-2">
-                <Zap className="w-4 h-4 text-violet-400" />
-                <span className="font-display text-sm font-bold tracking-widest uppercase text-violet-400">
+                <Zap className="w-4 h-4 text-primary" />
+                <span className="font-display text-sm font-bold tracking-widest uppercase text-primary">
                   Analog IC Design
                 </span>
               </div>
-              <div className="flex-1 h-px bg-gradient-to-r from-violet-500/30 to-transparent" />
+              <div className="flex-1 h-px bg-gradient-to-r from-primary/20 to-transparent" />
             </div>
 
             {/* EE233 — FM Radio Project (expandable) */}
-            <div className="rounded-xl border border-violet-500/20 bg-card/65 overflow-hidden mb-5 transition-all duration-300 hover:border-violet-400/30">
+            <div className="rounded-xl border border-border bg-card/65 overflow-hidden mb-5 transition-all duration-300 hover:border-primary/30">
               {/* Project summary row */}
               <div className="flex flex-col md:flex-row md:items-start gap-5 p-6">
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="font-mono text-xs font-bold text-violet-400 border border-violet-500/30 bg-violet-500/10 px-2 py-0.5 rounded-md">EE233 Final Project</span>
+                    <span className="font-mono text-xs font-bold text-primary border border-primary/25 bg-primary/10 px-2 py-0.5 rounded-md">EE233 Final Project</span>
                     <span className="font-mono text-[10px] text-green-300 border border-green-500/30 bg-green-500/15 px-2 py-0.5 rounded-md font-bold tracking-widest uppercase">COMPLETED</span>
                   </div>
                   <h3 className="font-display text-xl font-bold text-foreground mb-2">
@@ -300,11 +300,11 @@ export function StanfordSection() {
                   </h3>
                   <p className="font-body text-sm text-muted-foreground leading-relaxed mb-4">
                     Dual-conversion FM receiver (87.5–108 MHz). Uses a{' '}
-                    <span className="text-violet-300 font-medium">Si5351 PLL clock IC</span> to
+                    <span className="text-primary font-medium">Si5351 PLL clock IC</span> to
                     generate LO and quadrature I/Q signals via I²C. A{' '}
-                    <span className="text-violet-300 font-medium">Raspberry Pi Pico</span> hosts a
+                    <span className="text-primary font-medium">Raspberry Pi Pico</span> hosts a
                     WiFi HTTP server with an embedded{' '}
-                    <span className="text-violet-300 font-medium">real-time spectrum analyzer</span>{' '}
+                    <span className="text-primary font-medium">real-time spectrum analyzer</span>{' '}
                     and interactive tuning interface — all served from the microcontroller.
                   </p>
                   <div className="grid grid-cols-2 gap-2 mb-4">
@@ -316,7 +316,7 @@ export function StanfordSection() {
                       ['LO Control', 'Si5351 PLL via I²C'],
                       ['Interface', 'WiFi HTTP + Spectrum UI'],
                     ].map(([k, v]) => (
-                      <div key={k} className="rounded-md bg-violet-500/5 border border-violet-500/15 px-3 py-2">
+                      <div key={k} className="rounded-md bg-primary/10 border border-violet-500/15 px-3 py-2">
                         <div className="font-mono text-[10px] text-muted-foreground/80 uppercase tracking-wider">{k}</div>
                         <div className="font-body text-xs text-foreground mt-0.5">{v}</div>
                       </div>
@@ -327,7 +327,7 @@ export function StanfordSection() {
                       href={getAssetPath('/233-FinalProject/FinalProject.pdf')}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 font-mono text-xs text-violet-400 hover:text-violet-300 border border-violet-500/30 hover:border-violet-400/50 bg-violet-500/5 hover:bg-violet-500/10 px-3 py-1.5 rounded-md transition-all duration-200"
+                      className="inline-flex items-center gap-1.5 font-mono text-xs text-primary hover:text-primary border border-primary/25 hover:border-primary/30 bg-primary/10 hover:bg-primary/10 px-3 py-1.5 rounded-md transition-all duration-200"
                     >
                       <FileText className="w-3 h-3" /> Project Report (PDF)
                     </a>
@@ -335,7 +335,7 @@ export function StanfordSection() {
                       href="https://youtube.com/shorts/ubQI5udW8H8?si=RdDYvzP_OdoH4A6_"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 font-mono text-xs text-violet-400 hover:text-violet-300 border border-violet-500/30 hover:border-violet-400/50 bg-violet-500/5 hover:bg-violet-500/10 px-3 py-1.5 rounded-md transition-all duration-200"
+                      className="inline-flex items-center gap-1.5 font-mono text-xs text-primary hover:text-primary border border-primary/25 hover:border-primary/30 bg-primary/10 hover:bg-primary/10 px-3 py-1.5 rounded-md transition-all duration-200"
                     >
                       <ExternalLink className="w-3 h-3" /> Live Demo
                     </a>
@@ -343,17 +343,17 @@ export function StanfordSection() {
                 </div>
                 {/* Signal chain diagram */}
                 <div className="md:w-52 rounded-lg bg-background/60 border border-violet-500/15 p-4 font-mono text-xs text-muted-foreground/85 leading-relaxed shrink-0">
-                  <div className="text-violet-400/80 text-[10px] tracking-widest uppercase mb-2">Signal Chain</div>
+                  <div className="text-primary/80 text-[10px] tracking-widest uppercase mb-2">Signal Chain</div>
                   <div className="space-y-1">
                     <div className="text-foreground/80">FM Antenna</div>
                     <div className="text-muted-foreground/40 pl-2">↓  87.5–108 MHz RF</div>
                     <div className="text-foreground/80">Mixer Stage 1</div>
                     <div className="text-muted-foreground/40 pl-2">↓  CLK2 LO (Si5351)</div>
-                    <div className="text-violet-300">IF ≈ 10.700 MHz</div>
+                    <div className="text-primary">IF ≈ 10.700 MHz</div>
                     <div className="text-muted-foreground/40 pl-2">↓  I/Q (CLK0·CLK1)</div>
                     <div className="text-foreground/80">Quadrature Mixer</div>
                     <div className="text-muted-foreground/40 pl-2">↓  90° phase split</div>
-                    <div className="text-violet-300">Low-IF ≈ 250 kHz</div>
+                    <div className="text-primary">Low-IF ≈ 250 kHz</div>
                     <div className="text-muted-foreground/40 pl-2">↓  Demod → Audio</div>
                   </div>
                 </div>
@@ -363,17 +363,17 @@ export function StanfordSection() {
               <div className="border-t border-violet-500/15">
                 <button
                   onClick={() => setShowRadio(!showRadio)}
-                  className="w-full flex items-center justify-between px-6 py-3 group hover:bg-violet-500/5 transition-colors duration-200"
+                  className="w-full flex items-center justify-between px-6 py-3 group hover:bg-primary/10 transition-colors duration-200"
                 >
                   <div className="flex items-center gap-2">
-                    <Radio className="w-3.5 h-3.5 text-violet-400/70" />
-                    <span className="font-mono text-xs text-violet-400/80 uppercase tracking-widest">
+                    <Radio className="w-3.5 h-3.5 text-primary/70" />
+                    <span className="font-mono text-xs text-primary/80 uppercase tracking-widest">
                       {showRadio ? 'Hide tuning interface' : 'Show live tuning interface'}
                     </span>
                   </div>
                   <ChevronDown
                     className={cn(
-                      'w-4 h-4 text-violet-400/50 transition-transform duration-300',
+                      'w-4 h-4 text-primary/50 transition-transform duration-300',
                       showRadio && 'rotate-180'
                     )}
                   />
@@ -415,7 +415,7 @@ export function StanfordSection() {
       {/* Bottom fade */}
       <div
         className="absolute bottom-0 left-0 right-0 h-20 pointer-events-none"
-        style={{ background: 'linear-gradient(to top, hsl(224,84%,4%), transparent)' }}
+        style={{ background: 'linear-gradient(to top, hsl(var(--background)), transparent)' }}
       />
     </section>
   );

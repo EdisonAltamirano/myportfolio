@@ -157,7 +157,7 @@ export default function ResearchPage() {
       <div className="container mx-auto px-4 py-14 lg:px-8">
         {/* Header */}
         <FadeIn className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/[0.03] mb-5">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-black/10 bg-white/70 mb-5">
             <FlaskConical className="w-3.5 h-3.5 text-primary" />
             <span className="font-mono text-xs text-primary/80 tracking-widest uppercase">
               Academic Contributions
@@ -182,7 +182,7 @@ export default function ResearchPage() {
                 Publications
               </span>
             </div>
-            <div className="flex-1 h-px bg-gradient-to-r from-sky-500/30 to-transparent" />
+            <div className="flex-1 h-px bg-gradient-to-r from-primary/20 to-transparent" />
             <span className="font-mono text-xs text-muted-foreground/80">{publications.length} papers</span>
           </div>
 
@@ -193,7 +193,7 @@ export default function ResearchPage() {
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
-                        <span className="font-mono text-xs text-primary font-bold border border-white/12 bg-white/[0.05] px-2 py-0.5 rounded-md">
+                        <span className="font-mono text-xs text-primary font-bold border border-black/10 bg-white/80 px-2 py-0.5 rounded-md">
                           {pub.year}
                         </span>
                         <span className="font-mono text-xs text-muted-foreground/80">{pub.venue}</span>
@@ -211,7 +211,7 @@ export default function ResearchPage() {
                         href={pub.doi}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="shrink-0 flex items-center gap-1.5 font-mono text-xs text-teal-400 hover:text-teal-300 border border-teal-500/25 hover:border-teal-400/50 bg-teal-500/5 hover:bg-teal-500/10 px-3 py-1.5 rounded-md transition-all duration-200"
+                        className="shrink-0 flex items-center gap-1.5 font-mono text-xs text-primary hover:text-primary border border-border hover:border-primary/30 bg-primary/10 hover:bg-primary/10 px-3 py-1.5 rounded-md transition-all duration-200"
                       >
                         <ExternalLink className="w-3 h-3" />
                         {pub.linkLabel ?? "DOI"}
@@ -228,12 +228,12 @@ export default function ResearchPage() {
         <FadeIn delay="delay-200">
           <div className="flex items-center gap-3 mb-8">
             <div className="flex items-center gap-2">
-              <Presentation className="w-4 h-4 text-teal-400" />
-              <span className="font-display text-sm font-bold tracking-widest uppercase text-teal-400">
+              <Presentation className="w-4 h-4 text-primary" />
+              <span className="font-display text-sm font-bold tracking-widest uppercase text-primary">
                 Presentations & Talks
               </span>
             </div>
-            <div className="flex-1 h-px bg-gradient-to-r from-teal-500/30 to-transparent" />
+            <div className="flex-1 h-px bg-gradient-to-r from-primary/20 to-transparent" />
           </div>
 
           <div className="space-y-8">
@@ -255,7 +255,7 @@ export default function ResearchPage() {
                               href={item.link}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="flex items-center gap-1.5 font-mono text-xs text-teal-400 hover:text-teal-300 transition-colors"
+                              className="flex items-center gap-1.5 font-mono text-xs text-primary hover:text-primary transition-colors"
                             >
                               <ExternalLink className="w-3 h-3" />
                               {item.linkLabel ?? "View"}

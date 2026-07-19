@@ -56,15 +56,15 @@ export async function generateMetadata(
 
 export default function RootLayout({ children }: Props) {
   return (
-    <html lang="en" suppressHydrationWarning className="dark">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${rajdhani.variable} ${nunito.variable} ${jetbrainsMono.variable} font-body antialiased`}
         suppressHydrationWarning={true}
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
-          forcedTheme="dark"
+          defaultTheme="light"
+          enableSystem={false}
         >
           {children}
           <Toaster />

@@ -35,8 +35,8 @@ const statusBadge = {
   },
   upcoming: {
     label: 'UPCOMING',
-    cls: 'bg-violet-500/15 text-violet-300 border-violet-500/30',
-    dot: 'bg-violet-400',
+    cls: 'bg-primary/10 text-primary border-primary/25',
+    dot: 'bg-primary',
     Icon: Clock,
   },
 };
@@ -44,9 +44,9 @@ const statusBadge = {
 /* ── Skill tag ────────────────────────────────────────── */
 function SkillTag({ label, color = 'sky' }: { label: string; color?: string }) {
   const colorMap: Record<string, string> = {
-    sky: 'border-sky-500/25 bg-white/[0.04] text-primary',
-    teal: 'border-teal-500/25 bg-teal-500/8 text-teal-300',
-    violet: 'border-violet-500/25 bg-violet-500/8 text-violet-300',
+    sky: 'border-sky-500/25 bg-white/80 text-primary',
+    teal: 'border-border bg-primary/10 text-primary',
+    violet: 'border-border bg-primary/10 text-primary',
   };
   return (
     <span className={cn('font-mono text-[10px] px-2 py-0.5 rounded-md border tracking-wide', colorMap[color] ?? colorMap.sky)}>
@@ -58,7 +58,7 @@ function SkillTag({ label, color = 'sky' }: { label: string; color?: string }) {
 /* ── Employer box ─────────────────────────────────────── */
 function EmployerBox({ text }: { text: string }) {
   return (
-    <div className="mt-4 rounded-md border border-white/10 bg-white/[0.03] px-4 py-3">
+    <div className="mt-4 rounded-md border border-black/10 bg-white/70 px-4 py-3">
       <div className="font-mono text-[10px] text-primary/70 tracking-widest uppercase mb-1">What employers see</div>
       <p className="font-body text-xs text-muted-foreground leading-relaxed">{text}</p>
     </div>
@@ -97,8 +97,8 @@ export default function StanfordPage() {
 
         {/* ══ SECTION 1: HERO ══════════════════════════════════ */}
         <FadeIn className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/12 bg-white/[0.035] mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-black/10 bg-white/80 mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
             <span className="font-mono text-xs text-primary/80 tracking-widest uppercase">
               MS Electrical Engineering · 2024–Present
             </span>
@@ -130,11 +130,11 @@ export default function StanfordPage() {
           <TrackHeading
             icon={Radio}
             label="Arbabian Lab Research"
-            color="text-teal-400"
-            gradientColor="from-teal-500/30"
+            color="text-primary"
+            gradientColor="from-primary/20"
           />
 
-          <div className="rounded-xl border border-teal-500/20 bg-card/65 p-6 md:p-8">
+          <div className="rounded-xl border border-border bg-card/65 p-6 md:p-8">
             {/* Header */}
             <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
               <div>
@@ -142,7 +142,7 @@ export default function StanfordPage() {
                   <span className="font-mono text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-md border bg-green-500/15 text-green-300 border-green-500/30">
                     ACTIVE RESEARCH
                   </span>
-                  <span className="font-mono text-xs text-teal-400 font-bold">EE391</span>
+                  <span className="font-mono text-xs text-primary font-bold">EE391</span>
                 </div>
                 <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">
                   Arbabian Lab — mm-Wave Radar & Sensing Research
@@ -171,7 +171,7 @@ export default function StanfordPage() {
                     'Low-power RF/mmWave IoT device design',
                   ].map((item) => (
                     <div key={item} className="flex items-start gap-2.5">
-                      <ChevronRight className="w-3.5 h-3.5 text-teal-400 mt-0.5 shrink-0" />
+                      <ChevronRight className="w-3.5 h-3.5 text-primary mt-0.5 shrink-0" />
                       <span className="font-body text-sm text-muted-foreground">{item}</span>
                     </div>
                   ))}
@@ -191,7 +191,7 @@ export default function StanfordPage() {
                     { label: 'Lab / Conference', placeholder: '📷 Add team/presentation photo' },
                   ].map((photo) => (
                     <div key={photo.label} className="space-y-1">
-                      <div className="rounded border border-white/10 bg-white/[0.03] aspect-video flex items-center justify-center">
+                      <div className="rounded border border-black/10 bg-white/70 aspect-video flex items-center justify-center">
                         <span className="font-mono text-[10px] text-muted-foreground/85 text-center px-2 leading-relaxed">
                           {photo.placeholder}
                         </span>
@@ -212,14 +212,14 @@ export default function StanfordPage() {
           <TrackHeading
             icon={Cpu}
             label="VLSI & Chip Design Track"
-            color="text-sky-400"
-            gradientColor="from-sky-500/30"
+            color="text-primary"
+            gradientColor="from-primary/20"
           />
 
           {/* Track overview */}
-          <div className="rounded-lg border border-white/10 bg-white/[0.03] px-5 py-4 mb-6">
+          <div className="rounded-lg border border-black/10 bg-white/70 px-5 py-4 mb-6">
             <p className="font-body text-sm text-muted-foreground leading-relaxed">
-              <span className="text-sky-400 font-medium">Track Overview:</span>{' '}
+              <span className="text-primary font-medium">Track Overview:</span>{' '}
               The VLSI design sequence at Stanford covers the complete chip design flow from RTL
               specification through physical verification, with EE372 as the upcoming TSMC-oriented fabrication track. Tools: Cadence Virtuoso,
               Synopsys Design Compiler, Innovus P&R, plus the SkyWater 130nm open PDK.
@@ -228,7 +228,7 @@ export default function StanfordPage() {
 
           <div className="grid md:grid-cols-2 gap-6 mb-4">
             {/* EE372 */}
-            <div className="rounded-xl border border-white/12 bg-card/70 p-6 hover:border-sky-400/45 hover:shadow-[0_0_24px_rgba(56,189,248,0.1)] transition-all duration-300">
+            <div className="rounded-xl border border-black/10 bg-card/70 p-6 hover:border-primary/30 hover:shadow-lg hover:shadow-black/5 transition-all duration-300">
               <div className="flex items-start justify-between gap-2 mb-4">
                 <div>
                   <div className="font-mono text-xs font-bold text-primary tracking-widest mb-1">EE372</div>
@@ -237,10 +237,10 @@ export default function StanfordPage() {
                   </h3>
                 </div>
                 <div className="flex flex-col items-end gap-1.5 shrink-0">
-                  <span className="font-mono text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-md border bg-violet-500/15 text-violet-300 border-violet-500/30">
+                  <span className="font-mono text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-md border bg-primary/10 text-primary border-primary/25">
                     UPCOMING
                   </span>
-                  <span className="font-mono text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-md border bg-white/[0.06] text-primary border-white/12">
+                  <span className="font-mono text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-md border bg-black/[0.04] text-primary border-black/10">
                     FABRICATION TRACK
                   </span>
                 </div>
@@ -259,7 +259,7 @@ export default function StanfordPage() {
             </div>
 
             {/* EE272 */}
-            <div className="rounded-xl border border-white/12 bg-card/70 p-6 hover:border-sky-400/45 hover:shadow-[0_0_24px_rgba(56,189,248,0.1)] transition-all duration-300">
+            <div className="rounded-xl border border-black/10 bg-card/70 p-6 hover:border-primary/30 hover:shadow-lg hover:shadow-black/5 transition-all duration-300">
               <div className="flex items-start justify-between gap-2 mb-4">
                 <div>
                   <div className="font-mono text-xs font-bold text-primary tracking-widest mb-1">EE271 / EE272</div>
@@ -299,14 +299,14 @@ export default function StanfordPage() {
           <TrackHeading
             icon={Zap}
             label="Analog IC & RF Track"
-            color="text-violet-400"
-            gradientColor="from-violet-500/30"
+            color="text-primary"
+            gradientColor="from-primary/20"
           />
 
           {/* Track overview */}
-          <div className="rounded-lg border border-violet-500/15 bg-violet-500/5 px-5 py-4 mb-6">
+          <div className="rounded-lg border border-violet-500/15 bg-primary/10 px-5 py-4 mb-6">
             <p className="font-body text-sm text-muted-foreground leading-relaxed">
-              <span className="text-violet-400 font-medium">Track Overview:</span>{' '}
+              <span className="text-primary font-medium">Track Overview:</span>{' '}
               Deep analog IC design from device physics through advanced mixed-signal systems.
               Covers CMOS amplifier design, RF communications circuits, and ADC/DAC architectures
               using industry-standard Cadence tools.
@@ -315,10 +315,10 @@ export default function StanfordPage() {
 
           <div className="grid md:grid-cols-3 gap-6 mb-4">
             {/* EE214A */}
-            <div className="rounded-xl border border-violet-500/25 bg-card/70 p-6 hover:border-violet-400/45 hover:shadow-[0_0_24px_rgba(139,92,246,0.1)] transition-all duration-300">
+            <div className="rounded-xl border border-border bg-card/70 p-6 hover:border-primary/30 hover:shadow-[0_0_24px_rgba(139,92,246,0.1)] transition-all duration-300">
               <div className="flex items-start justify-between gap-2 mb-4">
                 <div>
-                  <div className="font-mono text-xs font-bold text-violet-400 tracking-widest mb-1">EE214A</div>
+                  <div className="font-mono text-xs font-bold text-primary tracking-widest mb-1">EE214A</div>
                   <h3 className="font-display text-base font-bold text-foreground leading-tight">
                     Fundamentals of Analog Integrated Circuit Design
                   </h3>
@@ -340,10 +340,10 @@ export default function StanfordPage() {
             </div>
 
             {/* EE233 */}
-            <div className="rounded-xl border border-violet-500/25 bg-card/70 p-6 hover:border-violet-400/45 hover:shadow-[0_0_24px_rgba(139,92,246,0.1)] transition-all duration-300">
+            <div className="rounded-xl border border-border bg-card/70 p-6 hover:border-primary/30 hover:shadow-[0_0_24px_rgba(139,92,246,0.1)] transition-all duration-300">
               <div className="flex items-start justify-between gap-2 mb-4">
                 <div>
-                  <div className="font-mono text-xs font-bold text-violet-400 tracking-widest mb-1">EE233</div>
+                  <div className="font-mono text-xs font-bold text-primary tracking-widest mb-1">EE233</div>
                   <h3 className="font-display text-base font-bold text-foreground leading-tight">
                     Analog Communications Design Laboratory
                   </h3>
@@ -352,7 +352,7 @@ export default function StanfordPage() {
                   <span className="font-mono text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-md border bg-muted/50 text-muted-foreground border-border">
                     DONE
                   </span>
-                  <span className="font-mono text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-md border bg-violet-500/15 text-violet-300 border-violet-500/30">
+                  <span className="font-mono text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-md border bg-primary/10 text-primary border-primary/25">
                     FM RADIO
                   </span>
                 </div>
@@ -366,7 +366,7 @@ export default function StanfordPage() {
                 href="/233-FinalProject/FinalProject.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 font-mono text-xs text-violet-400 hover:text-violet-300 border border-violet-500/30 hover:border-violet-400/50 bg-violet-500/5 hover:bg-violet-500/10 px-3 py-1.5 rounded-md transition-all duration-200 mb-4"
+                className="inline-flex items-center gap-1.5 font-mono text-xs text-primary hover:text-primary border border-primary/25 hover:border-primary/30 bg-primary/10 hover:bg-primary/10 px-3 py-1.5 rounded-md transition-all duration-200 mb-4"
               >
                 <FileText className="w-3 h-3" /> View Project Code
               </a>
@@ -378,15 +378,15 @@ export default function StanfordPage() {
             </div>
 
             {/* EE256 */}
-            <div className="rounded-xl border border-violet-500/25 bg-card/70 p-6 hover:border-violet-400/45 hover:shadow-[0_0_24px_rgba(139,92,246,0.1)] transition-all duration-300">
+            <div className="rounded-xl border border-border bg-card/70 p-6 hover:border-primary/30 hover:shadow-[0_0_24px_rgba(139,92,246,0.1)] transition-all duration-300">
               <div className="flex items-start justify-between gap-2 mb-4">
                 <div>
-                  <div className="font-mono text-xs font-bold text-violet-400 tracking-widest mb-1">EE256</div>
+                  <div className="font-mono text-xs font-bold text-primary tracking-widest mb-1">EE256</div>
                   <h3 className="font-display text-base font-bold text-foreground leading-tight">
                     Analog-Digital Interface Circuits
                   </h3>
                 </div>
-                <span className="font-mono text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-md border bg-violet-500/15 text-violet-300 border-violet-500/30 shrink-0">
+                <span className="font-mono text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-md border bg-primary/10 text-primary border-primary/25 shrink-0">
                   UPCOMING
                 </span>
               </div>
@@ -409,9 +409,9 @@ export default function StanfordPage() {
 
         {/* ══ SECTION 5: EMPLOYER SUMMARY ═════════════════════ */}
         <FadeIn delay="delay-250">
-          <div className="rounded-xl border border-white/10 bg-card/65 p-8">
+          <div className="rounded-xl border border-black/10 bg-card/65 p-8">
             <div className="text-center mb-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/[0.03] mb-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-black/10 bg-white/70 mb-4">
                 <span className="font-mono text-xs text-primary/80 tracking-widest uppercase">
                   Employer Summary
                 </span>
@@ -429,30 +429,30 @@ export default function StanfordPage() {
                 {
                   title: 'Full Chip Design Flow',
                   sub: 'RTL → Synthesis → P&R → Tape-out (TSMC experience)',
-                  color: 'text-sky-400',
+                  color: 'text-primary',
                   border: 'border-sky-500/25',
-                  bg: 'bg-sky-500/8',
+                  bg: 'bg-primary/10',
                 },
                 {
                   title: 'Analog & RF IC Design',
                   sub: 'CMOS amplifier to superheterodyne radios',
-                  color: 'text-violet-400',
-                  border: 'border-violet-500/25',
-                  bg: 'bg-violet-500/8',
+                  color: 'text-primary',
+                  border: 'border-border',
+                  bg: 'bg-primary/10',
                 },
                 {
                   title: 'mm-Wave Radar Systems',
                   sub: 'Co-designing ICs with ML perception algorithms',
-                  color: 'text-teal-400',
-                  border: 'border-teal-500/25',
-                  bg: 'bg-teal-500/8',
+                  color: 'text-primary',
+                  border: 'border-border',
+                  bg: 'bg-primary/10',
                 },
                 {
                   title: 'Mixed-Signal',
                   sub: 'Bridging analog sensors to digital AI systems',
-                  color: 'text-sky-300',
+                  color: 'text-primary',
                   border: 'border-sky-500/20',
-                  bg: 'bg-sky-500/5',
+                  bg: 'bg-primary/10',
                 },
               ].map((item) => (
                 <div

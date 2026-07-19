@@ -19,7 +19,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
   const Icon = tc.icon;
 
   return (
-    <article className="project-card group relative flex h-full flex-col overflow-hidden rounded-2xl bg-card/70 shadow-sm shadow-black/10">
+    <article className="project-card group relative flex h-full flex-col overflow-hidden rounded-2xl bg-card/70 shadow-sm shadow-black/5">
       <Link href={project.href} aria-label={`View ${project.title}`} className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background">
         <div className="relative aspect-[16/10] overflow-hidden bg-muted">
           <Image
@@ -32,7 +32,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             className="h-full w-full object-cover grayscale-[20%] transition duration-300 group-hover:scale-[1.025] group-hover:grayscale-0"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/64 via-transparent to-transparent opacity-70" />
-          <div className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full border border-white/12 bg-background/70 px-2.5 py-1 text-[11px] font-medium text-foreground backdrop-blur-md">
+          <div className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-background/70 px-2.5 py-1 text-[11px] font-medium text-foreground backdrop-blur-md">
             <Icon className="h-3 w-3" />
             {tc.label}
           </div>
@@ -54,13 +54,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
         <div className="mt-5 flex flex-wrap gap-2">
           {project.tags.slice(0, 4).map((tag) => (
-            <span key={tag} className="rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-1 text-[11px] font-medium text-muted-foreground">
+            <span key={tag} className="rounded-full border border-black/10 bg-white/70 px-2.5 py-1 text-[11px] font-medium text-muted-foreground">
               {tag}
             </span>
           ))}
         </div>
 
-        <div className="mt-6 flex items-center gap-2 border-t border-white/10 pt-4">
+        <div className="mt-6 flex items-center gap-2 border-t border-black/10 pt-4">
           <Link
             href={project.href}
             className="inline-flex flex-1 items-center justify-between rounded-full px-1 text-sm font-semibold text-foreground transition-colors duration-150 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
@@ -74,7 +74,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`Visit external website for ${project.title}`}
-              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-muted-foreground transition-colors duration-150 hover:border-white/20 hover:bg-white/[0.06] hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-black/10 text-muted-foreground transition-colors duration-150 hover:border-black/15 hover:bg-black/[0.04] hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               <ExternalLink className="h-4 w-4" />
             </a>

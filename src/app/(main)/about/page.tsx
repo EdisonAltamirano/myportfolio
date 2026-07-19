@@ -23,11 +23,11 @@ export default function AboutPage() {
 
         {/* Hero card */}
         <FadeIn delay="delay-100" className="mb-14">
-          <div className="rounded-xl border border-white/10 bg-card/70 overflow-hidden">
+          <div className="rounded-xl border border-black/10 bg-card/70 overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-2">
               <div className="p-8 md:p-12 flex flex-col justify-center">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/[0.03] mb-5 w-fit">
-                  <span className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse" />
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-black/10 bg-white/70 mb-5 w-fit">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                   <span className="font-mono text-xs text-primary/80 tracking-widest uppercase">
                     Stanford University · MS Electrical Engineering
                   </span>
@@ -45,15 +45,15 @@ export default function AboutPage() {
                   into the hardware stack — designing integrated circuits at the transistor level.
                 </p>
                 <p className="font-body text-muted-foreground leading-relaxed">
-                  At the <span className="text-teal-400 font-medium">Arbabian Lab</span>, I research
+                  At the <span className="text-primary font-medium">Arbabian Lab</span>, I research
                   mm-wave radar sensor ICs and multimodal AI systems. In the fab, I design analog
-                  circuits for <span className="text-sky-400 font-medium">real fabrication at TSMC</span>{" "}
+                  circuits for <span className="text-primary font-medium">real fabrication at TSMC</span>{" "}
                   — bridging physics, silicon, and intelligent perception.
                 </p>
                 <div className="mt-8">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2 font-display text-sm font-semibold tracking-wider uppercase text-primary hover:text-sky-300 border border-white/12 hover:border-sky-500/60 px-6 py-3 rounded-md transition-all duration-300"
+                    className="inline-flex items-center gap-2 font-display text-sm font-semibold tracking-wider uppercase text-primary hover:text-primary border border-black/10 hover:border-primary/30 px-6 py-3 rounded-md transition-all duration-300"
                   >
                     Get In Touch
                   </Link>
@@ -79,7 +79,7 @@ export default function AboutPage() {
             {aboutStats.map((stat) => (
               <div
                 key={stat.label}
-                className="rounded-lg border border-border bg-card/70 p-6 text-center hover:border-sky-500/30 transition-colors card-glow-sky"
+                className="rounded-lg border border-border bg-card/70 p-6 text-center hover:border-primary/25 transition-colors card-glow-sky"
               >
                 <span className="font-display text-4xl font-bold text-primary block">{stat.value}</span>
                 <span className="font-body text-sm text-muted-foreground mt-1 block">{stat.label}</span>
@@ -112,7 +112,7 @@ export default function AboutPage() {
               },
             ].map((p) => (
               <div key={p.title} className="rounded-lg border border-border bg-card/70 p-6 text-center card-glow-sky">
-                <div className="w-12 h-12 rounded-xl bg-white/[0.05] flex items-center justify-center mx-auto mb-4">
+                <div className="w-12 h-12 rounded-xl bg-white/80 flex items-center justify-center mx-auto mb-4">
                   <p.icon className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="font-display text-xl font-bold text-foreground mb-2">{p.title}</h3>
@@ -148,7 +148,7 @@ export default function AboutPage() {
               href="/docs/EdisonAltamiranoResume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 font-display text-sm font-bold tracking-wider uppercase px-8 py-4 rounded-md border border-white/12 text-primary hover:bg-sky-500/10 hover:border-sky-500/70 transition-all duration-300 animate-sky-glow"
+              className="inline-flex items-center gap-3 font-display text-sm font-bold tracking-wider uppercase px-8 py-4 rounded-md border border-black/10 text-primary hover:bg-primary/10 hover:border-primary/30 transition-all duration-300 animate-sky-glow"
             >
               <Download className="h-5 w-5" />
               Download Full CV

@@ -433,11 +433,11 @@ function ZFBrakingProjectContent() {
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="bg-violet-500/10 border-violet-500/20">
+              <Card className="bg-primary/10 border-border">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <Trophy className="h-6 w-6 text-violet-400 mr-3" />
-                    <h4 className="font-medium text-violet-300">Technical Leadership</h4>
+                    <Trophy className="h-6 w-6 text-primary mr-3" />
+                    <h4 className="font-medium text-primary">Technical Leadership</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Established best practices for AUTOSAR implementation and system architecture that became team standards.
@@ -457,11 +457,11 @@ function ZFBrakingProjectContent() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-sky-500/10 border-sky-500/20">
+              <Card className="bg-primary/10 border-sky-500/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <Star className="h-6 w-6 text-sky-400 mr-3" />
-                    <h4 className="font-medium text-sky-300">Innovation</h4>
+                    <Star className="h-6 w-6 text-primary mr-3" />
+                    <h4 className="font-medium text-primary">Innovation</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Introduced new testing methodologies and tools that improved overall system reliability and performance.
@@ -498,7 +498,7 @@ function ZFShuttleProjectContent() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="bg-card/60 border-border hover:border-sky-500/30 transition-colors duration-300">
+              <Card className="bg-card/60 border-border hover:border-primary/25 transition-colors duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <div className="bg-primary/10 p-3 rounded-lg">
@@ -512,7 +512,7 @@ function ZFShuttleProjectContent() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-card/60 border-border hover:border-sky-500/30 transition-colors duration-300">
+              <Card className="bg-card/60 border-border hover:border-primary/25 transition-colors duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <div className="bg-primary/10 p-3 rounded-lg">
@@ -526,7 +526,7 @@ function ZFShuttleProjectContent() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-card/60 border-border hover:border-sky-500/30 transition-colors duration-300">
+              <Card className="bg-card/60 border-border hover:border-primary/25 transition-colors duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <div className="bg-primary/10 p-3 rounded-lg">
@@ -706,7 +706,7 @@ function ZFShuttleProjectContent() {
               </h3>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div className="space-y-6">
-                  <Card className="bg-sky-500/10 border-sky-500/20">
+                  <Card className="bg-primary/10 border-sky-500/20">
                     <CardContent className="p-6">
                       <h4 className="font-bold mb-3">Stereo Vision & SLAM</h4>
                       <ul className="space-y-2 text-sm">
@@ -807,7 +807,7 @@ function ZFShuttleProjectContent() {
           </CardHeader>
           <CardContent className="space-y-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <Card className="bg-violet-500/10 border-violet-500/20">
+              <Card className="bg-primary/10 border-border">
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold mb-4 flex items-center">
                     <Monitor className="mr-3 h-5 w-5" />
@@ -911,7 +911,7 @@ function ZFShuttleProjectContent() {
               </Card>
 
               {/* High-Level Visits */}
-              <Card className="bg-sky-500/10 border-sky-500/25">
+              <Card className="bg-primary/10 border-sky-500/25">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-6">
                     <div className="bg-blue-200 p-3 rounded-lg">
@@ -999,11 +999,11 @@ function ZFShuttleProjectContent() {
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="bg-violet-500/10 border-violet-500/20">
+              <Card className="bg-primary/10 border-border">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <Building className="h-6 w-6 text-violet-400 mr-3" />
-                    <h4 className="font-medium text-violet-300">Institutional Reputation</h4>
+                    <Building className="h-6 w-6 text-primary mr-3" />
+                    <h4 className="font-medium text-primary">Institutional Reputation</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Consolidated Tecnológico de Monterrey as "core development center" for ZF in Latin America.
@@ -1044,11 +1044,11 @@ function ZFShuttleProjectContent() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-sky-500/10 border-sky-500/20">
+              <Card className="bg-primary/10 border-sky-500/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <Users className="h-6 w-6 text-sky-400 mr-3" />
-                    <h4 className="font-medium text-sky-300">Educational Impact</h4>
+                    <Users className="h-6 w-6 text-primary mr-3" />
+                    <h4 className="font-medium text-primary">Educational Impact</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Know-how incorporated into autonomous vehicle courses taught to teachers across Mexico.
@@ -1088,8 +1088,8 @@ function AIRLabProjectContent() {
           </CardHeader>
           <CardContent className="space-y-8">
             {/* Video Demonstration */}
-            <div className="bg-sky-500/10 border-l-4 border-sky-500 p-6 rounded-lg">
-              <h3 className="text-lg font-bold text-sky-300 mb-4">Project Functionality Demonstration</h3>
+            <div className="bg-primary/10 border-l-4 border-sky-500 p-6 rounded-lg">
+              <h3 className="text-lg font-bold text-primary mb-4">Project Functionality Demonstration</h3>
               <div className="relative overflow-hidden rounded-lg aspect-video shadow-lg">
                 <iframe
                   src="https://www.youtube.com/embed/sTFtxwSkYfI?si=Iwi-O_nJTJAtQZO0"
@@ -1110,7 +1110,7 @@ function AIRLabProjectContent() {
             {/* Overview */}
             <div>
               <h3 className="text-xl font-bold text-primary mb-4">Overview</h3>
-              <div className="bg-sky-500/10 border-l-4 border-sky-500 p-6 rounded-lg">
+              <div className="bg-primary/10 border-l-4 border-sky-500 p-6 rounded-lg">
                 <p className="text-muted-foreground italic mb-4">
                   "Ahold Delhaize's AI for Retail Lab (AIRLab) and YES!Delft invited us to the Finals Event of the AIRLab Stacking Challenge. Within this challenge, we have challenged students and research teams from all over the world to share knowledge and dive deep into the tech to better understand the ground principles of robotics."
                 </p>
@@ -1129,11 +1129,11 @@ function AIRLabProjectContent() {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-violet-500/10 border-violet-500/20">
+                <Card className="bg-primary/10 border-border">
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
-                      <Building className="h-6 w-6 text-violet-400 mr-3" />
-                      <h4 className="font-medium text-violet-300">Context</h4>
+                      <Building className="h-6 w-6 text-primary mr-3" />
+                      <h4 className="font-medium text-primary">Context</h4>
                     </div>
                     <p className="text-sm text-muted-foreground">
                       Hosted by AIRLab (Ahold Delhaize / TU Delft) with support from PAL Robotics and YES!Delft.
@@ -1310,7 +1310,7 @@ function AIRLabProjectContent() {
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* AIRLab */}
-              <Card className="bg-sky-500/10 border-sky-500/20">
+              <Card className="bg-primary/10 border-sky-500/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <div className="bg-blue-200 p-3 rounded-lg">
@@ -1354,7 +1354,7 @@ function AIRLabProjectContent() {
               </Card>
 
               {/* TU Delft */}
-              <Card className="bg-violet-500/10 border-violet-500/20">
+              <Card className="bg-primary/10 border-border">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <div className="bg-purple-200 p-3 rounded-lg">
@@ -1418,10 +1418,10 @@ function AIRLabProjectContent() {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-sky-500/10 border-sky-500/20">
+                <Card className="bg-primary/10 border-sky-500/20">
                   <CardContent className="p-6 text-center">
-                    <Star className="h-12 w-12 text-sky-400 mx-auto mb-4" />
-                    <h4 className="font-bold text-sky-300 mb-2">🏅 Key Differentiator</h4>
+                    <Star className="h-12 w-12 text-primary mx-auto mb-4" />
+                    <h4 className="font-bold text-primary mb-2">🏅 Key Differentiator</h4>
                     <p className="text-sm text-muted-foreground">Robust error handler with retry mechanism|minimized deadlocks</p>
                   </CardContent>
                 </Card>
@@ -1637,7 +1637,7 @@ function SmartFactoryProjectContent() {
               </h3>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div className="space-y-6">
-                  <Card className="bg-sky-500/10 border-sky-500/20">
+                  <Card className="bg-primary/10 border-sky-500/20">
                     <CardContent className="p-6">
                       <h4 className="font-bold mb-3">Vision & Simulation Systems</h4>
                       <ul className="space-y-2 text-sm">
@@ -1765,7 +1765,7 @@ function SmartFactoryProjectContent() {
               </Card>
 
               {/* Academic Publications */}
-              <Card className="bg-sky-500/10 border-sky-500/25">
+              <Card className="bg-primary/10 border-sky-500/25">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-6">
                     <div className="bg-blue-200 p-3 rounded-lg">
@@ -1864,11 +1864,11 @@ function SmartFactoryProjectContent() {
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* General Coordinator */}
-              <Card className="bg-violet-500/10 border-violet-500/20">
+              <Card className="bg-primary/10 border-border">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <Users className="h-6 w-6 text-violet-400 mr-3" />
-                    <h4 className="font-medium text-violet-300">General Coordinator</h4>
+                    <Users className="h-6 w-6 text-primary mr-3" />
+                    <h4 className="font-medium text-primary">General Coordinator</h4>
                   </div>
                   <p className="text-sm text-muted-foreground mb-4">
                     Led a team of 50 scholarship students, 70 students, and 3 teachers to design, implement, and validate the pilot factory.
@@ -1909,7 +1909,7 @@ function SmartFactoryProjectContent() {
             </div>
 
             {/* Mentor and Facilitator */}
-            <Card className="mt-8 bg-sky-500/10 border-sky-500/20">
+            <Card className="mt-8 bg-primary/10 border-sky-500/20">
               <CardContent className="p-6">
                 <div className="flex items-center mb-6">
                   <div className="bg-blue-200 p-3 rounded-lg">
@@ -1919,19 +1919,19 @@ function SmartFactoryProjectContent() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div className="bg-card/60 border border-border p-4 rounded-lg">
-                    <h4 className="font-medium text-sky-300 mb-2">Team Leadership</h4>
+                    <h4 className="font-medium text-primary mb-2">Team Leadership</h4>
                     <p className="text-sm text-muted-foreground">
                       Guided group leaders, defined weekly objectives, and reviewed progress presentations.
                     </p>
                   </div>
                   <div className="bg-card/60 border border-border p-4 rounded-lg">
-                    <h4 className="font-medium text-sky-300 mb-2">Immediate Feedback</h4>
+                    <h4 className="font-medium text-primary mb-2">Immediate Feedback</h4>
                     <p className="text-sm text-muted-foreground">
                       Provided real-time feedback to prevent technical blockages and maintain project momentum.
                     </p>
                   </div>
                   <div className="bg-card/60 border border-border p-4 rounded-lg">
-                    <h4 className="font-medium text-sky-300 mb-2">Weekend Support</h4>
+                    <h4 className="font-medium text-primary mb-2">Weekend Support</h4>
                     <p className="text-sm text-muted-foreground">
                       Resolved technical problems on weekends alongside faculty to ensure continuous progress.
                     </p>
@@ -1952,11 +1952,11 @@ function SmartFactoryProjectContent() {
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="bg-violet-500/10 border-violet-500/20">
+              <Card className="bg-primary/10 border-border">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <Network className="h-6 w-6 text-violet-400 mr-3" />
-                    <h4 className="font-medium text-violet-300">Knowledge Multiplier</h4>
+                    <Network className="h-6 w-6 text-primary mr-3" />
+                    <h4 className="font-medium text-primary">Knowledge Multiplier</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Created a replicable model for other campuses, strengthening the Smart Factory network in Latin America.
@@ -1994,11 +1994,11 @@ function SmartFactoryProjectContent() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-sky-500/10 border-sky-500/20">
+              <Card className="bg-primary/10 border-sky-500/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <Globe className="h-6 w-6 text-sky-400 mr-3" />
-                    <h4 className="font-medium text-sky-300">International Collaboration</h4>
+                    <Globe className="h-6 w-6 text-primary mr-3" />
+                    <h4 className="font-medium text-primary">International Collaboration</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Positioned Tec as partner of Cyber-Physical Learning Alliance (CPL) and MIT in Digital Twin projects.
@@ -2203,11 +2203,11 @@ function RoboCupProjectContent() {
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Navigation System */}
-              <Card className="bg-violet-500/10 border-violet-500/20">
+              <Card className="bg-primary/10 border-border">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <Navigation className="h-6 w-6 text-violet-400 mr-3" />
-                    <h4 className="font-medium text-violet-300">Adaptive Navigation</h4>
+                    <Navigation className="h-6 w-6 text-primary mr-3" />
+                    <h4 className="font-medium text-primary">Adaptive Navigation</h4>
                   </div>
                   <p className="text-sm text-muted-foreground mb-4">
                     Implemented robust navigation system capable of handling dynamic environments, including:
@@ -2258,7 +2258,7 @@ function RoboCupProjectContent() {
             </div>
 
             {/* Human-Robot Interaction */}
-            <Card className="mt-8 bg-sky-500/10 border-sky-500/20">
+            <Card className="mt-8 bg-primary/10 border-sky-500/20">
               <CardContent className="p-6">
                 <div className="flex items-center mb-6">
                   <div className="bg-blue-200 p-3 rounded-lg">
@@ -2268,19 +2268,19 @@ function RoboCupProjectContent() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div className="bg-card/60 border border-border p-4 rounded-lg">
-                    <h4 className="font-medium text-sky-300 mb-2">Voice Commands</h4>
+                    <h4 className="font-medium text-primary mb-2">Voice Commands</h4>
                     <p className="text-sm text-muted-foreground">
                       Natural language processing for understanding and executing voice commands in noisy environments.
                     </p>
                   </div>
                   <div className="bg-card/60 border border-border p-4 rounded-lg">
-                    <h4 className="font-medium text-sky-300 mb-2">Person Recognition</h4>
+                    <h4 className="font-medium text-primary mb-2">Person Recognition</h4>
                     <p className="text-sm text-muted-foreground">
                       Face recognition and tracking for identifying and interacting with different people in the arena.
                     </p>
                   </div>
                   <div className="bg-card/60 border border-border p-4 rounded-lg">
-                    <h4 className="font-medium text-sky-300 mb-2">Task Execution</h4>
+                    <h4 className="font-medium text-primary mb-2">Task Execution</h4>
                     <p className="text-sm text-muted-foreground">
                       Robust task planning and execution system for completing complex domestic service tasks.
                     </p>
@@ -2329,7 +2329,7 @@ function RoboCupProjectContent() {
               </Card>
 
               {/* Technical Recognition */}
-              <Card className="bg-sky-500/10 border-sky-500/20">
+              <Card className="bg-primary/10 border-sky-500/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-6">
                     <Award className="h-6 w-6 text-blue-700" />
@@ -2763,7 +2763,7 @@ function TokyoIROSProjectContent() {
               </h3>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div className="space-y-6">
-                  <Card className="bg-sky-500/10 border-sky-500/20">
+                  <Card className="bg-primary/10 border-sky-500/20">
                     <CardContent className="p-6">
                       <h4 className="font-bold mb-3">Intelligent Manipulation</h4>
                       <ul className="space-y-2 text-sm">
@@ -2895,7 +2895,7 @@ function TokyoIROSProjectContent() {
               </Card>
 
               {/* Community Recognition */}
-              <Card className="bg-sky-500/10 border-sky-500/25">
+              <Card className="bg-primary/10 border-sky-500/25">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-6">
                     <div className="bg-blue-200 p-3 rounded-lg">
@@ -2985,11 +2985,11 @@ function TokyoIROSProjectContent() {
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Navigation and Recovery Leader */}
-              <Card className="bg-violet-500/10 border-violet-500/20">
+              <Card className="bg-primary/10 border-border">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <Navigation className="h-6 w-6 text-violet-400 mr-3" />
-                    <h4 className="font-medium text-violet-300">Navigation & Recovery Leader</h4>
+                    <Navigation className="h-6 w-6 text-primary mr-3" />
+                    <h4 className="font-medium text-primary">Navigation & Recovery Leader</h4>
                   </div>
                   <p className="text-sm text-muted-foreground mb-4">
                     Designed autonomous navigation layer and failure replanning mechanisms, ensuring mission completion without interruption.
@@ -3030,7 +3030,7 @@ function TokyoIROSProjectContent() {
             </div>
 
             {/* Training and Mentorship */}
-            <Card className="mt-8 bg-sky-500/10 border-sky-500/20">
+            <Card className="mt-8 bg-primary/10 border-sky-500/20">
               <CardContent className="p-6">
                 <div className="flex items-center mb-6">
                   <div className="bg-blue-200 p-3 rounded-lg">
@@ -3040,19 +3040,19 @@ function TokyoIROSProjectContent() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div className="bg-card/60 border border-border p-4 rounded-lg">
-                    <h4 className="font-medium text-sky-300 mb-2">MoveIt! Best Practices</h4>
+                    <h4 className="font-medium text-primary mb-2">MoveIt! Best Practices</h4>
                     <p className="text-sm text-muted-foreground">
                       Trained team in advanced manipulation planning, optimization techniques, and collision avoidance strategies.
                     </p>
                   </div>
                   <div className="bg-card/60 border border-border p-4 rounded-lg">
-                    <h4 className="font-medium text-sky-300 mb-2">SIGVerse Simulation</h4>
+                    <h4 className="font-medium text-primary mb-2">SIGVerse Simulation</h4>
                     <p className="text-sm text-muted-foreground">
                       Conducted comprehensive training on virtual environment setup, debugging, and performance optimization.
                     </p>
                   </div>
                   <div className="bg-card/60 border border-border p-4 rounded-lg">
-                    <h4 className="font-medium text-sky-300 mb-2">Code Review & Testing</h4>
+                    <h4 className="font-medium text-primary mb-2">Code Review & Testing</h4>
                     <p className="text-sm text-muted-foreground">
                       Organized code review sessions and cross-testing protocols to ensure system reliability and robustness.
                     </p>
@@ -3073,11 +3073,11 @@ function TokyoIROSProjectContent() {
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="bg-violet-500/10 border-violet-500/20">
+              <Card className="bg-primary/10 border-border">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <Globe className="h-6 w-6 text-violet-400 mr-3" />
-                    <h4 className="font-medium text-violet-300">International Recognition</h4>
+                    <Globe className="h-6 w-6 text-primary mr-3" />
+                    <h4 className="font-medium text-primary">International Recognition</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Positioned Roborregos on the IROS scene and reinforced Tec de Monterrey's reputation in service robotics.
@@ -3115,11 +3115,11 @@ function TokyoIROSProjectContent() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-sky-500/10 border-sky-500/20">
+              <Card className="bg-primary/10 border-sky-500/20">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <Star className="h-6 w-6 text-sky-400 mr-3" />
-                    <h4 className="font-medium text-sky-300">Inspiration & Research</h4>
+                    <Star className="h-6 w-6 text-primary mr-3" />
+                    <h4 className="font-medium text-primary">Inspiration & Research</h4>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Motivated student community to explore human-robot interaction in virtual environments, driving new SLAM and VR research.
@@ -3152,7 +3152,7 @@ function ChakriProjectContent() {
       <FadeIn delay="delay-200">
         <div className="rounded-xl border border-sky-500/20 bg-card/50 p-8 md:p-10">
           <div className="flex items-center gap-2 mb-5">
-            <span className="font-mono text-xs text-sky-400/70 tracking-widest uppercase border border-sky-500/25 bg-sky-500/8 px-2 py-0.5 rounded-sm">CHAKRI Studio</span>
+            <span className="font-mono text-xs text-primary/70 tracking-widest uppercase border border-sky-500/25 bg-primary/10 px-2 py-0.5 rounded-sm">CHAKRI Studio</span>
             <span className="font-mono text-xs text-muted-foreground/50">·</span>
             <span className="font-mono text-xs text-muted-foreground/50">Client Project | Mexico</span>
           </div>
@@ -3166,7 +3166,7 @@ function ChakriProjectContent() {
           </p>
           <div className="flex flex-wrap gap-4 mt-6">
             {['Full-stack platform','Search + Auth + CMS + Analytics','Mexico-based client'].map(t=>(
-              <span key={t} className="font-mono text-xs text-sky-300 border border-sky-500/25 bg-sky-500/8 px-3 py-1 rounded-full">{t}</span>
+              <span key={t} className="font-mono text-xs text-primary border border-sky-500/25 bg-primary/10 px-3 py-1 rounded-full">{t}</span>
             ))}
           </div>
         </div>
@@ -3377,7 +3377,7 @@ function ChakriProjectContent() {
             <div className="bg-card/40 border border-border rounded-lg p-5 font-mono text-xs text-muted-foreground/80 leading-loose mb-4">
               <div className="text-primary/60 text-[10px] uppercase tracking-widest mb-3">Data Flow</div>
               <div className="flex flex-col gap-1">
-                <span><span className="text-sky-400">Architects / Designers / Admins</span>  →  Next.js Web App (SSR + ISR)</span>
+                <span><span className="text-primary">Architects / Designers / Admins</span>  →  Next.js Web App (SSR + ISR)</span>
                 <span className="pl-4 text-muted-foreground/50">↓  58 API Route Handlers</span>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-2 mt-1 pl-4">
                   {['Firebase Auth','Firestore','Firebase Storage','Elasticsearch','Google Analytics API','Cloud Functions'].map(s=>(
@@ -3489,11 +3489,11 @@ function JohnDeereProjectContent() {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-sky-500/10 border-sky-500/20 dark:from-blue-900/20 dark:to-blue-800/20 border-sky-500/30 dark:border-blue-700">
+                <Card className="bg-primary/10 border-sky-500/20 dark:from-blue-900/20 dark:to-blue-800/20 border-primary/25 dark:border-blue-700">
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
                       <div className="bg-blue-600/10 p-3 rounded-lg">
-                        <Shield className="h-6 w-6 text-sky-400" />
+                        <Shield className="h-6 w-6 text-primary" />
                       </div>
                       <h4 className="ml-3 text-lg font-bold text-blue-700 dark:text-blue-300">ShelfGuard</h4>
                     </div>
@@ -3633,25 +3633,25 @@ function JohnDeereProjectContent() {
           <Card className="shadow-xl">
             <CardHeader>
               <CardTitle className="text-2xl text-foreground flex items-center">
-                <Shield className="mr-3 h-6 w-6 text-sky-400" />
+                <Shield className="mr-3 h-6 w-6 text-primary" />
                 ShelfGuard - AI-Powered Theft Prevention
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-8">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div className="space-y-6">
-                  <h3 className="text-xl font-bold text-sky-400">Intelligent Security Solution</h3>
+                  <h3 className="text-xl font-bold text-primary">Intelligent Security Solution</h3>
                   <ul className="space-y-3">
                     <li className="flex items-start space-x-3">
-                      <Eye className="h-5 w-5 text-sky-400 mt-0.5 flex-shrink-0" />
+                      <Eye className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                       <span>Overhead cameras detect when someone removes an item from the shelf without authorization</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <Brain className="h-5 w-5 text-sky-400 mt-0.5 flex-shrink-0" />
+                      <Brain className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                       <span>Computer vision algorithms track hand-item interactions using OpenCV/OpenVINO</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <Zap className="h-5 w-5 text-sky-400 mt-0.5 flex-shrink-0" />
+                      <Zap className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                       <span>Triggers instant alerts to store associates or locks gates automatically</span>
                     </li>
                   </ul>
@@ -3678,14 +3678,14 @@ function JohnDeereProjectContent() {
 
               <div>
                 <h3 className="text-xl font-bold mb-6 flex items-center">
-                  <Cpu className="mr-3 h-6 w-6 text-sky-400" />
+                  <Cpu className="mr-3 h-6 w-6 text-primary" />
                   Advanced AI Features
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <Card className="bg-secondary/5">
                     <CardContent className="p-4">
                       <div className="flex items-center mb-3">
-                        <Eye className="h-5 w-5 text-sky-400 mr-2" />
+                        <Eye className="h-5 w-5 text-primary mr-2" />
                         <h4 className="font-medium">Real-time Detection</h4>
                       </div>
                       <p className="text-sm text-muted-foreground">
@@ -3697,7 +3697,7 @@ function JohnDeereProjectContent() {
                   <Card className="bg-secondary/5">
                     <CardContent className="p-4">
                       <div className="flex items-center mb-3">
-                        <Network className="h-5 w-5 text-sky-400 mr-2" />
+                        <Network className="h-5 w-5 text-primary mr-2" />
                         <h4 className="font-medium">System Integration</h4>
                       </div>
                       <p className="text-sm text-muted-foreground">
@@ -3726,7 +3726,7 @@ function JohnDeereProjectContent() {
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
                 <div className="text-center space-y-3">
                   <div className="bg-blue-100 dark:bg-blue-900/20 p-4 rounded-lg">
-                    <FileText className="h-8 w-8 text-sky-400 mx-auto" />
+                    <FileText className="h-8 w-8 text-primary mx-auto" />
                   </div>
                   <div>
                     <h4 className="font-medium text-sm">SAP</h4>
@@ -3746,7 +3746,7 @@ function JohnDeereProjectContent() {
 
                 <div className="text-center space-y-3">
                   <div className="bg-blue-100 dark:bg-blue-900/20 p-4 rounded-lg">
-                    <Cloud className="h-8 w-8 text-sky-400 mx-auto" />
+                    <Cloud className="h-8 w-8 text-primary mx-auto" />
                   </div>
                   <div>
                     <h4 className="font-medium text-sm">Azure</h4>
@@ -3756,7 +3756,7 @@ function JohnDeereProjectContent() {
 
                 <div className="text-center space-y-3">
                   <div className="bg-purple-100 dark:bg-purple-900/20 p-4 rounded-lg">
-                    <Zap className="h-8 w-8 text-violet-400 mx-auto" />
+                    <Zap className="h-8 w-8 text-primary mx-auto" />
                   </div>
                   <div>
                     <h4 className="font-medium text-sm">Power Platform</h4>
@@ -4009,15 +4009,15 @@ function VanttecProjectContent() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* RoboBoat Awards */}
-              <Card className="bg-sky-500/10 border-sky-500/20 dark:from-blue-900/20 dark:to-blue-800/20 border-sky-500/30 dark:border-blue-700">
+              <Card className="bg-primary/10 border-sky-500/20 dark:from-blue-900/20 dark:to-blue-800/20 border-primary/25 dark:border-blue-700">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-6">
                     <div className="bg-blue-600/10 p-3 rounded-lg">
-                      <Car className="h-8 w-8 text-sky-400" />
+                      <Car className="h-8 w-8 text-primary" />
                     </div>
                     <div className="ml-4">
-                      <h3 className="text-xl font-bold text-sky-300 dark:text-blue-200">RoboBoat Awards</h3>
-                      <p className="text-sm text-sky-400 dark:text-blue-300">Autonomous Surface Vehicle Competition</p>
+                      <h3 className="text-xl font-bold text-primary dark:text-blue-200">RoboBoat Awards</h3>
+                      <p className="text-sm text-primary dark:text-blue-300">Autonomous Surface Vehicle Competition</p>
                     </div>
                   </div>
 
@@ -4033,7 +4033,7 @@ function VanttecProjectContent() {
 
                   <div className="space-y-6">
                     <div>
-                      <h4 className="font-bold text-sky-300 dark:text-blue-200 mb-3">2021 Achievements:</h4>
+                      <h4 className="font-bold text-primary dark:text-blue-200 mb-3">2021 Achievements:</h4>
                       <div className="space-y-2">
                         <div className="flex items-start space-x-3">
                           <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
@@ -4063,7 +4063,7 @@ function VanttecProjectContent() {
                     </div>
 
                     <div>
-                      <h4 className="font-bold text-sky-300 dark:text-blue-200 mb-3">2020 Achievements:</h4>
+                      <h4 className="font-bold text-primary dark:text-blue-200 mb-3">2020 Achievements:</h4>
                       <div className="space-y-2">
                         <div className="flex items-start space-x-3">
                           <Trophy className="h-4 w-4 text-yellow-500 mt-1 flex-shrink-0" />
@@ -4092,15 +4092,15 @@ function VanttecProjectContent() {
               </Card>
 
               {/* RoboSub Awards */}
-              <Card className="bg-teal-500/10 border border-teal-500/25 shadow-xl">
+              <Card className="bg-primary/10 border border-border shadow-xl">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-6">
-                    <div className="bg-teal-500/15 p-3 rounded-lg border border-teal-500/20">
-                      <Navigation className="h-8 w-8 text-teal-300" />
+                    <div className="bg-primary/10 p-3 rounded-lg border border-border">
+                      <Navigation className="h-8 w-8 text-primary" />
                     </div>
                     <div className="ml-4">
                       <h3 className="text-xl font-bold text-teal-200">RoboSub Awards</h3>
-                      <p className="text-sm text-teal-300/80">Autonomous Underwater Vehicle Competition</p>
+                      <p className="text-sm text-primary/80">Autonomous Underwater Vehicle Competition</p>
                     </div>
                   </div>
 
@@ -4138,7 +4138,7 @@ function VanttecProjectContent() {
                         <Target className="h-5 w-5 text-teal-600 mt-1 flex-shrink-0" />
                         <div>
                           <h5 className="font-medium text-teal-800 dark:text-teal-200 mb-1">Outstanding Achievement</h5>
-                          <p className="text-sm text-teal-700 dark:text-teal-300">
+                          <p className="text-sm text-teal-700 dark:text-primary">
                             Remarkable performance in our first year competing in both RoboBoat and RoboSub competitions,
                             establishing VANTTEC as a leading force in autonomous marine robotics.
                           </p>
@@ -4265,7 +4265,7 @@ function VanttecProjectContent() {
                   <div className="space-y-6">
                     <div className="flex items-start space-x-4">
                       <div className="bg-primary rounded-full h-4 w-4 flex items-center justify-center mt-1">
-                        <div className="h-2 w-2 bg-white rounded-full" />
+                        <div className="h-2 w-2 bg-foreground rounded-full" />
                       </div>
                       <div>
                         <h4 className="font-medium">1st place in RoboBoat</h4>
@@ -4273,7 +4273,7 @@ function VanttecProjectContent() {
                     </div>
                     <div className="flex items-start space-x-4">
                       <div className="bg-primary rounded-full h-4 w-4 flex items-center justify-center mt-1">
-                        <div className="h-2 w-2 bg-white rounded-full" />
+                        <div className="h-2 w-2 bg-foreground rounded-full" />
                       </div>
                       <div>
                         <h4 className="font-medium">3rd place in RoboSub</h4>
@@ -4404,7 +4404,7 @@ function EE272ProjectContent() {
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-sky-500/10 border-sky-500/20 rounded-lg border p-5">
+              <div className="bg-primary/10 border-sky-500/20 rounded-lg border p-5">
                 <div className="flex items-center mb-3">
                   <GraduationCap className="h-5 w-5 text-primary mr-2" />
                   <h4 className="font-semibold">Final Grade</h4>
@@ -4412,7 +4412,7 @@ function EE272ProjectContent() {
                 <p className="text-3xl font-bold text-primary">8 / 8</p>
                 <p className="text-sm text-muted-foreground mt-1">Homeworks | all 100 / 100</p>
               </div>
-              <div className="bg-sky-500/10 border-sky-500/20 rounded-lg border p-5">
+              <div className="bg-primary/10 border-sky-500/20 rounded-lg border p-5">
                 <div className="flex items-center mb-3">
                   <Layers className="h-5 w-5 text-primary mr-2" />
                   <h4 className="font-semibold">Process Node</h4>
@@ -4420,7 +4420,7 @@ function EE272ProjectContent() {
                 <p className="text-2xl font-bold text-primary">SKY130</p>
                 <p className="text-sm text-muted-foreground mt-1">130 nm open-source PDK</p>
               </div>
-              <div className="bg-sky-500/10 border-sky-500/20 rounded-lg border p-5">
+              <div className="bg-primary/10 border-sky-500/20 rounded-lg border p-5">
                 <div className="flex items-center mb-3">
                   <Cpu className="h-5 w-5 text-primary mr-2" />
                   <h4 className="font-semibold">Final Project</h4>

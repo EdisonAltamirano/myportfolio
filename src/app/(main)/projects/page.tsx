@@ -92,7 +92,7 @@ export default function ProjectsPage() {
                   className={cn(
                     'flex items-center gap-2 px-4 py-2 rounded-md font-display text-sm font-semibold tracking-wider transition-all duration-200',
                     isActive
-                      ? 'bg-sky-500 text-black shadow-sm shadow-sky-500/30'
+                      ? 'bg-primary text-foreground shadow-sm shadow-primary/20'
                       : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'
                   )}
                 >

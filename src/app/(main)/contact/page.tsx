@@ -52,19 +52,19 @@ export default function ContactPage() {
 
           {/* Contact info */}
           <FadeIn delay="delay-100" className="lg:col-span-2 space-y-6">
-            <div className="rounded-xl border border-white/10 bg-card/70 p-6">
+            <div className="rounded-xl border border-black/10 bg-card/70 p-6">
               <div className="font-mono text-xs text-primary/70 tracking-widest uppercase mb-5">Direct Contact</div>
               <div className="space-y-4">
                 <a
                   href={`mailto:${primaryEmail}`}
                   className="flex items-center gap-3 group"
                 >
-                  <div className="w-9 h-9 rounded-md bg-white/[0.05] flex items-center justify-center shrink-0">
+                  <div className="w-9 h-9 rounded-md bg-white/80 flex items-center justify-center shrink-0">
                     <Mail className="w-4 h-4 text-primary" />
                   </div>
                   <div>
                     <div className="font-mono text-xs text-muted-foreground/80 uppercase tracking-wider">Email</div>
-                    <div className="font-body text-sm text-foreground group-hover:text-sky-400 transition-colors">
+                    <div className="font-body text-sm text-foreground group-hover:text-primary transition-colors">
                       {primaryEmail}
                     </div>
                   </div>
@@ -73,42 +73,42 @@ export default function ContactPage() {
                   href={`mailto:${workEmail}`}
                   className="flex items-center gap-3 group"
                 >
-                  <div className="w-9 h-9 rounded-md bg-white/[0.05] flex items-center justify-center shrink-0">
+                  <div className="w-9 h-9 rounded-md bg-white/80 flex items-center justify-center shrink-0">
                     <Mail className="w-4 h-4 text-primary" />
                   </div>
                   <div>
                     <div className="font-mono text-xs text-muted-foreground/80 uppercase tracking-wider">Work Email</div>
-                    <div className="font-body text-sm text-foreground group-hover:text-sky-400 transition-colors">
+                    <div className="font-body text-sm text-foreground group-hover:text-primary transition-colors">
                       {workEmail}
                     </div>
                   </div>
                 </a>
                 <a href={`tel:${phoneHref}`} className="flex items-center gap-3 group">
-                  <div className="w-9 h-9 rounded-md bg-teal-500/10 flex items-center justify-center shrink-0">
-                    <Phone className="w-4 h-4 text-teal-400" />
+                  <div className="w-9 h-9 rounded-md bg-primary/10 flex items-center justify-center shrink-0">
+                    <Phone className="w-4 h-4 text-primary" />
                   </div>
                   <div>
                     <div className="font-mono text-xs text-muted-foreground/80 uppercase tracking-wider">Phone</div>
-                    <div className="font-body text-sm text-foreground group-hover:text-teal-400 transition-colors">{phoneDisplay}</div>
+                    <div className="font-body text-sm text-foreground group-hover:text-primary transition-colors">{phoneDisplay}</div>
                   </div>
                 </a>
               </div>
             </div>
 
             <div className="rounded-xl border border-teal-500/15 bg-card/70 p-6">
-              <div className="font-mono text-xs text-teal-400/70 tracking-widest uppercase mb-5">Online</div>
+              <div className="font-mono text-xs text-primary/70 tracking-widest uppercase mb-5">Online</div>
               <a
                 href={linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 group"
               >
-                <div className="w-9 h-9 rounded-md bg-teal-500/10 flex items-center justify-center shrink-0">
-                  <Linkedin className="w-4 h-4 text-teal-400" />
+                <div className="w-9 h-9 rounded-md bg-primary/10 flex items-center justify-center shrink-0">
+                  <Linkedin className="w-4 h-4 text-primary" />
                 </div>
                 <div>
                   <div className="font-mono text-xs text-muted-foreground/80 uppercase tracking-wider">LinkedIn</div>
-                  <div className="font-body text-sm text-foreground group-hover:text-teal-400 transition-colors">
+                  <div className="font-body text-sm text-foreground group-hover:text-primary transition-colors">
                     edison-altamirano-avila
                   </div>
                 </div>
@@ -119,12 +119,12 @@ export default function ContactPage() {
                 rel="noopener noreferrer"
                 className="mt-4 flex items-center gap-3 group"
               >
-                <div className="w-9 h-9 rounded-md bg-teal-500/10 flex items-center justify-center shrink-0">
-                  <Globe className="w-4 h-4 text-teal-400" />
+                <div className="w-9 h-9 rounded-md bg-primary/10 flex items-center justify-center shrink-0">
+                  <Globe className="w-4 h-4 text-primary" />
                 </div>
                 <div>
                   <div className="font-mono text-xs text-muted-foreground/80 uppercase tracking-wider">Website</div>
-                  <div className="font-body text-sm text-foreground group-hover:text-teal-400 transition-colors">
+                  <div className="font-body text-sm text-foreground group-hover:text-primary transition-colors">
                     edisonaltamirano.github.io/myportfolio
                   </div>
                 </div>
@@ -216,7 +216,7 @@ export default function ContactPage() {
                   <Button
                     type="submit"
                     disabled={form.formState.isSubmitting}
-                    className="w-full bg-sky-500 hover:bg-sky-400 text-black font-display font-bold tracking-wider shadow-md shadow-sky-500/20 border-0"
+                    className="w-full bg-sky-500 hover:bg-primary text-black font-display font-bold tracking-wider shadow-md shadow-sky-500/20 border-0"
                   >
                     <Send className="mr-2 h-4 w-4" />
                     {form.formState.isSubmitting ? "Sending..." : "Send Message"}

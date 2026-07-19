@@ -7,32 +7,32 @@ const tracks = [
     icon: Cpu,
     title: 'VLSI & Chip Design',
     desc: 'VLSI design flow with Cadence and Synopsys tools, plus an upcoming TSMC-oriented fabrication track.',
-    color: 'text-sky-400',
-    bg: 'bg-sky-500/10',
+    color: 'text-primary',
+    bg: 'bg-primary/10',
     border: 'border-sky-500/20',
   },
   {
     icon: Zap,
     title: 'Analog IC',
     desc: 'CMOS amplifier design, feedback theory, and SPICE simulation in Cadence Virtuoso.',
-    color: 'text-violet-400',
-    bg: 'bg-violet-500/10',
-    border: 'border-violet-500/20',
+    color: 'text-primary',
+    bg: 'bg-primary/10',
+    border: 'border-border',
   },
   {
     icon: Radio,
     title: 'RF & Radar',
     desc: 'mm-Wave radar ICs at 77 GHz+, superheterodyne receivers, and RF front-end design.',
-    color: 'text-teal-400',
-    bg: 'bg-teal-500/10',
-    border: 'border-teal-500/20',
+    color: 'text-primary',
+    bg: 'bg-primary/10',
+    border: 'border-border',
   },
   {
     icon: Layers,
     title: 'Mixed-Signal',
     desc: 'ADC/DAC architectures, OTA design, and switched-capacitor data converter circuits.',
-    color: 'text-sky-300',
-    bg: 'bg-sky-500/8',
+    color: 'text-primary',
+    bg: 'bg-primary/10',
     border: 'border-sky-500/15',
   },
 ];
@@ -43,7 +43,7 @@ export function StanfordTeaser() {
       {/* Top fade */}
       <div
         className="absolute top-0 left-0 right-0 h-16 pointer-events-none"
-        style={{ background: 'linear-gradient(to bottom, hsl(224,84%,4%), transparent)' }}
+        style={{ background: 'linear-gradient(to bottom, hsl(var(--background)), transparent)' }}
       />
 
       <div className="container px-4 mx-auto relative z-10">
@@ -51,8 +51,8 @@ export function StanfordTeaser() {
           {/* Header row */}
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/[0.03] mb-4">
-                <span className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-black/10 bg-white/70 mb-4">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                 <span className="font-mono text-xs text-primary/80 tracking-widest uppercase">
                   Stanford University
                 </span>
@@ -66,7 +66,7 @@ export function StanfordTeaser() {
             </div>
             <Link
               href="/stanford"
-              className="inline-flex items-center gap-2 font-display text-sm font-semibold tracking-wider uppercase text-primary hover:text-sky-300 border border-white/12 hover:border-sky-500/60 px-6 py-3 rounded-md transition-all duration-300 group shrink-0"
+              className="inline-flex items-center gap-2 font-display text-sm font-semibold tracking-wider uppercase text-primary hover:text-primary border border-black/10 hover:border-primary/30 px-6 py-3 rounded-md transition-all duration-300 group shrink-0"
             >
               Full Stanford Profile
               <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
@@ -115,7 +115,7 @@ export function StanfordTeaser() {
       {/* Bottom fade */}
       <div
         className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none"
-        style={{ background: 'linear-gradient(to top, hsl(224,84%,4%), transparent)' }}
+        style={{ background: 'linear-gradient(to top, hsl(var(--background)), transparent)' }}
       />
     </section>
   );

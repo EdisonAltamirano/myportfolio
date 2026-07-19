@@ -5,11 +5,11 @@ import { Cpu, Globe, Linkedin, Mail } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="bg-muted/10 border-t border-white/10 text-muted-foreground py-12 relative">
+    <footer className="bg-muted/10 border-t border-black/10 text-muted-foreground py-12 relative">
       <PageViewTracker />
 
       {/* Sky glow line at top */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-sky-500/30 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
 
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
@@ -17,7 +17,7 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-7 h-7 rounded border border-white/12 bg-white/[0.05] flex items-center justify-center">
+              <div className="w-7 h-7 rounded border border-black/10 bg-white/80 flex items-center justify-center">
                 <Cpu className="w-3.5 h-3.5 text-primary" />
               </div>
               <span className="font-display text-sm font-bold tracking-widest uppercase text-foreground">
@@ -44,7 +44,7 @@ export function Footer() {
                 <Link
                   key={l.href}
                   href={l.href}
-                  className="block font-body text-sm text-muted-foreground/85 hover:text-sky-400 transition-colors"
+                  className="block font-body text-sm text-muted-foreground/85 hover:text-primary transition-colors"
                 >
                   {l.label}
                 </Link>
@@ -60,7 +60,7 @@ export function Footer() {
                 href={linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 font-body text-sm text-muted-foreground/85 hover:text-teal-400 transition-colors"
+                className="flex items-center gap-2 font-body text-sm text-muted-foreground/85 hover:text-primary transition-colors"
               >
                 <Linkedin className="w-3.5 h-3.5" /> LinkedIn
               </Link>
@@ -68,7 +68,7 @@ export function Footer() {
                 href="/docs/EdisonAltamiranoResume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 font-body text-sm text-muted-foreground/85 hover:text-sky-400 transition-colors"
+                className="flex items-center gap-2 font-body text-sm text-muted-foreground/85 hover:text-primary transition-colors"
               >
                 <Mail className="w-3.5 h-3.5" /> Download CV
               </Link>
@@ -76,7 +76,7 @@ export function Footer() {
                 href={officialWebsiteUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 font-body text-sm text-muted-foreground/85 hover:text-teal-400 transition-colors"
+                className="flex items-center gap-2 font-body text-sm text-muted-foreground/85 hover:text-primary transition-colors"
               >
                 <Globe className="w-3.5 h-3.5" /> Official Website
               </a>
