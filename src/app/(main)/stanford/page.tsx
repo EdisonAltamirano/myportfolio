@@ -105,21 +105,52 @@ export default function StanfordPage() {
           </div>
 
           <h1 className="font-display text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-            Stanford EE Research &{' '}
-            <span className="text-gradient-sky">Coursework</span>
+            Stanford EE Evidence for{' '}
+            <span className="text-foreground">Hardware-Sensing Roles</span>
           </h1>
+
+          <p className="mx-auto max-w-3xl text-base leading-7 text-muted-foreground sm:text-lg">
+            Graduate work organized around the employer signal it creates: RF/mm-wave sensing research,
+            VLSI physical-design discipline, analog/RF lab hardware, and mixed-signal coursework that
+            connects physical sensors to intelligent systems.
+          </p>
 
           {/* Quick stat row */}
           <div className="flex flex-wrap justify-center gap-6 mt-8">
             {[
               { value: '6', label: 'Courses' },
-              { value: '1', label: 'Research Lab' },
-              { value: 'TSMC', label: 'Fabrication track' },
-              { value: '2', label: 'Chip Designs' },
+              { value: '1', label: 'Research lab' },
+              { value: 'RF', label: 'Sensing focus' },
+              { value: '2', label: 'VLSI design tracks' },
             ].map((s) => (
               <div key={s.label} className="text-center px-4">
                 <div className="font-display text-3xl font-bold text-foreground">{s.value}</div>
                 <div className="font-mono text-xs text-muted-foreground/80 tracking-wider uppercase mt-0.5">{s.label}</div>
+              </div>
+            ))}
+          </div>
+        </FadeIn>
+
+        <FadeIn delay="delay-75" className="mb-16">
+          <div className="grid gap-4 md:grid-cols-3">
+            {[
+              {
+                title: 'RF / sensing systems',
+                body: 'Arbabian Lab research and EE233 radio work show signal-chain thinking from front-end hardware to perception-facing data.',
+              },
+              {
+                title: 'ASIC / VLSI discipline',
+                body: 'EE271/EE272 prove comfort with RTL, synthesis, physical design, timing closure, and verification constraints.',
+              },
+              {
+                title: 'Physical AI foundation',
+                body: 'Analog, mixed-signal, and radar coursework support roles that bridge sensors, embedded systems, and ML perception.',
+              },
+            ].map((item) => (
+              <div key={item.title} className="rounded-2xl border border-border bg-card p-5 text-left shadow-sm shadow-black/5">
+                <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary/80">Employer signal</div>
+                <h2 className="mt-2 font-display text-lg font-semibold text-foreground">{item.title}</h2>
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">{item.body}</p>
               </div>
             ))}
           </div>
@@ -178,25 +209,20 @@ export default function StanfordPage() {
                 </div>
               </div>
 
-              {/* Photo placeholders */}
+              {/* Employer relevance */}
               <div>
                 <div className="font-mono text-xs text-muted-foreground/80 uppercase tracking-widest mb-4">
-                  Lab Photos
+                  Why it matters for employers
                 </div>
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid gap-3">
                   {[
-                    { label: 'Radar Measurement Setup', placeholder: '📷 Add lab bench photo' },
-                    { label: 'IC Characterization', placeholder: '📷 Add probing setup photo' },
-                    { label: 'System Demo', placeholder: '📷 Add radar demo photo' },
-                    { label: 'Lab / Conference', placeholder: '📷 Add team/presentation photo' },
-                  ].map((photo) => (
-                    <div key={photo.label} className="space-y-1">
-                      <div className="rounded border border-black/10 bg-white/70 aspect-video flex items-center justify-center">
-                        <span className="font-mono text-[10px] text-muted-foreground/85 text-center px-2 leading-relaxed">
-                          {photo.placeholder}
-                        </span>
-                      </div>
-                      <p className="font-mono text-[10px] text-muted-foreground/75 text-center">{photo.label}</p>
+                    { label: 'Hardware + algorithms', body: 'Radar systems require circuit-level tradeoffs, signal processing, calibration, and ML-facing data quality.' },
+                    { label: 'Automotive relevance', body: 'mm-wave radar directly maps to ADAS, autonomy, industrial sensing, and safety-critical perception.' },
+                    { label: 'Research maturity', body: 'Graduate lab work shows Edison can read literature, test hypotheses, and communicate technical uncertainty.' },
+                  ].map((item) => (
+                    <div key={item.label} className="rounded-xl border border-border bg-muted/40 p-4">
+                      <div className="font-display text-sm font-semibold text-foreground">{item.label}</div>
+                      <p className="mt-1 text-sm leading-6 text-muted-foreground">{item.body}</p>
                     </div>
                   ))}
                 </div>
@@ -368,7 +394,7 @@ export default function StanfordPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 font-mono text-xs text-primary hover:text-primary border border-primary/25 hover:border-primary/30 bg-primary/10 hover:bg-primary/10 px-3 py-1.5 rounded-md transition-all duration-200 mb-4"
               >
-                <FileText className="w-3 h-3" /> View Project Code
+                <FileText className="w-3 h-3" /> View Final Project PDF
               </a>
               <div className="flex flex-wrap gap-1.5">
                 {['RF circuit design', 'SDR', 'Superheterodyne receivers', 'I/Q demodulation', 'Si5351 PLL', 'Spectrum analysis'].map((s) => (
@@ -417,10 +443,10 @@ export default function StanfordPage() {
                 </span>
               </div>
               <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground">
-                What This Means
+                What This Proves
               </h2>
               <p className="font-body text-muted-foreground mt-2 max-w-xl mx-auto">
-                What Edison uniquely brings from his Stanford EE program.
+                The practical hiring signal behind the coursework and research.
               </p>
             </div>
 

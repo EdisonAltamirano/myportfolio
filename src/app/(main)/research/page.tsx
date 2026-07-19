@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { FadeIn } from "@/components/animations/FadeIn";
-import { BookOpen, ExternalLink, Presentation, FlaskConical } from "lucide-react";
+import { BookOpen, ExternalLink, Presentation, FlaskConical, Factory, Bot, GraduationCap } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Research & Publications — Edison Altamirano",
@@ -151,6 +151,27 @@ const presentations: { year: string; items: { title: string; venue: string; link
   },
 ];
 
+const researchThemes = [
+  {
+    title: "Industrial robotics & digital twins",
+    icon: Factory,
+    body: "Published work around smart factories, ROS-based digital twins, mixed reality, and robot-programming education.",
+    signal: "Shows ability to translate robotics systems into repeatable training, simulation, and factory workflows.",
+  },
+  {
+    title: "Autonomous systems competitions",
+    icon: Bot,
+    body: "Technical reports and presentations for RoboBoat, RoboSub, and autonomous-vehicle demonstrations.",
+    signal: "Shows field-tested robotics communication: design rationale, integration choices, and measurable outcomes.",
+  },
+  {
+    title: "Teaching technical systems",
+    icon: GraduationCap,
+    body: "Invited courses and talks for faculty audiences on ROS, autonomous vehicles, ADAS simulation, and industrial data platforms.",
+    signal: "Shows Edison can explain complex systems clearly enough for teams, professors, and stakeholders to adopt them.",
+  },
+];
+
 export default function ResearchPage() {
   return (
     <div className="min-h-screen bg-circuit">
@@ -163,14 +184,35 @@ export default function ResearchPage() {
               Academic Contributions
             </span>
           </div>
-          <h1 className="font-display text-5xl md:text-6xl font-bold text-foreground mb-4">
-            Research &{" "}
-            <span className="text-gradient-sky">Publications</span>
+          <h1 className="font-display text-4xl md:text-6xl font-bold text-foreground mb-4 tracking-[-0.055em]">
+            Research that proves systems depth.
           </h1>
-          <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-            Peer-reviewed publications, conference presentations, and invited talks spanning
-            robotics, VLSI, AI systems, and engineering education.
+          <p className="font-body text-lg text-muted-foreground max-w-3xl mx-auto leading-8">
+            Peer-reviewed publications, technical reports, and invited talks organized around what
+            employers need to see: robotics systems thinking, digital-twin implementation, and the
+            ability to communicate advanced engineering work to technical audiences.
           </p>
+        </FadeIn>
+
+        <FadeIn delay="delay-75" className="mb-16">
+          <div className="grid gap-4 md:grid-cols-3">
+            {researchThemes.map((theme) => {
+              const Icon = theme.icon;
+              return (
+                <div key={theme.title} className="rounded-2xl border border-border bg-card p-5 text-left shadow-sm shadow-black/5">
+                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
+                    <Icon className="h-5 w-5 text-primary" />
+                  </div>
+                  <h2 className="font-display text-lg font-semibold text-foreground">{theme.title}</h2>
+                  <p className="mt-2 text-sm leading-6 text-muted-foreground">{theme.body}</p>
+                  <div className="mt-4 rounded-xl border border-border bg-muted/40 p-3">
+                    <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary/80">Employer signal</div>
+                    <p className="mt-1 text-xs leading-5 text-muted-foreground">{theme.signal}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </FadeIn>
 
         {/* Publications */}
@@ -189,8 +231,8 @@ export default function ResearchPage() {
           <div className="space-y-4">
             {publications.map((pub, i) => (
               <FadeIn key={i} delay={`delay-${(i % 4) * 75}`}>
-                <div className="rounded-xl border border-border bg-card p-5 card-glow-sky group">
-                  <div className="flex items-start justify-between gap-4">
+                <div className="rounded-xl border border-border bg-card p-5 shadow-sm shadow-black/5 group">
+                  <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
                         <span className="font-mono text-xs text-primary font-bold border border-black/10 bg-white/80 px-2 py-0.5 rounded-md">
@@ -198,7 +240,7 @@ export default function ResearchPage() {
                         </span>
                         <span className="font-mono text-xs text-muted-foreground/80">{pub.venue}</span>
                       </div>
-                      <p className="font-display text-sm font-semibold text-foreground leading-snug mb-1">
+                      <p className="font-display text-base font-semibold text-foreground leading-snug mb-1">
                         {pub.title}
                       </p>
                       <p className="font-body text-xs text-muted-foreground/85 italic">
@@ -211,7 +253,7 @@ export default function ResearchPage() {
                         href={pub.doi}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="shrink-0 flex items-center gap-1.5 font-mono text-xs text-primary hover:text-primary border border-border hover:border-primary/30 bg-primary/10 hover:bg-primary/10 px-3 py-1.5 rounded-md transition-all duration-200"
+                        className="shrink-0 flex items-center gap-1.5 font-mono text-xs text-primary hover:text-primary border border-border hover:border-primary/30 bg-primary/10 hover:bg-primary/10 px-3 py-2 rounded-md transition-all duration-200"
                       >
                         <ExternalLink className="w-3 h-3" />
                         {pub.linkLabel ?? "DOI"}
@@ -246,9 +288,9 @@ export default function ResearchPage() {
                 <div className="space-y-3">
                   {yearGroup.items.map((item, i) => (
                     <FadeIn key={i} delay={`delay-${i * 75}`}>
-                      <div className="rounded-xl border border-border bg-card p-5 card-glow-teal">
+                      <div className="rounded-xl border border-border bg-card p-5 shadow-sm shadow-black/5">
                         <p className="font-body text-sm text-foreground leading-relaxed mb-2">{item.title}</p>
-                        <div className="flex items-center justify-between gap-2">
+                        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                           <span className="font-mono text-xs text-muted-foreground/80">{item.venue}</span>
                           {item.link && (
                             <a

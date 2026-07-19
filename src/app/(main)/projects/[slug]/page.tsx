@@ -160,11 +160,80 @@ const projectsData = [
   }
 ];
 
+const detailProof = {
+  'zf-braking-systems': {
+    problem: 'Commercial-vehicle braking software has to coordinate control logic, configuration, simulation, and validation without compromising safety-critical behavior.',
+    contribution: 'AUTOSAR-oriented software architecture, MATLAB/Simulink modeling, VectorCAST validation, MISRA-aware embedded C/C++, and toolchain debugging.',
+    outcome: 'Professional embedded automotive work on next-generation axle modulator systems for commercial vehicles.',
+    proves: ['Safety-critical embedded software', 'Automotive toolchain fluency', 'Simulation-to-validation discipline'],
+  },
+  'zf-autonomous-shuttle': {
+    problem: 'A disused shuttle needed to become a supervised autonomous passenger platform with sensing, actuation, control, and safety layers integrated on real hardware.',
+    contribution: 'Firmware/electronics, CAN-connected actuation, ROS integration, perception/localization support, dashboards, and field-test coordination with ZF engineers.',
+    outcome: 'A working autonomous shuttle prototype demonstrated to academic and industry stakeholders.',
+    proves: ['Robotics systems integration', 'Embedded-to-autonomy bridge', 'Real vehicle testing under constraints'],
+  },
+  'ee272-vlsi-design': {
+    problem: 'A VLSI design flow must turn hardware intent into layout while satisfying timing, power, routing, and physical-verification constraints.',
+    contribution: 'RTL modeling, synthesis, floorplanning, CTS, routing, timing closure, DRC/LVS, and DNN accelerator physical implementation using SKY130/Cadence-style flows.',
+    outcome: 'Stanford EE271/EE272 project sequence with signoff-oriented design artifacts and strong assignment performance.',
+    proves: ['Architecture-to-layout reasoning', 'EDA workflow discipline', 'Timing and physical verification literacy'],
+  },
+  'ee233-fm-radio': {
+    problem: 'A real FM receiver must convert weak RF signals into intelligible baseband data while coordinating oscillators, filtering, embedded control, and UI telemetry.',
+    contribution: 'Dual-conversion superheterodyne architecture, Si5351 PLL control, I/Q demodulation, RP2040 firmware, and a WiFi browser interface for tuning and spectrum display.',
+    outcome: 'Working Stanford EE233 hardware/software radio with demo video, report, and interactive tuning interface.',
+    proves: ['RF signal-chain understanding', 'Embedded hardware control', 'Hardware/software interface design'],
+  },
+} as const;
+
+function ProjectProofPanel({ slug }: { slug: keyof typeof detailProof }) {
+  const proof = detailProof[slug];
+  return (
+    <FadeIn delay="delay-250">
+      <Card className="border-primary/20 bg-primary/10 shadow-sm shadow-black/5">
+        <CardHeader>
+          <CardTitle className="text-2xl text-foreground flex items-center">
+            <Target className="mr-3 h-6 w-6 text-primary" />
+            At a Glance: What This Proves
+          </CardTitle>
+          <p className="text-muted-foreground">
+            A recruiter-friendly translation of the project before the deeper technical evidence.
+          </p>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+            {[
+              ['Problem', proof.problem],
+              ['My contribution', proof.contribution],
+              ['Outcome', proof.outcome],
+            ].map(([label, body]) => (
+              <div key={label} className="rounded-xl border border-border bg-card p-4">
+                <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary/80">{label}</div>
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">{body}</p>
+              </div>
+            ))}
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {proof.proves.map((item) => (
+              <span key={item} className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-white/80 px-3 py-1.5 text-xs font-medium text-foreground">
+                <CheckCircle className="h-3.5 w-3.5 text-primary" />
+                {item}
+              </span>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
+    </FadeIn>
+  );
+}
+
 
 
 function ZFBrakingProjectContent() {
   return (
     <div className="space-y-12">
+      <ProjectProofPanel slug="zf-braking-systems" />
       {/* Project Overview Section */}
       <FadeIn delay="delay-300">
         <Card className="shadow-sm shadow-black/5">
@@ -480,6 +549,7 @@ function ZFBrakingProjectContent() {
 function ZFShuttleProjectContent() {
   return (
     <div className="space-y-12">
+      <ProjectProofPanel slug="zf-autonomous-shuttle" />
       {/* Project Overview Section */}
       <FadeIn delay="delay-300">
         <Card className="shadow-sm shadow-black/5">
@@ -4384,6 +4454,7 @@ function VanttecProjectContent() {
 function EE272ProjectContent() {
   return (
     <div className="space-y-12">
+      <ProjectProofPanel slug="ee272-vlsi-design" />
       {/* Overview */}
       <FadeIn delay="delay-300">
         <Card className="shadow-sm shadow-black/5">
@@ -4670,6 +4741,7 @@ export async function generateStaticParams() {
 function EE233ProjectContent() {
   return (
     <div className="space-y-10">
+      <ProjectProofPanel slug="ee233-fm-radio" />
 
       {/* Hero */}
       <FadeIn delay="delay-200">
