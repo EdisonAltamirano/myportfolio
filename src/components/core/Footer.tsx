@@ -5,7 +5,7 @@ import { Cpu, Globe, Linkedin, Mail } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="bg-muted/10 border-t border-black/10 text-muted-foreground py-12 relative">
+    <footer className="bg-muted/20 border-t border-black/10 text-muted-foreground py-12 relative">
       <PageViewTracker />
 
       {/* Sky glow line at top */}

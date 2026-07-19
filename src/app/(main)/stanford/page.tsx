@@ -23,13 +23,13 @@ export const metadata: Metadata = {
 const statusBadge = {
   active: {
     label: 'ACTIVE',
-    cls: 'bg-green-500/15 text-green-300 border-green-500/30',
+    cls: 'bg-green-500/15 text-green-700 border-primary/25',
     dot: 'bg-green-400',
     Icon: Circle,
   },
   completed: {
     label: 'COMPLETED',
-    cls: 'bg-muted/50 text-muted-foreground border-border',
+    cls: 'bg-muted text-muted-foreground border-border',
     dot: 'bg-muted-foreground',
     Icon: CheckCircle2,
   },
@@ -44,7 +44,7 @@ const statusBadge = {
 /* ── Skill tag ────────────────────────────────────────── */
 function SkillTag({ label, color = 'sky' }: { label: string; color?: string }) {
   const colorMap: Record<string, string> = {
-    sky: 'border-sky-500/25 bg-white/80 text-primary',
+    sky: 'border-primary/25 bg-white/80 text-primary',
     teal: 'border-border bg-primary/10 text-primary',
     violet: 'border-border bg-primary/10 text-primary',
   };
@@ -134,12 +134,12 @@ export default function StanfordPage() {
             gradientColor="from-primary/20"
           />
 
-          <div className="rounded-xl border border-border bg-card/65 p-6 md:p-8">
+          <div className="rounded-xl border border-border bg-card p-6 md:p-8">
             {/* Header */}
             <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
               <div>
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="font-mono text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-md border bg-green-500/15 text-green-300 border-green-500/30">
+                  <span className="font-mono text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-md border bg-green-500/15 text-green-700 border-primary/25">
                     ACTIVE RESEARCH
                   </span>
                   <span className="font-mono text-xs text-primary font-bold">EE391</span>
@@ -228,7 +228,7 @@ export default function StanfordPage() {
 
           <div className="grid md:grid-cols-2 gap-6 mb-4">
             {/* EE372 */}
-            <div className="rounded-xl border border-black/10 bg-card/70 p-6 hover:border-primary/30 hover:shadow-lg hover:shadow-black/5 transition-all duration-300">
+            <div className="rounded-xl border border-black/10 bg-card p-6 hover:border-primary/30 hover:shadow-lg hover:shadow-black/5 transition-all duration-300">
               <div className="flex items-start justify-between gap-2 mb-4">
                 <div>
                   <div className="font-mono text-xs font-bold text-primary tracking-widest mb-1">EE372</div>
@@ -259,7 +259,7 @@ export default function StanfordPage() {
             </div>
 
             {/* EE272 */}
-            <div className="rounded-xl border border-black/10 bg-card/70 p-6 hover:border-primary/30 hover:shadow-lg hover:shadow-black/5 transition-all duration-300">
+            <div className="rounded-xl border border-black/10 bg-card p-6 hover:border-primary/30 hover:shadow-lg hover:shadow-black/5 transition-all duration-300">
               <div className="flex items-start justify-between gap-2 mb-4">
                 <div>
                   <div className="font-mono text-xs font-bold text-primary tracking-widest mb-1">EE271 / EE272</div>
@@ -267,7 +267,7 @@ export default function StanfordPage() {
                     Design Projects in VLSI Systems
                   </h3>
                 </div>
-                <span className="font-mono text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-md border bg-muted/50 text-muted-foreground border-border shrink-0">
+                <span className="font-mono text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-md border bg-muted text-muted-foreground border-border shrink-0">
                   COMPLETED
                 </span>
               </div>
@@ -304,7 +304,7 @@ export default function StanfordPage() {
           />
 
           {/* Track overview */}
-          <div className="rounded-lg border border-violet-500/15 bg-primary/10 px-5 py-4 mb-6">
+          <div className="rounded-lg border border-border bg-primary/10 px-5 py-4 mb-6">
             <p className="font-body text-sm text-muted-foreground leading-relaxed">
               <span className="text-primary font-medium">Track Overview:</span>{' '}
               Deep analog IC design from device physics through advanced mixed-signal systems.
@@ -315,7 +315,7 @@ export default function StanfordPage() {
 
           <div className="grid md:grid-cols-3 gap-6 mb-4">
             {/* EE214A */}
-            <div className="rounded-xl border border-border bg-card/70 p-6 hover:border-primary/30 hover:shadow-[0_0_24px_rgba(139,92,246,0.1)] transition-all duration-300">
+            <div className="rounded-xl border border-border bg-card p-6 hover:border-primary/30 hover:shadow-lg hover:shadow-black/5 transition-all duration-300">
               <div className="flex items-start justify-between gap-2 mb-4">
                 <div>
                   <div className="font-mono text-xs font-bold text-primary tracking-widest mb-1">EE214A</div>
@@ -323,7 +323,7 @@ export default function StanfordPage() {
                     Fundamentals of Analog Integrated Circuit Design
                   </h3>
                 </div>
-                <span className="font-mono text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-md border bg-muted/50 text-muted-foreground border-border shrink-0">
+                <span className="font-mono text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-md border bg-muted text-muted-foreground border-border shrink-0">
                   DONE
                 </span>
               </div>
@@ -340,7 +340,7 @@ export default function StanfordPage() {
             </div>
 
             {/* EE233 */}
-            <div className="rounded-xl border border-border bg-card/70 p-6 hover:border-primary/30 hover:shadow-[0_0_24px_rgba(139,92,246,0.1)] transition-all duration-300">
+            <div className="rounded-xl border border-border bg-card p-6 hover:border-primary/30 hover:shadow-lg hover:shadow-black/5 transition-all duration-300">
               <div className="flex items-start justify-between gap-2 mb-4">
                 <div>
                   <div className="font-mono text-xs font-bold text-primary tracking-widest mb-1">EE233</div>
@@ -349,7 +349,7 @@ export default function StanfordPage() {
                   </h3>
                 </div>
                 <div className="flex flex-col items-end gap-1.5 shrink-0">
-                  <span className="font-mono text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-md border bg-muted/50 text-muted-foreground border-border">
+                  <span className="font-mono text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-md border bg-muted text-muted-foreground border-border">
                     DONE
                   </span>
                   <span className="font-mono text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-md border bg-primary/10 text-primary border-primary/25">
@@ -378,7 +378,7 @@ export default function StanfordPage() {
             </div>
 
             {/* EE256 */}
-            <div className="rounded-xl border border-border bg-card/70 p-6 hover:border-primary/30 hover:shadow-[0_0_24px_rgba(139,92,246,0.1)] transition-all duration-300">
+            <div className="rounded-xl border border-border bg-card p-6 hover:border-primary/30 hover:shadow-lg hover:shadow-black/5 transition-all duration-300">
               <div className="flex items-start justify-between gap-2 mb-4">
                 <div>
                   <div className="font-mono text-xs font-bold text-primary tracking-widest mb-1">EE256</div>
@@ -409,7 +409,7 @@ export default function StanfordPage() {
 
         {/* ══ SECTION 5: EMPLOYER SUMMARY ═════════════════════ */}
         <FadeIn delay="delay-250">
-          <div className="rounded-xl border border-black/10 bg-card/65 p-8">
+          <div className="rounded-xl border border-black/10 bg-card p-8">
             <div className="text-center mb-8">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-black/10 bg-white/70 mb-4">
                 <span className="font-mono text-xs text-primary/80 tracking-widest uppercase">
@@ -430,7 +430,7 @@ export default function StanfordPage() {
                   title: 'Full Chip Design Flow',
                   sub: 'RTL → Synthesis → P&R → Tape-out (TSMC experience)',
                   color: 'text-primary',
-                  border: 'border-sky-500/25',
+                  border: 'border-primary/25',
                   bg: 'bg-primary/10',
                 },
                 {
@@ -451,7 +451,7 @@ export default function StanfordPage() {
                   title: 'Mixed-Signal',
                   sub: 'Bridging analog sensors to digital AI systems',
                   color: 'text-primary',
-                  border: 'border-sky-500/20',
+                  border: 'border-border',
                   bg: 'bg-primary/10',
                 },
               ].map((item) => (

@@ -23,7 +23,7 @@ export default function AboutPage() {
 
         {/* Hero card */}
         <FadeIn delay="delay-100" className="mb-14">
-          <div className="rounded-xl border border-black/10 bg-card/70 overflow-hidden">
+          <div className="rounded-xl border border-black/10 bg-card overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-2">
               <div className="p-8 md:p-12 flex flex-col justify-center">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-black/10 bg-white/70 mb-5 w-fit">
@@ -79,7 +79,7 @@ export default function AboutPage() {
             {aboutStats.map((stat) => (
               <div
                 key={stat.label}
-                className="rounded-lg border border-border bg-card/70 p-6 text-center hover:border-primary/25 transition-colors card-glow-sky"
+                className="rounded-lg border border-border bg-card p-6 text-center hover:border-primary/25 transition-colors card-glow-sky"
               >
                 <span className="font-display text-4xl font-bold text-primary block">{stat.value}</span>
                 <span className="font-body text-sm text-muted-foreground mt-1 block">{stat.label}</span>
@@ -111,7 +111,7 @@ export default function AboutPage() {
                 body: "From autonomous vehicles and radar chips to agricultural e-commerce: technology only matters when it solves real problems for real people.",
               },
             ].map((p) => (
-              <div key={p.title} className="rounded-lg border border-border bg-card/70 p-6 text-center card-glow-sky">
+              <div key={p.title} className="rounded-lg border border-border bg-card p-6 text-center card-glow-sky">
                 <div className="w-12 h-12 rounded-xl bg-white/80 flex items-center justify-center mx-auto mb-4">
                   <p.icon className="h-6 w-6 text-primary" />
                 </div>
@@ -124,7 +124,7 @@ export default function AboutPage() {
 
         {/* Skills */}
         <FadeIn delay="delay-300" className="mb-14">
-          <div className="rounded-xl border border-border bg-card/60 p-8">
+          <div className="rounded-xl border border-border bg-card p-8">
             <div className="text-center mb-10">
               <h2 className="font-display text-3xl font-bold text-foreground mb-3">
                 Core Technical Expertise

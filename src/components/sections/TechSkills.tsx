@@ -7,7 +7,7 @@ interface TechSkillsProps {
 
 export function TechSkillsDisplay({ category }: TechSkillsProps) {
   return (
-    <div className="rounded-lg border border-border bg-card/60 card-glow-sky p-6">
+    <div className="rounded-lg border border-border bg-card card-glow-sky p-6">
       <div className="flex items-center gap-2.5 mb-5">
         {category.icon && (
           <div className="w-8 h-8 rounded-md bg-white/80 flex items-center justify-center">

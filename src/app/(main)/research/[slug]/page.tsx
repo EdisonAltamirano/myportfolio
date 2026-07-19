@@ -48,9 +48,10 @@ export default async function ResearchPostPage({ params }: Props) {
   }
 
   return (
-    <div className="container mx-auto px-4 py-12 lg:px-8">
+    <main className="min-h-screen bg-circuit">
+      <div className="container mx-auto px-4 py-14 lg:px-8">
       <FadeIn>
-        <Button variant="outline" asChild className="mb-8">
+        <Button variant="outline" asChild className="mb-8 rounded-full border-black/10 bg-white/80 shadow-sm shadow-black/5 hover:bg-white">
           <Link href="/research">
             <ArrowLeft className="mr-2 h-4 w-4" /> Back to Research
           </Link>
@@ -58,11 +59,11 @@ export default async function ResearchPostPage({ params }: Props) {
       </FadeIn>
 
       <FadeIn delay="delay-100">
-        <article className="max-w-3xl mx-auto">
-          <header className="mb-10">
-            <Badge variant="outline" className="mb-3 text-primary border-primary bg-primary/10">{post.category}</Badge>
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">{post.title}</h1>
-            <div className="flex items-center space-x-4 text-muted-foreground text-sm">
+        <article className="mx-auto max-w-4xl rounded-2xl border border-black/10 bg-white/[0.82] p-5 shadow-sm shadow-black/5 backdrop-blur-sm sm:p-8 lg:p-10">
+          <header className="mb-10 text-center">
+            <Badge variant="outline" className="mb-4 rounded-full border-primary/25 bg-primary/10 px-3 py-1 text-primary">{post.category}</Badge>
+            <h1 className="mx-auto max-w-3xl text-4xl font-bold tracking-[-0.05em] text-foreground md:text-5xl">{post.title}</h1>
+            <div className="mt-5 flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground">
               <span className="flex items-center"><UserCircle className="mr-1.5 h-4 w-4" /> {post.author}</span>
               <span className="flex items-center"><Calendar className="mr-1.5 h-4 w-4" /> {post.date}</span>
             </div>
@@ -82,7 +83,7 @@ export default async function ResearchPostPage({ params }: Props) {
           )}
 
           <div 
-            className="prose prose-lg dark:prose-invert max-w-none"
+            className="prose prose-lg max-w-none"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
 
@@ -103,6 +104,7 @@ export default async function ResearchPostPage({ params }: Props) {
           </footer>
         </article>
       </FadeIn>
-    </div>
+      </div>
+    </main>
   );
 }

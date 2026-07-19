@@ -81,7 +81,7 @@ export default function ProjectsPage() {
 
         {/* Tab bar */}
         <FadeIn delay="delay-100" className="mt-10">
-          <div className="inline-flex p-1 rounded-lg border border-border bg-card/50 gap-1">
+          <div className="inline-flex p-1 rounded-lg border border-border bg-card gap-1">
             {tabs.map((tab) => {
               const Icon = tab.icon;
               const isActive = active === tab.id;
@@ -93,7 +93,7 @@ export default function ProjectsPage() {
                     'flex items-center gap-2 px-4 py-2 rounded-md font-display text-sm font-semibold tracking-wider transition-all duration-200',
                     isActive
                       ? 'bg-primary text-foreground shadow-sm shadow-primary/20'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'
+                      : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                   )}
                 >
                   <Icon className="h-4 w-4 shrink-0" />

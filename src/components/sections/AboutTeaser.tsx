@@ -27,7 +27,7 @@ export function AboutTeaser() {
                 <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
                 {/* Stanford badge */}
                 <div className="absolute bottom-5 left-5 right-5">
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-black/10 bg-background/80 backdrop-blur-sm">
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-black/10 bg-white/[0.85] backdrop-blur-sm">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                     <span className="font-mono text-xs text-primary tracking-wider">
                       Stanford University · MS EE
@@ -37,7 +37,7 @@ export function AboutTeaser() {
               </div>
               {/* Decorative corner */}
               <div className="absolute -bottom-3 -right-3 w-24 h-24 rounded-xl border border-black/10 bg-white/70 -z-10" />
-              <div className="absolute -top-3 -left-3 w-16 h-16 rounded-xl border border-teal-500/15 bg-primary/10 -z-10" />
+              <div className="absolute -top-3 -left-3 w-16 h-16 rounded-xl border border-border bg-primary/10 -z-10" />
             </div>
           </FadeIn>
 
@@ -66,7 +66,7 @@ export function AboutTeaser() {
             <div className="grid grid-cols-2 gap-4 mb-8">
               {aboutStats.map((stat, index) => (
                 <FadeIn key={stat.label} delay={`delay-${index * 100}`}>
-                  <div className="rounded-lg border border-border bg-card/70 p-4 text-center hover:border-primary/25 transition-colors">
+                  <div className="rounded-lg border border-border bg-card p-4 text-center hover:border-primary/25 transition-colors">
                     <span className="font-display text-3xl font-bold text-primary block">{stat.value}</span>
                     <span className="font-body text-xs text-muted-foreground mt-1 block">{stat.label}</span>
                   </div>

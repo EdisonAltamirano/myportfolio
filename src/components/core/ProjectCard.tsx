@@ -19,7 +19,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
   const Icon = tc.icon;
 
   return (
-    <article className="project-card group relative flex h-full flex-col overflow-hidden rounded-2xl bg-card/70 shadow-sm shadow-black/5">
+    <article className="project-card group relative flex h-full flex-col overflow-hidden rounded-2xl bg-card shadow-sm shadow-black/5">
       <Link href={project.href} aria-label={`View ${project.title}`} className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background">
         <div className="relative aspect-[16/10] overflow-hidden bg-muted">
           <Image

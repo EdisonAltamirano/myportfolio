@@ -52,7 +52,7 @@ export default function ContactPage() {
 
           {/* Contact info */}
           <FadeIn delay="delay-100" className="lg:col-span-2 space-y-6">
-            <div className="rounded-xl border border-black/10 bg-card/70 p-6">
+            <div className="rounded-xl border border-black/10 bg-card p-6">
               <div className="font-mono text-xs text-primary/70 tracking-widest uppercase mb-5">Direct Contact</div>
               <div className="space-y-4">
                 <a
@@ -95,7 +95,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="rounded-xl border border-teal-500/15 bg-card/70 p-6">
+            <div className="rounded-xl border border-border bg-card p-6">
               <div className="font-mono text-xs text-primary/70 tracking-widest uppercase mb-5">Online</div>
               <a
                 href={linkedinUrl}
@@ -134,7 +134,7 @@ export default function ContactPage() {
 
           {/* Form */}
           <FadeIn delay="delay-200" className="lg:col-span-3">
-            <div className="rounded-xl border border-border bg-card/70 p-8">
+            <div className="rounded-xl border border-border bg-card p-8">
               <div className="flex items-center gap-2.5 mb-6">
                 <MessageSquare className="w-5 h-5 text-primary" />
                 <h2 className="font-display text-xl font-bold text-foreground">Send a Message</h2>
@@ -152,7 +152,7 @@ export default function ContactPage() {
                             <Input
                               placeholder="Your name"
                               {...field}
-                              className="bg-muted/30 border-border focus:border-sky-500/50 font-body"
+                              className="bg-white/80 border-border focus:border-primary/50 font-body"
                             />
                           </FormControl>
                           <FormMessage />
@@ -170,7 +170,7 @@ export default function ContactPage() {
                               placeholder="your@email.com"
                               type="email"
                               {...field}
-                              className="bg-muted/30 border-border focus:border-sky-500/50 font-body"
+                              className="bg-white/80 border-border focus:border-primary/50 font-body"
                             />
                           </FormControl>
                           <FormMessage />
@@ -188,7 +188,7 @@ export default function ContactPage() {
                           <Input
                             placeholder="What's this about?"
                             {...field}
-                            className="bg-muted/30 border-border focus:border-sky-500/50 font-body"
+                            className="bg-white/80 border-border focus:border-primary/50 font-body"
                           />
                         </FormControl>
                         <FormMessage />
@@ -206,7 +206,7 @@ export default function ContactPage() {
                             placeholder="Your message..."
                             rows={5}
                             {...field}
-                            className="bg-muted/30 border-border focus:border-sky-500/50 font-body resize-none"
+                            className="bg-white/80 border-border focus:border-primary/50 font-body resize-none"
                           />
                         </FormControl>
                         <FormMessage />
@@ -216,7 +216,7 @@ export default function ContactPage() {
                   <Button
                     type="submit"
                     disabled={form.formState.isSubmitting}
-                    className="w-full bg-sky-500 hover:bg-primary text-black font-display font-bold tracking-wider shadow-md shadow-sky-500/20 border-0"
+                    className="w-full bg-foreground hover:bg-foreground/90 text-white font-display font-bold tracking-wider shadow-md shadow-black/10 border-0"
                   >
                     <Send className="mr-2 h-4 w-4" />
                     {form.formState.isSubmitting ? "Sending..." : "Send Message"}

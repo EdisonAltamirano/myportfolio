@@ -10,7 +10,7 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
 
   return (
     <main className="min-h-screen bg-circuit px-4 py-24">
-      <section className="mx-auto flex min-h-[60vh] max-w-2xl flex-col items-center justify-center text-center">
+      <section className="mx-auto flex min-h-[60vh] max-w-2xl flex-col items-center justify-center rounded-2xl border border-black/10 bg-white/[0.82] p-8 text-center shadow-sm shadow-black/5 backdrop-blur-sm">
         <p className="eyebrow">Error state</p>
         <h1 className="mt-5 text-4xl font-semibold tracking-[-0.05em] text-foreground sm:text-6xl">
           Something went wrong.

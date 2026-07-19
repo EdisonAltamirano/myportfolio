@@ -24,7 +24,7 @@ const areaConfig = {
     icon: Cpu,
     label: 'VLSI',
     color: 'sky',
-    border: 'border-sky-500/25',
+    border: 'border-primary/25',
     bg: 'bg-primary/10',
     dot: 'bg-primary',
     text: 'text-primary',
@@ -45,8 +45,8 @@ const areaConfig = {
 };
 
 const statusConfig = {
-  active:    { label: 'ACTIVE',    cls: 'bg-green-500/15 text-green-300 border-green-500/30' },
-  completed: { label: 'COMPLETED', cls: 'bg-muted/50 text-muted-foreground border-border' },
+  active:    { label: 'ACTIVE',    cls: 'bg-green-500/15 text-green-700 border-primary/25' },
+  completed: { label: 'COMPLETED', cls: 'bg-muted text-muted-foreground border-border' },
   upcoming:  { label: 'UPCOMING',  cls: 'bg-primary/10 text-primary border-primary/25' },
 };
 
@@ -58,7 +58,7 @@ function CourseCard({ course }: { course: StanfordCourse }) {
   return (
     <div
       className={cn(
-        'relative rounded-lg border p-5 transition-all duration-300 bg-card/70 group cursor-default',
+        'relative rounded-lg border p-5 transition-all duration-300 bg-card group cursor-default',
         area.border,
         area.glow
       )}
@@ -162,7 +162,7 @@ export function StanfordSection() {
             {researchCourses.map((c) => (
               <div
                 key={c.code}
-                className="rounded-xl border border-border bg-card/65 p-6 md:p-8 transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-black/5"
+                className="rounded-xl border border-border bg-card p-6 md:p-8 transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-black/5"
               >
                 <div className="grid md:grid-cols-2 gap-6 items-start">
                   <div>
@@ -218,7 +218,7 @@ export function StanfordSection() {
 
             {/* EE272 — Chip Layout Viewer */}
             <FadeIn delay="delay-300">
-              <div className="rounded-xl border border-black/10 bg-card/65 overflow-hidden transition-all duration-300">
+              <div className="rounded-xl border border-black/10 bg-card overflow-hidden transition-all duration-300">
                 <button
                   onClick={() => setShowLayout(!showLayout)}
                   className="w-full flex items-center justify-between px-6 py-4 group hover:bg-primary/10 transition-colors duration-200"
@@ -287,13 +287,13 @@ export function StanfordSection() {
             </div>
 
             {/* EE233 — FM Radio Project (expandable) */}
-            <div className="rounded-xl border border-border bg-card/65 overflow-hidden mb-5 transition-all duration-300 hover:border-primary/30">
+            <div className="rounded-xl border border-border bg-card overflow-hidden mb-5 transition-all duration-300 hover:border-primary/30">
               {/* Project summary row */}
               <div className="flex flex-col md:flex-row md:items-start gap-5 p-6">
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-3">
                     <span className="font-mono text-xs font-bold text-primary border border-primary/25 bg-primary/10 px-2 py-0.5 rounded-md">EE233 Final Project</span>
-                    <span className="font-mono text-[10px] text-green-300 border border-green-500/30 bg-green-500/15 px-2 py-0.5 rounded-md font-bold tracking-widest uppercase">COMPLETED</span>
+                    <span className="font-mono text-[10px] text-green-700 border border-primary/25 bg-green-500/15 px-2 py-0.5 rounded-md font-bold tracking-widest uppercase">COMPLETED</span>
                   </div>
                   <h3 className="font-display text-xl font-bold text-foreground mb-2">
                     FM Superheterodyne Radio Receiver
@@ -316,7 +316,7 @@ export function StanfordSection() {
                       ['LO Control', 'Si5351 PLL via I²C'],
                       ['Interface', 'WiFi HTTP + Spectrum UI'],
                     ].map(([k, v]) => (
-                      <div key={k} className="rounded-md bg-primary/10 border border-violet-500/15 px-3 py-2">
+                      <div key={k} className="rounded-md bg-primary/10 border border-border px-3 py-2">
                         <div className="font-mono text-[10px] text-muted-foreground/80 uppercase tracking-wider">{k}</div>
                         <div className="font-body text-xs text-foreground mt-0.5">{v}</div>
                       </div>
@@ -342,7 +342,7 @@ export function StanfordSection() {
                   </div>
                 </div>
                 {/* Signal chain diagram */}
-                <div className="md:w-52 rounded-lg bg-background/60 border border-violet-500/15 p-4 font-mono text-xs text-muted-foreground/85 leading-relaxed shrink-0">
+                <div className="md:w-52 rounded-lg bg-white/80 border border-border p-4 font-mono text-xs text-muted-foreground/85 leading-relaxed shrink-0">
                   <div className="text-primary/80 text-[10px] tracking-widest uppercase mb-2">Signal Chain</div>
                   <div className="space-y-1">
                     <div className="text-foreground/80">FM Antenna</div>
@@ -360,7 +360,7 @@ export function StanfordSection() {
               </div>
 
               {/* Expandable Radio Interface */}
-              <div className="border-t border-violet-500/15">
+              <div className="border-t border-border">
                 <button
                   onClick={() => setShowRadio(!showRadio)}
                   className="w-full flex items-center justify-between px-6 py-3 group hover:bg-primary/10 transition-colors duration-200"
@@ -386,7 +386,7 @@ export function StanfordSection() {
                   )}
                 >
                   <div className="px-4 pb-4">
-                    <div className="rounded-lg overflow-hidden border border-violet-500/15" style={{ height: '620px' }}>
+                    <div className="rounded-lg overflow-hidden border border-border" style={{ height: '620px' }}>
                       {showRadio && (
                         <iframe
                           src={getAssetPath('/233-FinalProject/radioUI.html')}

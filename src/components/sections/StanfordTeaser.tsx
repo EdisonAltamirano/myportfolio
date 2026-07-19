@@ -9,7 +9,7 @@ const tracks = [
     desc: 'VLSI design flow with Cadence and Synopsys tools, plus an upcoming TSMC-oriented fabrication track.',
     color: 'text-primary',
     bg: 'bg-primary/10',
-    border: 'border-sky-500/20',
+    border: 'border-border',
   },
   {
     icon: Zap,
@@ -33,13 +33,13 @@ const tracks = [
     desc: 'ADC/DAC architectures, OTA design, and switched-capacitor data converter circuits.',
     color: 'text-primary',
     bg: 'bg-primary/10',
-    border: 'border-sky-500/15',
+    border: 'border-border',
   },
 ];
 
 export function StanfordTeaser() {
   return (
-    <section className="py-20 relative bg-muted/10 overflow-hidden">
+    <section className="py-20 relative bg-muted/20 overflow-hidden">
       {/* Top fade */}
       <div
         className="absolute top-0 left-0 right-0 h-16 pointer-events-none"
@@ -79,7 +79,7 @@ export function StanfordTeaser() {
               const Icon = track.icon;
               return (
                 <FadeIn key={track.title} delay={`delay-${i * 75}`}>
-                  <div className={`rounded-lg border ${track.border} bg-card/70 p-5 hover:bg-card/70 transition-all duration-300 group`}>
+                  <div className={`rounded-lg border ${track.border} bg-card p-5 hover:bg-card transition-all duration-300 group`}>
                     <div className={`w-9 h-9 rounded-md ${track.bg} flex items-center justify-center mb-3`}>
                       <Icon className={`w-4.5 h-4.5 ${track.color}`} />
                     </div>
