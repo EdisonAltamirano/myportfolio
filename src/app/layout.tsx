@@ -31,7 +31,7 @@ export async function generateMetadata(
     openGraph: {
       title: "Edison Altamirano | Stanford EE | VLSI & AI Research",
       description:
-        "Stanford EE researcher specializing in radar sensors, VLSI chip design at TSMC, and multimodal AI systems.",
+        "Stanford EE researcher specializing in radar sensors, VLSI and RF/mm-wave sensing systems, and multimodal AI systems.",
       type: "website" as const,
       url: officialWebsiteUrl,
       locale: "en_US",
@@ -41,7 +41,7 @@ export async function generateMetadata(
       card: "summary_large_image" as const,
       title: "Edison Altamirano | Stanford EE | VLSI & AI Research",
       description:
-        "Stanford EE researcher specializing in radar sensors, VLSI chip design at TSMC, and multimodal AI systems.",
+        "Stanford EE researcher specializing in radar sensors, VLSI and RF/mm-wave sensing systems, and multimodal AI systems.",
     },
   };
 

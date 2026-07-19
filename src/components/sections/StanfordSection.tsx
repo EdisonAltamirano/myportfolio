@@ -142,7 +142,7 @@ export function StanfordSection() {
           </h2>
           <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Pursuing an MS in EE at Stanford with a focus on integrated circuit design — from
-            mm-wave radar sensors to VLSI chip fabrication at TSMC.
+            mm-wave radar sensors to VLSI and TSMC-oriented fabrication workflows.
           </p>
         </FadeIn>
 

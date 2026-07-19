@@ -368,7 +368,7 @@ export const technicalSkills: SkillCategory[] = [
 ];
 
 export const expertiseAreas = [
-  { name: 'VLSI Chip Design',     label: '@ TSMC' },
+  { name: 'VLSI Chip Design',     label: 'Stanford EE' },
   { name: 'Radar Sensing',        label: 'Arbabian Lab' },
   { name: 'Multimodal AI',        label: 'Research' },
   { name: 'Autonomous Systems',   label: 'Expert' },

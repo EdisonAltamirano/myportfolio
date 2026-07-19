@@ -114,7 +114,7 @@ export default function StanfordPage() {
             {[
               { value: '6', label: 'Courses' },
               { value: '1', label: 'Research Lab' },
-              { value: 'TSMC', label: 'Tape-out' },
+              { value: 'TSMC', label: 'Fabrication track' },
               { value: '2', label: 'Chip Designs' },
             ].map((s) => (
               <div key={s.label} className="text-center px-4">
@@ -428,7 +428,7 @@ export default function StanfordPage() {
               {[
                 {
                   title: 'Full Chip Design Flow',
-                  sub: 'RTL → Synthesis → P&R → Tape-out (TSMC experience)',
+                  sub: 'RTL → Synthesis → P&R → tapeout-ready verification',
                   color: 'text-primary',
                   border: 'border-primary/25',
                   bg: 'bg-primary/10',

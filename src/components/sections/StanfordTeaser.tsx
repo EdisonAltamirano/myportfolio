@@ -61,7 +61,7 @@ export function StanfordTeaser() {
                 MS Electrical Engineering
               </h2>
               <p className="font-mono text-sm text-primary tracking-wide">
-                2024–Present · Arbabian Lab · TSMC Tape-out
+                2024–Present · Arbabian Lab · Fabrication Track
               </p>
             </div>
             <Link
