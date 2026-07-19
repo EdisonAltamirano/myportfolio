@@ -1,26 +1,20 @@
-import { Rajdhani, JetBrains_Mono, Nunito } from 'next/font/google';
+import { Geist, Geist_Mono } from 'next/font/google';
 
-export const rajdhani = Rajdhani({
+export const geistSans = Geist({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-rajdhani',
+  variable: '--font-sans',
   display: 'swap',
 });
 
-export const nunito = Nunito({
-  subsets: ['latin'],
-  variable: '--font-nunito',
-  weight: ['300', '400', '500', '600', '700', '800'],
-  display: 'swap',
-});
-
-export const jetbrainsMono = JetBrains_Mono({
+export const geistMono = Geist_Mono({
   subsets: ['latin'],
   variable: '--font-mono',
-  weight: ['300', '400', '500', '700'],
   display: 'swap',
 });
 
-// Legacy aliases
-export const inter = rajdhani;
-export const robotoMono = jetbrainsMono;
+// Legacy aliases used across the app. Keep them so existing imports remain stable.
+export const rajdhani = geistSans;
+export const nunito = geistSans;
+export const jetbrainsMono = geistMono;
+export const inter = geistSans;
+export const robotoMono = geistMono;

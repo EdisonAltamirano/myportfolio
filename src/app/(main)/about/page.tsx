@@ -23,37 +23,37 @@ export default function AboutPage() {
 
         {/* Hero card */}
         <FadeIn delay="delay-100" className="mb-14">
-          <div className="rounded-xl border border-sky-500/15 bg-card/50 overflow-hidden">
+          <div className="rounded-xl border border-white/10 bg-card/70 overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-2">
               <div className="p-8 md:p-12 flex flex-col justify-center">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-sky-500/20 bg-sky-500/5 mb-5 w-fit">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/[0.03] mb-5 w-fit">
                   <span className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse" />
-                  <span className="font-mono text-xs text-sky-400/80 tracking-widest uppercase">
+                  <span className="font-mono text-xs text-primary/80 tracking-widest uppercase">
                     Stanford University · MS Electrical Engineering
                   </span>
                 </div>
                 <h2 className="font-display text-3xl font-bold text-foreground mb-2">
                   {siteName}
                 </h2>
-                <p className="font-mono text-sm text-sky-400 mb-5 tracking-wide">
+                <p className="font-mono text-sm text-primary mb-5 tracking-wide">
                   Arbabian Lab Researcher · VLSI Designer · Robotics Engineer
                 </p>
                 <p className="font-body text-muted-foreground mb-4 leading-relaxed">
                   I started as a robotics engineer, building autonomous boats, humanoid service
                   robots, and industrial automation systems across Mexico and the Netherlands.
                   That hands-on foundation led me to Stanford, where I&apos;m now going deeper
-                  into the hardware stack | designing integrated circuits at the transistor level.
+                  into the hardware stack — designing integrated circuits at the transistor level.
                 </p>
                 <p className="font-body text-muted-foreground leading-relaxed">
                   At the <span className="text-teal-400 font-medium">Arbabian Lab</span>, I research
                   mm-wave radar sensor ICs and multimodal AI systems. In the fab, I design analog
                   circuits for <span className="text-sky-400 font-medium">real fabrication at TSMC</span>{" "}
-                  | bridging physics, silicon, and intelligent perception.
+                  — bridging physics, silicon, and intelligent perception.
                 </p>
                 <div className="mt-8">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2 font-display text-sm font-semibold tracking-wider uppercase text-sky-400 hover:text-sky-300 border border-sky-500/35 hover:border-sky-500/60 px-6 py-3 rounded-sm transition-all duration-300"
+                    className="inline-flex items-center gap-2 font-display text-sm font-semibold tracking-wider uppercase text-primary hover:text-sky-300 border border-white/12 hover:border-sky-500/60 px-6 py-3 rounded-md transition-all duration-300"
                   >
                     Get In Touch
                   </Link>
@@ -79,9 +79,9 @@ export default function AboutPage() {
             {aboutStats.map((stat) => (
               <div
                 key={stat.label}
-                className="rounded-lg border border-border bg-card/50 p-6 text-center hover:border-sky-500/30 transition-colors card-glow-sky"
+                className="rounded-lg border border-border bg-card/70 p-6 text-center hover:border-sky-500/30 transition-colors card-glow-sky"
               >
-                <span className="font-display text-4xl font-bold text-sky-400 block">{stat.value}</span>
+                <span className="font-display text-4xl font-bold text-primary block">{stat.value}</span>
                 <span className="font-body text-sm text-muted-foreground mt-1 block">{stat.label}</span>
               </div>
             ))}
@@ -98,7 +98,7 @@ export default function AboutPage() {
               {
                 icon: Cpu,
                 title: "Silicon First",
-                body: "Understanding systems at the transistor level | the physics of silicon | makes everything else more elegant. From circuits to software.",
+                body: "Understanding systems at the transistor level — the physics of silicon — makes everything else more elegant. From circuits to software.",
               },
               {
                 icon: Layers,
@@ -111,9 +111,9 @@ export default function AboutPage() {
                 body: "From autonomous vehicles and radar chips to agricultural e-commerce: technology only matters when it solves real problems for real people.",
               },
             ].map((p) => (
-              <div key={p.title} className="rounded-lg border border-border bg-card/50 p-6 text-center card-glow-sky">
-                <div className="w-12 h-12 rounded-xl bg-sky-500/10 flex items-center justify-center mx-auto mb-4">
-                  <p.icon className="h-6 w-6 text-sky-400" />
+              <div key={p.title} className="rounded-lg border border-border bg-card/70 p-6 text-center card-glow-sky">
+                <div className="w-12 h-12 rounded-xl bg-white/[0.05] flex items-center justify-center mx-auto mb-4">
+                  <p.icon className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="font-display text-xl font-bold text-foreground mb-2">{p.title}</h3>
                 <p className="font-body text-sm text-muted-foreground leading-relaxed">{p.body}</p>
@@ -124,13 +124,13 @@ export default function AboutPage() {
 
         {/* Skills */}
         <FadeIn delay="delay-300" className="mb-14">
-          <div className="rounded-xl border border-border bg-card/30 p-8">
+          <div className="rounded-xl border border-border bg-card/60 p-8">
             <div className="text-center mb-10">
               <h2 className="font-display text-3xl font-bold text-foreground mb-3">
                 Core Technical Expertise
               </h2>
               <p className="font-body text-muted-foreground">
-                From transistors to cloud deployments | a full-stack technical skill set.
+                From transistors to cloud deployments — a full-stack technical skill set.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -148,13 +148,13 @@ export default function AboutPage() {
               href="/docs/EdisonAltamiranoResume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 font-display text-sm font-bold tracking-wider uppercase px-8 py-4 rounded-sm border border-sky-500/40 text-sky-400 hover:bg-sky-500/10 hover:border-sky-500/70 transition-all duration-300 animate-sky-glow"
+              className="inline-flex items-center gap-3 font-display text-sm font-bold tracking-wider uppercase px-8 py-4 rounded-md border border-white/12 text-primary hover:bg-sky-500/10 hover:border-sky-500/70 transition-all duration-300 animate-sky-glow"
             >
               <Download className="h-5 w-5" />
               Download Full CV
             </Link>
-            <p className="font-mono text-xs text-muted-foreground/50">
-              PDF | updated 2025
+            <p className="font-mono text-xs text-muted-foreground/75">
+              PDF — updated 2025
             </p>
           </div>
         </FadeIn>

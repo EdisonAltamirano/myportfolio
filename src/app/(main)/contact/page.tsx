@@ -44,7 +44,7 @@ export default function ContactPage() {
           </h1>
           <p className="font-body text-lg text-muted-foreground max-w-xl mx-auto">
             Whether it&#39;s research collaboration, job opportunities, or just a great
-            engineering conversation | I&#39;d love to hear from you.
+            engineering conversation — I&#39;d love to hear from you.
           </p>
         </FadeIn>
 
@@ -52,18 +52,18 @@ export default function ContactPage() {
 
           {/* Contact info */}
           <FadeIn delay="delay-100" className="lg:col-span-2 space-y-6">
-            <div className="rounded-xl border border-sky-500/15 bg-card/50 p-6">
-              <div className="font-mono text-xs text-sky-400/70 tracking-widest uppercase mb-5">Direct Contact</div>
+            <div className="rounded-xl border border-white/10 bg-card/70 p-6">
+              <div className="font-mono text-xs text-primary/70 tracking-widest uppercase mb-5">Direct Contact</div>
               <div className="space-y-4">
                 <a
                   href={`mailto:${primaryEmail}`}
                   className="flex items-center gap-3 group"
                 >
-                  <div className="w-9 h-9 rounded-md bg-sky-500/10 flex items-center justify-center shrink-0">
-                    <Mail className="w-4 h-4 text-sky-400" />
+                  <div className="w-9 h-9 rounded-md bg-white/[0.05] flex items-center justify-center shrink-0">
+                    <Mail className="w-4 h-4 text-primary" />
                   </div>
                   <div>
-                    <div className="font-mono text-xs text-muted-foreground/60 uppercase tracking-wider">Email</div>
+                    <div className="font-mono text-xs text-muted-foreground/80 uppercase tracking-wider">Email</div>
                     <div className="font-body text-sm text-foreground group-hover:text-sky-400 transition-colors">
                       {primaryEmail}
                     </div>
@@ -73,11 +73,11 @@ export default function ContactPage() {
                   href={`mailto:${workEmail}`}
                   className="flex items-center gap-3 group"
                 >
-                  <div className="w-9 h-9 rounded-md bg-sky-500/10 flex items-center justify-center shrink-0">
-                    <Mail className="w-4 h-4 text-sky-400" />
+                  <div className="w-9 h-9 rounded-md bg-white/[0.05] flex items-center justify-center shrink-0">
+                    <Mail className="w-4 h-4 text-primary" />
                   </div>
                   <div>
-                    <div className="font-mono text-xs text-muted-foreground/60 uppercase tracking-wider">Work Email</div>
+                    <div className="font-mono text-xs text-muted-foreground/80 uppercase tracking-wider">Work Email</div>
                     <div className="font-body text-sm text-foreground group-hover:text-sky-400 transition-colors">
                       {workEmail}
                     </div>
@@ -88,14 +88,14 @@ export default function ContactPage() {
                     <Phone className="w-4 h-4 text-teal-400" />
                   </div>
                   <div>
-                    <div className="font-mono text-xs text-muted-foreground/60 uppercase tracking-wider">Phone</div>
+                    <div className="font-mono text-xs text-muted-foreground/80 uppercase tracking-wider">Phone</div>
                     <div className="font-body text-sm text-foreground group-hover:text-teal-400 transition-colors">{phoneDisplay}</div>
                   </div>
                 </a>
               </div>
             </div>
 
-            <div className="rounded-xl border border-teal-500/15 bg-card/50 p-6">
+            <div className="rounded-xl border border-teal-500/15 bg-card/70 p-6">
               <div className="font-mono text-xs text-teal-400/70 tracking-widest uppercase mb-5">Online</div>
               <a
                 href={linkedinUrl}
@@ -107,7 +107,7 @@ export default function ContactPage() {
                   <Linkedin className="w-4 h-4 text-teal-400" />
                 </div>
                 <div>
-                  <div className="font-mono text-xs text-muted-foreground/60 uppercase tracking-wider">LinkedIn</div>
+                  <div className="font-mono text-xs text-muted-foreground/80 uppercase tracking-wider">LinkedIn</div>
                   <div className="font-body text-sm text-foreground group-hover:text-teal-400 transition-colors">
                     edison-altamirano-avila
                   </div>
@@ -123,7 +123,7 @@ export default function ContactPage() {
                   <Globe className="w-4 h-4 text-teal-400" />
                 </div>
                 <div>
-                  <div className="font-mono text-xs text-muted-foreground/60 uppercase tracking-wider">Website</div>
+                  <div className="font-mono text-xs text-muted-foreground/80 uppercase tracking-wider">Website</div>
                   <div className="font-body text-sm text-foreground group-hover:text-teal-400 transition-colors">
                     edisonaltamirano.github.io/myportfolio
                   </div>
@@ -134,9 +134,9 @@ export default function ContactPage() {
 
           {/* Form */}
           <FadeIn delay="delay-200" className="lg:col-span-3">
-            <div className="rounded-xl border border-border bg-card/50 p-8">
+            <div className="rounded-xl border border-border bg-card/70 p-8">
               <div className="flex items-center gap-2.5 mb-6">
-                <MessageSquare className="w-5 h-5 text-sky-400" />
+                <MessageSquare className="w-5 h-5 text-primary" />
                 <h2 className="font-display text-xl font-bold text-foreground">Send a Message</h2>
               </div>
               <Form {...form}>
@@ -147,7 +147,7 @@ export default function ContactPage() {
                       name="name"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="font-mono text-xs text-muted-foreground/70 uppercase tracking-wider">Name</FormLabel>
+                          <FormLabel className="font-mono text-xs text-muted-foreground/85 uppercase tracking-wider">Name</FormLabel>
                           <FormControl>
                             <Input
                               placeholder="Your name"
@@ -164,7 +164,7 @@ export default function ContactPage() {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="font-mono text-xs text-muted-foreground/70 uppercase tracking-wider">Email</FormLabel>
+                          <FormLabel className="font-mono text-xs text-muted-foreground/85 uppercase tracking-wider">Email</FormLabel>
                           <FormControl>
                             <Input
                               placeholder="your@email.com"
@@ -183,7 +183,7 @@ export default function ContactPage() {
                     name="subject"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="font-mono text-xs text-muted-foreground/70 uppercase tracking-wider">Subject</FormLabel>
+                        <FormLabel className="font-mono text-xs text-muted-foreground/85 uppercase tracking-wider">Subject</FormLabel>
                         <FormControl>
                           <Input
                             placeholder="What's this about?"
@@ -200,7 +200,7 @@ export default function ContactPage() {
                     name="message"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="font-mono text-xs text-muted-foreground/70 uppercase tracking-wider">Message</FormLabel>
+                        <FormLabel className="font-mono text-xs text-muted-foreground/85 uppercase tracking-wider">Message</FormLabel>
                         <FormControl>
                           <Textarea
                             placeholder="Your message..."

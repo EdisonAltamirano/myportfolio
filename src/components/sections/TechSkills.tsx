@@ -10,8 +10,8 @@ export function TechSkillsDisplay({ category }: TechSkillsProps) {
     <div className="rounded-lg border border-border bg-card/60 card-glow-sky p-6">
       <div className="flex items-center gap-2.5 mb-5">
         {category.icon && (
-          <div className="w-8 h-8 rounded-md bg-sky-500/10 flex items-center justify-center">
-            <category.icon className="h-4 w-4 text-sky-400" />
+          <div className="w-8 h-8 rounded-md bg-white/[0.05] flex items-center justify-center">
+            <category.icon className="h-4 w-4 text-primary" />
           </div>
         )}
         <h3 className="font-display text-lg font-bold text-foreground">{category.title}</h3>
@@ -21,7 +21,7 @@ export function TechSkillsDisplay({ category }: TechSkillsProps) {
           <div key={skill.name}>
             <div className="flex justify-between mb-1.5">
               <span className="font-body text-sm text-muted-foreground">{skill.name}</span>
-              <span className="font-mono text-xs text-sky-400/80">{skill.level}%</span>
+              <span className="font-mono text-xs text-primary/80">{skill.level}%</span>
             </div>
             <div className="h-1.5 bg-muted rounded-full overflow-hidden">
               <div

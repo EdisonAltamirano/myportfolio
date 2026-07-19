@@ -10,9 +10,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans:    ['var(--font-rajdhani)', 'system-ui', 'sans-serif'],
-        body:    ['var(--font-nunito)', 'system-ui', 'sans-serif'],
-        display: ['var(--font-rajdhani)', 'system-ui', 'sans-serif'],
+        sans:    ['var(--font-sans)', 'system-ui', 'sans-serif'],
+        body:    ['var(--font-sans)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-sans)', 'system-ui', 'sans-serif'],
         mono:    ['var(--font-mono)', 'monospace'],
       },
       colors: {
@@ -69,8 +69,8 @@ export default {
       },
       borderRadius: {
         lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
+        md: 'calc(var(--radius) - 4px)',
+        sm: 'calc(var(--radius) - 8px)',
       },
       keyframes: {
         'accordion-down': {

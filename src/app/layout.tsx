@@ -1,4 +1,4 @@
-import type { Metadata, ResolvingMetadata } from 'next';
+import type { Metadata, ResolvingMetadata, Viewport } from 'next';
 import { rajdhani, nunito, jetbrainsMono } from '@/lib/fonts';
 import { officialWebsiteUrl } from '@/lib/constants';
 import './globals.css';
@@ -7,6 +7,11 @@ import { Toaster } from "@/components/ui/toaster";
 
 type Props = {
   children: React.ReactNode;
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
 };
 
 export async function generateMetadata(

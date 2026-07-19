@@ -29,7 +29,7 @@ const areaConfig = {
     dot: 'bg-sky-400',
     text: 'text-sky-400',
     glow: 'hover:border-sky-400/45 hover:shadow-[0_0_24px_rgba(56,189,248,0.12)]',
-    badge: 'bg-sky-500/15 text-sky-300 border-sky-500/30',
+    badge: 'bg-sky-500/15 text-primary border-white/12',
   },
   analog: {
     icon: Zap,
@@ -58,7 +58,7 @@ function CourseCard({ course }: { course: StanfordCourse }) {
   return (
     <div
       className={cn(
-        'relative rounded-lg border p-5 transition-all duration-300 bg-card/50 group cursor-default',
+        'relative rounded-lg border p-5 transition-all duration-300 bg-card/70 group cursor-default',
         area.border,
         area.glow
       )}
@@ -80,7 +80,7 @@ function CourseCard({ course }: { course: StanfordCourse }) {
         </div>
         <span
           className={cn(
-            'shrink-0 font-mono text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-sm border',
+            'shrink-0 font-mono text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-md border',
             status.cls
           )}
         >
@@ -95,11 +95,11 @@ function CourseCard({ course }: { course: StanfordCourse }) {
 
       {/* Footer */}
       <div className="flex items-center justify-between">
-        <span className="font-mono text-xs text-muted-foreground/60">{course.semester}</span>
+        <span className="font-mono text-xs text-muted-foreground/80">{course.semester}</span>
         {course.highlight && (
           <span
             className={cn(
-              'font-mono text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-sm border',
+              'font-mono text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-md border',
               area.badge
             )}
           >
@@ -130,10 +130,10 @@ export function StanfordSection() {
       <div className="container px-4 mx-auto relative z-10">
         {/* Header */}
         <FadeIn className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-sky-500/20 bg-sky-500/5 mb-5">
-            <FlaskConical className="w-3.5 h-3.5 text-sky-400" />
-            <span className="font-mono text-xs text-sky-400/80 tracking-widest uppercase">
-              Stanford University | Electrical Engineering
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/[0.03] mb-5">
+            <FlaskConical className="w-3.5 h-3.5 text-primary" />
+            <span className="font-mono text-xs text-primary/80 tracking-widest uppercase">
+              Stanford University — Electrical Engineering
             </span>
           </div>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -141,7 +141,7 @@ export function StanfordSection() {
             <span className="text-gradient-sky">Advanced Coursework</span>
           </h2>
           <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Pursuing an MS in EE at Stanford with a focus on integrated circuit design | from
+            Pursuing an MS in EE at Stanford with a focus on integrated circuit design — from
             mm-wave radar sensors to VLSI chip fabrication at TSMC.
           </p>
         </FadeIn>
@@ -162,7 +162,7 @@ export function StanfordSection() {
             {researchCourses.map((c) => (
               <div
                 key={c.code}
-                className="rounded-xl border border-teal-500/20 bg-card/40 p-6 md:p-8 transition-all duration-300 hover:border-teal-400/35 hover:shadow-[0_0_32px_rgba(45,212,191,0.08)]"
+                className="rounded-xl border border-teal-500/20 bg-card/65 p-6 md:p-8 transition-all duration-300 hover:border-teal-400/35 hover:shadow-[0_0_32px_rgba(45,212,191,0.08)]"
               >
                 <div className="grid md:grid-cols-2 gap-6 items-start">
                   <div>
@@ -175,7 +175,7 @@ export function StanfordSection() {
                     <p className="font-body text-muted-foreground leading-relaxed">{c.description}</p>
                   </div>
                   <div className="space-y-3">
-                    <div className="font-mono text-xs text-muted-foreground/60 uppercase tracking-widest mb-3">
+                    <div className="font-mono text-xs text-muted-foreground/80 uppercase tracking-widest mb-3">
                       Research Focus Areas
                     </div>
                     {[
@@ -201,8 +201,8 @@ export function StanfordSection() {
           <div className="mb-10">
             <div className="flex items-center gap-3 mb-5">
               <div className="flex items-center gap-2">
-                <Cpu className="w-4 h-4 text-sky-400" />
-                <span className="font-display text-sm font-bold tracking-widest uppercase text-sky-400">
+                <Cpu className="w-4 h-4 text-primary" />
+                <span className="font-display text-sm font-bold tracking-widest uppercase text-primary">
                   VLSI & Chip Design
                 </span>
               </div>
@@ -216,33 +216,33 @@ export function StanfordSection() {
               ))}
             </div>
 
-            {/* EE272 | Chip Layout Viewer */}
+            {/* EE272 — Chip Layout Viewer */}
             <FadeIn delay="delay-300">
-              <div className="rounded-xl border border-sky-500/20 bg-card/40 overflow-hidden transition-all duration-300">
+              <div className="rounded-xl border border-white/10 bg-card/65 overflow-hidden transition-all duration-300">
                 <button
                   onClick={() => setShowLayout(!showLayout)}
                   className="w-full flex items-center justify-between px-6 py-4 group hover:bg-sky-500/5 transition-colors duration-200"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-md bg-sky-500/10 flex items-center justify-center">
-                      <Layers className="w-4 h-4 text-sky-400" />
+                    <div className="w-8 h-8 rounded-md bg-white/[0.05] flex items-center justify-center">
+                      <Layers className="w-4 h-4 text-primary" />
                     </div>
                     <div className="text-left">
-                      <div className="font-mono text-xs text-sky-400 font-bold tracking-widest uppercase mb-0.5">
-                        EE272 | Final Project
+                      <div className="font-mono text-xs text-primary font-bold tracking-widest uppercase mb-0.5">
+                        EE272 — Final Project
                       </div>
                       <div className="font-display text-sm font-semibold text-foreground">
-                        SKY130 DNN Accelerator | Interactive VLSI Layout Viewer
+                        SKY130 DNN Accelerator — Interactive VLSI Layout Viewer
                       </div>
                     </div>
                   </div>
                   <div className="flex items-center gap-2 shrink-0 ml-4">
-                    <span className="font-mono text-[10px] text-sky-400/70 uppercase tracking-wider hidden sm:block">
+                    <span className="font-mono text-[10px] text-primary/70 uppercase tracking-wider hidden sm:block">
                       {showLayout ? 'collapse' : 'view chip layout'}
                     </span>
                     <ChevronDown
                       className={cn(
-                        'w-4 h-4 text-sky-400/60 transition-transform duration-300',
+                        'w-4 h-4 text-primary/60 transition-transform duration-300',
                         showLayout && 'rotate-180'
                       )}
                     />
@@ -256,12 +256,12 @@ export function StanfordSection() {
                   )}
                 >
                   <div className="px-4 pb-4">
-                    <div className="rounded-lg overflow-hidden border border-sky-500/15" style={{ height: '560px' }}>
+                    <div className="rounded-lg overflow-hidden border border-white/10" style={{ height: '560px' }}>
                       {showLayout && (
                         <iframe
                           src={getAssetPath('/272-Course/viewer.html')}
                           className="w-full h-full border-0"
-                          title="VLSI Layout Viewer | SKY130 DNN Accelerator"
+                          title="VLSI Layout Viewer — SKY130 DNN Accelerator"
                           sandbox="allow-scripts allow-same-origin"
                         />
                       )}
@@ -286,14 +286,14 @@ export function StanfordSection() {
               <div className="flex-1 h-px bg-gradient-to-r from-violet-500/30 to-transparent" />
             </div>
 
-            {/* EE233 | FM Radio Project (expandable) */}
-            <div className="rounded-xl border border-violet-500/20 bg-card/40 overflow-hidden mb-5 transition-all duration-300 hover:border-violet-400/30">
+            {/* EE233 — FM Radio Project (expandable) */}
+            <div className="rounded-xl border border-violet-500/20 bg-card/65 overflow-hidden mb-5 transition-all duration-300 hover:border-violet-400/30">
               {/* Project summary row */}
               <div className="flex flex-col md:flex-row md:items-start gap-5 p-6">
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="font-mono text-xs font-bold text-violet-400 border border-violet-500/30 bg-violet-500/10 px-2 py-0.5 rounded-sm">EE233 Final Project</span>
-                    <span className="font-mono text-[10px] text-green-300 border border-green-500/30 bg-green-500/15 px-2 py-0.5 rounded-sm font-bold tracking-widest uppercase">COMPLETED</span>
+                    <span className="font-mono text-xs font-bold text-violet-400 border border-violet-500/30 bg-violet-500/10 px-2 py-0.5 rounded-md">EE233 Final Project</span>
+                    <span className="font-mono text-[10px] text-green-300 border border-green-500/30 bg-green-500/15 px-2 py-0.5 rounded-md font-bold tracking-widest uppercase">COMPLETED</span>
                   </div>
                   <h3 className="font-display text-xl font-bold text-foreground mb-2">
                     FM Superheterodyne Radio Receiver
@@ -305,7 +305,7 @@ export function StanfordSection() {
                     <span className="text-violet-300 font-medium">Raspberry Pi Pico</span> hosts a
                     WiFi HTTP server with an embedded{' '}
                     <span className="text-violet-300 font-medium">real-time spectrum analyzer</span>{' '}
-                    and interactive tuning interface | all served from the microcontroller.
+                    and interactive tuning interface — all served from the microcontroller.
                   </p>
                   <div className="grid grid-cols-2 gap-2 mb-4">
                     {[
@@ -317,7 +317,7 @@ export function StanfordSection() {
                       ['Interface', 'WiFi HTTP + Spectrum UI'],
                     ].map(([k, v]) => (
                       <div key={k} className="rounded-md bg-violet-500/5 border border-violet-500/15 px-3 py-2">
-                        <div className="font-mono text-[10px] text-muted-foreground/60 uppercase tracking-wider">{k}</div>
+                        <div className="font-mono text-[10px] text-muted-foreground/80 uppercase tracking-wider">{k}</div>
                         <div className="font-body text-xs text-foreground mt-0.5">{v}</div>
                       </div>
                     ))}
@@ -327,7 +327,7 @@ export function StanfordSection() {
                       href={getAssetPath('/233-FinalProject/FinalProject.pdf')}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 font-mono text-xs text-violet-400 hover:text-violet-300 border border-violet-500/30 hover:border-violet-400/50 bg-violet-500/5 hover:bg-violet-500/10 px-3 py-1.5 rounded-sm transition-all duration-200"
+                      className="inline-flex items-center gap-1.5 font-mono text-xs text-violet-400 hover:text-violet-300 border border-violet-500/30 hover:border-violet-400/50 bg-violet-500/5 hover:bg-violet-500/10 px-3 py-1.5 rounded-md transition-all duration-200"
                     >
                       <FileText className="w-3 h-3" /> Project Report (PDF)
                     </a>
@@ -335,14 +335,14 @@ export function StanfordSection() {
                       href="https://youtube.com/shorts/ubQI5udW8H8?si=RdDYvzP_OdoH4A6_"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 font-mono text-xs text-violet-400 hover:text-violet-300 border border-violet-500/30 hover:border-violet-400/50 bg-violet-500/5 hover:bg-violet-500/10 px-3 py-1.5 rounded-sm transition-all duration-200"
+                      className="inline-flex items-center gap-1.5 font-mono text-xs text-violet-400 hover:text-violet-300 border border-violet-500/30 hover:border-violet-400/50 bg-violet-500/5 hover:bg-violet-500/10 px-3 py-1.5 rounded-md transition-all duration-200"
                     >
                       <ExternalLink className="w-3 h-3" /> Live Demo
                     </a>
                   </div>
                 </div>
                 {/* Signal chain diagram */}
-                <div className="md:w-52 rounded-lg bg-background/60 border border-violet-500/15 p-4 font-mono text-xs text-muted-foreground/70 leading-relaxed shrink-0">
+                <div className="md:w-52 rounded-lg bg-background/60 border border-violet-500/15 p-4 font-mono text-xs text-muted-foreground/85 leading-relaxed shrink-0">
                   <div className="text-violet-400/80 text-[10px] tracking-widest uppercase mb-2">Signal Chain</div>
                   <div className="space-y-1">
                     <div className="text-foreground/80">FM Antenna</div>

@@ -6,8 +6,8 @@ import { cn } from '@/lib/utils';
 interface FadeInProps {
   children: React.ReactNode;
   className?: string;
-  delay?: string; // e.g., 'delay-200'
-  duration?: string; // e.g., 'duration-500'
+  delay?: string;
+  duration?: string;
   as?: React.ElementType;
   threshold?: number;
   triggerOnce?: boolean;
@@ -17,39 +17,39 @@ export function FadeIn({
   children,
   className,
   delay = '',
-  duration = 'duration-700',
+  duration = 'duration-300',
   as: Component = 'div',
-  threshold = 0.1,
+  threshold = 0.12,
   triggerOnce = true,
 }: FadeInProps) {
   const [isVisible, setIsVisible] = useState(false);
   const elementRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setIsVisible(true);
-            if (triggerOnce && elementRef.current) {
-              observer.unobserve(elementRef.current);
-            }
+            if (triggerOnce && elementRef.current) observer.unobserve(elementRef.current);
           } else if (!triggerOnce) {
-             setIsVisible(false);
+            setIsVisible(false);
           }
         });
       },
-      { threshold }
+      { threshold, rootMargin: '0px 0px -40px 0px' }
     );
 
-    if (elementRef.current) {
-      observer.observe(elementRef.current);
-    }
-
+    const node = elementRef.current;
+    if (node) observer.observe(node);
     return () => {
-      if (elementRef.current) {
-        observer.unobserve(elementRef.current);
-      }
+      if (node) observer.unobserve(node);
     };
   }, [threshold, triggerOnce]);
 
@@ -57,10 +57,10 @@ export function FadeIn({
     <Component
       ref={elementRef}
       className={cn(
-        'transition-all ease-out',
+        'transition-all ease-out will-change-transform',
         duration,
         delay,
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
+        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0',
         className
       )}
     >

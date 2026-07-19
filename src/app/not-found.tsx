@@ -1,0 +1,25 @@
+import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
+
+export default function NotFound() {
+  return (
+    <main className="min-h-screen bg-circuit px-4 py-24">
+      <section className="mx-auto flex min-h-[60vh] max-w-2xl flex-col items-center justify-center text-center">
+        <p className="eyebrow">404</p>
+        <h1 className="mt-5 text-4xl font-semibold tracking-[-0.05em] text-foreground sm:text-6xl">
+          This page is not available.
+        </h1>
+        <p className="mt-5 max-w-xl text-base leading-7 text-muted-foreground">
+          The portfolio section you requested may have moved, or the link may be incomplete.
+        </p>
+        <Link
+          href="/projects"
+          className="mt-8 inline-flex items-center rounded-full border border-white/12 px-5 py-3 text-sm font-semibold text-foreground transition-colors hover:border-white/24 hover:bg-white/[0.06] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+        >
+          <ArrowLeft className="mr-2 h-4 w-4" />
+          Back to projects
+        </Link>
+      </section>
+    </main>
+  );
+}

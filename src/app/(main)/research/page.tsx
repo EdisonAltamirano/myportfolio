@@ -3,7 +3,7 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import { BookOpen, ExternalLink, Presentation, FlaskConical } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Research & Publications | Edison Altamirano",
+  title: "Research & Publications — Edison Altamirano",
   description:
     "Research publications, conference presentations, and academic contributions in robotics, VLSI, and AI.",
 };
@@ -90,7 +90,7 @@ const presentations: { year: string; items: { title: string; venue: string; link
     items: [
       {
         title:
-          "Intensive 20-hour Course on Robotics and Autonomous Vehicles | Teaching 30 professors from Tecnológico de Monterrey campuses on ROS1/ROS2, control systems, advanced perception algorithms, and ADAS simulations.",
+          "Intensive 20-hour Course on Robotics and Autonomous Vehicles — Teaching 30 professors from Tecnológico de Monterrey campuses on ROS1/ROS2, control systems, advanced perception algorithms, and ADAS simulations.",
         venue: "Tecnológico de Monterrey Faculty Program",
         link: "https://www.linkedin.com/posts/edison-altamirano-avila-55a0341a3_robotics-autonomousvehicles-innovation-activity-7296053708478435329-iOwt",
         linkLabel: "View Post",
@@ -102,7 +102,7 @@ const presentations: { year: string; items: { title: string; venue: string; link
     items: [
       {
         title:
-          '5th Anniversary of the SMART FACTORY at Tec De Monterrey | "Roadmap to the SmartFactory: Paving the Way for Intelligent Manufacturing and Advanced Robotics"',
+          '5th Anniversary of the SMART FACTORY at Tec De Monterrey — "Roadmap to the SmartFactory: Paving the Way for Intelligent Manufacturing and Advanced Robotics"',
         venue: "Tecnológico de Monterrey",
         link: "https://www.linkedin.com/posts/edison-altamirano-avila-55a0341a3_innovation-smartfactory-industry4-activity-7245875486931697664-V3Lk",
         linkLabel: "View Recording",
@@ -110,7 +110,7 @@ const presentations: { year: string; items: { title: string; venue: string; link
       {
         title:
           '"Virtual Twin for the Smart Factory as a Tool to Enable Robotics Skills Acquisition"',
-        venue: "IALF | University of Twente, Netherlands",
+        venue: "IALF — University of Twente, Netherlands",
         link: "https://ialf-online.net/",
         linkLabel: "Conference Website",
       },
@@ -128,7 +128,7 @@ const presentations: { year: string; items: { title: string; venue: string; link
     items: [
       {
         title:
-          "VANTTEC Self-Driving Car Showcase | First official demonstration of fully autonomous SDV capabilities to company executives, academics, and school directives.",
+          "VANTTEC Self-Driving Car Showcase — First official demonstration of fully autonomous SDV capabilities to company executives, academics, and school directives.",
         venue: "VANTTEC Showcase Event",
         link: "https://drive.google.com/file/d/1tOrO6Brp6VLg6hqPitjMkOtYIW-htkGg/view",
         linkLabel: "View Recording",
@@ -140,11 +140,11 @@ const presentations: { year: string; items: { title: string; venue: string; link
     items: [
       {
         title:
-          "AVEVA OSIsoft Training | Teaching 11+ professors on industrial data management using AVEVA PI System: real-time data collection, visualization, and analysis.",
+          "AVEVA OSIsoft Training — Teaching 11+ professors on industrial data management using AVEVA PI System: real-time data collection, visualization, and analysis.",
         venue: "Tecnológico de Monterrey",
       },
       {
-        title: 'RoboSub 2022 | "Presentation of VANTTEC UUV-IV Prototype"',
+        title: 'RoboSub 2022 — "Presentation of VANTTEC UUV-IV Prototype"',
         venue: "RoboNation RoboSub 2022",
       },
     ],
@@ -157,9 +157,9 @@ export default function ResearchPage() {
       <div className="container mx-auto px-4 py-14 lg:px-8">
         {/* Header */}
         <FadeIn className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-sky-500/20 bg-sky-500/5 mb-5">
-            <FlaskConical className="w-3.5 h-3.5 text-sky-400" />
-            <span className="font-mono text-xs text-sky-400/80 tracking-widest uppercase">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/[0.03] mb-5">
+            <FlaskConical className="w-3.5 h-3.5 text-primary" />
+            <span className="font-mono text-xs text-primary/80 tracking-widest uppercase">
               Academic Contributions
             </span>
           </div>
@@ -177,31 +177,31 @@ export default function ResearchPage() {
         <FadeIn delay="delay-100" className="mb-16">
           <div className="flex items-center gap-3 mb-8">
             <div className="flex items-center gap-2">
-              <BookOpen className="w-4 h-4 text-sky-400" />
-              <span className="font-display text-sm font-bold tracking-widest uppercase text-sky-400">
+              <BookOpen className="w-4 h-4 text-primary" />
+              <span className="font-display text-sm font-bold tracking-widest uppercase text-primary">
                 Publications
               </span>
             </div>
             <div className="flex-1 h-px bg-gradient-to-r from-sky-500/30 to-transparent" />
-            <span className="font-mono text-xs text-muted-foreground/60">{publications.length} papers</span>
+            <span className="font-mono text-xs text-muted-foreground/80">{publications.length} papers</span>
           </div>
 
           <div className="space-y-4">
             {publications.map((pub, i) => (
               <FadeIn key={i} delay={`delay-${(i % 4) * 75}`}>
-                <div className="rounded-lg border border-border bg-card/50 p-5 card-glow-sky group">
+                <div className="rounded-lg border border-border bg-card/70 p-5 card-glow-sky group">
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
-                        <span className="font-mono text-xs text-sky-400 font-bold border border-sky-500/30 bg-sky-500/10 px-2 py-0.5 rounded-sm">
+                        <span className="font-mono text-xs text-primary font-bold border border-white/12 bg-white/[0.05] px-2 py-0.5 rounded-md">
                           {pub.year}
                         </span>
-                        <span className="font-mono text-xs text-muted-foreground/60">{pub.venue}</span>
+                        <span className="font-mono text-xs text-muted-foreground/80">{pub.venue}</span>
                       </div>
                       <p className="font-display text-sm font-semibold text-foreground leading-snug mb-1">
                         {pub.title}
                       </p>
-                      <p className="font-body text-xs text-muted-foreground/70 italic">
+                      <p className="font-body text-xs text-muted-foreground/85 italic">
                         {pub.authors}
                         {pub.pages && ` · pp. ${pub.pages}`}
                       </p>
@@ -211,7 +211,7 @@ export default function ResearchPage() {
                         href={pub.doi}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="shrink-0 flex items-center gap-1.5 font-mono text-xs text-teal-400 hover:text-teal-300 border border-teal-500/25 hover:border-teal-400/50 bg-teal-500/5 hover:bg-teal-500/10 px-3 py-1.5 rounded-sm transition-all duration-200"
+                        className="shrink-0 flex items-center gap-1.5 font-mono text-xs text-teal-400 hover:text-teal-300 border border-teal-500/25 hover:border-teal-400/50 bg-teal-500/5 hover:bg-teal-500/10 px-3 py-1.5 rounded-md transition-all duration-200"
                       >
                         <ExternalLink className="w-3 h-3" />
                         {pub.linkLabel ?? "DOI"}
@@ -240,16 +240,16 @@ export default function ResearchPage() {
             {presentations.map((yearGroup) => (
               <div key={yearGroup.year}>
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="font-display text-2xl font-bold text-sky-400">{yearGroup.year}</span>
+                  <span className="font-display text-2xl font-bold text-primary">{yearGroup.year}</span>
                   <div className="flex-1 h-px bg-border/50" />
                 </div>
                 <div className="space-y-3">
                   {yearGroup.items.map((item, i) => (
                     <FadeIn key={i} delay={`delay-${i * 75}`}>
-                      <div className="rounded-lg border border-border bg-card/40 p-5 card-glow-teal">
+                      <div className="rounded-lg border border-border bg-card/65 p-5 card-glow-teal">
                         <p className="font-body text-sm text-foreground leading-relaxed mb-2">{item.title}</p>
                         <div className="flex items-center justify-between gap-2">
-                          <span className="font-mono text-xs text-muted-foreground/60">{item.venue}</span>
+                          <span className="font-mono text-xs text-muted-foreground/80">{item.venue}</span>
                           {item.link && (
                             <a
                               href={item.link}

@@ -9,9 +9,9 @@ export function SkillsSection() {
       <div className="container px-4 mx-auto">
         <FadeIn>
           <div className="text-center mb-14">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-sky-500/20 bg-sky-500/5 mb-5">
-              <Cpu className="w-3 h-3 text-sky-400" />
-              <span className="font-mono text-xs text-sky-400/80 tracking-widest uppercase">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/[0.03] mb-5">
+              <Cpu className="w-3 h-3 text-primary" />
+              <span className="font-mono text-xs text-primary/80 tracking-widest uppercase">
                 Technical Expertise
               </span>
             </div>
@@ -19,7 +19,7 @@ export function SkillsSection() {
               Core Skills
             </h2>
             <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-              From silicon transistors to cloud APIs | a comprehensive stack built over 7+ years.
+              From silicon transistors to cloud APIs — a comprehensive stack built over 7+ years.
             </p>
           </div>
         </FadeIn>

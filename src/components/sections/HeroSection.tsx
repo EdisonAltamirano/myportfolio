@@ -3,208 +3,78 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { FadeIn } from '@/components/animations/FadeIn';
-import { TypingText } from '@/components/ui/typing-text';
-import { ArrowRight, ExternalLink } from 'lucide-react';
+import { ArrowRight, ExternalLink, FileText } from 'lucide-react';
 
-const expertiseTags = [
-  'Radar IC Design',
-  'VLSI @ TSMC',
+const highlights = [
+  { value: 'Stanford EE', label: 'MS candidate, Arbabian Lab' },
+  { value: 'VLSI + Radar', label: 'IC design, sensing, fabrication track' },
+  { value: 'Robotics', label: 'Autonomous vehicles, ROS, perception' },
+  { value: 'Full-stack', label: 'Production apps and engineering systems' },
+];
+
+const focusAreas = [
+  'Radar IC design',
+  'VLSI systems',
+  'Autonomous robotics',
   'Multimodal AI',
-  'Chip Fabrication',
-  'Autonomous Systems',
-  'Full-Stack Dev',
+  'Embedded software',
+  'Product engineering',
 ];
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden bg-circuit">
-      {/* Scan line */}
-      <div className="scan-line" />
-
-      {/* ── Radar animation ─────────────────────────────────── */}
-      <div
-        className="absolute inset-0 flex items-center justify-center pointer-events-none"
-        aria-hidden="true"
-      >
-        <div className="relative" style={{ width: 640, height: 640, opacity: 0.11 }}>
-          {/* Concentric rings */}
-          {[1, 2, 3, 4, 5].map((i) => (
-            <div
-              key={i}
-              className="absolute rounded-full"
-              style={{
-                inset: `${(5 - i) * 12.5}%`,
-                border: `1px solid rgba(45, 212, 191, ${0.15 + i * 0.08})`,
-              }}
-            />
-          ))}
-          {/* Cross-hairs */}
-          <div className="absolute top-1/2 left-0 right-0 h-px bg-teal-400/20" />
-          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-teal-400/20" />
-          {/* 45-degree lines */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                'linear-gradient(45deg, transparent calc(50% - 0.5px), rgba(45,212,191,0.12) 50%, transparent calc(50% + 0.5px))',
-            }}
-          />
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                'linear-gradient(-45deg, transparent calc(50% - 0.5px), rgba(45,212,191,0.12) 50%, transparent calc(50% + 0.5px))',
-            }}
-          />
-          {/* Sweep */}
-          <div
-            className="absolute inset-0 rounded-full animate-radar-sweep"
-            style={{
-              background:
-                'conic-gradient(from 0deg, transparent 280deg, rgba(56,189,248,0.04) 310deg, rgba(56,189,248,0.32) 360deg)',
-            }}
-          />
-          {/* Radar blips */}
-          <div
-            className="absolute w-2.5 h-2.5 rounded-full bg-sky-400"
-            style={{ top: '22%', left: '62%' }}
-          >
-            <div className="absolute inset-0 rounded-full bg-sky-400 animate-radar-blip" />
-          </div>
-          <div
-            className="absolute w-2 h-2 rounded-full bg-teal-400"
-            style={{ top: '67%', left: '30%' }}
-          >
-            <div className="absolute inset-0 rounded-full bg-teal-400 animate-radar-blip" style={{ animationDelay: '1.2s' }} />
-          </div>
-          <div
-            className="absolute w-1.5 h-1.5 rounded-full bg-sky-300"
-            style={{ top: '43%', left: '75%' }}
-          >
-            <div className="absolute inset-0 rounded-full bg-sky-300 animate-radar-blip" style={{ animationDelay: '2.1s' }} />
-          </div>
-        </div>
-      </div>
-
-      {/* ── Radial gradient overlay ──────────────────────────── */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            'radial-gradient(ellipse 60% 80% at 50% 50%, transparent 0%, hsl(224,84%,4%) 70%)',
-        }}
-      />
-
-      {/* ── Content ─────────────────────────────────────────── */}
-      <div className="container px-4 mx-auto relative z-10 text-center">
-        <FadeIn className="max-w-4xl mx-auto">
-
-          {/* Stanford pill badge */}
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-sky-500/25 bg-sky-500/6 mb-8">
-            <span className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse" />
-            <span
-              className="font-mono text-xs text-sky-400/80 tracking-widest uppercase"
-              style={{ letterSpacing: '0.14em' }}
-            >
-              Stanford University · MS Electrical Engineering
-            </span>
+    <section className="relative overflow-hidden bg-circuit">
+      <div className="container mx-auto px-4 py-24 sm:py-28 lg:px-8 lg:py-36">
+        <FadeIn className="mx-auto max-w-5xl text-center">
+          <div className="mx-auto mb-8 flex max-w-[22rem] items-center justify-center overflow-hidden rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-center text-xs leading-5 text-muted-foreground shadow-sm shadow-black/10 sm:inline-flex sm:max-w-full sm:text-sm">
+            <span className="mr-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+            <span className="min-w-0 truncate sm:whitespace-normal">Stanford Electrical Engineering · Research, silicon, robotics, and software</span>
           </div>
 
-          {/* Name */}
-          <h1 className="font-display font-bold mb-5 tracking-tight leading-none">
-            <span
-              className="block text-foreground/90"
-              style={{ fontSize: 'clamp(2.8rem, 8vw, 6rem)' }}
-            >
-              EDISON
-            </span>
-            <span
-              className="block text-gradient-sky"
-              style={{ fontSize: 'clamp(2.8rem, 8vw, 6rem)' }}
-            >
-              ALTAMIRANO
-            </span>
+          <h1 className="mx-auto max-w-[22rem] text-3xl font-semibold leading-[1.02] tracking-[-0.045em] text-foreground sm:max-w-none sm:text-7xl sm:tracking-[-0.07em] lg:text-8xl">
+            Edison Altamirano builds systems from silicon to software.
           </h1>
 
-          {/* Role line */}
-          <p className="font-display text-lg md:text-2xl text-muted-foreground/80 mb-3 tracking-wide font-medium">
-            Arbabian Lab Researcher &nbsp;·&nbsp; VLSI Designer &nbsp;·&nbsp; Radar & AI Systems
+          <p className="mx-auto mt-8 max-w-[18rem] text-base leading-7 text-muted-foreground [text-wrap:wrap] sm:max-w-3xl sm:text-xl sm:leading-8 sm:[text-wrap:pretty]">
+            Stanford EE researcher at Arbabian Lab, VLSI designer, and robotics engineer with work spanning mm-wave radar sensors, chip design, autonomous vehicles, and production-grade full-stack platforms.
           </p>
 
-          {/* Body subtitle */}
-          <p className="font-body text-base text-muted-foreground/60 mb-10 max-w-xl mx-auto leading-relaxed">
-            Building next-generation sensors on silicon | from radar-integrated circuits
-            fabricated at TSMC to multimodal AI perception systems.
-          </p>
-
-          {/* Typing line */}
-          <div className="flex justify-center mb-10 h-6">
-            <div className="font-mono text-sm tracking-widest">
-              <span className="text-muted-foreground/40">$ focus &nbsp;</span>
-              <TypingText
-                texts={expertiseTags}
-                className="text-teal-400"
-                cursorClassName="text-sky-400"
-                typingSpeed={65}
-                deletingSpeed={40}
-                pauseTime={2200}
-              />
-            </div>
-          </div>
-
-          {/* CTA row */}
-          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-            <Button
-              asChild
-              size="lg"
-              className="bg-sky-500 hover:bg-sky-400 text-black font-display font-bold tracking-wider shadow-lg shadow-sky-500/20 border-0 px-8"
-            >
+          <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Button asChild size="lg" className="h-12 rounded-full bg-white px-6 text-sm font-semibold text-background shadow-none transition-transform duration-150 hover:scale-[1.01] hover:bg-white/90 active:scale-[0.98]">
               <Link href="/projects">
-                View Projects <ArrowRight className="ml-2 h-4 w-4" />
+                View selected work <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="border-teal-500/30 text-teal-400 hover:bg-teal-400/8 hover:border-teal-400/50 font-display font-semibold tracking-wider px-8"
-            >
-              <Link href="/research">Research & Publications</Link>
+            <Button asChild variant="outline" size="lg" className="h-12 rounded-full border-white/12 bg-transparent px-6 text-sm font-semibold text-foreground hover:bg-white/[0.06]">
+              <Link href="/docs/EdisonAltamiranoResume.pdf" target="_blank" rel="noopener noreferrer">
+                Resume <FileText className="ml-2 h-4 w-4" />
+              </Link>
             </Button>
-            <Button
-              asChild
-              variant="ghost"
-              size="lg"
-              className="text-muted-foreground hover:text-foreground font-display font-semibold tracking-wider"
-            >
-              <Link href="/contact">Contact</Link>
+            <Button asChild variant="ghost" size="lg" className="h-12 rounded-full px-6 text-sm font-semibold text-muted-foreground hover:bg-white/[0.06] hover:text-foreground">
+              <Link href="/contact">
+                Contact <ExternalLink className="ml-2 h-4 w-4" />
+              </Link>
             </Button>
           </div>
 
-          {/* Quick stats */}
-          <div className="mt-16 flex flex-wrap justify-center gap-x-8 gap-y-3">
-            {[
-              { value: 'EE391', label: 'Arbabian Lab Research' },
-              { value: 'EE372', label: 'Upcoming IC Fabrication' },
-              { value: 'EE272', label: 'VLSI Design' },
-              { value: '4×', label: 'IEEE Publications' },
-            ].map((s) => (
-              <div key={s.label} className="text-center">
-                <div className="font-display text-xl font-bold text-sky-400">{s.value}</div>
-                <div className="font-mono text-xs text-muted-foreground/60 tracking-wider uppercase mt-0.5">{s.label}</div>
+          <div className="mx-auto mt-14 grid max-w-4xl grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {highlights.map((item) => (
+              <div key={item.value} className="rounded-2xl border border-white/10 bg-white/[0.035] p-5 text-left shadow-sm shadow-black/10">
+                <div className="text-base font-semibold text-foreground">{item.value}</div>
+                <div className="mt-2 text-sm leading-6 text-muted-foreground">{item.label}</div>
               </div>
+            ))}
+          </div>
+
+          <div className="mt-10 flex flex-wrap justify-center gap-2">
+            {focusAreas.map((area) => (
+              <span key={area} className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs font-medium text-muted-foreground">
+                {area}
+              </span>
             ))}
           </div>
         </FadeIn>
       </div>
-
-      {/* Bottom fade */}
-      <div
-        className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
-        style={{
-          background: 'linear-gradient(to bottom, transparent, hsl(224,84%,4%))',
-        }}
-      />
     </section>
   );
 }
