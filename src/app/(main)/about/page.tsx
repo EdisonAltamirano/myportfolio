@@ -1,7 +1,7 @@
 import { FadeIn } from "@/components/animations/FadeIn";
 import Image from "next/image";
 import Link from "next/link";
-import { Download, FlaskConical, Cpu, Brain, Users, Layers } from "lucide-react";
+import { Download, Cpu, Users, Layers } from "lucide-react";
 import { aboutStats, siteName, technicalSkills } from "@/lib/constants";
 import { TechSkillsDisplay } from "@/components/sections/TechSkills";
 import { getAssetPath } from "@/lib/utils";
@@ -14,10 +14,10 @@ export default function AboutPage() {
         {/* Page title */}
         <FadeIn className="text-center mb-14">
           <h1 className="font-display text-5xl md:text-6xl font-bold text-foreground mb-4">
-            About <span className="text-gradient-sky">Me</span>
+            About <span className="text-gradient-sky">Edison</span>
           </h1>
           <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-            Engineer. Researcher. Builder. From Monterrey to Stanford.
+            Stanford EE engineer building intelligent sensing systems across silicon, embedded software, and autonomy.
           </p>
         </FadeIn>
 
@@ -36,19 +36,19 @@ export default function AboutPage() {
                   {siteName}
                 </h2>
                 <p className="font-mono text-sm text-primary mb-5 tracking-wide">
-                  Arbabian Lab Researcher · VLSI Designer · Robotics Engineer
+                  Hardware-AI / Sensing Systems · VLSI · Embedded Autonomy
                 </p>
                 <p className="font-body text-muted-foreground mb-4 leading-relaxed">
-                  I started as a robotics engineer, building autonomous boats, humanoid service
-                  robots, and industrial automation systems across Mexico and the Netherlands.
-                  That hands-on foundation led me to Stanford, where I&apos;m now going deeper
-                  into the hardware stack — designing integrated circuits at the transistor level.
+                  I started by building physical systems: autonomous boats, humanoid service
+                  robots, automotive prototypes, and industrial automation labs. That foundation
+                  now shapes how I approach Stanford EE work: not as isolated coursework, but as
+                  a path toward sensing systems that connect circuits, embedded software, and AI.
                 </p>
                 <p className="font-body text-muted-foreground leading-relaxed">
-                  At the <span className="text-primary font-medium">Arbabian Lab</span>, I research
-                  mm-wave radar sensor ICs and multimodal AI systems. In the fab, I design analog
-                  circuits for <span className="text-primary font-medium">real fabrication at TSMC</span>{" "}
-                  — bridging physics, silicon, and intelligent perception.
+                  My strongest direction is hardware-aware intelligence: mm-wave radar, analog
+                  and VLSI design, sensor fusion, safety-critical embedded systems, and robotics
+                  autonomy. I can also ship production software, which helps me turn technical
+                  systems into usable products.
                 </p>
                 <div className="mt-8">
                   <Link
@@ -91,24 +91,24 @@ export default function AboutPage() {
         {/* Philosophy */}
         <FadeIn delay="delay-200" className="mb-14">
           <h2 className="font-display text-3xl font-bold text-center text-foreground mb-8">
-            My Philosophy
+            How I create value
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
                 icon: Cpu,
-                title: "Silicon First",
-                body: "Understanding systems at the transistor level — the physics of silicon — makes everything else more elegant. From circuits to software.",
+                title: "Hardware-aware intelligence",
+                body: "I care about the full sensing stack: signals, circuits, embedded control, perception algorithms, and the physical system around them.",
               },
               {
                 icon: Layers,
-                title: "Full-Stack Thinking",
-                body: "Every great system is a stack. I work from analog IC design up through embedded firmware, AI models, and cloud APIs.",
+                title: "Systems thinking",
+                body: "My projects cross layers: analog and VLSI fundamentals, firmware, robotics middleware, simulation, AI, and production interfaces.",
               },
               {
                 icon: Users,
-                title: "Real-World Impact",
-                body: "From autonomous vehicles and radar chips to agricultural e-commerce: technology only matters when it solves real problems for real people.",
+                title: "Employer-ready execution",
+                body: "I focus on evidence: working demos, validated systems, competition results, industry projects, publications, and tools people can use.",
               },
             ].map((p) => (
               <div key={p.title} className="rounded-xl border border-border bg-card p-6 text-center card-glow-sky">
@@ -127,10 +127,10 @@ export default function AboutPage() {
           <div className="rounded-xl border border-border bg-card p-8">
             <div className="text-center mb-10">
               <h2 className="font-display text-3xl font-bold text-foreground mb-3">
-                Core Technical Expertise
+                Technical strengths by role
               </h2>
               <p className="font-body text-muted-foreground">
-                From transistors to cloud deployments — a full-stack technical skill set.
+                The strongest hiring signals are RF/analog systems, VLSI, embedded automotive software, robotics perception, and technical product engineering.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

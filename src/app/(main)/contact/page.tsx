@@ -40,11 +40,11 @@ export default function ContactPage() {
       <div className="container mx-auto px-4 py-14 lg:px-8">
         <FadeIn className="text-center mb-14">
           <h1 className="font-display text-5xl md:text-6xl font-bold text-foreground mb-4">
-            Get In <span className="text-gradient-sky">Touch</span>
+            Let&apos;s build <span className="text-gradient-sky">serious systems</span>
           </h1>
           <p className="font-body text-lg text-muted-foreground max-w-xl mx-auto">
-            Whether it&#39;s research collaboration, job opportunities, or just a great
-            engineering conversation — I&#39;d love to hear from you.
+            I&apos;m most interested in roles and collaborations around radar/sensing systems,
+            analog or VLSI design, embedded automotive software, robotics perception, and autonomy.
           </p>
         </FadeIn>
 
@@ -53,6 +53,14 @@ export default function ContactPage() {
           {/* Contact info */}
           <FadeIn delay="delay-100" className="lg:col-span-2 space-y-6">
             <div className="rounded-xl border border-black/10 bg-card p-6">
+              <div className="mb-6 rounded-2xl border border-primary/20 bg-primary/10 p-4">
+                <div className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-primary/80">Best contact topics</div>
+                <ul className="mt-3 space-y-2 text-sm leading-6 text-foreground">
+                  <li>• RF/mmWave radar, sensing, or multimodal AI roles</li>
+                  <li>• Analog, mixed-signal, VLSI, or ASIC opportunities</li>
+                  <li>• Embedded automotive, autonomy, robotics, or perception work</li>
+                </ul>
+              </div>
               <div className="font-mono text-xs text-primary/70 tracking-widest uppercase mb-5">Direct Contact</div>
               <div className="space-y-4">
                 <a
@@ -137,7 +145,7 @@ export default function ContactPage() {
             <div className="rounded-xl border border-border bg-card p-8">
               <div className="flex items-center gap-2.5 mb-6">
                 <MessageSquare className="w-5 h-5 text-primary" />
-                <h2 className="font-display text-xl font-bold text-foreground">Send a Message</h2>
+                <h2 className="font-display text-xl font-bold text-foreground">Send a focused message</h2>
               </div>
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
@@ -186,7 +194,7 @@ export default function ContactPage() {
                         <FormLabel className="font-mono text-xs text-muted-foreground/85 uppercase tracking-wider">Subject</FormLabel>
                         <FormControl>
                           <Input
-                            placeholder="What's this about?"
+                            placeholder="Role, research collaboration, or project topic"
                             {...field}
                             className="bg-white/80 border-border focus:border-primary/50 font-body"
                           />
@@ -203,7 +211,7 @@ export default function ContactPage() {
                         <FormLabel className="font-mono text-xs text-muted-foreground/85 uppercase tracking-wider">Message</FormLabel>
                         <FormControl>
                           <Textarea
-                            placeholder="Your message..."
+                            placeholder="Tell me what you're building, hiring for, or exploring."
                             rows={5}
                             {...field}
                             className="bg-white/80 border-border focus:border-primary/50 font-body resize-none"
