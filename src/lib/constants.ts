@@ -42,43 +42,43 @@ export const phoneDisplay = '+1 (650) 334-9546';
 
 export const featuredProjects: Project[] = [
   {
-    id: 'zf-autonomous-shuttle',
-    title: 'ZF Autonomous Shuttle',
+    id: 'ee233-fm-radio',
+    title: 'EE233 | FM Superheterodyne Radio Receiver',
     description:
-      "Pioneered firmware and electronics for Mexico's first autonomous passenger shuttle, complete with sensor fusion and path planning algorithms.",
-    imageUrl: `${BASE}/images/sdv image.png`,
-    imageHint: 'autonomous vehicle',
-    category: 'Robotics',
-    company: 'ZF Group',
-    tags: ['Robotics', 'Autonomous Systems', 'Firmware', 'CAN Bus'],
-    href: '/projects/zf-autonomous-shuttle',
+      'Built a dual-conversion FM receiver with Si5351 PLL synthesis, quadrature I/Q demodulation, Raspberry Pi Pico control, and a live browser tuning interface.',
+    imageUrl: `${BASE}/images/radio_hardware.png`,
+    imageHint: 'FM radio receiver hardware',
+    category: 'Analog / RF Systems',
+    company: 'Stanford University - EE233',
+    tags: ['RF Design', 'PLL', 'I/Q Demodulation', 'Embedded Control'],
+    href: '/projects/ee233-fm-radio',
+    type: 'academic',
+  },
+  {
+    id: 'ee272-vlsi-design',
+    title: 'EE271 / EE272 | VLSI Design Projects',
+    description:
+      'Completed Stanford RTL-to-GDS VLSI work using SKY130, Cadence/Synopsys-style flows, timing closure, DRC/LVS, and accelerator-oriented physical design.',
+    imageUrl: `${BASE}/272-Course/sram.png`,
+    imageHint: 'VLSI chip layout design',
+    category: 'VLSI / ASIC Flow',
+    company: 'Stanford University - EE271/EE272',
+    tags: ['VLSI', 'Physical Design', 'Timing Closure', 'SKY130'],
+    href: '/projects/ee272-vlsi-design',
+    type: 'academic',
+  },
+  {
+    id: 'zf-braking-systems',
+    title: 'ZF | Next-Gen Axle Modulators',
+    description:
+      'Developed AUTOSAR-oriented embedded software, Simulink validation workflows, and system analysis for safety-critical commercial vehicle braking systems.',
+    imageUrl: `${BASE}/zf_job/ZF-CVS.jpg`,
+    imageHint: 'embedded automotive braking systems',
+    category: 'Automotive Embedded',
+    company: 'ZF Friedrichshafen AG',
+    tags: ['AUTOSAR', 'Embedded C', 'Simulink', 'Safety-Critical Systems'],
+    href: '/projects/zf-braking-systems',
     type: 'company',
-  },
-  {
-    id: 'airlab-stacking-challenge',
-    title: 'AIRLab Stacking Challenge | Winner',
-    description:
-      'Won "Most Consistent Solution" award in international robotics competition hosted in the Netherlands, developing vision-based robotic grasping algorithms.',
-    imageUrl: `${BASE}/airlab/AirlabPrize.jpeg`,
-    imageHint: 'robotic arm stacking products',
-    category: 'Robotics',
-    company: 'Ahold Delhaize / TU Delft',
-    tags: ['Computer Vision', 'Robotic Manipulation', 'AI', 'International Competition'],
-    href: '/projects/airlab-stacking-challenge',
-    type: 'academic',
-  },
-  {
-    id: 'vanttec-roboboat-robosub',
-    title: 'Vanttec Roboboat & Robosub',
-    description:
-      'Led development of perception and control systems for autonomous surface and underwater vehicles competing internationally at RoboNation.',
-    imageUrl: `${BASE}/images/uuv.png`,
-    imageHint: 'robotic boat',
-    category: 'Robotics',
-    company: 'RoboNation / Tecnológico de Monterrey',
-    tags: ['Autonomous Systems', 'Computer Vision', 'Robotics', 'SLAM'],
-    href: '/projects/vanttec-roboboat-robosub',
-    type: 'academic',
   },
 ];
 
@@ -234,6 +234,82 @@ export const academicProjects: Project[] = [
 ];
 
 export const allProjects: Project[] = [...companyProjects, ...academicProjects];
+
+export type ProjectSignal = {
+  roleFit: string;
+  contribution: string;
+  outcome: string;
+  employerSignal: string;
+};
+
+export const projectSignals: Record<string, ProjectSignal> = {
+  'zf-autonomous-shuttle': {
+    roleFit: 'Robotics & Autonomy Engineer',
+    contribution: 'Firmware, electronics, sensing, and vehicle autonomy integration.',
+    outcome: 'Helped turn a disused vehicle into an autonomous passenger-shuttle prototype presented to industry leaders.',
+    employerSignal: 'Proves systems integration across embedded software, robotics, sensors, and real hardware constraints.',
+  },
+  'zf-braking-systems': {
+    roleFit: 'Embedded / Automotive Software Engineer',
+    contribution: 'AUTOSAR-oriented software, modeling, validation, reverse engineering, and safety-critical workflows.',
+    outcome: 'Professional engineering work on next-generation commercial vehicle braking systems.',
+    employerSignal: 'Proves readiness for embedded automotive, validation, and safety-critical software roles.',
+  },
+  'john-deere-go': {
+    roleFit: 'Enterprise / AI Systems Engineer',
+    contribution: 'Built SAP-connected workflows and computer-vision/automation systems for internal operations.',
+    outcome: 'Improved supply-chain and loss-prevention processes in an enterprise environment.',
+    employerSignal: 'Proves ability to ship practical systems inside large-company constraints.',
+  },
+  'chakri-ecommerce': {
+    roleFit: 'Full-stack Technical Product Engineer',
+    contribution: 'Designed and built a searchable BIM platform with Next.js, Firebase, Elasticsearch, CMS, analytics, and secure downloads.',
+    outcome: 'Delivered a production technical product for manufacturer discovery and BIM asset distribution.',
+    employerSignal: 'Proves product thinking, frontend/backend execution, data modeling, search, and deployment ability.',
+  },
+  'airlab-stacking-challenge': {
+    roleFit: 'AI / Robotics Software Engineer',
+    contribution: 'Vision-based robotic grasping and manipulation pipeline for a retail-stacking robotics challenge.',
+    outcome: 'Won “Most Consistent Solution” at an international robotics competition hosted in the Netherlands.',
+    employerSignal: 'Proves robotics perception, manipulation, reliability, and competitive technical execution.',
+  },
+  'vanttec-roboboat-robosub': {
+    roleFit: 'Autonomous Robotics Engineer',
+    contribution: 'Led perception, control, navigation, and autonomy work for surface and underwater vehicles.',
+    outcome: 'International RoboNation results including RoboBoat 1st place and RoboSub 3rd place.',
+    employerSignal: 'Proves autonomy stack experience in difficult real-world robotics environments.',
+  },
+  'smart-factory': {
+    roleFit: 'Industrial Automation / Digital Twin Engineer',
+    contribution: 'Led systems connecting robotics, PLCs, VR, simulation, industrial data, and teaching infrastructure.',
+    outcome: 'Built a recognized Industry 4.0 smart-factory environment linked to research and education programs.',
+    employerSignal: 'Proves industrial systems thinking, automation, digital twins, and technical leadership.',
+  },
+  'robocup-competitions': {
+    roleFit: 'Robotics Software Engineer',
+    contribution: 'Navigation, SLAM, planning, and autonomy software for humanoid service robots.',
+    outcome: 'Competition-tested robotics work in domestic-service robot scenarios.',
+    employerSignal: 'Proves ROS/navigation experience and ability to work on full robot behavior stacks.',
+  },
+  'tokyo-iros-2022': {
+    roleFit: 'Research Robotics Engineer',
+    contribution: 'Home-assistance robotics work across navigation, manipulation, task planning, and simulation.',
+    outcome: '3rd place at IROS 2022 HandyMan Challenge in Tokyo.',
+    employerSignal: 'Proves international research competition experience and end-to-end robotics implementation.',
+  },
+  'ee272-vlsi-design': {
+    roleFit: 'VLSI / Hardware Engineer',
+    contribution: 'RTL, physical design, timing closure, layout, verification, and open-source PDK flow work.',
+    outcome: 'Stanford VLSI sequence with strong project performance and chip-design depth.',
+    employerSignal: 'Proves hardware design discipline and ability to reason from architecture to layout/signoff.',
+  },
+  'ee233-fm-radio': {
+    roleFit: 'Analog / RF Systems Engineer',
+    contribution: 'Built a dual-conversion FM receiver with PLL control, I/Q demodulation, and browser-based tuning.',
+    outcome: 'Working Stanford EE233 hardware/software radio project with real circuit and interface integration.',
+    employerSignal: 'Proves comfort at the boundary of RF hardware, embedded control, and software interfaces.',
+  },
+};
 
 /* ── Skills ──────────────────────────────────────────────── */
 

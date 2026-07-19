@@ -1,15 +1,24 @@
 "use client";
 
-import { useState } from 'react';
-import { companyProjects, academicProjects, allProjects } from '@/lib/constants';
+import { useMemo, useState } from 'react';
+import { allProjects, projectSignals } from '@/lib/constants';
 import { ProjectCard } from '@/components/core/ProjectCard';
 import { FadeIn } from '@/components/animations/FadeIn';
-import { Building2, GraduationCap, Layers } from 'lucide-react';
+import { Bot, Cpu, Factory, Layers, Radio, ShieldCheck } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-type Tab = 'all' | 'company' | 'academic';
+type Tab = 'all' | 'hardware' | 'embedded' | 'robotics' | 'industrial' | 'product';
 
-const featuredProjectOrder: string[] = ['ee272-vlsi-design', 'ee233-fm-radio'];
+const featuredProjectOrder: string[] = [
+  'ee233-fm-radio',
+  'ee272-vlsi-design',
+  'zf-braking-systems',
+  'zf-autonomous-shuttle',
+  'airlab-stacking-challenge',
+  'vanttec-roboboat-robosub',
+  'smart-factory',
+  'chakri-ecommerce',
+];
 
 function sortProjects<T extends { id: string }>(projects: T[]) {
   const priority = new Map(featuredProjectOrder.map((id, index) => [id, index]));
@@ -17,71 +26,94 @@ function sortProjects<T extends { id: string }>(projects: T[]) {
     const aPriority = priority.get(a.id);
     const bPriority = priority.get(b.id);
 
-    if (aPriority !== undefined && bPriority !== undefined) {
-      return aPriority - bPriority;
-    }
-
-    if (aPriority !== undefined) {
-      return -1;
-    }
-
-    if (bPriority !== undefined) {
-      return 1;
-    }
-
+    if (aPriority !== undefined && bPriority !== undefined) return aPriority - bPriority;
+    if (aPriority !== undefined) return -1;
+    if (bPriority !== undefined) return 1;
     return 0;
   });
 }
 
-const tabs: { id: Tab; label: string; icon: React.ElementType; desc: string }[] = [
+const tabs: { id: Tab; label: string; short: string; icon: React.ElementType; desc: string }[] = [
   {
     id: 'all',
-    label: 'All Projects',
+    label: 'All selected work',
+    short: 'All',
     icon: Layers,
-    desc: 'Complete portfolio | company work, research, and startups',
+    desc: 'A curated view of hardware, embedded, robotics, industrial, and product systems.',
   },
   {
-    id: 'company',
-    label: 'Industry & Startups',
-    icon: Building2,
-    desc: 'Professional work at ZF, John Deere, Chakri, and more',
+    id: 'hardware',
+    label: 'RF / IC / VLSI',
+    short: 'RF / IC',
+    icon: Radio,
+    desc: 'Stanford EE work in RF systems, analog circuits, VLSI, and silicon-oriented design flows.',
   },
   {
-    id: 'academic',
-    label: 'Academic & Research',
-    icon: GraduationCap,
-    desc: 'University research, robotics competitions, and publications',
+    id: 'embedded',
+    label: 'Embedded automotive',
+    short: 'Embedded',
+    icon: ShieldCheck,
+    desc: 'Safety-critical software, AUTOSAR, Simulink, CAN/electronics, and automotive systems integration.',
+  },
+  {
+    id: 'robotics',
+    label: 'Robotics & autonomy',
+    short: 'Robotics',
+    icon: Bot,
+    desc: 'Autonomous vehicles, perception, navigation, manipulation, ROS, and international competitions.',
+  },
+  {
+    id: 'industrial',
+    label: 'Industrial / digital twins',
+    short: 'Industry 4.0',
+    icon: Factory,
+    desc: 'Smart factories, automation, simulation, digital twins, and industrial engineering systems.',
+  },
+  {
+    id: 'product',
+    label: 'Product systems',
+    short: 'Product',
+    icon: Cpu,
+    desc: 'Production software systems that prove breadth: platforms, enterprise tools, search, analytics, and internal workflows.',
   },
 ];
 
-const projectMap: Record<Tab, typeof allProjects> = {
-  all:      sortProjects(allProjects),
-  company:  companyProjects,
-  academic: sortProjects(academicProjects),
+const tabProjectIds: Record<Tab, string[] | null> = {
+  all: null,
+  hardware: ['ee233-fm-radio', 'ee272-vlsi-design'],
+  embedded: ['zf-braking-systems', 'zf-autonomous-shuttle'],
+  robotics: ['airlab-stacking-challenge', 'vanttec-roboboat-robosub', 'robocup-competitions', 'tokyo-iros-2022', 'zf-autonomous-shuttle'],
+  industrial: ['smart-factory', 'john-deere-go'],
+  product: ['chakri-ecommerce', 'john-deere-go'],
 };
 
 export default function ProjectsPage() {
   const [active, setActive] = useState<Tab>('all');
-  const projects = projectMap[active];
+
+  const projects = useMemo(() => {
+    const ids = tabProjectIds[active];
+    if (!ids) return sortProjects(allProjects);
+    const allowed = new Set(ids);
+    return sortProjects(allProjects.filter((project) => allowed.has(project.id)));
+  }, [active]);
+
+  const currentTab = tabs.find((tab) => tab.id === active) ?? tabs[0];
 
   return (
-    <div className="min-h-screen bg-circuit">
-      {/* Header */}
-      <div className="container mx-auto px-4 pt-14 pb-12 lg:px-8 text-center">
+    <main className="min-h-screen bg-circuit">
+      <div className="container mx-auto px-4 pt-14 pb-12 text-center lg:px-8">
         <FadeIn>
-          <h1 className="font-display text-5xl md:text-6xl font-bold text-foreground mb-4">
-            My{' '}
-            <span className="text-gradient-sky">Projects</span>
+          <div className="eyebrow mb-4">Selected work</div>
+          <h1 className="mx-auto max-w-4xl text-4xl font-semibold tracking-[-0.055em] text-foreground sm:text-5xl md:text-6xl">
+            Evidence organized by the roles I can do.
           </h1>
-          <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-            From autonomous vehicles and VLSI chips to enterprise platforms and AI systems |
-            built across 7+ years in industry and academia.
+          <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-muted-foreground sm:text-lg">
+            The portfolio spans hardware, embedded software, robotics, industrial systems, and full-stack products. This page organizes each project by the hiring signal it proves.
           </p>
         </FadeIn>
 
-        {/* Tab bar */}
         <FadeIn delay="delay-100" className="mt-10">
-          <div className="inline-flex p-1 rounded-xl border border-border bg-card gap-1">
+          <div className="mx-auto flex max-w-5xl gap-2 overflow-x-auto rounded-2xl border border-border bg-card p-1.5 shadow-sm shadow-black/5 sm:flex-wrap sm:justify-center sm:overflow-visible">
             {tabs.map((tab) => {
               const Icon = tab.icon;
               const isActive = active === tab.id;
@@ -90,43 +122,53 @@ export default function ProjectsPage() {
                   key={tab.id}
                   onClick={() => setActive(tab.id)}
                   className={cn(
-                    'flex items-center gap-2 px-4 py-2 rounded-md font-display text-sm font-semibold tracking-wider transition-all duration-200',
+                    'flex shrink-0 items-center gap-2 rounded-xl px-3.5 py-2.5 text-sm font-semibold transition-all duration-200 sm:px-4',
                     isActive
                       ? 'bg-primary text-primary-foreground shadow-sm shadow-primary/20'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                      : 'text-muted-foreground hover:bg-muted hover:text-foreground'
                   )}
                 >
                   <Icon className="h-4 w-4 shrink-0" />
-                  <span className="hidden sm:inline">{tab.label}</span>
-                  <span className="sm:hidden">{tab.id === 'all' ? 'All' : tab.id === 'company' ? 'Industry' : 'Academic'}</span>
+                  <span className="hidden md:inline">{tab.label}</span>
+                  <span className="md:hidden">{tab.short}</span>
                 </button>
               );
             })}
           </div>
-          <p className="font-mono text-xs text-muted-foreground/60 mt-3 tracking-wide">
-            {tabs.find((t) => t.id === active)?.desc}
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-muted-foreground">
+            {currentTab.desc}
           </p>
         </FadeIn>
       </div>
 
-      {/* Grid */}
-      <div className="container mx-auto px-4 pb-20 lg:px-8">
+      <div className="container mx-auto px-4 pb-24 lg:px-8">
         {projects.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project, index) => (
-              <FadeIn key={project.id} delay={`delay-${(index % 6) * 75}`}>
-                <ProjectCard project={project} />
-              </FadeIn>
-            ))}
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {projects.map((project, index) => {
+              const signal = projectSignals[project.id];
+              return (
+                <FadeIn key={project.id} delay={`delay-${(index % 6) * 75}`}>
+                  <div className="h-full">
+                    {signal && (
+                      <div className="mb-3 rounded-2xl border border-black/10 bg-white/80 p-4 shadow-sm shadow-black/5">
+                        <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">Result</div>
+                        <p className="mt-1 text-sm leading-6 text-foreground">{signal.outcome}</p>
+                      </div>
+                    )}
+                    <ProjectCard project={project} />
+                  </div>
+                </FadeIn>
+              );
+            })}
           </div>
         ) : (
           <FadeIn>
-            <p className="text-center font-body text-muted-foreground text-xl py-20">
+            <p className="py-20 text-center text-xl text-muted-foreground">
               No projects in this category yet.
             </p>
           </FadeIn>
         )}
       </div>
-    </div>
+    </main>
   );
 }

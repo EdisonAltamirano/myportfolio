@@ -10,7 +10,7 @@ import { Separator } from '@/components/ui/separator';
 import { FadeIn } from '@/components/animations/FadeIn';
 import { siteName } from '@/lib/constants';
 import { Layers, Trophy, Globe, Satellite, Map, Award, Star, Bot, Monitor, Route, Hand, Zap, FileText, CheckCircle, Car, Cog, Shield, Play, Users, Building, Factory, Settings, Brain, Network, Wrench, BookOpen, Presentation, Home, Gamepad2, Volume2, Navigation, Cloud, Headphones, ShoppingCart, Truck, DollarSign, Smartphone, ChefHat, MapPin, Bell, Server, Sparkles, Camera, Box, Clock, BarChart, GraduationCap, Code, XCircle, Layout, RefreshCw, LineChart, TestTube, Bug, Lightbulb, GitBranch, Video, ExternalLink } from 'lucide-react';
-import { allProjects, Project } from '@/lib/constants';
+import { allProjects, Project, projectSignals } from '@/lib/constants';
 import { Suspense } from 'react';
 import { getAssetPath } from '@/lib/utils';
 // Project metadata
@@ -4887,6 +4887,7 @@ export default async function ProjectPage({ params }: Props) {
   }
 
   const ProjectContent = projectComponents[slug];
+  const signal = projectSignals[slug];
 
   return (
     <main className="min-h-screen bg-circuit">
@@ -4921,6 +4922,23 @@ export default async function ProjectPage({ params }: Props) {
                 className="object-cover w-full h-full"
               />
             </div>
+          )}
+
+          {signal && (
+            <section className="mb-10 grid grid-cols-1 gap-4 md:grid-cols-3">
+              <div className="rounded-2xl border border-black/10 bg-muted/40 p-5">
+                <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">Role fit</div>
+                <p className="mt-2 text-sm font-semibold leading-6 text-foreground">{signal.roleFit}</p>
+              </div>
+              <div className="rounded-2xl border border-black/10 bg-muted/40 p-5">
+                <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">My contribution</div>
+                <p className="mt-2 text-sm leading-6 text-foreground">{signal.contribution}</p>
+              </div>
+              <div className="rounded-2xl border border-primary/20 bg-primary/10 p-5">
+                <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-primary/80">Employer signal</div>
+                <p className="mt-2 text-sm leading-6 text-foreground">{signal.employerSignal}</p>
+              </div>
+            </section>
           )}
 
           {ProjectContent && <ProjectContent />}

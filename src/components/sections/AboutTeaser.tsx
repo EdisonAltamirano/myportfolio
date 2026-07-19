@@ -47,19 +47,19 @@ export function AboutTeaser() {
               About
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-5 leading-tight">
-              Hardware Meets{' '}
+              From autonomous robots to{' '}
               <span className="text-gradient-sky">Silicon</span>
             </h2>
             <p className="font-body text-lg text-muted-foreground mb-4 leading-relaxed">
-              My journey started in robotics engineering — building autonomous boats, humanoid
-              robots, and smart factories. Now at Stanford, I&#39;m going deeper: designing
-              integrated circuits at the transistor level.
+              I began by building autonomous vehicles, marine robots, humanoid service robots,
+              and industrial automation systems. At Stanford EE, I&#39;m applying that systems
+              background deeper into the hardware stack: RF/mm-wave sensing, analog circuits,
+              and VLSI implementation.
             </p>
             <p className="font-body text-muted-foreground mb-8 leading-relaxed">
-              At the <span className="text-primary font-medium">Arbabian Lab</span>, I research
-              mm-wave radar sensors and multimodal AI systems. In the fab, I design analog ICs
-              for <span className="text-primary font-medium">actual fabrication at TSMC</span> —
-              bridging the gap between physics, silicon, and intelligent perception.
+              I&#39;m especially interested in roles where circuits, embedded systems, and AI
+              perception meet — radar sensing, mixed-signal ICs, sensor fusion, safety-critical
+              automotive software, and autonomy.
             </p>
 
             {/* Stats */}

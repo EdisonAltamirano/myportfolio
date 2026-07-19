@@ -6,19 +6,19 @@ import { FadeIn } from '@/components/animations/FadeIn';
 import { ArrowRight, ExternalLink, FileText } from 'lucide-react';
 
 const highlights = [
-  { value: 'Stanford EE', label: 'MS candidate, Arbabian Lab' },
-  { value: 'VLSI + Radar', label: 'IC design, sensing, fabrication track' },
-  { value: 'Robotics', label: 'Autonomous vehicles, ROS, perception' },
-  { value: 'Full-stack', label: 'Production apps and engineering systems' },
+  { value: 'Stanford EE', label: 'Graduate work in RF, analog, VLSI, and sensing systems' },
+  { value: 'Radar + AI', label: 'mm-wave sensing, multimodal perception, hardware-aware intelligence' },
+  { value: 'Embedded Autonomy', label: 'Automotive systems, robotics, ROS, perception, control' },
+  { value: 'Product Builder', label: 'Production software tools for technical and industrial domains' },
 ];
 
 const focusAreas = [
-  'Radar IC design',
-  'VLSI systems',
-  'Autonomous robotics',
-  'Multimodal AI',
-  'Embedded software',
-  'Product engineering',
+  'mmWave radar systems',
+  'Analog / mixed-signal IC',
+  'VLSI physical design',
+  'Embedded autonomy',
+  'Sensor fusion & perception',
+  'Safety-critical automotive software',
 ];
 
 export function HeroSection() {
@@ -28,15 +28,15 @@ export function HeroSection() {
         <FadeIn className="mx-auto max-w-5xl text-center">
           <div className="mx-auto mb-8 flex max-w-[18rem] items-center justify-center overflow-hidden rounded-full border border-black/10 bg-white/80 px-4 py-2 text-center text-xs leading-5 text-muted-foreground shadow-sm shadow-black/5 sm:inline-flex sm:max-w-full sm:text-sm">
             <span className="mr-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-            <span className="min-w-0 truncate sm:whitespace-normal">Stanford Electrical Engineering · Research, silicon, robotics, and software</span>
+            <span className="min-w-0 truncate sm:whitespace-normal">Stanford Electrical Engineering · sensing systems, silicon, autonomy</span>
           </div>
 
           <h1 className="mx-auto max-w-[22rem] text-3xl font-semibold leading-[1.02] tracking-[-0.045em] text-foreground sm:max-w-none sm:text-7xl sm:tracking-[-0.07em] lg:text-8xl">
-            Edison Altamirano builds systems from silicon to software.
+            Edison Altamirano builds intelligent sensing systems from silicon to autonomy.
           </h1>
 
           <p className="mx-auto mt-8 max-w-[18rem] text-base leading-7 text-muted-foreground [text-wrap:wrap] sm:max-w-3xl sm:text-xl sm:leading-8 sm:[text-wrap:pretty]">
-            Stanford EE researcher at Arbabian Lab, VLSI designer, and robotics engineer with work spanning mm-wave radar sensors, chip design, autonomous vehicles, and production-grade full-stack platforms.
+            Stanford EE researcher in Arbabian Lab working on mm-wave radar and multimodal AI, with hands-on experience in VLSI and analog design, embedded automotive systems, and autonomous robotics.
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">

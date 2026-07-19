@@ -13,15 +13,14 @@ export function FeaturedProjects() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-black/10 bg-white/70 mb-5">
               <Star className="w-3 h-3 text-primary" />
               <span className="font-mono text-xs text-primary/80 tracking-widest uppercase">
-                Highlighted Work
+                Proof of depth
               </span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Featured Projects
+              Selected systems work
             </h2>
             <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-              A selection of my most impactful work — autonomous systems,
-              international competitions, and enterprise applications.
+              A curated set of projects across RF systems, chip design, embedded autonomy, and production engineering — chosen to make my strongest role fit clear.
             </p>
           </div>
         </FadeIn>

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Project } from '@/lib/constants';
+import { Project, projectSignals } from '@/lib/constants';
 import { ArrowRight, Building2, GraduationCap, Rocket, ExternalLink } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -17,6 +17,7 @@ const typeConfig = {
 export function ProjectCard({ project }: ProjectCardProps) {
   const tc = typeConfig[project.type ?? 'academic'];
   const Icon = tc.icon;
+  const signal = projectSignals[project.id];
 
   return (
     <article className="project-card group relative flex h-full flex-col overflow-hidden rounded-2xl bg-card shadow-sm shadow-black/5">
@@ -40,8 +41,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
       </Link>
 
       <div className="flex flex-1 flex-col p-5 sm:p-6">
-        <div className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground/80">
-          {project.company}
+        <div className="flex flex-wrap items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground/80">
+          <span>{project.company}</span>
+          {signal?.roleFit && (
+            <span className="rounded-full border border-primary/20 bg-primary/10 px-2 py-0.5 text-[10px] tracking-[0.16em] text-primary">
+              {signal.roleFit}
+            </span>
+          )}
         </div>
         <h3 className="mt-3 text-xl font-semibold leading-tight tracking-[-0.035em] text-foreground">
           <Link href={project.href} className="rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background">
@@ -51,6 +57,19 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <p className="mt-3 flex-1 text-sm leading-6 text-muted-foreground">
           {project.description}
         </p>
+
+        {signal && (
+          <div className="mt-5 space-y-3 rounded-2xl border border-black/10 bg-muted/35 p-4">
+            <div>
+              <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Contribution</div>
+              <p className="mt-1 text-sm leading-6 text-foreground">{signal.contribution}</p>
+            </div>
+            <div>
+              <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Employer signal</div>
+              <p className="mt-1 text-sm leading-6 text-muted-foreground">{signal.employerSignal}</p>
+            </div>
+          </div>
+        )}
 
         <div className="mt-5 flex flex-wrap gap-2">
           {project.tags.slice(0, 4).map((tag) => (

@@ -16,10 +16,10 @@ export function SkillsSection() {
               </span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Core Skills
+              Skills grouped by hiring signal
             </h2>
             <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-              From silicon transistors to cloud APIs — a comprehensive stack built over 7+ years.
+              Instead of a generic toolbox, these are the technical clusters that connect my projects to concrete roles.
             </p>
           </div>
         </FadeIn>
