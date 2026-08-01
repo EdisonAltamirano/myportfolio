@@ -9,7 +9,7 @@ import * as z from "zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
 import { FadeIn } from "@/components/animations/FadeIn";
-import { officialWebsiteUrl, phoneDisplay, phoneHref, primaryEmail, workEmail, linkedinUrl } from "@/lib/constants";
+import { officialWebsiteUrl, phoneDisplay, phoneHref, primaryEmail, linkedinUrl } from "@/lib/constants";
 import { Mail, Linkedin, Phone, Send, MessageSquare, Globe } from "lucide-react";
 
 const contactFormSchema = z.object({
@@ -74,20 +74,6 @@ export default function ContactPage() {
                     <div className="font-mono text-xs text-muted-foreground/80 uppercase tracking-wider">Email</div>
                     <div className="font-body text-sm text-foreground group-hover:text-primary transition-colors">
                       {primaryEmail}
-                    </div>
-                  </div>
-                </a>
-                <a
-                  href={`mailto:${workEmail}`}
-                  className="flex items-center gap-3 group"
-                >
-                  <div className="w-9 h-9 rounded-md bg-white/80 flex items-center justify-center shrink-0">
-                    <Mail className="w-4 h-4 text-primary" />
-                  </div>
-                  <div>
-                    <div className="font-mono text-xs text-muted-foreground/80 uppercase tracking-wider">Work Email</div>
-                    <div className="font-body text-sm text-foreground group-hover:text-primary transition-colors">
-                      {workEmail}
                     </div>
                   </div>
                 </a>

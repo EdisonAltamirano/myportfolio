@@ -10,6 +10,8 @@ import { cn } from '@/lib/utils';
 type Tab = 'all' | 'hardware' | 'embedded' | 'robotics' | 'industrial' | 'product';
 
 const featuredProjectOrder: string[] = [
+  'ee372-ldo-chip',
+  'ee219-uwb-radar',
   'ee233-fm-radio',
   'ee272-vlsi-design',
   'zf-braking-systems',
@@ -80,7 +82,7 @@ const tabs: { id: Tab; label: string; short: string; icon: React.ElementType; de
 
 const tabProjectIds: Record<Tab, string[] | null> = {
   all: null,
-  hardware: ['ee233-fm-radio', 'ee272-vlsi-design'],
+  hardware: ['ee372-ldo-chip', 'ee219-uwb-radar', 'ee233-fm-radio', 'ee272-vlsi-design'],
   embedded: ['zf-braking-systems', 'zf-autonomous-shuttle'],
   robotics: ['airlab-stacking-challenge', 'vanttec-roboboat-robosub', 'robocup-competitions', 'tokyo-iros-2022', 'zf-autonomous-shuttle'],
   industrial: ['smart-factory', 'john-deere-go'],
@@ -100,15 +102,15 @@ export default function ProjectsPage() {
   const currentTab = tabs.find((tab) => tab.id === active) ?? tabs[0];
 
   return (
-    <main className="min-h-screen bg-circuit">
-      <div className="container mx-auto px-4 pt-14 pb-12 text-center lg:px-8">
+    <main className="min-h-screen w-full min-w-0 bg-circuit">
+      <div className="container mx-auto w-full max-w-full px-4 pt-14 pb-12 text-center lg:px-8">
         <FadeIn>
           <div className="eyebrow mb-4">Selected work</div>
           <h1 className="mx-auto max-w-4xl text-4xl font-semibold tracking-[-0.055em] text-foreground sm:text-5xl md:text-6xl">
-            Evidence organized by the roles I can do.
+            Selected engineering work.
           </h1>
           <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-muted-foreground sm:text-lg">
-            The portfolio spans hardware, embedded software, robotics, industrial systems, and full-stack products. This page organizes each project by the hiring signal it proves.
+            Projects spanning hardware, embedded software, robotics, industrial systems, and full-stack products.
           </p>
         </FadeIn>
 
@@ -141,22 +143,13 @@ export default function ProjectsPage() {
         </FadeIn>
       </div>
 
-      <div className="container mx-auto px-4 pb-24 lg:px-8">
+      <div className="container mx-auto w-full max-w-full px-4 pb-24 lg:px-8">
         {projects.length > 0 ? (
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
             {projects.map((project, index) => {
-              const signal = projectSignals[project.id];
               return (
                 <FadeIn key={project.id} delay={`delay-${(index % 6) * 75}`}>
-                  <div className="h-full">
-                    {signal && (
-                      <div className="mb-3 rounded-2xl border border-black/10 bg-white/80 p-4 shadow-sm shadow-black/5">
-                        <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">Result</div>
-                        <p className="mt-1 text-sm leading-6 text-foreground">{signal.outcome}</p>
-                      </div>
-                    )}
-                    <ProjectCard project={project} />
-                  </div>
+                  <ProjectCard project={project} />
                 </FadeIn>
               );
             })}

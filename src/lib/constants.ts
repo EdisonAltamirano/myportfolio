@@ -1,4 +1,4 @@
-import { Book, Bot, Brain, Cpu, CodeXml, Contact, Home, Radio, Briefcase, Server, UserCircle, Zap } from 'lucide-react';
+import { Book, Bot, Brain, Cpu, CodeXml, Contact, Home, Radio, Briefcase, Server, UserCircle, Zap, GraduationCap } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 export type NavLink = {
@@ -11,6 +11,7 @@ export const navLinks: NavLink[] = [
   { href: '/',         label: 'Home',     icon: Home },
   { href: '/about',    label: 'About',    icon: UserCircle },
   { href: '/projects', label: 'Work',     icon: Briefcase },
+  { href: '/stanford', label: 'Stanford Studies', icon: GraduationCap },
   { href: '/research', label: 'Research', icon: Book },
   { href: '/contact',  label: 'Contact',  icon: Contact },
 ];
@@ -34,7 +35,6 @@ export type Project = {
 const BASE = process.env.NODE_ENV === 'production' ? '/myportfolio' : '';
 
 export const primaryEmail = 'eraltam@stanford.edu';
-export const workEmail = 'edison.altamirano@drijet.io';
 export const linkedinUrl = 'https://www.linkedin.com/in/edison-altamirano-avila-55a0341a3';
 export const officialWebsiteUrl = 'https://edisonaltamirano.github.io/myportfolio/';
 export const phoneHref = '+16503349546';
@@ -140,6 +140,32 @@ export const companyProjects: Project[] = [
 
 export const academicProjects: Project[] = [
   {
+    id: 'ee219-uwb-radar',
+    title: 'EE219 | UWB Human Tracking & Breathing Detection',
+    description:
+      'Built a pulsed-UWB radar pipeline for multi-person tracking, occupancy estimation, and contactless breathing-rate sensing in a Bosch-supported research collaboration.',
+    imageUrl: `${BASE}/stanford/ee219/uwb-radar-cover.png`,
+    imageHint: 'UWB radar people counting, person tracking, and breathing detection',
+    category: 'Radar / Signal Processing',
+    company: 'Stanford University · Bosch Collaboration',
+    tags: ['UWB Radar', 'CFAR', 'Kalman / EKF', 'Hungarian Assignment', 'Vital Signs'],
+    href: '/projects/ee219-uwb-radar',
+    type: 'academic',
+  },
+  {
+    id: 'ee372-ldo-chip',
+    title: 'EE372 | Analog/Mixed-Signal LDO Chip',
+    description:
+      'Designed and laid out a TSMC 180 nm LDO with bandgap reference trimming, high-gain error amplifier, Schmitt triggers, I²C control, and analog/digital integration.',
+    imageUrl: `${BASE}/stanford/ee372/layout.jpg`,
+    imageHint: 'TSMC 180 nanometer mixed-signal LDO chip layout',
+    category: 'Analog / Mixed-Signal IC',
+    company: 'Stanford University · Apple Design Showcase',
+    tags: ['TSMC 180 nm', 'LDO', 'Bandgap Reference', 'Cadence', 'DRC / LVS'],
+    href: '/projects/ee372-ldo-chip',
+    type: 'academic',
+  },
+  {
     id: 'airlab-stacking-challenge',
     title: 'AIRLab Stacking Challenge | Winner',
     description:
@@ -239,7 +265,7 @@ export type ProjectSignal = {
   roleFit: string;
   contribution: string;
   outcome: string;
-  employerSignal: string;
+  technicalSummary: string;
 };
 
 export const projectSignals: Record<string, ProjectSignal> = {
@@ -247,67 +273,79 @@ export const projectSignals: Record<string, ProjectSignal> = {
     roleFit: 'Robotics & Autonomy Engineer',
     contribution: 'Firmware, electronics, sensing, and vehicle autonomy integration.',
     outcome: 'Helped turn a disused vehicle into an autonomous passenger-shuttle prototype presented to industry leaders.',
-    employerSignal: 'Proves systems integration across embedded software, robotics, sensors, and real hardware constraints.',
+    technicalSummary: 'Embedded software, robotics, sensors, and real-hardware integration.',
   },
   'zf-braking-systems': {
     roleFit: 'Embedded / Automotive Software Engineer',
     contribution: 'AUTOSAR-oriented software, modeling, validation, reverse engineering, and safety-critical workflows.',
     outcome: 'Professional engineering work on next-generation commercial vehicle braking systems.',
-    employerSignal: 'Proves readiness for embedded automotive, validation, and safety-critical software roles.',
+    technicalSummary: 'Embedded automotive software, validation, and safety-critical systems.',
   },
   'john-deere-go': {
     roleFit: 'Enterprise / AI Systems Engineer',
     contribution: 'Built SAP-connected workflows and computer-vision/automation systems for internal operations.',
     outcome: 'Improved supply-chain and loss-prevention processes in an enterprise environment.',
-    employerSignal: 'Proves ability to ship practical systems inside large-company constraints.',
+    technicalSummary: 'Practical system delivery within large-company engineering constraints.',
   },
   'chakri-ecommerce': {
     roleFit: 'Full-stack Technical Product Engineer',
     contribution: 'Designed and built a searchable BIM platform with Next.js, Firebase, Elasticsearch, CMS, analytics, and secure downloads.',
     outcome: 'Delivered a production technical product for manufacturer discovery and BIM asset distribution.',
-    employerSignal: 'Proves product thinking, frontend/backend execution, data modeling, search, and deployment ability.',
+    technicalSummary: 'Product design, full-stack development, data modeling, search, and deployment.',
   },
   'airlab-stacking-challenge': {
     roleFit: 'AI / Robotics Software Engineer',
     contribution: 'Vision-based robotic grasping and manipulation pipeline for a retail-stacking robotics challenge.',
     outcome: 'Won “Most Consistent Solution” at an international robotics competition hosted in the Netherlands.',
-    employerSignal: 'Proves robotics perception, manipulation, reliability, and competitive technical execution.',
+    technicalSummary: 'Robotics perception, manipulation, reliability, and competition deployment.',
   },
   'vanttec-roboboat-robosub': {
     roleFit: 'Autonomous Robotics Engineer',
     contribution: 'Led perception, control, navigation, and autonomy work for surface and underwater vehicles.',
     outcome: 'International RoboNation results including RoboBoat 1st place and RoboSub 3rd place.',
-    employerSignal: 'Proves autonomy stack experience in difficult real-world robotics environments.',
+    technicalSummary: 'Autonomy-stack integration in demanding real-world robotics environments.',
   },
   'smart-factory': {
     roleFit: 'Industrial Automation / Digital Twin Engineer',
     contribution: 'Led systems connecting robotics, PLCs, VR, simulation, industrial data, and teaching infrastructure.',
     outcome: 'Built a recognized Industry 4.0 smart-factory environment linked to research and education programs.',
-    employerSignal: 'Proves industrial systems thinking, automation, digital twins, and technical leadership.',
+    technicalSummary: 'Industrial automation, digital twins, systems integration, and technical leadership.',
   },
   'robocup-competitions': {
     roleFit: 'Robotics Software Engineer',
     contribution: 'Navigation, SLAM, planning, and autonomy software for humanoid service robots.',
     outcome: 'Competition-tested robotics work in domestic-service robot scenarios.',
-    employerSignal: 'Proves ROS/navigation experience and ability to work on full robot behavior stacks.',
+    technicalSummary: 'ROS, navigation, and full robot behavior-stack development.',
   },
   'tokyo-iros-2022': {
     roleFit: 'Research Robotics Engineer',
     contribution: 'Home-assistance robotics work across navigation, manipulation, task planning, and simulation.',
     outcome: '3rd place at IROS 2022 HandyMan Challenge in Tokyo.',
-    employerSignal: 'Proves international research competition experience and end-to-end robotics implementation.',
+    technicalSummary: 'End-to-end robotics implementation for international research competitions.',
   },
   'ee272-vlsi-design': {
     roleFit: 'VLSI / Hardware Engineer',
     contribution: 'RTL, physical design, timing closure, layout, verification, and open-source PDK flow work.',
     outcome: 'Stanford VLSI sequence with strong project performance and chip-design depth.',
-    employerSignal: 'Proves hardware design discipline and ability to reason from architecture to layout/signoff.',
+    technicalSummary: 'Hardware design from architecture through layout, timing, and signoff.',
   },
   'ee233-fm-radio': {
     roleFit: 'Analog / RF Systems Engineer',
     contribution: 'Built a dual-conversion FM receiver with PLL control, I/Q demodulation, and browser-based tuning.',
     outcome: 'Working Stanford EE233 hardware/software radio project with real circuit and interface integration.',
-    employerSignal: 'Proves comfort at the boundary of RF hardware, embedded control, and software interfaces.',
+    technicalSummary: 'RF hardware, embedded control, and software-interface integration.',
+  },
+  'ee219-uwb-radar': {
+    roleFit: 'Radar / Sensing Algorithms Engineer',
+    contribution: 'CIR decoding, clutter suppression, OS-CFAR, Doppler processing, Kalman/EKF tracking, global assignment, and breathing-rate extraction.',
+    outcome: 'Improved exact two-person counting accuracy from 22.7% to 53.2%; detected breathing at 10.8 and 21.1 BPM with 24.4 and 13.5 dB SNR.',
+    technicalSummary: 'Radar processing from sensor physics and calibration through estimation, data association, metrics, and limitation analysis.',
+  },
+  'ee372-ldo-chip': {
+    roleFit: 'Analog / Mixed-Signal IC Designer',
+    contribution: 'Designed the LDO architecture and transistor-level blocks, used gm/Id sizing and automated sweeps, completed layout integration, and debugged DRC/LVS across analog and digital domains.',
+    outcome: 'Completed the TSMC 180 nm design with a perfect 10/10 showcase score and presented the project at Apple headquarters.',
+    technicalSummary: 'Full-chip analog/mixed-signal design: specifications, tradeoffs, simulation, layout, verification, and technical presentation.',
   },
 };
 
@@ -397,7 +435,7 @@ export const stanfordCourses: StanfordCourse[] = [
   {
     code: 'EE391',
     title: 'Research | Arbabian Lab',
-    semester: '2024–Present',
+    semester: '2024–Present · A / A+',
     description:
       'Graduate research in one of Stanford\'s leading RF/mm-wave IC groups. Focus on next-generation radar sensor systems and multimodal AI frameworks that fuse radar data with vision and other sensing modalities for perception tasks.',
     highlight: 'Radar · Multimodal AI',
@@ -406,18 +444,28 @@ export const stanfordCourses: StanfordCourse[] = [
   },
   {
     code: 'EE372',
-    title: 'Design for Test & IC Fabrication',
-    semester: 'Upcoming',
+    title: 'Analog/Mixed-Signal LDO Chip',
+    semester: 'Spring 2026 · A+',
     description:
-      'Upcoming full chip design flow for an analog integrated circuit (camera/imager), spanning specification, schematic capture, layout, DRC/LVS verification, and TSMC-oriented fabrication.',
-    highlight: 'Upcoming TSMC Fabrication',
-    status: 'upcoming',
+      'Completed a TSMC 180 nm LDO with a trimmed BANBA bandgap reference, high-gain OTA, Schmitt-trigger protection, I²C trim control, physical layout, and incremental DRC/LVS closure.',
+    highlight: 'Apple Design Showcase · 10/10',
+    status: 'completed',
     area: 'vlsi',
+  },
+  {
+    code: 'EE219',
+    title: '3D+ Imaging Sensors',
+    semester: 'Summer 2026 · A',
+    description:
+      'Pulsed-UWB radar project spanning channel impulse responses, clutter suppression, range-Doppler CFAR, multi-target estimation, people counting, and contactless breathing-rate detection.',
+    highlight: 'Bosch Collaboration · UWB Radar',
+    status: 'completed',
+    area: 'research',
   },
   {
     code: 'EE271 / EE272',
     title: 'VLSI Design Projects',
-    semester: '2024–2025',
+    semester: '2024–2025 · B+ / A+',
     description:
       'Advanced VLSI system design covering full-custom layout, logic synthesis, timing closure, and mixed-signal IC verification across the EE271/EE272 sequence.',
     highlight: 'Silicon Design',
@@ -427,7 +475,7 @@ export const stanfordCourses: StanfordCourse[] = [
   {
     code: 'EE214A',
     title: 'Analog Integrated Circuit Design',
-    semester: 'Fall 2024',
+    semester: 'Fall 2024 · A−',
     description:
       'Core analog IC design principles: MOSFET device physics, single-stage/multi-stage amplifiers, noise analysis, frequency response, and feedback theory in deep-submicron CMOS.',
     status: 'completed',
@@ -436,7 +484,7 @@ export const stanfordCourses: StanfordCourse[] = [
   {
     code: 'EE233',
     title: 'Advanced Analog Circuits',
-    semester: 'Winter 2025',
+    semester: 'Winter 2025 · A+',
     description:
       'Op-amp design, comparators, bandgap references, data converters (ADC/DAC architectures), and switched-capacitor circuits. Final project: a dual-conversion FM superheterodyne radio receiver using a Si5351 PLL IC with WiFi-controlled quadrature I/Q demodulation.',
     highlight: 'FM Radio IC Project',
@@ -444,13 +492,14 @@ export const stanfordCourses: StanfordCourse[] = [
     area: 'analog',
   },
   {
-    code: 'EE256',
-    title: 'Analog–Digital Interface Circuits',
-    semester: 'Spring 2026',
+    code: 'ENGR306',
+    title: 'Capital-Formation Design',
+    semester: '2025 · A−',
     description:
-      'Design of high-performance ADCs, DACs, and mixed-signal circuits for interfacing physical sensors with digital systems | closing the loop between the analog world and AI.',
-    status: 'upcoming',
-    area: 'analog',
+      'Technology venture formation, market discovery, value propositions, and capital strategy for moving engineering concepts toward viable products.',
+    highlight: 'Engineering Entrepreneurship',
+    status: 'completed',
+    area: 'research',
   },
 ];
 

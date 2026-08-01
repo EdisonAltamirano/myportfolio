@@ -22,7 +22,11 @@ export function FadeIn({
   threshold = 0.12,
   triggerOnce = true,
 }: FadeInProps) {
-  const [isVisible, setIsVisible] = useState(false);
+  // Content must remain usable when IntersectionObserver is unavailable,
+  // delayed, or blocked by an embedded/mobile browser. Starting visible avoids
+  // a permanently blank page; the observer still supports repeat animations
+  // when a caller explicitly opts into triggerOnce={false}.
+  const [isVisible, setIsVisible] = useState(true);
   const elementRef = useRef<HTMLElement>(null);
 
   useEffect(() => {

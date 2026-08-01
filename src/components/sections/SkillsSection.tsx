@@ -16,7 +16,7 @@ export function SkillsSection() {
               </span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Skills grouped by hiring signal
+              Skills across hardware, software, and autonomy
             </h2>
             <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
               Instead of a generic toolbox, these are the technical clusters that connect my projects to concrete roles.

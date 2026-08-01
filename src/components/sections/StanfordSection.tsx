@@ -147,55 +147,6 @@ export function StanfordSection() {
         </FadeIn>
 
         {/* ── Research ────────────────────────────────────────────── */}
-        <FadeIn delay="delay-100">
-          <div className="mb-10">
-            <div className="flex items-center gap-3 mb-5">
-              <div className="flex items-center gap-2">
-                <Radio className="w-4 h-4 text-primary" />
-                <span className="font-display text-sm font-bold tracking-widest uppercase text-primary">
-                  Research Lab
-                </span>
-              </div>
-              <div className="flex-1 h-px bg-gradient-to-r from-primary/20 to-transparent" />
-            </div>
-
-            {researchCourses.map((c) => (
-              <div
-                key={c.code}
-                className="rounded-xl border border-border bg-card p-6 md:p-8 transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-black/5"
-              >
-                <div className="grid md:grid-cols-2 gap-6 items-start">
-                  <div>
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-primary/10 mb-4">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                      <span className="font-mono text-xs text-primary/90 tracking-widest uppercase">Active Research</span>
-                    </div>
-                    <div className="font-mono text-sm font-bold text-foreground mb-1 tracking-wider">{c.code}</div>
-                    <h3 className="font-display text-2xl font-bold text-foreground mb-3">{c.title}</h3>
-                    <p className="font-body text-muted-foreground leading-relaxed">{c.description}</p>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="font-mono text-xs text-muted-foreground/80 uppercase tracking-widest mb-3">
-                      Research Focus Areas
-                    </div>
-                    {[
-                      'mm-Wave & radar integrated circuit design',
-                      'Multimodal sensor fusion (radar + vision + AI)',
-                      'RF signal processing for perception tasks',
-                      'Low-power sensor IC architectures',
-                    ].map((item) => (
-                      <div key={item} className="flex items-start gap-2.5">
-                        <ChevronRight className="w-3.5 h-3.5 text-primary mt-0.5 shrink-0" />
-                        <span className="font-body text-sm text-muted-foreground">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </FadeIn>
-
         {/* ── VLSI ────────────────────────────────────────────────── */}
         <FadeIn delay="delay-200">
           <div className="mb-10">

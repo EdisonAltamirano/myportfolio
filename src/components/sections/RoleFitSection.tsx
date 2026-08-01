@@ -36,7 +36,7 @@ const roleFits = [
   {
     title: 'VLSI / EE Hardware Candidate',
     summary: 'Stanford EE work across VLSI, analog circuits, RF systems, and silicon-oriented design flows.',
-    proof: 'EE271/272 · EE233 · upcoming fabrication track',
+    proof: 'EE271/272 · EE233 · EE372 chip design',
     icon: Cpu,
   },
 ];
@@ -49,10 +49,10 @@ export function RoleFitSection() {
           <div className="mx-auto mb-12 max-w-3xl text-center">
             <div className="eyebrow mb-4">Best-fit roles</div>
             <h2 className="text-4xl font-semibold tracking-[-0.055em] text-foreground sm:text-5xl">
-              Clear hiring signals across intelligent physical systems.
+              Engineering depth across intelligent physical systems.
             </h2>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg">
-              My strongest work sits at the intersection of software, hardware, robotics, and product engineering. These are the roles where my projects provide the clearest evidence.
+              My strongest work sits at the intersection of software, hardware, robotics, and product engineering.
             </p>
           </div>
         </FadeIn>

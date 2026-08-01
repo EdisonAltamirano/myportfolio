@@ -32,7 +32,7 @@ export function HeroSection() {
           </div>
 
           <h1 className="mx-auto max-w-[22rem] text-3xl font-semibold leading-[1.02] tracking-[-0.045em] text-foreground sm:max-w-none sm:text-7xl sm:tracking-[-0.07em] lg:text-8xl">
-            Edison Altamirano builds intelligent sensing systems from silicon to autonomy.
+            I build intelligent sensing systems from silicon to autonomy.
           </h1>
 
           <p className="mx-auto mt-8 max-w-[18rem] text-base leading-7 text-muted-foreground [text-wrap:wrap] sm:max-w-3xl sm:text-xl sm:leading-8 sm:[text-wrap:pretty]">

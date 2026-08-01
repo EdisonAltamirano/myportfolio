@@ -20,9 +20,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
   const signal = projectSignals[project.id];
 
   return (
-    <article className="project-card group relative flex h-full flex-col overflow-hidden rounded-2xl bg-card shadow-sm shadow-black/5">
+    <article className="project-card group relative flex h-full min-w-0 flex-col overflow-hidden rounded-2xl bg-card shadow-sm shadow-black/5">
       <Link href={project.href} aria-label={`View ${project.title}`} className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background">
-        <div className="relative aspect-[16/10] overflow-hidden bg-muted">
+        <div className="relative aspect-[16/8.5] overflow-hidden bg-muted">
           <Image
             src={project.imageUrl}
             alt={project.title}
@@ -40,8 +40,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </div>
       </Link>
 
-      <div className="flex flex-1 flex-col p-5 sm:p-6">
-        <div className="flex flex-wrap items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground/80">
+      <div className="flex flex-1 flex-col p-4 sm:p-5">
+        <div className="flex min-w-0 flex-wrap items-center gap-2 break-words text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground/80">
           <span>{project.company}</span>
           {signal?.roleFit && (
             <span className="rounded-full border border-primary/20 bg-primary/10 px-2 py-0.5 text-[10px] tracking-[0.16em] text-primary">
@@ -54,32 +54,26 @@ export function ProjectCard({ project }: ProjectCardProps) {
             {project.title}
           </Link>
         </h3>
-        <p className="mt-3 flex-1 text-sm leading-6 text-muted-foreground">
+        <p className="mt-2 [overflow-wrap:anywhere] text-sm leading-5 text-muted-foreground">
           {project.description}
         </p>
 
         {signal && (
-          <div className="mt-5 space-y-3 rounded-2xl border border-black/10 bg-muted/35 p-4">
-            <div>
-              <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Contribution</div>
-              <p className="mt-1 text-sm leading-6 text-foreground">{signal.contribution}</p>
-            </div>
-            <div>
-              <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Employer signal</div>
-              <p className="mt-1 text-sm leading-6 text-muted-foreground">{signal.employerSignal}</p>
-            </div>
+          <div className="mt-3 rounded-xl border border-primary/15 bg-primary/[0.06] px-3.5 py-3">
+            <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-primary/80">Key result</div>
+            <p className="mt-1 text-sm font-medium leading-5 text-foreground">{signal.outcome}</p>
           </div>
         )}
 
-        <div className="mt-5 flex flex-wrap gap-2">
-          {project.tags.slice(0, 4).map((tag) => (
+        <div className="mt-3 flex flex-wrap gap-1.5">
+          {project.tags.slice(0, 3).map((tag) => (
             <span key={tag} className="rounded-full border border-black/10 bg-white/70 px-2.5 py-1 text-[11px] font-medium text-muted-foreground">
               {tag}
             </span>
           ))}
         </div>
 
-        <div className="mt-6 flex items-center gap-2 border-t border-black/10 pt-4">
+        <div className="mt-auto flex items-center gap-2 border-t border-black/10 pt-4">
           <Link
             href={project.href}
             className="inline-flex flex-1 items-center justify-between rounded-full px-1 text-sm font-semibold text-foreground transition-colors duration-150 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"

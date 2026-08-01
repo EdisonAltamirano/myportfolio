@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { FadeIn } from "@/components/animations/FadeIn";
-import { BookOpen, ExternalLink, Presentation, FlaskConical, Factory, Bot, GraduationCap } from "lucide-react";
+import { BookOpen, ExternalLink, Presentation, FlaskConical } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Research & Publications — Edison Altamirano",
@@ -151,27 +151,6 @@ const presentations: { year: string; items: { title: string; venue: string; link
   },
 ];
 
-const researchThemes = [
-  {
-    title: "Industrial robotics & digital twins",
-    icon: Factory,
-    body: "Published work around smart factories, ROS-based digital twins, mixed reality, and robot-programming education.",
-    signal: "Shows ability to translate robotics systems into repeatable training, simulation, and factory workflows.",
-  },
-  {
-    title: "Autonomous systems competitions",
-    icon: Bot,
-    body: "Technical reports and presentations for RoboBoat, RoboSub, and autonomous-vehicle demonstrations.",
-    signal: "Shows field-tested robotics communication: design rationale, integration choices, and measurable outcomes.",
-  },
-  {
-    title: "Teaching technical systems",
-    icon: GraduationCap,
-    body: "Invited courses and talks for faculty audiences on ROS, autonomous vehicles, ADAS simulation, and industrial data platforms.",
-    signal: "Shows Edison can explain complex systems clearly enough for teams, professors, and stakeholders to adopt them.",
-  },
-];
-
 export default function ResearchPage() {
   return (
     <div className="min-h-screen bg-circuit">
@@ -185,34 +164,12 @@ export default function ResearchPage() {
             </span>
           </div>
           <h1 className="font-display text-4xl md:text-6xl font-bold text-foreground mb-4 tracking-[-0.055em]">
-            Research that proves systems depth.
+            Research across robotics, autonomy, and digital twins.
           </h1>
           <p className="font-body text-lg text-muted-foreground max-w-3xl mx-auto leading-8">
-            Peer-reviewed publications, technical reports, and invited talks organized around what
-            employers need to see: robotics systems thinking, digital-twin implementation, and the
-            ability to communicate advanced engineering work to technical audiences.
+            Peer-reviewed publications, technical reports, and invited talks spanning robotics
+            systems, digital-twin implementation, autonomous vehicles, and engineering education.
           </p>
-        </FadeIn>
-
-        <FadeIn delay="delay-75" className="mb-16">
-          <div className="grid gap-4 md:grid-cols-3">
-            {researchThemes.map((theme) => {
-              const Icon = theme.icon;
-              return (
-                <div key={theme.title} className="rounded-2xl border border-border bg-card p-5 text-left shadow-sm shadow-black/5">
-                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
-                    <Icon className="h-5 w-5 text-primary" />
-                  </div>
-                  <h2 className="font-display text-lg font-semibold text-foreground">{theme.title}</h2>
-                  <p className="mt-2 text-sm leading-6 text-muted-foreground">{theme.body}</p>
-                  <div className="mt-4 rounded-xl border border-border bg-muted/40 p-3">
-                    <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary/80">Employer signal</div>
-                    <p className="mt-1 text-xs leading-5 text-muted-foreground">{theme.signal}</p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
         </FadeIn>
 
         {/* Publications */}

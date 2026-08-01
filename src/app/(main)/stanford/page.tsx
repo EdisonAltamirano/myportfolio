@@ -16,7 +16,7 @@ import { cn } from '@/lib/utils';
 export const metadata: Metadata = {
   title: 'Stanford EE — Edison Altamirano',
   description:
-    'MS Electrical Engineering at Stanford: Arbabian Lab mm-Wave radar research, EE271/EE272 VLSI chip design, upcoming EE372 fabrication work, and analog/RF coursework.',
+    'MS Electrical Engineering at Stanford: Arbabian Lab mm-Wave radar research, EE271/EE272 VLSI design, an EE372 mixed-signal chip in TSMC 180 nm, and analog/RF coursework.',
 };
 
 /* ── Status badge config ──────────────────────────────── */
@@ -52,16 +52,6 @@ function SkillTag({ label, color = 'sky' }: { label: string; color?: string }) {
     <span className={cn('font-mono text-[10px] px-2 py-0.5 rounded-md border tracking-wide', colorMap[color] ?? colorMap.sky)}>
       {label}
     </span>
-  );
-}
-
-/* ── Employer box ─────────────────────────────────────── */
-function EmployerBox({ text }: { text: string }) {
-  return (
-    <div className="mt-4 rounded-md border border-black/10 bg-white/70 px-4 py-3">
-      <div className="font-mono text-[10px] text-primary/70 tracking-widest uppercase mb-1">What employers see</div>
-      <p className="font-body text-xs text-muted-foreground leading-relaxed">{text}</p>
-    </div>
   );
 }
 
@@ -105,20 +95,19 @@ export default function StanfordPage() {
           </div>
 
           <h1 className="font-display text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-            Stanford EE Evidence for{' '}
-            <span className="text-foreground">Hardware-Sensing Roles</span>
+            Stanford EE{' '}
+            <span className="text-foreground">Courses & Research</span>
           </h1>
 
           <p className="mx-auto max-w-3xl text-base leading-7 text-muted-foreground sm:text-lg">
-            Graduate work organized around the employer signal it creates: RF/mm-wave sensing research,
-            VLSI physical-design discipline, analog/RF lab hardware, and mixed-signal coursework that
-            connects physical sensors to intelligent systems.
+            My graduate work connects RF/mm-wave sensing research, VLSI physical design,
+            analog/RF lab hardware, and mixed-signal circuits for intelligent sensing systems.
           </p>
 
           {/* Quick stat row */}
           <div className="flex flex-wrap justify-center gap-6 mt-8">
             {[
-              { value: '6', label: 'Courses' },
+              { value: '8', label: 'Course codes' },
               { value: '1', label: 'Research lab' },
               { value: 'RF', label: 'Sensing focus' },
               { value: '2', label: 'VLSI design tracks' },
@@ -148,7 +137,7 @@ export default function StanfordPage() {
               },
             ].map((item) => (
               <div key={item.title} className="rounded-2xl border border-border bg-card p-5 text-left shadow-sm shadow-black/5">
-                <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary/80">Employer signal</div>
+                <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary/80">Technical area</div>
                 <h2 className="mt-2 font-display text-lg font-semibold text-foreground">{item.title}</h2>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">{item.body}</p>
               </div>
@@ -209,27 +198,8 @@ export default function StanfordPage() {
                 </div>
               </div>
 
-              {/* Employer relevance */}
-              <div>
-                <div className="font-mono text-xs text-muted-foreground/80 uppercase tracking-widest mb-4">
-                  Why it matters for employers
-                </div>
-                <div className="grid gap-3">
-                  {[
-                    { label: 'Hardware + algorithms', body: 'Radar systems require circuit-level tradeoffs, signal processing, calibration, and ML-facing data quality.' },
-                    { label: 'Automotive relevance', body: 'mm-wave radar directly maps to ADAS, autonomy, industrial sensing, and safety-critical perception.' },
-                    { label: 'Research maturity', body: 'Graduate lab work shows Edison can read literature, test hypotheses, and communicate technical uncertainty.' },
-                  ].map((item) => (
-                    <div key={item.label} className="rounded-xl border border-border bg-muted/40 p-4">
-                      <div className="font-display text-sm font-semibold text-foreground">{item.label}</div>
-                      <p className="mt-1 text-sm leading-6 text-muted-foreground">{item.body}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
             </div>
 
-            <EmployerBox text="RF IC design expertise, hardware-algorithm co-design, mmWave systems (Qualcomm, NXP, Aptiv, Bosch)" />
           </div>
         </FadeIn>
 
@@ -247,7 +217,7 @@ export default function StanfordPage() {
             <p className="font-body text-sm text-muted-foreground leading-relaxed">
               <span className="text-primary font-medium">Track Overview:</span>{' '}
               The VLSI design sequence at Stanford covers the complete chip design flow from RTL
-              specification through physical verification, with EE372 as the upcoming TSMC-oriented fabrication track. Tools: Cadence Virtuoso,
+              specification through physical verification, including an EE372 mixed-signal LDO chip in TSMC 180 nm. Tools: Cadence Virtuoso,
               Synopsys Design Compiler, Innovus P&R, plus the SkyWater 130nm open PDK.
             </p>
           </div>
@@ -264,18 +234,17 @@ export default function StanfordPage() {
                 </div>
                 <div className="flex flex-col items-end gap-1.5 shrink-0">
                   <span className="font-mono text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-md border bg-primary/10 text-primary border-primary/25">
-                    UPCOMING
+                    COMPLETED
                   </span>
                   <span className="font-mono text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-md border bg-black/[0.04] text-primary border-black/10">
                     FABRICATION TRACK
                   </span>
                 </div>
               </div>
-              <p className="font-mono text-xs text-muted-foreground/80 mb-3">Upcoming</p>
+              <p className="font-mono text-xs text-muted-foreground/80 mb-3">TSMC 180 nm</p>
               <p className="font-body text-sm text-muted-foreground leading-relaxed mb-4">
-                Planned full chip design flow for an analog IC (imager/camera circuit), from
-                specification and schematic capture through layout, DRC/LVS verification, and
-                TSMC-oriented fabrication.
+                Designed and laid out a mixed-signal LDO chip with bandgap reference, OTA,
+                compensation, and digital trim control; completed DRC/LVS and presented the work at Apple.
               </p>
               <div className="flex flex-wrap gap-1.5">
                 {['Physical layout (Cadence)', 'DRC/LVS', 'Analog schematic design', 'TSMC PDK'].map((s) => (
@@ -317,7 +286,6 @@ export default function StanfordPage() {
             </div>
           </div>
 
-          <EmployerBox text="Roles: Digital/Analog IC Designer at Intel, Apple, NVIDIA, AMD, Qualcomm. Full chip design flow experience is highly sought after." />
         </FadeIn>
 
         {/* ══ SECTION 4: ANALOG IC & RF TRACK ════════════════ */}
@@ -339,7 +307,7 @@ export default function StanfordPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-4">
+          <div className="grid md:grid-cols-2 gap-6 mb-4">
             {/* EE214A */}
             <div className="rounded-xl border border-border bg-card p-6 hover:border-primary/30 hover:shadow-lg hover:shadow-black/5 transition-all duration-300">
               <div className="flex items-start justify-between gap-2 mb-4">
@@ -403,102 +371,8 @@ export default function StanfordPage() {
               </div>
             </div>
 
-            {/* EE256 */}
-            <div className="rounded-xl border border-border bg-card p-6 hover:border-primary/30 hover:shadow-lg hover:shadow-black/5 transition-all duration-300">
-              <div className="flex items-start justify-between gap-2 mb-4">
-                <div>
-                  <div className="font-mono text-xs font-bold text-foreground tracking-widest mb-1">EE256</div>
-                  <h3 className="font-display text-base font-bold text-foreground leading-tight">
-                    Analog-Digital Interface Circuits
-                  </h3>
-                </div>
-                <span className="font-mono text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-md border bg-primary/10 text-primary border-primary/25 shrink-0">
-                  UPCOMING
-                </span>
-              </div>
-              <p className="font-mono text-xs text-muted-foreground/80 mb-3">Spring 2026</p>
-              <p className="font-body text-sm text-muted-foreground leading-relaxed mb-4">
-                Design of circuits for signal conditioning and data conversion. ADC/DAC architectures
-                at transistor level: OTAs, active filters, sampling circuits, switched-capacitor
-                stages, voltage comparators, Nyquist-rate and oversampled converters.
-              </p>
-              <div className="flex flex-wrap gap-1.5">
-                {['ADC/DAC design', 'OTA design', 'Switched-capacitor circuits', 'Data converter characterization'].map((s) => (
-                  <SkillTag key={s} label={s} color="violet" />
-                ))}
-              </div>
-            </div>
           </div>
 
-          <EmployerBox text="Roles: Analog IC Designer at Texas Instruments, Analog Devices, Broadcom, Apple. Mixed-signal interface experience critical for IoT, automotive, and communications chips." />
-        </FadeIn>
-
-        {/* ══ SECTION 5: EMPLOYER SUMMARY ═════════════════════ */}
-        <FadeIn delay="delay-250">
-          <div className="rounded-xl border border-black/10 bg-card p-8">
-            <div className="text-center mb-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-black/10 bg-white/70 mb-4">
-                <span className="font-mono text-xs text-primary/80 tracking-widest uppercase">
-                  Employer Summary
-                </span>
-              </div>
-              <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground">
-                What This Proves
-              </h2>
-              <p className="font-body text-muted-foreground mt-2 max-w-xl mx-auto">
-                The practical hiring signal behind the coursework and research.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {[
-                {
-                  title: 'Full Chip Design Flow',
-                  sub: 'RTL → Synthesis → P&R → tapeout-ready verification',
-                  color: 'text-primary',
-                  border: 'border-primary/25',
-                  bg: 'bg-primary/10',
-                },
-                {
-                  title: 'Analog & RF IC Design',
-                  sub: 'CMOS amplifier to superheterodyne radios',
-                  color: 'text-primary',
-                  border: 'border-border',
-                  bg: 'bg-primary/10',
-                },
-                {
-                  title: 'mm-Wave Radar Systems',
-                  sub: 'Co-designing ICs with ML perception algorithms',
-                  color: 'text-primary',
-                  border: 'border-border',
-                  bg: 'bg-primary/10',
-                },
-                {
-                  title: 'Mixed-Signal',
-                  sub: 'Bridging analog sensors to digital AI systems',
-                  color: 'text-primary',
-                  border: 'border-border',
-                  bg: 'bg-primary/10',
-                },
-              ].map((item) => (
-                <div
-                  key={item.title}
-                  className={cn(
-                    'rounded-xl border p-5 text-center',
-                    item.border,
-                    item.bg
-                  )}
-                >
-                  <h3 className={cn('font-display text-sm font-bold mb-2', item.color)}>
-                    {item.title}
-                  </h3>
-                  <p className="font-body text-xs text-muted-foreground leading-relaxed">
-                    {item.sub}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
         </FadeIn>
 
       </div>

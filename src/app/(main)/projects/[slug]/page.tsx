@@ -9,7 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { FadeIn } from '@/components/animations/FadeIn';
 import { siteName } from '@/lib/constants';
-import { Layers, Trophy, Globe, Satellite, Map, Award, Star, Bot, Monitor, Route, Hand, Zap, FileText, CheckCircle, Car, Cog, Shield, Play, Users, Building, Factory, Settings, Brain, Network, Wrench, BookOpen, Presentation, Home, Gamepad2, Volume2, Navigation, Cloud, Headphones, ShoppingCart, Truck, DollarSign, Smartphone, ChefHat, MapPin, Bell, Server, Sparkles, Camera, Box, Clock, BarChart, GraduationCap, Code, XCircle, Layout, RefreshCw, LineChart, TestTube, Bug, Lightbulb, GitBranch, Video, ExternalLink } from 'lucide-react';
+import { Layers, Trophy, Globe, Satellite, Map, Award, Star, Bot, Monitor, Route, Hand, Zap, FileText, CheckCircle, Car, Cog, Shield, Play, Users, Building, Factory, Settings, Brain, Network, Wrench, BookOpen, Presentation, Home, Gamepad2, Volume2, Navigation, Cloud, Headphones, ShoppingCart, Truck, DollarSign, Smartphone, ChefHat, MapPin, Bell, Server, Sparkles, Camera, Box, Clock, BarChart, GraduationCap, Code, XCircle, Layout, RefreshCw, LineChart, TestTube, Bug, Lightbulb, GitBranch, Video, ExternalLink, Download } from 'lucide-react';
 import { allProjects, Project, projectSignals } from '@/lib/constants';
 import { Suspense } from 'react';
 import { getAssetPath } from '@/lib/utils';
@@ -157,6 +157,32 @@ const projectsData = [
     imageHint: "FM radio receiver circuit board",
     githubUrl: "",
     demoUrl: "https://youtube.com/shorts/ubQI5udW8H8?si=RdDYvzP_OdoH4A6_"
+  },
+  {
+    id: '12',
+    slug: 'ee219-uwb-radar',
+    title: 'EE219 | UWB Human Tracking & Breathing Detection',
+    date: 'July 2026',
+    author: siteName,
+    category: 'Radar / Signal Processing',
+    tags: ['UWB Radar', 'OS-CFAR', 'Kalman Filter', 'Extended Kalman Filter', 'Hungarian Assignment', 'Vital Signs'],
+    imageUrl: getAssetPath('/stanford/ee219/uwb-radar-cover.png'),
+    imageHint: 'UWB radar people counting, person tracking, and breathing detection',
+    githubUrl: '',
+    demoUrl: ''
+  },
+  {
+    id: '13',
+    slug: 'ee372-ldo-chip',
+    title: 'EE372 | Analog/Mixed-Signal LDO Chip',
+    date: 'June 2026',
+    author: siteName,
+    category: 'Analog / Mixed-Signal IC',
+    tags: ['TSMC 180 nm', 'LDO', 'Bandgap Reference', 'gm/Id', 'Cadence', 'DRC / LVS', 'I²C'],
+    imageUrl: getAssetPath('/stanford/ee372/layout.jpg'),
+    imageHint: 'TSMC 180 nanometer LDO full chip layout',
+    githubUrl: '',
+    demoUrl: ''
   }
 ];
 
@@ -185,6 +211,18 @@ const detailProof = {
     outcome: 'Working Stanford EE233 hardware/software radio with demo video, report, and interactive tuning interface.',
     proves: ['RF signal-chain understanding', 'Embedded hardware control', 'Hardware/software interface design'],
   },
+  'ee219-uwb-radar': {
+    problem: 'Indoor UWB returns contain static clutter, multipath, sidelobes, ambiguous peaks, and overlapping targets; breathing motion is only a few millimeters.',
+    contribution: 'Built the processing stack from CIR calibration and clutter removal through OS-CFAR, Doppler, gated Kalman/EKF tracking, Hungarian assignment, group association, and slow-time phase FFT.',
+    outcome: 'Raised exact two-person counting accuracy from 22.7% to 53.2% and recovered breathing at 10.8/21.1 BPM with 24.4/13.5 dB SNR.',
+    proves: ['Radar signal-processing depth', 'Probabilistic estimation', 'Experiment design and ablation analysis'],
+  },
+  'ee372-ldo-chip': {
+    problem: 'A mixed-signal LDO must generate a stable reference, regulate under load, reject false switching, expose trim control, and close physical verification across analog and digital domains.',
+    contribution: 'Designed and integrated a BANBA bandgap, 5-bit trim resistor, high-gain error amplifier, Schmitt triggers, CMOS MUX, I²C trim control, and full custom layout in TSMC 180 nm.',
+    outcome: 'Completed the chip, earned a 10/10 design-showcase score, and presented the work at Apple headquarters.',
+    proves: ['Transistor-level analog design', 'Mixed-signal integration', 'Layout and DRC/LVS closure'],
+  },
 } as const;
 
 function ProjectProofPanel({ slug }: { slug: keyof typeof detailProof }) {
@@ -195,10 +233,10 @@ function ProjectProofPanel({ slug }: { slug: keyof typeof detailProof }) {
         <CardHeader>
           <CardTitle className="text-2xl text-foreground flex items-center">
             <Target className="mr-3 h-6 w-6 text-primary" />
-            At a Glance: What This Proves
+            Project at a Glance
           </CardTitle>
           <p className="text-muted-foreground">
-            A recruiter-friendly translation of the project before the deeper technical evidence.
+            The challenge, my contribution, and the measured result.
           </p>
         </CardHeader>
         <CardContent className="space-y-6">
@@ -4935,6 +4973,89 @@ function EE233ProjectContent() {
   );
 }
 
+function EE219RadarProjectContent() {
+  const stages = [
+    ['1 · Sensor data', 'Decode complex CIR frames from the NCJ29D6/SR250 on IEEE 802.15.4z channel 9; calibrate 0.15 m taps and two receive paths.'],
+    ['2 · Detection', 'Remove static clutter, compute range-Doppler maps, and apply OS-CFAR to produce range and radial-velocity detections.'],
+    ['3 · Association', 'Use Mahalanobis gating and Hungarian assignment so noisy detections are matched globally instead of greedily.'],
+    ['4 · Tracking', 'Progress from a 1-D constant-velocity Kalman baseline to a Cartesian EKF with nonlinear range, angle, and radial-velocity observations.'],
+    ['5 · Vital signs', 'Select the strongest chest range tap, unwrap slow-time phase, bandpass 0.2–0.5 Hz, and estimate breathing frequency with an FFT.'],
+  ];
+  return (
+    <div className="space-y-10">
+      <ProjectProofPanel slug="ee219-uwb-radar" />
+      <FadeIn delay="delay-300">
+        <Card><CardHeader><CardTitle>End-to-end radar pipeline</CardTitle></CardHeader><CardContent>
+          <div className="grid gap-3 md:grid-cols-5">{stages.map(([title, body]) => (
+            <div key={title} className="rounded-xl border bg-muted/35 p-4"><div className="font-mono text-xs font-semibold text-primary">{title}</div><p className="mt-2 text-sm leading-6 text-muted-foreground">{body}</p></div>
+          ))}</div>
+        </CardContent></Card>
+      </FadeIn>
+      <FadeIn delay="delay-350">
+        <div className="grid gap-6 lg:grid-cols-[1.15fr_.85fr]">
+          <Card><CardHeader><CardTitle>Measured results</CardTitle></CardHeader><CardContent className="grid gap-4 sm:grid-cols-2">
+            {[
+              ['53.2%', 'Exact two-person count accuracy; baseline was 22.7%.'],
+              ['0.047', 'False-positive tracks per frame in the full pipeline.'],
+              ['10.8 BPM', 'Deep-breathing estimate at ~1 m with 24.4 dB peak SNR.'],
+              ['21.1 BPM', 'Semi-rapid breathing estimate at ~1.5 m with 13.5 dB peak SNR.'],
+            ].map(([value, label]) => <div key={value} className="rounded-xl border border-primary/20 bg-primary/10 p-4"><div className="text-2xl font-semibold">{value}</div><p className="mt-1 text-sm leading-6 text-muted-foreground">{label}</p></div>)}
+          </CardContent></Card>
+          <Card><CardHeader><CardTitle>Engineering judgment</CardTitle></CardHeader><CardContent className="space-y-3 text-sm leading-6 text-muted-foreground">
+            <p>The ablation study showed that more sophisticated association did not improve every metric monotonically; it exposed tuning and close-crossing failure modes instead of hiding them.</p>
+            <p>The two-antenna geometry limits angular resolution to roughly 51°, while 500 MHz bandwidth limits range resolution to 0.30 m. Those physical limits explain unresolved close crossings.</p>
+            <p className="font-medium text-foreground">Collaboration: Stanford EE219 project using Bosch automotive UWB radar hardware in an industry-connected research program.</p>
+          </CardContent></Card>
+        </div>
+      </FadeIn>
+      <FadeIn delay="delay-400">
+        <div className="mx-auto max-w-3xl rounded-2xl border border-primary/20 bg-primary/[0.06] p-6 text-center sm:p-8">
+          <FileText className="mx-auto h-9 w-9 text-primary" />
+          <h3 className="mt-3 text-xl font-semibold text-foreground">Technical report</h3>
+          <p className="mx-auto mt-2 max-w-xl text-sm leading-6 text-muted-foreground">Read the complete EE219 report for the radar architecture, experiments, ablation study, measured results, and limitations.</p>
+          <Button asChild className="mt-5 rounded-full">
+            <a href={getAssetPath('/stanford/ee219/EE219-UWB-Radar-Report.pdf')} download>
+              <Download className="mr-2 h-4 w-4" /> Read the full report
+            </a>
+          </Button>
+        </div>
+      </FadeIn>
+    </div>
+  );
+}
+
+function EE372LdoProjectContent() {
+  return (
+    <div className="space-y-10">
+      <ProjectProofPanel slug="ee372-ldo-chip" />
+      <FadeIn delay="delay-300">
+        <div className="grid gap-6 lg:grid-cols-2">
+          <Card><CardHeader><CardTitle>Architecture and design choices</CardTitle></CardHeader><CardContent className="space-y-3">
+            {[
+              ['BANBA bandgap + 5-bit trim', 'A resistor trim network corrects reference variation while preserving a programmable production-style calibration path.'],
+              ['3-mirror NMOS-input OTA', 'Chosen for the reduced 0.8–1.0 V common-mode range; the cascoded implementation reached approximately 80 dB gain.'],
+              ['Stability compensation', 'Miller capacitance and a nulling resistor were swept in the closed LDO loop rather than selected in isolation.'],
+              ['Protection and control', 'Two Schmitt triggers add ~0.4 V hysteresis; a transmission-gate MUX and I²C shadow/commit register control trimming safely.'],
+            ].map(([title, body]) => <div key={title} className="rounded-xl border bg-muted/35 p-4"><div className="font-semibold">{title}</div><p className="mt-1 text-sm leading-6 text-muted-foreground">{body}</p></div>)}
+          </CardContent></Card>
+          <Card><CardHeader><CardTitle>Full-chip execution</CardTitle></CardHeader><CardContent className="space-y-4 text-sm leading-6 text-muted-foreground">
+            <p>Used gm/Id-based sizing, lookup tables for the TSMC 180 nm devices, and MATLAB sweeps to turn hand calculations into optimized transistor dimensions.</p>
+            <p>The layout was integrated incrementally: each block passed DRC/LVS before assembly. Analog-on-top integration treated the digital trim controller as a verified block with separated analog and digital power nets.</p>
+            <div className="rounded-xl border border-primary/20 bg-primary/10 p-4"><div className="font-mono text-xs uppercase tracking-widest text-primary">Academic result</div><p className="mt-2 text-foreground">A+ course grade · perfect milestone scores · 10/10 design showcase · final presentation at Apple headquarters.</p></div>
+          </CardContent></Card>
+        </div>
+      </FadeIn>
+      <FadeIn delay="delay-350"><div className="grid gap-4 md:grid-cols-3">
+        {[
+          ['/stanford/ee372/architecture.jpg', 'System architecture'],
+          ['/stanford/ee372/layout.jpg', 'Full-chip layout'],
+          ['/stanford/ee372/bgr.jpg', 'BANBA bandgap design'],
+        ].map(([src, alt]) => <div key={src} className="overflow-hidden rounded-2xl border bg-card"><Image src={getAssetPath(src)} alt={alt} width={1440} height={810} className="aspect-video w-full object-cover" /><div className="p-3 text-sm font-medium">{alt}</div></div>)}
+      </div></FadeIn>
+    </div>
+  );
+}
+
 // Map of slugs to their corresponding content components
 const projectComponents: { [key: string]: React.ComponentType } = {
   'zf-autonomous-shuttle': ZFShuttleProjectContent,
@@ -4948,6 +5069,8 @@ const projectComponents: { [key: string]: React.ComponentType } = {
   'vanttec-roboboat-robosub': VanttecProjectContent,
   'ee272-vlsi-design': EE272ProjectContent,
   'ee233-fm-radio': EE233ProjectContent,
+  'ee219-uwb-radar': EE219RadarProjectContent,
+  'ee372-ldo-chip': EE372LdoProjectContent,
 };
 
 export default async function ProjectPage({ params }: Props) {
@@ -4962,8 +5085,8 @@ export default async function ProjectPage({ params }: Props) {
   const signal = projectSignals[slug];
 
   return (
-    <main className="min-h-screen bg-circuit">
-      <div className="container mx-auto px-4 py-14 lg:px-8">
+    <main className="min-h-screen w-full min-w-0 bg-circuit">
+      <div className="container mx-auto w-full max-w-full px-4 py-14 lg:px-8">
       <FadeIn>
         <Button variant="outline" asChild className="mb-8 rounded-full border-black/10 bg-white/80 shadow-sm shadow-black/5 hover:bg-white">
           <Link href="/projects">
@@ -4973,10 +5096,10 @@ export default async function ProjectPage({ params }: Props) {
       </FadeIn>
 
       <FadeIn delay="delay-100">
-        <article className="case-study mx-auto max-w-6xl rounded-2xl border border-black/10 bg-white/[0.82] p-4 shadow-sm shadow-black/5 backdrop-blur-sm sm:p-8 lg:p-10">
+        <article className="case-study mx-auto w-full min-w-0 max-w-6xl rounded-2xl border border-black/10 bg-white/[0.82] p-4 shadow-sm shadow-black/5 backdrop-blur-sm sm:p-8 lg:p-10">
           <header className="mb-10 text-center">
             <Badge variant="outline" className="mb-4 rounded-full border-primary/25 bg-primary/10 px-3 py-1 text-primary">{project.category}</Badge>
-            <h1 className="mx-auto max-w-3xl text-3xl font-semibold tracking-[-0.055em] text-foreground sm:text-4xl md:text-5xl">{project.title}</h1>
+            <h1 className="mx-auto max-w-3xl break-words text-3xl font-semibold tracking-[-0.055em] text-foreground sm:text-4xl md:text-5xl">{project.title}</h1>
             <div className="mt-5 flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground">
               <span className="flex items-center"><UserCircle className="mr-1.5 h-4 w-4" /> {project.author}</span>
               <span className="flex items-center"><Calendar className="mr-1.5 h-4 w-4" /> {project.date}</span>
@@ -5007,8 +5130,8 @@ export default async function ProjectPage({ params }: Props) {
                 <p className="mt-2 text-sm leading-6 text-foreground">{signal.contribution}</p>
               </div>
               <div className="rounded-2xl border border-primary/20 bg-primary/10 p-5">
-                <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-primary/80">Employer signal</div>
-                <p className="mt-2 text-sm leading-6 text-foreground">{signal.employerSignal}</p>
+                <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-primary/80">Technical focus</div>
+                <p className="mt-2 text-sm leading-6 text-foreground">{signal.technicalSummary}</p>
               </div>
             </section>
           )}

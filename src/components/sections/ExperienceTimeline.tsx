@@ -49,8 +49,8 @@ const timelineData: TimelineEntry[] = [
     org: "Stanford University",
     period: "2024–Present",
     description:
-      "Graduate research in Arbabian Lab (EE391): mm-wave radar sensor ICs and multimodal AI systems. Completed VLSI design coursework in EE271 and EE272, with EE372 upcoming for analog IC fabrication through TSMC. Analog IC design courses: EE214A, EE233.",
-    details: "Upcoming: EE372 | analog IC (imager/camera) design for TSMC-oriented fabrication.",
+      "Graduate research in Arbabian Lab (EE391): mm-wave radar sensor ICs and multimodal AI systems. Completed VLSI design coursework in EE271 and EE272, plus a mixed-signal LDO chip in EE372 using TSMC 180 nm. Analog IC design courses: EE214A, EE233.",
+    details: "EE372 | mixed-signal LDO chip, layout, DRC/LVS, and presentation at Apple.",
     category: "research",
     highlight: "Arbabian Lab · IC Design Track",
   },

@@ -14,7 +14,7 @@ export default function AboutPage() {
         {/* Page title */}
         <FadeIn className="text-center mb-14">
           <h1 className="font-display text-5xl md:text-6xl font-bold text-foreground mb-4">
-            About <span className="text-gradient-sky">Edison</span>
+            About <span className="text-gradient-sky">me</span>
           </h1>
           <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
             Stanford EE engineer building intelligent sensing systems across silicon, embedded software, and autonomy.
@@ -107,7 +107,7 @@ export default function AboutPage() {
               },
               {
                 icon: Users,
-                title: "Employer-ready execution",
+                title: "End-to-end execution",
                 body: "I focus on evidence: working demos, validated systems, competition results, industry projects, publications, and tools people can use.",
               },
             ].map((p) => (
@@ -130,7 +130,7 @@ export default function AboutPage() {
                 Technical strengths by role
               </h2>
               <p className="font-body text-muted-foreground">
-                The strongest hiring signals are RF/analog systems, VLSI, embedded automotive software, robotics perception, and technical product engineering.
+                My work spans RF and analog systems, VLSI, embedded automotive software, robotics perception, and technical product engineering.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
