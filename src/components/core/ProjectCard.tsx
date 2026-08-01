@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Project, projectSignals } from '@/lib/constants';
-import { ArrowRight, Building2, GraduationCap, Rocket, ExternalLink } from 'lucide-react';
+import { ArrowRight, Building2, GraduationCap, Rocket, ExternalLink, Play } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface ProjectCardProps {
@@ -37,6 +37,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <Icon className="h-3 w-3" />
             {tc.label}
           </div>
+          {project.youtubeId && (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="flex h-14 w-14 items-center justify-center rounded-full border border-white/40 bg-black/45 text-white shadow-lg backdrop-blur-sm transition duration-200 group-hover:scale-105 group-hover:bg-primary/80">
+                <Play className="ml-0.5 h-6 w-6 fill-current" />
+              </div>
+            </div>
+          )}
         </div>
       </Link>
 

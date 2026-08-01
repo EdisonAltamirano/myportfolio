@@ -10,6 +10,7 @@ import { cn } from '@/lib/utils';
 type Tab = 'all' | 'hardware' | 'embedded' | 'robotics' | 'industrial' | 'product';
 
 const featuredProjectOrder: string[] = [
+  'anello-navigation-simulation',
   'ee372-ldo-chip',
   'ee219-uwb-radar',
   'ee233-fm-radio',
@@ -84,7 +85,7 @@ const tabProjectIds: Record<Tab, string[] | null> = {
   all: null,
   hardware: ['ee372-ldo-chip', 'ee219-uwb-radar', 'ee233-fm-radio', 'ee272-vlsi-design'],
   embedded: ['zf-braking-systems', 'zf-autonomous-shuttle'],
-  robotics: ['airlab-stacking-challenge', 'vanttec-roboboat-robosub', 'robocup-competitions', 'tokyo-iros-2022', 'zf-autonomous-shuttle'],
+  robotics: ['anello-navigation-simulation', 'airlab-stacking-challenge', 'vanttec-roboboat-robosub', 'robocup-competitions', 'tokyo-iros-2022', 'zf-autonomous-shuttle'],
   industrial: ['smart-factory', 'john-deere-go'],
   product: ['chakri-ecommerce', 'john-deere-go'],
 };

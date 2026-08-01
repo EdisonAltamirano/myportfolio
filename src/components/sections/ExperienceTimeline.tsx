@@ -45,83 +45,64 @@ const categoryConfig: Record<TimelineCategory, { icon: React.ElementType; color:
 
 const timelineData: TimelineEntry[] = [
   {
-    title: "Stanford University | MS Electrical Engineering",
-    org: "Stanford University",
-    period: "2024–Present",
+    title: "Navigation Simulation Engineer",
+    org: "ANELLO Photonics",
+    period: "June 2026 – Present",
     description:
-      "Graduate research in Arbabian Lab (EE391): mm-wave radar sensor ICs and multimodal AI systems. Completed VLSI design coursework in EE271 and EE272, plus a mixed-signal LDO chip in EE372 using TSMC 180 nm. Analog IC design courses: EE214A, EE233.",
-    details: "EE372 | mixed-signal LDO chip, layout, DRC/LVS, and presentation at Apple.",
-    category: "research",
-    highlight: "Arbabian Lab · IC Design Track",
-  },
-  {
-    title: "ZF | Next-Gen Axle Modulators",
-    org: "ZF Friedrichshafen AG",
-    period: "2023–Present",
-    description:
-      "Developing next-generation braking systems for commercial vehicles. Mathematical modeling, embedded software (AUTOSAR), and reverse engineering commercial systems. Project valued at millions in financial projections.",
+      "California, United States. Engineering navigation simulation systems for advanced photonics-based positioning and autonomy applications.",
     category: "company",
+    highlight: "Current",
   },
   {
-    title: "John Deere. Supply Chain Management Intern",
-    org: "John Deere",
-    period: "2022–2023",
-    description:
-      "Built internal supply-chain systems at John Deere Labs, including IM Reserver for SAP-connected reservation workflows and ShieldGuard for computer-vision-based loss prevention. Delivered solutions with Azure, Power Platform, and ABAP.",
-    category: "company",
-  },
-  {
-    title: "Chakri | Agricultural E-commerce",
-    org: "Chakri (Co-founder)",
-    period: "2020–Present",
-    description:
-      "Co-founded platform connecting farmers directly with consumers. Built three integrated apps (customer, vendor, admin). 300+ users, 6,000+ products. Also developed BACModelos.com marketplace website.",
-    category: "startup",
-    highlight: "bacmodelos.com",
-  },
-  {
-    title: "ZF Autonomous Shuttle",
+    title: "Application Engineer",
     org: "ZF Group",
-    period: "2022–2023",
+    period: "November 2023 – September 2025",
     description:
-      "Led software for Mexico's first student autonomous passenger shuttle sponsored by ZF. CAN bus control, visual SLAM, and sensor fusion. Presented to Tesla executives before their Gigafactory announcement.",
+      "Monterrey, Mexico. Supported advanced vehicle systems through application engineering, modeling, embedded software, and cross-functional product development.",
     category: "company",
-    highlight: "First in Mexico",
   },
   {
-    title: "ROBORREGOS | RoboCup & IROS Tokyo",
-    org: "Roborregos / Tecnológico de Monterrey",
-    period: "2022–2023",
+    title: "Autonomous Vehicle Intern",
+    org: "ZF Group",
+    period: "August 2022 – June 2023",
     description:
-      "Led navigation software for humanoid service robots (TIAGO). Competed in RoboCup@Home Mexico nationals and achieved 3rd place in HandyMan Challenge at IROS 2022 in Tokyo.",
-    category: "academic",
-    highlight: "3rd place IROS 2022",
+      "Monterrey, Mexico. Contributed to autonomous vehicle development, including shuttle software, CAN bus control, visual SLAM, and sensor-fusion workflows.",
+    category: "company",
+    highlight: "Autonomy",
   },
   {
-    title: "VANTTEC | Autonomous Marine Vehicles",
-    org: "RoboNation / Tecnológico de Monterrey",
-    period: "2020–2023",
-    description:
-      "Led software for autonomous surface vessels and underwater vehicles. State machines, computer vision, SLAM, and radio communication. Published multiple IEEE and RoboNation technical papers.",
-    details: "Won 1st place in RoboBoat and 3rd in RoboSub international competitions.",
-    category: "academic",
-    highlight: "🥇 RoboBoat Champion",
-  },
-  {
-    title: "Smart Factory | Industry 4.0",
+    title: "Undergraduate Research Assistant",
     org: "Tecnológico de Monterrey",
-    period: "2019–2022",
+    period: "January 2020 – July 2022",
     description:
-      "Built one of Latin America's most advanced automated factories. AGV robots, PLC integration, digital twins, VR interfaces. Now MIT-partnered and recognized by IEEE EDUCON and IALF.",
+      "Monterrey, Mexico. Supported applied research in robotics and Industry 4.0 systems, including automated factories, AGV robots, digital twins, and VR interfaces.",
+    category: "research",
+  },
+  {
+    title: "Robotics Developer",
+    org: "VantTec",
+    period: "August 2019 – June 2023",
+    description:
+      "Monterrey, Mexico. Developed autonomous marine robotics software for surface and underwater vehicles, spanning state machines, computer vision, SLAM, and communications.",
+    details: "International RoboBoat and RoboSub competition work.",
+    category: "academic",
+    highlight: "Marine Robotics",
+  },
+  {
+    title: "Software Developer",
+    org: "RoBorregos",
+    period: "October 2022 – May 2023",
+    description:
+      "Mexico. Built robotics software for humanoid service robots, including navigation and autonomy systems for RoboCup and international robotics challenges.",
     category: "academic",
   },
   {
-    title: "Robotics Beginnings",
-    org: "LIONS Team / Tecnológico de Monterrey",
-    period: "2018–2019",
+    title: "Supply Chain Management Intern",
+    org: "John Deere",
+    period: "January 2022 – February 2023",
     description:
-      "Joined LIONS robotics team and won regional Robocup in MazeRescue. Built computer vision and electronics for maze-solving robots. Also served as TA for mobile app development.",
-    category: "academic",
+      "Monterrey, Mexico. Built internal supply-chain systems and automation tools using Azure, Power Platform, SAP-connected workflows, and ABAP.",
+    category: "company",
   },
 ];
 

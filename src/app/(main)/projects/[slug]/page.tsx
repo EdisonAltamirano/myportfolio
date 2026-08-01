@@ -16,6 +16,19 @@ import { getAssetPath } from '@/lib/utils';
 // Project metadata
 const projectsData = [
   {
+    id: '14',
+    slug: 'anello-navigation-simulation',
+    title: 'ANELLO Photonics | Navigation Simulation Engineer',
+    date: 'June 2026 – Present',
+    author: siteName,
+    category: 'Navigation Simulation',
+    tags: ['MATLAB', 'Simulink', 'PX4', 'SITL', 'HITL', 'Inertial Navigation', 'IMU Modeling'],
+    imageUrl: 'https://img.youtube.com/vi/s08NLhYrOQI/maxresdefault.jpg',
+    imageHint: 'navigation simulation autonomous platforms inertial sensors',
+    githubUrl: '',
+    demoUrl: 'https://youtu.be/s08NLhYrOQI'
+  },
+  {
     id: '1',
     slug: "zf-autonomous-shuttle",
     title: "ZF Autonomous Shuttle",
@@ -187,6 +200,12 @@ const projectsData = [
 ];
 
 const detailProof = {
+  'anello-navigation-simulation': {
+    problem: 'Navigation algorithms and inertial sensors need to be tested safely across very different vehicle dynamics before deployment on physical autonomous platforms.',
+    contribution: 'Built a navigation simulation framework from the ground up, including realistic IMU behavior, sensor models, data interfaces, control integration, validation tools, and SITL/HITL workflows.',
+    outcome: 'A repeatable simulation and validation pipeline for fixed-wing aircraft, ground rovers, unmanned surface vehicles, and unmanned underwater vehicles.',
+    proves: ['Navigation simulation architecture', 'IMU and sensor-modeling depth', 'SITL/HITL validation discipline'],
+  },
   'zf-braking-systems': {
     problem: 'Commercial-vehicle braking software has to coordinate control logic, configuration, simulation, and validation without compromising safety-critical behavior.',
     contribution: 'AUTOSAR-oriented software architecture, MATLAB/Simulink modeling, VectorCAST validation, MISRA-aware embedded C/C++, and toolchain debugging.',
@@ -5056,8 +5075,140 @@ function EE372LdoProjectContent() {
   );
 }
 
+function AnelloNavigationSimulationProjectContent() {
+  const platforms = [
+    ['Fixed-wing aircraft', 'Modeled higher-speed flight dynamics, control response, and navigation behavior for aerial autonomy testing.'],
+    ['Ground rovers', 'Simulated lower-speed vehicle motion, terrain-style maneuvers, and platform-specific control conditions.'],
+    ['Unmanned surface vehicles', 'Supported marine surface-motion behavior and sensor conditions for navigation-system evaluation.'],
+    ['Unmanned underwater vehicles', 'Extended the framework toward submerged platform dynamics and constrained navigation scenarios.'],
+  ];
+
+  const technicalWork = [
+    'Created the complete navigation simulation framework from the ground up.',
+    'Made the IMU operate realistically inside the simulated environment instead of acting like an idealized sensor.',
+    'Integrated simulated sensor data with navigation and control systems for closed-loop evaluation.',
+    'Validated performance under different vehicle dynamics, operating conditions, and sensor assumptions.',
+    'Built Software-in-the-Loop and Hardware-in-the-Loop workflows for repeatable pre-deployment testing.',
+    'Developed reusable sensor models, data interfaces, validation tools, and simulation components.',
+  ];
+
+  return (
+    <div className="space-y-10">
+      <ProjectProofPanel slug="anello-navigation-simulation" />
+
+      <FadeIn delay="delay-250">
+        <Card className="overflow-hidden border-primary/20 bg-card shadow-sm shadow-black/5">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2 text-2xl text-foreground">
+              <Video className="h-6 w-6 text-primary" /> ANELLO Photonics video
+            </CardTitle>
+            <p className="text-sm leading-6 text-muted-foreground">
+              Featured video used as the project cover and embedded here for the full case study.
+            </p>
+          </CardHeader>
+          <CardContent>
+            <div className="aspect-video overflow-hidden rounded-2xl border border-black/10 bg-black shadow-lg shadow-black/10">
+              <iframe
+                src="https://www.youtube.com/embed/s08NLhYrOQI"
+                title="ANELLO Photonics Navigation Simulation Engineer video"
+                className="h-full w-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+            <div className="mt-4 flex flex-wrap gap-3">
+              <a
+                href="https://youtu.be/s08NLhYrOQI"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-xl border border-primary/30 px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-primary/10"
+              >
+                <ExternalLink className="h-4 w-4" /> Watch on YouTube
+              </a>
+            </div>
+          </CardContent>
+        </Card>
+      </FadeIn>
+
+      <FadeIn delay="delay-300">
+        <div className="rounded-2xl border border-border bg-card p-6 shadow-sm shadow-black/5 md:p-8">
+          <div className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-primary">Role summary</div>
+          <h2 className="max-w-3xl text-3xl font-semibold tracking-[-0.045em] text-foreground md:text-4xl">
+            Navigation simulation framework for inertial sensors and autonomous systems.
+          </h2>
+          <p className="mt-4 max-w-4xl text-base leading-7 text-muted-foreground">
+            At ANELLO Photonics, I developed a complete simulation framework for testing inertial sensors and navigation algorithms across multiple autonomous platforms. The work connected vehicle dynamics, sensor modeling, navigation logic, and control behavior so systems could be evaluated consistently before moving to real hardware.
+          </p>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay="delay-350">
+        <div className="grid gap-6 lg:grid-cols-[1fr_1.1fr]">
+          <Card className="border-border bg-card shadow-sm shadow-black/5">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-xl text-foreground">
+                <Navigation className="h-5 w-5 text-primary" /> What I built
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              {technicalWork.map((item) => (
+                <div key={item} className="flex items-start gap-2 text-sm leading-6 text-muted-foreground">
+                  <CheckCircle className="mt-1 h-3.5 w-3.5 shrink-0 text-primary" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </CardContent>
+          </Card>
+
+          <Card className="border-border bg-card shadow-sm shadow-black/5">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-xl text-foreground">
+                <Route className="h-5 w-5 text-primary" /> Platform coverage
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {platforms.map(([title, body]) => (
+                  <div key={title} className="rounded-xl border border-primary/15 bg-primary/[0.06] p-4">
+                    <div className="text-sm font-semibold text-foreground">{title}</div>
+                    <p className="mt-2 text-sm leading-6 text-muted-foreground">{body}</p>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay="delay-400">
+        <Card className="border-primary/20 bg-primary/10 shadow-sm shadow-black/5">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2 text-xl text-foreground">
+              <Cpu className="h-5 w-5 text-primary" /> Technologies
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="flex flex-wrap gap-2">
+              {[
+                'MATLAB', 'Simulink', 'PX4', 'SITL', 'HITL', 'Inertial navigation systems', 'IMUs',
+                'Sensor modeling', 'Vehicle dynamics', 'Autonomous systems', 'Fixed-wing aircraft',
+                'Rovers', 'USVs', 'UUVs', 'Control systems', 'Signal processing', 'Python', 'C/C++', 'Git',
+              ].map((tech) => (
+                <span key={tech} className="rounded-full border border-primary/20 bg-white/80 px-3 py-1.5 text-xs font-medium text-foreground">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      </FadeIn>
+    </div>
+  );
+}
+
 // Map of slugs to their corresponding content components
 const projectComponents: { [key: string]: React.ComponentType } = {
+  'anello-navigation-simulation': AnelloNavigationSimulationProjectContent,
   'zf-autonomous-shuttle': ZFShuttleProjectContent,
   'airlab-stacking-challenge': AIRLabProjectContent,
   'smart-factory': SmartFactoryProjectContent,

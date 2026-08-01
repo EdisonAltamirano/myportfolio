@@ -20,38 +20,38 @@ type Publication = {
 
 const publications: Publication[] = [
   {
-    authors: "Altamirano-Avila, E., Ahmad, R., & Rodriguez-Padilla, C.",
+    authors: "Altamirano Avila, E., Prado Chapa, D., Diaz Arenas, I., & Vazquez Hurtado, C.",
     year: "2022",
     title:
       "A Digital Twin Implementation for Mobile and Collaborative Robot Scenarios for Teaching Robotics Based on Robot Operating System.",
     venue: "IEEE EDUCON",
-    pages: "1–6",
+    pages: "559–564",
     doi: "https://doi.org/10.1109/EDUCON52537.2022.9766583",
   },
   {
-    authors: "Rodriguez-Padilla, C., Ahmad, R., & Altamirano-Avila, E.",
+    authors: "Cisneros Morales, J. A., Altamirano Ávila, E. R., Mendivil-Castro, R., & Muñoz, L. A.",
     year: "2023",
     title: "Visual Navigation Algorithms for Mobile Manipulators in Service Shops.",
-    venue: "International Conference on Robotics and Automation",
-    pages: "1–8",
+    venue: "Advances in Soft Computing",
+    pages: "227–238",
     doi: "https://doi.org/10.1007/978-3-031-47640-2_19",
   },
   {
-    authors: "Vázquez-Hurtado, C., Altamirano-Avila, E., & Ahmad, R.",
+    authors: "Vázquez-Hurtado, C., Altamirano-Avila, E., Roman-Flores, A., & Vargas-Martinez, A.",
     year: "2023",
     title:
       "Towards a Mixed Virtual Reality Environment Implementation to Enable Industrial Robot Programming Competencies within a Cyber-Physical Factory.",
     venue: "IEEE EDUCON",
-    pages: "1–6",
+    pages: "1–8",
     doi: "https://doi.org/10.1109/EDUCON54358.2023.10125175",
   },
   {
     authors:
-      "Vázquez-Hurtado, C., Altamirano-Avila, E., Rodriguez-Padilla, C., Ahmad, R., et al.",
+      "Vázquez-Hurtado, C., Altamirano-Avila, E., Rodriguez-Padilla, C., Ahmad, R., Gómez Quiñones, J. I., Rodriguez-Delgado, J. M., & Flores-Ramírez, A.",
     year: "2024",
     title:
       "Virtual Twin for the Smart Factory as a Tool to Enable Robotics Skills Acquisition.",
-    venue: "International Conference on Learning Factories (IALF)",
+    venue: "Learning Factories of the Future",
     pages: "113–120",
     doi: "https://doi.org/10.1007/978-3-031-65411-4_14",
   },
@@ -74,12 +74,11 @@ const publications: Publication[] = [
     linkLabel: "VANTTEC",
   },
   {
-    authors: "Altamirano-Avila, E., Ahmad, R., & Rodriguez-Padilla, C.",
+    authors: "Altamirano-Avila, E., Valdivia-Puga, A., & Vazquez-Hurtado, C.",
     year: "2022",
     title:
       "Work in Progress: Implementation of a Digital Twin as Technology to Support Discrete Event Control Teaching.",
     venue: "IEEE EDUNINE",
-    pages: "1–6",
     doi: "https://doi.org/10.1109/EDUNINE53672.2022.9782154",
   },
 ];

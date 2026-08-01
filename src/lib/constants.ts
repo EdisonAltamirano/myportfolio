@@ -30,6 +30,7 @@ export type Project = {
   href: string;
   type: ProjectType;
   websiteUrl?: string;
+  youtubeId?: string;
 };
 
 const BASE = process.env.NODE_ENV === 'production' ? '/myportfolio' : '';
@@ -83,6 +84,21 @@ export const featuredProjects: Project[] = [
 ];
 
 export const companyProjects: Project[] = [
+  {
+    id: 'anello-navigation-simulation',
+    title: 'ANELLO Photonics | Navigation Simulation Engineer',
+    description:
+      'Built a complete navigation simulation framework for testing inertial sensors and navigation algorithms across fixed-wing aircraft, rovers, USVs, and UUVs.',
+    imageUrl: `https://img.youtube.com/vi/s08NLhYrOQI/maxresdefault.jpg`,
+    imageHint: 'navigation simulation autonomous platforms inertial sensors',
+    category: 'Navigation Simulation',
+    company: 'ANELLO Photonics',
+    tags: ['MATLAB', 'Simulink', 'PX4', 'SITL/HITL', 'Inertial Navigation'],
+    href: '/projects/anello-navigation-simulation',
+    type: 'company',
+    websiteUrl: 'https://youtu.be/s08NLhYrOQI',
+    youtubeId: 's08NLhYrOQI',
+  },
   {
     id: 'zf-autonomous-shuttle',
     title: 'ZF Autonomous Shuttle',
@@ -269,6 +285,12 @@ export type ProjectSignal = {
 };
 
 export const projectSignals: Record<string, ProjectSignal> = {
+  'anello-navigation-simulation': {
+    roleFit: 'Navigation Simulation / Autonomy Engineer',
+    contribution: 'Built the full simulation pipeline, realistic IMU behavior, sensor models, SITL/HITL workflows, validation tooling, and reusable interfaces across multiple autonomous platforms.',
+    outcome: 'A reusable simulation framework that enables repeatable navigation testing before deployment on real hardware.',
+    technicalSummary: 'MATLAB, Simulink, PX4, SITL/HITL, inertial navigation, IMUs, sensor modeling, vehicle dynamics, Python, C/C++, and Git.',
+  },
   'zf-autonomous-shuttle': {
     roleFit: 'Robotics & Autonomy Engineer',
     contribution: 'Firmware, electronics, sensing, and vehicle autonomy integration.',
