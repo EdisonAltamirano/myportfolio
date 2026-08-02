@@ -145,7 +145,7 @@ export default function AboutPage() {
         <FadeIn delay="delay-400" className="text-center">
           <div className="inline-flex flex-col items-center gap-3">
             <Link
-              href="/docs/EdisonAltamiranoResume.pdf"
+              href="/docs/edison_altamirano_ms_cv.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 font-display text-sm font-bold tracking-wider uppercase px-8 py-4 rounded-md border border-black/10 text-primary hover:bg-primary/10 hover:border-primary/30 transition-all duration-300 animate-sky-glow"

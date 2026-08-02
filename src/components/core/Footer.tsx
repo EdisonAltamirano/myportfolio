@@ -65,7 +65,7 @@ export function Footer() {
                 <Linkedin className="w-3.5 h-3.5" /> LinkedIn
               </Link>
               <Link
-                href="/docs/EdisonAltamiranoResume.pdf"
+                href="/docs/edison_altamirano_ms_cv.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 font-body text-sm text-muted-foreground/85 hover:text-primary transition-colors"

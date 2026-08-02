@@ -46,7 +46,7 @@ export function HeroSection() {
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="h-12 rounded-full border-black/10 bg-transparent px-6 text-sm font-semibold text-foreground hover:bg-black/[0.04]">
-              <Link href="/docs/EdisonAltamiranoResume.pdf" target="_blank" rel="noopener noreferrer">
+              <Link href="/docs/edison_altamirano_ms_cv.pdf" target="_blank" rel="noopener noreferrer">
                 Resume <FileText className="ml-2 h-4 w-4" />
               </Link>
             </Button>

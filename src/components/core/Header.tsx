@@ -50,7 +50,7 @@ export function Header() {
             );
           })}
           <Link
-            href="/docs/EdisonAltamiranoResume.pdf"
+            href="/docs/edison_altamirano_ms_cv.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="ml-3 rounded-full border border-black/10 px-3.5 py-2 text-sm font-medium text-foreground transition-colors duration-150 hover:border-black/20 hover:bg-black/[0.04] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
@@ -92,7 +92,7 @@ export function Header() {
                   );
                 })}
                 <Link
-                  href="/docs/EdisonAltamiranoResume.pdf"
+                  href="/docs/edison_altamirano_ms_cv.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setOpen(false)}
